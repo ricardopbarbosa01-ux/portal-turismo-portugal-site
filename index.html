@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portugal Travel Hub — As Melhores Praias e Destinos</title>
+  <meta name="description" content="Descubra praias, destinos e experiências premium em Portugal. Explore o Algarve, Lisboa, Porto e muito mais.">
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portal-turismo-portugal.pages.dev/">
+  <meta property="og:title" content="Portugal Travel Hub — As Melhores Praias e Destinos">
+  <meta property="og:description" content="Descubra praias, destinos e experiências premium em Portugal.">
+  <meta property="og:image" content="https://portal-turismo-portugal.pages.dev/og-image.jpg">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="Portugal Travel Hub">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portugal Travel Hub — As Melhores Praias e Destinos">
+  <meta name="twitter:description" content="Descubra praias, destinos e experiências premium em Portugal.">
+  <meta name="twitter:image" content="https://portal-turismo-portugal.pages.dev/og-image.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portugal Travel Hub",
+    "url": "https://portal-turismo-portugal.pages.dev",
+    "description": "Descubra praias, destinos e experiências premium em Portugal.",
+    "inLanguage": "pt-PT",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://portal-turismo-portugal.pages.dev/beaches.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
+
+<!-- ── Navbar ──────────────────────────────────────────────────── -->
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    Portugal Travel Hub
+    <span aria-hidden="true" style="display:inline-flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;color:#ff3b3b;margin-left:6px;vertical-align:middle;">
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff3b3b;animation:live-pulse 1.2s ease-in-out infinite;"></span>
+      LIVE
+    </span>
+  </a>
+  <style>@keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}</style>
+
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+  <div class="nav-links" role="list">
+    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <a href="#destinations" role="listitem">Destinos</a>
+    <a href="beaches.html" role="listitem">Praias</a>
+    <a href="#partners" role="listitem">Parceiros</a>
+    <a href="/#premium">Premium</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<main id="main">
+<section class="hero" aria-label="Secção principal">
+
+  <div class="hero-overlay">
+    <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">A sua guia de praias em</span>
+      <h1 class="hero-title">Encontre a Praia <em>Certa</em></h1>
+      <p class="hero-subtitle">
+        Surf, família ou descanso — descubra as melhores praias de Portugal
+        e planeie o seu dia em minutos.
+      </p>
+      <!-- Smart Search Bar -->
+      <div class="hero-search" role="search" aria-label="Pesquisa de destinos">
+        <div class="hs-tabs">
+          <button class="hs-tab active" data-placeholder="Que destino procura? Ex: Algarve, Nazaré…" onclick="hsTab(this)">Destino</button>
+          <button class="hs-tab" data-placeholder="Nome da praia ou região… Ex: Praia da Rocha" onclick="hsTab(this)">Praia</button>
+        </div>
+        <div class="hs-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <input class="hs-input" type="text" placeholder="Que destino procura? Ex: Algarve, Nazaré…" aria-label="Destino" id="hs-input" autocomplete="off" onkeydown="if(event.key==='Enter') hsSearch()" oninput="toggleClearBtn()">
+          <button id="hs-clear" class="hs-clear" aria-label="Limpar pesquisa" onclick="hsClear()" type="button">&times;</button>
+          <button class="hs-btn" onclick="hsSearch()">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Pesquisar
+          </button>
+        </div>
+        <div class="hs-suggestions">
+          <span>Sugestões:</span>
+          <button class="hs-chip" onclick="hsChip(this)">Algarve</button>
+          <button class="hs-chip" onclick="hsChip(this)">Lisboa</button>
+          <button class="hs-chip" onclick="hsChip(this)">Porto</button>
+          <button class="hs-chip" onclick="hsChip(this)">Portimão</button>
+          <button class="hs-chip" onclick="hsChip(this)">Praia da Rocha</button>
+          <button class="hs-chip" onclick="hsChip(this)">Nazaré</button>
+        </div>
+        <div id="hs-feedback" class="hs-feedback"></div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="beaches.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Descobrir Praias
+        </a>
+        <a href="#como-funciona" class="btn btn-outline">Como funciona</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#destinations" class="hero-scroll" aria-label="Ver destinos">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 12"/></svg>
+  </a>
+</section>
+
+<!-- ── Stats ─────────────────────────────────────────────────── -->
+<div class="stats" aria-label="Estatísticas">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-number">4<span>+</span></div>
+      <div class="stat-label">Destinos de Excelência</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number">200<span>+</span></div>
+      <div class="stat-label">Parceiros Certificados</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number">50k<span>+</span></div>
+      <div class="stat-label">Viajantes Satisfeitos</div>
+    </div>
+    <div class="stat-item reveal">
+      <div class="stat-number">98<span>%</span></div>
+      <div class="stat-label">Taxa de Satisfação</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Como Funciona ──────────────────────────────────────────── -->
+<section class="how-it-works" id="como-funciona" aria-labelledby="hiw-title">
+  <div class="section-header reveal">
+    <div class="section-tag">Simples e Directo</div>
+    <h2 class="section-title" id="hiw-title">Como <em>Funciona</em></h2>
+    <p class="section-subtitle">Três passos para encontrar a praia ideal e planear o seu dia.</p>
+  </div>
+
+  <div class="hiw-grid">
+    <article class="hiw-step reveal" tabindex="0" role="listitem" aria-label="Explorar destinos e praias">
+      <div class="hiw-num" aria-hidden="true">1</div>
+      <div class="hiw-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3 class="hiw-title">Explorar destinos e praias</h3>
+      <p class="hiw-desc">
+        Descubra regiões, destinos e praias em Portugal com navegação simples e visual.
+      </p>
+    </article>
+
+    <article class="hiw-step reveal" tabindex="0" role="listitem" aria-label="Comparar opções premium">
+      <div class="hiw-num" aria-hidden="true">2</div>
+      <div class="hiw-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <h3 class="hiw-title">Comparar opções premium</h3>
+      <p class="hiw-desc">
+        Compare praias, hotéis e experiências premium com informação clara para decidir melhor.
+      </p>
+    </article>
+
+    <article class="hiw-step reveal" tabindex="0" role="listitem" aria-label="Planear e enviar pedido">
+      <div class="hiw-num" aria-hidden="true">3</div>
+      <div class="hiw-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="2" y1="8" x2="20" y2="8"/></svg>
+      </div>
+      <h3 class="hiw-title">Planear e enviar pedido</h3>
+      <p class="hiw-desc">
+        Envie o seu pedido e avance com um planeamento mais rápido e personalizado.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- ── Destinos de Portugal ────────────────────────────────── -->
+<section class="destinations-v2" id="destinations" aria-labelledby="dest-v2-title">
+  <div class="section-header reveal">
+    <div class="section-tag">Portugal a Descoberto</div>
+    <h2 class="section-title" id="dest-v2-title">Destinos de <em>Portugal</em></h2>
+    <p class="section-subtitle">
+      Deixe-se levar por paisagens únicas, da costa dourada do Algarve às vinhas do Douro.
+      Cada região, uma promessa. Cada destino, uma nova história para contar.
+    </p>
+  </div>
+
+  <div class="destinations-v2-grid">
+    <a href="beaches.html?region=Algarve" class="destination-card reveal" aria-label="Explorar Algarve">
+      <img src="https://portal-turismo-portugal.pages.dev/og-image.jpg" alt="Falésias e praias douradas do Algarve." loading="lazy" width="400" height="533">
+      <div class="destination-card-content">
+        <div>
+          <span class="destination-card-tag">Região</span>
+          <h3 class="destination-card-title">Algarve</h3>
+          <p class="destination-card-desc">Onde o sol beija o mar e as falésias contam histórias milenares.</p>
+        </div>
+        <div class="destination-card-cta">
+          <span>Saiba Mais</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+    <a href="beaches.html?region=Lisboa" class="destination-card reveal" aria-label="Explorar Lisboa">
+      <img src="https://portal-turismo-portugal.pages.dev/og-image.jpg" alt="Elétrico amarelo nas ruas de Lisboa." loading="lazy" width="400" height="533">
+      <div class="destination-card-content">
+        <div>
+          <span class="destination-card-tag">Região</span>
+          <h3 class="destination-card-title">Lisboa</h3>
+          <p class="destination-card-desc">A capital da luz, onde a tradição e a modernidade dançam junto ao Tejo.</p>
+        </div>
+        <div class="destination-card-cta">
+          <span>Saiba Mais</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+    <a href="beaches.html?q=Nazaré" class="destination-card reveal" aria-label="Explorar Nazaré">
+      <img src="https://portal-turismo-portugal.pages.dev/og-image.jpg" alt="Ondas gigantes na Nazaré." loading="lazy" width="400" height="533">
+      <div class="destination-card-content">
+        <div>
+          <span class="destination-card-tag">Destino</span>
+          <h3 class="destination-card-title">Nazaré</h3>
+          <p class="destination-card-desc">O palco das ondas gigantes, um desafio para os bravos e um espetáculo para todos.</p>
+        </div>
+        <div class="destination-card-cta">
+          <span>Saiba Mais</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+    <a href="beaches.html?region=Porto" class="destination-card reveal" aria-label="Explorar Porto">
+      <img src="https://portal-turismo-portugal.pages.dev/og-image.jpg" alt="Ribeira do Porto com barcos rabelo." loading="lazy" width="400" height="533">
+      <div class="destination-card-content">
+        <div>
+          <span class="destination-card-tag">Região</span>
+          <h3 class="destination-card-title">Porto</h3>
+          <p class="destination-card-desc">A cidade invicta, onde o vinho do Porto aquece a alma e o Douro embeleza a paisagem.</p>
+        </div>
+        <div class="destination-card-cta">
+          <span>Saiba Mais</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── Featured Beaches ──────────────────────────────────────── -->
+<section class="featured-beaches" aria-labelledby="fb-title">
+  <div class="section-header reveal">
+    <div class="section-tag">Praias em Destaque</div>
+    <h2 class="section-title" id="fb-title">As Melhores <em>Praias</em></h2>
+    <p class="section-subtitle">Seleccionadas pela sua qualidade de água, paisagem e equipamentos — actualizadas em tempo real.</p>
+  </div>
+  <div class="fb-grid" id="fb-grid" role="list" aria-label="Praias em destaque"></div>
+  <div class="fb-cta">
+    <a href="beaches.html" class="btn btn-blue">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      Ver Todas as Praias
+    </a>
+  </div>
+</section>
+
+<!-- ── Partners ───────────────────────────────────────────────── -->
+<section class="partners" id="partners" aria-labelledby="partner-title">
+  <div class="section-header reveal">
+    <div class="section-tag">Confiança e Qualidade</div>
+    <h2 class="section-title" id="partner-title">Parceiros de <em>Excelência</em></h2>
+    <p class="section-subtitle">
+      Trabalhamos exclusivamente com parceiros verificados para garantir que a sua experiência em Portugal seja memorável e segura.
+    </p>
+  </div>
+
+  <div class="partners-grid">
+    <!-- Hotels -->
+    <article class="partner-card reveal" tabindex="0">
+      <div class="partner-card-header">
+        <div class="partner-icon partner-icon--hotels" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="partner-verified-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Parceiro Verificado
+        </div>
+      </div>
+      <div class="partner-content">
+        <div class="partner-type">Alojamento</div>
+        <h3 class="partner-title">Hotéis de Charme</h3>
+        <p class="partner-desc">
+          Pousadas históricas, boutique hotels e resorts de luxo em toda a extensão do país.
+        </p>
+        <div class="partner-logos">
+          <span class="partner-badge">Pousadas de Portugal</span>
+          <span class="partner-badge">Vila Galé</span>
+          <span class="partner-badge">Bensaúde</span>
+        </div>
+      </div>
+      <a href="https://www.booking.com/country/pt.pt-pt.html" target="_blank" rel="noopener noreferrer" class="partner-cta">
+        Ver em Booking.com
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </article>
+
+    <!-- Restaurants -->
+    <article class="partner-card reveal" tabindex="0">
+      <div class="partner-card-header">
+        <div class="partner-icon partner-icon--food" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div class="partner-verified-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Parceiro Verificado
+        </div>
+      </div>
+      <div class="partner-content">
+        <div class="partner-type">Gastronomia</div>
+        <h3 class="partner-title">Restaurantes Selecionados</h3>
+        <p class="partner-desc">
+          Da cozinha mediterrânica aos mariscos frescos, petiscos e estrelas Michelin.
+        </p>
+        <div class="partner-logos">
+          <span class="partner-badge">The Fork Selection</span>
+          <span class="partner-badge">Guia Michelin</span>
+          <span class="partner-badge">Belcanto</span>
+        </div>
+      </div>
+      <a href="https://www.thefork.pt/" target="_blank" rel="noopener noreferrer" class="partner-cta">
+        Ver em TheFork
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </article>
+
+    <!-- Car Rental -->
+    <article class="partner-card reveal" tabindex="0">
+      <div class="partner-card-header">
+        <div class="partner-icon partner-icon--car" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="partner-verified-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Parceiro Verificado
+        </div>
+      </div>
+      <div class="partner-content">
+        <div class="partner-type">Mobilidade</div>
+        <h3 class="partner-title">Aluguer de Automóvel</h3>
+        <p class="partner-desc">
+          Explore Portugal ao seu ritmo com as melhores frotas nacionais e internacionais.
+        </p>
+        <div class="partner-logos">
+          <span class="partner-badge">Hertz</span>
+          <span class="partner-badge">Europcar</span>
+          <span class="partner-badge">Sixt</span>
+        </div>
+      </div>
+      <a href="https://www.rentalcars.com/pt/?country=Portugal" target="_blank" rel="noopener noreferrer" class="partner-cta">
+        Ver em RentalCars
+        <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- ── Premium CTA ─────────────────────────────────────────────── -->
+<section class="premium" id="premium" aria-labelledby="premium-title">
+  <div class="premium-inner">
+    <div class="premium-content">
+      <div class="premium-badge">Acesso Exclusivo</div>
+      <h2 class="premium-title" id="premium-title">
+        A sua viagem, <em>elevada</em> a Ouro
+      </h2>
+      <p class="premium-text">
+        Com o nosso plano Premium, cada detalhe é pensado para si. Aceda a benefícios únicos,
+        roteiros personalizados por especialistas e um concierge dedicado à sua inteira disposição.
+      </p>
+      <div class="premium-actions">
+        <a href="login.html#register" class="btn btn-primary">
+          Aderir ao Premium
+        </a>
+        <a href="contact.html" class="btn btn-outline">Saber Mais</a>
+      </div>
+    </div>
+
+    <div class="premium-benefits" role="list">
+      <div class="benefit-item reveal" role="listitem">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 1l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 1z"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h4 class="premium-accent">Prioridade em Reservas</h4>
+          <p>Acesso antecipado aos melhores hotéis e restaurantes de topo.</p>
+        </div>
+      </div>
+
+      <div class="benefit-item reveal" role="listitem">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21.39 12a2.39 2.39 0 00-2.39-2.39H12a2.39 2.39 0 00-2.39 2.39V21a2.39 2.39 0 002.39 2.39h7a2.39 2.39 0 002.39-2.39zM16 3a4 4 0 014 4h-4z"/><path d="M3 10V4a2 2 0 012-2h7l5 5v3"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h4 class="premium-accent">Roteiros Personalizados</h4>
+          <p>Itinerários exclusivos criados por especialistas locais.</p>
+        </div>
+      </div>
+
+      <div class="benefit-item reveal" role="listitem">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9.5 2h5l.5 2h3l-1 5-4 2-4-2-1-5h3z"/><path d="M6 10l-3 8 9 4 9-4-3-8h-12z"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h4 class="premium-accent">Concierge Pessoal 24/7</h4>
+          <p>Assistência dedicada a qualquer hora para uma experiência perfeita.</p>
+        </div>
+      </div>
+
+      <div class="benefit-item reveal" role="listitem">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
+        </div>
+        <div class="benefit-text">
+          <h4 class="premium-accent">Ofertas Exclusivas</h4>
+          <p>Descontos e vantagens em parceiros premium e experiências únicas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        Portugal Travel Hub
+      </div>
+      <p class="footer-tagline">
+        O seu companheiro de viagem premium para descobrir o melhor de Portugal.
+      </p>
+      <nav class="footer-social" aria-label="Redes sociais">
+        <a href="javascript:void(0);" class="social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </a>
+        <a href="javascript:void(0);" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </a>
+        <a href="javascript:void(0);" class="social-btn" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 003 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="javascript:void(0);" class="social-btn" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a5 5 0 0 1 0 3.56"/><path d="M17 8a5 5 0 0 1 0 8"/></svg>
+        </a>
+      </nav>
+    </div>
+
+    <nav class="footer-col" aria-label="Destinos">
+      <h5>Destinos</h5>
+      <ul>
+        <li><a href="beaches.html?region=Algarve">Algarve</a></li>
+        <li><a href="beaches.html?region=Lisboa">Lisboa</a></li>
+        <li><a href="beaches.html?region=Porto">Porto</a></li>
+        <li><a href="beaches.html?region=Alentejo">Alentejo</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Empresa">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="about.html">Sobre Nós</a></li>
+        <li><a href="/#como-funciona">Como Funciona</a></li>
+        <li><a href="/#partners">Parceiros</a></li>
+        <li><a href="/#premium">Premium</a></li>
+        <li><a href="beaches.html">Praias</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Suporte">
+      <h5>Suporte</h5>
+      <ul>
+        <li><a href="contact.html">Centro de Ajuda</a></li>
+        <li><a href="privacy.html">Política de Privacidade</a></li>
+        <li><a href="terms.html">Termos de Serviço</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span>Desenvolvido com <span aria-label="amor">♥</span> em Portugal · <a href="privacy.html">Política de Privacidade</a></span>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script>
+  // ── Smart Search Bar Functions ──────────────────────────────
+  function hsTab(el) {
+    document.querySelectorAll('.hs-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    const input = document.getElementById('hs-input');
+    if (input && el.dataset.placeholder) input.placeholder = el.dataset.placeholder;
+  }
+  function hsChip(el) {
+    const input = document.getElementById('hs-input');
+    input.value = el.textContent;
+    input.focus();
+    toggleClearBtn();
+  }
+  function hsClear() {
+    const input = document.getElementById('hs-input');
+    input.value = '';
+    input.focus();
+    toggleClearBtn();
+  }
+  function toggleClearBtn() {
+    const input = document.getElementById('hs-input');
+    const btn = document.getElementById('hs-clear');
+    if (input.value.length > 0) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  }
+  function hsSearch() {
+    const raw = document.getElementById('hs-input').value.trim();
+    if (!raw) return;
+    window.location.href = 'beaches.html?q=' + encodeURIComponent(raw);
+  }
+
+  // ── Spotlight Effect ─────────────────────────────────────────
+  const spotlight = document.getElementById('spotlight');
+  if (window.matchMedia("(pointer: fine)").matches) {
+    let rafId = null;
+    document.addEventListener('mousemove', (e) => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        spotlight.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px, rgba(201,168,76,0.10), transparent 50%)`;
+      });
+    });
+  }
+
+  // ── Navbar scroll ─────────────────────────────────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Mobile nav ────────────────────────────────────────────
+  const toggle = document.getElementById('nav-toggle');
+  const navClose = document.getElementById('nav-close');
+  const navBackdrop = document.getElementById('nav-backdrop');
+  function openMobileNav() {
+    navbar.classList.add('nav-mobile-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    navbar.classList.remove('nav-mobile-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', () => navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
+  navClose?.addEventListener('click', closeMobileNav);
+  navBackdrop?.addEventListener('click', closeMobileNav);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+  // ── Page Logic ────────────────────────────────────────────────
+  (async () => {
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Fetch Featured Beaches (Placeholder) ──
+    // In a real scenario, this would be an API call.
+    // The mock data has been removed as per recovery instructions.
+    const grid = document.getElementById('fb-grid');
+    if (grid) {
+      // You can add a loading state here if desired
+      // grid.innerHTML = '<p>A carregar praias...</p>';
+    }
+  })();
+</script>
+
+<!-- ── Bottom nav (mobile) ──────────────────────────────────── -->
+<nav class="bottom-nav" aria-label="Navegação rápida">
+  <a href="/" class="bottom-nav-item active" aria-label="Início" aria-current="page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Início</span>
+  </a>
+  <a href="beaches.html" class="bottom-nav-item" aria-label="Praias">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="2" y1="8" x2="20" y2="8"/></svg>
+    <span>Praias</span>
+  </a>
+  <a href="about.html" class="bottom-nav-item" aria-label="Sobre Nós">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <span>Sobre</span>
+  </a>
+  <a href="login.html" class="bottom-nav-item" aria-label="Entrar">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 1-2 2h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+    <span>Entrar</span>
+  </a>
+</nav>
+
+<script>
+  // ── Service Worker registration ───────────────────────────────
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .catch(() => { /* SW registration failed silently */ });
+    });
+  }
+</script>
+</body>
+</html>

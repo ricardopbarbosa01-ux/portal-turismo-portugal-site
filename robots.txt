@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin.html
+Disallow: /dashboard.html
+Disallow: /login.html
+Disallow: /partner-dashboard.html
+Disallow: /offline.html
+Disallow: /sw.js
+
+Sitemap: https://portal-turismo-portugal.pages.dev/sitemap.xml

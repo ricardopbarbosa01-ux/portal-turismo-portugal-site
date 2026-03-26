@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a3d6b"/>
+      <stop offset="100%" stop-color="#c9a84c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M120 390c70-40 140-40 210 0s140 40 210 0 140-40 210 0 140 40 210 0 140-40 210 0"/>
+    <path d="M120 450c70-40 140-40 210 0s140 40 210 0 140-40 210 0 140 40 210 0 140-40 210 0"/>
+  </g>
+  <circle cx="980" cy="140" r="58" fill="#ffffff" opacity="0.95"/>
+  <text x="60" y="110" font-family="Inter,Arial,sans-serif" font-size="42" fill="#ffffff" font-weight="700">Portugal Travel Hub</text>
+  <text x="60" y="165" font-family="Inter,Arial,sans-serif" font-size="28" fill="#ffffff" opacity="0.95">Imagem temporária da praia</text>
+</svg>
