@@ -55,8 +55,7 @@ function isAdminUser(user) {
   if (!user) return false;
   return (
     user.app_metadata?.role === 'admin' ||
-    user.user_metadata?.role === 'admin' ||
-    user.email === 'ricardopbarbosa01@gmail.com'
+    user.user_metadata?.role === 'admin'
   );
 }
 
@@ -131,3 +130,13 @@ function showToast(message, type = 'success') {
     setTimeout(() => toast.remove(), 300);
   }, 4000);
 }
+
+// ─── Analytics helper ─────────────────────────────────────────────────────────
+// Pushes into dataLayer (GTM-compatible) and calls gtag() if already loaded.
+// Fully resilient — site never breaks if no analytics script is present.
+window.track = function(event, params) {
+  try {
+    if (window.gtag) window.gtag('event', event, params || {});
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: event }, params || {}));
+  } catch (_) {}
+};

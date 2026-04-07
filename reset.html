@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova password · Portugal Travel Hub</title>
+  <meta name="description" content="Define a tua nova password para a conta Portugal Travel Hub.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <style>
+    /* ── Design tokens (matches login.html) ── */
+    :root {
+      --blue:         #0a3d6b;
+      --blue-mid:     #1a5fa3;
+      --gold:         #c9a84c;
+      --gold-light:   #e8c97a;
+      --white:        #ffffff;
+      --off-white:    #f6f4ef;
+      --text:         #1a1a2e;
+      --text-mid:     #4a5568;
+      --text-light:   #718096;
+      --error:        #e53e3e;
+      --success:      #38a169;
+      --radius-sm:    8px;
+      --radius:       16px;
+      --radius-pill:  50px;
+      --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+      --font-heading: 'Bodoni Moda', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--off-white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+    a { text-decoration: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+
+    /* ── Layout ── */
+    .auth-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .auth-wrapper { grid-template-columns: 1fr; }
+      .auth-visual  { display: none; }
+    }
+
+    /* ── Left panel ── */
+    .auth-visual {
+      position: relative;
+      background-image:
+        linear-gradient(160deg, rgba(10,61,107,0.88) 0%, rgba(10,61,107,0.60) 55%, rgba(10,61,107,0.82) 100%),
+        url('https://images.unsplash.com/photo-1536003736069-c9a5b2ad2e7a?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px 48px;
+      color: var(--white);
+    }
+    .auth-visual-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .auth-visual-logo-icon {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .auth-visual-logo-icon svg { width: 18px; height: 18px; fill: var(--gold); stroke: none; }
+    .auth-visual-content { max-width: 380px; }
+    .auth-visual-eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .auth-visual-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      font-weight: 700; line-height: 1.18;
+      color: var(--white); margin-bottom: 20px;
+    }
+    .auth-visual-subtitle {
+      font-size: 0.95rem; color: rgba(255,255,255,0.74);
+      line-height: 1.6;
+    }
+
+    /* ── Right panel ── */
+    .auth-form-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 56px;
+      background: var(--white);
+      overflow-y: auto;
+    }
+    @media (max-width: 900px) { .auth-form-panel { padding: 40px 32px; } }
+    @media (max-width: 480px) { .auth-form-panel { padding: 32px 20px; } }
+
+    .auth-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; color: var(--text-light);
+      margin-bottom: 28px; transition: color 0.15s;
+    }
+    .auth-back:hover { color: var(--blue); }
+    .auth-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .auth-form-title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem; font-weight: 700;
+      color: var(--blue); margin-bottom: 6px;
+    }
+    .auth-form-subtitle {
+      font-size: 0.875rem; color: var(--text-light);
+      margin-bottom: 28px; line-height: 1.5;
+    }
+
+    /* ── Form fields ── */
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block; font-size: 0.8125rem; font-weight: 600;
+      color: var(--text); margin-bottom: 7px; letter-spacing: 0.01em;
+    }
+    .form-input-wrap { position: relative; }
+    .form-input {
+      width: 100%; padding: 13px 16px;
+      border: 1.5px solid #e2e8f0; border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 1rem;
+      color: var(--text); background: var(--white);
+      transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      outline: none; -webkit-appearance: none;
+    }
+    .form-input:focus {
+      border-color: var(--blue-mid);
+      box-shadow: 0 0 0 3px rgba(10,61,107,0.10);
+    }
+    .form-input.error {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(229,62,62,0.10);
+    }
+    .form-input--with-toggle { padding-right: 46px; }
+    .pw-toggle {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; cursor: pointer;
+      padding: 4px; color: var(--text-light);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 4px; transition: color 0.15s;
+    }
+    .pw-toggle:hover { color: var(--blue); }
+    .pw-toggle svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .form-error {
+      display: none; margin-top: 6px;
+      font-size: 0.8rem; color: var(--error);
+    }
+    .form-error.visible { display: block; }
+
+    /* ── Alert banner ── */
+    .auth-alert {
+      display: none; padding: 12px 16px;
+      border-radius: var(--radius-sm); font-size: 0.875rem;
+      margin-bottom: 20px; line-height: 1.4;
+    }
+    .auth-alert.visible { display: flex; align-items: flex-start; gap: 10px; }
+    .auth-alert--error   { background: rgba(229,62,62,0.08); border: 1px solid rgba(229,62,62,0.24); color: #c53030; }
+    .auth-alert--success { background: rgba(56,161,105,0.08); border: 1px solid rgba(56,161,105,0.24); color: #276749; }
+    .auth-alert svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── Submit button ── */
+    .btn-auth {
+      width: 100%; padding: 15px 24px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600;
+      color: var(--blue);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border: none; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(201,168,76,0.35);
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), opacity 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      position: relative; overflow: hidden; min-height: 52px;
+    }
+    .btn-auth:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.50); }
+    .btn-auth:active:not(:disabled) { transform: translateY(0) scale(0.98); }
+    .btn-auth:disabled { opacity: 0.65; cursor: not-allowed; }
+    .btn-auth .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(10,61,107,0.25);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+    .btn-auth.loading .spinner { display: block; }
+    .btn-auth.loading .btn-text { display: none; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── State panels ── */
+    .state { display: none; }
+    .state.active { display: block; }
+
+    /* ── Loading state ── */
+    .loading-state {
+      text-align: center; padding: 48px 0;
+    }
+    .loading-spinner-lg {
+      width: 40px; height: 40px;
+      border: 3px solid rgba(10,61,107,0.12);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    /* ── Success state ── */
+    .success-icon {
+      width: 64px; height: 64px;
+      background: rgba(56,161,105,0.10);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .success-icon svg { width: 30px; height: 30px; stroke: var(--success); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ── Error state ── */
+    .error-icon {
+      width: 64px; height: 64px;
+      background: rgba(229,62,62,0.08);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .error-icon svg { width: 30px; height: 30px; stroke: var(--error); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .centered { text-align: center; padding: 40px 0; }
+
+    .auth-switch {
+      margin-top: 24px; text-align: center;
+      font-size: 0.875rem; color: var(--text-mid);
+    }
+    .auth-switch a { color: var(--blue-mid); font-weight: 600; }
+    .auth-switch a:hover { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <!-- ── Left visual panel ── -->
+  <div class="auth-visual" aria-hidden="true">
+    <a href="/" class="auth-visual-logo">
+      <div class="auth-visual-logo-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      Portugal Travel Hub
+    </a>
+    <div class="auth-visual-content">
+      <p class="auth-visual-eyebrow">Segurança da Conta</p>
+      <h1 class="auth-visual-title">A tua nova password</h1>
+      <p class="auth-visual-subtitle">Escolhe uma password segura para proteger o acesso à tua conta e aos conteúdos premium.</p>
+    </div>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.35);">© 2026 Portugal Travel Hub</p>
+  </div>
+
+  <!-- ── Right form panel ── -->
+  <div class="auth-form-panel">
+    <a href="login.html" class="auth-back">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      Voltar ao login
+    </a>
+
+    <!-- STATE: loading -->
+    <div class="state active" id="state-loading">
+      <div class="loading-state">
+        <div class="loading-spinner-lg"></div>
+        <p style="font-family:var(--font-heading);font-size:1.25rem;color:var(--blue);margin-bottom:8px;">A verificar link…</p>
+        <p style="font-size:0.875rem;color:var(--text-light);">Aguarda um momento.</p>
+      </div>
+    </div>
+
+    <!-- STATE: form (enter new password) -->
+    <div class="state" id="state-form">
+      <h2 class="auth-form-title">Nova password</h2>
+      <p class="auth-form-subtitle">Escolhe uma password com pelo menos 8 caracteres.</p>
+
+      <div class="auth-alert" id="form-alert" role="alert"></div>
+
+      <form id="form-reset" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="new-password">Nova password</label>
+          <div class="form-input-wrap">
+            <input class="form-input form-input--with-toggle" type="password"
+                   id="new-password" name="password"
+                   autocomplete="new-password" required minlength="8">
+            <button type="button" class="pw-toggle" aria-label="Mostrar password"
+                    onclick="togglePw('new-password', this)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <span class="form-error" id="new-password-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="confirm-password">Confirmar password</label>
+          <div class="form-input-wrap">
+            <input class="form-input form-input--with-toggle" type="password"
+                   id="confirm-password" name="confirm"
+                   autocomplete="new-password" required>
+            <button type="button" class="pw-toggle" aria-label="Mostrar confirmação"
+                    onclick="togglePw('confirm-password', this)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <span class="form-error" id="confirm-password-error"></span>
+        </div>
+
+        <button type="submit" class="btn-auth" id="btn-submit">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-text">Definir nova password</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- STATE: success -->
+    <div class="state" id="state-success">
+      <div class="centered">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 class="auth-form-title" style="text-align:center;margin-bottom:12px;">Password atualizada!</h2>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;margin-bottom:32px;">
+          A tua password foi alterada com sucesso. Já podes entrar na tua conta.
+        </p>
+        <a href="login.html" class="btn-auth" style="display:inline-flex;width:auto;padding:14px 36px;">
+          <span class="btn-text">Entrar na conta</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- STATE: invalid link -->
+    <div class="state" id="state-error">
+      <div class="centered">
+        <div class="error-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h2 class="auth-form-title" style="text-align:center;margin-bottom:12px;">Link inválido ou expirado</h2>
+        <p style="font-size:0.9rem;color:var(--text-light);line-height:1.6;margin-bottom:32px;">
+          O link de recuperação já não é válido. Os links expiram ao fim de 1 hora.<br>
+          Pede um novo link de recuperação.
+        </p>
+        <a href="login.html#reset" class="btn-auth" style="display:inline-flex;width:auto;padding:14px 36px;">
+          <span class="btn-text">Pedir novo link</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="auth-switch">
+      <a href="login.html">Entrar na conta</a>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--blue);padding:20px 5vw;" role="contentinfo">
+  <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:0.8rem;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:8px;">
+    <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="privacidade.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Privacidade</a>
+      <a href="termos.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Termos</a>
+      <a href="contact.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Contacto</a>
+    </span>
+  </div>
+</footer>
+
+<script src="js/config.js?v=20260402"></script>
+<script>
+  function showState(id) {
+    document.querySelectorAll('.state').forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function showAlert(msg, type = 'error') {
+    const el = document.getElementById('form-alert');
+    const icon = type === 'error'
+      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
+      : '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+    el.className = `auth-alert auth-alert--${type} visible`;
+    el.innerHTML = icon + `<span>${msg}</span>`;
+  }
+
+  function setFieldError(id, msg) {
+    document.getElementById(id).classList.add('error');
+    const err = document.getElementById(id + '-error');
+    if (err) { err.textContent = msg; err.classList.add('visible'); }
+  }
+
+  function clearErrors() {
+    document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error'));
+    document.querySelectorAll('.form-error').forEach(el => { el.textContent = ''; el.classList.remove('visible'); });
+    const alert = document.getElementById('form-alert');
+    alert.className = 'auth-alert';
+    alert.innerHTML = '';
+  }
+
+  function togglePw(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    btn.setAttribute('aria-label', show ? 'Ocultar password' : 'Mostrar password');
+  }
+
+  function setLoading(on) {
+    const btn = document.getElementById('btn-submit');
+    btn.classList.toggle('loading', on);
+    btn.disabled = on;
+  }
+
+  // ── Wait for Supabase PASSWORD_RECOVERY event ────────────────
+  let recoveryReady = false;
+
+  // Timeout: if no event after 6s, show error state
+  const recoveryTimeout = setTimeout(() => {
+    if (!recoveryReady) showState('state-error');
+  }, 6000);
+
+  db.auth.onAuthStateChange((event) => {
+    if (event === 'PASSWORD_RECOVERY') {
+      recoveryReady = true;
+      clearTimeout(recoveryTimeout);
+      showState('state-form');
+      document.getElementById('new-password').focus();
+    }
+  });
+
+  // ── Form submit ──────────────────────────────────────────────
+  document.getElementById('form-reset').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearErrors();
+
+    const pw  = document.getElementById('new-password').value;
+    const pw2 = document.getElementById('confirm-password').value;
+    let valid = true;
+
+    if (!pw || pw.length < 8) {
+      setFieldError('new-password', 'A password deve ter pelo menos 8 caracteres.');
+      valid = false;
+    }
+    if (pw !== pw2) {
+      setFieldError('confirm-password', 'As passwords não coincidem.');
+      valid = false;
+    }
+    if (!valid) return;
+
+    setLoading(true);
+    try {
+      const { error } = await db.auth.updateUser({ password: pw });
+      if (error) throw error;
+      showState('state-success');
+    } catch (err) {
+      const msg = (err?.message || '').toLowerCase();
+      if (msg.includes('password should be at least')) {
+        showAlert('A password deve ter pelo menos 8 caracteres.');
+      } else if (msg.includes('network') || msg.includes('fetch')) {
+        showAlert('Erro de ligação. Verifica a tua internet e tenta novamente.');
+      } else {
+        showAlert('Não foi possível atualizar a password. Tenta novamente.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  });
+</script>
+
+</body>
+</html>

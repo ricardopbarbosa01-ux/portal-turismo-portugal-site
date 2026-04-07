@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade · Portugal Travel Hub</title>
+  <meta name="description" content="Política de privacidade da Portugal Travel Hub — como recolhemos, utilizamos e protegemos os seus dados pessoais em conformidade com o RGPD.">
+  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/privacidade.html">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portal-turismo-portugal.pages.dev/privacidade.html">
+  <meta property="og:title" content="Política de Privacidade · Portugal Travel Hub">
+  <meta property="og:description" content="Como recolhemos, utilizamos e protegemos os seus dados pessoais na Portugal Travel Hub.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="Portugal Travel Hub">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Política de Privacidade · Portugal Travel Hub">
+  <meta name="twitter:description" content="Como recolhemos, utilizamos e protegemos os seus dados pessoais na Portugal Travel Hub.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Política de Privacidade — Portugal Travel Hub",
+    "description": "Como recolhemos, utilizamos e protegemos os seus dados pessoais na Portugal Travel Hub.",
+    "url": "https://portal-turismo-portugal.pages.dev/privacidade.html",
+    "isPartOf": { "@type": "WebSite", "url": "https://portal-turismo-portugal.pages.dev/" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #0a3d6b; --blue-mid: #1a5fa3; --gold: #c9a84c; --gold-light: #e8c97a;
+      --white: #ffffff; --off-white: #f6f4ef; --text: #1a1a2e; --text-mid: #4a5568;
+      --glass: rgba(255,255,255,0.10); --glass-border: rgba(255,255,255,0.20);
+      --shadow: 0 4px 16px rgba(10,61,107,0.10), 0 12px 40px rgba(10,61,107,0.12);
+      --radius: 16px; --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--off-white); overflow-x: hidden; }
+    a { text-decoration: none; color: var(--blue-mid); }
+    a:hover { text-decoration: underline; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
+
+    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--blue); color: var(--white); padding: 8px 16px; border-radius: 8px; z-index: 9999; transition: top 0.2s; }
+    .skip-link:focus { top: 16px; }
+
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; height: 72px;
+      background: rgba(10,61,107,0.95); backdrop-filter: blur(20px) saturate(1.5);
+      border-bottom: 1px solid var(--glass-border); transition: background var(--transition);
+    }
+    .navbar.scrolled { background: rgba(10,61,107,0.99); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Bodoni Moda', serif; font-size: 1.25rem; color: var(--white); text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 20px; height: 20px; fill: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.03em; transition: color var(--transition); position: relative; text-decoration: none; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform var(--transition); }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; transition: var(--transition); cursor: pointer; min-height: 44px; text-decoration: none; }
+    .btn-outline { border: 1.5px solid var(--glass-border); color: var(--white); backdrop-filter: blur(12px); background: var(--glass); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font-weight: 600; }
+    .btn-primary:hover { transform: translateY(-1px); text-decoration: none; }
+    .nav-toggle { display: none; color: var(--white); min-height: 48px; min-width: 48px; align-items: center; justify-content: center; border-radius: 8px; transition: background var(--transition); }
+    .nav-toggle:hover { background: rgba(255,255,255,0.1); }
+    .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+    .nav-close { display: none; }
+    .nav-backdrop { display: none; }
+    @media (max-width: 768px) {
+      .nav-actions .btn-outline { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-backdrop { display: block; position: fixed; inset: 0; z-index: 99; background: rgba(0,0,0,0.55); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; cursor: pointer; }
+      .nav-mobile-open .nav-backdrop { opacity: 1; visibility: visible; }
+      .nav-links { display: flex !important; flex-direction: column; align-items: flex-start; position: fixed; top: 0; right: 0; bottom: 0; width: 280px; z-index: 100; background: rgba(5,35,70,0.99); backdrop-filter: blur(24px) saturate(1.5); border-left: 1px solid var(--glass-border); padding: 80px 32px 40px; gap: 4px; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; }
+      .nav-mobile-open .nav-links { transform: translateX(0); }
+      .nav-links a { font-size: 1.05rem; padding: 14px 0; width: 100%; min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .nav-links a:last-child { border-bottom: none; }
+      .nav-close { display: flex; align-items: center; justify-content: center; position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; color: var(--white); background: rgba(255,255,255,0.1); transition: background var(--transition); flex-shrink: 0; }
+      .nav-close:hover { background: rgba(255,255,255,0.2); }
+      .nav-close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+    }
+
+    .breadcrumb { padding: 88px 5vw 0; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-mid); }
+    .breadcrumb a { color: var(--blue-mid); transition: color var(--transition); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb svg { width: 14px; height: 14px; stroke: var(--text-mid); fill: none; flex-shrink: 0; }
+
+    .page-header { background: linear-gradient(135deg, var(--blue) 0%, #0d2b4e 100%); padding: 48px 5vw 72px; text-align: center; }
+    .page-tag { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-title { font-family: 'Bodoni Moda', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); font-weight: 700; line-height: 1.1; margin-bottom: 12px; }
+    .page-subtitle { font-size: 0.95rem; color: rgba(255,255,255,0.65); }
+
+    .doc-wrap { max-width: 760px; margin: 0 auto; padding: 72px 5vw 96px; }
+    .doc-updated { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid rgba(10,61,107,0.1); }
+    .doc-wrap h2 { font-family: 'Bodoni Moda', serif; font-size: 1.35rem; color: var(--blue); margin: 48px 0 14px; font-weight: 700; }
+    .doc-wrap h2:first-of-type { margin-top: 0; }
+    .doc-wrap p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+    .doc-wrap ul { padding-left: 24px; margin-bottom: 14px; }
+    .doc-wrap li { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 6px; }
+    .doc-wrap a { color: var(--blue-mid); }
+    .doc-wrap a:hover { color: var(--blue); }
+
+    .doc-highlight { background: rgba(10,61,107,0.05); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 24px 0; }
+    .doc-highlight p { margin-bottom: 0; font-size: 0.9rem; }
+
+    .footer { background: var(--blue); padding: 40px 5vw; }
+    .footer-bottom { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: rgba(255,255,255,0.45); flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: rgba(255,255,255,0.55); transition: color var(--transition); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gold); }
+  </style>
+  <link rel="stylesheet" href="css/style.css?v=20260402">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
+
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </div>
+    Portugal Travel Hub
+  </a>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+  <div class="nav-links" role="list">
+    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="beaches.html" role="listitem">Praias</a>
+    <a href="surf.html" role="listitem">Surf</a>
+    <a href="pesca.html" role="listitem">Pesca</a>
+    <a href="webcams.html" role="listitem">Webcams</a>
+    <a href="planear.html" role="listitem">Planear</a>
+    <a href="precos.html" role="listitem">Preços</a>
+    <a href="parceiros.html" role="listitem">Parceiros</a>
+  </div>
+  <div class="nav-actions">
+    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Localização na página">
+  <a href="/">Início</a>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  <span aria-current="page">Política de Privacidade</span>
+</nav>
+
+<main id="main">
+  <header class="page-header">
+    <div class="page-tag">Legal</div>
+    <h1 class="page-title">Política de Privacidade</h1>
+    <p class="page-subtitle">Como tratamos os seus dados com responsabilidade e transparência</p>
+  </header>
+
+  <div class="doc-wrap">
+    <p class="doc-updated">Última actualização: Março de 2026</p>
+
+    <h2>1. Responsável pelo Tratamento</h2>
+    <p>A Portugal Travel Hub (disponível em <strong>portal-turismo-portugal.pages.dev</strong>) é responsável pelo tratamento dos dados pessoais recolhidos através deste sítio web. Para qualquer questão relativa à privacidade, pode contactar-nos através da nossa <a href="contact.html">página de contacto</a>.</p>
+
+    <h2>2. Informação que Recolhemos</h2>
+    <p>Recolhemos apenas os dados necessários para prestar o nosso serviço:</p>
+    <ul>
+      <li><strong>Dados de conta</strong> — nome e endereço de email, fornecidos voluntariamente ao criar uma conta ou preencher formulários de contacto ou captação de leads</li>
+      <li><strong>Dados de utilização</strong> — páginas visitadas, filtros utilizados e preferências de pesquisa, gerados automaticamente durante a navegação</li>
+      <li><strong>Dados técnicos</strong> — endereço IP, tipo de browser e sistema operativo, para fins de segurança e diagnóstico</li>
+    </ul>
+    <div class="doc-highlight">
+      <p>Não recolhemos dados de pagamento directamente. Transacções de subscrição são processadas pela LemonSqueezy, o nosso Merchant of Record, sujeito à sua própria política de privacidade. Não criamos perfis de comportamento para fins publicitários.</p>
+    </div>
+
+    <h2>3. Como Utilizamos a sua Informação</h2>
+    <ul>
+      <li>Fornecer, operar e melhorar a plataforma</li>
+      <li>Autenticar e gerir a sua conta de utilizador</li>
+      <li>Processar e gerir subscrições ao plano Pro</li>
+      <li>Responder às suas mensagens e pedidos de suporte</li>
+      <li>Enviar comunicações relacionadas com o serviço (sem newsletters comerciais sem consentimento)</li>
+      <li>Cumprir obrigações legais aplicáveis</li>
+    </ul>
+
+    <h2>4. Base Legal do Tratamento</h2>
+    <p>O tratamento dos seus dados baseia-se nas seguintes bases legais ao abrigo do RGPD:</p>
+    <ul>
+      <li><strong>Execução do contrato</strong> — para fornecer as funcionalidades da conta de utilizador e do plano Pro</li>
+      <li><strong>Interesse legítimo</strong> — para segurança da plataforma e melhoria do serviço</li>
+      <li><strong>Consentimento</strong> — para comunicações opcionais, que pode retirar a qualquer momento</li>
+    </ul>
+
+    <h2>5. Partilha de Dados com Terceiros</h2>
+    <p>Não vendemos os seus dados pessoais a terceiros. Partilhamos informação apenas com os seguintes prestadores de serviço essenciais, sempre sob acordos de confidencialidade e protecção de dados:</p>
+    <ul>
+      <li><strong>Supabase</strong> — base de dados e autenticação, com servidores na União Europeia</li>
+      <li><strong>Cloudflare</strong> — alojamento e protecção contra ataques, com transferências regidas por cláusulas contratuais padrão</li>
+      <li><strong>LemonSqueezy</strong> — processamento de pagamentos de subscrições (actua como Merchant of Record)</li>
+    </ul>
+    <p>A plataforma inclui também ligações de afiliado para parceiros externos como Booking.com e GetYourGuide. Esses parceiros têm as suas próprias políticas de privacidade independentes.</p>
+
+    <h2>6. Segurança dos Dados</h2>
+    <p>Implementamos medidas técnicas e organizativas adequadas para proteger os seus dados:</p>
+    <ul>
+      <li>Encriptação em trânsito via HTTPS/TLS</li>
+      <li>Controlo de acesso baseado em funções (Role-Based Access Control)</li>
+      <li>Row Level Security na base de dados — cada utilizador acede apenas aos seus próprios dados</li>
+      <li>Palavras-passe nunca armazenadas em texto simples</li>
+    </ul>
+
+    <h2>7. Os seus Direitos (RGPD)</h2>
+    <p>Enquanto titular de dados, tem os seguintes direitos que pode exercer a qualquer momento:</p>
+    <ul>
+      <li><strong>Acesso</strong> — solicitar uma cópia dos seus dados pessoais</li>
+      <li><strong>Rectificação</strong> — corrigir dados incompletos ou inexactos</li>
+      <li><strong>Eliminação</strong> — solicitar o apagamento dos seus dados ("direito ao esquecimento")</li>
+      <li><strong>Portabilidade</strong> — receber os seus dados num formato estruturado e legível por máquina</li>
+      <li><strong>Oposição</strong> — opor-se ao tratamento baseado em interesse legítimo</li>
+      <li><strong>Reclamação</strong> — apresentar reclamação à CNPD (Comissão Nacional de Protecção de Dados)</li>
+    </ul>
+    <p>Para exercer qualquer um destes direitos, contacte-nos através da nossa <a href="contact.html">página de contacto</a>. Responderemos no prazo de 30 dias.</p>
+
+    <h2>8. Cookies</h2>
+    <p>Utilizamos cookies estritamente necessários ao funcionamento da plataforma e cookies funcionais para melhorar a experiência. Consulte a nossa <a href="cookies.html">Política de Cookies</a> para informação detalhada sobre os cookies que utilizamos e como os gerir.</p>
+
+    <h2>9. Retenção de Dados</h2>
+    <p>Os seus dados são mantidos enquanto a sua conta estiver activa. Após eliminação da conta, os dados pessoais são apagados no prazo de 30 dias, excepto os que seja obrigados a reter por lei (ex: registos de transacções durante 10 anos para fins fiscais).</p>
+
+    <h2>10. Alterações a Esta Política</h2>
+    <p>Podemos actualizar esta política periodicamente. Em caso de alterações significativas, notificamo-lo por email ou através de um aviso destacado no sítio web. A data da última actualização encontra-se sempre indicada no início desta página.</p>
+  </div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-bottom">
+    <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span><a href="sobre.html">Sobre</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js?v=20260402"></script>
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+  const toggle = document.getElementById('nav-toggle');
+  const navClose = document.getElementById('nav-close');
+  const navBackdrop = document.getElementById('nav-backdrop');
+  function openMobileNav() { navbar.classList.add('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+  function closeMobileNav() { navbar.classList.remove('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+  toggle?.addEventListener('click', () => navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
+  navClose?.addEventListener('click', closeMobileNav);
+  navBackdrop?.addEventListener('click', closeMobileNav);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
+  (async () => {
+    try {
+      const user = await getCurrentUser();
+      if (user) {
+        document.getElementById('nav-login-btn').textContent = 'Dashboard';
+        document.getElementById('nav-login-btn').href = 'dashboard.html';
+        document.getElementById('nav-register-btn').textContent = 'Sair';
+        document.getElementById('nav-register-btn').href = '#';
+        document.getElementById('nav-register-btn').addEventListener('click', (e) => { e.preventDefault(); signOut(); });
+      }
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

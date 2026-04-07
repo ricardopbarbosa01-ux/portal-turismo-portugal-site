@@ -2,8 +2,12 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praias de Portugal · Portugal Travel Hub</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+  <title>Praias de Portugal — Mapa, Qualidade da Água e Condições · Portugal Travel Hub</title>
   <meta name="description" content="Explore as melhores praias de Portugal — do Algarve à Madeira. Qualidade da água, imagens e informação actualizada.">
   <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/beaches.html">
   <meta name="robots" content="index, follow">
@@ -11,18 +15,18 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://portal-turismo-portugal.pages.dev/beaches.html">
-  <meta property="og:title"       content="Praias de Portugal · Portugal Travel Hub">
+  <meta property="og:title"       content="Praias de Portugal — Mapa, Qualidade da Água e Condições · Portugal Travel Hub">
   <meta property="og:description" content="Explore as melhores praias de Portugal — do Algarve à Madeira. Qualidade da água, imagens e informação actualizada.">
-  <meta property="og:image"       content="https://portal-turismo-portugal.pages.dev/beach-placeholder.svg">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:locale"      content="pt_PT">
   <meta property="og:site_name"   content="Portugal Travel Hub">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Praias de Portugal · Portugal Travel Hub">
+  <meta name="twitter:title"       content="Praias de Portugal — Mapa, Qualidade da Água e Condições · Portugal Travel Hub">
   <meta name="twitter:description" content="Explore as melhores praias de Portugal — do Algarve à Madeira. Qualidade da água, imagens e informação actualizada.">
   <meta name="twitter:url"         content="https://portal-turismo-portugal.pages.dev/beaches.html">
-  <meta name="twitter:image"       content="https://portal-turismo-portugal.pages.dev/beach-placeholder.svg">
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -55,6 +59,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://glupdjvdvunogkqgxoui.supabase.co" crossorigin>
 
   <style>
     :root {
@@ -208,12 +214,12 @@
     .filter-search svg { width: 16px; height: 16px; stroke: var(--text-light); fill: none; flex-shrink: 0; }
     .filter-search input {
       border: none; background: none; font-family: 'Inter', sans-serif;
-      font-size: 0.9rem; color: var(--text); outline: none; width: 100%;
+      font-size: 1rem; color: var(--text); outline: none; width: 100%;
     }
     .filter-search input::placeholder { color: var(--text-light); }
     .filter-select {
       height: 48px; padding: 0 16px; border: 1.5px solid var(--border);
-      border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.875rem;
+      border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 1rem;
       color: var(--text); background: var(--off-white); cursor: pointer; outline: none;
       transition: border-color var(--transition); appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238892a4' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
@@ -288,7 +294,7 @@
       display: flex; flex-direction: column;
     }
     .beach-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .beach-card-img-wrap { position: relative; height: 200px; overflow: hidden; flex-shrink: 0; }
+    .beach-card-img-wrap { position: relative; height: 220px; overflow: hidden; flex-shrink: 0; }
     .beach-card-img {
       width: 100%; height: 100%; object-fit: cover;
       transition: transform 0.5s ease;
@@ -308,9 +314,9 @@
       letter-spacing: 0.12em; text-transform: uppercase;
       padding: 4px 10px; border-radius: 50px;
     }
-    .beach-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .beach-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
     .beach-card-name {
-      font-family: 'Bodoni Moda', serif; font-size: 1.15rem;
+      font-family: 'Bodoni Moda', serif; font-size: 1.2rem;
       color: var(--blue); font-weight: 700; line-height: 1.2;
     }
     .beach-card-desc {
@@ -358,7 +364,7 @@
       border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); background: var(--white);
     }
-    .skeleton-img  { height: 200px; }
+    .skeleton-img  { height: 220px; }
     .skeleton-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; }
     .skeleton-line { height: 14px; border-radius: 6px; }
     .skeleton-line--title  { width: 70%; height: 18px; }
@@ -395,6 +401,10 @@
     @media (max-width: 600px) {
       .beaches-section { padding: 32px 4vw 60px; }
       .page-header { padding: 24px 5vw 48px; }
+      .filters-bar { flex-direction: column; gap: 8px; padding: 14px 4vw; }
+      .filter-search { min-width: 0; max-width: 100%; width: 100%; }
+      .filter-select { width: 100%; }
+      .filter-count { margin-left: 0; }
     }
 
     /* ── Mobile Bottom Nav ── */
@@ -430,6 +440,175 @@
       .filter-search { min-width: 0; flex: 1; }
       .filter-count { display: none; }
     }
+
+    /* ── Hero stats strip ── */
+    .hero-stats {
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 28px;
+      background: rgba(255,255,255,0.08); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 50px;
+      padding: 12px 28px; width: fit-content;
+      margin-left: auto; margin-right: auto;
+    }
+    .hero-stat { text-align: center; padding: 0 20px; }
+    .hero-stat-value {
+      display: block; font-family: 'Bodoni Moda', serif; font-size: 1.5rem;
+      font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 2px;
+    }
+    .hero-stat-label {
+      display: block; font-size: 0.68rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(255,255,255,0.60);
+    }
+    .hero-stat-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+    .page-header { position: relative; overflow: hidden; }
+    .page-header-wave { position: absolute; bottom: -1px; left: 0; right: 0; width: 100%; height: 56px; display: block; }
+    @media (max-width: 480px) {
+      .hero-stats { padding: 10px 16px; }
+      .hero-stat { padding: 0 12px; }
+      .hero-stat-value { font-size: 1.2rem; }
+    }
+
+    /* ── Filter clear button ── */
+    .filter-clear {
+      display: none; align-items: center; gap: 6px;
+      height: 40px; padding: 0 16px; border-radius: 50px;
+      border: 1.5px solid rgba(231,76,60,0.3); color: #c0392b;
+      font-size: 0.82rem; font-weight: 500; font-family: 'Inter', sans-serif;
+      background: rgba(231,76,60,0.04); transition: all var(--transition);
+      white-space: nowrap; cursor: pointer;
+    }
+    .filter-clear:hover { border-color: #c0392b; background: rgba(231,76,60,0.08); }
+    .filter-clear svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .filters-bar.has-active .filter-clear { display: inline-flex; }
+
+    /* ── Mobile results strip ── */
+    .results-strip {
+      display: none; padding: 8px 4vw; font-size: 0.8rem;
+      color: var(--text-light); background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      align-items: center; justify-content: space-between;
+    }
+    .results-strip strong { color: var(--blue); }
+    @media (max-width: 768px) { .results-strip { display: flex; } }
+
+    /* ── Premium empty state ── */
+    .state-premium-empty { grid-column: 1 / -1; text-align: center; padding: 80px 24px; }
+    .state-premium-empty__icon {
+      width: 72px; height: 72px; margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.06));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+    .state-premium-empty__icon svg { width: 36px; height: 36px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; }
+    .state-premium-empty__title {
+      font-family: 'Bodoni Moda', serif; font-size: 1.5rem; font-weight: 700;
+      color: var(--blue); margin-bottom: 8px;
+    }
+    .state-premium-empty__sub {
+      font-size: 0.9rem; color: var(--text-mid); max-width: 340px;
+      margin: 0 auto 24px; line-height: 1.6;
+    }
+    .btn-clear {
+      display: inline-flex; align-items: center; gap: 8px; padding: 11px 26px;
+      border-radius: 50px; background: var(--blue); color: var(--white);
+      font-size: 0.875rem; font-weight: 600; font-family: 'Inter', sans-serif;
+      cursor: pointer; border: none; transition: opacity 0.2s;
+    }
+    .btn-clear:hover { opacity: 0.85; }
+
+    /* ── Excelente card highlight ── */
+    .beach-card--excelente { box-shadow: 0 4px 20px rgba(39,174,96,0.10), 0 0 0 1.5px rgba(39,174,96,0.18); border-top: 3px solid var(--gold); }
+    .beach-card--excelente:hover { box-shadow: 0 12px 40px rgba(39,174,96,0.16), 0 0 0 1.5px rgba(39,174,96,0.25); }
+
+    /* ── How to choose section ── */
+    .how-section { background: var(--white); padding: 64px 5vw; border-top: 1px solid var(--border); }
+    .how-section-inner { max-width: 1200px; margin: 0 auto; }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+    @media (max-width: 960px) { .how-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .how-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+    .how-card { background: var(--off-white); border-radius: var(--radius); padding: 24px 20px; border: 1.5px solid var(--border); cursor: pointer; transition: transform 0.25s var(--transition), box-shadow 0.25s, border-color 0.25s; text-align: left; display: flex; flex-direction: column; }
+    .how-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(201,168,76,0.30); }
+    .how-card-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; flex-shrink: 0; }
+    .how-card-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .how-card-title { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--blue); margin-bottom: 6px; line-height: 1.2; }
+    .how-card-desc { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; flex: 1; margin-bottom: 14px; }
+    .how-card-trigger { font-size: 0.78rem; font-weight: 600; color: var(--gold); display: flex; align-items: center; gap: 4px; }
+    .how-card-trigger svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+    /* Section labels */
+    .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+    .section-title-lg { font-family: 'Bodoni Moda', serif; font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; color: var(--blue); margin-bottom: 10px; line-height: 1.2; }
+    .section-sub { font-size: 0.92rem; color: var(--text-mid); line-height: 1.65; max-width: 500px; }
+    /* Card actions row */
+    .beach-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+    /* Card CTA button */
+    .beach-card-cta-btn { display:inline-flex; align-items:center; gap:6px; padding:10px 20px; min-height:44px; border-radius:50px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--blue); font-size:0.82rem; font-weight:700; transition:transform 0.18s,box-shadow 0.18s; text-decoration:none; white-space:nowrap; }
+    .beach-card-cta-btn:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(201,168,76,0.38); }
+    .beach-card-cta-btn svg { width:13px; height:13px; stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+    /* Card secondary planear CTA */
+    .beach-card-planear { display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; font-weight: 500; color: var(--text-light); padding: 4px 10px; border-radius: 50px; border: 1px solid var(--border); transition: all 0.2s; white-space: nowrap; min-height: 44px; text-decoration: none; }
+    .beach-card-planear:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.05); }
+    .beach-card-planear svg { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2; }
+    /* Card Booking.com affiliate link */
+    .beach-card-booking { display:flex; align-items:center; justify-content:flex-end; gap:4px; font-size:0.68rem; font-weight:500; color:var(--text-light); text-decoration:none; padding:5px 0 0; margin-top:2px; transition:color 0.2s; }
+    .beach-card-booking:hover { color:var(--blue); }
+    .beach-card-booking svg { width:10px; height:10px; stroke:currentColor; fill:none; stroke-width:2; flex-shrink:0; }
+    /* Card tags */
+    .beach-card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+    .beach-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 50px; background: rgba(10,61,107,0.06); color: var(--text-mid); }
+    .beach-tag--surf     { background: rgba(41,128,212,0.10); color: #1a5fa3; }
+    .beach-tag--família  { background: rgba(39,174,96,0.10);  color: #1e8449; }
+    .beach-tag--natureza { background: rgba(39,174,96,0.08);  color: #1e8449; }
+    .beach-tag--ilhas    { background: rgba(201,168,76,0.12); color: #8b6914; }
+    .beach-tag--pesca    { background: rgba(10,61,107,0.08);  color: var(--blue); }
+    .beach-tag--premiada { background: rgba(201,168,76,0.12); color: #8b6914; }
+    /* Footer inner */
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 40px; }
+    .footer-col { display: flex; flex-direction: column; gap: 12px; }
+    .footer-brand-name { font-family: 'Bodoni Moda', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-desc { font-size: 0.8rem; line-height: 1.6; color: rgba(255,255,255,0.45); max-width: 220px; }
+    .footer-heading { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color var(--transition); }
+    .footer-col a:hover { color: var(--gold); }
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
+
+    /* ── Conversion strip ── */
+    .conversion-strip {
+      background: linear-gradient(135deg, var(--blue) 0%, #0d2b4e 100%);
+      padding: 48px 5vw;
+    }
+    .conversion-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+    }
+    .conversion-title {
+      font-family: 'Bodoni Moda', serif; font-size: 1.6rem; font-weight: 700;
+      color: var(--white); margin-bottom: 6px; line-height: 1.2;
+    }
+    .conversion-sub { font-size: 0.9rem; color: rgba(255,255,255,0.70); max-width: 400px; line-height: 1.6; }
+    .conversion-cta {
+      display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px;
+      border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--blue); font-weight: 700; font-size: 0.9rem; white-space: nowrap;
+      flex-shrink: 0; transition: all 0.2s; box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+    }
+    .conversion-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
+    @media (max-width: 600px) { .conversion-inner { flex-direction: column; align-items: flex-start; } }
+
+    /* ── Vertical crosslinks ── */
+    .crosslinks-section { background: var(--off-white); padding: 48px 5vw; border-top: 1px solid var(--border); }
+    .crosslinks-inner { max-width: 1200px; margin: 0 auto; }
+    .crosslinks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    @media (max-width: 900px) { .crosslinks-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .crosslinks-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+    .crosslink-card { background: var(--white); border-radius: var(--radius); padding: 24px 20px; border: 1.5px solid var(--border); display: flex; flex-direction: column; gap: 10px; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; text-decoration: none; }
+    .crosslink-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(201,168,76,0.28); }
+    .crosslink-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .crosslink-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .crosslink-title { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--blue); line-height: 1.2; }
+    .crosslink-desc { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; flex: 1; }
+    .crosslink-cta-text { font-size: 0.78rem; font-weight: 600; color: var(--gold); display: flex; align-items: center; gap: 4px; }
+    .crosslink-cta-text svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
   </style>
 </head>
 <body>
@@ -450,10 +629,13 @@
     <button class="nav-close" id="nav-close" aria-label="Fechar menu">
       <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <a href="/#destinations" role="listitem">Destinos</a>
     <a href="beaches.html" class="active" role="listitem" aria-current="page">Praias</a>
-    <a href="/#partners" role="listitem">Parceiros</a>
-    <a href="/#premium" role="listitem">Premium</a>
+    <a href="surf.html" role="listitem">Surf</a>
+    <a href="pesca.html" role="listitem">Pesca</a>
+    <a href="webcams.html" role="listitem">Webcams</a>
+    <a href="planear.html" role="listitem">Planear</a>
+    <a href="precos.html" role="listitem">Preços</a>
+    <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
 
   <div class="nav-actions">
@@ -473,9 +655,38 @@
 
 <!-- Page header -->
 <header class="page-header">
-  <div class="page-tag">Portugal · Mar &amp; Costa</div>
-  <h1 class="page-title">Praias <em>Deslumbrantes</em></h1>
-  <p class="page-subtitle">Do Algarve à Madeira — explore as melhores praias de Portugal com informação actualizada.</p>
+  <div class="page-tag">Curadoria editorial · 7 Regiões · Oceano Atlântico</div>
+  <h1 class="page-title">Praias de <em>Portugal</em></h1>
+  <p class="page-subtitle">Do Minho ao Algarve, da Madeira aos Açores — descobre as praias mais bonitas de Portugal com curadoria editorial, condições actualizadas e guias de visita completos.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
+    <a href="#main" class="btn btn-primary">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
+      Explorar Praias
+    </a>
+    <a href="planear.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.40);color:rgba(255,255,255,0.9);">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Planear Escapada
+    </a>
+  </div>
+  <div class="hero-stats" id="hero-stats" style="display:none" aria-label="Estatísticas">
+    <div class="hero-stat">
+      <span class="hero-stat-value" id="hero-stat-count">—</span>
+      <span class="hero-stat-label">Praias</span>
+    </div>
+    <div class="hero-stat-divider" aria-hidden="true"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-value">7</span>
+      <span class="hero-stat-label">Regiões</span>
+    </div>
+    <div class="hero-stat-divider" aria-hidden="true"></div>
+    <div class="hero-stat">
+      <span class="hero-stat-value">Grátis</span>
+      <span class="hero-stat-label">Acesso total</span>
+    </div>
+  </div>
+  <svg class="page-header-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f6f4ef"/>
+  </svg>
 </header>
 
 <!-- Filters -->
@@ -484,7 +695,25 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <input type="search" id="search-input" placeholder="Pesquisar praia..." aria-label="Pesquisar por nome">
   </div>
+  <select id="sort-select" class="filter-select" aria-label="Ordenar por">
+    <option value="default">Destaque</option>
+    <option value="alpha">A → Z</option>
+    <option value="quality">Melhor qualidade</option>
+  </select>
+  <select id="tipo-select" class="filter-select" aria-label="Filtrar por tipo">
+    <option value="">Todos os tipos</option>
+    <option value="surf">Surf</option>
+    <option value="família">Família</option>
+    <option value="natureza">Natureza</option>
+    <option value="ilhas">Ilhas</option>
+    <option value="pesca">Pesca</option>
+    <option value="premiada">Excelente</option>
+  </select>
   <span class="filter-count" id="filter-count" aria-live="polite"></span>
+  <button class="filter-clear" id="filter-clear" aria-label="Limpar todos os filtros" onclick="clearFilters()">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    Limpar
+  </button>
 </div>
 
 <!-- Region + Quality chips -->
@@ -502,6 +731,9 @@
   <button class="chip quality-chip" data-filter="quality" data-value="Boa" onclick="setChip(this,'quality')">Boa</button>
 </div>
 
+<!-- Mobile results strip -->
+<div class="results-strip" id="results-strip" aria-live="polite"></div>
+
 <!-- Region Banner -->
 <div id="region-banner" style="display:none" aria-live="polite"></div>
 
@@ -518,7 +750,7 @@
           <strong>Falta alguma praia?</strong>
           <span>Partilhe connosco e ajude a tornar este guia mais completo.</span>
         </div>
-        <a href="mailto:ricardopbarbosa01@gmail.com?subject=Sugestão%20de%20Praia&body=Nome%20da%20praia%3A%0ARegião%3A%0AOutras%20notas%3A" class="suggest-btn">
+        <a href="contact.html?assunto=sugestao&subject=Sugestão%20de%20Praia" class="suggest-btn">
           Sugerir uma Praia
         </a>
       </div>
@@ -526,25 +758,156 @@
   </section>
 </main>
 
+<!-- Explorar verticais -->
+<section class="crosslinks-section" aria-labelledby="crosslinks-title">
+  <div class="crosslinks-inner">
+    <span class="section-eyebrow">Explorar o Portal</span>
+    <h2 class="section-title-lg" id="crosslinks-title">Vai além das praias</h2>
+    <p class="section-sub">Combine surf, pesca, webcams ao vivo e planeamento numa experiência costeira completa.</p>
+    <div class="crosslinks-grid">
+      <a href="surf.html" class="crosslink-card" aria-label="Explorar surf em Portugal">
+        <div class="crosslink-icon" style="background:linear-gradient(135deg,#1a5fa3,#2980d4)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 10c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="6"/></svg>
+        </div>
+        <p class="crosslink-title">Surf</p>
+        <p class="crosslink-desc">Condições de onda, pontos de surf e praias com ondulação atlântica consistente.</p>
+        <span class="crosslink-cta-text">Explorar <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="pesca.html" class="crosslink-card" aria-label="Explorar pesca em Portugal">
+        <div class="crosslink-icon" style="background:linear-gradient(135deg,var(--blue),#0d2b4e)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
+        </div>
+        <p class="crosslink-title">Pesca</p>
+        <p class="crosslink-desc">Zonas de pesca, épocas, espécies e as praias onde a pesca é tradição local.</p>
+        <span class="crosslink-cta-text">Explorar <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="webcams.html" class="crosslink-card" aria-label="Ver webcams das praias em tempo real">
+        <div class="crosslink-icon" style="background:linear-gradient(135deg,#27ae60,#1e8449)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="16" height="12" rx="2"/><path d="M22 8l-4 4 4 4V8z"/></svg>
+        </div>
+        <p class="crosslink-title">Webcams</p>
+        <p class="crosslink-desc">Veja as praias ao vivo antes de partir — ondas, sol e afluência em tempo real.</p>
+        <span class="crosslink-cta-text">Ver ao vivo <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      <a href="planear.html?source=beaches" class="crosslink-card" aria-label="Planear escapada à praia">
+        <div class="crosslink-icon" style="background:linear-gradient(135deg,var(--gold),var(--gold-light))">
+          <svg viewBox="0 0 24 24" style="stroke:var(--blue)" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <p class="crosslink-title">Planear</p>
+        <p class="crosslink-desc">Organize a sua escapada completa — praia, alojamento, atividades e rotas.</p>
+        <span class="crosslink-cta-text">Começar a planear <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Como escolher a praia certa -->
+<section class="how-section" aria-labelledby="how-title">
+  <div class="how-section-inner">
+    <span class="section-eyebrow">Guia de Escolha</span>
+    <h2 class="section-title-lg" id="how-title">Como escolher a praia certa</h2>
+    <p class="section-sub">Cada praia tem a sua personalidade. Selecione o perfil que corresponde ao seu estilo de viagem e veja as sugestões filtradas.</p>
+    <div class="how-grid">
+      <button class="how-card" onclick="filterByProfile('Algarve','Boa')" aria-label="Filtrar praias para família">
+        <div class="how-card-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-mid))">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="how-card-title">Para a Família</p>
+        <p class="how-card-desc">Águas calmas, serviços de apoio e bandeira azul. Ideal para crianças e grupos multigeracionais.</p>
+        <span class="how-card-trigger">Ver praias do Algarve <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="how-card" onclick="filterByProfile('Porto','')" aria-label="Filtrar praias para surf">
+        <div class="how-card-icon" style="background:linear-gradient(135deg,#1a5fa3,#2980d4)">
+          <svg viewBox="0 0 24 24"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 10c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="6"/></svg>
+        </div>
+        <p class="how-card-title">Surf &amp; Desporto</p>
+        <p class="how-card-desc">Ondulação consistente e atlantic swell. Costa norte e noroeste com as melhores condições de surf de Portugal.</p>
+        <span class="how-card-trigger">Ver praias do Porto <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="how-card" onclick="filterByProfile('Alentejo','')" aria-label="Filtrar praias de natureza">
+        <div class="how-card-icon" style="background:linear-gradient(135deg,#27ae60,#1e8449)">
+          <svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 7V2"/><path d="M17 7c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z"/></svg>
+        </div>
+        <p class="how-card-title">Natureza &amp; Silêncio</p>
+        <p class="how-card-desc">Praias isoladas, Costa Vicentina protegida e natureza intocada. Para quem quer escapar sem multidões.</p>
+        <span class="how-card-trigger">Ver Costa Vicentina <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+      <button class="how-card" onclick="filterByProfile('','Excelente')" aria-label="Filtrar praias com melhor qualidade de água">
+        <div class="how-card-icon" style="background:linear-gradient(135deg,var(--gold),var(--gold-light))">
+          <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <p class="how-card-title">Melhor Qualidade</p>
+        <p class="how-card-desc">Filtradas por qualidade "Excelente" — praias com os melhores índices de qualidade da água atualizados.</p>
+        <span class="how-card-trigger">Ver qualidade Excelente <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </button>
+    </div>
+    <p style="margin-top:28px;font-size:0.82rem;color:var(--text-light);text-align:center">Quer uma recomendação personalizada? <a href="planear.html" style="color:var(--gold);font-weight:600">Planear a minha escapada →</a></p>
+  </div>
+</section>
+
+<!-- Conversion strip -->
+<section class="conversion-strip" aria-label="Registo gratuito">
+  <div class="conversion-inner">
+    <div>
+      <p class="conversion-title">Pronto para escolher a sua praia?</p>
+      <p class="conversion-sub">Crie o seu perfil de viagem e receba recomendações de praias adaptadas ao seu estilo, região e época do ano.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;">
+      <a href="planear.html?source=beaches" class="conversion-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Planear a Minha Escapada
+      </a>
+      <a href="precos.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.30);color:var(--white);font-size:0.875rem;font-weight:500;white-space:nowrap;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.60)';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.30)';this.style.background=''">
+        Ver Planos
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <p class="footer-brand-name">Portugal Travel Hub</p>
+      <p class="footer-brand-desc">O portal de referência para descobrir, planear e viver o melhor de Portugal.</p>
+    </div>
+    <div class="footer-col">
+      <h3 class="footer-heading">Destinos</h3>
+      <a href="beaches.html">Praias</a>
+      <a href="surf.html">Surf</a>
+      <a href="pesca.html">Pesca</a>
+      <a href="webcams.html">Webcams</a>
+    </div>
+    <div class="footer-col">
+      <h3 class="footer-heading">Empresa</h3>
+      <a href="parceiros.html">Parceiros</a>
+      <a href="precos.html">Preços</a>
+      <a href="planear.html">Planear</a>
+      <a href="contact.html">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <h3 class="footer-heading">Legal</h3>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="termos.html">Termos</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+  </div>
   <div class="footer-bottom">
     <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
-    <a href="/">← Voltar ao início</a>
+    <span><a href="sobre.html">Sobre</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></span>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/config.js"></script>
+<script src="js/config.js?v=20260402"></script>
 <script>
   // ── Auth state ──────────────────────────────────────────────────────────────
   (async () => {
     try {
-      const user = await getCurrentUser();
+      const { data: { user } } = await db.auth.getUser();
       if (user) {
         document.getElementById('nav-login-btn').textContent = 'Dashboard';
-        document.getElementById('nav-login-btn').href = getUserRole(user) === 'partner'
-          ? 'partner-dashboard.html' : 'dashboard.html';
+        document.getElementById('nav-login-btn').href = 'dashboard.html';
         document.getElementById('nav-register-btn').textContent = 'Sair';
         document.getElementById('nav-register-btn').href = '#';
         document.getElementById('nav-register-btn').addEventListener('click', (e) => {
@@ -559,16 +922,47 @@
   const navClose = document.getElementById('nav-close');
   const navBackdrop = document.getElementById('nav-backdrop');
   const navbarEl = document.getElementById('navbar');
-  function openMobileNav() { navbarEl.classList.add('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
-  function closeMobileNav() { navbarEl.classList.remove('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-  toggle.addEventListener('click', () => navbarEl.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
+  function openMobileNav() { document.body.classList.add('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+  function closeMobileNav() { document.body.classList.remove('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+  toggle.addEventListener('click', () => document.body.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
   navClose?.addEventListener('click', closeMobileNav);
   navBackdrop?.addEventListener('click', closeMobileNav);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
 
+  // ── Helpers ─────────────────────────────────────────────────────────────────
+  function escHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function updateCount(beaches) {
+    const n = beaches.length;
+    const html = `<strong>${n}</strong> praia${n !== 1 ? 's' : ''}`;
+    const filterCount = document.getElementById('filter-count');
+    const resultsStrip = document.getElementById('results-strip');
+    if (filterCount) filterCount.innerHTML = html;
+    if (resultsStrip) resultsStrip.innerHTML = html;
+  }
+
   // ── Beaches data & render ───────────────────────────────────────────────────
   let allBeaches = [];
+
+  function deriveTags(b) {
+    const tags = [];
+    const desc = (b.description || '').toLowerCase();
+    const region = (b.region || '').toLowerCase();
+    const fac = Array.isArray(b.facilities) ? b.facilities : [];
+    // surf: use is_surf_spot field directly (more reliable than text-matching)
+    if (b.is_surf_spot || desc.includes('surf') || desc.includes('onda') || region === 'porto') tags.push('surf');
+    // família: lifeguard facility + algarve region + text
+    if (fac.includes('lifeguard') || desc.includes('famil') || desc.includes('famíl') || desc.includes('criança') || region === 'algarve') tags.push('família');
+    if (desc.includes('naturez') || desc.includes('isolad') || region === 'alentejo') tags.push('natureza');
+    if (region === 'madeira' || region === 'açores') tags.push('ilhas');
+    if (desc.includes('pesc')) tags.push('pesca');
+    if (b.water_quality === 'Excelente') tags.push('premiada');
+    return tags;
+  }
 
   function showSkeletons() {
     const grid = document.getElementById('beaches-grid');
@@ -586,58 +980,92 @@
 
   function renderBeaches(beaches) {
     const grid = document.getElementById('beaches-grid');
-    const count = document.getElementById('filter-count');
 
     if (!beaches.length) {
       grid.innerHTML = `
-        <div class="state-wrap" role="status">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          <strong>Sem resultados</strong>
-          <p>Nenhuma praia corresponde aos filtros seleccionados.</p>
+        <div class="state-premium-empty" role="status">
+          <div class="state-premium-empty__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
+          </div>
+          <p class="state-premium-empty__title">Nenhuma praia encontrada</p>
+          <p class="state-premium-empty__sub">Tente ajustar os filtros ou explore todas as regiões disponíveis.</p>
+          <button class="btn-clear" onclick="clearFilters()">Limpar filtros</button>
         </div>`;
-      count.innerHTML = '<strong>0</strong> praias';
+      updateCount({ length: 0 });
       return;
     }
 
-    count.innerHTML = `<strong>${beaches.length}</strong> praia${beaches.length !== 1 ? 's' : ''}`;
+    updateCount(beaches);
 
     grid.innerHTML = beaches.map(b => {
       const hasImage = b.image_url && String(b.image_url).trim();
-      const imgSrc = hasImage ? b.image_url : 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20600%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230a3d6b%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23c9a84c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22600%22%20fill%3D%22url(%23g)%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%220.9%22%3E%3Cpath%20d%3D%22M120%20390c70-40%20140-40%20210%200s140%2040%20210%200%20140-40%20210%200%20140%2040%20210%200%20140-40%20210%200%22%2F%3E%3Cpath%20d%3D%22M120%20450c70-40%20140-40%20210%200s140%2040%20210%200%20140-40%20210%200%20140%2040%20210%200%20140-40%20210%200%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22980%22%20cy%3D%22140%22%20r%3D%2258%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22110%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2242%22%20fill%3D%22%23ffffff%22%20font-weight%3D%22700%22%3EPortugal%20Travel%20Hub%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22165%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2228%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.95%22%3EImagem%20tempor%C3%A1ria%20da%20praia%3C%2Ftext%3E%3C%2Fsvg%3E';
-      const imgHtml = `<img class="beach-card-img" src="${imgSrc}" alt="${b.name}" loading="lazy" decoding="async" width="400" height="200" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20600%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230a3d6b%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23c9a84c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22600%22%20fill%3D%22url(%23g)%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%220.9%22%3E%3Cpath%20d%3D%22M120%20390c70-40%20140-40%20210%200s140%2040%20210%200%20140-40%20210%200%20140%2040%20210%200%20140-40%20210%200%22%2F%3E%3Cpath%20d%3D%22M120%20450c70-40%20140-40%20210%200s140%2040%20210%200%20140-40%20210%200%20140%2040%20210%200%20140-40%20210%200%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22980%22%20cy%3D%22140%22%20r%3D%2258%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.95%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22110%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2242%22%20fill%3D%22%23ffffff%22%20font-weight%3D%22700%22%3EPortugal%20Travel%20Hub%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%22165%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2228%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.95%22%3EImagem%20tempor%C3%A1ria%20da%20praia%3C%2Ftext%3E%3C%2Fsvg%3E';">`;
+      const mediaHtml = hasImage
+        ? `<img class="beach-card-img" src="${escHtml(b.image_url)}" alt="${escHtml(b.name)}" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : '';
+      const fallbackHtml = `<div class="beach-card-fallback"${hasImage ? ' style="display:none"' : ''}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
+        <span>${escHtml(b.region || 'Portugal')}</span>
+      </div>`;
 
       const qualityHtml = b.water_quality
-        ? `<span class="quality-badge quality--${b.water_quality}">${b.water_quality}</span>`
+        ? `<span class="quality-badge quality--${escHtml(b.water_quality)}">${escHtml(b.water_quality)}</span>`
         : '';
-
-      const activeHtml = `<span class="active-badge ${b.is_active ? 'active-badge--on' : 'active-badge--off'}">${b.is_active ? 'Ativa' : 'Inativa'}</span>`;
 
       const descHtml = b.description
-        ? `<p class="beach-card-desc">${b.description}</p>`
+        ? `<p class="beach-card-desc">${escHtml(b.description)}</p>`
         : '';
 
+      const qualityClass = b.water_quality === 'Excelente' ? ' beach-card--excelente' : '';
+      const beachUrl  = b.id ? `beach.html?id=${encodeURIComponent(b.id)}` : '#';
+      const planearUrl = `planear.html?source=beaches&beach=${encodeURIComponent(b.name)}&region=${encodeURIComponent(b.region || '')}`;
+      // Booking.com affiliate search (aid = affiliate ID from booking.com/affiliate-program)
+      const bookingUrl = `https://www.booking.com/searchresults.pt-pt.html?ss=${encodeURIComponent(b.name + ' Portugal')}&aid=XXXXXXX#hotelTmpl`;
+      const tagsArr   = deriveTags(b);
+      const tagsHtml  = tagsArr.length ? `<div class="beach-card-tags">${tagsArr.slice(0,3).map(t => `<span class="beach-tag beach-tag--${t}">${t}</span>`).join('')}</div>` : '';
+
       return `
-        <a href="beach.html?id=${b.id}" class="beach-card" role="listitem" aria-label="Ver detalhe de ${b.name}" style="text-decoration:none;display:flex;flex-direction:column;">
+        <article class="beach-card${qualityClass}" role="listitem"
+                 data-beach-id="${escHtml(String(b.id))}"
+                 data-region="${escHtml(b.region || '')}"
+                 data-quality="${escHtml(b.water_quality || '')}"
+                 data-name="${escHtml(b.name)}"
+                 tabindex="0"
+                 onclick="window.location.href='${beachUrl}'"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='${beachUrl}'}"
+                 style="cursor:pointer;display:flex;flex-direction:column;">
           <div class="beach-card-img-wrap">
-            ${imgHtml}
-            ${b.region ? `<span class="beach-region-badge">${b.region}</span>` : ''}
+            ${mediaHtml}${fallbackHtml}
+            ${b.region ? `<span class="beach-region-badge">${escHtml(b.region)}</span>` : ''}
           </div>
           <div class="beach-card-body">
-            <h2 class="beach-card-name">${b.name}</h2>
+            <h2 class="beach-card-name">${escHtml(b.name)}</h2>
             ${descHtml}
+            ${tagsHtml}
             <div class="beach-card-footer">
               ${qualityHtml}
             </div>
+            <div class="beach-card-actions">
+              <a href="${beachUrl}" class="beach-card-cta-btn" onclick="event.stopPropagation()" aria-label="Ver detalhe de ${escHtml(b.name)}">
+                Ver esta Praia
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="${planearUrl}" class="beach-card-planear" onclick="event.stopPropagation()" aria-label="Planear visita a ${escHtml(b.name)}">
+                Planear
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </a>
+            </div>
+            <a href="${bookingUrl}" class="beach-card-booking" onclick="event.stopPropagation()" target="_blank" rel="noopener noreferrer" aria-label="Ver alojamento perto de ${escHtml(b.name)} no Booking.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Ver alojamento perto
+            </a>
           </div>
-        </a>`;
+        </article>`;
     }).join('');
   }
 
   let activeRegion  = '';
   let activeQuality = '';
+  let activeTipo    = '';
 
   const REGION_BANNERS = {
     'Algarve':  { title: 'Algarve — Costa Dourada do Sul', desc: 'Falésias dramáticas, águas cristalinas e praias premiadas. A região mais visitada de Portugal.', cta: null },
@@ -669,13 +1097,51 @@
 
   function applyFilters() {
     const term = document.getElementById('search-input').value.toLowerCase();
-    const filtered = allBeaches.filter(b => {
+    const sortVal = document.getElementById('sort-select').value;
+    const hasFilters = !!(term || activeRegion || activeQuality || activeTipo);
+    document.querySelector('.filters-bar').classList.toggle('has-active', hasFilters);
+    let filtered = allBeaches.filter(b => {
       const matchName    = !term          || b.name.toLowerCase().includes(term) || (b.region || '').toLowerCase().includes(term);
       const matchRegion  = !activeRegion  || b.region === activeRegion;
       const matchQuality = !activeQuality || b.water_quality === activeQuality;
-      return matchName && matchRegion && matchQuality;
+      const matchTipo    = !activeTipo    || deriveTags(b).includes(activeTipo);
+      return matchName && matchRegion && matchQuality && matchTipo;
     });
+    if (sortVal === 'alpha') {
+      filtered = [...filtered].sort((a, b) => a.name.localeCompare(b.name, 'pt'));
+    } else if (sortVal === 'quality') {
+      const q = { Excelente: 0, Boa: 1, Suficiente: 2, Má: 3 };
+      filtered = [...filtered].sort((a, b) => (q[a.water_quality] ?? 4) - (q[b.water_quality] ?? 4));
+    }
     renderBeaches(filtered);
+  }
+
+  function clearFilters() {
+    activeRegion  = '';
+    activeQuality = '';
+    activeTipo    = '';
+    document.getElementById('search-input').value = '';
+    document.getElementById('sort-select').value  = 'default';
+    document.getElementById('tipo-select').value  = '';
+    document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.toggle('active', c.dataset.value === ''));
+    document.querySelectorAll('.chip[data-filter="quality"]').forEach(c => c.classList.toggle('active', c.dataset.value === ''));
+    document.getElementById('region-banner').style.display = 'none';
+    document.querySelector('.filters-bar').classList.remove('has-active');
+    renderBeaches(allBeaches);
+  }
+
+  function filterByProfile(region, quality) {
+    activeRegion  = region  || '';
+    activeQuality = quality || '';
+    document.getElementById('search-input').value = '';
+    document.getElementById('sort-select').value = 'default';
+    document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.toggle('active', c.dataset.value === activeRegion));
+    document.querySelectorAll('.chip[data-filter="quality"]').forEach(c => c.classList.toggle('active', c.dataset.value === activeQuality));
+    updateRegionBanner(activeRegion);
+    const hasFilters = !!(activeRegion || activeQuality);
+    document.querySelector('.filters-bar').classList.toggle('has-active', hasFilters);
+    applyFilters();
+    document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
   }
 
   function injectItemListLd(beaches) {
@@ -707,26 +1173,37 @@
       allBeaches = await getBeaches();
       renderBeaches(allBeaches);
       injectItemListLd(allBeaches);
+      // Update hero stats
+      if (allBeaches.length > 0) {
+        const heroStats = document.getElementById('hero-stats');
+        const heroCount = document.getElementById('hero-stat-count');
+        if (heroStats && heroCount) {
+          heroCount.textContent = allBeaches.length;
+          heroStats.style.display = 'flex';
+        }
+      }
     } catch(e) {
       document.getElementById('beaches-grid').innerHTML = `
-        <div class="state-wrap" role="alert">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-          <strong>Erro ao carregar praias</strong>
-          <p>${e.message}</p>
+        <div class="state-premium-empty" role="alert">
+          <div class="state-premium-empty__icon" style="background:linear-gradient(135deg,rgba(231,76,60,0.10),rgba(231,76,60,0.05))">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="stroke:#c0392b"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <p class="state-premium-empty__title" style="color:#c0392b">Erro ao carregar praias</p>
+          <p class="state-premium-empty__sub">${escHtml(e.message)}</p>
+          <button class="btn-clear" onclick="loadBeaches()">Tentar novamente</button>
         </div>`;
     }
   }
 
   document.getElementById('search-input').addEventListener('input', applyFilters);
+  document.getElementById('sort-select').addEventListener('change', applyFilters);
+  document.getElementById('tipo-select').addEventListener('change', e => { activeTipo = e.target.value; applyFilters(); });
 
   // ── Read URL params and pre-fill filters ──────────────────────
   const urlParams = new URLSearchParams(window.location.search);
   const paramQ      = urlParams.get('q');
   const paramRegion = urlParams.get('region');
+  const paramTipo   = urlParams.get('tipo');
   if (paramQ) document.getElementById('search-input').value = paramQ;
   if (paramRegion) {
     activeRegion = paramRegion;
@@ -734,8 +1211,19 @@
     if (chip) { document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.remove('active')); chip.classList.add('active'); }
     updateRegionBanner(paramRegion);
   }
+  if (paramTipo) {
+    activeTipo = paramTipo;
+    const tipoEl = document.getElementById('tipo-select');
+    if (tipoEl) tipoEl.value = paramTipo;
+  }
 
-  loadBeaches().then(() => { if (paramQ || paramRegion) applyFilters(); });
+  loadBeaches().then(() => { if (paramQ || paramRegion || paramTipo) applyFilters(); });
+
+  // ── Beach card click tracking (delegated) ────────────────────────
+  document.getElementById('beaches-grid').addEventListener('click', function(e) {
+    const card = e.target.closest('.beach-card');
+    if (card) track('beach_card_view_click', { page: 'beaches', beach: card.dataset.name || '', region: card.dataset.region || '' });
+  });
 
   // ── Mobile bottom nav actions ────────────────────────────────────
   document.getElementById('mob-search-btn')?.addEventListener('click', () => {
@@ -770,24 +1258,5 @@
   </div>
 </nav>
 
-<!-- ── Bottom nav (mobile) ──────────────────────────────────── -->
-<nav class="bottom-nav" aria-label="Navegação rápida">
-  <a href="/" class="bottom-nav-item" aria-label="Início">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    <span>Início</span>
-  </a>
-  <a href="beaches.html" class="bottom-nav-item active" aria-label="Praias" aria-current="page">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22.54 10.22a5 5 0 0 1 0 3.56"/><path d="M17 8a5 5 0 0 1 0 8"/></svg>
-    <span>Praias</span>
-  </a>
-  <a href="about.html" class="bottom-nav-item" aria-label="Sobre Nós">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-    <span>Sobre</span>
-  </a>
-  <a href="login.html" class="bottom-nav-item" aria-label="Entrar">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    <span>Entrar</span>
-  </a>
-</nav>
 </body>
 </html>

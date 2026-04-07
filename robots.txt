@@ -5,5 +5,8 @@ Disallow: /login.html
 Disallow: /partner-dashboard.html
 Disallow: /offline.html
 Disallow: /sw.js
+Disallow: /proposal-template.html
+Disallow: /case-study-template.html
+Disallow: /partner-demo.html
 
 Sitemap: https://portal-turismo-portugal.pages.dev/sitemap.xml

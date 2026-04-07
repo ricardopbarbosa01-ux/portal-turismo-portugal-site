@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+  <title>CRM · Leads · Portugal Travel Hub</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="css/style.css?v=20260402">
+
+  <style>
+    /* ── Dashboard layout ── */
+    .dash-root { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    .dash-sidebar {
+      background: var(--blue); display: flex; flex-direction: column;
+      padding: 0; position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    }
+    .sidebar-logo {
+      display: flex; align-items: center; gap: 10px;
+      padding: 28px 24px 20px; font-family: var(--font-heading);
+      font-size: 1rem; font-weight: 600; color: var(--white);
+      text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 8px;
+    }
+    .sidebar-logo-icon {
+      width: 34px; height: 34px; background: rgba(255,255,255,0.10);
+      border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .sidebar-logo-icon svg { width: 16px; height: 16px; fill: var(--gold); stroke: none; }
+    .sidebar-section-label {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); padding: 16px 24px 6px;
+    }
+    .sidebar-nav { flex: 1; }
+    .sidebar-item {
+      display: flex; align-items: center; gap: 11px; padding: 11px 24px;
+      font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.65);
+      cursor: pointer; transition: background 0.15s, color 0.15s;
+      text-decoration: none; border: none; background: none;
+      font-family: var(--font-body); width: 100%; text-align: left;
+    }
+    .sidebar-item svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .sidebar-item:hover { background: rgba(255,255,255,0.07); color: var(--white); }
+    .sidebar-item.active { background: rgba(255,255,255,0.12); color: var(--white); font-weight: 600; }
+    .sidebar-item.active svg { stroke: var(--gold); }
+    .sidebar-badge {
+      margin-left: auto; font-size: 0.65rem; font-weight: 700;
+      background: var(--gold); color: var(--blue);
+      padding: 2px 7px; border-radius: 20px; letter-spacing: 0.04em;
+    }
+    .sidebar-badge.live { background: #38a169; color: #fff; }
+    .sidebar-footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 16px 24px; }
+    .sidebar-user { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .sidebar-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1a5fa3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: var(--white); flex-shrink: 0;
+    }
+    .sidebar-user-name { font-size: 0.875rem; font-weight: 600; color: var(--white); }
+    .sidebar-user-email { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
+    .sidebar-signout {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.8125rem; color: rgba(255,255,255,0.45);
+      cursor: pointer; padding: 6px 0; background: none; border: none;
+      font-family: var(--font-body); transition: color 0.15s; width: 100%; text-align: left;
+    }
+    .sidebar-signout svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+    .sidebar-signout:hover { color: rgba(255,255,255,0.8); }
+    .sidebar-pro-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+      background: rgba(201,168,76,0.18); color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.30);
+      padding: 3px 9px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .sidebar-pro-badge::before { content: '★ '; }
+
+    /* ── Main ── */
+    .dash-main { background: var(--off-white); min-height: 100vh; }
+    .dash-topbar {
+      background: var(--white); border-bottom: 1px solid rgba(10,61,107,0.07);
+      padding: 16px 32px; display: flex; align-items: center;
+      justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .dash-topbar-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--blue); }
+    .topbar-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .topbar-updated { font-size: 0.75rem; color: var(--text-light); white-space: nowrap; }
+    .topbar-btn {
+      display: flex; align-items: center; gap: 6px; padding: 7px 14px;
+      min-height: 44px;
+      border-radius: 8px; font-size: 0.8rem; font-weight: 500;
+      font-family: var(--font-body); cursor: pointer;
+      border: 1.5px solid rgba(10,61,107,0.15); background: var(--white); color: var(--text-mid);
+      transition: background 0.15s, color 0.15s, border-color 0.15s; touch-action: manipulation;
+    }
+    .topbar-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .topbar-btn:hover { background: var(--off-white); color: var(--blue); }
+    .topbar-btn.danger:hover { background: #fff5f5; color: #c53030; border-color: #fc8181; }
+    .topbar-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .dash-content { padding: 28px 32px; }
+
+    /* ── KPI row ── */
+    .kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 24px; }
+    .kpi-card {
+      background: var(--white); border-radius: var(--radius); padding: 18px 20px 16px;
+      box-shadow: 0 1px 4px rgba(10,61,107,0.06), 0 4px 16px rgba(10,61,107,0.04);
+      display: flex; flex-direction: column; gap: 4px;
+      border: 2px solid transparent;
+      transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s; cursor: pointer;
+    }
+    .kpi-card:hover { box-shadow: 0 2px 8px rgba(10,61,107,0.10), 0 8px 24px rgba(10,61,107,0.07); transform: translateY(-1px); }
+    .kpi-card.active-filter { border-color: var(--gold); background: rgba(201,168,76,0.03); }
+    .kpi-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .kpi-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+    .kpi-icon svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .kpi-icon.blue   { background: rgba(10,61,107,0.09);  color: var(--blue); }
+    .kpi-icon.gold   { background: rgba(201,168,76,0.15); color: #8a6818; }
+    .kpi-icon.green  { background: rgba(56,161,105,0.12); color: #276749; }
+    .kpi-icon.teal   { background: rgba(49,151,149,0.12); color: #2c7a7b; }
+    .kpi-icon.red    { background: rgba(229,62,62,0.10);  color: #c53030; }
+    .kpi-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-light); }
+    .kpi-value { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 700; color: var(--blue); line-height: 1; margin: 2px 0; }
+    .kpi-sub { font-size: 0.72rem; color: var(--text-light); }
+
+    /* ── Status badges ── */
+    .status-badge {
+      display: inline-flex; align-items: center;
+      padding: 3px 9px; border-radius: 20px;
+      font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.03em; white-space: nowrap;
+    }
+    .st-novo              { background: rgba(10,61,107,0.09);   color: var(--blue); }
+    .st-em-analise        { background: rgba(214,158,46,0.14);  color: #92610a; }
+    .st-contactado        { background: rgba(128,90,213,0.12);  color: #553c9a; }
+    .st-proposta_enviada  { background: rgba(214,116,0,0.13);   color: #8a4800; }
+    .st-qualificado       { background: rgba(56,161,105,0.14);  color: #276749; }
+    .st-ganho             { background: rgba(34,139,34,0.15);   color: #145214; }
+    .st-perdido           { background: rgba(220,53,69,0.12);   color: #8b1a24; }
+    .st-fechado           { background: rgba(45,55,72,0.10);    color: #2d3748; }
+    .st-arquivado         { background: rgba(160,174,192,0.15); color: #718096; }
+
+    /* ── Priority ── */
+    .prio-cell { display: flex; align-items: center; gap: 5px; font-size: 0.775rem; color: var(--text-mid); }
+    .prio-dot  { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .prio-alta  { background: #e53e3e; }
+    .prio-media { background: #d69e2e; }
+    .prio-baixa { background: #a0aec0; }
+
+    /* ── Priority cycle chip (inline list action) ── */
+    .prio-cycle {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.775rem; font-family: var(--font-body); font-weight: 500;
+      color: var(--text-mid); background: none; border: 1px solid transparent;
+      border-radius: 20px; padding: 3px 7px 3px 5px;
+      cursor: pointer; transition: background 0.13s, border-color 0.13s;
+      touch-action: manipulation; min-height: 28px; white-space: nowrap;
+    }
+    .prio-cycle:hover  { background: rgba(10,61,107,0.06); border-color: rgba(10,61,107,0.18); color: var(--blue); }
+    .prio-cycle:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .prio-cycle::after { content: '↻'; font-size: 0.7rem; opacity: 0; margin-left: 2px; transition: opacity 0.13s; }
+    .prio-cycle:hover::after { opacity: 0.5; }
+
+    /* ── Tier (score) badges ── */
+    .tier-badge {
+      display: inline-flex; align-items: center;
+      padding: 3px 9px; border-radius: 20px;
+      font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.03em; white-space: nowrap;
+    }
+    .tier-alto  { background: rgba(56,161,105,0.14);  color: #276749; }
+    .tier-medio { background: rgba(214,158,46,0.14);  color: #92610a; }
+    .tier-baixo { background: rgba(160,174,192,0.15); color: #718096; }
+
+    /* ── Recommendation block ── */
+    .rec-block {
+      background: rgba(10,61,107,0.03); border: 1px solid rgba(10,61,107,0.08);
+      border-radius: 9px; padding: 12px 16px; margin-bottom: 14px;
+    }
+    .rec-title {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.10em;
+      text-transform: uppercase; color: var(--text-light); margin-bottom: 8px;
+    }
+    .rec-title svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .rec-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .rec-score { font-size: 0.72rem; color: var(--text-light); }
+    .rec-action { font-size: 0.84rem; font-weight: 600; color: var(--blue); margin-bottom: 6px; }
+    .rec-reasons {
+      margin: 0; padding: 0; list-style: none;
+      display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 6px;
+    }
+    .rec-reasons li {
+      font-size: 0.67rem; background: rgba(10,61,107,0.06); color: var(--text-mid);
+      padding: 2px 8px; border-radius: 20px;
+    }
+    .rec-reasons li::before { content: '+ '; color: #38a169; font-weight: 700; }
+    .rec-brief {
+      font-size: 0.78rem; color: var(--text-mid); margin: 8px 0 4px;
+      padding: 6px 10px; background: rgba(10,61,107,0.04);
+      border-radius: 6px; line-height: 1.5; word-break: break-word;
+    }
+
+    /* ── Action bar (top of lead detail) ── */
+    .det-action-bar {
+      background: #f7f9fc; border: 1px solid rgba(10,61,107,0.10);
+      border-radius: 10px; padding: 14px 16px; margin-bottom: 14px;
+    }
+    .det-action-bar-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 10px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+    .det-action-next { display: flex; flex-direction: column; gap: 3px; }
+    .det-action-label {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.10em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    .det-action-text { font-size: 0.92rem; font-weight: 700; color: var(--blue); line-height: 1.3; }
+    .det-urgency {
+      font-size: 0.68rem; font-weight: 600; border-radius: 20px;
+      padding: 3px 10px; white-space: nowrap; flex-shrink: 0;
+    }
+    .det-urgency--high { background: rgba(229,62,62,0.10); color: #c53030; }
+    .det-urgency--mid  { background: rgba(237,137,54,0.12); color: #c05621; }
+    .det-urgency--low  { background: rgba(0,0,0,0.05); color: var(--text-light); }
+    .det-brief {
+      font-size: 0.78rem; color: var(--text-mid); margin-bottom: 10px;
+      padding: 5px 10px; background: rgba(10,61,107,0.05);
+      border-radius: 6px; line-height: 1.5; word-break: break-word;
+    }
+    .det-quick-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .det-qa-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 6px 12px; border-radius: 7px; font-size: 0.75rem; font-weight: 500;
+      border: 1.5px solid rgba(10,61,107,0.13); cursor: pointer;
+      background: var(--white); color: var(--text-mid);
+      font-family: var(--font-body); text-decoration: none;
+      transition: background 0.13s, color 0.13s; touch-action: manipulation;
+      white-space: nowrap;
+    }
+    .det-qa-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .det-qa-btn:hover { background: #edf2f7; color: var(--blue); border-color: rgba(10,61,107,0.25); }
+    .det-qa-btn--accent { background: rgba(56,161,105,0.08); color: #276749; border-color: rgba(56,161,105,0.25); }
+    .det-qa-btn--accent:hover { background: rgba(56,161,105,0.16); color: #1a4731; }
+    .det-qa-btn--win    { background: rgba(34,139,34,0.09);  color: #145214; border-color: rgba(34,139,34,0.25); }
+    .det-qa-btn--win:hover { background: rgba(34,139,34,0.17); color: #0a2e0a; }
+    .det-qa-btn--danger { background: rgba(220,53,69,0.08);  color: #8b1a24; border-color: rgba(220,53,69,0.2); }
+    .det-qa-btn--danger:hover { background: rgba(220,53,69,0.15); color: #5a0f17; }
+    .det-pipeline-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.06); margin-top: 6px; }
+    .det-pipeline-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-light); margin-right: 2px; }
+    .det-last-contact { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(10,61,107,0.08); }
+    .det-last-label { font-size: 0.68rem; font-weight: 600; color: #276749; }
+    .det-last-date  { font-size: 0.68rem; color: var(--text-light); }
+
+    /* ── Sort bar ── */
+    .sort-bar { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+    .sort-label {
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.10em; color: var(--text-light); white-space: nowrap;
+    }
+    .sort-btn {
+      padding: 4px 10px; border-radius: 30px; min-height: 36px;
+      font-size: 0.72rem; font-weight: 500;
+      font-family: var(--font-body); cursor: pointer;
+      border: 1.5px solid rgba(10,61,107,0.12);
+      background: var(--off-white); color: var(--text-mid);
+      transition: background 0.15s, color 0.15s; touch-action: manipulation;
+    }
+    .sort-btn:hover { background: rgba(10,61,107,0.06); color: var(--blue); }
+    .sort-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .sort-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    /* ── CRM panel ── */
+    .crm-panel {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: 0 1px 4px rgba(10,61,107,0.06), 0 4px 16px rgba(10,61,107,0.04); overflow: hidden;
+    }
+    .crm-panel-head {
+      padding: 14px 22px; border-bottom: 1px solid rgba(10,61,107,0.06);
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .crm-filters-wrap { display: flex; flex-direction: column; gap: 7px; }
+    .crm-search-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 0 4px; border-top: 1px solid rgba(0,0,0,0.06); margin-top: 4px; }
+    .crm-search-input {
+      flex: 1; min-width: 180px; height: 32px; padding: 0 10px;
+      border: 1px solid rgba(10,61,107,0.18); border-radius: 6px;
+      font-size: 0.8rem; color: var(--text); background: var(--white);
+      outline: none;
+    }
+    .crm-search-input:focus { border-color: var(--blue); box-shadow: 0 0 0 2px rgba(10,61,107,0.1); }
+    .crm-subfilter-select {
+      height: 32px; padding: 0 8px; border: 1px solid rgba(10,61,107,0.18); border-radius: 6px;
+      font-size: 0.78rem; color: var(--text); background: var(--white); cursor: pointer;
+    }
+    .crm-subfilter-select:focus { outline: 2px solid var(--gold); }
+    .crm-clear-btn {
+      height: 32px; padding: 0 12px; border: 1px solid rgba(10,61,107,0.15); border-radius: 6px;
+      font-size: 0.75rem; font-weight: 600; color: var(--text-mid); background: transparent;
+      cursor: pointer; white-space: nowrap;
+    }
+    .crm-clear-btn:hover { background: rgba(10,61,107,0.05); color: var(--blue); }
+    .crm-filter-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .filter-group-label {
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.10em; color: var(--text-light);
+      white-space: nowrap; min-width: 38px;
+    }
+    .crm-filter-btn {
+      padding: 5px 12px; border-radius: 30px; min-height: 36px;
+      font-size: 0.75rem; font-weight: 500;
+      font-family: var(--font-body); cursor: pointer;
+      border: 1.5px solid rgba(10,61,107,0.12);
+      background: var(--off-white); color: var(--text-mid);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      touch-action: manipulation;
+    }
+    .crm-filter-btn:hover { background: rgba(10,61,107,0.06); color: var(--blue); border-color: rgba(10,61,107,0.2); }
+    .crm-filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); font-weight: 600; }
+    .crm-filter-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .crm-count-label { font-size: 0.78rem; color: var(--text-light); white-space: nowrap; padding-top: 2px; }
+
+    /* ── Table header ── */
+    .leads-header {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr 108px 70px 84px 72px;
+      gap: 12px; padding: 10px 22px;
+      background: rgba(10,61,107,0.025); border-bottom: 1px solid rgba(10,61,107,0.07);
+    }
+    .leads-header-cell { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-light); }
+
+    /* ── Lead rows ── */
+    .leads-list { display: flex; flex-direction: column; }
+    .lead-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr 108px 70px 84px 72px;
+      gap: 12px; align-items: center;
+      padding: 12px 22px; border-bottom: 1px solid rgba(10,61,107,0.045);
+      cursor: pointer; transition: background 0.12s; font-size: 0.8125rem;
+    }
+    .lead-row:hover { background: rgba(10,61,107,0.025); }
+    .lead-row.expanded { background: rgba(201,168,76,0.04); }
+    .lead-row:last-of-type { border-bottom: none; }
+    .lead-row:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+    .lead-badge {
+      display: inline-flex; align-items: center;
+      padding: 3px 9px; border-radius: 20px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .lead-badge.plan    { background: rgba(10,61,107,0.10); color: var(--blue); }
+    .lead-badge.contact { background: rgba(49,151,149,0.12); color: #2c7a7b; }
+    .lead-badge.partner { background: rgba(201,168,76,0.18); color: #7b4f12; }
+    .lead-badge.test    { background: rgba(160,174,192,0.18); color: #4a5568; border: 1px dashed #a0aec0; }
+    .dupe-badge {
+      display: inline-flex; align-items: center;
+      padding: 1px 6px; border-radius: 10px; margin-left: 4px;
+      font-size: 0.6rem; font-weight: 700; vertical-align: middle; white-space: nowrap;
+      background: rgba(214,158,46,0.13); color: #92610a; border: 1px solid rgba(214,158,46,0.3);
+    }
+    /* ── Urgency badges (list row) ── */
+    .urgency-badge {
+      display: inline-flex; align-items: center;
+      padding: 1px 6px; border-radius: 10px; margin-left: 4px;
+      font-size: 0.59rem; font-weight: 700; vertical-align: middle; white-space: nowrap;
+    }
+    .urgency-badge--now  { background: rgba(220,53,69,0.12);  color: #8b1a24; border: 1px solid rgba(220,53,69,0.25); }
+    .urgency-badge--late { background: rgba(214,116,0,0.12);  color: #8a4800; border: 1px solid rgba(214,116,0,0.25); }
+    .urgency-badge--today{ background: rgba(214,158,46,0.14); color: #92610a; border: 1px solid rgba(214,158,46,0.3); }
+    /* ── Followup block (detail) ── */
+    .det-followup {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      padding: 8px 12px; border-radius: 8px; margin-bottom: 10px;
+      background: rgba(10,61,107,0.04); border: 1px solid rgba(10,61,107,0.08);
+      font-size: 0.78rem;
+    }
+    .det-followup-row { display: flex; flex-direction: column; gap: 2px; }
+    .det-followup-key { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-light); }
+    .det-followup-val { font-weight: 600; color: var(--text); }
+    .det-followup-urgency--now  { color: #8b1a24; }
+    .det-followup-urgency--late { color: #8a4800; }
+    .det-followup-urgency--today{ color: #92610a; }
+    /* ── KPI icon red ── */
+    .kpi-icon.red { background: rgba(220,53,69,0.1); color: #c0392b; }
+    .det-dupes { margin-bottom: 10px; }
+    .det-dupes-title { font-size: 0.72rem; font-weight: 700; color: var(--text-mid); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .det-dupe-row {
+      display: flex; gap: 10px; align-items: baseline;
+      padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.04);
+      font-size: 0.75rem; color: var(--text-mid);
+    }
+    .det-dupe-row:last-child { border-bottom: none; }
+    .det-dupe-date { flex-shrink: 0; color: var(--text-light); min-width: 60px; }
+    .det-dupe-type { flex-shrink: 0; font-weight: 600; }
+    .det-dupe-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .det-dupe-email { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-light); }
+    .lead-name  { font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .lead-email { color: var(--text-mid); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .lead-source {
+      font-size: 0.7rem; padding: 2px 7px; border-radius: 4px;
+      background: rgba(10,61,107,0.05); color: var(--text-light);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .lead-source.has-src { background: rgba(56,161,105,0.10); color: #276749; }
+    .lead-time { font-size: 0.71rem; color: var(--text-light); text-align: right; }
+
+    /* ── Inline detail ── */
+    .lead-detail-row {
+      background: rgba(10,61,107,0.022); border-bottom: 1px solid rgba(10,61,107,0.06);
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.22s ease;
+      padding: 0 22px;
+    }
+    .lead-detail-row.open { max-height: 960px; padding: 18px 22px; }
+
+    /* ── Det management section ── */
+    .det-mgmt { margin-bottom: 4px; }
+    .det-mgmt-fields { display: flex; flex-wrap: wrap; gap: 12px 16px; margin-bottom: 12px; align-items: flex-start; }
+    .det-field-group { display: flex; flex-direction: column; gap: 4px; }
+    .det-field-label {
+      font-size: 0.63rem; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+    .det-select {
+      padding: 6px 10px; border-radius: 7px;
+      border: 1.5px solid rgba(10,61,107,0.15);
+      font-family: var(--font-body); font-size: 1rem;
+      color: var(--text); background: var(--white); cursor: pointer; min-width: 148px;
+    }
+    .det-select:focus { outline: none; border-color: var(--gold); }
+    .det-note-group { flex: 1; min-width: 200px; }
+    .det-note-input {
+      padding: 7px 10px; border-radius: 7px;
+      border: 1.5px solid rgba(10,61,107,0.15);
+      font-family: var(--font-body); font-size: 1rem;
+      color: var(--text); resize: vertical; min-height: 56px;
+      width: 100%; background: var(--white); box-sizing: border-box; line-height: 1.5;
+    }
+    .det-note-input:focus { outline: none; border-color: var(--gold); }
+    .det-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .det-save-btn {
+      padding: 7px 18px; border-radius: 7px;
+      background: var(--blue); color: var(--white);
+      font-size: 0.8rem; font-weight: 600; border: none; cursor: pointer;
+      font-family: var(--font-body); transition: opacity 0.15s; touch-action: manipulation;
+    }
+    .det-save-btn:hover { opacity: 0.87; }
+    .det-save-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .det-copy-btn {
+      padding: 7px 14px; border-radius: 7px;
+      background: var(--off-white); color: var(--text-mid);
+      font-size: 0.8rem; font-weight: 500;
+      border: 1.5px solid rgba(10,61,107,0.12); cursor: pointer;
+      font-family: var(--font-body); display: flex; align-items: center; gap: 5px;
+      transition: background 0.15s, color 0.15s; touch-action: manipulation;
+    }
+    .det-copy-btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .det-copy-btn:hover { background: #edf2f7; color: var(--blue); }
+    .det-copy-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .det-mailto-btn {
+      padding: 7px 14px; border-radius: 7px; text-decoration: none;
+      background: rgba(56,161,105,0.08); color: #276749;
+      font-size: 0.8rem; font-weight: 500;
+      border: 1.5px solid rgba(56,161,105,0.22); display: inline-flex; align-items: center; gap: 5px;
+      transition: background 0.15s; touch-action: manipulation;
+    }
+    .det-mailto-btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .det-mailto-btn:hover { background: rgba(56,161,105,0.15); }
+    .det-divider { height: 1px; background: rgba(10,61,107,0.07); margin: 14px 0 12px; }
+
+    /* ── Temporal block ── */
+    .det-temporal { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 10px; font-size: 0.75rem; color: var(--text-light); }
+    .det-temporal-item { display: flex; gap: 4px; align-items: baseline; }
+    .det-temporal-key { font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; font-size: 0.63rem; }
+    .det-temporal-val { color: var(--text); }
+
+    /* ── Mini timeline ── */
+    .det-timeline { margin: 10px 0 4px; border-left: 2px solid rgba(10,61,107,0.12); padding-left: 12px; display: flex; flex-direction: column; gap: 5px; }
+    .det-tl-evt { font-size: 0.74rem; color: var(--text-light); position: relative; }
+    .det-tl-evt::before { content: ''; position: absolute; left: -16px; top: 5px; width: 6px; height: 6px; border-radius: 50%; background: rgba(10,61,107,0.2); }
+    .det-tl-evt b { color: var(--text); font-weight: 600; }
+    .det-tl-evt .tl-time { color: var(--text-light); font-size: 0.7rem; margin-left: 4px; }
+
+    /* ── Data fields in detail ── */
+    .lead-detail-inner { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px 20px; }
+    .detail-field { display: flex; flex-direction: column; gap: 3px; }
+    .detail-key { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-light); }
+    .detail-val { font-size: 0.84rem; color: var(--text); font-weight: 500; word-break: break-word; }
+    .detail-val.empty { color: var(--text-light); font-style: italic; font-weight: 400; }
+    .detail-close { display: flex; justify-content: flex-end; margin-top: 14px; }
+    .detail-close-btn {
+      font-size: 0.775rem; color: var(--text-light);
+      background: none; border: none; cursor: pointer;
+      font-family: var(--font-body); padding: 4px 8px; transition: color 0.15s;
+    }
+    .detail-close-btn:hover { color: var(--blue); }
+
+    /* ── Empty state ── */
+    .crm-empty { text-align: center; padding: 56px 24px; }
+    .crm-empty-icon {
+      width: 52px; height: 52px; background: rgba(10,61,107,0.06); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+    }
+    .crm-empty-icon svg { width: 22px; height: 22px; stroke: rgba(10,61,107,0.3); fill: none; stroke-width: 1.5; }
+    .crm-empty h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+    .crm-empty p { font-size: 0.875rem; color: var(--text-light); max-width: 340px; margin: 0 auto; line-height: 1.6; }
+
+    /* ── Skeleton ── */
+    .skel {
+      background: linear-gradient(90deg, #e8edf3 25%, #f0f4f8 50%, #e8edf3 75%);
+      background-size: 200% 100%; animation: skel-shimmer 1.5s infinite;
+      border-radius: 6px; display: inline-block;
+    }
+    @keyframes skel-shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+    /* ── Toast ── */
+    .crm-toast {
+      position: fixed; bottom: 24px; right: 24px;
+      background: var(--blue); color: var(--white);
+      padding: 12px 18px; border-radius: 10px; font-size: 0.84rem; font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      transform: translateY(80px); opacity: 0;
+      transition: transform 0.22s ease, opacity 0.22s ease;
+      z-index: 500; pointer-events: none;
+    }
+    .crm-toast.show { transform: translateY(0); opacity: 1; }
+    .crm-toast.ok { background: #276749; }
+
+    /* ── Mobile toggle ── */
+    .dash-mobile-toggle {
+      display: none; position: fixed; top: 14px; left: 14px; z-index: 200;
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--blue); border: none; cursor: pointer;
+      align-items: center; justify-content: center;
+    }
+    .dash-mobile-toggle svg { width: 18px; height: 18px; stroke: var(--white); fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1280px) { .kpi-row { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 980px) {
+      .leads-header { display: none; }
+      .lead-row {
+        grid-template-columns: auto 1fr; grid-template-rows: auto auto auto;
+        gap: 3px 10px; padding: 14px 16px;
+      }
+      .lead-row > *:nth-child(n+3) { grid-column: 2; }
+      .lead-badge { grid-row: 1; grid-column: 1; align-self: start; }
+      .lead-name  { grid-row: 1; }
+      .prio-cell, .lead-email, .lead-source, .lead-time { font-size: 0.72rem; text-align: left; }
+    }
+    @media (max-width: 860px) {
+      .dash-root { grid-template-columns: 1fr; }
+      .dash-sidebar {
+        position: fixed; top: 0; left: -280px; width: 260px;
+        z-index: 100; transition: left 0.28s cubic-bezier(0.4,0,0.2,1);
+      }
+      .dash-sidebar.open { left: 0; box-shadow: 4px 0 24px rgba(0,0,0,0.2); }
+      .dash-mobile-toggle { display: flex; }
+      .dash-topbar { padding: 14px 20px 14px 64px; }
+      .dash-content { padding: 20px 16px; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .det-mgmt-fields { flex-direction: column; }
+      .det-note-group { min-width: unset; width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .topbar-btn span { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .kpi-card, .lead-detail-row, .crm-toast, .dash-sidebar { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<button class="dash-mobile-toggle" id="sidebar-toggle" aria-label="Abrir menu lateral">
+  <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+
+<div class="dash-root">
+  <!-- ── Sidebar ── -->
+  <aside class="dash-sidebar" id="dash-sidebar" aria-label="Navegação do dashboard">
+    <a href="/" class="sidebar-logo">
+      <div class="sidebar-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      Travel Hub
+    </a>
+
+    <nav class="sidebar-nav" aria-label="Secções do dashboard">
+      <div class="sidebar-section-label">Operacional</div>
+      <a href="#" class="sidebar-item active" aria-current="page">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Leads CRM
+        <span class="sidebar-badge live" id="crm-total-badge" aria-label="total de leads">0</span>
+      </a>
+
+      <div class="sidebar-section-label">Portal</div>
+      <a href="beaches.html" class="sidebar-item">
+        <svg viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
+        Praias
+      </a>
+      <a href="planear.html" class="sidebar-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Planear Viagem
+      </a>
+      <a href="parceiros.html" class="sidebar-item">
+        <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+        Parceiros
+      </a>
+      <a href="contact.html" class="sidebar-item">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contacto
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebar-avatar">?</div>
+        <div>
+          <div class="sidebar-user-name" id="sidebar-name">A carregar…</div>
+          <div class="sidebar-user-email" id="sidebar-email"></div>
+        </div>
+      </div>
+      <div class="sidebar-pro-badge" id="sidebar-pro-badge" hidden aria-label="Plano Pro ativo">Pro Ativo</div>
+      <button class="sidebar-signout" id="signout-btn" aria-label="Terminar sessão">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Terminar sessão
+      </button>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="dash-main" id="main" aria-label="CRM de Leads">
+
+    <header class="dash-topbar">
+      <div class="dash-topbar-title">CRM · Leads</div>
+      <div class="topbar-actions">
+        <span class="topbar-updated" id="crm-updated" aria-live="polite"></span>
+        <button class="topbar-btn" id="btn-export" aria-label="Exportar leads como JSON">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Exportar JSON</span>
+        </button>
+        <button class="topbar-btn danger" id="btn-clear" aria-label="Limpar todos os dados do localStorage">
+          <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          <span>Limpar dados</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="dash-content">
+
+      <!-- KPI row: operational metrics -->
+      <div class="kpi-row" role="list" aria-label="Métricas operacionais de leads">
+
+        <div class="kpi-card" role="listitem" data-filter="todos" tabindex="0" aria-label="Total de leads — clicar para ver todos">
+          <div class="kpi-icon blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="kpi-label">Total de Leads</div>
+          <div class="kpi-value" id="kpi-total">—</div>
+          <div class="kpi-sub">todas as fontes</div>
+        </div>
+
+        <div class="kpi-card" role="listitem" data-filter="alto-potencial" tabindex="0" aria-label="Alto potencial — clicar para filtrar">
+          <div class="kpi-icon green" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="kpi-label">Alto Potencial</div>
+          <div class="kpi-value" id="kpi-alto-pot">—</div>
+          <div class="kpi-sub">score ≥ 55 pts</div>
+        </div>
+
+        <div class="kpi-card" role="listitem" data-filter="contactado" tabindex="0" aria-label="Leads em pipeline — clicar para filtrar">
+          <div class="kpi-icon green" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="kpi-label">Em Pipeline</div>
+          <div class="kpi-value" id="kpi-qualif">—</div>
+          <div class="kpi-sub">contactado → proposta → qualificado</div>
+        </div>
+
+        <div class="kpi-card" role="listitem" data-filter="ganho" tabindex="0" aria-label="Negócios ganhos — clicar para filtrar">
+          <div class="kpi-icon green" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="kpi-label">Ganhos</div>
+          <div class="kpi-value" id="kpi-alta">—</div>
+          <div class="kpi-sub">negócios fechados</div>
+        </div>
+
+        <div class="kpi-card" role="listitem" data-filter="parceiro" tabindex="0" aria-label="Candidaturas de parceiros — clicar para filtrar">
+          <div class="kpi-icon gold" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+          </div>
+          <div class="kpi-label">Parceiros B2B</div>
+          <div class="kpi-value" id="kpi-partner">—</div>
+          <div class="kpi-sub">candidaturas</div>
+        </div>
+
+        <div class="kpi-card" role="listitem" data-filter="precisa-acao" tabindex="0" aria-label="Leads que precisam de ação — clicar para filtrar">
+          <div class="kpi-icon red" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="kpi-label">Precisa Ação</div>
+          <div class="kpi-value" id="kpi-precisa-acao">—</div>
+          <div class="kpi-sub">leads a tratar</div>
+        </div>
+
+        <div class="kpi-card" role="listitem" data-filter="precisa-acao" tabindex="0" aria-label="Leads atrasados — clicar para filtrar">
+          <div class="kpi-icon red" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="kpi-label">Atrasados</div>
+          <div class="kpi-value" id="kpi-atrasado">—</div>
+          <div class="kpi-sub">&gt; 3 dias sem toque</div>
+        </div>
+
+      </div><!-- /kpi-row -->
+
+      <!-- CRM panel -->
+      <div class="crm-panel" role="region" aria-label="Lista de leads">
+
+        <div class="crm-panel-head">
+          <div class="crm-filters-wrap">
+            <!-- Row 1: by source/type -->
+            <div class="crm-filter-group" role="group" aria-label="Filtrar por fonte">
+              <span class="filter-group-label" aria-hidden="true">Fonte</span>
+              <button class="crm-filter-btn" data-filter="todos">Todos</button>
+              <button class="crm-filter-btn active" data-filter="reais">Reais</button>
+              <button class="crm-filter-btn" data-filter="testes">Testes</button>
+              <button class="crm-filter-btn" data-filter="planeamento">Planeamento</button>
+              <button class="crm-filter-btn" data-filter="contacto">Contacto</button>
+              <button class="crm-filter-btn" data-filter="parceiro">Parceiro</button>
+              <button class="crm-filter-btn" data-filter="com-contexto">Com contexto</button>
+              <button class="crm-filter-btn" data-filter="sem-contexto">Sem contexto</button>
+            </div>
+            <!-- Row 2: by operational status -->
+            <div class="crm-filter-group" role="group" aria-label="Filtrar por estado operacional">
+              <span class="filter-group-label" aria-hidden="true">Pipeline</span>
+              <button class="crm-filter-btn" data-filter="precisa-acao">Precisa ação</button>
+              <button class="crm-filter-btn" data-filter="sem-tratar">Sem tratar</button>
+              <button class="crm-filter-btn" data-filter="contactado">Contactados</button>
+              <button class="crm-filter-btn" data-filter="proposta_enviada">Proposta enviada</button>
+              <button class="crm-filter-btn" data-filter="qualificado">Qualificados</button>
+              <button class="crm-filter-btn" data-filter="ganho">Ganhos</button>
+              <button class="crm-filter-btn" data-filter="perdido">Perdidos</button>
+              <button class="crm-filter-btn" data-filter="priority-alta">Alta prioridade</button>
+              <button class="crm-filter-btn" data-filter="arquivado">Arquivados</button>
+            </div>
+            <!-- Row 3: by score tier -->
+            <div class="crm-filter-group" role="group" aria-label="Filtrar por potencial">
+              <span class="filter-group-label" aria-hidden="true">Potencial</span>
+              <button class="crm-filter-btn" data-filter="alto-potencial">Alto</button>
+              <button class="crm-filter-btn" data-filter="medio-potencial">Médio</button>
+              <button class="crm-filter-btn" data-filter="baixo-potencial">Baixo</button>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+            <div class="sort-bar" role="group" aria-label="Ordenar leads">
+              <span class="sort-label">Ordenar</span>
+              <button class="sort-btn active" data-sort="data">Por data</button>
+              <button class="sort-btn" data-sort="score">Por score</button>
+              <button class="sort-btn" data-sort="prioridade">Por prioridade</button>
+            </div>
+            <span class="crm-count-label" id="crm-count" aria-live="polite">0 leads</span>
+          </div>
+        </div>
+
+        <!-- Search + sub-filters -->
+        <div class="crm-search-row">
+          <input type="search" id="crm-search" class="crm-search-input"
+                 placeholder="Procurar nome, email ou origem…" aria-label="Pesquisar leads" autocomplete="off">
+          <select id="sf-status" class="crm-subfilter-select" aria-label="Filtrar por estado">
+            <option value="todos">Estado: todos</option>
+            <option value="novo">Novo</option>
+            <option value="contactado">Contactado</option>
+            <option value="proposta_enviada">Proposta enviada</option>
+            <option value="qualificado">Qualificado</option>
+            <option value="ganho">Ganho</option>
+            <option value="perdido">Perdido</option>
+            <option value="arquivado">Arquivado</option>
+          </select>
+          <select id="sf-type" class="crm-subfilter-select" aria-label="Filtrar por tipo">
+            <option value="todos">Tipo: todos</option>
+            <option value="planeamento">Planeamento</option>
+            <option value="contacto">Contacto</option>
+            <option value="parceiro">Parceiro</option>
+          </select>
+          <select id="sf-priority" class="crm-subfilter-select" aria-label="Filtrar por prioridade">
+            <option value="todas">Prioridade: todas</option>
+            <option value="alta">Alta</option>
+            <option value="media">Média</option>
+            <option value="baixa">Baixa</option>
+          </select>
+          <button id="btn-clear-filters" class="crm-clear-btn" aria-label="Limpar filtros">↺ Limpar</button>
+        </div>
+
+        <!-- Table header -->
+        <div class="leads-header" aria-hidden="true">
+          <div class="leads-header-cell">Tipo</div>
+          <div class="leads-header-cell">Nome / Negócio</div>
+          <div class="leads-header-cell">Email</div>
+          <div class="leads-header-cell">Status</div>
+          <div class="leads-header-cell">Prioridade</div>
+          <div class="leads-header-cell">Potencial</div>
+          <div class="leads-header-cell" style="text-align:right">Data</div>
+        </div>
+
+        <!-- Lead list (populated by JS) -->
+        <div class="leads-list" id="leads-list" aria-label="Leads">
+          <div class="lead-row" style="pointer-events:none" aria-hidden="true">
+            <span class="skel" style="width:78px;height:20px;border-radius:20px;"></span>
+            <span class="skel" style="height:14px;max-width:160px;"></span>
+            <span class="skel" style="height:14px;max-width:180px;"></span>
+            <span class="skel" style="width:80px;height:18px;border-radius:20px;"></span>
+            <span class="skel" style="width:60px;height:14px;"></span>
+            <span class="skel" style="height:14px;max-width:80px;"></span>
+            <span class="skel" style="height:12px;max-width:56px;margin-left:auto;"></span>
+          </div>
+        </div>
+
+      </div><!-- /crm-panel -->
+    </div><!-- /dash-content -->
+  </main>
+</div>
+
+<div class="crm-toast" id="crm-toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/config.js?v=20260402"></script>
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   PORTUGAL TRAVEL HUB · CRM DASHBOARD
+   Data architecture:
+     - pth_plan_requests    → captured leads (planear.html)
+     - pth_contact_messages → captured leads (contact.html)
+     - pth_partner_leads    → captured leads (parceiros.html)
+     - pth_lead_meta        → operational metadata (this file only)
+   Migration path: replace localStorage reads/writes with Supabase queries.
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ── Auth guard ────────────────────────────────────────────────── */
+(async () => {
+  const { data: { user } } = await db.auth.getUser();
+  if (!user) { window.location.href = '/login.html'; return; }
+  await initCRM(user);
+  // Post-checkout activation confirmation with polling (race condition hardening)
+  if (new URLSearchParams(window.location.search).get('activated') === '1') {
+    history.replaceState(null, '', '/dashboard.html');
+
+    function isProActive(u) {
+      const r = u?.user_metadata?.role || u?.raw_user_meta_data?.role;
+      const s = u?.user_metadata?.pro_status;
+      return r === 'pro' || r === 'partner' || s === 'active';
+    }
+
+    // Discrete pending indicator inside sidebar (no layout shift)
+    const badge     = document.getElementById('sidebar-pro-badge');
+    const pendingEl = document.createElement('div');
+    pendingEl.id    = 'pro-pending';
+    pendingEl.setAttribute('aria-live', 'polite');
+    pendingEl.style.cssText = 'font-size:0.7rem;color:var(--gold);margin-top:6px;padding:0 16px;opacity:0.9;';
+    pendingEl.textContent   = 'A verificar ativação…';
+    if (badge) badge.parentNode.insertBefore(pendingEl, badge.nextSibling);
+
+    // getUser() always hits Supabase Auth REST — never reads stale JWT cache
+    const { data: { user: freshUser } } = await db.auth.getUser();
+    if (isProActive(freshUser)) {
+      // Webhook fired before redirect — immediate confirm
+      pendingEl.remove();
+      if (badge) badge.hidden = false;
+      track('pro_activation_return', { page: 'dashboard', result: 'immediate' });
+      showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
+    } else {
+      // Poll until role is confirmed or 12s timeout (6 × 2s)
+      let attempts = 0;
+      const MAX_ATTEMPTS = 6;
+      const pollTimer = setInterval(async () => {
+        attempts++;
+        const { data: { user: polled } } = await db.auth.getUser();
+        if (isProActive(polled)) {
+          clearInterval(pollTimer);
+          pendingEl.remove();
+          if (badge) badge.hidden = false;
+          track('pro_activation_return', { page: 'dashboard', result: 'polled', attempts: attempts });
+          showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
+        } else if (attempts >= MAX_ATTEMPTS) {
+          clearInterval(pollTimer);
+          pendingEl.textContent = 'A ativação pode demorar alguns segundos. Atualiza esta página.';
+          pendingEl.style.color = 'var(--text-light)';
+        }
+      }, 2000);
+    }
+  }
+})();
+
+document.getElementById('signout-btn').addEventListener('click', async e => {
+  e.preventDefault();
+  await db.auth.signOut();
+  location.reload();
+});
+
+/* ── Mobile sidebar ────────────────────────────────────────────── */
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebar       = document.getElementById('dash-sidebar');
+sidebarToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+document.addEventListener('click', e => {
+  if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target))
+    sidebar.classList.remove('open');
+});
+
+/* ── Constants ─────────────────────────────────────────────────── */
+const META_KEY = 'pth_lead_meta';
+
+const STATUS_LABELS = {
+  'novo':             'Novo',
+  'contactado':       'Contactado',
+  'proposta_enviada': 'Proposta enviada',
+  'qualificado':      'Qualificado',
+  'ganho':            'Ganho',
+  'perdido':          'Perdido',
+  'arquivado':        'Arquivado',
+  /* legacy compat */
+  'em-analise':       'Em análise',
+  'fechado':          'Fechado'
+};
+const PRIORITY_LABELS = { alta: 'Alta', media: 'Média', baixa: 'Baixa' };
+const STATUS_VALS = Object.keys(STATUS_LABELS);
+
+/* ── HTML escape ────────────────────────────────────────────────── */
+function esc(v) {
+  if (v === null || v === undefined || v === '' || v === '—') return '—';
+  return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+// Variant that returns empty string for empty values (used for textarea/form values)
+function escVal(v) {
+  if (!v) return '';
+  return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── Stable lead ID (djb2-xor hash of type|email|timestamp) ──────
+   Produces consistent IDs like "p2w3abc1" that survive page reloads.
+   Fallback: uses name when email is absent.
+   Migration note: replace with Supabase row UUID.                  */
+function makeLeadId(type, email, timestamp, name) {
+  const seed = `${type}|${(email && email !== '—') ? email : name}|${timestamp || ''}`;
+  let h = 5381;
+  for (let i = 0; i < seed.length; i++) h = ((h << 5) + h) ^ seed.charCodeAt(i);
+  return `${type[0]}${(h >>> 0).toString(36)}`;
+}
+
+/* ── Metadata layer: pth_lead_meta ─────────────────────────────── */
+function loadMetaStore() {
+  try { return JSON.parse(localStorage.getItem(META_KEY) || '{}'); } catch { return {}; }
+}
+function getMeta(id) {
+  const m = loadMetaStore()[id] || {};
+  return {
+    status:       m.status       || 'novo',
+    priority:     m.priority     || 'media',
+    note:         m.note         || '',
+    updated_at:   m.updated_at   || null,
+    last_action:  m.last_action  || null,
+    contacted_at: m.contacted_at || null,
+  };
+}
+function saveMeta(id, updates) {
+  const store = loadMetaStore();
+  store[id] = { ...store[id], ...updates, updated_at: new Date().toISOString() };
+  localStorage.setItem(META_KEY, JSON.stringify(store));
+  // Persist to Supabase (fire-and-forget; localStorage is the synchronous cache)
+  const row = store[id];
+  db.from('lead_meta').upsert(
+    { lead_id: id, status: row.status, priority: row.priority, note: row.note,
+      updated_at: row.updated_at, last_action: row.last_action || null, contacted_at: row.contacted_at || null },
+    { onConflict: 'lead_id' }
+  ).then(({ error }) => {
+    if (error) console.warn('[lead_meta upsert]', error.message, error);
+  });
+}
+
+/* ── Normalise leads from 3 sources ────────────────────────────── */
+// Accepts data directly (Supabase); falls back to localStorage when called without args (e.g. after meta save)
+function normaliseLeads(plans, contacts, partners) {
+  function safeLocal(key) {
+    try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : []; } catch { return []; }
+  }
+  if (!plans)    plans    = safeLocal('pth_plan_requests');
+  if (!contacts) contacts = safeLocal('pth_contact_messages');
+  if (!partners) partners = safeLocal('pth_partner_leads');
+
+  const build = (type, raw, name, email, intent, region, source, timestamp) => {
+    const id = makeLeadId(type, email, timestamp, name);
+    return { id, type, name, email, intent, region, source, timestamp, raw };
+  };
+
+  const all = [
+    ...plans.map(l => build(
+      'planeamento',
+      l,
+      l.nome    || l.name    || l.contacto || '—',
+      l.email   || '—',
+      l.destino || l.tipo    || l.subtipo  || l.assunto || (Array.isArray(l.interesse) ? l.interesse.join(', ') : l.interesse) || '—',
+      l.region  || l.regiao  || '—',
+      l.source_page || l.source || '',
+      l.timestamp || null
+    )),
+    ...contacts.map(l => build(
+      'contacto',
+      l,
+      l.nome    || l.name    || '—',
+      l.email   || '—',
+      l.assunto || l.subject || (l.mensagem ? l.mensagem.slice(0,48) + '…' : '—'),
+      '—',
+      l.source_page || l.source || '',
+      l.timestamp || null
+    )),
+    ...partners.map(l => build(
+      'parceiro',
+      l,
+      l.negocio  || l.contacto || '—',
+      l.email    || '—',
+      l.objetivo || '—',
+      l.regiao   || l.localizacao || '—',
+      l.source_page || l.source || '',
+      l.timestamp || null
+    ))
+  ];
+
+  return all.sort((a, b) => {
+    if (!a.timestamp && !b.timestamp) return 0;
+    if (!a.timestamp) return 1;
+    if (!b.timestamp) return -1;
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+}
+
+/* ── Time helpers ──────────────────────────────────────────────── */
+function relTime(ts) {
+  if (!ts) return '—';
+  const m = Math.floor((Date.now() - new Date(ts)) / 60000);
+  if (m < 1)  return 'agora';
+  if (m < 60) return `há ${m}m`;
+  const h = Math.floor(m / 60);
+  if (h < 24) return `há ${h}h`;
+  const d = Math.floor(h / 24);
+  if (d < 7)  return `há ${d}d`;
+  return new Date(ts).toLocaleDateString('pt-PT', { day:'numeric', month:'short' });
+}
+function fullDate(ts) {
+  if (!ts) return '—';
+  return new Date(ts).toLocaleString('pt-PT', {
+    day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'
+  });
+}
+
+/* ── Temporal detail helpers ────────────────────────────────────── */
+function getLeadCreatedAt(lead)  { return lead.timestamp || null; }
+function getLeadUpdatedAt(lead)  { const m = getMeta(lead.id); return m.updated_at || null; }
+
+function temporalBlock(lead) {
+  const meta      = getMeta(lead.id);
+  const createdAt = getLeadCreatedAt(lead);
+  const updatedAt = getLeadUpdatedAt(lead);
+  const touchAt   = getLastTouchAt(lead);
+  const stoppedAt = touchAt;
+
+  const row = (key, val, rel) =>
+    `<span class="det-temporal-item"><span class="det-temporal-key">${key}</span><span class="det-temporal-val" title="${rel || ''}">${val}</span></span>`;
+
+  return `<div class="det-temporal">
+    ${row('Entrada',            fullDate(createdAt), relTime(createdAt))}
+    ${updatedAt ? row('Última atualização', fullDate(updatedAt), relTime(updatedAt)) : ''}
+    ${row('Último toque',       relTime(stoppedAt),  fullDate(stoppedAt))}
+    ${row('Tempo parado',       relTime(stoppedAt),  '')}
+  </div>`;
+}
+
+function miniTimeline(lead) {
+  const meta = getMeta(lead.id);
+  const ACTION_LABELS = {
+    email_aberto:       'Email aberto',
+    marcado_contactado: 'Marcado contactado',
+    proposta_enviada:   'Proposta enviada',
+    qualificado:        'Qualificado',
+    ganho:              'Ganho',
+    perdido:            'Perdido',
+    arquivado:          'Arquivado',
+  };
+
+  const events = [];
+  if (lead.timestamp) {
+    events.push({ label: 'Lead recebido', ts: lead.timestamp });
+  }
+  if (meta.contacted_at) {
+    events.push({ label: 'Contacto registado', ts: meta.contacted_at });
+  }
+  if (meta.last_action && meta.last_action !== 'marcado_contactado') {
+    const aLabel = ACTION_LABELS[meta.last_action] || meta.last_action;
+    events.push({ label: `Última ação: ${aLabel}`, ts: meta.updated_at || null });
+  } else if (meta.last_action === 'marcado_contactado') {
+    events.push({ label: 'Marcado como contactado', ts: meta.contacted_at || meta.updated_at || null });
+  }
+  if (meta.updated_at && meta.updated_at !== meta.contacted_at) {
+    events.push({ label: 'Atualizado', ts: meta.updated_at });
+  }
+
+  if (!events.length) return '';
+  // Deduplicate by ts+label, sort chronologically
+  const seen = new Set();
+  const unique = events.filter(e => {
+    const k = `${e.label}|${e.ts}`;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  }).sort((a, b) => new Date(a.ts || 0) - new Date(b.ts || 0));
+
+  return `<div class="det-timeline">
+    ${unique.map(e => `<div class="det-tl-evt"><b>${esc(e.label)}</b>${e.ts ? `<span class="tl-time">${relTime(e.ts)}</span>` : ''}</div>`).join('')}
+  </div><div class="det-divider"></div>`;
+}
+
+/* ── Badge renderers ────────────────────────────────────────────── */
+/* ── Test lead classification ───────────────────────────────────── */
+const TEST_PATTERN_NAME  = /\btest(e)?\b|playwright|node-?test/i;
+const TEST_PATTERN_EMAIL = /test|playwright|@portalteste\.|@test\.|@example\.|@exemplo\./i;
+function isTestLead(lead) {
+  return TEST_PATTERN_NAME.test(lead.name) || TEST_PATTERN_EMAIL.test(lead.email);
+}
+
+/* ── Deduplication helpers ──────────────────────────────────────── */
+function normalizeEmail(email) {
+  if (!email || email === '—') return null;
+  return email.trim().toLowerCase();
+}
+function getLeadTypeKey(lead) { return lead.type; }
+function getDedupKey(lead) {
+  const email = normalizeEmail(lead.email);
+  if (!email) return null; // no grouping without email — keep isolated
+  return email + '|' + getLeadTypeKey(lead);
+}
+function deduplicateLeads(leads) {
+  const groups = new Map();
+  const noKey  = [];
+  for (const lead of leads) {
+    const key = getDedupKey(lead);
+    if (!key) { noKey.push({ ...lead, _dupes: [] }); continue; }
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(lead);
+  }
+  const result = [];
+  for (const [, group] of groups) {
+    const sorted = [...group].sort((a, b) => {
+      const ma = getMeta(a.id), mb = getMeta(b.id);
+      const da = new Date(ma.updated_at || ma.contacted_at || a.timestamp || 0);
+      const db = new Date(mb.updated_at || mb.contacted_at || b.timestamp || 0);
+      return db - da;
+    });
+    const [primary, ...dupes] = sorted;
+    result.push({ ...primary, _dupes: dupes });
+  }
+  for (const lead of noKey) result.push(lead);
+  result.sort((a, b) => {
+    if (!a.timestamp && !b.timestamp) return 0;
+    if (!a.timestamp) return 1;
+    if (!b.timestamp) return -1;
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+  return result;
+}
+
+/* ── Follow-up / urgency helpers ───────────────────────────────── */
+const DONE_STATUSES   = new Set(['ganho','perdido','arquivado','fechado']);
+const ACTIVE_STATUSES = new Set(['contactado','proposta_enviada','qualificado','em-analise']);
+function getLastTouchAt(lead) {
+  const m = getMeta(lead.id);
+  return m.contacted_at || m.updated_at || lead.timestamp || null;
+}
+function getUrgencyLevel(lead) {
+  const m = getMeta(lead.id);
+  const st = m.status || 'novo';
+  if (DONE_STATUSES.has(st)) return 0;
+  if (st === 'novo' && !m.contacted_at) return 3; // max — never touched
+  if (ACTIVE_STATUSES.has(st)) {
+    const last = getLastTouchAt(lead);
+    if (!last) return 3;
+    const days = (Date.now() - new Date(last)) / 86400000;
+    if (days > 3) return 2;  // Atrasado
+    if (days >= 2) return 1; // Hoje
+    return 0;                // Em curso
+  }
+  return 0;
+}
+function getNeedsAction(lead) { return getUrgencyLevel(lead) > 0; }
+function getUrgencyLabel(lead) {
+  const lvl = getUrgencyLevel(lead);
+  if (lvl === 3) return 'Ação agora';
+  if (lvl === 2) return 'Atrasado';
+  if (lvl === 1) return 'Hoje';
+  return null;
+}
+function getUrgencyClass(lead) {
+  const lvl = getUrgencyLevel(lead);
+  if (lvl === 3) return 'now';
+  if (lvl === 2) return 'late';
+  if (lvl === 1) return 'today';
+  return null;
+}
+function getNextActionLabel(lead) {
+  const st = getMeta(lead.id).status || 'novo';
+  const map = {
+    novo:             'Fazer primeiro contacto',
+    contactado:       'Fazer follow-up',
+    proposta_enviada: 'Cobrar resposta da proposta',
+    qualificado:      'Fechar oportunidade',
+    'em-analise':     'Rever oportunidade',
+    ganho:            'Sem ação pendente',
+    perdido:          'Sem ação pendente',
+    arquivado:        'Sem ação pendente',
+    fechado:          'Sem ação pendente',
+  };
+  return map[st] || 'Fazer follow-up';
+}
+
+function dupesSection(dupes) {
+  return `
+  <div class="det-dupes">
+    <div class="det-dupes-title">Registos relacionados (${dupes.length})</div>
+    ${dupes.map(d => `
+    <div class="det-dupe-row">
+      <span class="det-dupe-date" title="${fullDate(d.timestamp)}">${fullDate(d.timestamp)} · ${relTime(d.timestamp)}</span>
+      <span class="det-dupe-type">${esc(d.type)}</span>
+      <span class="det-dupe-name">${esc(d.name)}</span>
+      <span class="det-dupe-email">${esc(d.email)}</span>
+    </div>`).join('')}
+  </div>
+  <div class="det-divider"></div>`;
+}
+
+function typeBadge(type) {
+  const map = {
+    planeamento: ['plan',    'Planeamento'],
+    contacto:    ['contact', 'Contacto'],
+    parceiro:    ['partner', 'Parceiro']
+  };
+  const [cls, label] = map[type] || ['plan', type];
+  return `<span class="lead-badge ${cls}">${label}</span>`;
+}
+function statusBadge(status) {
+  const label = STATUS_LABELS[status] || 'Novo';
+  return `<span class="status-badge st-${status}">${label}</span>`;
+}
+function prioBadge(priority) {
+  const label = PRIORITY_LABELS[priority] || 'Média';
+  return `<div class="prio-cell"><span class="prio-dot prio-${priority}" aria-hidden="true"></span><span>${label}</span></div>`;
+}
+function tierBadge(tier, label) {
+  return `<span class="tier-badge tier-${tier}">${label}</span>`;
+}
+function testBadge() {
+  return `<span class="lead-badge test" title="Lead de teste — não conta nas métricas">Teste</span>`;
+}
+
+/* ── Lead scoring (transparent, rule-based) ─────────────────────── */
+function scoreLead(lead) {
+  let score = 0;
+  const reasons = [];
+  const r = lead.raw;
+  const meta = getMeta(lead.id);
+
+  // 1. Type base
+  if (lead.type === 'parceiro')         { score += 30; reasons.push('Parceiro B2B'); }
+  else if (lead.type === 'planeamento') { score += 20; reasons.push('Pedido de planeamento'); }
+  else                                  { score += 10; reasons.push('Contacto geral'); }
+
+  // 2. Contactable
+  if (lead.email && lead.email !== '—') { score += 10; reasons.push('Email disponível'); }
+
+  // 3. Tracked origin
+  if (lead.source && lead.source.trim()) { score += 8; reasons.push('Origem rastreada'); }
+
+  // 4. Region identified
+  if (lead.region && lead.region !== '—') { score += 5; reasons.push('Região identificada'); }
+
+  // 5. Intent defined
+  if (lead.intent && lead.intent !== '—') { score += 8; reasons.push('Intenção definida'); }
+
+  // 6. Partner-specific signals
+  if (lead.type === 'parceiro') {
+    if (r.website)         { score += 10; reasons.push('Website presente'); }
+    if (r.instagram)       { score += 5;  reasons.push('Presença no Instagram'); }
+    if (r.plano_interesse) { score += 10; reasons.push('Plano de interesse definido'); }
+  }
+
+  // 7. Planning-specific signals
+  if (lead.type === 'planeamento') {
+    if (r.budget || r.orcamento)                         { score += 8; reasons.push('Budget indicado'); }
+    if (r.datas  || r.data_inicio || r.data_fim)         { score += 7; reasons.push('Datas especificadas'); }
+    if (r.pessoas) { score += 5; reasons.push('Nº de pessoas indicado'); }
+  }
+
+  // 8. Manual meta signals (amplify or discount)
+  if (meta.priority === 'alta')       { score += 15; reasons.push('Prioridade alta (manual)'); }
+  else if (meta.priority === 'media') { score += 5; }
+
+  if      (meta.status === 'ganho')                                                            { score += 30; reasons.push('Negócio ganho'); }
+  else if (meta.status === 'qualificado')                                                      { score += 20; reasons.push('Qualificado'); }
+  else if (meta.status === 'proposta_enviada')                                                 { score += 15; reasons.push('Proposta enviada'); }
+  else if (meta.status === 'contactado')                                                       { score += 5; }
+  else if (meta.status === 'em-analise')                                                       { score += 10; reasons.push('Em análise'); }
+  else if (meta.status === 'perdido' || meta.status === 'arquivado' || meta.status === 'fechado') { score -= 20; }
+
+  if (meta.note) { score += 5; reasons.push('Nota interna adicionada'); }
+
+  // Tier
+  let tier, tierLabel;
+  if (score >= 55)      { tier = 'alto';  tierLabel = 'Alto'; }
+  else if (score >= 25) { tier = 'medio'; tierLabel = 'Médio'; }
+  else                  { tier = 'baixo'; tierLabel = 'Baixo'; }
+
+  // Next action (based on status + tier)
+  let nextAction;
+  if      (meta.status === 'ganho')             { nextAction = 'Negócio ganho — onboarding / entrega'; }
+  else if (meta.status === 'perdido')           { nextAction = 'Perdido — arquivar ou tentar reativar'; }
+  else if (meta.status === 'arquivado')         { nextAction = 'Arquivado — sem ação necessária'; }
+  else if (meta.status === 'fechado')           { nextAction = 'Negócio fechado — arquivar se necessário'; }
+  else if (meta.status === 'qualificado')       { nextAction = 'Enviar proposta / Fechar negócio'; }
+  else if (meta.status === 'proposta_enviada')  { nextAction = 'Aguardar decisão — follow-up se necessário'; }
+  else if (meta.status === 'contactado')        { nextAction = 'Qualificar / Preparar proposta'; }
+  else if (meta.status === 'em-analise')        { nextAction = 'Preparar proposta'; }
+  else if (tier === 'alto') {
+    if (lead.type === 'planeamento') {
+      const hasAllData = lead.email && lead.email !== '—' && (r.budget || r.orcamento) && (r.data_inicio || r.datas);
+      nextAction = hasAllData ? 'Enviar proposta — dados completos, contactar agora' : 'Contactar com proposta personalizada';
+    } else { nextAction = 'Contactar com proposta'; }
+  }
+  else if (tier === 'medio') {
+    nextAction = lead.type === 'planeamento' ? 'Enviar email de qualificação — clarificar datas e budget' : 'Qualificar por email';
+  }
+  else                                    { nextAction = 'Pedir mais contexto ou arquivar'; }
+
+  return { score, tier, tierLabel, reasons, nextAction };
+}
+
+/* ── Commercial brief helpers ───────────────────────────────────── */
+function commercialBriefText(lead) {
+  const r = lead.raw;
+  const parts = [];
+  const interesse = Array.isArray(r.interesse) ? r.interesse.join(', ') : (r.interesse || '');
+  if (interesse) parts.push(interesse);
+  const regiao = r.regiao || lead.region;
+  if (regiao && regiao !== '—') parts.push(regiao);
+  if (r.pessoas) parts.push(r.pessoas + ' pess.');
+  const budget = r.orcamento || r.budget;
+  if (budget) parts.push(budget);
+  if (r.data_inicio && r.data_fim) parts.push(r.data_inicio + ' → ' + r.data_fim);
+  else if (r.data_inicio)          parts.push('de ' + r.data_inicio);
+  return parts.join(' · ');
+}
+function commercialBrief(lead) {
+  if (lead.type !== 'planeamento') return '';
+  const text = commercialBriefText(lead);
+  return text ? `<div class="rec-brief">${esc(text)}</div>` : '';
+}
+
+/* ── Contextual email template builder ─────────────────────────── */
+function buildEmailTemplate(lead) {
+  const r      = lead.raw;
+  const nome   = lead.name && lead.name !== '—' ? lead.name.split(' ')[0] : '';
+  const hi     = nome ? `Olá ${nome},` : 'Olá,';
+  const status = getMeta(lead.id).status || 'novo';
+  const sig    = ['Cumprimentos,', 'Portugal Travel Hub'].join('\n');
+
+  // Type-specific context snippets
+  let ctxRef = 'pedido/contacto';
+  if (lead.type === 'planeamento') {
+    const interesse = Array.isArray(r.interesse) ? r.interesse.join(', ') : (r.interesse || '');
+    const regiao    = r.regiao || lead.region;
+    const budget    = r.orcamento || r.budget;
+    const datas     = r.data_inicio && r.data_fim
+      ? `de ${r.data_inicio} a ${r.data_fim}`
+      : r.data_inicio ? `a partir de ${r.data_inicio}` : '';
+    const detalhe = [
+      interesse                 ? `Interesses: ${interesse}`    : '',
+      regiao && regiao !== '—'  ? `Região: ${regiao}`           : '',
+      r.pessoas                 ? `Grupo: ${r.pessoas} pessoas` : '',
+      budget                    ? `Orçamento: ${budget}`        : '',
+      datas                     ? `Datas: ${datas}`             : '',
+    ].filter(Boolean).join('\n');
+    ctxRef = detalhe ? `plano de viagem/escapada com o seguinte detalhe:\n${detalhe}` : 'plano de viagem/escapada';
+  } else if (lead.type === 'parceiro') {
+    ctxRef = 'proposta de parceria/colaboração';
+  } else {
+    ctxRef = 'pedido de contacto/informação';
+  }
+
+  // Stage-based subject + body
+  const subjectSuffix = ' | Portugal Travel Hub';
+  let subject, lines;
+
+  if (status === 'novo') {
+    subject = `Obrigado pelo seu contacto${subjectSuffix}`;
+    lines = [
+      hi, '',
+      `Recebi o teu ${ctxRef} — obrigado pela confiança!`, '',
+      'Gostaria de perceber melhor o que procuras para te dar a melhor resposta possível.',
+      'Podes partilhar mais detalhes ou preferências? Estou disponível para responder a qualquer dúvida.', '',
+      sig,
+    ];
+  } else if (status === 'contactado') {
+    subject = `Seguimento do seu pedido${subjectSuffix}`;
+    lines = [
+      hi, '',
+      `Queria fazer um breve seguimento ao teu ${ctxRef}.`, '',
+      'Ainda tens interesse em avançar? Continuo disponível para te ajudar no planeamento/solução.', '',
+      sig,
+    ];
+  } else if (status === 'proposta_enviada') {
+    subject = `Seguimento da proposta enviada${subjectSuffix}`;
+    lines = [
+      hi, '',
+      'Queria confirmar que recebeste a proposta que enviei anteriormente.', '',
+      'Tens alguma dúvida ou feedback? Estou à disposição para ajustar o que for necessário e definir o próximo passo.', '',
+      sig,
+    ];
+  } else if (status === 'qualificado') {
+    subject = `Próximos passos para o seu pedido${subjectSuffix}`;
+    lines = [
+      hi, '',
+      `Relativamente ao teu ${ctxRef}, gostaria de definir os próximos passos concretos.`, '',
+      'Quando tens disponibilidade para avançar? Posso preparar tudo rapidamente.', '',
+      sig,
+    ];
+  } else if (status === 'ganho') {
+    subject = `Confirmação e próximos passos${subjectSuffix}`;
+    lines = [
+      hi, '',
+      'Bem-vindo(a) ao Portugal Travel Hub! Estamos muito satisfeitos por ter contigo.', '',
+      'Em breve entro em contacto para confirmar todos os detalhes e próximos passos.', '',
+      sig,
+    ];
+  } else if (status === 'perdido') {
+    subject = `Continuamos disponíveis para ajudar${subjectSuffix}`;
+    lines = [
+      hi, '',
+      'Queria deixar uma nota rápida: continuamos disponíveis caso voltes a precisar de ajuda com a tua viagem ou pedido.', '',
+      'Sem qualquer compromisso — basta responder a este email.', '',
+      sig,
+    ];
+  } else {
+    // arquivado / fechado / fallback
+    subject = `Portugal Travel Hub — Em contacto${subjectSuffix}`;
+    lines = [
+      hi, '',
+      'Queria apenas deixar uma mensagem de contacto caso precisasses de algum apoio.', '',
+      sig,
+    ];
+  }
+
+  return { subject, body: lines.join('\n') };
+}
+
+function buildMailto(lead) {
+  if (!lead.email || lead.email === '—') return null;
+  const { subject, body } = buildEmailTemplate(lead);
+  return `mailto:${encodeURIComponent(lead.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+/* ── Action bar (top of lead detail) ───────────────────────────── */
+function pipelineBtns(lead) {
+  const st = getMeta(lead.id).status || 'novo';
+  const ALLOWED = {
+    novo:             ['contactado','proposta_enviada','qualificado','ganho','perdido','arquivado'],
+    contactado:       ['proposta_enviada','qualificado','ganho','perdido','arquivado'],
+    proposta_enviada: ['qualificado','ganho','perdido','arquivado'],
+    qualificado:      ['ganho','perdido','arquivado'],
+    'em-analise':     ['contactado','proposta_enviada','qualificado','ganho','perdido','arquivado'],
+    perdido:          ['arquivado'],
+  };
+  const allowed = ALLOWED[st] || [];
+  if (!allowed.length) return '';
+  const defs = [
+    ['contactado',       'Contactado',       'det-qa-btn',             '<polyline points="20 6 9 17 4 12"/>'],
+    ['proposta_enviada', 'Proposta enviada',  'det-qa-btn',             '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>'],
+    ['qualificado',      'Qualificado',       'det-qa-btn',             '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>'],
+    ['ganho',            'Ganho',             'det-qa-btn det-qa-btn--win',    '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>'],
+    ['perdido',          'Perdido',           'det-qa-btn det-qa-btn--danger', '<circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>'],
+    ['arquivado',        'Arquivar',          'det-qa-btn',             '<polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/>'],
+  ];
+  const btns = defs.filter(([s]) => allowed.includes(s))
+    .map(([s, label, cls, svg]) =>
+      `<button class="${cls}" data-qa="set-status" data-status="${s}" data-lead-id="${lead.id}">
+        <svg viewBox="0 0 24 24">${svg}</svg>${label}
+      </button>`).join('');
+  return `<div class="det-pipeline-actions"><span class="det-pipeline-label">Avançar:</span>${btns}</div>`;
+}
+
+function actionBar(lead, idx) {
+  const { tier } = scoreLead(lead);
+  const meta = getMeta(lead.id);
+  const st = meta.status || 'novo';
+  const urgLabel = getUrgencyLabel(lead);
+  const urgCls   = getUrgencyClass(lead);
+  const urgLevel = getUrgencyLevel(lead);
+  const detUrgClass = urgCls ? ` det-followup-urgency--${urgCls}` : '';
+  // Legacy urgency label for the top bar (action-oriented)
+  let urgency, urgencyClass;
+  if      (DONE_STATUSES.has(st))        { urgency = '—';                    urgencyClass = 'low'; }
+  else if (urgLevel === 3)               { urgency = 'Responder agora';      urgencyClass = 'high'; }
+  else if (urgLevel === 2)               { urgency = 'Atrasado';             urgencyClass = 'high'; }
+  else if (urgLevel === 1)               { urgency = 'Hoje';                 urgencyClass = 'mid'; }
+  else if (st === 'qualificado')         { urgency = 'Enviar proposta';      urgencyClass = 'mid'; }
+  else if (tier === 'alto')              { urgency = 'Esta semana';          urgencyClass = 'mid'; }
+  else                                   { urgency = 'Em curso';             urgencyClass = 'low'; }
+
+  const nextActionText = getNextActionLabel(lead);
+  const lastTouch      = getLastTouchAt(lead);
+  const brief          = lead.type === 'planeamento' ? commercialBriefText(lead) : '';
+  const hasEmail       = lead.email && lead.email !== '—';
+  const canContact     = !DONE_STATUSES.has(st);
+  const lastLabel      = meta.last_action === 'email_aberto' ? 'Email aberto' : meta.last_action === 'marcado_contactado' ? 'Marcado contactado' : meta.last_action || null;
+
+  return `<div class="det-action-bar">
+    <div class="det-action-bar-top">
+      <div class="det-action-next">
+        <span class="det-action-label">Próxima ação</span>
+        <span class="det-action-text">${esc(nextActionText)}</span>
+      </div>
+      <span class="det-urgency det-urgency--${urgencyClass}">${esc(urgency)}</span>
+    </div>
+    <div class="det-followup">
+      <div class="det-followup-row">
+        <span class="det-followup-key">Próxima ação</span>
+        <span class="det-followup-val">${esc(nextActionText)}</span>
+      </div>
+      <div class="det-followup-row">
+        <span class="det-followup-key">Último toque</span>
+        <span class="det-followup-val">${lastTouch ? fullDate(lastTouch) : '—'}</span>
+      </div>
+      ${urgLabel ? `<div class="det-followup-row">
+        <span class="det-followup-key">Situação</span>
+        <span class="det-followup-val${detUrgClass}">${esc(urgLabel)}</span>
+      </div>` : ''}
+    </div>
+    ${brief ? `<div class="det-brief">${esc(brief)}</div>` : ''}
+    <div class="det-quick-actions">
+      ${hasEmail ? `
+      <button class="det-qa-btn" data-qa="copy-email" data-email="${esc(lead.email)}">
+        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copiar email
+      </button>
+      <button class="det-qa-btn det-qa-btn--accent" data-qa="open-email" data-lead-id="${lead.id}">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>Abrir email
+      </button>` : ''}
+      <button class="det-qa-btn" data-qa="copy-summary" data-idx="${idx}" data-lead-id="${lead.id}">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Copiar resumo
+      </button>
+      ${isTestLead(lead) ? `
+      <button class="det-qa-btn" data-qa="archive-test" data-lead-id="${lead.id}" style="opacity:0.7">
+        <svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>Arquivar teste
+      </button>` : ''}
+    </div>
+    ${!isTestLead(lead) ? pipelineBtns(lead) : ''}
+    ${lastLabel || meta.contacted_at ? `
+    <div class="det-last-contact">
+      ${lastLabel ? `<span class="det-last-label">${esc(lastLabel)}</span>` : ''}
+      ${meta.contacted_at ? `<span class="det-last-date">${fullDate(meta.contacted_at)}</span>` : ''}
+    </div>` : ''}
+  </div>`;
+}
+
+/* ── Recommendation section ─────────────────────────────────────── */
+function recSection(lead) {
+  const { score, tier, tierLabel, reasons, nextAction } = scoreLead(lead);
+  return `
+    <div class="rec-block">
+      <div class="rec-title">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+        Recomendação
+      </div>
+      <div class="rec-meta">
+        ${tierBadge(tier, tierLabel + ' potencial')}
+        <span class="rec-score">Score: ${score} pts</span>
+      </div>
+      <div class="rec-action">→ ${esc(nextAction)}</div>
+      ${reasons.length ? `<ul class="rec-reasons">${reasons.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>` : ''}
+    </div>`;
+}
+
+/* ── Detail data fields ─────────────────────────────────────────── */
+function dataFields(lead) {
+  const r = lead.raw;
+  const pairs = [];
+  const SOURCE_LABELS = {
+    planear: 'Planeamento', beach: 'Ficha de praia', beaches: 'Lista de praias',
+    index: 'Página inicial', surf: 'Surf', pesca: 'Pesca', parceiros: 'Parceiros'
+  };
+  if (r.timestamp) pairs.push(['Data / hora', fullDate(r.timestamp)]);
+  const rawSrc = r.source_page || r.source || '';
+  if (rawSrc) pairs.push(['Origem', SOURCE_LABELS[rawSrc] || rawSrc]);
+  if (r.source_beach)  pairs.push(['Praia de origem',  r.source_beach]);
+  if (r.source_region) pairs.push(['Região de origem', r.source_region]);
+  if (r.page_url) {
+    let shortUrl = r.page_url;
+    try { const u = new URL(r.page_url); shortUrl = u.pathname + (u.search || ''); } catch {}
+    pairs.push(['URL', shortUrl]);
+  }
+
+  if (lead.type === 'planeamento') {
+    if (r.interesse) {
+      const v = Array.isArray(r.interesse) ? r.interesse.join(', ') : r.interesse;
+      if (v) pairs.push(['Interesses', v]);
+    }
+    if (r.data_inicio) pairs.push(['Data início', r.data_inicio]);
+    if (r.data_fim)    pairs.push(['Data fim',    r.data_fim]);
+    ['nome','email','regiao','pessoas','orcamento','notas',
+     'destino','tipo','subtipo','datas','budget','region','intent','parceiro','mensagem']
+      .forEach(k => { if (r[k]) pairs.push([k.charAt(0).toUpperCase()+k.slice(1).replace(/_/g,' '), r[k]]); });
+  } else if (lead.type === 'contacto') {
+    ['nome','email','assunto','mensagem']
+      .forEach(k => { if (r[k]) pairs.push([k.charAt(0).toUpperCase()+k.slice(1), r[k]]); });
+  } else if (lead.type === 'parceiro') {
+    ['negocio','tipo','contacto','email','objetivo','plano_interesse','localizacao','regiao','website','instagram','mensagem']
+      .forEach(k => { if (r[k]) pairs.push([k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()), r[k]]); });
+  }
+
+  if (!pairs.length) return '<p class="detail-val empty">Sem campos adicionais.</p>';
+  return pairs.map(([k,v]) =>
+    `<div class="detail-field">
+       <span class="detail-key">${esc(k)}</span>
+       <span class="detail-val">${esc(String(v))}</span>
+     </div>`
+  ).join('');
+}
+
+/* ── Management section HTML (status + priority + note) ─────────── */
+function mgmtSection(lead, idx) {
+  const meta = getMeta(lead.id);
+  const statusOpts = Object.entries(STATUS_LABELS).map(([v,l]) =>
+    `<option value="${v}"${meta.status===v?' selected':''}>${l}</option>`).join('');
+  const prioOpts = Object.entries(PRIORITY_LABELS).map(([v,l]) =>
+    `<option value="${v}"${meta.priority===v?' selected':''}>${l}</option>`).join('');
+
+  return `
+    <div class="det-mgmt">
+      <div class="det-mgmt-fields">
+        <div class="det-field-group">
+          <label class="det-field-label" for="det-status-${idx}">Status</label>
+          <select class="det-select" id="det-status-${idx}" data-lead-id="${lead.id}">
+            ${statusOpts}
+          </select>
+        </div>
+        <div class="det-field-group">
+          <label class="det-field-label" for="det-prio-${idx}">Prioridade</label>
+          <select class="det-select" id="det-prio-${idx}" data-lead-id="${lead.id}">
+            ${prioOpts}
+          </select>
+        </div>
+        <div class="det-field-group det-note-group">
+          <label class="det-field-label" for="det-note-${idx}">Nota interna</label>
+          <textarea class="det-note-input" id="det-note-${idx}"
+                    data-lead-id="${lead.id}"
+                    placeholder="Adicionar nota sobre este lead…"></textarea>
+        </div>
+      </div>
+      <div class="det-actions">
+        <button class="det-save-btn" data-idx="${idx}" data-lead-id="${lead.id}">Guardar</button>
+        <button class="det-copy-btn" data-idx="${idx}" data-lead-id="${lead.id}">
+          <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar resumo
+        </button>
+        ${lead.email && lead.email !== '—' ? `<a class="det-mailto-btn" href="mailto:${esc(lead.email)}" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Email rápido
+        </a>` : ''}
+      </div>
+    </div>
+    <div class="det-divider"></div>`;
+}
+
+/* ── State ─────────────────────────────────────────────────────── */
+let allLeads      = [];
+let activeFilter  = 'reais';
+let activeSortBy  = 'data';
+let searchQuery   = '';
+let filterStatus  = 'todos';
+let filterType    = 'todos';
+let filterPriority = 'todas';
+let _selectedLeadId = null;
+
+/* ── UI State persistence ───────────────────────────────────────── */
+const UI_STATE_KEY = 'pth_crm_ui_state';
+function saveUIState() {
+  try {
+    localStorage.setItem(UI_STATE_KEY, JSON.stringify({
+      activeFilter, searchQuery, filterStatus, filterType, filterPriority,
+      selectedLeadId: _selectedLeadId
+    }));
+  } catch(_) {}
+}
+function restoreUIState() {
+  try {
+    const raw = localStorage.getItem(UI_STATE_KEY);
+    if (!raw) return;
+    const s = JSON.parse(raw);
+    if (s.activeFilter)    activeFilter    = s.activeFilter;
+    if (s.searchQuery)     searchQuery     = s.searchQuery;
+    if (s.filterStatus)    filterStatus    = s.filterStatus;
+    if (s.filterType)      filterType      = s.filterType;
+    if (s.filterPriority)  filterPriority  = s.filterPriority;
+    if (s.selectedLeadId)  _selectedLeadId = s.selectedLeadId;
+    // Sync DOM inputs
+    const el = id => document.getElementById(id);
+    if (el('crm-search'))   el('crm-search').value   = searchQuery;
+    if (el('sf-status'))    el('sf-status').value    = filterStatus;
+    if (el('sf-type'))      el('sf-type').value      = filterType;
+    if (el('sf-priority'))  el('sf-priority').value  = filterPriority;
+    // Sync filter buttons
+    document.querySelectorAll('.crm-filter-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.filter === activeFilter));
+  } catch(_) {}
+}
+
+function visibleLeads() {
+  const f = activeFilter;
+  let leads;
+  if      (f === 'todos')           leads = [...allLeads];
+  else if (f === 'reais')           leads = allLeads.filter(l => !isTestLead(l));
+  else if (f === 'testes')          leads = allLeads.filter(l => isTestLead(l));
+  else if (f === 'com-contexto')    leads = allLeads.filter(l => l.source && l.source.trim());
+  else if (f === 'sem-contexto')    leads = allLeads.filter(l => !l.source || !l.source.trim());
+  else if (f === 'precisa-acao')    leads = allLeads.filter(l => !isTestLead(l));
+  else if (f === 'sem-tratar')      leads = allLeads.filter(l => { const m = getMeta(l.id); return m.status === 'novo' && !m.note; });
+  else if (f === 'priority-alta')   leads = allLeads.filter(l => getMeta(l.id).priority === 'alta');
+  else if (f === 'priority-media')  leads = allLeads.filter(l => getMeta(l.id).priority === 'media');
+  else if (f === 'priority-baixa')  leads = allLeads.filter(l => getMeta(l.id).priority === 'baixa');
+  else if (f === 'alto-potencial')  leads = allLeads.filter(l => scoreLead(l).tier === 'alto');
+  else if (f === 'medio-potencial') leads = allLeads.filter(l => scoreLead(l).tier === 'medio');
+  else if (f === 'baixo-potencial') leads = allLeads.filter(l => scoreLead(l).tier === 'baixo');
+  else if (STATUS_VALS.includes(f)) leads = allLeads.filter(l => getMeta(l.id).status === f);
+  else                              leads = allLeads.filter(l => l.type === f);
+
+  // Deduplicate (read-only derivation — same email+type = grouped, primary = most recent)
+  leads = deduplicateLeads(leads);
+
+  // Post-dedup filter for precisa-acao
+  if (f === 'precisa-acao') leads = leads.filter(l => getNeedsAction(l));
+
+  // Combinatorial sub-filters
+  if (filterStatus   !== 'todos')  leads = leads.filter(l => getMeta(l.id).status   === filterStatus);
+  if (filterType     !== 'todos')  leads = leads.filter(l => l.type                  === filterType);
+  if (filterPriority !== 'todas')  leads = leads.filter(l => getMeta(l.id).priority  === filterPriority);
+
+  // Search (local, case-insensitive)
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    leads = leads.filter(l => {
+      const m = getMeta(l.id);
+      return (l.name  || '').toLowerCase().includes(q)
+          || (l.email || '').toLowerCase().includes(q)
+          || (l.type  || '').toLowerCase().includes(q)
+          || (m.note  || '').toLowerCase().includes(q);
+    });
+  }
+
+  // Apply sort
+  if (f === 'precisa-acao') {
+    const po = { alta: 0, media: 1, baixa: 2 };
+    leads.sort((a, b) => {
+      const ula = getUrgencyLevel(a), ulb = getUrgencyLevel(b);
+      if (ulb !== ula) return ulb - ula;
+      const pa = po[getMeta(a.id).priority] ?? 1, pb = po[getMeta(b.id).priority] ?? 1;
+      if (pa !== pb) return pa - pb;
+      return new Date(getLastTouchAt(a) || 0) - new Date(getLastTouchAt(b) || 0);
+    });
+  } else if (activeSortBy === 'score') {
+    leads.sort((a, b) => scoreLead(b).score - scoreLead(a).score);
+  } else if (activeSortBy === 'prioridade') {
+    const po = { alta: 0, media: 1, baixa: 2 };
+    leads.sort((a, b) => (po[getMeta(a.id).priority] ?? 1) - (po[getMeta(b.id).priority] ?? 1));
+  } else {
+    // Default (data): urgency desc → priority asc → oldest touch first
+    const po = { alta: 0, media: 1, baixa: 2 };
+    leads.sort((a, b) => {
+      const ula = getUrgencyLevel(a), ulb = getUrgencyLevel(b);
+      if (ulb !== ula) return ulb - ula;
+      const pa = po[getMeta(a.id).priority] ?? 1, pb = po[getMeta(b.id).priority] ?? 1;
+      if (pa !== pb) return pa - pb;
+      return new Date(getLastTouchAt(a) || 0) - new Date(getLastTouchAt(b) || 0);
+    });
+  }
+
+  return leads;
+}
+
+/* ── Render ────────────────────────────────────────────────────── */
+function render() {
+  const leads = visibleLeads();
+  const list  = document.getElementById('leads-list');
+
+  document.getElementById('crm-count').textContent =
+    `${leads.length} lead${leads.length !== 1 ? 's' : ''}`;
+
+  if (!leads.length) {
+    const msgs = {
+      todos:           ['Sem leads ainda', 'Os leads do portal aparecem aqui depois de alguém preencher os formulários de planeamento, contacto ou parceiros.'],
+      'precisa-acao':  ['Sem leads por tratar', 'Todos os leads estão em dia — boa gestão comercial!'],
+      reais:           ['Sem leads reais ainda', 'Os leads reais aparecem aqui. Leads de teste são ocultados por defeito.'],
+      testes:          ['Sem leads de teste', 'Ótimo — sem ruído de testes no CRM.'],
+      planeamento:     ['Sem pedidos de planeamento', 'Preenche o formulário em planear.html para gerar o primeiro lead.'],
+      contacto:        ['Sem contactos recebidos', 'Os contactos de contact.html aparecem aqui.'],
+      parceiro:        ['Sem candidaturas de parceiros', 'As candidaturas de parceiros.html aparecem aqui.'],
+      'com-contexto':  ['Nenhum lead com contexto de origem', 'Leads captados com source_page na URL.'],
+      'sem-contexto':  ['Nenhum lead sem contexto', 'Todos os leads têm source_page — bom sinal!'],
+      'sem-tratar':    ['Nenhum lead por tratar', 'Todos os leads têm nota ou estado actualizado.'],
+      'em-analise':       ['Nenhum lead em análise', 'Actualiza o estado de um lead para "Em análise".'],
+      'contactado':       ['Nenhum lead contactado', 'Marca um lead como contactado no detalhe.'],
+      'proposta_enviada': ['Nenhuma proposta enviada', 'Avança um lead para "Proposta enviada" após contacto.'],
+      'qualificado':      ['Nenhum lead qualificado', 'Qualifica leads no painel de detalhe.'],
+      'ganho':            ['Nenhum negócio ganho', 'Marca leads como Ganho ao fechar negócio.'],
+      'perdido':          ['Nenhum lead perdido', ''],
+      'fechado':          ['Nenhum lead fechado', ''],
+      'arquivado':        ['Nenhum lead arquivado', ''],
+      'novo':          ['Nenhum lead com estado Novo', 'Todos os leads foram actualizados.'],
+      'priority-alta':   ['Nenhum lead de alta prioridade',   'Define prioridade como Alta no detalhe de cada lead.'],
+      'alto-potencial':  ['Nenhum lead de alto potencial',   'Score alto exige email, intenção definida, região ou prioridade manual alta.'],
+      'medio-potencial': ['Nenhum lead de médio potencial',  ''],
+      'baixo-potencial': ['Nenhum lead de baixo potencial',  'Todos os leads têm score médio ou alto — bom sinal!']
+    };
+    const [h, p] = msgs[activeFilter] || msgs.todos;
+    const hasSubFilters = searchQuery || filterStatus !== 'todos' || filterType !== 'todos' || filterPriority !== 'todas';
+    list.innerHTML = `
+      <div class="crm-empty" role="status">
+        <div class="crm-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h3>${hasSubFilters ? 'Nenhum lead encontrado com estes filtros.' : esc(h)}</h3>
+        ${hasSubFilters
+          ? `<button class="crm-clear-btn" onclick="clearSubFilters()" style="margin-top:8px">↺ Limpar filtros</button>`
+          : p ? `<p>${esc(p)}</p>` : ''}
+      </div>`;
+    return;
+  }
+
+  list.innerHTML = leads.map((lead, i) => {
+    const meta    = getMeta(lead.id);
+    const scoring = scoreLead(lead);
+    return `
+      <div class="lead-row" data-idx="${i}" role="button" tabindex="0"
+           aria-expanded="false"
+           aria-label="${esc(lead.name)}, ${lead.type}, ${STATUS_LABELS[meta.status]}, ${relTime(lead.timestamp)}">
+        <div>${typeBadge(lead.type)}</div>
+        <div class="lead-name"  title="${esc(lead.name)}">${esc(lead.name)}${isTestLead(lead) ? ' ' + testBadge() : ''}${lead._dupes && lead._dupes.length ? `<span class="dupe-badge">+${lead._dupes.length}</span>` : ''}${!isTestLead(lead) && getUrgencyClass(lead) ? `<span class="urgency-badge urgency-badge--${getUrgencyClass(lead)}">${getUrgencyLabel(lead)}</span>` : ''}</div>
+        <div class="lead-email" title="${esc(lead.email)}">${esc(lead.email)}</div>
+        <div>${statusBadge(meta.status)}</div>
+        <div><button class="prio-cycle" data-lead-id="${lead.id}" data-prio="${meta.priority||'media'}" title="Clique para alterar prioridade"><span class="prio-dot prio-${meta.priority||'media'}" aria-hidden="true"></span>${PRIORITY_LABELS[meta.priority]||'Média'}</button></div>
+        <div>${tierBadge(scoring.tier, scoring.tierLabel)}</div>
+        <div class="lead-time" title="${fullDate(lead.timestamp)}">${relTime(lead.timestamp)}</div>
+      </div>
+      <div class="lead-detail-row" id="det-${i}" aria-hidden="true">
+        ${actionBar(lead, i)}
+        ${temporalBlock(lead)}
+        ${miniTimeline(lead)}
+        ${recSection(lead)}
+        ${mgmtSection(lead, i)}
+        ${lead._dupes && lead._dupes.length ? dupesSection(lead._dupes) : ''}
+        <div class="lead-detail-inner">${dataFields(lead)}</div>
+        <div class="detail-close">
+          <button class="detail-close-btn" data-close="${i}" aria-label="Fechar detalhe">Fechar ↑</button>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Set textarea values after innerHTML (avoids entity issues with .value)
+  leads.forEach((lead, i) => {
+    const ta = document.getElementById(`det-note-${i}`);
+    if (ta) ta.value = getMeta(lead.id).note || '';
+  });
+}
+
+/* ── Inline priority cycle ──────────────────────────────────────── */
+const PRIO_ORDER = ['alta', 'media', 'baixa'];
+function handlePrioCycle(btn) {
+  const cur  = btn.dataset.prio || 'media';
+  const next = PRIO_ORDER[(PRIO_ORDER.indexOf(cur) + 1) % PRIO_ORDER.length];
+  const lid  = btn.dataset.leadId;
+  saveMeta(lid, { priority: next });
+  updateKPIs();
+  render();
+  toast(`Prioridade → ${PRIORITY_LABELS[next]}`, 'ok');
+}
+
+/* ── Toggle / close detail ──────────────────────────────────────── */
+function toggleDetail(row) {
+  const idx    = row.dataset.idx;
+  const det    = document.getElementById(`det-${idx}`);
+  const isOpen = det.classList.contains('open');
+
+  document.querySelectorAll('.lead-detail-row.open').forEach(d => {
+    d.classList.remove('open'); d.setAttribute('aria-hidden','true');
+  });
+  document.querySelectorAll('.lead-row.expanded').forEach(r => {
+    r.classList.remove('expanded'); r.setAttribute('aria-expanded','false');
+  });
+
+  if (!isOpen) {
+    det.classList.add('open'); det.setAttribute('aria-hidden','false');
+    row.classList.add('expanded'); row.setAttribute('aria-expanded','true');
+    const lead = visibleLeads()[parseInt(idx, 10)];
+    _selectedLeadId = lead ? lead.id : null;
+  } else {
+    _selectedLeadId = null;
+  }
+  saveUIState();
+}
+function closeDetail(idx) {
+  const det = document.getElementById(`det-${idx}`);
+  if (!det) return;
+  det.classList.remove('open'); det.setAttribute('aria-hidden','true');
+  const row = document.querySelector(`.lead-row[data-idx="${idx}"]`);
+  if (row) { row.classList.remove('expanded'); row.setAttribute('aria-expanded','false'); }
+}
+
+/* ── Save handler (in-place update, no full re-render) ───────────── */
+function handleSave(btn) {
+  const idx      = parseInt(btn.dataset.idx, 10);
+  const lid      = btn.dataset.leadId;
+  const status   = document.getElementById(`det-status-${idx}`)?.value;
+  const priority = document.getElementById(`det-prio-${idx}`)?.value;
+  const note     = (document.getElementById(`det-note-${idx}`)?.value || '').trim();
+
+  if (!status || !priority) return;
+  saveMeta(lid, { status, priority, note });
+
+  // Update badges in-place (keeps detail open, no scroll jump)
+  const row = document.querySelector(`.lead-row[data-idx="${idx}"]`);
+  if (row) {
+    row.children[3].innerHTML = statusBadge(status);
+    row.children[4].innerHTML = prioBadge(priority);
+    // Re-score: status/priority changes affect the tier badge
+    const scoredLead = allLeads.find(l => l.id === lid);
+    if (scoredLead) {
+      const sc = scoreLead(scoredLead);
+      row.children[5].innerHTML = tierBadge(sc.tier, sc.tierLabel);
+    }
+  }
+
+  // Refresh KPIs (metadata changed)
+  allLeads = normaliseLeads();
+  updateKPIs();
+  toast('Guardado.', 'ok');
+}
+
+/* ── Copy summary handler ───────────────────────────────────────── */
+function handleCopy(btn) {
+  const idx  = parseInt(btn.dataset.idx, 10);
+  const lead = visibleLeads()[idx];
+  if (!lead) return;
+  const meta = getMeta(lead.id);
+  const r = lead.raw;
+  const { score, tierLabel, nextAction } = scoreLead(lead);
+  const planLines = lead.type === 'planeamento' ? [
+    Array.isArray(r.interesse) ? `Interesses: ${r.interesse.join(', ')}` : (r.interesse ? `Interesses: ${r.interesse}` : null),
+    (r.orcamento || r.budget) ? `Budget: ${r.orcamento || r.budget}` : null,
+    r.pessoas ? `Pessoas: ${r.pessoas}` : null,
+    (r.data_inicio || r.data_fim) ? `Datas: ${r.data_inicio || ''} → ${r.data_fim || ''}` : null,
+    r.notas ? `Notas: ${r.notas}` : null,
+  ].filter(Boolean) : [];
+  const lines = [
+    `Tipo: ${lead.type}`,
+    `Nome: ${lead.name}`,
+    `Email: ${lead.email}`,
+    `Intenção: ${lead.intent}`,
+    `Região: ${lead.region}`,
+    `Source: ${lead.source || '—'}`,
+    `Status: ${STATUS_LABELS[meta.status] || meta.status}`,
+    `Prioridade: ${PRIORITY_LABELS[meta.priority] || meta.priority}`,
+    `Score: ${score} pts · Potencial: ${tierLabel}`,
+    `Próxima ação: ${nextAction}`,
+    meta.note ? `Nota: ${meta.note}` : null,
+    `Data: ${fullDate(lead.timestamp)}`,
+    ...planLines,
+  ].filter(Boolean).join('\n');
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(lines)
+      .then(() => toast('Resumo copiado.', 'ok'))
+      .catch(() => fallbackCopy(lines));
+  } else {
+    fallbackCopy(lines);
+  }
+}
+function fallbackCopy(text) {
+  const ta = Object.assign(document.createElement('textarea'), {
+    value: text, style: 'position:absolute;left:-9999px'
+  });
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand('copy');
+  document.body.removeChild(ta);
+  toast('Resumo copiado.', 'ok');
+}
+
+/* ── Event delegation on leads-list (set up once) ───────────────── */
+const leadsList = document.getElementById('leads-list');
+leadsList.addEventListener('click', e => {
+  const prioBtn  = e.target.closest('.prio-cycle');
+  const saveBtn  = e.target.closest('.det-save-btn');
+  const copyBtn  = e.target.closest('.det-copy-btn');
+  const closeBtn = e.target.closest('.detail-close-btn');
+  const qaBtn    = e.target.closest('[data-qa]');
+  const row      = e.target.closest('.lead-row');
+
+  if (prioBtn)  { e.stopPropagation(); handlePrioCycle(prioBtn); return; }
+  if (saveBtn)  { e.stopPropagation(); handleSave(saveBtn); return; }
+  if (copyBtn)  { e.stopPropagation(); handleCopy(copyBtn); return; }
+  if (closeBtn) { e.stopPropagation(); closeDetail(closeBtn.dataset.close); return; }
+  if (qaBtn) {
+    e.stopPropagation();
+    const qa = qaBtn.dataset.qa;
+    if (qa === 'copy-email') {
+      const email = qaBtn.dataset.email;
+      if (navigator.clipboard) navigator.clipboard.writeText(email).then(() => toast('Email copiado.', 'ok')).catch(() => { fallbackCopy(email); toast('Email copiado.', 'ok'); });
+      else { fallbackCopy(email); toast('Email copiado.', 'ok'); }
+    } else if (qa === 'copy-summary') {
+      handleCopy(qaBtn);
+    } else if (qa === 'open-email') {
+      const lead = allLeads.find(l => l.id === qaBtn.dataset.leadId);
+      if (lead) {
+        const url = buildMailto(lead);
+        if (!url) { toast('Lead sem email.', 'warn'); return; }
+        const a = Object.assign(document.createElement('a'), { href: url });
+        a.click();
+        // Only track action — does NOT change status or contacted_at automatically
+        saveMeta(lead.id, { last_action: 'email_aberto' });
+        toast('Email aberto.', 'ok');
+      }
+    } else if (qa === 'set-status') {
+      const targetStatus = qaBtn.dataset.status;
+      const leadId       = qaBtn.dataset.leadId;
+      const currentMeta  = getMeta(leadId);
+      const now          = new Date().toISOString();
+      const update       = { status: targetStatus, last_action: targetStatus };
+      if (targetStatus === 'contactado') {
+        update.contacted_at = now;
+      } else if (targetStatus === 'proposta_enviada' || targetStatus === 'qualificado') {
+        update.contacted_at = currentMeta.contacted_at || now;
+      }
+      saveMeta(leadId, update);
+      updateKPIs();
+      render();
+      const LABELS = {
+        contactado: 'Marcado como contactado.', proposta_enviada: 'Proposta enviada registada.',
+        qualificado: 'Lead qualificado.', ganho: 'Lead marcado como Ganho.',
+        perdido: 'Lead marcado como Perdido.', arquivado: 'Lead arquivado.',
+      };
+      toast(LABELS[targetStatus] || 'Estado actualizado.', 'ok');
+    } else if (qa === 'archive-test') {
+      saveMeta(qaBtn.dataset.leadId, { status: 'arquivado', last_action: 'arquivado_teste' });
+      updateKPIs();
+      render();
+      toast('Lead de teste arquivado.', 'ok');
+    }
+    return;
+  }
+  if (row) { toggleDetail(row); }
+});
+leadsList.addEventListener('keydown', e => {
+  const row = e.target.closest('.lead-row');
+  if (row && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggleDetail(row); }
+});
+
+/* ── Filter logic ───────────────────────────────────────────────── */
+function setFilter(f) {
+  activeFilter = f;
+  saveUIState();
+  document.querySelectorAll('.crm-filter-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.filter === f));
+  document.querySelectorAll('.kpi-card[data-filter]').forEach(c =>
+    c.classList.toggle('active-filter', c.dataset.filter === f));
+  render();
+}
+document.querySelectorAll('.crm-filter-btn').forEach(btn =>
+  btn.addEventListener('click', () => setFilter(btn.dataset.filter)));
+document.querySelectorAll('.sort-btn').forEach(btn =>
+  btn.addEventListener('click', () => {
+    activeSortBy = btn.dataset.sort;
+    document.querySelectorAll('.sort-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.sort === activeSortBy));
+    render();
+  })
+);
+document.querySelectorAll('.kpi-card[data-filter]').forEach(card => {
+  card.addEventListener('click', () => setFilter(card.dataset.filter));
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFilter(card.dataset.filter); }
+  });
+});
+
+/* ── Search + sub-filters ───────────────────────────────────────── */
+function clearSubFilters() {
+  searchQuery = ''; filterStatus = 'todos'; filterType = 'todos'; filterPriority = 'todas';
+  saveUIState();
+  const el = id => document.getElementById(id);
+  if (el('crm-search'))   el('crm-search').value   = '';
+  if (el('sf-status'))    el('sf-status').value    = 'todos';
+  if (el('sf-type'))      el('sf-type').value      = 'todos';
+  if (el('sf-priority'))  el('sf-priority').value  = 'todas';
+  render();
+}
+document.getElementById('crm-search').addEventListener('input', e => { searchQuery = e.target.value.trim(); saveUIState(); render(); });
+document.getElementById('sf-status').addEventListener('change',   e => { filterStatus   = e.target.value; saveUIState(); render(); });
+document.getElementById('sf-type').addEventListener('change',     e => { filterType     = e.target.value; saveUIState(); render(); });
+document.getElementById('sf-priority').addEventListener('change', e => { filterPriority = e.target.value; saveUIState(); render(); });
+document.getElementById('btn-clear-filters').addEventListener('click', clearSubFilters);
+
+/* ── KPIs (operational) ─────────────────────────────────────────── */
+function updateKPIs() {
+  const real     = deduplicateLeads(allLeads.filter(l => !isTestLead(l)));
+  const total    = real.length;
+  const altoPot  = real.filter(l => scoreLead(l).tier === 'alto').length;
+  const PIPELINE_STATES = new Set(['contactado', 'proposta_enviada', 'qualificado']);
+  const emPipeline = real.filter(l => PIPELINE_STATES.has(getMeta(l.id).status)).length;
+  const ganhos   = real.filter(l => getMeta(l.id).status === 'ganho').length;
+  const parceiros = real.filter(l => l.type === 'parceiro').length;
+
+  const precisaAcao = real.filter(l => getNeedsAction(l)).length;
+  const atrasado    = real.filter(l => getUrgencyLevel(l) === 2).length;
+
+  document.getElementById('kpi-total').textContent       = total;
+  document.getElementById('kpi-alto-pot').textContent    = altoPot;
+  document.getElementById('kpi-qualif').textContent      = emPipeline;
+  document.getElementById('kpi-alta').textContent        = ganhos;
+  document.getElementById('kpi-partner').textContent     = parceiros;
+  document.getElementById('kpi-precisa-acao').textContent = precisaAcao;
+  document.getElementById('kpi-atrasado').textContent    = atrasado;
+  document.getElementById('crm-total-badge').textContent = total;
+}
+
+/* ── Toast ──────────────────────────────────────────────────────── */
+function toast(msg, cls = '') {
+  const el = document.getElementById('crm-toast');
+  el.textContent = msg;
+  el.className   = `crm-toast${cls ? ' '+cls : ''}`;
+  requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('show')));
+  setTimeout(() => el.classList.remove('show'), 3500);
+}
+
+/* ── Export JSON (includes metadata) ───────────────────────────── */
+document.getElementById('btn-export').addEventListener('click', () => {
+  if (!allLeads.length) { toast('Sem leads para exportar.'); return; }
+  const payload = {
+    exported_at: new Date().toISOString(),
+    total: allLeads.length,
+    breakdown: {
+      planeamento: allLeads.filter(l=>l.type==='planeamento').length,
+      contacto:    allLeads.filter(l=>l.type==='contacto').length,
+      parceiro:    allLeads.filter(l=>l.type==='parceiro').length
+    },
+    leads: allLeads.map(l => {
+      const m  = getMeta(l.id);
+      const sc = scoreLead(l);
+      return { id:l.id, type:l.type, name:l.name, email:l.email,
+               intent:l.intent, region:l.region, source:l.source,
+               timestamp:l.timestamp, status:m.status, priority:m.priority,
+               note:m.note, lead_score:sc.score, lead_tier:sc.tier,
+               score_reasons:sc.reasons, next_action:sc.nextAction, ...l.raw };
+    })
+  };
+  const a = Object.assign(document.createElement('a'), {
+    href:     URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),
+    download: `crm-leads-${new Date().toISOString().slice(0,10)}.json`
+  });
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast(`${allLeads.length} leads exportados.`, 'ok');
+});
+
+/* ── Clear localStorage ─────────────────────────────────────────── */
+document.getElementById('btn-clear').addEventListener('click', () => {
+  if (!confirm('Apagar todos os leads e metadata do localStorage? Esta ação não pode ser desfeita.')) return;
+  ['pth_plan_requests','pth_contact_messages','pth_partner_leads','pth_lead_meta']
+    .forEach(k => localStorage.removeItem(k));
+  allLeads = [];
+  updateKPIs();
+  render();
+  toast('Dados limpos.');
+});
+
+/* ── Init ───────────────────────────────────────────────────────── */
+async function initCRM(user) {
+  const name     = user.user_metadata?.full_name || user.email.split('@')[0];
+  const initials = name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+  document.getElementById('sidebar-avatar').textContent = initials;
+  document.getElementById('sidebar-name').textContent   = name;
+  document.getElementById('sidebar-email').textContent  = user.email;
+
+  const role = user.user_metadata?.role || user.raw_user_meta_data?.role;
+  if (role === 'pro' || role === 'partner') {
+    const badge = document.getElementById('sidebar-pro-badge');
+    if (badge) badge.hidden = false;
+  }
+
+  // ── Fetch leads from Supabase (source of truth) ─────────────────
+  const [plansRes, contactsRes, partnersRes] = await Promise.allSettled([
+    db.from('plan_requests').select('*').order('timestamp', { ascending: false }),
+    db.from('contact_messages').select('*').order('timestamp', { ascending: false }),
+    db.from('partner_leads').select('*').order('timestamp', { ascending: false }),
+  ]);
+  // Extract data; fall back to localStorage if a table is missing or errored
+  function extract(res, lsKey) {
+    if (res.status === 'fulfilled' && res.value.data) {
+      try { localStorage.setItem(lsKey, JSON.stringify(res.value.data)); } catch {}
+      return res.value.data;
+    }
+    try { return JSON.parse(localStorage.getItem(lsKey) || '[]'); } catch { return []; }
+  }
+  const plans    = extract(plansRes,    'pth_plan_requests');
+  const contacts = extract(contactsRes, 'pth_contact_messages');
+  const partners = extract(partnersRes, 'pth_partner_leads');
+
+  // ── Hydrate metadata from Supabase ───────────────────────────────
+  try {
+    const { data } = await db.from('lead_meta').select('lead_id,status,priority,note,updated_at,last_action,contacted_at');
+    if (data && data.length) {
+      const store = loadMetaStore();
+      data.forEach(row => {
+        const local = store[row.lead_id];
+        // Supabase wins unless a local entry is strictly newer (offline edit)
+        if (!local || !local.updated_at || row.updated_at >= local.updated_at) {
+          store[row.lead_id] = { status: row.status, priority: row.priority, note: row.note,
+            updated_at: row.updated_at, last_action: row.last_action || null, contacted_at: row.contacted_at || null };
+        }
+      });
+      localStorage.setItem(META_KEY, JSON.stringify(store));
+    }
+  } catch (err) { console.warn('[lead_meta hydrate]', err?.message || err); }
+
+  allLeads = normaliseLeads(plans, contacts, partners);
+  restoreUIState();
+  updateKPIs();
+  render();
+
+  // Restore selected lead after render (graceful — skip if no longer visible)
+  if (_selectedLeadId) {
+    const visible = visibleLeads();
+    const idx = visible.findIndex(l => l.id === _selectedLeadId);
+    if (idx !== -1) {
+      const row = document.querySelector(`.lead-row[data-idx="${idx}"]`);
+      if (row) toggleDetail(row);
+    } else {
+      _selectedLeadId = null;
+      saveUIState();
+    }
+  }
+
+  const t = new Date().toLocaleTimeString('pt-PT',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('crm-updated').textContent = `Atualizado às ${t}`;
+}
+</script>
+</body>
+</html>
