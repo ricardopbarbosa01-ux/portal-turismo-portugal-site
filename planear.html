@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
-  <title>Plan Your Portugal Escape — Beach, Surf &amp; Fishing · Portugal Travel Hub</title>
-  <meta name="description" content="Tell us what you're looking for and we'll help plan it — beach, surf, fishing or a full escape. Personalised recommendations for the best of Portugal.">
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/planear.html">
+  <title>Planear a Sua Escapada em Portugal — Praia, Surf e Pesca · Portugal Travel Hub</title>
+  <meta name="description" content="Diga-nos o que procura e ajudamo-lo a planear — praia, surf, pesca ou uma escapada completa. Recomendações personalizadas para o melhor de Portugal.">
+  <link rel="canonical" href="https://portalturismoportugal.com/planear.html">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/planear.html">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/planear.html">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/planear.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://portal-turismo-portugal.pages.dev/planear.html">
-  <meta property="og:title" content="Plan Your Portugal Escape — Beach, Surf &amp; Fishing · Portugal Travel Hub">
-  <meta property="og:description" content="Tell us what you're looking for — beach, surf, fishing or a full escape — and we'll handle the rest.">
+  <meta property="og:url" content="https://portalturismoportugal.com/planear.html">
+  <meta property="og:title" content="Planear a Sua Escapada em Portugal — Praia, Surf e Pesca · Portugal Travel Hub">
+  <meta property="og:description" content="Diga-nos o que procura — praia, surf, pesca ou uma escapada completa — e tratamos do resto.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
-  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale" content="pt_PT">
   <meta property="og:site_name" content="Portugal Travel Hub">
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Plan Your Portugal Escape — Beach, Surf &amp; Fishing · Portugal Travel Hub">
-  <meta name="twitter:description" content="Tell us what you're looking for — beach, surf, fishing or a full escape — and we'll handle the rest.">
+  <meta name="twitter:title"       content="Planear a Sua Escapada em Portugal — Praia, Surf e Pesca · Portugal Travel Hub">
+  <meta name="twitter:description" content="Diga-nos o que procura — praia, surf, pesca ou uma escapada completa — e tratamos do resto.">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
-  <meta name="twitter:url"         content="https://portal-turismo-portugal.pages.dev/planear.html">
+  <meta name="twitter:url"         content="https://portalturismoportugal.com/planear.html">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -33,17 +40,17 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "Plan Your Portugal Escape — Beach, Surf &amp; Fishing",
-        "description": "Personalised recommendations to plan the perfect seaside escape in Portugal.",
-        "url": "https://portal-turismo-portugal.pages.dev/planear.html",
-        "inLanguage": "en",
-        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portal-turismo-portugal.pages.dev/" }
+        "name": "Planear Escapada em Portugal — Praia, Surf e Pesca",
+        "description": "Recomendações personalizadas para planear a escapada perfeita ao litoral de Portugal.",
+        "url": "https://portalturismoportugal.com/planear.html",
+        "inLanguage": "pt",
+        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portalturismoportugal.com/" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://portal-turismo-portugal.pages.dev/" },
-          { "@type": "ListItem", "position": 2, "name": "Plan Your Escape", "item": "https://portal-turismo-portugal.pages.dev/planear.html" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://portalturismoportugal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Plan Your Escape", "item": "https://portalturismoportugal.com/planear.html" }
         ]
       }
     ]
@@ -53,10 +60,11 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css?v=20260402">
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
 
   <style>
     /* ── Nav local overrides ── */
@@ -795,71 +803,82 @@
       .sld-track.sld-shake { animation: none !important; }
       .sld-spinner { animation: none !important; }
     }
+    /* ── Success actions — mobile stack ── */
+    @media (max-width: 480px) {
+      .success-actions { flex-direction: column; align-items: stretch; }
+      .success-btn-primary, .success-btn-outline { justify-content: center; }
+    }
   </style>
+
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to content</a>
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
 
 <!-- ══ NAVBAR ══════════════════════════════════════════════════════════ -->
-<nav class="navbar" role="navigation" aria-label="Main navigation" id="navbar">
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+
   <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
-    <span>Portugal Travel Hub</span>
+    Portugal Travel Hub
   </a>
 
-  <div class="nav-backdrop" id="nav-backdrop"></div>
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Close menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="3" x2="21" y2="21"/><line x1="21" y1="3" x2="3" y2="21"/></svg>
-    </button>
-    <a href="beaches.html" role="listitem">Beaches</a>
+    <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
-    <a href="pesca.html" role="listitem">Fishing</a>
+    <a href="pesca.html" role="listitem">Pesca</a>
     <a href="webcams.html" role="listitem">Webcams</a>
-    <a href="planear.html" role="listitem" class="active" aria-current="page">Plan</a>
-    <a href="precos.html" role="listitem">Pricing</a>
-    <a href="parceiros.html" role="listitem">Partners</a>
+    <a href="planear.html" role="listitem">Planear</a>
+    <a href="precos.html" role="listitem">Preços</a>
+    <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
 
   <div class="nav-actions">
-    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
-    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
+    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <!-- ══ MAIN ════════════════════════════════════════════════════════════ -->
 <main id="main">
 
 <!-- ── Hero ── -->
-<section class="page-hero" aria-label="Plan your escape">
+<section class="page-hero" aria-label="Planear a sua escapada">
   <div class="hero-eyebrow-pill" aria-hidden="true">
     <span class="hero-eyebrow-dot"></span>
-    <span>Personalised recommendations</span>
+    <span>Recomendações personalizadas</span>
   </div>
-  <h1>Your next escape,<br><em>planned in detail.</em></h1>
-  <p>Tell us what you're looking for — beaches, surf, fishing, itineraries or experiences — and receive personalised suggestions based on real data from the entire Portuguese coastline.</p>
+  <h1>Diga-nos o que procura.<br><em>Entregamos o plano.</em></h1>
+  <p>Praias, surf, pesca, itinerários ou experiências costeiras — diga-nos as suas datas e preferências e receba um plano personalizado baseado em dados reais. Sem listas genéricas.</p>
   <div class="hero-chips" aria-hidden="true">
     <span class="hero-chip">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-      200+ beaches
+      500+ praias
     </span>
     <span class="hero-chip">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16l4-4 4 4 4-8 4 8"/></svg>
-      Live conditions
+      Condições ao vivo
     </span>
     <span class="hero-chip">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      North to South
+      Norte a Sul
     </span>
     <span class="hero-chip">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/></svg>
-      Reply within 48h
+      Recomendação imediata
     </span>
   </div>
 </section>
@@ -867,18 +886,18 @@
 <!-- ── O que pode planear ── -->
 <section class="what-section" aria-label="What you can plan with us">
   <div class="what-inner">
-    <span class="section-eyebrow">What you can plan</span>
-    <h2 class="section-title-centered reveal">Everything the Portuguese coast has to offer.</h2>
+    <span class="section-eyebrow">O que pode planear</span>
+    <h2 class="section-title-centered reveal">Tudo o que a costa portuguesa tem para oferecer.</h2>
     <div class="what-grid">
 
       <div class="what-card">
         <div class="what-card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
-        <p class="what-card-title">Beaches</p>
-        <p class="what-card-desc">200+ beaches catalogued by profile, conditions and accessibility.</p>
+        <p class="what-card-title">Praias</p>
+        <p class="what-card-desc">200+ praias catalogadas por perfil, condições e acessibilidade.</p>
         <a href="beaches.html" class="what-card-link">
-          Browse beaches
+          Ver praias
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -887,10 +906,10 @@
         <div class="what-card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         </div>
-        <p class="what-card-title">Full Itineraries</p>
-        <p class="what-card-desc">Day-by-day itineraries combining beaches, meals and activities.</p>
+        <p class="what-card-title">Itinerários Completos</p>
+        <p class="what-card-desc">Itinerários dia a dia que combinam praias, refeições e atividades.</p>
         <a href="#pedido" class="what-card-link">
-          Request an itinerary
+          Pedir roteiro
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -900,9 +919,9 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16l4-4 4 4 4-8 4 8"/></svg>
         </div>
         <p class="what-card-title">Surf</p>
-        <p class="what-card-desc">Best spots by level, ideal conditions and season by region.</p>
+        <p class="what-card-desc">Melhores spots por nível, condições ideais e época por região.</p>
         <a href="surf.html" class="what-card-link">
-          Explore surf
+          Explorar surf
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -911,10 +930,10 @@
         <div class="what-card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 12a6 6 0 0 1-6 6M3 7c1.5 2 4 3 7 3s5.5-1 7-3"/><path d="M12 18c-4 4-9 2-9 2s2-5 5-6"/></svg>
         </div>
-        <p class="what-card-title">Fishing</p>
-        <p class="what-card-desc">Species, technique, location and ideal season by fishing type.</p>
+        <p class="what-card-title">Pesca</p>
+        <p class="what-card-desc">Espécies, técnica, localização e época ideal por tipo de pesca.</p>
         <a href="pesca.html" class="what-card-link">
-          Explore fishing
+          Explorar pesca
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -923,10 +942,10 @@
         <div class="what-card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <p class="what-card-title">Accommodation</p>
-        <p class="what-card-desc">Hotels and stays by the sea, filtered by area and budget.</p>
+        <p class="what-card-title">Alojamento</p>
+        <p class="what-card-desc">Hotéis e estadias à beira-mar, filtrados por zona e orçamento.</p>
         <a href="#pedido" class="what-card-link">
-          Get a suggestion
+          Obter sugestão
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -935,10 +954,10 @@
         <div class="what-card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         </div>
-        <p class="what-card-title">Restaurants</p>
-        <p class="what-card-desc">Sea-view tables and local dishes — by region, specialty and style.</p>
+        <p class="what-card-title">Restaurantes</p>
+        <p class="what-card-desc">Mesas com vista mar e pratos regionais — por região, especialidade e estilo.</p>
         <a href="#pedido" class="what-card-link">
-          Get a suggestion
+          Obter sugestão
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -947,10 +966,10 @@
         <div class="what-card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
-        <p class="what-card-title">Experiences</p>
-        <p class="what-card-desc">Diving, kayaking, windsurfing, boat trips and much more.</p>
+        <p class="what-card-title">Experiências</p>
+        <p class="what-card-desc">Mergulho, kayak, windsurf, passeios de barco e muito mais.</p>
         <a href="#pedido" class="what-card-link">
-          Request an experience
+          Pedir experiência
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -959,10 +978,10 @@
         <div class="what-card-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="3"/><path d="M8 20h8M12 18v2"/></svg>
         </div>
-        <p class="what-card-title">Live Webcams</p>
-        <p class="what-card-desc">Check real-time conditions before you leave home.</p>
+        <p class="what-card-title">Webcams ao Vivo</p>
+        <p class="what-card-desc">Veja as condições em tempo real antes de sair de casa.</p>
         <a href="webcams.html" class="what-card-link">
-          Watch webcams
+          Ver webcams
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
       </div>
@@ -971,14 +990,14 @@
     <div class="what-cta-row">
       <a href="#pedido" class="what-cta">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Build My Plan
+        Criar o Meu Plano
       </a>
     </div>
   </div>
 </section>
 
 <!-- ── Form + Sidebar ── -->
-<section class="plan-layout reveal" id="pedido" aria-label="Planning form">
+<section class="plan-layout reveal" id="pedido" aria-label="Formulário de planeamento">
 
   <!-- FORM -->
   <div>
@@ -986,9 +1005,9 @@
 
       <!-- Header -->
       <div class="form-card-header">
-        <p class="form-card-header-eyebrow" id="form-card-eyebrow">Personalised suggestion request</p>
-        <h2 id="form-card-title">Tell us about your ideal trip</h2>
-        <p id="form-card-subtitle">Fill in the fields below — takes under 2 minutes. Your profile is saved so you can receive personalised suggestions by email.</p>
+        <p class="form-card-header-eyebrow" id="form-card-eyebrow">Gratuito · Personalizado · Imediato</p>
+        <h2 id="form-card-title">Como é a sua viagem ideal?</h2>
+        <p id="form-card-subtitle">Leva menos de 2 minutos. Recebe uma recomendação personalizada com praias reais, condições verificadas e sugestões ajustadas ao seu perfil.</p>
       </div>
 
       <!-- Form -->
@@ -1001,21 +1020,21 @@
           <!-- Name + Email -->
           <div class="form-row">
             <div class="field">
-              <label for="f-nome">Name <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="f-nome" name="nome" placeholder="Your name" autocomplete="given-name" required>
-              <span class="field-error" id="err-nome">Please enter your name.</span>
+              <label for="f-nome">Nome <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="f-nome" name="nome" placeholder="O seu nome" autocomplete="given-name" required>
+              <span class="field-error" id="err-nome">Por favor introduza o seu nome.</span>
             </div>
             <div class="field">
               <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
-              <input type="email" id="f-email" name="email" placeholder="email@example.com" autocomplete="email" required>
-              <span class="field-error" id="err-email">Please enter a valid email.</span>
+              <input type="email" id="f-email" name="email" placeholder="email@exemplo.com" autocomplete="email" required>
+              <span class="field-error" id="err-email">Por favor introduza um e-mail válido.</span>
             </div>
           </div>
 
           <!-- Interest type -->
           <div class="form-row full" style="margin-bottom:20px;">
             <div class="field">
-              <label id="lbl-interesse">What do you want to do? <span class="req" aria-hidden="true">*</span></label>
+              <label id="lbl-interesse">O que quer fazer? <span class="req" aria-hidden="true">*</span></label>
               <div class="interest-grid" id="interest-grid" role="group" aria-labelledby="lbl-interesse">
 
                 <label class="interest-item" data-val="praia">
@@ -1023,7 +1042,7 @@
                   <span class="interest-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M3 18c0-4.5 5-9 9.5-9S21 13.5 21 18H3z"/></svg>
                   </span>
-                  <span class="interest-label">Beach</span>
+                  <span class="interest-label">Praia</span>
                 </label>
 
                 <label class="interest-item" data-val="surf">
@@ -1039,7 +1058,7 @@
                   <span class="interest-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 12a6 6 0 0 1-6 6M3 7c1.5 2 4 3 7 3s5.5-1 7-3"/><path d="M12 18c-4 4-9 2-9 2s2-5 5-6"/></svg>
                   </span>
-                  <span class="interest-label">Fishing</span>
+                  <span class="interest-label">Pesca</span>
                 </label>
 
                 <label class="interest-item" data-val="webcams">
@@ -1047,7 +1066,7 @@
                   <span class="interest-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="3"/><path d="M8 20h8M12 18v2"/></svg>
                   </span>
-                  <span class="interest-label">Live webcams</span>
+                  <span class="interest-label">Webcams ao Vivo</span>
                 </label>
 
                 <label class="interest-item" data-val="roteiro">
@@ -1055,7 +1074,7 @@
                   <span class="interest-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                   </span>
-                  <span class="interest-label">Full itinerary</span>
+                  <span class="interest-label">Roteiro Completo</span>
                 </label>
 
                 <label class="interest-item" data-val="outro">
@@ -1063,39 +1082,40 @@
                   <span class="interest-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
                   </span>
-                  <span class="interest-label">Other activity</span>
+                  <span class="interest-label">Outra Atividade</span>
                 </label>
 
               </div>
-              <span class="field-error" id="err-interesse" style="margin-top:4px;">Please select at least one option.</span>
+              <span class="field-error" id="err-interesse" style="margin-top:4px;">Selecione pelo menos uma opção.</span>
             </div>
           </div>
 
           <!-- Region + No. of people -->
           <div class="form-row">
             <div class="field">
-              <label for="f-regiao">Preferred region</label>
+              <label for="f-regiao">Região preferida</label>
               <select id="f-regiao" name="regiao">
-                <option value="">Any region</option>
+                <option value="">Qualquer região</option>
                 <option value="algarve">Algarve</option>
-                <option value="alentejo">Alentejo Coast</option>
+                <option value="alentejo">Costa Alentejana</option>
                 <option value="setubal">Setúbal / Arrábida</option>
                 <option value="cascais">Cascais / Estoril</option>
-                <option value="costa-prata">Silver Coast</option>
-                <option value="minho">Minho / Galicia</option>
-                <option value="acores">Azores</option>
+                <option value="costa-prata">Costa de Prata</option>
+                <option value="oeste">Oeste — Peniche e Ericeira</option>
+                <option value="minho">Minho / Galiza</option>
+                <option value="acores">Açores</option>
                 <option value="madeira">Madeira</option>
               </select>
             </div>
             <div class="field">
-              <label for="f-pessoas">Number of people</label>
+              <label for="f-pessoas">Número de pessoas</label>
               <select id="f-pessoas" name="pessoas">
-                <option value="">Select</option>
-                <option value="1">Just me (1)</option>
-                <option value="2">2 people</option>
-                <option value="3-4">3 to 4 people</option>
-                <option value="5-8">5 to 8 people</option>
-                <option value="8+">Group (8+)</option>
+                <option value="">Selecionar</option>
+                <option value="1">Só eu (1)</option>
+                <option value="2">2 pessoas</option>
+                <option value="3-4">3 a 4 pessoas</option>
+                <option value="5-8">5 a 8 pessoas</option>
+                <option value="8+">Grupo (8+)</option>
               </select>
             </div>
           </div>
@@ -1103,11 +1123,11 @@
           <!-- Dates -->
           <div class="form-row">
             <div class="field">
-              <label for="f-data-inicio">Start date (approx.)</label>
+              <label for="f-data-inicio">Data de início (aprox.)</label>
               <input type="date" id="f-data-inicio" name="data_inicio" autocomplete="off">
             </div>
             <div class="field">
-              <label for="f-data-fim">End date (approx.)</label>
+              <label for="f-data-fim">Data de fim (aprox.)</label>
               <input type="date" id="f-data-fim" name="data_fim" autocomplete="off">
             </div>
           </div>
@@ -1115,31 +1135,31 @@
           <!-- Budget -->
           <div class="form-row full" style="margin-bottom:20px;">
             <div class="field">
-              <label id="lbl-orcamento">Approximate budget (per person)</label>
+              <label id="lbl-orcamento">Orçamento aproximado (por pessoa)</label>
               <div class="budget-grid" id="budget-grid" role="radiogroup" aria-labelledby="lbl-orcamento">
 
                 <label class="budget-item" data-val="economico">
                   <input type="radio" name="orcamento" value="economico">
                   <span class="budget-dot"></span>
-                  <span class="budget-label">Budget<br><span class="budget-sub">up to €300</span></span>
+                  <span class="budget-label">Económico<br><span class="budget-sub">até €300</span></span>
                 </label>
 
                 <label class="budget-item" data-val="moderado">
                   <input type="radio" name="orcamento" value="moderado">
                   <span class="budget-dot"></span>
-                  <span class="budget-label">Moderate<br><span class="budget-sub">€300 – €800</span></span>
+                  <span class="budget-label">Moderado<br><span class="budget-sub">€300 – €800</span></span>
                 </label>
 
                 <label class="budget-item" data-val="premium">
                   <input type="radio" name="orcamento" value="premium">
                   <span class="budget-dot"></span>
-                  <span class="budget-label">Premium<br><span class="budget-sub">€800 – €2,000</span></span>
+                  <span class="budget-label">Premium<br><span class="budget-sub">€800 – €2.000</span></span>
                 </label>
 
                 <label class="budget-item" data-val="luxo">
                   <input type="radio" name="orcamento" value="luxo">
                   <span class="budget-dot"></span>
-                  <span class="budget-label">No limit<br><span class="budget-sub">above €2,000</span></span>
+                  <span class="budget-label">Sem limite<br><span class="budget-sub">acima de €2.000</span></span>
                 </label>
 
               </div>
@@ -1149,8 +1169,8 @@
           <!-- Notes -->
           <div class="form-row full">
             <div class="field">
-              <label for="f-notas">Preferences or additional notes</label>
-              <textarea id="f-notas" name="notas" placeholder="E.g. I prefer quieter beaches, I have young children, I enjoy surf fishing, I want to mix beach and culture…" rows="4"></textarea>
+              <label for="f-notas">Preferências ou notas adicionais</label>
+              <textarea id="f-notas" name="notas" placeholder="Ex: prefiro praias mais calmas, viajo com crianças, gosto de pesca de surf, quero combinar praia e cultura…" rows="4"></textarea>
             </div>
           </div>
 
@@ -1158,24 +1178,24 @@
           <div class="form-submit-area">
             <div class="coming-soon-notice" aria-live="polite">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span><strong>No spam, no automatic subscriptions.</strong> Your request is saved securely — used exclusively to send personalised suggestions.</span>
+              <span><strong>Sem spam, sem subscrições automáticas.</strong> O seu pedido é cruzado com dados reais de 500+ praias para gerar uma recomendação personalizada.</span>
             </div>
             <!-- Slide-to-confirm -->
             <div class="sld-wrap" id="sld-wrap">
               <div class="sld-track" id="sld-track" role="button" tabindex="0"
-                   aria-label="Drag to confirm your request. Press Enter or Space to confirm by keyboard.">
+                   aria-label="Deslize para confirmar o pedido. Prima Enter ou Espaço para confirmar pelo teclado.">
                 <div class="sld-fill" id="sld-fill"></div>
                 <div class="sld-thumb" id="sld-thumb" aria-hidden="true">
                   <!-- arrow (default) -->
                   <svg class="sld-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                   <!-- spinner (loading) -->
-                  <div class="sld-spinner" role="status" aria-label="Processing"></div>
+                  <div class="sld-spinner" role="status" aria-label="A processar"></div>
                   <!-- check (success) -->
                   <svg class="sld-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
                 <span class="sld-label" id="sld-label" aria-live="polite">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-                  Drag to confirm
+                  Deslize para confirmar
                   <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
                 </span>
               </div>
@@ -1183,8 +1203,7 @@
             <!-- Visually hidden submit button preserved for form semantics / Enter-key in inputs -->
             <button type="submit" id="submit-btn" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" tabindex="-1" aria-hidden="true"></button>
             <p class="form-disclaimer">
-              By submitting, you accept our <a href="privacidade.html">Privacy Policy</a>.
-              No data is sent to external servers at this stage.
+              Ao submeter, aceita a nossa <a href="privacidade.html">Política de Privacidade</a>.
             </p>
           </div>
 
@@ -1197,16 +1216,18 @@
           </div>
           <div class="success-badge">
             <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Plan generated
+            Plano gerado
           </div>
-          <h3 id="rec-title">Your recommended escape</h3>
+          <h3 id="rec-title">A sua escapada recomendada</h3>
           <div id="rec-card" style="background:var(--off-white);border-radius:12px;padding:16px 20px;width:100%;text-align:left;border-left:3px solid var(--gold);margin:4px 0 8px;">
-            <p id="rec-destination" style="font-weight:700;color:var(--blue);font-size:1rem;margin:0 0 6px;font-family:'Inter',sans-serif;"></p>
-            <p id="rec-desc" style="font-size:0.875rem;color:var(--text-mid);margin:0 0 8px;line-height:1.55;"></p>
-            <p id="rec-budget-note" style="font-size:0.75rem;color:var(--text-light);margin:0;line-height:1.4;"></p>
+            <p style="font-size:0.68rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin:0 0 6px;font-family:'Inter',sans-serif;">Destino recomendado</p>
+            <p id="rec-destination" style="font-weight:700;color:var(--blue);font-size:1.05rem;margin:0 0 8px;font-family:'Inter',sans-serif;"></p>
+            <p id="rec-desc" style="font-size:0.875rem;color:var(--text-mid);margin:0 0 0;line-height:1.6;"></p>
+            <p id="rec-budget-note" style="font-size:0.75rem;color:var(--text-light);margin:0;line-height:1.4;border-top:1px solid rgba(10,61,107,0.07);padding-top:8px;margin-top:8px;"></p>
           </div>
-          <p style="font-size:0.8rem;color:var(--text-light);">Next steps:</p>
+          <p style="font-size:0.78rem;font-weight:600;color:var(--text-mid);letter-spacing:0.02em;text-transform:uppercase;">Recomendamos a seguir:</p>
           <div class="success-actions" id="success-actions"></div>
+          <p id="rec-status" style="font-size:0.75rem;color:var(--text-light);margin-top:8px;min-height:1.2em;" aria-live="polite"></p>
         </div>
 
       </div><!-- /form-body -->
@@ -1218,28 +1239,28 @@
 
     <!-- How it works -->
     <div class="sidebar-card reveal">
-      <p class="sidebar-card-eyebrow">Process</p>
-      <h3>How it works</h3>
+      <p class="sidebar-card-eyebrow">Processo</p>
+      <h3>Como funciona</h3>
       <div class="steps">
         <div class="step">
           <span class="step-num" aria-hidden="true">1</span>
           <div class="step-body">
-            <p class="step-title">Share your profile</p>
-            <p class="step-desc">Activities, region, dates, group size and budget — under 2 minutes.</p>
+            <p class="step-title">Partilhe o seu perfil</p>
+            <p class="step-desc">Atividades, região, datas, grupo e orçamento — menos de 2 minutos.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num" aria-hidden="true">2</span>
           <div class="step-body">
-            <p class="step-title">We match it with real data</p>
-            <p class="step-desc">Your request is analysed against beach, surf, fishing and webcam conditions by region.</p>
+            <p class="step-title">Cruzamos com dados reais</p>
+            <p class="step-desc">O seu pedido é analisado com condições de praias, surf, pesca e webcams por região.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-num" aria-hidden="true">3</span>
           <div class="step-body">
-            <p class="step-title">You receive suggestions by email</p>
-            <p class="step-desc">Destinations, ideal conditions, itinerary and experiences — all personalised for you.</p>
+            <p class="step-title">Recebe uma recomendação personalizada</p>
+            <p class="step-desc">Destinos, condições ideais, itinerário e experiências — tudo ajustado ao seu perfil.</p>
           </div>
         </div>
       </div>
@@ -1247,16 +1268,16 @@
 
     <!-- What you can request -->
     <div class="sidebar-card reveal">
-      <p class="sidebar-card-eyebrow">What you can request</p>
-      <h3>We cover everything</h3>
+      <p class="sidebar-card-eyebrow">O que pode pedir</p>
+      <h3>Cobrimos tudo</h3>
       <div class="ask-list">
         <div class="ask-item">
           <div class="ask-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div class="ask-text">
-            <p class="ask-title">Best beach for your profile</p>
-            <p class="ask-sub">Family, couple, group, accessible, secluded, lively…</p>
+            <p class="ask-title">A melhor praia para o seu perfil</p>
+            <p class="ask-sub">Família, casal, grupo, acessível, isolada, animada…</p>
           </div>
         </div>
         <div class="ask-item">
@@ -1264,8 +1285,8 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16l4-4 4 4 4-8 4 8"/></svg>
           </div>
           <div class="ask-text">
-            <p class="ask-title">Surf conditions for your dates</p>
-            <p class="ask-sub">Wave size, wind, tides — by region and period.</p>
+            <p class="ask-title">Condições de surf para as suas datas</p>
+            <p class="ask-sub">Ondulação, vento, marés — por região e período.</p>
           </div>
         </div>
         <div class="ask-item">
@@ -1273,8 +1294,8 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 12a6 6 0 0 1-6 6M3 7c1.5 2 4 3 7 3s5.5-1 7-3"/></svg>
           </div>
           <div class="ask-text">
-            <p class="ask-title">Best fishing spots</p>
-            <p class="ask-sub">Species, technique, season and ideal location.</p>
+            <p class="ask-title">Melhores spots de pesca</p>
+            <p class="ask-sub">Espécies, técnica, época e localização ideal.</p>
           </div>
         </div>
         <div class="ask-item">
@@ -1282,8 +1303,8 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
           <div class="ask-text">
-            <p class="ask-title">Full itinerary</p>
-            <p class="ask-sub">Days, beaches, meals and activities in one proposal.</p>
+            <p class="ask-title">Roteiro completo</p>
+            <p class="ask-sub">Dias, praias, refeições e atividades numa só proposta.</p>
           </div>
         </div>
       </div>
@@ -1291,28 +1312,28 @@
 
     <!-- Trust -->
     <div class="sidebar-card reveal">
-      <p class="sidebar-card-eyebrow">Why us</p>
-      <h3>Real data, not opinions</h3>
+      <p class="sidebar-card-eyebrow">Porque nós</p>
+      <h3>Dados reais, não opiniões</h3>
       <div class="trust-list">
         <div class="trust-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>200+ beaches catalogued with real-time data</span>
+          <span>200+ praias catalogadas com dados em tempo real</span>
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Live webcams across all coastal regions</span>
+          <span>Webcams ao vivo em todas as regiões costeiras</span>
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>10-day surf and fishing forecast (Pro plan)</span>
+          <span>Previsão de surf e pesca de 10 dias (plano Pro)</span>
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Portuguese team with local knowledge</span>
+          <span>Equipa portuguesa com conhecimento local</span>
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>No commissions, no hidden paid partners</span>
+          <span>Sem comissões, sem parceiros pagos ocultos</span>
         </div>
       </div>
     </div>
@@ -1323,52 +1344,74 @@
 <!-- ── Why us section ── -->
 <section class="why-section" aria-label="Platform advantages">
   <div class="why-inner">
-    <span class="section-eyebrow">Why us</span>
-    <h2 class="section-title-centered reveal">Real data. Tailored suggestions. No commissions.</h2>
+    <span class="section-eyebrow">Porque nós</span>
+    <h2 class="section-title-centered reveal">Dados reais. Sugestões personalizadas. Sem comissões.</h2>
     <div class="why-grid">
 
       <div class="why-card reveal">
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <h3 class="why-title">Suggestions tailored to your profile</h3>
-        <p class="why-desc">Not a generic list. We match your preferences, dates, group size and budget against real conditions — to recommend what actually works for you.</p>
+        <h3 class="why-title">Sugestões ajustadas ao seu perfil</h3>
+        <p class="why-desc">Não é uma lista genérica. Cruzamos as suas preferências, datas, grupo e orçamento com condições reais — para recomendar o que realmente funciona para si.</p>
       </div>
 
       <div class="why-card reveal" style="transition-delay:0.1s">
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <h3 class="why-title">Verified conditions, not opinions</h3>
-        <p class="why-desc">Waves, tides, wind and fishing — live data from 200+ beaches. You know exactly what to expect before leaving home.</p>
+        <h3 class="why-title">Condições verificadas, não opiniões</h3>
+        <p class="why-desc">Ondas, marés, vento e pesca — dados em tempo real de 200+ praias. Sabe exatamente o que esperar antes de sair de casa.</p>
       </div>
 
       <div class="why-card reveal" style="transition-delay:0.2s">
         <div class="why-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
-        <h3 class="why-title">Independent. No paid partners.</h3>
-        <p class="why-desc">Our suggestions are not sponsored. We recommend what makes sense for your profile — not whoever paid most to appear.</p>
+        <h3 class="why-title">Independentes. Sem parceiros pagos.</h3>
+        <p class="why-desc">As nossas sugestões não são patrocinadas. Recomendamos o que faz sentido para o seu perfil — não quem pagou mais para aparecer.</p>
       </div>
 
     </div>
   </div>
 </section>
 
+<!-- ── Planning Guides ── -->
+<section style="padding:3rem 1.5rem;max-width:900px;margin:0 auto;">
+  <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-size:1.5rem;color:var(--blue);margin-bottom:1rem;">Guias de Planeamento</h2>
+  <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
+    <a href="onde-ficar-algarve-praia.html" style="flex:1;min-width:260px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:1.25rem 1.5rem;text-decoration:none;transition:var(--transition);">
+      <p style="font-family:'Bodoni Moda',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--blue);margin:0 0 .4rem;">Onde Ficar no Algarve</p>
+      <p style="font-size:.875rem;color:var(--text-mid);margin:0 0 .75rem;line-height:1.5;">Lagos, Tavira, Sagres ou Albufeira — guia por zona para escolher a melhor base de acordo com o teu perfil de viagem.</p>
+      <span style="font-size:.8rem;font-weight:600;color:var(--gold);letter-spacing:.02em;">Ler guia →</span>
+    </a>
+    <a href="praias-algarve.html" style="flex:1;min-width:260px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:1.25rem 1.5rem;text-decoration:none;transition:var(--transition);">
+      <p style="font-family:'Bodoni Moda',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--blue);margin:0 0 .4rem;">Melhores Praias do Algarve</p>
+      <p style="font-size:.875rem;color:var(--text-mid);margin:0 0 .75rem;line-height:1.5;">Guia editorial completo por zona — costa vicentina, sotavento, barlavento — com contexto real para cada praia.</p>
+      <span style="font-size:.8rem;font-weight:600;color:var(--gold);letter-spacing:.02em;">Ver praias →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── Trust strip ── -->
+<section style="background:var(--white);padding:2rem 5vw;border-top:1px solid rgba(10,61,107,0.07);text-align:center;">
+  <p style="font-size:.875rem;color:var(--text-mid);max-width:560px;margin:0 auto;line-height:1.65;">Já sabes as praias que queres. Já sabes a zona que faz sentido. <strong style="color:var(--blue);font-weight:600;">Diz-nos as datas e o perfil do grupo — tratamos do resto.</strong> Sem jargão de agência, sem lista genérica.</p>
+</section>
+
 <!-- ── Bottom CTA ── -->
 <section class="bottom-cta" aria-label="Next steps">
-  <h2>The Portugal that deserves<br><em style="font-style:italic;">your next escape.</em></h2>
-  <p>Request your personalised suggestion or start exploring the best beaches, conditions and experiences on the Portuguese coast.</p>
+  <h2>Pare de pesquisar. Comece a planear.<br><em style="font-style:italic;">Tratamos do trabalho por si.</em></h2>
+  <p>Diga-nos as suas datas, interesses e grupo — cruzamos com as praias, condições e experiências certas na costa portuguesa.</p>
   <div class="cta-actions">
     <a href="#pedido" class="cta-gold">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Build My Plan
+      Criar o Meu Plano
     </a>
     <a href="beaches.html" class="cta-ghost">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
-      Explore Beaches
+      Explorar Praias
     </a>
-    <a href="precos.html" class="cta-ghost">View Plans</a>
+    <a href="precos.html" class="cta-ghost">Ver Planos</a>
   </div>
 </section>
 
@@ -1384,51 +1427,51 @@
         </div>
         <span>Portugal Travel Hub</span>
       </div>
-      <p class="footer-tagline">Your premium portal for Portugal's beaches — real-time conditions, webcams and forecasts.</p>
+      <p class="footer-tagline">O seu portal premium para as praias de Portugal — condições em tempo real, webcams e previsões.</p>
     </div>
-    <nav class="footer-col" aria-label="Destinations">
-      <h5>Destinations</h5>
+    <nav class="footer-col" aria-label="Destinos">
+      <h5>Destinos</h5>
       <ul>
-        <li><a href="beaches.html">Beaches</a></li>
+        <li><a href="beaches.html">Praias</a></li>
         <li><a href="surf.html">Surf</a></li>
-        <li><a href="pesca.html">Fishing</a></li>
+        <li><a href="pesca.html">Pesca</a></li>
         <li><a href="webcams.html">Webcams</a></li>
       </ul>
     </nav>
-    <nav class="footer-col" aria-label="Company">
-      <h5>Company</h5>
+    <nav class="footer-col" aria-label="Empresa">
+      <h5>Empresa</h5>
       <ul>
-        <li><a href="sobre.html">About Us</a></li>
-        <li><a href="precos.html">Pricing</a></li>
-        <li><a href="parceiros.html">Partners</a></li>
-        <li><a href="planear.html" aria-current="page">Plan</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="precos.html">Preços</a></li>
+        <li><a href="parceiros.html">Parceiros</a></li>
+        <li><a href="planear.html" aria-current="page">Planear</a></li>
+        <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
     <nav class="footer-col" aria-label="Legal">
       <h5>Legal</h5>
       <ul>
-        <li><a href="privacidade.html">Privacy</a></li>
-        <li><a href="termos.html">Terms</a></li>
+        <li><a href="privacy.html">Privacidade</a></li>
+        <li><a href="terms.html">Termos</a></li>
         <li><a href="cookies.html">Cookies</a></li>
       </ul>
     </nav>
   </div>
   <div class="footer-bottom">
-    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. All rights reserved.</span>
-    <span><a href="sobre.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacidade.html">Privacy</a> · <a href="termos.html">Terms</a> · <a href="cookies.html">Cookies</a></span>
+    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span><a href="sobre.html">Sobre</a> · <a href="contact.html">Contacto</a> · <a href="privacy.html">Privacidade</a> · <a href="terms.html">Termos</a> · <a href="cookies.html">Cookies</a></span>
   </div>
 </footer>
 
 <!-- ══ BOTTOM NAV (mobile) ════════════════════════════════════════════ -->
-<nav class="bottom-nav" aria-label="Quick navigation">
-  <a href="/" class="bottom-nav-item" aria-label="Home">
+<nav class="bottom-nav" aria-label="Navegação rápida">
+  <a href="/" class="bottom-nav-item" aria-label="Início">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    <span>Home</span>
+    <span>Início</span>
   </a>
-  <a href="beaches.html" class="bottom-nav-item" aria-label="Beaches">
+  <a href="beaches.html" class="bottom-nav-item" aria-label="Praias">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
-    <span>Beaches</span>
+    <span>Praias</span>
   </a>
   <a href="surf.html" class="bottom-nav-item" aria-label="Surf">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16l4-4 4 4 4-8 4 8"/></svg>
@@ -1438,14 +1481,15 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     <span>Plan</span>
   </a>
-  <a href="precos.html" class="bottom-nav-item" aria-label="Pricing">
+  <a href="precos.html" class="bottom-nav-item" aria-label="Preços">
     <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-    <span>Pricing</span>
+    <span>Preços</span>
   </a>
 </nav>
 
 <!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
 // ── Footer year ──
@@ -1550,41 +1594,7 @@ function validateForm() {
   return valid;
 }
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  if (!validateForm()) return;
-
-  // Gather data
-  const interests = [...document.querySelectorAll('.interest-item input:checked')].map(cb => cb.value);
-  const budget    = document.querySelector('.budget-item.selected input')?.value || '';
-  const data = {
-    nome:        document.getElementById('f-nome').value.trim(),
-    email:       document.getElementById('f-email').value.trim(),
-    interesse:   interests,
-    regiao:      document.getElementById('f-regiao').value,
-    pessoas:     document.getElementById('f-pessoas').value,
-    data_inicio: document.getElementById('f-data-inicio').value,
-    data_fim:    document.getElementById('f-data-fim').value,
-    orcamento:   budget,
-    notas:       document.getElementById('f-notas').value.trim(),
-    timestamp:   new Date().toISOString(),
-    ...(window._pthSourceCtx || {})
-  };
-
-  try {
-    const existing = JSON.parse(localStorage.getItem('pth_plan_requests') || '[]');
-    existing.push(data);
-    localStorage.setItem('pth_plan_requests', JSON.stringify(existing));
-    db.from('plan_requests').insert([data]).catch(() => {});
-  } catch(_) {}
-
-  track('planner_submit', { page: 'planear', interest: interests.join(','), region: data.regiao, budget: data.orcamento });
-  // Show success
-  form.style.display = 'none';
-  buildRecommendation(data);
-  formSuccess.classList.add('visible');
-  formSuccess.focus();
-});
+// Form submission handled by js/planear.js
 
 // ── Slide-to-confirm button ──────────────────────────────────────
 (function() {
@@ -1641,7 +1651,7 @@ form.addEventListener('submit', function(e) {
 
     // Lock and enter loading
     sldTrack.classList.add('sld-loading');
-    sldLabel.textContent = 'Processing...';
+    sldLabel.textContent = 'A processar...';
     sldThumb.style.transition = 'transform 0.22s ease-out';
     sldFill.style.transition  = 'width 0.22s ease-out';
     sldThumb.style.transform  = 'translateX(' + maxOff() + 'px)';
@@ -1669,13 +1679,17 @@ form.addEventListener('submit', function(e) {
         var existing = JSON.parse(localStorage.getItem('pth_plan_requests') || '[]');
         existing.push(payload);
         localStorage.setItem('pth_plan_requests', JSON.stringify(existing));
-        db.from('plan_requests').insert([payload]).catch(function() {});
-      } catch(_) {}
+      } catch (lsErr) {
+        console.warn('[PTH] plan_requests localStorage failed (slider):', lsErr);
+      }
+
+      // Supabase — deferred status update after panel shows
+      var _sliderInsert = db.from('plan_requests').insert([payload]);
 
       // Switch to success state on track
       sldTrack.classList.remove('sld-loading');
       sldTrack.classList.add('sld-success');
-      sldLabel.textContent = 'Request confirmed!';
+      sldLabel.textContent = 'Pedido confirmado!';
 
       // Hand off to success panel
       setTimeout(function() {
@@ -1683,6 +1697,22 @@ form.addEventListener('submit', function(e) {
         buildRecommendation(payload);
         formSuccess.classList.add('visible');
         formSuccess.focus();
+
+        // Update status badge once Supabase resolves (deferred from above)
+        var recStatus = document.getElementById('rec-status');
+        _sliderInsert
+          .then(function(resp) {
+            if (!resp.error) {
+              if (recStatus) recStatus.innerHTML = '✓ Pedido recebido pela equipa.';
+            } else {
+              console.warn('[PTH] plan_requests insert error (slider):', resp.error);
+              if (recStatus) recStatus.innerHTML = 'Guardado localmente. Se não recebermos contacto em 48h, <a href="contact.html">escreva-nos</a>.';
+            }
+          })
+          .catch(function(err) {
+            console.warn('[PTH] plan_requests network error (slider):', err);
+            if (recStatus) recStatus.innerHTML = 'Guardado localmente. Se não recebermos contacto em 48h, <a href="contact.html">escreva-nos</a>.';
+          });
       }, 700);
     }, 1300);
   }
@@ -1855,7 +1885,7 @@ form.addEventListener('submit', function(e) {
       beaches: `<a href="beaches.html" class="success-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>Explore Beaches</a>`,
       surf:    `<a href="surf.html" class="success-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/><circle cx="12" cy="12" r="3"/></svg>View Surf Conditions</a>`,
       pesca:   `<a href="pesca.html" class="success-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="4" y1="20" x2="20" y2="4"/><path d="M20 4h-6m6 0v6"/><path d="M8 20c0-4 4-8 8-8"/></svg>View Fishing Spots</a>`,
-      webcams: `<a href="webcams.html" class="success-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="15" height="10" rx="2"/><polygon points="17 9 22 5 22 19 17 15"/></svg>Live Webcams</a>`,
+      webcams: `<a href="webcams.html" class="success-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="15" height="10" rx="2"/><polygon points="17 9 22 5 22 19 17 15"/></svg>Webcams ao Vivo</a>`,
       partner: `<a href="precos.html" class="success-btn-primary">View Partner Plans</a>`,
       gyg:     `<a href="https://gyg.me/JnPTPRhk" class="success-btn-outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Browse Experiences</a>`,
       booking: `<a href="https://www.booking.com/searchresults.pt-pt.html?ss=Portugal" class="success-btn-outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Find Accommodation</a>`,
@@ -1953,18 +1983,38 @@ function buildRecommendation(data) {
     premium:   'Boutique hotels à beira-mar, experiências guiadas e restaurantes de referência.',
     luxo:      'Resorts de charme, SPA, serviço personalizado e chef à la carte.'
   };
-  var budgetNote = budgetMap[budget] || '';
+  var budgetNote = budgetMap[budget] ? 'Alojamento: ' + budgetMap[budget] : '';
   if (pessoas === '5-8' || pessoas === '8+') {
     budgetNote += budgetNote ? ' · Reserva antecipada recomendada para grupos.' : 'Reserva antecipada recomendada para grupos.';
   }
 
   var firstName = nome ? nome.split(' ')[0] : '';
-  var title = firstName ? 'A escapada ideal para ' + firstName : 'A tua escapada recomendada';
+  var title = firstName ? 'A escapada ideal para ' + firstName : 'A sua escapada recomendada';
 
   var gygBtn = hasSurf
     ? '<a href="https://gyg.me/eYnBuLEu" class="success-btn-outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Aulas de Surf</a>'
     : '<a href="https://gyg.me/JnPTPRhk" class="success-btn-outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Ver Experiências</a>';
-  var bookingBtn = '<a href="https://www.booking.com/searchresults.pt-pt.html?ss=Portugal" class="success-btn-outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Encontrar Alojamento</a>';
+
+  var bookingDest = { algarve:'Algarve', alentejo:'Alentejo', setubal:'Setúbal', cascais:'Cascais', 'costa-prata':'Nazaré', minho:'Minho', acores:'Azores', madeira:'Madeira' }[regiao] || 'Portugal';
+  var lisboaReg = ['setubal','cascais'];
+  var STRONG_MATCH = null;
+  if      (hasSurf  && regiao === 'algarve')                                     STRONG_MATCH = {zone:'zone-sagres',     name:'Sagres',            booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Sagres+Portugal'};
+  else if (hasPesca && regiao === 'algarve')                                     STRONG_MATCH = {zone:'zone-portimao',   name:'Portimão',          booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Portimao+Portugal'};
+  else if (hasSurf  && lisboaReg.indexOf(regiao) !== -1)                         STRONG_MATCH = {zone:'zone-caparica',   name:'Costa da Caparica', booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Costa+da+Caparica+Portugal'};
+  else if (hasPesca && lisboaReg.indexOf(regiao) !== -1)                         STRONG_MATCH = {zone:'zone-sesimbra',   name:'Sesimbra',          booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Sesimbra+Portugal'};
+  else if (hasSurf  && regiao === 'alentejo')                                    STRONG_MATCH = {zone:'zone-zambujeira', name:'Zambujeira do Mar', booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Zambujeira+do+Mar+Portugal'};
+  else if ((budget === 'premium' || budget === 'luxo') && regiao === 'alentejo') STRONG_MATCH = {zone:'zone-comporta',   name:'Comporta',          booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Comporta+Portugal'};
+  else if (hasSurf  && regiao === 'costa-prata')                                 STRONG_MATCH = {zone:'zone-peniche',    name:'Peniche',           booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Peniche+Portugal'};
+  else if (hasSurf  && regiao === 'oeste')                                       STRONG_MATCH = {zone:'zone-peniche',    name:'Peniche',           booking:'https://www.booking.com/searchresults.pt-pt.html?ss=Peniche+Portugal'};
+  if (hasSurf) bookingDest = regiao === 'algarve' ? 'Sagres' : regiao === 'alentejo' ? 'Zambujeira do Mar' : 'Ericeira';
+  if (hasPesca) bookingDest = regiao === 'algarve' ? 'Olhão' : 'Setúbal';
+  var bookingBtn = '<a href="https://www.booking.com/searchresults.pt-pt.html?ss=' + encodeURIComponent(bookingDest) + '" class="success-btn-outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Encontrar Alojamento</a>';
+  var STAY_MAP_PT = { algarve:['onde-ficar-algarve-praia.html','Ver onde ficar no Algarve'], alentejo:['onde-ficar-costa-alentejo-praia.html','Ver onde ficar na Costa do Alentejo'], setubal:['onde-ficar-lisboa-setubal-praia.html','Ver onde ficar em Lisboa e Setúbal'], cascais:['onde-ficar-lisboa-setubal-praia.html','Ver onde ficar em Lisboa e Setúbal'], 'costa-prata':['onde-ficar-centro-portugal-praia.html','Ver onde ficar no Centro'], minho:['onde-ficar-norte-portugal-praia.html','Ver onde ficar no Norte'], madeira:['onde-ficar-madeira-perto-da-praia.html','Ver onde ficar na Madeira'], oeste:['onde-ficar-oeste-praia.html','Ver onde ficar no Oeste'] };
+  var stayEntry = STAY_MAP_PT[regiao];
+  var stayParams = 'source=planner&region=' + encodeURIComponent(regiao||'') + (budget ? '&budget=' + encodeURIComponent(budget) : '') + (hasSurf ? '&profile=surf' : hasPesca ? '&profile=pesca' : '');
+  var stayAnchor = STRONG_MATCH ? '#' + STRONG_MATCH.zone : '';
+  var stayBtn = stayEntry ? '<a href="' + stayEntry[0] + '?' + stayParams + stayAnchor + '" class="success-btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' + stayEntry[1] + '</a>' : '';
+  var zoneBookingBtn = STRONG_MATCH ? '<a href="' + STRONG_MATCH.booking + '" class="success-btn-outline" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Ver alojamento em ' + STRONG_MATCH.name + '</a>' : '';
 
   var titleEl   = document.getElementById('rec-title');
   var destEl    = document.getElementById('rec-destination');
@@ -1977,7 +2027,10 @@ function buildRecommendation(data) {
   if (descEl)    descEl.textContent   = descBase;
   if (budgetEl)  budgetEl.textContent = budgetNote;
   if (actionsEl) {
-    actionsEl.innerHTML = primaryBtn + gygBtn + bookingBtn;
+    var ctaHtml = STRONG_MATCH
+      ? primaryBtn + zoneBookingBtn + stayBtn + gygBtn
+      : primaryBtn + bookingBtn + stayBtn + gygBtn;
+    actionsEl.innerHTML = ctaHtml;
     actionsEl.addEventListener('click', function(e) {
       var a = e.target.closest('a');
       if (a) track('planner_recommendation_cta_click', { page: 'planear', destination: dest, interest: interests.join(','), region: regiao });
@@ -1994,5 +2047,15 @@ const io = new IntersectionObserver(
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
+
+  <script src="js/lang-switcher.js" defer></script>
+  <script src="/js/planear.js"></script>
 </body>
 </html>

@@ -8,3 +8,11 @@ test-results/
 smoke-results.json
 smoke-test.png
 *.pdf
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.claude/
+.mcp.json

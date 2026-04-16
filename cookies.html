@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Cookies · Portugal Travel Hub</title>
   <meta name="description" content="Política de cookies da Portugal Travel Hub — que cookies utilizamos, para que servem e como os pode gerir.">
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/cookies.html">
+  <link rel="canonical" href="https://portalturismoportugal.com/cookies.html">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://portal-turismo-portugal.pages.dev/cookies.html">
+  <meta property="og:url" content="https://portalturismoportugal.com/cookies.html">
   <meta property="og:title" content="Política de Cookies · Portugal Travel Hub">
   <meta property="og:description" content="Que cookies utilizamos, para que servem e como os pode gerir na Portugal Travel Hub.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
@@ -27,8 +27,8 @@
     "@type": "WebPage",
     "name": "Política de Cookies — Portugal Travel Hub",
     "description": "Que cookies utilizamos, para que servem e como os pode gerir na Portugal Travel Hub.",
-    "url": "https://portal-turismo-portugal.pages.dev/cookies.html",
-    "isPartOf": { "@type": "WebSite", "url": "https://portal-turismo-portugal.pages.dev/" }
+    "url": "https://portalturismoportugal.com/cookies.html",
+    "isPartOf": { "@type": "WebSite", "url": "https://portalturismoportugal.com/" }
   }
   </script>
 
@@ -135,24 +135,23 @@
     .footer-bottom a { color: rgba(255,255,255,0.55); transition: color var(--transition); text-decoration: none; }
     .footer-bottom a:hover { color: var(--gold); }
   </style>
-  <link rel="stylesheet" href="css/style.css?v=20260402">
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
+
 </head>
 <body>
 
 <a href="#main" class="skip-link">Saltar para o conteúdo</a>
 
 <nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
-  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
     Portugal Travel Hub
   </a>
-  <div class="nav-backdrop" id="nav-backdrop"></div>
+
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
     <a href="pesca.html" role="listitem">Pesca</a>
@@ -161,13 +160,22 @@
     <a href="precos.html" role="listitem">Preços</a>
     <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
+
   <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
     <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <nav class="breadcrumb" aria-label="Localização na página">
@@ -274,6 +282,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   const navbar = document.getElementById('navbar');

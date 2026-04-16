@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escola de Surf Atlântico — Exemplo de Perfil Premium · Portugal Travel Hub</title>
+  <meta name="description" content="Veja como o seu negócio ficaria num perfil premium no Portugal Travel Hub — o portal de referência das praias de Portugal.">
+  <link rel="canonical" href="https://portalturismoportugal.com/partner-demo.html">
+  <meta name="robots" content="noindex, follow">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://portalturismoportugal.com/partner-demo.html">
+  <meta property="og:title"       content="Exemplo de Perfil Premium · Portugal Travel Hub">
+  <meta property="og:description" content="Veja como o seu negócio ficaria no portal de referência das praias de Portugal.">
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale"      content="pt_PT">
+  <meta property="og:site_name"   content="Portugal Travel Hub">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="js/nav.js?v=20260415"></script>
+<script src="js/config.js?v=20260402"></script>
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
+
+  <style>
+    /* ── Nav local ── */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);cursor:pointer;min-height:44px;}
+    .btn-outline{border:1.5px solid var(--glass-border);color:var(--white);backdrop-filter:blur(12px);background:var(--glass);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-weight:600;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.40);}
+    @media(max-width:640px){.nav-actions .btn-outline{display:none;}}
+
+    /* ── Demo notice ── */
+    .demo-notice{background:linear-gradient(90deg,rgba(201,168,76,0.14) 0%,rgba(201,168,76,0.06) 100%);border-bottom:1px solid rgba(201,168,76,0.28);padding:11px 5vw;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:200;}
+    .demo-notice-text{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:rgba(255,255,255,0.80);}
+    .demo-notice-badge{background:var(--gold);color:var(--blue);font-size:0.60rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:3px 9px;border-radius:50px;flex-shrink:0;}
+    .demo-notice-cta{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--gold-light);text-decoration:none;white-space:nowrap;transition:color 0.2s;}
+    .demo-notice-cta:hover{color:var(--white);}
+    .demo-notice-cta svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;}
+
+    /* ── Profile hero ── */
+    .profile-hero{position:relative;height:440px;overflow:hidden;background:var(--blue);}
+    @media(max-width:640px){.profile-hero{height:300px;}}
+    .profile-hero-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.55);}
+    .profile-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,14,29,0.88) 0%,rgba(5,14,29,0.18) 55%,transparent 100%);}
+    .profile-hero-content{position:absolute;bottom:0;left:0;right:0;padding:32px 5vw 44px;max-width:1160px;margin:0 auto;}
+    .profile-verified{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.16);border:1px solid rgba(201,168,76,0.38);border-radius:50px;padding:5px 12px 5px 9px;margin-bottom:16px;}
+    .profile-verified svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2.5;}
+    .profile-verified span{font-size:0.67rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);}
+    .profile-name{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(2rem,4vw,3.1rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:12px;}
+    .profile-tagline{font-size:0.92rem;color:rgba(255,255,255,0.68);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .profile-sep{color:rgba(255,255,255,0.28);}
+    .profile-loc{display:flex;align-items:center;gap:5px;color:rgba(255,255,255,0.55);font-size:0.85rem;margin-top:8px;}
+    .profile-loc svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0;}
+
+    /* ── Profile body layout ── */
+    .profile-body{background:var(--white);}
+    .profile-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 310px;gap:56px;padding:56px 5vw;}
+    @media(max-width:860px){.profile-inner{grid-template-columns:1fr;gap:36px;padding:36px 5vw;}}
+
+    /* ── Left col ── */
+    .profile-section{margin-bottom:44px;}
+    .profile-section:last-child{margin-bottom:0;}
+    .profile-section-title{font-family:'Bodoni Moda',Georgia,serif;font-size:1.25rem;font-weight:600;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+    .profile-desc{font-size:0.95rem;line-height:1.80;color:var(--text-mid);}
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px;}
+    @media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
+    .svc-card{background:var(--off-white);border-radius:12px;padding:20px;border:1px solid var(--border);}
+    .svc-name{font-weight:600;font-size:0.875rem;color:var(--text);margin-bottom:6px;}
+    .svc-desc{font-size:0.80rem;color:var(--text-mid);line-height:1.60;}
+    .svc-price{display:inline-block;margin-top:10px;font-size:0.75rem;font-weight:600;color:var(--blue);background:rgba(10,61,107,0.07);padding:3px 9px;border-radius:50px;}
+
+    /* ── Sidebar ── */
+    .info-card{background:var(--off-white);border-radius:14px;padding:22px;border:1px solid var(--border);margin-bottom:18px;}
+    .info-card-title{font-size:0.67rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light);margin-bottom:16px;}
+    .info-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:13px;}
+    .info-row:last-child{margin-bottom:0;}
+    .info-row-icon{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px;}
+    .info-label{font-size:0.72rem;color:var(--text-light);margin-bottom:2px;}
+    .info-value{font-size:0.875rem;font-weight:500;color:var(--text);line-height:1.4;}
+    .tag-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px;}
+    .tag{display:inline-block;padding:3px 9px;border-radius:50px;font-size:0.72rem;font-weight:500;background:rgba(10,61,107,0.07);color:var(--blue);}
+
+    /* ── Sidebar CTA ── */
+    .partner-cta-card{background:linear-gradient(135deg,var(--blue) 0%,#1a5fa3 100%);border-radius:14px;padding:24px;text-align:center;}
+    .partner-cta-label{font-family:'Bodoni Moda',serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:10px;}
+    .partner-cta-body{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.60;margin-bottom:18px;}
+    .partner-cta-btn{display:block;padding:13px 18px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:700;border-radius:50px;text-decoration:none;margin-bottom:10px;transition:transform 0.2s,box-shadow 0.2s;}
+    .partner-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.45);}
+    .partner-cta-link{font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+    .partner-cta-link:hover{color:rgba(255,255,255,0.80);}
+  </style>
+
+</head>
+<body>
+
+<!-- Demo notice banner -->
+<div class="demo-notice" role="note" aria-label="Nota de demonstração">
+  <p class="demo-notice-text">
+    <span class="demo-notice-badge">Demo</span>
+    Este é um exemplo de perfil premium — veja como o seu negócio ficaria no portal.
+  </p>
+  <a href="parceiros.html#candidatura" class="demo-notice-cta">
+    Quero o meu perfil
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    Portugal Travel Hub
+  </a>
+
+  <div class="nav-links" role="list">
+    <a href="beaches.html" role="listitem">Praias</a>
+    <a href="surf.html" role="listitem">Surf</a>
+    <a href="pesca.html" role="listitem">Pesca</a>
+    <a href="webcams.html" role="listitem">Webcams</a>
+    <a href="planear.html" role="listitem">Planear</a>
+    <a href="precos.html" role="listitem">Preços</a>
+    <a href="parceiros.html" role="listitem">Parceiros</a>
+  </div>
+
+  <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
+    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+</nav>
+
+<main id="main">
+
+<!-- Profile hero -->
+<section class="profile-hero" aria-label="Perfil Escola de Surf Atlântico">
+  <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1400&q=80" alt="Surfistas na Praia da Nazaré" class="profile-hero-img" loading="eager">
+  <div class="profile-hero-overlay" aria-hidden="true"></div>
+  <div class="profile-hero-content">
+    <div class="profile-verified" aria-label="Parceiro verificado">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Parceiro Verificado</span>
+    </div>
+    <h1 class="profile-name">Escola de Surf Atlântico</h1>
+    <p class="profile-tagline">
+      Surf <span class="profile-sep">·</span> Bodyboard <span class="profile-sep">·</span> Aluguer de Equipamento
+    </p>
+    <p class="profile-loc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Praia da Nazaré, Costa de Prata, Portugal
+    </p>
+  </div>
+</section>
+
+<!-- Profile body -->
+<div class="profile-body">
+  <div class="profile-inner">
+
+    <!-- Main column -->
+    <div>
+      <div class="profile-section">
+        <h2 class="profile-section-title">Sobre a escola</h2>
+        <p class="profile-desc">A Escola de Surf Atlântico opera na Praia da Nazaré desde 2014, formando surfistas de todos os níveis na costa mais icónica de Portugal. Com instrutores certificados pela Federação Portuguesa de Surf e turmas reduzidas (máx. 6 alunos por instrutor), garantimos aprendizagem segura, personalizada e com bom ambiente. Todo o equipamento de qualidade está incluído — pranchas, fatos e acesso à área de aquecimento. Abertos todo o ano, com época alta de junho a outubro.</p>
+      </div>
+
+      <div class="profile-section">
+        <h2 class="profile-section-title">Serviços</h2>
+        <div class="services-grid">
+          <div class="svc-card">
+            <div class="svc-name">Aula de Surf — Iniciante</div>
+            <div class="svc-desc">2h de aula com instrutor FPS. Equipamento incluído. Para quem está a começar do zero.</div>
+            <span class="svc-price">A partir de 45 €</span>
+          </div>
+          <div class="svc-card">
+            <div class="svc-name">Aula de Surf — Intermédio</div>
+            <div class="svc-desc">Técnica, leitura de ondas e posicionamento. Grupos de nível homogéneo. 2h.</div>
+            <span class="svc-price">A partir de 40 €</span>
+          </div>
+          <div class="svc-card">
+            <div class="svc-name">Curso Semanal (5 dias)</div>
+            <div class="svc-desc">10h de aula distribuídas por 5 dias. Ideal para progressão rápida em férias.</div>
+            <span class="svc-price">A partir de 180 €</span>
+          </div>
+          <div class="svc-card">
+            <div class="svc-name">Aluguer de Equipamento</div>
+            <div class="svc-desc">Pranchas softboard e fatos em vários tamanhos, sem aula incluída.</div>
+            <span class="svc-price">20 € / dia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <h2 class="profile-section-title">Bodyboard</h2>
+        <p class="profile-desc">Também oferecemos aulas e aluguer de bodyboard para toda a família. Os nossos instrutores garantem segurança e diversão mesmo para as ondas maiores da Nazaré. Ideal para crianças a partir dos 8 anos e para quem prefere uma entrada gradual no surf.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div>
+      <div class="info-card">
+        <div class="info-card-title">Informação</div>
+        <div class="info-row">
+          <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div class="info-label">Localização</div>
+            <div class="info-value">Praia da Nazaré, Costa de Prata</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div>
+            <div class="info-label">Época</div>
+            <div class="info-value">Todo o ano · Alta: Jun–Out</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <div class="info-label">Horário</div>
+            <div class="info-value">09:00 – 19:00 (época alta)</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div>
+            <div class="info-label">Turma máxima</div>
+            <div class="info-value">6 alunos por instrutor</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <div>
+            <div class="info-label">Línguas</div>
+            <div class="tag-list">
+              <span class="tag">Português</span>
+              <span class="tag">Inglês</span>
+              <span class="tag">Espanhol</span>
+            </div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-row-icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <div class="info-label">Certificação</div>
+            <div class="info-value">Instrutores FPS certificados</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partner-cta-card">
+        <p class="partner-cta-label">O seu negócio assim</p>
+        <p class="partner-cta-body">Visibilidade premium junto de quem planeia escapadas às praias de Portugal — sem comissões por reserva.</p>
+        <a href="parceiros.html#candidatura" class="partner-cta-btn">Candidatar-me como Parceiro</a>
+        <a href="media-kit.html" class="partner-cta-link">Ver Media Kit →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        </div>
+        <span>Portugal Travel Hub</span>
+      </div>
+      <p class="footer-tagline">O portal de referência das praias de Portugal — condições em tempo real, webcams e previsões.</p>
+    </div>
+    <nav class="footer-col" aria-label="Destinos">
+      <h5>Destinos</h5>
+      <ul>
+        <li><a href="beaches.html">Praias</a></li>
+        <li><a href="surf.html">Surf</a></li>
+        <li><a href="pesca.html">Pesca</a></li>
+        <li><a href="webcams.html">Webcams</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Empresa">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="precos.html">Preços</a></li>
+        <li><a href="planear.html">Planear</a></li>
+        <li><a href="parceiros.html">Parceiros</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="privacidade.html">Privacidade</a></li>
+        <li><a href="termos.html">Termos</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span><a href="sobre.html">Sobre</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 30); }, { passive: true });
+
+const navToggle   = document.getElementById('nav-toggle');
+const navBackdrop = document.getElementById('nav-backdrop');
+const navClose    = document.getElementById('nav-close');
+const navLinks    = document.querySelector('.nav-links');
+function openMenu()  { document.body.classList.add('nav-mobile-open'); navToggle.setAttribute('aria-expanded','true'); }
+function closeMenu() { document.body.classList.remove('nav-mobile-open'); navToggle.setAttribute('aria-expanded','false'); }
+navToggle?.addEventListener('click', openMenu);
+navClose?.addEventListener('click', closeMenu);
+navBackdrop?.addEventListener('click', closeMenu);
+navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+(async () => {
+  try {
+    const { data: { user } } = await db.auth.getUser();
+    const loginBtn = document.getElementById('nav-login-btn');
+    const regBtn   = document.getElementById('nav-register-btn');
+    if (user) { loginBtn.textContent = 'Dashboard'; loginBtn.href = 'dashboard.html'; regBtn.style.display = 'none'; }
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

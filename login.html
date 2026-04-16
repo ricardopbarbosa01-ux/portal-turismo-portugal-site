@@ -4,20 +4,25 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
   <title>Entrar · Portugal Travel Hub</title>
-  <meta name="description" content="Acede à tua conta Portugal Travel Hub — previsões premium, alertas personalizados e muito mais.">
+  <meta name="description" content="Inicie sessão na sua conta do Portugal Travel Hub �?" previsões premium, alertas personalizados e muito mais.">
   <meta name="robots" content="noindex, nofollow">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <style>
-    /* ── Tokens (matches main design system) ── */
+    /* �"?�"? Tokens (matches main design system) �"?�"? */
     :root {
       --blue:         #0a3d6b;
       --blue-mid:     #1a5fa3;
@@ -53,19 +58,18 @@
       *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
     }
 
-    /* ── Layout ── */
+    /* �"?�"? Layout �"?�"? */
     .auth-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 100vh;
     }
 
-    /* ── Left panel (visual) ── */
+    /* �"?�"? Left panel (visual) �"?�"? */
     .auth-visual {
       position: relative;
       background-image:
-        linear-gradient(160deg, rgba(10,61,107,0.88) 0%, rgba(10,61,107,0.60) 55%, rgba(10,61,107,0.82) 100%),
-        url('https://images.unsplash.com/photo-1536003736069-c9a5b2ad2e7a?auto=format&fit=crop&w=1200&q=80');
+        linear-gradient(160deg, rgba(10,61,107,0.95) 0%, rgba(10,61,107,0.75) 55%, rgba(10,61,107,0.95) 100%);
       background-size: cover;
       background-position: center;
       display: flex;
@@ -169,7 +173,7 @@
     .testimonial-name { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.9); }
     .testimonial-role { font-size: 0.72rem; color: rgba(255,255,255,0.5); }
 
-    /* ── Right panel (form) ── */
+    /* �"?�"? Right panel (form) �"?�"? */
     .auth-form-panel {
       display: flex;
       flex-direction: column;
@@ -178,13 +182,14 @@
       padding: 48px 40px;
       background: var(--white);
       min-height: 100vh;
+      position: relative;
     }
     .auth-form-inner {
       width: 100%;
       max-width: 400px;
     }
 
-    /* ── Tabs ── */
+    /* �"?�"? Tabs �"?�"? */
     .auth-tabs {
       display: flex;
       background: var(--off-white);
@@ -213,7 +218,7 @@
       box-shadow: 0 2px 8px rgba(10,61,107,0.10);
     }
 
-    /* ── Form heading ── */
+    /* �"?�"? Form heading �"?�"? */
     .auth-form-title {
       font-family: var(--font-heading);
       font-size: 1.75rem;
@@ -228,7 +233,7 @@
       line-height: 1.5;
     }
 
-    /* ── Form fields ── */
+    /* �"?�"? Form fields �"?�"? */
     .form-group {
       margin-bottom: 18px;
     }
@@ -286,7 +291,7 @@
     }
     .form-error.visible { display: block; }
 
-    /* ── Forgot password ── */
+    /* �"?�"? Forgot password �"?�"? */
     .forgot-link {
       display: flex;
       justify-content: flex-end;
@@ -301,7 +306,7 @@
     }
     .forgot-link a:hover { color: var(--blue); }
 
-    /* ── Password strength ── */
+    /* �"?�"? Password strength �"?�"? */
     .pw-strength {
       display: none;
       margin-top: 8px;
@@ -325,7 +330,7 @@
       color: var(--text-light);
     }
 
-    /* ── Alert banner ── */
+    /* �"?�"? Alert banner �"?�"? */
     .auth-alert {
       display: none;
       padding: 12px 16px;
@@ -339,7 +344,7 @@
     .auth-alert--success { background: rgba(56,161,105,0.08); border: 1px solid rgba(56,161,105,0.24); color: #276749; }
     .auth-alert svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* ── Submit button ── */
+    /* �"?�"? Submit button �"?�"? */
     .btn-auth {
       width: 100%;
       padding: 15px 24px;
@@ -375,7 +380,7 @@
     .btn-auth.loading .btn-text { display: none; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── Divider ── */
+    /* �"?�"? Divider �"?�"? */
     .auth-divider {
       display: flex; align-items: center; gap: 12px;
       margin: 22px 0;
@@ -388,7 +393,7 @@
       height: 1px; background: #e2e8f0;
     }
 
-    /* ── Terms note ── */
+    /* �"?�"? Terms note �"?�"? */
     .auth-terms {
       margin-top: 18px;
       font-size: 0.78rem;
@@ -399,7 +404,7 @@
     .auth-terms a { color: var(--blue-mid, #1a5fa3); font-weight: 500; }
     .auth-terms a:hover { color: var(--blue); }
 
-    /* ── Switch panel link ── */
+    /* �"?�"? Switch panel link �"?�"? */
     .auth-switch {
       margin-top: 24px;
       text-align: center;
@@ -413,7 +418,7 @@
     }
     .auth-switch button:hover { color: var(--blue); }
 
-    /* ── Back to site ── */
+    /* �"?�"? Back to site �"?�"? */
     .auth-back {
       display: inline-flex; align-items: center; gap: 6px;
       font-size: 0.8125rem; color: var(--text-light);
@@ -423,11 +428,11 @@
     .auth-back:hover { color: var(--blue); }
     .auth-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* ── Panels (show/hide) ── */
+    /* �"?�"? Panels (show/hide) �"?�"? */
     .auth-panel { display: none; }
     .auth-panel.active { display: block; }
 
-    /* ── Reset success ── */
+    /* �"?�"? Reset success �"?�"? */
     .reset-success {
       text-align: center;
       padding: 32px 0;
@@ -441,7 +446,7 @@
     }
     .reset-success-icon svg { width: 26px; height: 26px; stroke: var(--success); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* ── Mobile ── */
+    /* �"?�"? Mobile �"?�"? */
     @media (max-width: 860px) {
       .auth-wrapper { grid-template-columns: 1fr; }
       .auth-visual { display: none; }
@@ -456,18 +461,21 @@
       /* Form group spacing: breathe on mobile */
       .form-group { margin-bottom: 20px; }
     }
-    @media (max-width: 400px) {
-      /* Very small screens: tighter outer padding, full-width form inner */
-      .auth-form-panel { padding: 40px 16px; padding-top: 48px; }
-      .auth-tabs { margin-bottom: 28px; }
-    }
+    
+    .lang-btn { font-family:'Inter',system-ui,sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.10em; text-transform:uppercase; color:var(--text-light); text-decoration:none; padding:4px 5px; border-radius:4px; }
+    .lang-btn--active { color:var(--gold); }
+    .lang-btn:not(.lang-btn--active):hover { color:var(--blue); }
+    .lang-sep { color:#ccc; font-size:0.65rem; }
   </style>
+
+<link rel="stylesheet" href="/css/style.css?v=20260416b">
+  <link rel="canonical" href="https://www.portalturismoportugal.com/login.html">
 </head>
 <body>
 
 <div class="auth-wrapper" role="main">
 
-  <!-- ── Left visual panel ── -->
+  <!-- �"?�"? Left visual panel �"?�"? -->
   <div class="auth-visual" aria-hidden="true">
     <a href="/" class="auth-visual-logo">
       <div class="auth-visual-logo-icon">
@@ -477,15 +485,15 @@
     </a>
 
     <div class="auth-visual-content">
-      <div class="auth-visual-eyebrow">ACESSO PREMIUM</div>
-      <h1 class="auth-visual-title">As praias de Portugal<br>na palma da tua mão</h1>
+      <div class="auth-visual-eyebrow">PREMIUM ACCESS</div>
+      <h1 class="auth-visual-title">As praias de Portugal<br>na palma da mão</h1>
       <p class="auth-visual-subtitle">Condições em tempo real, webcams ao vivo, previsões de surf e pesca — personalizadas para ti.</p>
       <div class="auth-visual-features">
         <div class="auth-feature-item">
           <div class="auth-feature-icon">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
           </div>
-          Condições atualizadas minuto a minuto
+          Condições actualizadas minuto a minuto
         </div>
         <div class="auth-feature-item">
           <div class="auth-feature-icon">
@@ -497,7 +505,7 @@
           <div class="auth-feature-icon">
             <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
           </div>
-          Webcams exclusivas ao vivo
+          Webcams ao vivo exclusivas
         </div>
         <div class="auth-feature-item">
           <div class="auth-feature-icon">
@@ -509,18 +517,18 @@
     </div>
 
     <div class="auth-visual-testimonial">
-      <p>"Uso todos os dias antes de ir surfar. As previsões são precisas e as webcams poupam-me muitas viagens em vão."</p>
+      <p>"Uso todos os dias antes de ir surfar. As previsões são certeiras e as webcams poupam-me muitas viagens em vão."</p>
       <div class="testimonial-author">
         <div class="testimonial-avatar">JS</div>
         <div>
           <div class="testimonial-name">João Silva</div>
-          <div class="testimonial-role">Surfista · Peniche</div>
+          <div class="testimonial-role">Surfer · Peniche</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ── Right form panel ── -->
+  <!-- �"?�"? Right form panel �"?�"? -->
   <div class="auth-form-panel">
     <div class="auth-form-inner">
 
@@ -528,12 +536,17 @@
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
         Voltar ao portal
       </a>
+      <div class="lang-switcher" style="position:absolute;top:20px;right:20px;" aria-label="Seleção de idioma">
+        <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <a href="/en/login.html" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+      </div>
 
       <!-- Tabs -->
-      <div class="auth-tabs" role="tablist" aria-label="Modo de acesso">
+      <div class="auth-tabs" role="tablist" aria-label="Account access">
         <button class="auth-tab active" id="tab-login" role="tab" aria-selected="true"
                 aria-controls="panel-login" onclick="switchTab('login')">
-          Entrar
+          Iniciar Sessão
         </button>
         <button class="auth-tab" id="tab-register" role="tab" aria-selected="false"
                 aria-controls="panel-register" onclick="switchTab('register')">
@@ -547,25 +560,25 @@
         <span id="alert-message"></span>
       </div>
 
-      <!-- ── LOGIN PANEL ── -->
+      <!-- �"?�"? LOGIN PANEL �"?�"? -->
       <div class="auth-panel active" id="panel-login" role="tabpanel" aria-labelledby="tab-login">
         <h2 class="auth-form-title">Bem-vindo de volta</h2>
-        <p class="auth-form-subtitle">Entra na tua conta para aceder às condições em tempo real.</p>
+        <p class="auth-form-subtitle">Inicie sessão para aceder às condições das praias em tempo real.</p>
 
         <form id="form-login" novalidate>
           <div class="form-group">
-            <label class="form-label" for="login-email">Email</label>
+            <label class="form-label" for="login-email">E-mail</label>
             <input class="form-input" type="email" id="login-email" name="email"
-                   placeholder="o.teu@email.com" autocomplete="email" required>
+                   placeholder="o_seu@email.com" autocomplete="email" required>
             <span class="form-error" id="login-email-error"></span>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="login-password">Password</label>
+            <label class="form-label" for="login-password">Palavra-passe</label>
             <div class="form-input-wrap">
               <input class="form-input form-input--with-toggle" type="password" id="login-password"
-                     name="password" placeholder="A tua password" autocomplete="current-password" required>
-              <button type="button" class="pw-toggle" aria-label="Mostrar password"
+                     name="password" placeholder="A sua palavra-passe" autocomplete="current-password" required>
+              <button type="button" class="pw-toggle" aria-label="Show password"
                       onclick="togglePassword('login-password', this)">
                 <svg viewBox="0 0 24 24" class="icon-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 <svg viewBox="0 0 24 24" class="icon-eye-off" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
@@ -575,48 +588,48 @@
           </div>
 
           <div class="forgot-link">
-            <a href="#" onclick="switchTab('reset'); return false;">Esqueceu a password?</a>
+            <a href="#" onclick="switchTab('reset'); return false;">Esqueceu a sua palavra-passe?</a>
           </div>
 
           <button type="submit" class="btn-auth" id="btn-login">
             <div class="spinner" aria-hidden="true"></div>
-            <span class="btn-text">Entrar</span>
+            <span class="btn-text">Iniciar Sessão</span>
           </button>
         </form>
 
         <p class="auth-switch">
-          Ainda não tens conta?
-          <button onclick="switchTab('register')">Criar conta grátis</button>
+          Ainda não tem conta?
+          <button onclick="switchTab('register')">Criar conta gratuita</button>
         </p>
       </div>
 
-      <!-- ── REGISTER PANEL ── -->
+      <!-- �"?�"? REGISTER PANEL �"?�"? -->
       <div class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register">
-        <h2 class="auth-form-title">Criar conta grátis</h2>
-        <p class="auth-form-subtitle">Junta-te a milhares de utilizadores que já usam o portal.</p>
+        <h2 class="auth-form-title">Criar conta gratuita</h2>
+        <p class="auth-form-subtitle">Junte-se a milhares de utilizadores no portal de praias de Portugal.</p>
 
         <form id="form-register" novalidate>
           <div class="form-group">
             <label class="form-label" for="register-name">Nome</label>
             <input class="form-input" type="text" id="register-name" name="name"
-                   placeholder="O teu nome" autocomplete="given-name" required>
+                   placeholder="O seu nome" autocomplete="given-name" required>
             <span class="form-error" id="register-name-error"></span>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="register-email">Email</label>
+            <label class="form-label" for="register-email">E-mail</label>
             <input class="form-input" type="email" id="register-email" name="email"
                    placeholder="o.teu@email.com" autocomplete="email" required>
             <span class="form-error" id="register-email-error"></span>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="register-password">Password</label>
+            <label class="form-label" for="register-password">Palavra-passe</label>
             <div class="form-input-wrap">
               <input class="form-input form-input--with-toggle" type="password" id="register-password"
                      name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password"
                      required oninput="checkPasswordStrength(this.value)">
-              <button type="button" class="pw-toggle" aria-label="Mostrar password"
+              <button type="button" class="pw-toggle" aria-label="Show password"
                       onclick="togglePassword('register-password', this)">
                 <svg viewBox="0 0 24 24" class="icon-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 <svg viewBox="0 0 24 24" class="icon-eye-off" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
@@ -636,40 +649,40 @@
         </form>
 
         <p class="auth-terms">
-          Ao criares uma conta aceitas os nossos
-          <a href="termos.html" target="_blank" rel="noopener noreferrer">Termos de Serviço</a>
+          Ao criar uma conta aceita os nossos
+          <a href="terms.html" target="_blank" rel="noopener noreferrer">Termos de Serviço</a>
           e
-          <a href="privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
+          <a href="privacy.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
         </p>
 
         <p class="auth-switch">
-          Já tens conta?
-          <button onclick="switchTab('login')">Entrar</button>
+          Já tem conta?
+          <button onclick="switchTab('login')">Iniciar Sessão</button>
         </p>
       </div>
 
-      <!-- ── RESET PANEL ── -->
+      <!-- �"?�"? RESET PANEL �"?�"? -->
       <div class="auth-panel" id="panel-reset" role="tabpanel">
         <div id="reset-form-wrap">
-          <h2 class="auth-form-title">Recuperar password</h2>
-          <p class="auth-form-subtitle">Envia-te um link para redefinires a tua password.</p>
+          <h2 class="auth-form-title">Repor a sua palavra-passe</h2>
+          <p class="auth-form-subtitle">Enviaremos um link para repor a sua palavra-passe.</p>
 
           <form id="form-reset" novalidate>
             <div class="form-group">
               <label class="form-label" for="reset-email">Email da conta</label>
               <input class="form-input" type="email" id="reset-email" name="email"
-                     placeholder="o.teu@email.com" autocomplete="email" required>
+                     placeholder="o_seu@email.com" autocomplete="email" required>
               <span class="form-error" id="reset-email-error"></span>
             </div>
 
             <button type="submit" class="btn-auth" id="btn-reset">
               <div class="spinner" aria-hidden="true"></div>
-              <span class="btn-text">Enviar Link</span>
+              <span class="btn-text">Enviar Link de Recuperação</span>
             </button>
           </form>
 
           <p class="auth-switch">
-            <button onclick="switchTab('login')">← Voltar ao login</button>
+            <button onclick="switchTab('login')">&larr; Voltar ao início de sessão</button>
           </p>
         </div>
 
@@ -679,10 +692,10 @@
           </div>
           <h3 style="font-family:var(--font-heading);font-size:1.4rem;color:var(--blue);margin-bottom:8px;">Email enviado!</h3>
           <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.6;margin-bottom:24px;">
-            Verifica a tua caixa de email e clica no link para redefinir a password.
+            Verifique a sua caixa de entrada e clique no link para repor a sua palavra-passe.
           </p>
           <button onclick="switchTab('login')" class="btn-auth" style="max-width:220px;margin:0 auto;">
-            <span class="btn-text">Voltar ao Login</span>
+            <span class="btn-text">Voltar ao Início de Sessão</span>
           </button>
         </div>
       </div>
@@ -693,275 +706,9 @@
 
 <!-- Supabase config -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="js/config.js?v=20260402"></script>
-<script>
-  // ── Tab navigation ──────────────────────────────────────────────────
-  function switchTab(tab) {
-    // Hide all panels
-    document.querySelectorAll('.auth-panel').forEach(p => {
-      p.classList.remove('active');
-      p.hidden = false;
-    });
-    // Deactivate all tabs
-    document.querySelectorAll('.auth-tab').forEach(t => {
-      t.classList.remove('active');
-      t.setAttribute('aria-selected', 'false');
-    });
-    // Clear alert
-    hideAlert();
-
-    if (tab === 'login') {
-      document.getElementById('panel-login').classList.add('active');
-      document.getElementById('tab-login').classList.add('active');
-      document.getElementById('tab-login').setAttribute('aria-selected', 'true');
-    } else if (tab === 'register') {
-      document.getElementById('panel-register').classList.add('active');
-      document.getElementById('tab-register').classList.add('active');
-      document.getElementById('tab-register').setAttribute('aria-selected', 'true');
-    } else if (tab === 'reset') {
-      document.getElementById('panel-reset').classList.add('active');
-      // No tab highlight for reset
-    }
-  }
-
-  // Activate register tab if URL hash starts with #register
-  if (window.location.hash.startsWith('#register')) {
-    switchTab('register');
-  }
-
-  // Read optional ?redirect= param for post-auth redirect (e.g. to LemonSqueezy checkout)
-  // Only allow redirects to known safe origins (lemonsqueezy.com or same origin)
-  const _redirectParam = new URLSearchParams(window.location.search).get('redirect') || '';
-  const _safeRedirect  = _redirectParam && /^https:\/\/([a-z0-9-]+\.lemonsqueezy\.com|portal-turismo-portugal\.pages\.dev)\//.test(_redirectParam)
-    ? _redirectParam : null;
-
-  // If already authenticated, skip login form and go straight to the redirect target
-  (async () => {
-    const { data: { user } } = await db.auth.getUser();
-    if (user) { window.location.href = _safeRedirect || '/dashboard.html'; }
-  })();
-
-  // ── Password visibility toggle ──────────────────────────────────────
-  function togglePassword(inputId, btn) {
-    const input = document.getElementById(inputId);
-    const isHidden = input.type === 'password';
-    input.type = isHidden ? 'text' : 'password';
-    btn.setAttribute('aria-label', isHidden ? 'Ocultar password' : 'Mostrar password');
-    btn.querySelector('.icon-eye').style.display     = isHidden ? 'none'  : '';
-    btn.querySelector('.icon-eye-off').style.display = isHidden ? ''      : 'none';
-  }
-
-  // ── Password strength ───────────────────────────────────────────────
-  function checkPasswordStrength(value) {
-    const strength = document.getElementById('pw-strength');
-    const fill     = document.getElementById('pw-strength-fill');
-    const label    = document.getElementById('pw-strength-label');
-
-    if (!value) {
-      strength.classList.remove('visible');
-      return;
-    }
-    strength.classList.add('visible');
-
-    let score = 0;
-    if (value.length >= 8)  score++;
-    if (value.length >= 12) score++;
-    if (/[A-Z]/.test(value)) score++;
-    if (/[0-9]/.test(value)) score++;
-    if (/[^A-Za-z0-9]/.test(value)) score++;
-
-    const levels = [
-      { pct: '20%', color: '#e53e3e', text: 'Muito fraca' },
-      { pct: '40%', color: '#ed8936', text: 'Fraca' },
-      { pct: '60%', color: '#ecc94b', text: 'Razoável' },
-      { pct: '80%', color: '#68d391', text: 'Boa' },
-      { pct: '100%',color: '#38a169', text: 'Excelente' },
-    ];
-    const lvl = levels[Math.min(score - 1, 4)] || levels[0];
-    fill.style.width      = lvl.pct;
-    fill.style.background = lvl.color;
-    label.textContent     = lvl.text;
-    label.style.color     = lvl.color;
-  }
-
-  // ── Alert helpers ───────────────────────────────────────────────────
-  function showAlert(message, type = 'error') {
-    const el    = document.getElementById('auth-alert');
-    const icon  = document.getElementById('alert-icon');
-    const msg   = document.getElementById('alert-message');
-
-    el.className = `auth-alert auth-alert--${type} visible`;
-    msg.textContent = message;
-
-    if (type === 'error') {
-      icon.innerHTML = '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>';
-    } else {
-      icon.innerHTML = '<polyline points="20 6 9 17 4 12"/>';
-    }
-
-    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  function hideAlert() {
-    const el = document.getElementById('auth-alert');
-    el.classList.remove('visible');
-    el.className = 'auth-alert';
-  }
-
-  function setFieldError(id, message) {
-    const input = document.getElementById(id);
-    const error = document.getElementById(id + '-error');
-    if (input)  input.classList.add('error');
-    if (error)  { error.textContent = message; error.classList.add('visible'); }
-  }
-
-  function clearFieldErrors(prefix) {
-    document.querySelectorAll(`[id^="${prefix}"]`).forEach(el => {
-      if (el.tagName === 'INPUT') el.classList.remove('error');
-      if (el.classList.contains('form-error')) el.classList.remove('visible');
-    });
-  }
-
-  function setLoading(btnId, loading) {
-    const btn = document.getElementById(btnId);
-    btn.classList.toggle('loading', loading);
-    btn.disabled = loading;
-  }
-
-  // ── Map Supabase error messages → Portuguese ────────────────────────
-  function mapError(err) {
-    const msg = (err?.message || '').toLowerCase();
-    if (msg.includes('invalid login credentials') || msg.includes('invalid email or password'))
-      return 'Email ou password incorretos. Tenta novamente.';
-    if (msg.includes('email not confirmed'))
-      return 'Confirma o teu email antes de entrar. Verifica a tua caixa de entrada.';
-    if (msg.includes('user already registered') || msg.includes('already exists'))
-      return 'Já existe uma conta com este email. Tenta entrar.';
-    if (msg.includes('password should be at least'))
-      return 'A password deve ter pelo menos 8 caracteres.';
-    if (msg.includes('network') || msg.includes('fetch'))
-      return 'Erro de ligação. Verifica a tua internet e tenta novamente.';
-    if (msg.includes('rate limit'))
-      return 'Demasiadas tentativas. Aguarda um momento e tenta novamente.';
-    return 'Ocorreu um erro. Tenta novamente.';
-  }
-
-  // ── LOGIN ───────────────────────────────────────────────────────────
-  document.getElementById('form-login').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearFieldErrors('login-');
-    hideAlert();
-
-    const email    = document.getElementById('login-email').value.trim();
-    const password = document.getElementById('login-password').value;
-    let valid = true;
-
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setFieldError('login-email', 'Introduz um email válido.');
-      valid = false;
-    }
-    if (!password) {
-      setFieldError('login-password', 'Introduz a tua password.');
-      valid = false;
-    }
-    if (!valid) return;
-
-    setLoading('btn-login', true);
-    try {
-      const { error } = await signIn(email, password);
-      if (error) throw error;
-      track('login_success', { page: 'login', source: _safeRedirect ? 'upgrade' : 'direct' });
-      showAlert('Login efetuado com sucesso! A redirecionar…', 'success');
-      setTimeout(() => { window.location.href = _safeRedirect || '/dashboard.html'; }, 1000);
-    } catch (err) {
-      showAlert(mapError(err));
-    } finally {
-      setLoading('btn-login', false);
-    }
-  });
-
-  // ── REGISTER ────────────────────────────────────────────────────────
-  document.getElementById('form-register').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearFieldErrors('register-');
-    hideAlert();
-
-    const name     = document.getElementById('register-name').value.trim();
-    const email    = document.getElementById('register-email').value.trim();
-    const password = document.getElementById('register-password').value;
-    let valid = true;
-
-    if (!name || name.length < 2) {
-      setFieldError('register-name', 'Introduz o teu nome (mínimo 2 caracteres).');
-      valid = false;
-    }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setFieldError('register-email', 'Introduz um email válido.');
-      valid = false;
-    }
-    if (!password || password.length < 8) {
-      setFieldError('register-password', 'A password deve ter pelo menos 8 caracteres.');
-      valid = false;
-    }
-    if (!valid) return;
-
-    setLoading('btn-register', true);
-    try {
-      const { data, error } = await signUp(email, password, { full_name: name });
-
-      if (error) throw error;
-
-      // Supabase silent behaviour: when email confirmation is ON and the email
-      // already exists, signUp() returns error=null but identities=[].
-      // This is by design (prevents email enumeration) but causes false success.
-      if (!data?.user || data.user.identities?.length === 0) {
-        showAlert('Este email já está registado. Tenta entrar na conta ou recuperar a password.', 'error');
-        return;
-      }
-
-      document.getElementById('form-register').reset();
-      document.getElementById('pw-strength').classList.remove('visible');
-
-      if (_safeRedirect) {
-        showAlert('Conta criada! A redirecionar para o checkout…', 'success');
-        setTimeout(() => { window.location.href = _safeRedirect; }, 1200);
-      } else {
-        showAlert('Conta criada! Verifica o teu email para confirmar o registo.', 'success');
-      }
-    } catch (err) {
-      console.error('[register] signUp error:', err);
-      showAlert(mapError(err));
-    } finally {
-      setLoading('btn-register', false);
-    }
-  });
-
-  // ── RESET PASSWORD ──────────────────────────────────────────────────
-  document.getElementById('form-reset').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearFieldErrors('reset-');
-    hideAlert();
-
-    const email = document.getElementById('reset-email').value.trim();
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setFieldError('reset-email', 'Introduz um email válido.');
-      return;
-    }
-
-    setLoading('btn-reset', true);
-    try {
-      const { error } = await resetPassword(email);
-      if (error) throw error;
-      track('reset_request_submit', { page: 'login' });
-      document.getElementById('reset-form-wrap').style.display = 'none';
-      document.getElementById('reset-success').style.display = 'block';
-    } catch (err) {
-      showAlert(mapError(err));
-    } finally {
-      setLoading('btn-reset', false);
-    }
-  });
-</script>
+<script src="/js/nav.js?v=20260415"></script>
+<script src="/js/config.js?v=20260402"></script>
+<script src="/js/login.js"></script>
 
 <footer style="background:var(--blue,#0a3d6b);padding:24px 5vw;margin-top:auto;" role="contentinfo">
   <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:0.8rem;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:8px;">
@@ -969,11 +716,19 @@
     <span style="display:flex;gap:12px;flex-wrap:wrap;">
       <a href="sobre.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Sobre</a>
       <a href="contact.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Contacto</a>
-      <a href="privacidade.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Privacidade</a>
-      <a href="termos.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Termos</a>
+      <a href="privacy.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Privacidade</a>
+      <a href="terms.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Terms</a>
       <a href="cookies.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Cookies</a>
     </span>
   </div>
 </footer>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
+  <script src="js/lang-switcher.js" defer></script>
 </body>
 </html>

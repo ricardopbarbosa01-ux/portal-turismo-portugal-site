@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Webcams de Portugal — Praias e Surf em Directo · Portugal Travel Hub</title>
   <meta name="description" content="Webcams das melhores praias de Portugal — Nazaré, Peniche, Ericeira, Lagos e muito mais. Veja as condições antes de sair de casa.">
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/webcams.html">
+  <link rel="canonical" href="https://portalturismoportugal.com/webcams.html">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/webcams.html">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/webcams.html">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/webcams.html">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Webcams de Portugal — Praias e Surf em Directo · Portugal Travel Hub">
   <meta property="og:description" content="Webcams das melhores praias e spots de surf de Portugal — veja as condições antes de partir.">
-  <meta property="og:url" content="https://portal-turismo-portugal.pages.dev/webcams.html">
+  <meta property="og:url" content="https://portalturismoportugal.com/webcams.html">
   <meta property="og:locale" content="pt_PT">
   <meta property="og:site_name"   content="Portugal Travel Hub">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
@@ -21,7 +24,7 @@
   <meta name="twitter:title"       content="Webcams de Portugal — Praias e Surf em Directo · Portugal Travel Hub">
   <meta name="twitter:description" content="Webcams das melhores praias e spots de surf de Portugal — veja as condições antes de partir.">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
-  <meta name="twitter:url"         content="https://portal-turismo-portugal.pages.dev/webcams.html">
+  <meta name="twitter:url"         content="https://portalturismoportugal.com/webcams.html">
 
   <script type="application/ld+json">
   {
@@ -31,15 +34,15 @@
         "@type": "CollectionPage",
         "name": "Webcams de Portugal — Praias e Surf em Directo",
         "description": "Webcams das melhores praias de Portugal — Nazaré, Peniche, Ericeira e muito mais.",
-        "url": "https://portal-turismo-portugal.pages.dev/webcams.html",
+        "url": "https://portalturismoportugal.com/webcams.html",
         "inLanguage": "pt-PT",
-        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portal-turismo-portugal.pages.dev/" }
+        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portalturismoportugal.com/" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portal-turismo-portugal.pages.dev/" },
-          { "@type": "ListItem", "position": 2, "name": "Webcams", "item": "https://portal-turismo-portugal.pages.dev/webcams.html" }
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalturismoportugal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Webcams", "item": "https://portalturismoportugal.com/webcams.html" }
         ]
       }
     ]
@@ -70,38 +73,18 @@
     :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
     .skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:var(--white);padding:8px 16px;border-radius:8px;z-index:9999;transition:top 0.2s;}
     .skip-link:focus{top:16px;}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0.01ms!important;}}
-
-    /* ── Navbar ── */
-    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background:rgba(10,61,107,0.95);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--glass-border);}
-    .nav-logo{display:flex;align-items:center;gap:10px;font-family:'Bodoni Moda',serif;font-size:1.25rem;color:var(--white);}
-    .nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:10px;display:flex;align-items:center;justify-content:center;}
-    .nav-logo-icon svg{width:20px;height:20px;fill:var(--blue);}
-    .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{color:rgba(255,255,255,0.85);font-size:0.9rem;letter-spacing:0.03em;transition:color var(--transition);position:relative;}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--transition);}
-    .nav-links a:hover,.nav-links a.active{color:var(--white);}
-    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
-    .nav-actions{display:flex;align-items:center;gap:12px;}
+    
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);cursor:pointer;min-height:44px;}
     .btn-outline{border:1.5px solid var(--glass-border);color:var(--white);backdrop-filter:blur(12px);background:var(--glass);}
     .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
     .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-weight:600;box-shadow:0 4px 20px var(--gold-glow);}
     .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 30px var(--gold-glow);}
-    .nav-toggle{display:none;color:var(--white);min-height:48px;min-width:48px;align-items:center;justify-content:center;border-radius:8px;transition:background var(--transition);}
-    .nav-toggle:hover{background:rgba(255,255,255,0.1);}
-    .nav-toggle svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
     .nav-close{display:none;}
     .nav-backdrop{display:none;}
-    @media(max-width:768px){
-      .nav-actions .btn-outline{display:none;}
-      .nav-toggle{display:flex;}
+    
       .nav-backdrop{display:block;position:fixed;inset:0;z-index:99;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;cursor:pointer;}
       .nav-mobile-open .nav-backdrop{opacity:1;visibility:visible;}
-      .nav-links{display:flex!important;flex-direction:column;align-items:flex-start;position:fixed;top:0;right:0;bottom:0;width:280px;z-index:100;background:rgba(5,35,70,0.99);backdrop-filter:blur(24px) saturate(1.5);border-left:1px solid var(--glass-border);padding:80px 32px 40px;gap:4px;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;}
-      .nav-mobile-open .nav-links{transform:translateX(0);}
-      .nav-links a{font-size:1.05rem;padding:14px 0;width:100%;min-height:48px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,0.07);}
-      .nav-links a:last-child{border-bottom:none;}
+      .nav-mobile-open
       .nav-close{display:flex;align-items:center;justify-content:center;position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;color:var(--white);background:rgba(255,255,255,0.1);transition:background var(--transition);}
       .nav-close:hover{background:rgba(255,255,255,0.2);}
       .nav-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
@@ -350,8 +333,13 @@
     .wcam-sponsor-cta{font-size:0.78rem;font-weight:600;color:var(--blue);text-decoration:none;white-space:nowrap;transition:color 0.2s;flex-shrink:0;display:inline-flex;align-items:center;gap:4px;}
     .wcam-sponsor-cta:hover{color:var(--gold);}
     .wcam-sponsor-cta svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;}
-    @media(max-width:500px){.wcam-sponsor-cta{width:100%;}}
+    
+    .lang-btn{font-family:'Inter',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;padding:4px 5px;border-radius:4px;transition:color 0.2s;cursor:pointer;min-height:0;}
+    .lang-btn--active{color:var(--gold);cursor:default;}
+    .lang-btn:not(.lang-btn--active):hover{color:rgba(255,255,255,0.90);}
   </style>
+
+<link rel="stylesheet" href="/css/style.css?v=20260416b">
 </head>
 <body>
 
@@ -359,32 +347,39 @@
 
 <!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
-  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
     Portugal Travel Hub
   </a>
-  <div class="nav-backdrop" id="nav-backdrop"></div>
+
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
     <a href="pesca.html" role="listitem">Pesca</a>
-    <a href="webcams.html" class="active" role="listitem" aria-current="page">Webcams</a>
+    <a href="webcams.html" role="listitem">Webcams</a>
     <a href="planear.html" role="listitem">Planear</a>
     <a href="precos.html" role="listitem">Preços</a>
     <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
+
   <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
     <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <main id="main">
@@ -394,7 +389,7 @@
     <div class="wcam-hero-inner">
       <div class="wcam-hero-tag">Portugal · Atlântico · Webcams</div>
       <h1 class="wcam-hero-title">Veja antes de <em>partir</em></h1>
-      <p class="wcam-hero-subtitle">Nazaré, Peniche, Ericeira, Guincho, Caparica, Portimão e muito mais — 9 webcams via Beachcam para ver o mar antes de partir e planear a escapada perfeita.</p>
+      <p class="wcam-hero-subtitle">Nazaré, Peniche, Ericeira, Guincho, Caparica, Portimão e muito mais — veja o mar em tempo real antes de sair de casa. Nesta fase, a cobertura é suportada pela Beachcam by MEO, enquanto evoluímos para uma experiência mais integrada no portal.</p>
       <div class="wcam-hero-stats" aria-label="Resumo">
         <div class="wcam-hero-stat">
           <span class="wcam-hero-stat-value">9</span>
@@ -542,8 +537,8 @@
           <div class="value-card-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3 class="value-card-title">Serviços de Referência</h3>
-          <p class="value-card-body">Encaminhamento direto para <strong>parceiros verificados</strong> — sem links rotos, sem sites amadores. Integração crescente com os melhores serviços de webcam costeira.</p>
+          <h3 class="value-card-title">Fonte de Referência</h3>
+          <p class="value-card-body">Acesso directo à <strong>Beachcam by MEO</strong>, plataforma líder em Portugal — sem links rotos, sem sites amadores. Cobertura que cresce à medida que o portal integra novos serviços e parceiros costeiros.</p>
         </div>
       </div>
     </div>
@@ -600,9 +595,9 @@
   <div class="wcam-partner" aria-label="Parceiro editorial">
     <div class="wcam-partner-inner">
       <div>
-        <div class="wcam-partner-label">Parceiro Editorial</div>
-        <div class="wcam-partner-title">Webcams via Beachcam · MEO</div>
-        <p class="wcam-partner-sub">As webcams activas nesta página são disponibilizadas pelo Beachcam — plataforma de referência para câmaras costeiras em Portugal. Clica em qualquer webcam ao vivo para a ver em direto.</p>
+        <div class="wcam-partner-label">Cobertura Atual</div>
+        <div class="wcam-partner-title">Webcams via Beachcam by MEO</div>
+        <p class="wcam-partner-sub">Nesta fase, a cobertura de webcams é suportada pela Beachcam by MEO — plataforma de referência para câmaras costeiras em Portugal. À medida que o portal cresce, evoluímos para uma experiência mais integrada, com mais câmaras e contexto editorial próprio. Clique em qualquer webcam para ver em directo.</p>
       </div>
       <a href="https://beachcam.meo.pt/livecams/" class="wcam-partner-link" target="_blank" rel="noopener noreferrer" aria-label="Visitar Beachcam em nova janela">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -733,6 +728,7 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -1065,5 +1061,6 @@
     applyFilters();
   })();
 </script>
+<script src="/js/lang-switcher.js" defer></script>
 </body>
 </html>

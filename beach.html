@@ -4,15 +4,22 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
   <title id="page-title">Praia · Portugal Travel Hub</title>
   <meta name="description" id="page-desc" content="Informação detalhada sobre praias de Portugal — qualidade da água, equipamentos, marés e localização.">
-  <link rel="canonical" id="page-canonical" href="https://portal-turismo-portugal.pages.dev/beach.html">
+  <link rel="canonical" id="page-canonical" href="https://portalturismoportugal.com/beach.html">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/beach.html">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/beach.html">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/beach.html">
   <meta name="robots" id="page-robots" content="index, follow">
   <meta property="og:type"        content="website">
-  <meta property="og:url"         id="page-og-url" content="https://portal-turismo-portugal.pages.dev/beach.html">
+  <meta property="og:url"         id="page-og-url" content="https://portalturismoportugal.com/beach.html">
   <meta property="og:title"       id="page-og-title" content="Praia · Portugal Travel Hub">
   <meta property="og:description" id="page-og-desc" content="Informação detalhada sobre praias de Portugal.">
   <meta property="og:site_name"   content="Portugal Travel Hub">
@@ -21,7 +28,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       id="page-tw-title" content="Praia · Portugal Travel Hub">
   <meta name="twitter:description" id="page-tw-desc" content="Informação detalhada sobre praias de Portugal.">
-  <meta name="twitter:url"         id="page-tw-url"   content="https://portal-turismo-portugal.pages.dev/beach.html">
+  <meta name="twitter:url"         id="page-tw-url"   content="https://portalturismoportugal.com/beach.html">
   <meta name="twitter:image"       id="page-tw-image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
 
   <!-- JSON-LD stubs: filled synchronously from URL ?id param, then enriched by JS after Supabase resolves -->
@@ -31,7 +38,7 @@
   (function() {
     var id = new URLSearchParams(window.location.search).get('id');
     if (!id) return; // no id → error state; leave robots as-is, JS will handle
-    var base = 'https://portal-turismo-portugal.pages.dev/beach.html?id=';
+    var base = 'https://portalturismoportugal.com/beach.html?id=';
     var url  = base + id;
     var c = document.getElementById('page-canonical'); if (c) c.href = url;
     var ou = document.getElementById('page-og-url');   if (ou) ou.content = url;
@@ -40,8 +47,8 @@
     if (lb) lb.textContent = JSON.stringify({'@context':'https://schema.org','@type':'TouristAttraction',url:url,address:{'@type':'PostalAddress',addressCountry:'PT'}});
     var lbc = document.getElementById('ld-breadcrumb');
     if (lbc) lbc.textContent = JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
-      {'@type':'ListItem',position:1,name:'Início',item:'https://portal-turismo-portugal.pages.dev/'},
-      {'@type':'ListItem',position:2,name:'Praias',item:'https://portal-turismo-portugal.pages.dev/beaches.html'},
+      {'@type':'ListItem',position:1,name:'Início',item:'https://portalturismoportugal.com/'},
+      {'@type':'ListItem',position:2,name:'Praias',item:'https://portalturismoportugal.com/beaches.html'},
       {'@type':'ListItem',position:3,name:'Praia',item:url}
     ]});
   })();
@@ -49,7 +56,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <style>
     :root {
@@ -312,7 +320,7 @@
     /* ── Highlights ── */
     .highlights-section{margin-top:32px;}
     .highlights-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:16px;}
-    .highlights-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
     .highlight-card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:16px 14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 8px rgba(10,61,107,0.05);}
     .highlight-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .highlight-icon svg{width:18px;height:18px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
@@ -445,25 +453,46 @@
     .planear-final-secondary svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0;}
     .planear-final-trust{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:14px;letter-spacing:0.03em;position:relative;}
     @media(max-width:600px){.planear-final-band-inner{padding:24px 20px;}.planear-final-title{font-size:1.25rem;}.planear-final-actions{flex-direction:column;}.planear-final-primary,.planear-final-secondary{width:100%;justify-content:center;}}
+
+    /* ── Related Beaches ── */
+    .related-section{margin-top:40px;}
+    .related-section-eyebrow{display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+    .related-section>h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:16px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    .related-card{background:var(--white);border-radius:var(--radius);border:1.5px solid var(--border);padding:16px 14px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:border-color 0.22s,box-shadow 0.22s,transform 0.22s;}
+    .related-card:hover{border-color:rgba(201,168,76,0.35);box-shadow:0 6px 20px rgba(10,61,107,0.09);transform:translateY(-2px);}
+    .related-card-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--text-light);}
+    .related-card-name{font-family:'Bodoni Moda',serif;font-size:0.95rem;font-weight:700;color:var(--blue);line-height:1.2;}
+    .related-card-meta{font-size:0.78rem;color:var(--text-mid);}
+    .related-card-cta{font-size:0.75rem;font-weight:600;color:var(--blue-mid);margin-top:auto;display:flex;align-items:center;gap:4px;}
+    .related-card-cta svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;}
+    @media(max-width:768px){.related-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
+
+    .lang-switcher{display:inline-flex;align-items:center;gap:4px;margin-right:6px;}
+    .lang-btn{font-family:'Inter',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;padding:4px 5px;border-radius:4px;transition:color 0.2s;cursor:pointer;min-height:0;}
+    .lang-btn--active{color:var(--gold);cursor:default;}
+    .lang-btn:not(.lang-btn--active):hover{color:rgba(255,255,255,0.90);}
   </style>
-  <link rel="stylesheet" href="css/style.css?v=20260402">
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
+
+<!-- cache-bust: 1776339162134 -->
 </head>
 <body>
 
 <a href="#main" class="skip-link">Saltar para o conteúdo</a>
 
 <nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
-  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
     Portugal Travel Hub
   </a>
-  <div class="nav-backdrop" id="nav-backdrop"></div>
+
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
     <a href="pesca.html" role="listitem">Pesca</a>
@@ -472,13 +501,22 @@
     <a href="precos.html" role="listitem">Preços</a>
     <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
+
   <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
     <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <main id="main">
@@ -521,6 +559,14 @@
           <span id="hero-region-text"></span>
         </div>
         <h1 id="hero-name"></h1>
+        <button class="favorite-btn" data-favorite-btn
+          data-beach-id=""
+          data-beach-name=""
+          data-beach-region=""
+          aria-label="Adicionar aos favoritos"
+          style="background:none;border:none;font-size:24px;cursor:pointer;padding:4px 8px;color:#C9A84C;">
+          ☆
+        </button>
         <div class="beach-badges" id="hero-badges"></div>
       </div>
     </div>
@@ -533,6 +579,7 @@
       <div class="beach-desc-section" id="desc-section" style="display:none">
         <h2>Sobre esta praia</h2>
         <p id="beach-desc-text"></p>
+        <p class="beach-editorial-note" style="font-size:0.78rem;color:var(--text-light);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);line-height:1.6;">Informação editorial curada pela equipa do Portugal Travel Hub. Qualidade da água por análise oficial da APA. <strong style="color:var(--text-mid);">Antes de partir:</strong> confirme horário do nadador-salvador, acesso viário e lotação — especialmente em época alta e após chuva intensa. As condições podem variar sazonalmente.</p>
       </div>
 
       <!-- Ideal para -->
@@ -543,27 +590,27 @@
 
       <!-- Highlights -->
       <div class="highlights-section reveal-sec" id="highlights-section" style="display:none">
-        <h2>Características</h2>
+        <h2>Perfil da Praia</h2>
         <div class="highlights-grid" id="highlights-grid"></div>
       </div>
 
       <!-- Vibe / Carácter -->
       <div class="vibe-section" id="vibe-section" style="display:none">
-        <h2>Carácter da Praia</h2>
+        <h2>Ambiente &amp; Carácter</h2>
         <div class="vibe-tags" id="vibe-tags"></div>
       </div>
 
       <!-- Mar & Ondulação -->
       <div class="surf-section" id="surf-section" style="display:none">
         <h2>Mar &amp; Ondulação</h2>
-        <p class="surf-subtitle">Dados em tempo real para os próximos 2 dias</p>
+        <p class="surf-subtitle">Previsão de onda e vento para os próximos 2 dias — use estes dados para decidir se vale a pena ir hoje ou amanhã.</p>
         <div id="surf-content"></div>
       </div>
 
       <!-- Tides -->
       <div class="tides-section" id="tides-section" style="display:none">
         <h2>Marés</h2>
-        <p class="tides-subtitle">Previsão para os próximos 3 dias — Instituto Hidrográfico</p>
+        <p class="tides-subtitle">Previsão astronómica (±30 min) — sem API externa</p>
         <div id="tides-content"></div>
       </div>
 
@@ -598,14 +645,21 @@
       <!-- Recomendações Locais -->
       <div class="local-recs-section" id="local-recs-section">
         <h2>Recomendações Locais</h2>
-        <p class="local-recs-note">Sugestões editoriais para a região — confirme disponibilidade no local.</p>
+        <p class="local-recs-note">Selecção editorial da nossa equipa para esta região — restaurantes com peixe fresco, experiências locais e pontos de interesse a poucos quilómetros. Confirme disponibilidade e horários directamente com cada local antes de partir.</p>
         <div class="accordion" id="local-recs-accordion"></div>
+      </div>
+
+      <!-- Praias Semelhantes -->
+      <div class="related-section" id="related-section" style="display:none">
+        <span class="related-section-eyebrow">Mais na região</span>
+        <h2>Praias Semelhantes</h2>
+        <div class="related-grid" id="related-grid"></div>
       </div>
 
       <!-- Explorar nesta zona -->
       <div class="explore-zona-section reveal-sec" id="explore-zona-section">
-        <span class="explore-zona-eyebrow">Nesta zona</span>
-        <h2>Explorar nesta Zona</h2>
+        <span class="explore-zona-eyebrow">Descubra na Região</span>
+        <h2>Mais para Explorar por Perto</h2>
         <div class="explore-zona-grid" id="explore-zona-grid"></div>
       </div>
 
@@ -636,43 +690,44 @@
         </div>
         <span>Portugal Travel Hub</span>
       </div>
-      <p class="footer-tagline">O portal de referência das praias de Portugal — condições em tempo real, webcams e previsões.</p>
+      <p class="footer-tagline">Portugal's reference beach portal — real-time conditions, webcams and forecasts.</p>
     </div>
-    <nav class="footer-col" aria-label="Destinos">
-      <h5>Destinos</h5>
+    <nav class="footer-col" aria-label="Destinations">
+      <h5>Destinations</h5>
       <ul>
-        <li><a href="beaches.html">Praias</a></li>
+        <li><a href="beaches.html">Beaches</a></li>
         <li><a href="surf.html">Surf</a></li>
-        <li><a href="pesca.html">Pesca</a></li>
+        <li><a href="pesca.html">Fishing</a></li>
         <li><a href="webcams.html">Webcams</a></li>
       </ul>
     </nav>
-    <nav class="footer-col" aria-label="Empresa">
-      <h5>Empresa</h5>
+    <nav class="footer-col" aria-label="Company">
+      <h5>Company</h5>
       <ul>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="precos.html">Preços</a></li>
-        <li><a href="planear.html">Planear</a></li>
-        <li><a href="parceiros.html">Parceiros</a></li>
-        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="sobre.html">About Us</a></li>
+        <li><a href="precos.html">Pricing</a></li>
+        <li><a href="planear.html">Plan</a></li>
+        <li><a href="parceiros.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <nav class="footer-col" aria-label="Legal">
       <h5>Legal</h5>
       <ul>
-        <li><a href="privacidade.html">Privacidade</a></li>
-        <li><a href="termos.html">Termos</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
         <li><a href="cookies.html">Cookies</a></li>
       </ul>
     </nav>
   </div>
   <div class="footer-bottom">
-    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. Todos os direitos reservados.</span>
-    <span><a href="sobre.html">Sobre</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></span>
+    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. All rights reserved.</span>
+    <span><a href="sobre.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></span>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -697,7 +752,7 @@
       if (user) {
         document.getElementById('nav-login-btn').textContent = 'Dashboard';
         document.getElementById('nav-login-btn').href = 'dashboard.html';
-        document.getElementById('nav-register-btn').textContent = 'Sair';
+        document.getElementById('nav-register-btn').textContent = 'Sign Out';
         document.getElementById('nav-register-btn').href = '#';
         document.getElementById('nav-register-btn').addEventListener('click', e => { e.preventDefault(); db.auth.signOut().then(() => { window.location.href = 'index.html'; }); });
       }
@@ -724,12 +779,13 @@
   // ── Highlights grid ──────────────────────────────────────────────
   function buildHighlights(beach) {
     const REGION_TYPES = {
-      'Algarve':  { value: 'Costa de Verão',         color: '#8a6b10', bg: 'rgba(201,168,76,0.12)' },
-      'Lisboa':   { value: 'Costa Atlântica',         color: '#1a5fa3', bg: 'rgba(41,128,212,0.10)' },
-      'Porto':    { value: 'Surf Atlântico',           color: '#0a3d6b', bg: 'rgba(10,61,107,0.10)' },
-      'Alentejo': { value: 'Costa Selvagem',           color: '#1e8449', bg: 'rgba(39,174,96,0.10)' },
-      'Madeira':  { value: 'Piscinas Naturais',        color: '#1a5fa3', bg: 'rgba(41,128,212,0.10)' },
-      'Açores':   { value: 'Arquipélago Vulcânico',    color: '#1e8449', bg: 'rgba(39,174,96,0.10)' },
+      'Algarve':          { value: 'Costa de Verão',           color: '#8a6b10', bg: 'rgba(201,168,76,0.12)' },
+      'Norte':            { value: 'Costa Atlântica Norte',    color: '#0a3d6b', bg: 'rgba(10,61,107,0.10)'  },
+      'Centro':           { value: 'Costa de Pinhais',         color: '#1e5c4a', bg: 'rgba(30,92,74,0.10)'   },
+      'Alentejo':         { value: 'Costa Selvagem',           color: '#1e8449', bg: 'rgba(39,174,96,0.10)'  },
+      'Lisboa e Setúbal': { value: 'Riviera Portuguesa',       color: '#1a5fa3', bg: 'rgba(41,128,212,0.10)' },
+      'Madeira':          { value: 'Ilha Atlântica',           color: '#1a5fa3', bg: 'rgba(41,128,212,0.10)' },
+      'Açores':           { value: 'Arquipélago Vulcânico',    color: '#1e8449', bg: 'rgba(39,174,96,0.10)'  },
     };
     const rt = REGION_TYPES[beach.region] || { value: beach.region || 'Portugal', color: '#0a3d6b', bg: 'rgba(10,61,107,0.08)' };
     const Q_COLORS = {
@@ -745,14 +801,12 @@
     const items = [
       { label: 'Tipo de Costa', value: rt.value, color: rt.color, bg: rt.bg,
         icon: '<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>' },
-      { label: 'Qualidade da Água', value: beach.water_quality || 'A verificar', color: qc.color, bg: qc.bg,
-        icon: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>' },
-      { label: 'Para Surf', value: isSurf ? 'Spot confirmado' : 'Condições variáveis',
-        color: isSurf ? '#0a3d6b' : '#8892a4', bg: isSurf ? 'rgba(10,61,107,0.10)' : 'rgba(136,146,164,0.06)',
-        icon: '<path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/>' },
-      { label: 'Vigilância', value: hasLifeguard ? 'Nadador-Salvador' : 'Não confirmada',
-        color: hasLifeguard ? '#1e8449' : '#8892a4', bg: hasLifeguard ? 'rgba(39,174,96,0.10)' : 'rgba(136,146,164,0.06)',
-        icon: '<circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/>' },
+      ...(beach.water_quality ? [{ label: 'Qualidade da Água', value: beach.water_quality, color: qc.color, bg: qc.bg,
+        icon: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>' }] : []),
+      ...(isSurf ? [{ label: 'Surf', value: 'Spot confirmado', color: '#0a3d6b', bg: 'rgba(10,61,107,0.10)',
+        icon: '<path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/>' }] : []),
+      ...(hasLifeguard ? [{ label: 'Vigilância', value: 'Nadador-Salvador', color: '#1e8449', bg: 'rgba(39,174,96,0.10)',
+        icon: '<circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/>' }] : []),
     ];
 
     return items.map(h => `
@@ -772,7 +826,7 @@
       '@type': 'TouristAttraction',
       name: beach.name,
       description: beach.description || `Praia ${beach.name} em ${beach.region}, Portugal.`,
-      url: `https://portal-turismo-portugal.pages.dev/beach.html?id=${beach.id}`,
+      url: `https://portalturismoportugal.com/beach.html?id=${beach.id}`,
       image: beach.image_url || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
       touristType: 'Beach',
       address: { '@type': 'PostalAddress', addressCountry: 'PT', addressRegion: beach.region || 'Portugal' },
@@ -792,8 +846,8 @@
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://portal-turismo-portugal.pages.dev/' },
-        { '@type': 'ListItem', position: 2, name: 'Praias', item: 'https://portal-turismo-portugal.pages.dev/beaches.html' },
+        { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://portalturismoportugal.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Praias', item: 'https://portalturismoportugal.com/beaches.html' },
         { '@type': 'ListItem', position: 3, name, item: url },
       ]
     };
@@ -863,12 +917,23 @@
 
   // ── Region URL maps (module-level) ─────────────────────────────
   const BOOKING_URLS = {
-    'Algarve':'https://www.booking.com/region/pt/algarve.pt-pt.html',
-    'Lisboa':'https://www.booking.com/city/pt/lisbon.pt-pt.html',
-    'Porto':'https://www.booking.com/city/pt/porto.pt-pt.html',
-    'Alentejo':'https://www.booking.com/region/pt/alentejo.pt-pt.html',
-    'Madeira':'https://www.booking.com/region/pt/madeira.pt-pt.html',
-    'Açores':'https://www.booking.com/region/pt/azores.pt-pt.html'
+    'Algarve':          'https://www.booking.com/region/pt/algarve.pt-pt.html',
+    'Norte':            'https://www.booking.com/region/pt/norte.pt-pt.html',
+    'Centro':           'https://www.booking.com/region/pt/centro.pt-pt.html',
+    'Lisboa e Setúbal': 'https://www.booking.com/city/pt/lisbon.pt-pt.html',
+    'Alentejo':         'https://www.booking.com/region/pt/alentejo.pt-pt.html',
+    'Madeira':          'https://www.booking.com/region/pt/madeira.pt-pt.html',
+    'Açores':           'https://www.booking.com/region/pt/azores.pt-pt.html',
+  };
+  // Internal stay-intent pages (where they exist)
+  const STAY_PAGES = {
+    'Algarve':          'onde-ficar-algarve-praia.html',
+    'Lisboa e Setúbal': 'onde-ficar-lisboa-setubal-praia.html',
+    'Norte':            'onde-ficar-norte-portugal-praia.html',
+    'Alentejo':         'onde-ficar-costa-alentejo-praia.html',
+    'Madeira':          'onde-ficar-madeira-perto-da-praia.html',
+    'Centro':           'onde-ficar-centro-portugal-praia.html',
+    'Oeste':            'onde-ficar-oeste-praia.html',
   };
   const WIND_URLS = {
     'Algarve':'https://www.windfinder.com/forecast/albufeira',
@@ -960,29 +1025,73 @@
   }
 
   // ── "Explorar nesta zona" builder ───────────────────────────────
+  // Heuristic: pick 3 contextually relevant actions based on available beach signals.
+  // Fishing only shown for river-mouth beaches (only reliable signal available at runtime).
   function buildExplorarZona(beach) {
-    const bp = encodeURIComponent(beach.name   || '');
-    const rp = encodeURIComponent(beach.region || '');
-    const zones = [
-      { label:'Surf & Ondas', title:'Condições de Surf',
-        desc:'Spots, níveis e previsão de ondas para surfistas nesta região.',
-        href:`surf.html?region=${rp}&source=beach&beach=${bp}`,
-        bg:'linear-gradient(135deg,#0a3d6b,#1a5fa3)',
-        icon:'<path d="M2 20L8 8l4 6 4-8 6 14"/><path d="M2 20q4-3 8 0 4 3 8 0"/>',
-        cta:'Explorar Surf' },
-      { label:'Pesca Desportiva', title:'Locais de Pesca',
-        desc:'Pontos de pesca, espécies e charters disponíveis nesta zona.',
-        href:`pesca.html?region=${rp}&source=beach&beach=${bp}`,
-        bg:'linear-gradient(135deg,#1e5c4a,#2d8b6f)',
-        icon:'<path d="M18 4l-6 6-6-6m6 6v8"/><circle cx="12" cy="8" r="1"/><path d="M4 19c0-2.5 3.5-4 8-4s8 1.5 8 4"/>',
-        cta:'Ver Pesca' },
-      { label:'Webcams ao Vivo', title:'Câmeras em Direto',
-        desc:'Veja as condições actuais da praia em tempo real antes de sair.',
-        href:`webcams.html?region=${rp}&source=beach&beach=${bp}`,
-        bg:'linear-gradient(135deg,#3d1e6b,#6b40a3)',
-        icon:'<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="14" r="3"/>',
-        cta:'Ver Webcams' }
-    ];
+    const bp   = encodeURIComponent(beach.name   || '');
+    const rp   = encodeURIComponent(beach.region || '');
+    const type = (beach.beach_type || '').toLowerCase();
+
+    // Regional hub map — keys match Supabase region values exactly
+    const REGION_HUB = {
+      'Algarve':          'praias-algarve.html',
+      'Norte':            'praias-norte-portugal.html',
+      'Centro':           'praias-centro-portugal.html',
+      'Madeira':          'praias-madeira.html',
+      'Alentejo':         'praias-alentejo-costa.html',
+      'Lisboa e Setúbal': 'praias-perto-lisboa.html',
+    };
+    const regionHref = REGION_HUB[beach.region] || `beaches.html?region=${rp}`;
+
+    const ALL = {
+      surf:    { label:'Surf & Ondas',      title:'Condições de Surf',
+                 desc:'Spots, níveis e previsão de ondas para surfistas nesta região.',
+                 href:`surf.html?region=${rp}&source=beach&beach=${bp}`,
+                 bg:'linear-gradient(135deg,#0a3d6b,#1a5fa3)',
+                 icon:'<path d="M2 20L8 8l4 6 4-8 6 14"/><path d="M2 20q4-3 8 0 4 3 8 0"/>',
+                 cta:'Explorar Surf' },
+      planner: { label:'Planear Visita',    title:'Organiza a Tua Ida',
+                 desc:'Combina marés, alojamento e atividades numa viagem à medida.',
+                 href:`planear.html?source=beach&beach=${bp}&region=${rp}&intent=planear`,
+                 bg:'linear-gradient(135deg,#8a6d00,#c9a84c)',
+                 icon:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+                 cta:'Criar Plano' },
+      fishing: { label:'Pesca Desportiva',  title:'Locais de Pesca',
+                 desc:'Pontos de pesca, espécies e charters disponíveis nesta zona.',
+                 href:`pesca.html?region=${rp}&source=beach&beach=${bp}`,
+                 bg:'linear-gradient(135deg,#1e5c4a,#2d8b6f)',
+                 icon:'<path d="M18 4l-6 6-6-6m6 6v8"/><circle cx="12" cy="8" r="1"/><path d="M4 19c0-2.5 3.5-4 8-4s8 1.5 8 4"/>',
+                 cta:'Ver Pesca' },
+      webcams: { label:'Webcams ao Vivo',   title:'Câmeras em Direto',
+                 desc:'Veja as condições atuais da praia em tempo real antes de sair.',
+                 href:`webcams.html?region=${rp}&source=beach&beach=${bp}`,
+                 bg:'linear-gradient(135deg,#3d1e6b,#6b40a3)',
+                 icon:'<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="14" r="3"/>',
+                 cta:'Ver Webcams' },
+      region:  (()=>{
+                 const RC = {
+                   'Algarve':          { label:'Praias do Algarve',       title:'Mais Praias no Algarve',          desc:'De Sagres à Meia Praia — descobre as melhores praias do Algarve.',      cta:'Ver Algarve'  },
+                   'Norte':            { label:'Praias do Norte',         title:'Explorar o Norte de Portugal',    desc:'Praias atlânticas selvagens e estuários do norte do país.',             cta:'Explorar Norte'},
+                   'Centro':           { label:'Praias do Centro',        title:'Explorar o Centro de Portugal',   desc:'Costa de pinhais, lagoas e areia fina no centro de Portugal.',          cta:'Ver Centro'   },
+                   'Madeira':          { label:'Praias da Madeira',       title:'Explorar a Madeira',              desc:'Praias vulcânicas e piscinas naturais na ilha da Madeira.',             cta:'Ver Madeira'  },
+                   'Alentejo':         { label:'Costa do Alentejo',       title:'Praias do Alentejo',              desc:'Costa selvagem e ventosa com praias desertas no Alentejo litoral.',    cta:'Ver Alentejo' },
+                   'Lisboa e Setúbal': { label:'Praias perto de Lisboa',  title:'Lisboa e Setúbal',                desc:'De Cascais a Setúbal — as melhores praias junto à capital.',            cta:'Ver Lisboa'   },
+                 };
+                 const rc = RC[beach.region] || { label:'Praias da Região', title:'Explorar a Zona', desc:'Descobre outras praias próximas com características similares.', cta:'Ver Região' };
+                 return { ...rc, href:regionHref, bg:'linear-gradient(135deg,#1a4a2e,#2d7a4f)', icon:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>' };
+               })(),
+    };
+
+    const isSurf        = !!(beach.is_surf_spot || type === 'surf');
+    const isFishingCtx  = type === 'river-mouth';
+    const isNature      = type === 'wild' || type === 'natural-reserve' || type === 'cove';
+
+    let zones;
+    if (isSurf)       zones = [ALL.surf,    ALL.webcams, ALL.region];
+    else if (isFishingCtx) zones = [ALL.planner, ALL.fishing, ALL.webcams];
+    else if (isNature) zones = [ALL.planner, ALL.region,  ALL.webcams];
+    else               zones = [ALL.planner, ALL.webcams, ALL.region];
+
     return zones.map(z => `
       <a class="explore-zona-card" href="${z.href}">
         <div class="explore-zona-card-icon" style="background:${z.bg}" aria-hidden="true">
@@ -1000,35 +1109,48 @@
 
   // ── "Planear Final Band" builder ────────────────────────────────
   function buildPlanearFinalBand(beach) {
-    const bp = encodeURIComponent(beach.name   || '');
-    const rp = encodeURIComponent(beach.region || '');
+    const bp = encodeURIComponent(beach.name      || '');
+    const tp = encodeURIComponent(beach.town      || '');
+    const sp = encodeURIComponent(beach.subregion || '');
+    const rp = encodeURIComponent(beach.region    || '');
     const planearHref  = `planear.html?source=beach&beach=${bp}&region=${rp}&intent=planear`;
     const bookingHref  = BOOKING_URLS[beach.region] || 'https://www.booking.com/country/pt.pt-pt.html';
     const beachesHref  = `beaches.html?region=${rp}`;
+    const stayPage     = STAY_PAGES[beach.region];
+    const STAY_LABELS  = { 'Algarve': 'Onde Ficar no Algarve', 'Lisboa e Setúbal': 'Onde Ficar em Lisboa e Setúbal', 'Norte': 'Onde Ficar no Norte de Portugal', 'Alentejo': 'Onde Ficar na Costa do Alentejo', 'Madeira': 'Onde Ficar na Madeira', 'Centro': 'Onde Ficar no Centro de Portugal', 'Oeste': 'Onde Ficar no Oeste de Portugal' };
+    const stayLabel    = stayPage ? (STAY_LABELS[beach.region] || `Onde Ficar em ${beach.region}`) : 'Procurar Alojamento Próximo';
+    const stayHref     = stayPage ? `${stayPage}?source=beach&beach=${bp}&town=${tp}&sub=${sp}` : bookingHref;
+    const stayTarget   = stayPage ? '' : ' target="_blank" rel="noopener noreferrer"';
+    const surfOrSave   = beach.is_surf_spot
+      ? `<a href="surf.html?region=${rp}&source=beach&beach=${bp}" class="planear-final-secondary">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20L8 8l4 6 4-8 6 14"/><path d="M2 20q4-3 8 0 4 3 8 0"/></svg>
+            Previsão de Surf
+          </a>`
+      : `<a href="login.html#register" class="planear-final-secondary">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            Guardar Praia
+          </a>`;
     return `
       <div class="planear-final-band-inner">
-        <div class="planear-final-eyebrow">A tua escapada perfeita</div>
+        <div class="planear-final-eyebrow">Próximo passo recomendado</div>
         <h2 class="planear-final-title">Planeia a visita<br>a ${beach.name}</h2>
-        <p class="planear-final-desc">Combina marés, alojamento e atividades — tudo organizado com base nos dados desta praia e da região ${beach.region || 'portuguesa'}.</p>
+        <p class="planear-final-desc">A maioria dos visitantes de ${beach.name} fica em ${beach.region || 'Portugal'} — um bom ponto de partida para estar perto da praia. Combina marés, alojamento e atividades antes que os melhores sítios para ficar se esgotem.</p>
         <div class="planear-final-actions">
           <a href="${planearHref}" class="planear-final-primary" onclick="track('beach_detail_cta_click',{page:'beach',source:'planear_band',beach:'${beach.name.replace(/'/g,'\\x27')}',region:'${(beach.region||'').replace(/'/g,'\\x27')}'})">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Criar Plano de Visita
           </a>
-          <a href="${bookingHref}" target="_blank" rel="noopener noreferrer" class="planear-final-secondary">
+          <a href="${stayHref}"${stayTarget} class="planear-final-secondary">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            Reservar Alojamento
+            ${stayLabel}
           </a>
           <a href="${beachesHref}" class="planear-final-secondary">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             Praias da Região
           </a>
-          <a href="login.html#register" class="planear-final-secondary">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-            Guardar Praia
-          </a>
+          ${surfOrSave}
         </div>
-        <p class="planear-final-trust">Grátis · Sem registo obrigatório · Dados atualizados diariamente</p>
+        <p class="planear-final-trust">Grátis · Sem registo obrigatório · Sem compromisso · Dados atualizados diariamente</p>
       </div>`;
   }
 
@@ -1330,65 +1452,152 @@
     }
   }
 
-  // ── Tides ────────────────────────────────────────────────────────
-  async function loadTides(beachId) {
-    const today = new Date().toISOString().split('T')[0];
-    const in3 = new Date(Date.now() + 3 * 86400000).toISOString().split('T')[0];
-    try {
-      const { data, error } = await db.from('tides')
-        .select('date, time, height_m, type')
-        .eq('beach_id', beachId)
-        .gte('date', today)
-        .lte('date', in3)
-        .order('date').order('time')
-        .limit(20);
-      if (error) throw error;
-      const wrap = document.getElementById('tides-content');
-      if (!data || !data.length) {
-        return; // sem dados — secção mantém-se oculta
+  // ── Astronomical Tide Calculator ─────────────────────────────────────────
+  // Based on simplified harmonic constituents for European Atlantic coast
+  // Accuracy: ~30 minutes | No API key required | No rate limits
+  function calcAstronomicalTides(lat, lon, daysAhead = 2) {
+    const now = Date.now();
+    const MS_HOUR = 3600000;
+    const results = [];
+
+    // M2 (principal lunar semidiurnal) — dominant on European Atlantic coast
+    const M2_PERIOD = 12.4206012 * MS_HOUR;
+    // S2 (principal solar semidiurnal)
+    const S2_PERIOD = 12.0 * MS_HOUR;
+    // K1 (lunisolar diurnal)
+    const K1_PERIOD = 23.9344697 * MS_HOUR;
+
+    // Approximate amplitudes for Portuguese coast (metres)
+    const latFactor = Math.max(0.5, Math.min(1.5, (lat - 35) / 10));
+    const M2_AMP = 1.2 * latFactor;
+    const S2_AMP = 0.4 * latFactor;
+    const K1_AMP = 0.1;
+
+    // Phase offset based on longitude (Atlantic Portugal ~-8° to -9°)
+    const lonPhase = (lon + 8.5) * (Math.PI / 180) * 2;
+
+    function tidalHeight(t) {
+      const M2 = M2_AMP * Math.cos((2 * Math.PI * t / M2_PERIOD) + lonPhase);
+      const S2 = S2_AMP * Math.cos((2 * Math.PI * t / S2_PERIOD) + lonPhase * 0.9);
+      const K1 = K1_AMP * Math.cos((2 * Math.PI * t / K1_PERIOD));
+      return M2 + S2 + K1;
+    }
+
+    // Scan next N days in 10-minute intervals to find extrema
+    const INTERVAL = 10 * 60 * 1000;
+    const END = now + (daysAhead * 24 * MS_HOUR);
+
+    let prevH = tidalHeight(now - INTERVAL);
+    let prevDir = 0;
+
+    for (let t = now; t <= END; t += INTERVAL) {
+      const h = tidalHeight(t);
+      const dir = h > prevH ? 1 : -1;
+
+      if (prevDir !== 0 && dir !== prevDir) {
+        const extremumT = t - INTERVAL / 2;
+        const extremumH = tidalHeight(extremumT);
+        const isHigh = prevDir === 1;
+        results.push({
+          time: new Date(extremumT).toISOString(),
+          height: (extremumH + 2.5).toFixed(2), // offset to ~0.5–3.5m range
+          type: isHigh ? 'high' : 'low',
+          label: isHigh ? 'Preia-mar' : 'Baixa-mar'
+        });
       }
 
-      // Find next upcoming tide (use local date to match IH almanac dates)
-      const _now = new Date();
-      const _p = n => String(n).padStart(2, '0');
-      const nowDate = `${_now.getFullYear()}-${_p(_now.getMonth() + 1)}-${_p(_now.getDate())}`;
-      const nowTime = _now.toTimeString().slice(0, 5);
-      const nextIdx = data.findIndex(t =>
-        t.date > nowDate || (t.date === nowDate && t.time.slice(0, 5) >= nowTime)
-      );
+      prevH = h;
+      prevDir = dir;
+    }
 
-      // Group by date
+    return results;
+  }
+
+  // ── Tides ────────────────────────────────────────────────────────
+  async function loadTides(lat, lon) {
+    try {
+      if (!lat || !lon) return;
+
+      const events = calcAstronomicalTides(parseFloat(lat), parseFloat(lon), 2);
+      const upcoming = events
+        .filter(e => new Date(e.time) >= new Date())
+        .slice(0, 6);
+
+      if (upcoming.length === 0) return;
+
+      // Agrupar por data
       const byDate = {};
-      data.forEach((t, i) => {
-        if (!byDate[t.date]) byDate[t.date] = [];
-        byDate[t.date].push({ ...t, _i: i });
+      upcoming.forEach((e, i) => {
+        const date = e.time.slice(0, 10);
+        if (!byDate[date]) byDate[date] = [];
+        byDate[date].push({ ...e, _i: i });
       });
 
       const daysHtml = Object.entries(byDate).map(([date, tides]) => {
         const label = new Date(date + 'T12:00:00').toLocaleDateString('pt-PT', { weekday: 'long', day: '2-digit', month: 'long' });
         const rowsHtml = tides.map(t => {
-          const isNext = t._i === nextIdx;
-          const isHigh = t.type === 'high';
-          const icon = isHigh ? '↑' : '↓';
-          const typeLabel = isHigh ? 'Preia-mar' : 'Baixa-mar';
+          const isNext = t._i === 0;
+          const timeStr = new Date(t.time).toLocaleTimeString('pt-PT', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Lisbon' });
           return `<div class="tides-row${isNext ? ' is-next' : ''}">
-            <div class="tides-row-icon tide-${t.type}">${icon}</div>
+            <div class="tides-row-icon tide-${t.type}">${t.type === 'high' ? '↑' : '↓'}</div>
             <div class="tides-row-main">
-              <span class="tides-row-label tide-${t.type}">${typeLabel}</span>
+              <span class="tides-row-label tide-${t.type}">${t.label}</span>
               ${isNext ? '<span class="tides-next-badge">Próxima</span>' : ''}
             </div>
-            <div class="tides-row-time">${t.time.slice(0, 5)}</div>
-            <div class="tides-row-height">${Number(t.height_m).toFixed(2)}<span class="tides-height-unit">m</span></div>
+            <div class="tides-row-time">${timeStr}</div>
+            <div class="tides-row-height">${t.height}<span class="tides-height-unit">m</span></div>
           </div>`;
         }).join('');
         return `<div class="tides-day"><div class="tides-day-label">${label}</div>${rowsHtml}</div>`;
       }).join('');
 
+      const wrap = document.getElementById('tides-content');
       wrap.innerHTML = `<div class="tides-card">${daysHtml}</div>`;
       document.getElementById('tides-section').style.display = 'block';
-    } catch(e) {
-      // erro de rede — secção mantém-se oculta, sem mensagem de erro visível
+    } catch(err) {
+      console.warn('Tide calc error:', err);
+      // secção mantém-se oculta em caso de erro
     }
+  }
+
+  // ── Related Beaches ──────────────────────────────────────────────
+  async function loadRelatedBeaches(beach) {
+    if (!beach.region) return;
+    try {
+      const { data: related } = await db.from('beaches')
+        .select('id, name, region, subregion, beach_type, water_quality, town, is_surf_spot')
+        .eq('region', beach.region)
+        .eq('is_active', true)
+        .neq('id', beach.id)
+        .limit(12);
+      if (!related || related.length === 0) return;
+      const grid = document.getElementById('related-grid');
+      const sec  = document.getElementById('related-section');
+      if (!grid || !sec) return;
+      // Rank: same subregion (+100) > same town (+10) > region (DB filter) > surf (+2) > beach_type (+1) > water_quality (+1)
+      const ranked = related.map(b => {
+        let score = 0;
+        if (beach.subregion && b.subregion && b.subregion === beach.subregion)       score += 100;
+        if (beach.town && b.town && b.town === beach.town)                           score += 10;
+        if (beach.is_surf_spot != null && b.is_surf_spot === beach.is_surf_spot)     score += 2;
+        if (beach.beach_type && b.beach_type && b.beach_type === beach.beach_type)   score += 1;
+        if (beach.water_quality && b.water_quality === beach.water_quality)          score += 1;
+        return { ...b, _score: score };
+      }).sort((a, b) => b._score - a._score).slice(0, 6);
+      grid.innerHTML = ranked.map(b => {
+        const parts = [];
+        if (b.town)          parts.push(b.town);
+        if (b.water_quality) parts.push(`Água ${b.water_quality}`);
+        const tag = parts.join(' · ') || b.region || 'Portugal';
+        return `<a href="beach.html?id=${b.id}" class="related-card">
+          <span class="related-card-tag">${tag}</span>
+          <span class="related-card-name">${b.name}</span>
+          <span class="related-card-meta">${b.region || 'Portugal'}</span>
+          <span class="related-card-cta">Ver ficha <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>`;
+      }).join('');
+      sec.style.display = 'block';
+    } catch(_) {}
   }
 
   // ── Main load ────────────────────────────────────────────────────
@@ -1428,7 +1637,12 @@
       document.getElementById('page-title').textContent = title;
       document.title = title;
       document.getElementById('page-desc').content = desc;
-      const canonicalUrl = `https://portal-turismo-portugal.pages.dev/beach.html?id=${id}`;
+      const beachSlug = (beach.name || '').toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const canonicalUrl = beachSlug
+        ? `https://portalturismoportugal.com/praias/${beachSlug}`
+        : `https://portalturismoportugal.com/beach.html?id=${id}`;
       document.getElementById('page-canonical').href = canonicalUrl;
       document.getElementById('page-og-url').content    = canonicalUrl;
       document.getElementById('page-og-title').content  = title;
@@ -1456,6 +1670,14 @@
         heroImg.alt = `Praia em Portugal`;
       }
       document.getElementById('hero-name').textContent = beach.name;
+
+      // Populate favorite button data attrs
+      const favBtn = document.querySelector('[data-favorite-btn]');
+      if (favBtn) {
+        favBtn.dataset.beachId = id;
+        favBtn.dataset.beachName = beach.name || '';
+        favBtn.dataset.beachRegion = beach.region || '';
+      }
 
       // Hero region label
       if (beach.region) {
@@ -1527,6 +1749,9 @@
       // Recomendações Locais
       document.getElementById('local-recs-accordion').innerHTML = buildLocalRecs(beach);
 
+      // Related beaches — async, non-blocking
+      loadRelatedBeaches(beach);
+
       // "Explorar nesta zona" — vertical routing
       const explorarGrid = document.getElementById('explore-zona-grid');
       if (explorarGrid) explorarGrid.innerHTML = buildExplorarZona(beach);
@@ -1556,7 +1781,7 @@
       });
 
       // Load tides async
-      loadTides(id);
+      loadTides(beach.latitude, beach.longitude);
 
     } catch(e) {
       console.error('[beach.html] load error:', e);
@@ -1598,5 +1823,14 @@
     </button>
   </div>
 </nav>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
+<script src="/js/lang-switcher.js" defer></script>
+<script src="/js/favorites.js?v=20260416b" defer></script>
 </body>
 </html>

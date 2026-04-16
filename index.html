@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
 
-  <title>Portugal Travel Hub — Beaches, Webcams, Surf & Fishing in Real Time</title>
-  <meta name="description" content="Portugal's reference beach portal. Real-time conditions, live webcams, surf and fishing forecasts, interactive map — all in one place.">
+  <title>Portugal Travel Hub — Praias, Webcams, Surf e Pesca em Tempo Real</title>
+  <meta name="description" content="O portal de referência para praias em Portugal. Condições em tempo real, webcams ao vivo, previsões de surf e pesca, mapa interactivo — tudo num só lugar.">
 
   <!-- SEO -->
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/">
+  <link rel="canonical" href="https://portalturismoportugal.com/">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://portal-turismo-portugal.pages.dev/">
-  <meta property="og:title" content="Portugal Travel Hub — Beaches, Webcams, Surf & Fishing in Real Time">
-  <meta property="og:description" content="Portugal's beach portal. Real-time conditions, live webcams, surf and fishing forecasts — all in one place.">
+  <meta property="og:url" content="https://portalturismoportugal.com/">
+  <meta property="og:title" content="Portugal Travel Hub — Praias, Webcams, Surf e Pesca em Tempo Real">
+  <meta property="og:description" content="O portal de praias de Portugal. Condições em tempo real, webcams ao vivo, previsões de surf e pesca — tudo num só lugar.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
-  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale" content="pt_PT">
   <meta property="og:site_name" content="Portugal Travel Hub">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Portugal Travel Hub — Beach Conditions, Webcams, Surf & Fishing in Real Time">
-  <meta name="twitter:description" content="Portugal's beach portal. Real-time conditions, live webcams, surf and fishing forecasts — all in one place.">
+  <meta name="twitter:title"       content="Portugal Travel Hub — Condições de Praia, Webcams, Surf e Pesca em Tempo Real">
+  <meta name="twitter:description" content="O portal de praias de Portugal. Condições em tempo real, webcams ao vivo, previsões de surf e pesca — tudo num só lugar.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
 
   <!-- JSON-LD -->
@@ -36,12 +43,12 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Portugal Travel Hub",
-    "url": "https://portal-turismo-portugal.pages.dev",
+    "url": "https://portalturismoportugal.com",
     "description": "Portugal's beach portal. Real-time conditions, webcams, surf and fishing.",
-    "inLanguage": "en",
+    "inLanguage": "pt",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://portal-turismo-portugal.pages.dev/beaches.html?q={search_term_string}",
+      "target": "https://portalturismoportugal.com/beaches.html?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -50,7 +57,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Hero video poster preload (matches actual poster src) -->
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" fetchpriority="high">
@@ -61,7 +69,7 @@
   <link rel="preconnect" href="https://videos.pexels.com">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css?v=20260402">
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
 
   <style>
     /* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
@@ -829,7 +837,7 @@
     .btn-sm {
       padding: 9px 20px !important;
       font-size: 0.8125rem !important;
-      min-height: 38px !important;
+      min-height: 44px !important;
     }
     .btn-outline-dark {
       border: 1.5px solid rgba(10,61,107,0.22);
@@ -845,14 +853,49 @@
     @media (max-width: 599px) {
       .b2b-strip { flex-direction: column; align-items: flex-start; }
     }
+    /* ── Editorial guides band ── */
+    .idx-guides-band{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
+    .idx-guides-inner{max-width:1100px;margin:0 auto;}
+    .idx-guides-eyebrow{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .idx-guides-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.55rem,2.8vw,2rem);font-weight:700;color:var(--blue);margin:0 0 28px;line-height:1.2;}
+    .idx-guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:860px){.idx-guides-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){.idx-guides-grid{grid-template-columns:1fr;gap:14px;}}
+    .idx-guide-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px 20px;text-decoration:none;color:inherit;transition:box-shadow 0.2s,transform 0.2s;}
+    .idx-guide-card:hover{box-shadow:0 8px 32px rgba(10,61,107,0.10);transform:translateY(-2px);}
+    .idx-guide-card-eyebrow{display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+    .idx-guide-card-title{font-family:'Bodoni Moda',serif;font-size:1rem;font-weight:700;color:var(--blue);margin:0 0 10px;line-height:1.3;}
+    .idx-guide-card-desc{font-size:0.875rem;color:var(--text-mid);line-height:1.65;margin:0 0 16px;flex:1;}
+    .idx-guide-card-cta{font-size:0.8125rem;font-weight:600;color:var(--gold);letter-spacing:0.02em;}
+
+    /* ══════════════════════════════════════════════════════════
+       JOURNEY BRIDGE — Qual é o seu próximo passo?
+       ══════════════════════════════════════════════════════════ */
+    .journey-bridge { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .journey-bridge-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .journey-bridge-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .journey-step { display: flex; flex-direction: column; padding: 30px 28px; text-decoration: none; color: inherit; border-right: 1px solid var(--border); transition: background 0.18s; }
+    .journey-step:last-child { border-right: none; }
+    .journey-step:hover { background: var(--white); }
+    .journey-step__eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-family: var(--font-body); }
+    .journey-step__label { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--blue); line-height: 1.3; margin: 0 0 8px; }
+    .journey-step__sub { font-size: 0.8125rem; color: var(--text-mid); line-height: 1.55; flex: 1; margin: 0 0 14px; font-family: var(--font-body); }
+    .journey-step__cta { font-size: 0.8125rem; font-weight: 600; color: var(--gold); font-family: var(--font-body); }
+    @media (max-width: 767px) {
+      .journey-bridge-grid { grid-template-columns: 1fr; }
+      .journey-step { border-right: none; border-bottom: 1px solid var(--border); padding: 22px 20px; }
+      .journey-step:last-child { border-bottom: none; }
+    }
   </style>
+
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to content</a>
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
 
 <!-- ── Navbar ──────────────────────────────────────────────────── -->
-<nav class="navbar" role="navigation" aria-label="Main navigation" id="navbar">
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+
   <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -860,36 +903,40 @@
     Portugal Travel Hub
   </a>
 
-  <div class="nav-backdrop" id="nav-backdrop"></div>
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Close menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="3" x2="21" y2="21"/><line x1="21" y1="3" x2="3" y2="21"/></svg>
-    </button>
-    <a href="beaches.html" role="listitem">Beaches</a>
+    <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
-    <a href="pesca.html" role="listitem">Fishing</a>
+    <a href="pesca.html" role="listitem">Pesca</a>
     <a href="webcams.html" role="listitem">Webcams</a>
-    <a href="planear.html" role="listitem">Plan</a>
-    <a href="precos.html" role="listitem">Pricing</a>
-    <a href="parceiros.html" role="listitem">Partners</a>
+    <a href="planear.html" role="listitem">Planear</a>
+    <a href="precos.html" role="listitem">Preços</a>
+    <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
 
   <div class="nav-actions">
-    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
-    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
+    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <!-- ── PRELOADER ────────────────────────────────────────────── -->
 <div id="preloader" class="preloader" aria-hidden="true">
   <div class="preloader__loader"></div>
   <div class="preloader__texts">
-    <p class="preloader__text">500+ Beaches</p>
-    <p class="preloader__text">7 Regions</p>
-    <p class="preloader__text">Atlantic</p>
+    <p class="preloader__text">110+ Praias</p>
+    <p class="preloader__text">7 Regiões</p>
+    <p class="preloader__text">Atlântico</p>
   </div>
 </div>
 
@@ -899,32 +946,32 @@
 <main id="main">
 
 <!-- ── 1. HERO — SPLIT 50/50 ────────────────────────────────── -->
-<section class="hero" aria-label="Portugal's beach portal">
+<section class="hero" aria-label="O portal de praias de Portugal">
   <!-- LEFT: Text content -->
   <div class="hero__left">
     <div class="spotlight" id="spotlight" aria-hidden="true"></div>
     <div class="hero__titles">
       <h1>
         <span class="hero__line1">Portugal</span>
-        <span class="hero__line2">through the <i>Ocean</i></span>
+        <span class="hero__line2">começa no <i>Atlântico</i></span>
       </h1>
     </div>
     <p class="hero__subtitle">
-      500+ beaches, 9 live webcams and curated trip planning for every region of Portugal's Atlantic coast.
+      110+ praias catalogadas, webcams ao vivo e dados reais de surf e marés — de Norte a Sul, do Continente às Ilhas. O guia definitivo da costa portuguesa.
     </p>
     <div class="hero__actions">
       <a href="planear.html" class="btn btn-primary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'planear'})">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Plan a Trip
+        Planear Viagem
       </a>
       <a href="beaches.html" class="btn btn-outline hero-btn-outline" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'beaches'})">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
-        Explore Beaches
+        Explorar Praias
       </a>
     </div>
     <div class="hero__based-in">
-      <span class="hero__based-label">Based in:</span>
-      <span class="hero__location">Lisbon</span>
+      <span class="hero__based-label">Presente em:</span>
+      <span class="hero__location">Lisboa</span>
       <span class="hero__location">Porto</span>
       <span class="hero__location">Algarve</span>
     </div>
@@ -937,17 +984,17 @@
       playsinline autoplay muted loop preload="none"
       class="hero__video"
       poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
-      aria-label="Video of Portuguese beaches"
+      aria-label="Vídeo de praias portuguesas"
     ></video>
     <div class="hero__video-overlay"></div>
     <div class="hero__right-content">
-      <span class="hero-eyebrow">PORTUGAL · 7 REGIONS · 500+ BEACHES · ATLANTIC</span>
-      <p class="hero__right-tagline">We blend science and nature<br>with an artistic touch.</p>
+      <span class="hero-eyebrow">PORTUGAL · 7 REGIÕES · 110+ PRAIAS · ATLÂNTICO</span>
+      <p class="hero__right-tagline">O Atlântico em tempo real.<br>Curadoria editorial independente — sem conteúdo patrocinado oculto.</p>
     </div>
   </div>
 
   <!-- Scroll indicator -->
-  <a href="#conditions" class="hero-scroll" aria-label="See beach conditions">
+  <a href="#conditions" class="hero-scroll" aria-label="Ver condições das praias">
     <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
   </a>
 </section>
@@ -956,61 +1003,61 @@
 <section class="intent-bg page-section" id="intent" aria-labelledby="intent-title">
   <div class="section-inner">
     <div class="section-header reveal" style="margin-bottom:36px;">
-      <div class="section-tag">START HERE</div>
-      <h2 class="section-title" id="intent-title">What are you looking for today?</h2>
+      <div class="section-tag">COMECE AQUI</div>
+      <h2 class="section-title" id="intent-title">O que procura hoje?</h2>
     </div>
-    <nav class="intent-grid" aria-label="Browse by intent">
+    <nav class="intent-grid" aria-label="Navegar por intenção">
 
-      <a href="beaches.html" class="intent-card reveal" aria-label="Explore beaches in Portugal">
+      <a href="beaches.html" class="intent-card reveal" aria-label="Explorar praias em Portugal">
         <div class="intent-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/><path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17s2.5 2 5 2 2.5-2 5-2"/></svg>
         </div>
-        <span class="intent-card__label">Explore Beaches</span>
-        <span class="intent-card__desc">500+ curated beaches across 7 Atlantic regions</span>
+        <span class="intent-card__label">Explorar Praias</span>
+        <span class="intent-card__desc">110+ praias em 7 regiões do Atlântico</span>
         <div class="intent-card__arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
       </a>
 
-      <a href="surf.html" class="intent-card reveal" aria-label="Check surf conditions">
+      <a href="surf.html" class="intent-card reveal" aria-label="Ver condições de surf">
         <div class="intent-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M2 20c2-2 4-3 6-3 2.5 0 4 1.5 6 1.5 2 0 3.5-1 4-1.5"/><path d="M9 9c0 2.5 1 4.5 3 6"/><path d="M15 3c-2 3-2.5 5.5-1 8"/><path d="M9 9l6-6"/></svg>
         </div>
-        <span class="intent-card__label">Surf Conditions</span>
-        <span class="intent-card__desc">Waves, swell, wind and recommended spots</span>
+        <span class="intent-card__label">Condições de Surf</span>
+        <span class="intent-card__desc">Ondas, marulho, vento e spots recomendados</span>
         <div class="intent-card__arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
       </a>
 
-      <a href="pesca.html" class="intent-card reveal" aria-label="Check fishing conditions">
+      <a href="pesca.html" class="intent-card reveal" aria-label="Ver condições de pesca">
         <div class="intent-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M18 16l-5.5-1.5"/><path d="M9.5 12c1.5 1 4 1.5 4 1.5V8a2.5 2.5 0 0 0-5 0c0 1.5 1 3 1 3"/><path d="M3 16s1.5-3 4-4"/><path d="M9.5 12L6 16"/><circle cx="18" cy="16" r="2"/><path d="M20 16h2"/></svg>
         </div>
-        <span class="intent-card__label">Fishing Spots</span>
-        <span class="intent-card__desc">Tides, moon phase, water temperature and best spots</span>
+        <span class="intent-card__label">Spots de Pesca</span>
+        <span class="intent-card__desc">Marés, fase lunar, temperatura da água e melhores spots</span>
         <div class="intent-card__arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
       </a>
 
-      <a href="webcams.html" class="intent-card reveal" aria-label="Watch live beach webcams">
+      <a href="webcams.html" class="intent-card reveal" aria-label="Ver webcams de praia ao vivo">
         <div class="intent-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
         </div>
-        <span class="intent-card__label">Live Webcams</span>
-        <span class="intent-card__desc">9 live cameras along Portugal's Atlantic coast</span>
+        <span class="intent-card__label">Webcams ao Vivo</span>
+        <span class="intent-card__desc">9 câmaras ao vivo ao longo da costa Atlântica de Portugal</span>
         <div class="intent-card__arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
       </a>
 
-      <a href="planear.html" class="intent-card reveal" aria-label="Plan a beach getaway">
+      <a href="planear.html" class="intent-card reveal" aria-label="Planear uma escapada à praia">
         <div class="intent-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
-        <span class="intent-card__label">Plan a Trip</span>
-        <span class="intent-card__desc">Free custom plan — no sign-up required</span>
+        <span class="intent-card__label">Planear Viagem</span>
+        <span class="intent-card__desc">Plano personalizado gratuito — sem registo obrigatório</span>
         <div class="intent-card__arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
@@ -1024,13 +1071,13 @@
 <section class="conditions-bg page-section" id="conditions" aria-labelledby="conditions-title">
   <div class="section-inner">
     <div class="section-header reveal">
-      <div class="section-tag">LIVE DATA</div>
-      <h2 class="section-title" id="conditions-title">Conditions updated<br>every minute</h2>
-      <p class="section-subtitle">Water temperature, sea state, beach flag, wind and UV index — available on every beach page.</p>
+      <div class="section-tag">DADOS EM TEMPO REAL</div>
+      <h2 class="section-title" id="conditions-title">Condições atualizadas<br>a cada minuto</h2>
+      <p class="section-subtitle">Temperatura da água, estado do mar, bandeira de praia, vento e índice UV — disponível em cada página de praia.</p>
     </div>
     <div class="conditions-grid">
 
-      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="Sea state — view beaches">
+      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="Estado do mar — ver praias">
         <div class="condition-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24">
             <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/>
@@ -1038,42 +1085,42 @@
             <path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17s2.5 2 5 2 2.5-2 5-2"/>
           </svg>
         </div>
-        <h3 class="condition-card__label">Sea State</h3>
-        <span class="condition-card__value">View per beach →</span>
+        <h3 class="condition-card__label">Estado do Mar</h3>
+        <span class="condition-card__value">Ver por praia →</span>
       </a>
 
-      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="Water temperature — view beaches">
+      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="Temperatura da água — ver praias">
         <div class="condition-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24">
             <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
           </svg>
         </div>
-        <h3 class="condition-card__label">Water Temperature</h3>
-        <span class="condition-card__value">View per beach →</span>
+        <h3 class="condition-card__label">Temperatura da Água</h3>
+        <span class="condition-card__value">Ver por praia →</span>
       </a>
 
-      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="Beach flag — view beaches">
+      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="Bandeira de praia — ver praias">
         <div class="condition-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24">
             <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
             <line x1="4" y1="22" x2="4" y2="15"/>
           </svg>
         </div>
-        <h3 class="condition-card__label">Beach Flag</h3>
-        <span class="condition-card__value">View per beach →</span>
+        <h3 class="condition-card__label">Bandeira de Praia</h3>
+        <span class="condition-card__value">Ver por praia →</span>
       </a>
 
-      <a href="surf.html" class="condition-card hp-card reveal" aria-label="Wind and swell — view surf spots">
+      <a href="surf.html" class="condition-card hp-card reveal" aria-label="Vento e marulho — ver spots de surf">
         <div class="condition-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24">
             <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
           </svg>
         </div>
-        <h3 class="condition-card__label">Wind &amp; Swell</h3>
-        <span class="condition-card__value">View surf spots →</span>
+        <h3 class="condition-card__label">Vento e Marulho</h3>
+        <span class="condition-card__value">Ver spots de surf →</span>
       </a>
 
-      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="UV Index — view beaches">
+      <a href="beaches.html" class="condition-card hp-card reveal" aria-label="Índice UV — ver praias">
         <div class="condition-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="5"/>
@@ -1087,8 +1134,8 @@
             <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
           </svg>
         </div>
-        <h3 class="condition-card__label">UV Index</h3>
-        <span class="condition-card__value">View per beach →</span>
+        <h3 class="condition-card__label">Índice UV</h3>
+        <span class="condition-card__value">Ver por praia →</span>
       </a>
 
     </div>
@@ -1099,9 +1146,9 @@
 <section class="webcams-bg page-section--dark section--dark" id="webcams" aria-labelledby="webcams-title">
   <div class="section-inner">
     <div class="section-header reveal">
-      <div class="section-tag">LIVE FROM THE COAST</div>
-      <h2 class="section-title" id="webcams-title">9 live webcams<br>from the Atlantic</h2>
-      <p class="section-subtitle">Powered by Beachcam — Portugal's most reliable coastal cameras, so you know before you go.</p>
+      <div class="section-tag">AO VIVO DA COSTA</div>
+      <h2 class="section-title" id="webcams-title">9 webcams ao vivo<br>do Atlântico</h2>
+      <p class="section-subtitle">Tecnologia Beachcam — as câmaras costeiras mais fiáveis de Portugal, para saber antes de partir.</p>
     </div>
 
     <div class="webcams-grid">
@@ -1131,7 +1178,7 @@
     </div>
 
     <div class="webcams-cta">
-      <a href="webcams.html" class="btn btn-outline" aria-label="View all webcams">
+      <a href="webcams.html" class="btn btn-outline" aria-label="Ver todas as webcams">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
         Watch All 9 Live Webcams
       </a>
@@ -1144,8 +1191,8 @@
   <div class="section-inner">
     <div class="section-header reveal">
       <div class="section-tag">SURF & FISHING</div>
-      <h2 class="section-title" id="sp-title">Surf and Fishing with professional data</h2>
-      <p class="section-subtitle">Pro-grade tide, swell and wind data — the same level as specialist platforms, completely free.</p>
+      <h2 class="section-title" id="sp-title">Surf e Pesca com dados profissionais</h2>
+      <p class="section-subtitle">Dados de marés, marulho e vento de nível profissional — ao mesmo nível das plataformas especializadas, completamente gratuito.</p>
     </div>
 
     <div class="surf-pesca-grid">
@@ -1159,8 +1206,8 @@
           </svg>
         </div>
         <h3>Surf</h3>
-        <p>Waves, swell, wind and full conditions for your next session.</p>
-        <a href="surf.html" class="btn btn-primary" aria-label="View surf spots">View Surf Spots</a>
+        <p>Ondas, marulho, vento e condições completas para a sua próxima sessão.</p>
+        <a href="surf.html" class="btn btn-primary" aria-label="View surf spots">Ver Spots de Surf</a>
       </div>
 
       <div class="sp-card sp-card--pesca reveal">
@@ -1174,9 +1221,9 @@
             <path d="M20 16h2"/>
           </svg>
         </div>
-        <h3>Fishing</h3>
-        <p>Tides, moon phase, water temperature and the right moment to fish.</p>
-        <a href="pesca.html" class="btn btn-primary" aria-label="View fishing spots">View Fishing Spots</a>
+        <h3>Pesca</h3>
+        <p>Marés, fase lunar, temperatura da água e o momento certo para pescar.</p>
+        <a href="pesca.html" class="btn btn-primary" aria-label="View fishing spots">Ver Spots de Pesca</a>
       </div>
 
     </div>
@@ -1187,51 +1234,81 @@
 <section class="featured-bg page-section featured-beaches" aria-labelledby="fb-title">
   <div class="section-inner">
     <div class="section-header reveal">
-      <div class="section-tag">EDITORIAL PICKS</div>
-      <h2 class="section-title" id="fb-title">Featured beaches</h2>
-      <p class="section-subtitle">Hand-picked based on water quality, access, safety flags and seasonal conditions.</p>
+      <div class="section-tag">SELEÇÃO EDITORIAL</div>
+      <h2 class="section-title" id="fb-title">Praias em Destaque</h2>
+      <p class="section-subtitle">Selecionadas pela qualidade da água, acessibilidade, bandeiras de segurança e condições sazonais.</p>
     </div>
-    <div class="fb-grid" id="fb-grid" role="list" aria-label="Featured beaches" aria-live="polite"></div>
+    <div class="fb-grid" id="fb-grid" role="list" aria-label="Praias em destaque" aria-live="polite"></div>
     <div class="fb-cta">
       <a href="beaches.html" class="btn btn-blue">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        View All Beaches
+        Ver Todas as Praias
       </a>
     </div>
   </div>
 </section>
+
+<!-- ── JOURNEY BRIDGE — Qual é o seu próximo passo? ─────────── -->
+<div class="journey-bridge" aria-label="Qual é o seu próximo passo">
+  <div class="journey-bridge-inner">
+    <div class="journey-bridge-grid">
+
+      <a href="beaches.html?source=home-journey&amp;step=discover" class="journey-step">
+        <span class="journey-step__eyebrow">Descubro Praias</span>
+        <span class="journey-step__label">Já sei a zona</span>
+        <span class="journey-step__sub">Filtrar 110+ praias por região, tipo ou qualidade da água.</span>
+        <span class="journey-step__cta">Ver todas as praias →</span>
+      </a>
+
+      <a href="onde-ficar-algarve-praia.html?source=home-journey&amp;step=stay" class="journey-step">
+        <span class="journey-step__eyebrow">Procuro Estadia</span>
+        <span class="journey-step__label">Preciso de onde ficar</span>
+        <span class="journey-step__sub">Guia editorial de alojamento perto das melhores praias — sem publicidade oculta.</span>
+        <span class="journey-step__cta">Ver guia de estadia →</span>
+      </a>
+
+      <a href="planear.html?source=home-journey&amp;step=plan" class="journey-step">
+        <span class="journey-step__eyebrow">Planear Tudo</span>
+        <span class="journey-step__label">Quero o plano completo</span>
+        <span class="journey-step__sub">Praia, alojamento, atividades e condições — personalizado para as suas datas.</span>
+        <span class="journey-step__cta">Criar o meu plano →</span>
+      </a>
+
+    </div>
+  </div>
+</div>
 
 <!-- ── 6. PLANEAR CTA ─────────────────────────────────────────── -->
 <section class="planear-cta-bg page-section--dark section--dark" id="planear-cta" aria-labelledby="planear-cta-title">
   <div class="section-inner">
     <div class="planear-cta-inner">
       <div class="section-header reveal">
-        <div class="section-tag">PERSONALISED PLANNING</div>
-        <h2 class="section-title" id="planear-cta-title">Your perfect coastal trip<br>starts here</h2>
-        <p class="section-subtitle">Match the right beach with the best conditions for your dates — a full custom plan in minutes, no sign-up needed.</p>
+        <div class="section-tag">PLANEAMENTO PERSONALIZADO</div>
+        <h2 class="section-title" id="planear-cta-title">Diga-nos o que procura.<br>Fazemos o plano.</h2>
+        <p class="section-subtitle">A praia certa, as condições ideais, itinerário completo — personalizado para as suas datas e interesses em minutos.</p>
       </div>
-      <div class="planear-checklist reveal" aria-label="What you can plan">
+      <div class="planear-checklist reveal" aria-label="O que pode planear">
         <span class="planear-check">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          The right beach for you
+          A praia certa para si
         </span>
         <span class="planear-check">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Best conditions by date
+          Melhores condições por data
         </span>
         <span class="planear-check">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Surf and fishing in one spot
+          Surf e pesca no mesmo lugar
         </span>
         <span class="planear-check">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Personalised recommendations
+          Recomendações personalizadas
         </span>
       </div>
       <div class="reveal" style="text-align:center;">
         <a href="planear.html" class="btn btn-primary" style="font-size:1rem;padding:16px 44px;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Build My Plan
+          Criar o Meu Plano
         </a>
       </div>
     </div>
@@ -1242,8 +1319,8 @@
 <section class="monetizacao-bg page-section" aria-labelledby="monet-title">
   <div class="section-inner">
     <div class="section-header reveal">
-      <div class="section-tag">COMPLETE YOUR TRIP</div>
-      <h2 class="section-title" id="monet-title">Hotels, activities and gear</h2>
+      <div class="section-tag">COMPLETE A SUA VIAGEM</div>
+      <h2 class="section-title" id="monet-title">Hotéis, atividades e equipamento</h2>
     </div>
 
     <div class="monetizacao-grid">
@@ -1251,13 +1328,13 @@
       <a href="https://www.booking.com/country/pt.pt-pt.html"
          target="_blank" rel="noopener noreferrer"
          class="monet-card hp-card hp-card--link reveal"
-         aria-label="Find coastal hotels on Booking.com">
+         aria-label="Encontrar hotéis costeiros no Booking.com">
         <div class="monet-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <h3>Coastal hotels</h3>
+        <h3>Hotéis costeiros</h3>
         <p class="monet-card__via">via Booking.com</p>
-        <p class="monet-card__desc">Beachside accommodation across all regions of Portugal.</p>
+        <p class="monet-card__desc">Alojamento à beira-mar em todas as regiões de Portugal.</p>
         <span class="btn btn-blue" aria-hidden="true">
           Browse Hotels
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -1267,13 +1344,13 @@
       <a href="https://www.getyourguide.pt/portugal-l33/"
          target="_blank" rel="noopener noreferrer"
          class="monet-card hp-card hp-card--link reveal"
-         aria-label="Find activities and tours in Portugal on GetYourGuide">
+         aria-label="Encontrar atividades e tours em Portugal no GetYourGuide">
         <div class="monet-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         </div>
-        <h3>Coastal experiences</h3>
+        <h3>Experiências costeiras</h3>
         <p class="monet-card__via">via GetYourGuide</p>
-        <p class="monet-card__desc">Surf lessons, diving, kayaking and guided tours along the coast.</p>
+        <p class="monet-card__desc">Aulas de surf, mergulho, kayak e tours guiados ao longo da costa.</p>
         <span class="btn btn-blue" aria-hidden="true">
           Browse Experiences
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -1283,13 +1360,13 @@
       <a href="https://www.amazon.es/s?k=equipamento+surf+praia"
          target="_blank" rel="noopener noreferrer"
          class="monet-card hp-card hp-card--link reveal"
-         aria-label="Find surf and beach gear on Amazon">
+         aria-label="Encontrar equipamento de surf e praia na Amazon">
         <div class="monet-card__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
-        <h3>Beach and surf gear</h3>
+        <h3>Equipamento de praia e surf</h3>
         <p class="monet-card__via">via Amazon</p>
-        <p class="monet-card__desc">Boards, wetsuits and accessories delivered to your door.</p>
+        <p class="monet-card__desc">Pranchas, fatos de neoprene e acessórios entregues em casa.</p>
         <span class="btn btn-blue" aria-hidden="true">
           Browse Gear
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -1299,13 +1376,41 @@
     </div>
     <div class="b2b-strip reveal">
       <div class="b2b-strip__text">
-        <span class="b2b-strip__label">Do you run a tourism business in Portugal?</span>
-        <span class="b2b-strip__sub">Reach travellers actively planning coastal trips — exactly when they decide.</span>
+        <span class="b2b-strip__label">Tem um negócio de turismo em Portugal?</span>
+        <span class="b2b-strip__sub">Chegue aos viajantes que estão a planear viagens costeiras — no momento em que decidem.</span>
       </div>
       <div class="b2b-strip__actions">
-        <a href="parceiros.html" class="btn btn-blue btn-sm">Partner Plans</a>
+        <a href="parceiros.html" class="btn btn-blue btn-sm">Planos de Parceiro</a>
         <a href="media-kit.html" class="btn btn-outline-dark btn-sm">Media Kit</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Editorial guides ─────────────────────────────────────── -->
+<section class="idx-guides-band" aria-labelledby="idx-guides-title">
+  <div class="idx-guides-inner">
+    <span class="idx-guides-eyebrow">Guias Editoriais</span>
+    <h2 class="idx-guides-title" id="idx-guides-title">Explore por região e experiência</h2>
+    <div class="idx-guides-grid">
+      <a href="praias-algarve.html" class="idx-guide-card">
+        <span class="idx-guide-card-eyebrow">Algarve · Guia de Zonas</span>
+        <p class="idx-guide-card-title">Praias do Algarve</p>
+        <p class="idx-guide-card-desc">Este, central ou oeste? Lagoas calmas, falésias dramáticas ou costa atlântica selvagem — cada zona tem o seu carácter.</p>
+        <span class="idx-guide-card-cta">Ler guia →</span>
+      </a>
+      <a href="praias-perto-lisboa.html" class="idx-guide-card">
+        <span class="idx-guide-card-eyebrow">Lisboa · Escapadas de Dia</span>
+        <p class="idx-guide-card-title">Praias Perto de Lisboa</p>
+        <p class="idx-guide-card-desc">De Cascais (comboio, 35 min) à Arrábida e Comporta — guia por distância, acesso e tipo de praia.</p>
+        <span class="idx-guide-card-cta">Ler guia →</span>
+      </a>
+      <a href="melhores-praias-por-do-sol.html" class="idx-guide-card">
+        <span class="idx-guide-card-eyebrow">Experiência · Pôr do Sol</span>
+        <p class="idx-guide-card-title">Praias para o Pôr do Sol</p>
+        <p class="idx-guide-card-desc">Comporta, Sagres, Zambujeira — as praias orientadas a oeste com os pores do sol mais espetaculares de Portugal.</p>
+        <span class="idx-guide-card-cta">Ler guia →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1323,29 +1428,22 @@
         Portugal Travel Hub
       </div>
       <p class="footer-tagline">
-        Portugal's reference portal for beaches — conditions, webcams, surf, fishing and trip planning.
+        O portal de referência de praias em Portugal — condições, webcams, surf, pesca e planeamento de viagens.
       </p>
-      <nav class="footer-social" aria-label="Social media">
-        <a href="javascript:void(0);" class="social-btn" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-        <a href="javascript:void(0);" class="social-btn" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="javascript:void(0);" class="social-btn" aria-label="Twitter / X">
-          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-        </a>
-        <a href="javascript:void(0);" class="social-btn" aria-label="YouTube">
-          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-        </a>
-      </nav>
+      <form class="footer-search-form" role="search" aria-label="Pesquisar praia">
+        <div class="footer-search-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="footer-search-input" placeholder="Pesquisar praia..." aria-label="Pesquisar praia">
+          <button type="submit" class="footer-search-btn" aria-label="Pesquisar">Ir</button>
+        </div>
+      </form>
     </div>
 
-    <nav class="footer-col" aria-label="Destinations">
-      <h5>Destinations</h5>
+    <nav class="footer-col" aria-label="Destinos">
+      <h5>Destinos</h5>
       <ul>
         <li><a href="beaches.html?region=Algarve">Algarve</a></li>
-        <li><a href="beaches.html?region=Lisboa">Lisbon</a></li>
+        <li><a href="beaches.html?region=Lisboa">Lisboa</a></li>
         <li><a href="beaches.html?region=Porto">Porto</a></li>
         <li><a href="beaches.html?region=Alentejo">Alentejo</a></li>
       </ul>
@@ -1354,56 +1452,57 @@
     <nav class="footer-col" aria-label="Portal">
       <h5>Portal</h5>
       <ul>
-        <li><a href="beaches.html">Beaches</a></li>
+        <li><a href="beaches.html">Praias</a></li>
         <li><a href="webcams.html">Webcams</a></li>
         <li><a href="surf.html">Surf</a></li>
-        <li><a href="pesca.html">Fishing</a></li>
-        <li><a href="planear.html">Plan a Trip</a></li>
+        <li><a href="pesca.html">Pesca</a></li>
+        <li><a href="planear.html">Planear Viagem</a></li>
       </ul>
     </nav>
 
-    <nav class="footer-col" aria-label="Partners &amp; Help">
-      <h5>Partners &amp; Help</h5>
+    <nav class="footer-col" aria-label="Parceiros &amp; Ajuda">
+      <h5>Parceiros &amp; Ajuda</h5>
       <ul>
-        <li><a href="parceiros.html">Partners</a></li>
+        <li><a href="parceiros.html">Parceiros</a></li>
         <li><a href="media-kit.html">Media Kit</a></li>
-        <li><a href="sobre.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacidade.html">Privacy</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="privacy.html">Privacidade</a></li>
       </ul>
     </nav>
   </div>
 
   <div class="footer-bottom">
-    <span>© 2026 Portugal Travel Hub. All rights reserved.</span>
-    <span><a href="sobre.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacidade.html">Privacy</a> · <a href="termos.html">Terms</a> · <a href="cookies.html">Cookies</a></span>
+    <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span><a href="sobre.html">Sobre</a> · <a href="metodologia-editorial.html">Metodologia</a> · <a href="transparencia-comercial.html">Transparência</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a></span>
   </div>
 </footer>
 
 <!-- ── Bottom nav (mobile) ──────────────────────────────────── -->
-<nav class="bottom-nav" aria-label="Quick navigation">
-  <a href="/" class="bottom-nav-item active" aria-label="Home" aria-current="page">
+<nav class="bottom-nav" aria-label="Navegação rápida">
+  <a href="/" class="bottom-nav-item active" aria-label="Início" aria-current="page">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    <span>Home</span>
+    <span>Início</span>
   </a>
-  <a href="beaches.html" class="bottom-nav-item" aria-label="Beaches">
+  <a href="beaches.html" class="bottom-nav-item" aria-label="Praias">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
-    <span>Beaches</span>
+    <span>Praias</span>
   </a>
   <a href="surf.html" class="bottom-nav-item" aria-label="Surf">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
     <span>Surf</span>
   </a>
-  <a href="pesca.html" class="bottom-nav-item" aria-label="Fishing">
+  <a href="pesca.html" class="bottom-nav-item" aria-label="Pesca">
     <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-    <span>Fishing</span>
+    <span>Pesca</span>
   </a>
 </nav>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/config.js?v=20260402"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/animations.js?v=20260402" defer></script>
 <script>
   // ── Preloader ────────────────────────────────────────────────
@@ -1415,7 +1514,6 @@
       preloader.classList.add('gone');
       return;
     }
-    document.body.style.overflow = 'hidden';
     var texts = preloader.querySelectorAll('.preloader__text');
     texts.forEach(function(t, i) {
       setTimeout(function() { t.style.opacity = '1'; }, 300 + i * 800);
@@ -1423,7 +1521,6 @@
     setTimeout(function() { preloader.classList.add('slide-up'); }, 1400);
     setTimeout(function() {
       preloader.classList.add('gone');
-      document.body.style.overflow = '';
     }, 2200);
   })();
 
@@ -1439,34 +1536,17 @@
     });
   }
 
-  // ── Navbar scroll ─────────────────────────────────────────────
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+  // ── Navbar scroll + mobile nav → handled by js/nav.js ────────
 
-  // ── Mobile nav drawer ─────────────────────────────────────────
-  const toggle      = document.getElementById('nav-toggle');
-  const navClose    = document.getElementById('nav-close');
-  const navBackdrop = document.getElementById('nav-backdrop');
-
-  function openMobileNav() {
-    navbar.classList.add('nav-mobile-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  // ── Footer search ─────────────────────────────────────────────
+  const footerSearchForm = document.querySelector('.footer-search-form');
+  if (footerSearchForm) {
+    footerSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = document.getElementById('footer-search-input')?.value.trim();
+      if (q) window.location.href = 'beaches.html?q=' + encodeURIComponent(q);
+    });
   }
-  function closeMobileNav() {
-    navbar.classList.remove('nav-mobile-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  toggle?.addEventListener('click', () =>
-    navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav()
-  );
-  navClose?.addEventListener('click', closeMobileNav);
-  navBackdrop?.addEventListener('click', closeMobileNav);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
 
   // ── Page logic ────────────────────────────────────────────────
   (async () => {
@@ -1493,23 +1573,23 @@
           quality: 'Excelente'
         },
         {
-          href:    'beaches.html?q=Praia+da+Marinha',
+          href:    'beach.html?id=66ee7f6b-018b-408b-8d48-c58d2f73bf8d',
           name:    'Praia da Marinha',
           region:  'Algarve',
           img:     'https://images.unsplash.com/photo-1651237031934-4c1c78b9f1ba?auto=format&fit=crop&w=1200&q=80',
           quality: 'Excelente'
         },
         {
-          href:    'beaches.html?q=Praia+da+Comporta',
+          href:    'beach.html?id=91f9ac99-a4b2-4793-afba-5b7f79d72d54',
           name:    'Praia da Comporta',
-          region:  'Alentejo',
+          region:  'Lisboa e Setúbal',
           img:     'https://images.unsplash.com/photo-1542413965-e786216dfcd9?q=80&w=774&auto=format&fit=crop',
           quality: 'Boa'
         },
         {
-          href:    'beaches.html?q=Praia+dos+Galapinhos',
+          href:    'beach.html?id=3d2dacea-cfcb-4086-9e15-a7b57ec9f2e7',
           name:    'Praia dos Galapinhos',
-          region:  'Setúbal',
+          region:  'Lisboa e Setúbal',
           img:     'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80',
           quality: 'Excelente'
         },
@@ -1524,7 +1604,7 @@
 
       grid.innerHTML = FEATURED.map(b => `
         <article class="fb-card reveal" role="listitem" tabindex="0">
-          <a href="${b.href}" class="fb-card-link" aria-label="View ${b.name}, ${b.region}">
+          <a href="${b.href}" class="fb-card-link" aria-label="Ver ${b.name}, ${b.region}">
             <div class="fb-card-img">
               <img src="${b.img}"
                    alt="${b.name}, ${b.region}."
@@ -1578,6 +1658,54 @@
       }
     } catch (_) {}
   })();
+
+  // ── PWA install prompt ────────────────────────────────────────
+  (function () {
+    if (localStorage.getItem('pwa-install-dismissed')) return;
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      setTimeout(() => {
+        const banner = document.getElementById('pwa-install-banner');
+        if (banner) banner.style.display = 'block';
+      }, 4000);
+    });
+
+    document.addEventListener('click', (e) => {
+      const banner = document.getElementById('pwa-install-banner');
+      if (!banner) return;
+      if (e.target.closest('#pwa-install-btn')) {
+        banner.style.display = 'none';
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(({ outcome }) => {
+            if (outcome === 'accepted') localStorage.setItem('pwa-install-dismissed', '1');
+            deferredPrompt = null;
+          });
+        }
+      } else if (e.target.closest('#pwa-dismiss-btn')) {
+        banner.style.display = 'none';
+        localStorage.setItem('pwa-install-dismissed', '1');
+      }
+    });
+  })();
 </script>
+
+<!-- PWA install banner -->
+<div id="pwa-install-banner" role="complementary" aria-label="Install app" style="display:none;position:fixed;bottom:80px;left:0;right:0;padding:0 16px;z-index:9000;pointer-events:none;">
+  <div style="max-width:480px;margin:0 auto;background:#0a3d6b;border:1px solid rgba(201,168,76,0.35);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;pointer-events:all;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <img src="/favicon.svg" width="38" height="38" alt="" style="border-radius:8px;flex-shrink:0;">
+    <div style="flex:1;min-width:0;">
+      <p style="margin:0;font-size:0.85rem;font-weight:600;color:#fff;line-height:1.3;">Instalar Portugal Travel Hub</p>
+      <p style="margin:0;font-size:0.75rem;color:rgba(255,255,255,0.58);line-height:1.3;">Adicionar ao ecrã inicial para acesso rápido</p>
+    </div>
+    <button id="pwa-install-btn" style="background:linear-gradient(135deg,#c9a84c,#e8c97a);color:#0a3d6b;border:none;border-radius:50px;padding:9px 18px;font-size:0.8rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">Instalar</button>
+    <button id="pwa-dismiss-btn" aria-label="Dismiss install prompt" style="background:transparent;border:none;color:rgba(255,255,255,0.45);cursor:pointer;padding:4px 6px;font-size:1.4rem;line-height:1;flex-shrink:0;">&times;</button>
+  </div>
+</div>
+
+  <script src="js/lang-switcher.js" defer></script>
 </body>
 </html>

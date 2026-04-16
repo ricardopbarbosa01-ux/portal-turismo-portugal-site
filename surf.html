@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
   <title>Surf em Portugal — Spots, Ondas e Guia · Portugal Travel Hub</title>
   <meta name="description" content="Os melhores spots de surf em Portugal — de Peniche e Nazaré ao Algarve e Açores. Perfil de onda, nível recomendado e guia prático.">
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/surf.html">
+  <link rel="canonical" href="https://portalturismoportugal.com/surf.html">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/surf.html">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/surf.html">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/surf.html">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title"       content="Surf em Portugal — Spots, Ondas e Guia · Portugal Travel Hub">
   <meta property="og:description" content="Os melhores spots de surf de Portugal — perfil de onda, nível recomendado e guia prático.">
-  <meta property="og:url"         content="https://portal-turismo-portugal.pages.dev/surf.html">
+  <meta property="og:url"         content="https://portalturismoportugal.com/surf.html">
   <meta property="og:locale"      content="pt_PT">
   <meta property="og:site_name"   content="Portugal Travel Hub">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&q=80">
@@ -21,7 +28,7 @@
   <meta name="twitter:title"       content="Surf em Portugal — Spots, Ondas e Guia · Portugal Travel Hub">
   <meta name="twitter:description" content="Os melhores spots de surf de Portugal — perfil de onda, nível recomendado e guia prático.">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&q=80">
-  <meta name="twitter:url"         content="https://portal-turismo-portugal.pages.dev/surf.html">
+  <meta name="twitter:url"         content="https://portalturismoportugal.com/surf.html">
 
   <script type="application/ld+json">
   {
@@ -31,15 +38,15 @@
         "@type": "CollectionPage",
         "name": "Surf em Portugal — Spots, Ondas e Guia",
         "description": "Os melhores spots de surf de Portugal — perfil de onda, nível recomendado e guia prático.",
-        "url": "https://portal-turismo-portugal.pages.dev/surf.html",
+        "url": "https://portalturismoportugal.com/surf.html",
         "inLanguage": "pt-PT",
-        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portal-turismo-portugal.pages.dev/" }
+        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portalturismoportugal.com/" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portal-turismo-portugal.pages.dev/" },
-          { "@type": "ListItem", "position": 2, "name": "Surf em Portugal", "item": "https://portal-turismo-portugal.pages.dev/surf.html" }
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalturismoportugal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Surf em Portugal", "item": "https://portalturismoportugal.com/surf.html" }
         ]
       }
     ]
@@ -93,7 +100,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <style>
     :root {
@@ -116,19 +124,7 @@
     :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
     .skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:var(--white);padding:8px 16px;border-radius:8px;z-index:9999;transition:top 0.2s;}
     .skip-link:focus{top:16px;}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0.01ms!important;}}
-
-    /* ── Navbar ── */
-    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background:rgba(10,61,107,0.95);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--glass-border);}
-    .nav-logo{display:flex;align-items:center;gap:10px;font-family:'Bodoni Moda',serif;font-size:1.25rem;color:var(--white);}
-    .nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:10px;display:flex;align-items:center;justify-content:center;}
-    .nav-logo-icon svg{width:20px;height:20px;fill:var(--blue);}
-    .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{color:rgba(255,255,255,0.85);font-size:0.9rem;letter-spacing:0.03em;transition:color var(--transition);position:relative;}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--transition);}
-    .nav-links a:hover,.nav-links a.active{color:var(--white);}
-    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
-    .nav-actions{display:flex;align-items:center;gap:12px;}
+    
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);cursor:pointer;min-height:44px;}
     .btn-outline{border:1.5px solid var(--glass-border);color:var(--white);backdrop-filter:blur(12px);background:var(--glass);}
     .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
@@ -136,20 +132,12 @@
     .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 30px var(--gold-glow);}
     .btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);}
     .btn-blue:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
-    .nav-toggle{display:none;color:var(--white);min-height:48px;min-width:48px;align-items:center;justify-content:center;border-radius:8px;transition:background var(--transition);}
-    .nav-toggle:hover{background:rgba(255,255,255,0.1);}
-    .nav-toggle svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
     .nav-close{display:none;}
     .nav-backdrop{display:none;}
-    @media(max-width:768px){
-      .nav-actions .btn-outline{display:none;}
-      .nav-toggle{display:flex;}
+    
       .nav-backdrop{display:block;position:fixed;inset:0;z-index:99;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;cursor:pointer;}
       .nav-mobile-open .nav-backdrop{opacity:1;visibility:visible;}
-      .nav-links{display:flex!important;flex-direction:column;align-items:flex-start;position:fixed;top:0;right:0;bottom:0;width:280px;z-index:100;background:rgba(5,35,70,0.99);backdrop-filter:blur(24px) saturate(1.5);border-left:1px solid var(--glass-border);padding:80px 32px 40px;gap:4px;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;}
-      .nav-mobile-open .nav-links{transform:translateX(0);}
-      .nav-links a{font-size:1.05rem;padding:14px 0;width:100%;min-height:48px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,0.07);}
-      .nav-links a:last-child{border-bottom:none;}
+      .nav-mobile-open
       .nav-close{display:flex;align-items:center;justify-content:center;position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;color:var(--white);background:rgba(255,255,255,0.1);transition:background var(--transition);}
       .nav-close:hover{background:rgba(255,255,255,0.2);}
       .nav-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
@@ -494,7 +482,18 @@
     .surf-alerts-success.visible{display:flex;}
     .surf-alerts-success svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;flex-shrink:0;}
     @media(max-width:480px){.surf-alerts-form{flex-direction:column;}.surf-alerts-btn{width:100%;justify-content:center;}}
+    /* ── SEO guide cards band ── */
+    .seo-guides-band{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
+    .seo-guides-inner{max-width:1100px;margin:0 auto;}
+    .seo-guides-inner .section-title-lg{margin-bottom:32px;}
+    .seo-guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+    
+    .lang-btn{font-family:'Inter',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;padding:4px 5px;border-radius:4px;transition:color 0.2s;cursor:pointer;min-height:0;}
+    .lang-btn--active{color:var(--gold);cursor:default;}
+    .lang-btn:not(.lang-btn--active):hover{color:rgba(255,255,255,0.90);}
   </style>
+
+<link rel="stylesheet" href="/css/style.css?v=20260416b">
 </head>
 <body>
 
@@ -502,32 +501,39 @@
 
 <!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
-  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
     Portugal Travel Hub
   </a>
-  <div class="nav-backdrop" id="nav-backdrop"></div>
+
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <a href="beaches.html" role="listitem">Praias</a>
-    <a href="surf.html" class="active" role="listitem" aria-current="page">Surf</a>
+    <a href="surf.html" role="listitem">Surf</a>
     <a href="pesca.html" role="listitem">Pesca</a>
     <a href="webcams.html" role="listitem">Webcams</a>
     <a href="planear.html" role="listitem">Planear</a>
     <a href="precos.html" role="listitem">Preços</a>
     <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
+
   <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
     <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <main id="main">
@@ -653,6 +659,7 @@
     </div>
     <div class="region-chips-bar" role="group" aria-label="Filtro de região" id="region-chips">
       <button class="chip active" data-region="">Todas as Regiões</button>
+      <button class="chip" data-region="Norte">Norte</button>
       <button class="chip" data-region="Porto">Porto</button>
       <button class="chip" data-region="Centro">Centro</button>
       <button class="chip" data-region="Lisboa">Lisboa</button>
@@ -671,9 +678,9 @@
   <section class="surf-guide" aria-label="Guia de surf em Portugal">
     <div class="guide-inner">
       <div class="guide-header">
-        <span class="guide-tag">Guia Editorial</span>
+        <span class="guide-tag">Guia Editorial Independente</span>
         <h2 class="guide-title">Portugal, um destino <em>mundial</em></h2>
-        <p class="guide-subtitle">O Atlântico banha 1800 km de costa portuguesa, gerando condições únicas para todos os níveis — do iniciante ao profissional de big wave.</p>
+        <p class="guide-subtitle">Com 1800 km de costa exposta ao Atlântico Norte, Portugal é um dos destinos de surf mais consistentes e acessíveis do mundo — ondas de world-class de Nazaré a Supertubos, e praias ideais para aprender na Costa Vicentina e no Algarve. Este guia combina perfis de spot verificados, contexto de condições real e recomendações editoriais sem influência comercial.</p>
       </div>
       <div class="guide-cards">
         <div class="guide-card">
@@ -921,11 +928,41 @@
     </div>
   </section>
 
+  <!-- SEO surf guides -->
+  <section class="seo-guides-band" aria-labelledby="surf-guides-title">
+    <div class="seo-guides-inner">
+      <span class="section-eyebrow">Guias de Surf</span>
+      <h2 class="section-title-lg" id="surf-guides-title">Guias aprofundados de surf em Portugal</h2>
+      <div class="seo-guides-grid">
+        <a href="surfing-portugal.html" class="seo-guide-card">
+          <p class="seo-guide-card-title">Surfing in Portugal — The Full Guide</p>
+          <p class="seo-guide-card-desc">Regions, seasons, wave types, and everything you need to plan a surf trip anywhere in Portugal.</p>
+          <span class="seo-guide-cta">Read guide →</span>
+        </a>
+        <a href="beginner-surf-beaches-algarve.html" class="seo-guide-card">
+          <p class="seo-guide-card-title">Beginner Surf Beaches in the Algarve</p>
+          <p class="seo-guide-card-desc">Mellow waves, sandy bottoms, and surf schools. The best Algarve beaches for learning to surf.</p>
+          <span class="seo-guide-cta">Read guide →</span>
+        </a>
+        <a href="surf-algarve.html" class="seo-guide-card">
+          <p class="seo-guide-card-title">Surf no Algarve — Spots e Zonas</p>
+          <p class="seo-guide-card-desc">Costa Vicentina, Sagres e Praia do Amado — guia por nível e zona com as melhores épocas e condições típicas.</p>
+          <span class="seo-guide-cta">Ler guia →</span>
+        </a>
+        <a href="praias-para-surfistas-iniciantes-portugal.html" class="seo-guide-card">
+          <p class="seo-guide-card-title">Praias para Surfistas Iniciantes em Portugal</p>
+          <p class="seo-guide-card-desc">Ondas pequenas, fundo de areia e escolas certificadas — guia por zona e época para quem está a aprender a surfar em Portugal.</p>
+          <span class="seo-guide-cta">Ler guia →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Plan CTA band -->
   <section class="surf-plan-band reveal-sec" aria-labelledby="surf-plan-heading">
     <div class="surf-plan-band-inner">
       <h2 id="surf-plan-heading">Pronto para apanhar<br><em>a próxima onda?</em></h2>
-      <p>Conte-nos o seu nível, a região que prefere e quando quer ir. A nossa equipa combina spot, escola e alojamento para uma escapada que vale a pena.</p>
+      <p>Diga-nos o seu nível, a região e as datas. Combinamos spot, escola e alojamento — uma escapada de surf feita à medida, sem stress de planeamento.</p>
       <div class="surf-plan-band-row">
         <a href="planear.html?source=surf&tipo=surf&intent=planear" class="spb-btn-gold">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
@@ -947,7 +984,7 @@
   <section class="surf-faq" aria-label="Perguntas frequentes">
     <div class="surf-faq-header">
       <h2 class="surf-faq-title">Perguntas Frequentes</h2>
-      <p class="surf-faq-sub">Tudo o que precisa de saber antes de ir à água.</p>
+      <p class="surf-faq-sub">Condições, escolas, equipamento e segurança — as questões mais comuns sobre surf em Portugal respondidas de forma directa.</p>
     </div>
     <div class="faq-list" id="faq-list"></div>
   </section>
@@ -958,43 +995,43 @@
     <div class="surf-footer-grid">
       <div>
         <p class="surf-footer-brand">Portugal Travel Hub</p>
-        <p class="surf-footer-tagline">O portal de referência das praias de Portugal. Guia editorial, planeamento e descoberta — do surf ao ecoturismo costeiro.</p>
+        <p class="surf-footer-tagline">Portugal's reference beach portal. Editorial guide, trip planning and discovery — from surf to coastal ecotourism.</p>
       </div>
       <nav class="surf-footer-col" aria-label="Portal">
         <p class="surf-footer-col-title">Portal</p>
         <ul>
-          <li><a href="beaches.html">Praias</a></li>
+          <li><a href="beaches.html">Beaches</a></li>
           <li><a href="surf.html" aria-current="page">Surf</a></li>
-          <li><a href="pesca.html">Pesca</a></li>
+          <li><a href="pesca.html">Fishing</a></li>
           <li><a href="webcams.html">Webcams</a></li>
-          <li><a href="planear.html">Planear</a></li>
+          <li><a href="planear.html">Plan</a></li>
         </ul>
       </nav>
-      <nav class="surf-footer-col" aria-label="Empresa">
-        <p class="surf-footer-col-title">Empresa</p>
+      <nav class="surf-footer-col" aria-label="Company">
+        <p class="surf-footer-col-title">Company</p>
         <ul>
-          <li><a href="sobre.html">Sobre Nós</a></li>
-          <li><a href="precos.html">Preços</a></li>
-          <li><a href="parceiros.html">Parceiros</a></li>
-          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="sobre.html">About Us</a></li>
+          <li><a href="precos.html">Pricing</a></li>
+          <li><a href="parceiros.html">Partners</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <nav class="surf-footer-col" aria-label="Legal">
         <p class="surf-footer-col-title">Legal</p>
         <ul>
-          <li><a href="privacidade.html">Privacidade</a></li>
-          <li><a href="termos.html">Termos</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
           <li><a href="cookies.html">Cookies</a></li>
         </ul>
       </nav>
     </div>
     <div class="surf-footer-bottom">
-      <p class="surf-footer-copy">&copy; 2026 Portugal Travel Hub. Todos os direitos reservados.</p>
-      <nav class="surf-footer-legal" aria-label="Links legais">
-        <a href="sobre.html">Sobre</a>
-        <a href="contact.html">Contacto</a>
-        <a href="privacidade.html">Privacidade</a>
-        <a href="termos.html">Termos</a>
+      <p class="surf-footer-copy">&copy; 2026 Portugal Travel Hub. All rights reserved.</p>
+      <nav class="surf-footer-legal" aria-label="Legal links">
+        <a href="sobre.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
         <a href="cookies.html">Cookies</a>
       </nav>
     </div>
@@ -1002,15 +1039,15 @@
 </footer>
 
 <!-- Mobile bottom nav -->
-<nav class="mobile-bottom-nav" aria-label="Navegação rápida">
+<nav class="mobile-bottom-nav" aria-label="Quick navigation">
   <div class="mobile-bottom-nav-inner">
-    <a href="/" class="mobile-nav-item" aria-label="Início">
+    <a href="/" class="mobile-nav-item" aria-label="Home">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/></svg>
-      Início
+      Home
     </a>
-    <a href="beaches.html" class="mobile-nav-item" aria-label="Praias">
+    <a href="beaches.html" class="mobile-nav-item" aria-label="Beaches">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 20c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="10"/></svg>
-      Praias
+      Beaches
     </a>
     <a href="surf.html" class="mobile-nav-item active" aria-label="Surf" aria-current="page">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M8 6l4-4 4 4"/></svg>
@@ -1024,6 +1061,7 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   // ── Auth ─────────────────────────────────────────────────────────
@@ -1033,9 +1071,9 @@
       if (user) {
         const loginBtn = document.getElementById('nav-login-btn');
         const regBtn   = document.getElementById('nav-register-btn');
-        if (loginBtn) { loginBtn.textContent = 'A minha conta'; loginBtn.href = 'account.html'; }
+        if (loginBtn) { loginBtn.textContent = 'My Account'; loginBtn.href = 'dashboard.html'; }
         if (regBtn) {
-          regBtn.textContent = 'Sair';
+          regBtn.textContent = 'Sign Out';
           regBtn.href = '#';
           regBtn.addEventListener('click', async e => { e.preventDefault(); await db.auth.signOut(); location.reload(); });
         }
@@ -1136,6 +1174,159 @@
       season:'Outubro–Março', best_swell:'N / NO', best_wind:'SE',
       desc:'O spot mais famoso dos Açores. Ondas potentes do Atlântico Norte numa paisagem vulcânica única.',
       tags:['Açores','Atlântico','Natureza Única','Ilha'], quality:5
+    },
+    {
+      name:'Praia de Moledo', region:'Norte', location:'Caminha',
+      bgClass:'spot-bg--porto', type:'Beach Break',
+      levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
+      levels:['iniciante','intermediio'],
+      season:'Outono–Primavera', best_swell:'NO', best_wind:'E',
+      desc:'Praia extensa na foz do Rio Minho com condições suaves, ideal para iniciantes. Funciona melhor com swell de NW e vento de E.',
+      tags:['Iniciante','Foz do Minho','Caminha','Suave'], quality:3
+    },
+    {
+      name:'Praia de Afife', region:'Norte', location:'Viana do Castelo',
+      bgClass:'spot-bg--porto', type:'Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio',
+      levels:['intermediio'],
+      season:'Todo o Ano', best_swell:'NO', best_wind:'E / NE',
+      desc:'Spot remoto com pouca multidão. Bancadas de areia variáveis que criam picos imprevisíveis. Melhor na maré média com swell de NW.',
+      tags:['Remoto','Pouca Multidão','Picos Variáveis'], quality:3
+    },
+    {
+      name:'Praia de Cabedelo', region:'Norte', location:'Viana do Castelo',
+      bgClass:'spot-bg--porto', type:'Beach Break',
+      levelKey:'iniciante', levelLabel:'Todos os Níveis',
+      levels:['iniciante','intermediio','avancado'],
+      season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
+      desc:'Uma das praias de surf mais antigas de Portugal. Escolinha de surf histórica, bancadas consistentes e ambiente descontraído.',
+      tags:['Histórico','Escola','Todos os Níveis','Consistente'], quality:4
+    },
+    {
+      name:'Praia de Ancora', region:'Norte', location:'Viana do Castelo',
+      bgClass:'spot-bg--porto', type:'Beach Break',
+      levelKey:'iniciante', levelLabel:'Iniciante',
+      levels:['iniciante'],
+      season:'Primavera–Outono', best_swell:'NO', best_wind:'E',
+      desc:'Praia protegida com ondas pequenas e regulares. Excelente para primeiras aulas e longboard nos meses de Verão.',
+      tags:['Iniciante','Longboard','Protegida','Escola'], quality:3
+    },
+    {
+      name:'Praia de Esposende', region:'Norte', location:'Esposende',
+      bgClass:'spot-bg--porto', type:'Beach Break',
+      levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
+      levels:['iniciante','intermediio'],
+      season:'Outono–Inverno', best_swell:'NO', best_wind:'E / NE',
+      desc:'Praia urbana com fácil acesso e parque. Funciona com swell de NW, melhor de manhã antes do vento onshore.',
+      tags:['Urbano','Acesso Fácil','Manhã','Escola'], quality:3
+    },
+    {
+      name:'Praia de Ofir', region:'Norte', location:'Esposende',
+      bgClass:'spot-bg--porto', type:'Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio',
+      levels:['intermediio'],
+      season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
+      desc:'Spot consistente na foz do Cávado. Bancadas de areia bem formadas com ondas tubulares em dias de swell médio.',
+      tags:['Consistente','Foz do Cávado','Tubular'], quality:4
+    },
+    {
+      name:'Praia do Furadouro', region:'Centro', location:'Ovar',
+      bgClass:'spot-bg--centro', type:'Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
+      levels:['intermediio','avancado'],
+      season:'Outono–Inverno', best_swell:'N / NO', best_wind:'E',
+      desc:'Spot exposed com ondas potentes de Atlântico Norte. Correntes fortes — não recomendado para iniciantes. Melhor com vento de E.',
+      tags:['Potente','Correntes','Exposed','Inverno'], quality:3
+    },
+    {
+      name:'Praia de Mira', region:'Centro', location:'Mira',
+      bgClass:'spot-bg--centro', type:'Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio',
+      levels:['intermediio'],
+      season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
+      desc:'Praia longa e exposta com bancadas de areia que mudam sazonalmente. Pouca multidão fora de época.',
+      tags:['Praia Longa','Pouca Multidão','Sazonal'], quality:3
+    },
+    {
+      name:'Praia da Tocha', region:'Centro', location:'Cantanhede',
+      bgClass:'spot-bg--centro', type:'Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
+      levels:['intermediio','avancado'],
+      season:'Outono–Inverno', best_swell:'NO', best_wind:'E / NE',
+      desc:'Spot pouco conhecido com ondas de qualidade. Acesso por pinhais — vale a pena explorar em dias de swell limpo de NW.',
+      tags:['Pouco Conhecido','Qualidade','Pinhais'], quality:3
+    },
+    {
+      name:'Praia de Buarcos', region:'Centro', location:'Figueira da Foz',
+      bgClass:'spot-bg--centro', type:'Beach Break',
+      levelKey:'iniciante', levelLabel:'Todos os Níveis',
+      levels:['iniciante','intermediio','avancado'],
+      season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
+      desc:'Spot urbano da Figueira com fácil acesso. Bancadas variáveis — em dias bons produz ondas tubulares de qualidade.',
+      tags:['Urbano','Tubular','Figueira da Foz','Versátil'], quality:3
+    },
+    {
+      name:'Praia da Arrifana', region:'Algarve', location:'Aljezur',
+      bgClass:'spot-bg--algarve', type:'Reef / Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
+      levels:['intermediio','avancado'],
+      season:'Outono–Primavera', best_swell:'NO', best_wind:'NE',
+      desc:'Baía protegida na Costa Vicentina com ondas consistentes. Reef no lado direito para avançados, beach break acessível no centro.',
+      tags:['Costa Vicentina','Reef','Protegida','Consistente'], quality:4
+    },
+    {
+      name:'Praia do Castelejo', region:'Algarve', location:'Vila do Bispo',
+      bgClass:'spot-bg--algarve', type:'Beach Break',
+      levelKey:'avancado', levelLabel:'Avançado',
+      levels:['avancado'],
+      season:'Outono–Inverno', best_swell:'NO', best_wind:'E',
+      desc:'Praia selvagem exposta ao Atlântico. Ondas potentes e pesadas — apenas para surfistas experientes. Acesso por estrada de terra.',
+      tags:['Selvagem','Potente','Experientes','Isolado'], quality:4
+    },
+    {
+      name:'Praia da Zavial', region:'Algarve', location:'Vila do Bispo',
+      bgClass:'spot-bg--algarve', type:'Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio',
+      levels:['intermediio'],
+      season:'Todo o Ano', best_swell:'S', best_wind:'N / NE',
+      desc:'Spot protegido que funciona com swell do Sul — raro em Portugal. Ideal quando o resto do Algarve está flat ou com vento onshore.',
+      tags:['Swell Sul','Protegido','Alternativa','Algarve'], quality:3
+    },
+    {
+      name:'Praia da Salema', region:'Algarve', location:'Vila do Bispo',
+      bgClass:'spot-bg--algarve', type:'Beach Break',
+      levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
+      levels:['iniciante','intermediio'],
+      season:'Verão–Outono', best_swell:'SO', best_wind:'N',
+      desc:'Baía pequena com ondas suaves. Popular entre escolas de surf locais nos meses de Verão.',
+      tags:['Iniciante','Baía','Escola','Verão'], quality:3
+    },
+    {
+      name:'Praia de Odeceixe', region:'Alentejo', location:'Aljezur',
+      bgClass:'spot-bg--alentejo', type:'River Mouth',
+      levelKey:'iniciante', levelLabel:'Todos os Níveis',
+      levels:['iniciante','intermediio','avancado'],
+      season:'Todo o Ano', best_swell:'NO', best_wind:'E / NE',
+      desc:'Spot único na foz da ribeira de Odeceixe. Lado esquerdo protegido para iniciantes, lado direito com ondas mais potentes.',
+      tags:['River Mouth','Único','Todos os Níveis','Costa Vicentina'], quality:4
+    },
+    {
+      name:'Ribeira Grande', region:'Açores', location:'Ribeira Grande, S. Miguel',
+      bgClass:'spot-bg--acores', type:'Reef Break',
+      levelKey:'avancado', levelLabel:'Avançado',
+      levels:['avancado'],
+      season:'Outono–Inverno', best_swell:'N / NO', best_wind:'SE',
+      desc:'O spot mais famoso dos Açores. Reef de lava com ondas longas e potentes. Palco de campeonatos internacionais — água fria, precisa de fato 4/3mm.',
+      tags:['Reef de Lava','Competição','Big Wave','Açores'], quality:5
+    },
+    {
+      name:'Praia de Santa Bárbara', region:'Açores', location:'Ribeira Grande, S. Miguel',
+      bgClass:'spot-bg--acores', type:'Beach Break',
+      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
+      levels:['intermediio','avancado'],
+      season:'Todo o Ano', best_swell:'N / NO', best_wind:'SE',
+      desc:'Beach break consistente próximo de Ribeira Grande. Mais acessível que o reef, ideal para surfistas intermédios que visitam os Açores.',
+      tags:['Açores','Consistente','Acessível','Ilha'], quality:4
     }
   ];
 
@@ -1374,5 +1565,13 @@
   });
 })();
 </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
+<script src="/js/lang-switcher.js" defer></script>
 </body>
 </html>

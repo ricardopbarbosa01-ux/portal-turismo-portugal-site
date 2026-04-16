@@ -1,12 +1,16 @@
 // Portugal Travel Hub — Service Worker
 // Cache strategy: network-first for HTML, cache-first for static assets
-const CACHE_NAME = 'ptb-v8';
+const CACHE_NAME = 'ptb-v10';
 
 // Assets to pre-cache on install (the app shell)
 const SHELL = [
   '/',
   '/index.html',
   '/offline.html',
+  '/manifest.webmanifest',
+  '/favicon.svg',
+  '/icons/icon-192.svg',
+  '/icons/icon-512.svg',
   '/beaches.html',
   '/beach.html',
   '/surf.html',
@@ -22,6 +26,9 @@ const SHELL = [
   '/media-kit.html',
   '/css/style.css?v=20260402',
   '/js/config.js',
+  '/js/lang-switcher.js',
+  '/en/',
+  '/en/index.html',
 ];
 
 // ── Install: cache the shell ──────────────────────────────────

@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="css/style.css?v=20260402">
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
 
   <style>
     /* ── Dashboard layout ── */
@@ -580,6 +580,8 @@
       .kpi-card, .lead-detail-row, .crm-toast, .dash-sidebar { transition: none !important; }
     }
   </style>
+  <meta name="description" content="O teu painel Portugal Travel Hub — gere leads, acompanha pedidos e acede a ferramentas exclusivas.">
+  <link rel="canonical" href="https://www.portalturismoportugal.com/dashboard.html">
 </head>
 <body>
 
@@ -599,7 +601,7 @@
 
     <nav class="sidebar-nav" aria-label="Secções do dashboard">
       <div class="sidebar-section-label">Operacional</div>
-      <a href="#" class="sidebar-item active" aria-current="page">
+      <a href="#" class="sidebar-item active" id="sidebar-crm" aria-current="page" onclick="showView('crm');return false;">
         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Leads CRM
         <span class="sidebar-badge live" id="crm-total-badge" aria-label="total de leads">0</span>
@@ -609,6 +611,10 @@
       <a href="beaches.html" class="sidebar-item">
         <svg viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
         Praias
+      </a>
+      <a href="#" class="sidebar-item" id="sidebar-favorites" style="display:none" onclick="showView('favorites');return false;">
+        ⭐ Favoritos
+        <span class="sidebar-pro-tag">Pro</span>
       </a>
       <a href="planear.html" class="sidebar-item">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -659,6 +665,8 @@
     </header>
 
     <div class="dash-content">
+
+      <div id="crm-view">
 
       <!-- KPI row: operational metrics -->
       <div class="kpi-row" role="list" aria-label="Métricas operacionais de leads">
@@ -831,6 +839,27 @@
         </div>
 
       </div><!-- /crm-panel -->
+
+      </div><!-- /crm-view -->
+
+      <!-- Favorites section (Pro only) -->
+      <section id="favorites-section" class="dashboard-section" style="display:none">
+        <div class="favorites-header">
+          <div>
+            <h2 class="section-title">⭐ As tuas praias favoritas</h2>
+            <p class="section-subtitle">Acesso rápido às praias que guardaste</p>
+          </div>
+          <a href="/beaches.html" class="btn-add-favorite">+ Explorar praias</a>
+        </div>
+        <div id="favorites-grid" class="favorites-grid">
+          <div class="favorites-empty">
+            <div class="favorites-empty-icon">🏖️</div>
+            <p>Ainda não tens favoritos guardados.</p>
+            <a href="/beaches.html" class="btn-explore-beaches">Explorar praias</a>
+          </div>
+        </div>
+      </section>
+
     </div><!-- /dash-content -->
   </main>
 </div>
@@ -838,6 +867,7 @@
 <div class="crm-toast" id="crm-toast" role="status" aria-live="polite"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
 /* ═══════════════════════════════════════════════════════════════════
@@ -855,15 +885,38 @@
 (async () => {
   const { data: { user } } = await db.auth.getUser();
   if (!user) { window.location.href = '/login.html'; return; }
+  if (user.app_metadata?.role !== 'admin') { window.location.href = '/'; return; }
   await initCRM(user);
+
+  // ── Pro upgrade banner (free users only) ───────────────────────
+  const isPro = user?.app_metadata?.plan === 'pro';
+
+  // ── Mostrar CRM por default, favoritos ocultos ───────────────
+  showView('crm');
+
+  // Mostrar link de favoritos na sidebar se Pro
+  if (isPro) {
+    document.getElementById('sidebar-favorites').style.display = 'flex';
+  }
+
+  if (!isPro) {
+    const emailEnc = encodeURIComponent(user.email || '');
+    const lsBase   = 'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/2d56d759-3e65-46cb-9210-ea7c0fce2cb3';
+    const lsUrl    = `${lsBase}?checkout[email]=${emailEnc}&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fdashboard.html%3Factivated%3D1`;
+    const banner   = document.createElement('div');
+    banner.id      = 'pro-upgrade-banner';
+    banner.innerHTML = `<div style="background:#1B3A6B;color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-radius:8px;margin:16px 24px 0;flex-wrap:wrap;"><span style="font-size:14px;">⚡ <strong>Plano Gratuito</strong> — Faz upgrade para Pro e desbloqueia webcams HD, alertas em tempo real e previsões de 10 dias.</span><a href="${lsUrl}" style="background:#C9A84C;color:#1B3A6B;padding:8px 20px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap;" onclick="track('dashboard_upgrade_banner_click',{page:'dashboard'})">Activar Pro — €4,99/mês</a></div>`;
+    const mainEl   = document.getElementById('main');
+    if (mainEl) mainEl.insertBefore(banner, mainEl.firstChild);
+  }
+
   // Post-checkout activation confirmation with polling (race condition hardening)
   if (new URLSearchParams(window.location.search).get('activated') === '1') {
     history.replaceState(null, '', '/dashboard.html');
+    document.getElementById('pro-upgrade-banner')?.remove();
 
     function isProActive(u) {
-      const r = u?.user_metadata?.role || u?.raw_user_meta_data?.role;
-      const s = u?.user_metadata?.pro_status;
-      return r === 'pro' || r === 'partner' || s === 'active';
+      return u?.app_metadata?.plan === 'pro';
     }
 
     // Discrete pending indicator inside sidebar (no layout shift)
@@ -1012,10 +1065,10 @@ function normaliseLeads(plans, contacts, partners) {
       l,
       l.nome    || l.name    || l.contacto || '—',
       l.email   || '—',
-      l.destino || l.tipo    || l.subtipo  || l.assunto || (Array.isArray(l.interesse) ? l.interesse.join(', ') : l.interesse) || '—',
+      l.destino || l.tipo    || l.subtipo  || l.assunto || (Array.isArray(l.interesses) ? l.interesses.join(', ') : l.interesses) || (Array.isArray(l.interesse) ? l.interesse.join(', ') : l.interesse) || '—',
       l.region  || l.regiao  || '—',
       l.source_page || l.source || '',
-      l.timestamp || null
+      l.timestamp || l.created_at || null
     )),
     ...contacts.map(l => build(
       'contacto',
@@ -1025,7 +1078,7 @@ function normaliseLeads(plans, contacts, partners) {
       l.assunto || l.subject || (l.mensagem ? l.mensagem.slice(0,48) + '…' : '—'),
       '—',
       l.source_page || l.source || '',
-      l.timestamp || null
+      l.timestamp || l.created_at || null
     )),
     ...partners.map(l => build(
       'parceiro',
@@ -1035,7 +1088,7 @@ function normaliseLeads(plans, contacts, partners) {
       l.objetivo || '—',
       l.regiao   || l.localizacao || '—',
       l.source_page || l.source || '',
-      l.timestamp || null
+      l.timestamp || l.created_at || null
     ))
   ];
 
@@ -2214,9 +2267,9 @@ async function initCRM(user) {
 
   // ── Fetch leads from Supabase (source of truth) ─────────────────
   const [plansRes, contactsRes, partnersRes] = await Promise.allSettled([
-    db.from('plan_requests').select('*').order('timestamp', { ascending: false }),
+    db.from('plan_requests').select('*').order('created_at', { ascending: false }),
     db.from('contact_messages').select('*').order('timestamp', { ascending: false }),
-    db.from('partner_leads').select('*').order('timestamp', { ascending: false }),
+    db.from('partner_leads').select('*').order('created_at', { ascending: false }),
   ]);
   // Extract data; fall back to localStorage if a table is missing or errored
   function extract(res, lsKey) {
@@ -2268,6 +2321,101 @@ async function initCRM(user) {
   const t = new Date().toLocaleTimeString('pt-PT',{hour:'2-digit',minute:'2-digit'});
   document.getElementById('crm-updated').textContent = `Atualizado às ${t}`;
 }
+
+async function loadFavoritesSection() {
+  const section = document.getElementById('favorites-section');
+  const grid = document.getElementById('favorites-grid');
+  if (!section || !grid) return;
+
+  section.style.display = 'block';
+
+  // Mostrar loading
+  grid.innerHTML = '<div class="favorites-loading"><div class="spinner-small"></div> A carregar favoritos...</div>';
+
+  const favs = await getFavorites();
+
+  if (!favs.length) {
+    grid.innerHTML = `
+      <div class="favorites-empty">
+        <div class="favorites-empty-icon">🏖️</div>
+        <p>Ainda não tens favoritos guardados.</p>
+        <a href="/beaches.html" class="btn-explore-beaches">Explorar praias</a>
+      </div>`;
+    return;
+  }
+
+  // Buscar dados das praias do Supabase para mostrar imagem e região
+  const ids = favs.map(f => f.beach_id);
+  const { data: beaches } = await db
+    .from('beaches')
+    .select('id, name, region, image_url, water_quality, latitude, longitude')
+    .in('id', ids);
+
+  const beachMap = {};
+  (beaches || []).forEach(b => { beachMap[b.id] = b; });
+
+  grid.innerHTML = favs.map(f => {
+    const b = beachMap[f.beach_id] || {};
+    const img = b.image_url || '/images/beach-placeholder.jpg';
+    const region = b.region || f.beach_region || 'Portugal';
+    const quality = b.water_quality || '';
+    const qualityBadge = quality
+      ? `<span class="fav-badge fav-badge--${quality.toLowerCase()}">${quality}</span>`
+      : '';
+
+    return `
+      <div class="fav-card">
+        <a href="/beach.html?id=${f.beach_id}" class="fav-card-img-link">
+          <div class="fav-card-img" style="background-image:url('${img}')">
+            <div class="fav-card-overlay"></div>
+            <div class="fav-card-badges">${qualityBadge}</div>
+          </div>
+        </a>
+        <div class="fav-card-body">
+          <div class="fav-card-info">
+            <a href="/beach.html?id=${f.beach_id}" class="fav-card-name">${f.beach_name}</a>
+            <span class="fav-card-region">📍 ${region}</span>
+          </div>
+          <div class="fav-card-actions">
+            <a href="/beach.html?id=${f.beach_id}" class="btn-fav-view">Ver praia</a>
+            <button class="btn-fav-remove" title="Remover favorito"
+              onclick="removeFavorite('${f.beach_id}', '${f.beach_name}', '${region}')">
+              ✕
+            </button>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+async function removeFavorite(beachId, beachName, beachRegion) {
+  await toggleFavorite(beachId, beachName, beachRegion);
+  loadFavoritesSection();
+}
+
+function showView(view) {
+  // Esconder todas as vistas
+  const crmView = document.getElementById('crm-view');
+  const favSection = document.getElementById('favorites-section');
+
+  if (crmView) crmView.style.display = 'none';
+  if (favSection) favSection.style.display = 'none';
+
+  // Remover active de todos os sidebar items
+  document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
+
+  if (view === 'crm') {
+    if (crmView) crmView.style.display = 'block';
+    document.getElementById('sidebar-crm')?.classList.add('active');
+  } else if (view === 'favorites') {
+    if (favSection) {
+      favSection.style.display = 'block';
+      loadFavoritesSection();
+    }
+    document.getElementById('sidebar-favorites')?.classList.add('active');
+  }
+}
 </script>
+<script src="/js/favorites.js?v=20260416b" defer></script>
 </body>
 </html>

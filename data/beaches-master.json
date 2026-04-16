@@ -1,0 +1,4397 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "description": "Editorial source of truth for beach content management. Supabase is the live runtime data source — this file tracks content scaffolding, EN metadata, linking and editorial status for every beach in the portal.",
+    "generated": "2026-04-09",
+    "total_beaches_in_db": 110,
+    "total_beaches_here": 107,
+    "regions_in_db": [
+      "Alentejo",
+      "Algarve",
+      "Açores",
+      "Centro",
+      "Lisboa e Setúbal",
+      "Madeira",
+      "Norte",
+      "Oeste"
+    ],
+    "valid_status": [
+      "live",
+      "draft",
+      "missing-data"
+    ],
+    "valid_water_quality": [
+      "Excelente",
+      "Boa",
+      "Suficiente",
+      "Má"
+    ],
+    "valid_beach_type": [
+      "sandy",
+      "cove",
+      "urban",
+      "wild",
+      "surf",
+      "river-mouth",
+      "natural-reserve",
+      "volcanic"
+    ],
+    "valid_access": [
+      "easy-flat",
+      "wooden-staircase",
+      "cliff-path",
+      "sandy-path",
+      "boat-only",
+      "car-direct"
+    ],
+    "valid_parking": [
+      "free-onsite",
+      "paid-onsite",
+      "nearby-free",
+      "nearby-paid",
+      "limited",
+      "none"
+    ],
+    "note_on_regions": "Region values must match Supabase exactly. 'Oeste' covers Cascais/Sintra/Ericeira; 'Lisboa e Setúbal' covers Setúbal Peninsula and Arrábida."
+  },
+  "beaches": [
+    {
+      "slug": "praia-do-camilo",
+      "supabase_id": "d9af39d6-f9ae-483d-ab1d-e48a026dfd53",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Camilo",
+      "name_en": "Camilo Beach",
+      "region": "Algarve",
+      "subregion": "Lagos",
+      "beach_type": "cove",
+      "ideal_for": [
+        "families",
+        "snorkelling",
+        "swimming",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "wooden-staircase",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0833,
+      "longitude": -8.6667,
+      "description_pt": "Encaixada entre falésias douradas, acessível por escadas de madeira. Uma das praias mais fotogénicas do Algarve.",
+      "description_en": "Tucked between golden cliffs and reached by wooden steps — one of the Algarve's most photogenic coves.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagos"
+    },
+    {
+      "slug": "praia-da-marinha",
+      "supabase_id": "66ee7f6b-018b-408b-8d48-c58d2f73bf8d",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Marinha",
+      "name_en": "Marinha Beach",
+      "region": "Algarve",
+      "subregion": "Lagoa",
+      "beach_type": "cove",
+      "ideal_for": [
+        "snorkelling",
+        "photography",
+        "swimming",
+        "diving"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "nearby-paid",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.0833,
+      "longitude": -8.4,
+      "description_pt": "Falésias calcárias e água de cristal. Repetidamente eleita uma das mais belas praias da Europa.",
+      "description_en": "Limestone cliffs and crystal-clear water. Repeatedly voted one of Europe's most beautiful beaches.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-secretas-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Lagoa"
+    },
+    {
+      "slug": "praia-de-benagil",
+      "supabase_id": "d3bb1bb1-4e97-424d-9267-710673662975",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Benagil",
+      "name_en": "Benagil Beach",
+      "region": "Algarve",
+      "subregion": "Lagoa",
+      "beach_type": "cove",
+      "ideal_for": [
+        "photography",
+        "kayaking",
+        "swimming"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": false,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "nearby-paid",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.0833,
+      "longitude": -8.4167,
+      "description_pt": "Praia pequena com acesso à Gruta de Benagil — uma das formações naturais mais fotografadas de Portugal.",
+      "description_en": "A small cove with access to the Benagil Cave — one of Portugal's most photographed natural formations.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-secretas-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagoa"
+    },
+    {
+      "slug": "meia-praia",
+      "supabase_id": "9b62bea8-e8c4-44f1-9ab5-9e9864cf6bb5",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Meia Praia",
+      "name_en": "Meia Praia",
+      "region": "Algarve",
+      "subregion": "Lagos",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "windsurfing",
+        "sunset"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1167,
+      "longitude": -8.6833,
+      "description_pt": "Praia extensa de areia fina a leste de Lagos. Perfeita para famílias e windsurf, com vistas para a baía.",
+      "description_en": "A long stretch of fine sand east of Lagos. Perfect for families and windsurfing, with views over the bay.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagos"
+    },
+    {
+      "slug": "praia-da-rocha",
+      "supabase_id": "9ff93289-f391-41aa-bdd1-d7d55637a9a2",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Rocha",
+      "name_en": "Rocha Beach",
+      "region": "Algarve",
+      "subregion": "Portimão",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "nightlife-nearby"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "paid-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1167,
+      "longitude": -8.5333,
+      "description_pt": "Uma das praias mais populares do Algarve, com animação e serviços completos junto a Portimão.",
+      "description_en": "One of the Algarve's most popular beaches, with full services and easy access near Portimão.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Portimão"
+    },
+    {
+      "slug": "praia-de-sagres",
+      "supabase_id": "dee7ca71-0316-4254-a1db-6c8f79a6e380",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Sagres",
+      "name_en": "Sagres Beach",
+      "region": "Algarve",
+      "subregion": "Vila do Bispo",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "sunset",
+        "fishing",
+        "hiking-nearby"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 36.9934,
+      "longitude": -8.9412,
+      "description_pt": "Na ponta mais a sudoeste de Portugal, com ondas poderosas e pores do sol épicos sobre o Atlântico.",
+      "description_en": "At Portugal's southwestern tip, with powerful Atlantic waves and epic sunsets over the ocean.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "surf.html",
+        "melhores-praias-por-do-sol.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/surfing-portugal.html",
+        "en/best-sunset-beaches.html"
+      ],
+      "booking_region_hint": "Sagres"
+    },
+    {
+      "slug": "praia-do-amado",
+      "supabase_id": "b04adbca-20fc-44e0-b947-066978b8fffc",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Amado",
+      "name_en": "Amado Beach",
+      "region": "Alentejo",
+      "subregion": "Carrapateira",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surf",
+        "bodyboard",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.2112,
+      "longitude": -8.8712,
+      "description_pt": "Praia de surf na Costa Vicentina, dentro do Parque Natural do Sudoeste Alentejano. Ondas consistentes e paisagem selvagem.",
+      "description_en": "A surf beach on the Costa Vicentina, inside the Sudoeste Alentejano Natural Park. Consistent waves and wild scenery.",
+      "related_pages_pt": [
+        "surf.html",
+        "praias-para-surfistas-iniciantes-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html",
+        "en/beginner-surf-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Aljezur"
+    },
+    {
+      "slug": "zambujeira-do-mar",
+      "supabase_id": "4bd3bca5-6c5b-486d-87c0-bd21ea5435ce",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Zambujeira do Mar",
+      "name_en": "Zambujeira do Mar",
+      "region": "Alentejo",
+      "subregion": "Odemira",
+      "beach_type": "wild",
+      "ideal_for": [
+        "sunset",
+        "swimming",
+        "nature",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.5234,
+      "longitude": -8.7923,
+      "description_pt": "Praia encaixada entre falésias verdes na Costa Vicentina. Selvagem, protegida e de beleza singular.",
+      "description_en": "A cove nestled between green cliffs on the Costa Vicentina. Wild, protected and uniquely beautiful.",
+      "related_pages_pt": [
+        "melhores-praias-por-do-sol.html"
+      ],
+      "related_pages_en": [
+        "en/best-sunset-beaches.html"
+      ],
+      "booking_region_hint": "Odemira"
+    },
+    {
+      "slug": "praia-de-vila-nova-de-milfontes",
+      "supabase_id": "2dd735c3-9317-45bb-aed7-c3832af7653d",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Vila Nova de Milfontes",
+      "name_en": "Vila Nova de Milfontes Beach",
+      "region": "Alentejo",
+      "subregion": "Odemira",
+      "beach_type": "river-mouth",
+      "ideal_for": [
+        "families",
+        "kayaking",
+        "swimming",
+        "fishing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "restaurant"
+      ],
+      "webcam_available": false,
+      "latitude": 37.7167,
+      "longitude": -8.7833,
+      "description_pt": "Na foz do Rio Mira, com condições calmas no interior da ria e ondas no exterior. Ideal para famílias.",
+      "description_en": "At the mouth of the Mira River — calm lagoon on one side, Atlantic waves on the other. Great for families.",
+      "related_pages_pt": [
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Vila Nova de Milfontes"
+    },
+    {
+      "slug": "praia-do-guincho",
+      "supabase_id": "8d29adfa-7276-4074-bce6-dc1c6b49ae12",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Guincho",
+      "name_en": "Guincho Beach",
+      "region": "Oeste",
+      "subregion": "Cascais",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "windsurfing",
+        "photography",
+        "hiking-nearby"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "paid-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "restaurant"
+      ],
+      "webcam_available": true,
+      "latitude": 38.7333,
+      "longitude": -9.4833,
+      "description_pt": "Praia selvagem com dunas e forte vento atlântico, a 5 km de Cascais. Meca do windsurf e kitesurf.",
+      "description_en": "A wild dune beach with strong Atlantic winds 5km from Cascais. A mecca for windsurfing and kitesurfing.",
+      "related_pages_pt": [
+        "beaches.html",
+        "surf.html",
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/surfing-portugal.html",
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Cascais"
+    },
+    {
+      "slug": "praia-de-carcavelos",
+      "supabase_id": "406a09d1-daa7-44b3-aa19-3a13b4aab711",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Carcavelos",
+      "name_en": "Carcavelos Beach",
+      "region": "Oeste",
+      "subregion": "Cascais",
+      "beach_type": "urban",
+      "ideal_for": [
+        "surf",
+        "families",
+        "swimming",
+        "beach-volleyball"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "paid-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 38.6834,
+      "longitude": -9.3334,
+      "description_pt": "A maior praia perto de Lisboa, com excelente acesso de comboio, escola de surf e condições consistentes.",
+      "description_en": "The largest beach near Lisbon, with excellent train access, a surf school and consistent conditions.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "surf.html"
+      ],
+      "related_pages_en": [
+        "en/beaches-near-lisbon.html",
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Cascais"
+    },
+    {
+      "slug": "praia-da-comporta",
+      "supabase_id": "91f9ac99-a4b2-4793-afba-5b7f79d72d54",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Comporta",
+      "name_en": "Comporta Beach",
+      "region": "Lisboa e Setúbal",
+      "subregion": "Grândola",
+      "beach_type": "wild",
+      "ideal_for": [
+        "sunset",
+        "photography",
+        "nature",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.3667,
+      "longitude": -8.7667,
+      "description_pt": "Quilómetros de areia branca entre arrozais e pinheiros. Paraíso selvagem a 90 km de Lisboa.",
+      "description_en": "Kilometres of white sand between rice paddies and pine trees. A wild paradise 90km from Lisbon.",
+      "related_pages_pt": [
+        "beaches.html",
+        "melhores-praias-por-do-sol.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/best-sunset-beaches.html"
+      ],
+      "booking_region_hint": "Comporta"
+    },
+    {
+      "slug": "portinho-da-arrabida",
+      "supabase_id": "cb7d55ac-702f-49ec-98f7-d2c8c8e62715",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Portinho da Arrábida",
+      "name_en": "Portinho da Arrábida",
+      "region": "Oeste",
+      "subregion": "Setúbal",
+      "beach_type": "natural-reserve",
+      "ideal_for": [
+        "snorkelling",
+        "diving",
+        "swimming",
+        "nature"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "limited",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.4834,
+      "longitude": -8.9834,
+      "description_pt": "Dentro do Parque Natural da Arrábida, com água azul-turquesa protegida da serra. Acesso limitado em época alta.",
+      "description_en": "Inside the Arrábida Natural Park, with turquoise water sheltered by the mountain. Access is limited in peak season.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Setúbal"
+    },
+    {
+      "slug": "praia-da-nazare",
+      "supabase_id": "4c907c07-8bbd-4c37-90f2-8f9e2696f5a0",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Nazaré",
+      "name_en": "Nazaré Beach",
+      "region": "Centro",
+      "subregion": "Nazaré",
+      "beach_type": "urban",
+      "ideal_for": [
+        "surf",
+        "photography",
+        "families",
+        "big-wave-watching"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": true,
+      "latitude": 39.6,
+      "longitude": -9.0667,
+      "description_pt": "Famosa pelas maiores ondas do mundo no inverno e pela cultura piscatória local. Webcam ao vivo disponível.",
+      "description_en": "World-famous for its winter big waves and local fishing culture. Live webcam available.",
+      "related_pages_pt": [
+        "beaches.html",
+        "surf.html",
+        "webcams.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Nazaré"
+    },
+    {
+      "slug": "praia-de-moledo",
+      "supabase_id": "b699e6b6-e0cb-4620-9355-e1f3074ddde9",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Moledo",
+      "name_en": "Moledo Beach",
+      "region": "Norte",
+      "subregion": "Caminha",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunset",
+        "nature"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 41.8334,
+      "longitude": -8.8667,
+      "description_pt": "Praia extensa no extremo norte de Portugal, com vista para as ilhas Cíes e a foz do Rio Minho.",
+      "description_en": "A long sandy beach at Portugal's northern tip, with views to the Cíes Islands and the Minho estuary.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Caminha"
+    },
+    {
+      "slug": "praia-de-tavira",
+      "supabase_id": "f1f7b723-5ae7-457f-a810-6d5ad1f43c23",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Tavira",
+      "name_en": "Tavira Beach",
+      "region": "Algarve",
+      "subregion": "Tavira",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "nature",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "boat-only",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "restaurant"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1103,
+      "longitude": -7.645,
+      "description_pt": "Ilha-barreira acessível por ferry a partir de Tavira. Água calma da Ria Formosa — perfeita para famílias e nadadores menos experientes.",
+      "description_en": "A barrier island reached by ferry from Tavira. Calm Ria Formosa lagoon water — ideal for families and weaker swimmers.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Tavira"
+    },
+    {
+      "slug": "praia-de-sao-rafael",
+      "supabase_id": "3308ac4a-f42c-4c44-938b-cccbebb21afc",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de São Rafael",
+      "name_en": "São Rafael Beach",
+      "region": "Algarve",
+      "subregion": "Albufeira",
+      "beach_type": "cove",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "snorkelling",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "wooden-staircase",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.07,
+      "longitude": -8.275,
+      "description_pt": "Enseada tranquila entre falésias douradas perto de Albufeira. Excelente para famílias pela água calma e protegida.",
+      "description_en": "A sheltered cove between golden cliffs near Albufeira. Excellent for families thanks to calm, protected water.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Albufeira"
+    },
+    {
+      "slug": "praia-do-vau",
+      "supabase_id": "885a3c2e-2f8d-424d-b98c-a8c7b8732bee",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Vau",
+      "name_en": "Vau Beach",
+      "region": "Algarve",
+      "subregion": "Portimão",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunset"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 37.12,
+      "longitude": -8.57,
+      "description_pt": "A Praia do Vau situa-se a poente da Praia da Rocha, numa secção de costa com menor densidade urbana e um carácter mais recortado pelas falésias de calcário. A qualidade da água é Excelente. O areal é de dimensão moderada e as formações rochosas que o limitam criam algum resguardo natural. É frequentemente escolhida como alternativa mais tranquila à vizinha Praia da Rocha — a que acumula maior afluência do barlavento de Portimão. O percurso costeiro entre ambas as praias, ao longo do topo da falésia, oferece vistas sobre as formações rochosas desta secção do Algarve.",
+      "description_en": "Fine sand beach west of Portimão with low cliffs and good family conditions. A quieter alternative to Praia da Rocha.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Portimão"
+    },
+    {
+      "slug": "praia-de-vilamoura",
+      "supabase_id": "8c523fc0-993c-4e0e-9d29-755d7257be50",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Vilamoura",
+      "name_en": "Vilamoura Beach",
+      "region": "Algarve",
+      "subregion": "Loulé",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "watersports",
+        "nightlife-nearby"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "paid-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0667,
+      "longitude": -8.1167,
+      "description_pt": "A Praia de Vilamoura situa-se junto ao complexo de marina que deu nome a um dos maiores centros turísticos do Algarve. O areal é extenso, de areia fina, com qualidade da água Excelente. A organização e os serviços de suporte estão entre os mais completos da região. A marina adjacente, com a sua concentração de embarcações e comércio de posicionamento premium, confere à praia um contexto diferente das praias de falésia mais selvagens do barlavento. É uma escolha coerente para quem prioriza conforto e fácil acesso a partir de um alojamento na zona.",
+      "description_en": "Urban beach next to Vilamoura marina. Full services, well-maintained sand and easy family access.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Vilamoura"
+    },
+    {
+      "slug": "praia-verde",
+      "supabase_id": "feead871-bb63-43d7-acf9-592d7d54b514",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia Verde",
+      "name_en": "Praia Verde",
+      "region": "Algarve",
+      "subregion": "Castro Marim",
+      "beach_type": "natural-reserve",
+      "ideal_for": [
+        "nature",
+        "families",
+        "swimming",
+        "sunset"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.19,
+      "longitude": -7.41,
+      "description_pt": "A Praia Verde fica no sotavento algarvio, perto de Castro Marim, numa zona onde o pinhal se aproxima da praia e o horizonte costeiro permanece aberto. A qualidade da água é Excelente. O nome descreve o enquadramento: vegetação costeira densa em contraste com o areal claro e a água de tonalidade que oscila entre o verde e o azul consoante a luz. É uma das praias mais tranquilas desta zona do Algarve — com menos turismo de massa do que as praias a ocidente — e mantém o carácter de praia de pinhal que raramente se encontra noutros pontos do litoral algarvio.",
+      "description_en": "A beach inside the Ria Formosa, near the Spanish border. White sand, pine trees and calm water — less visited than central Algarve.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Castro Marim"
+    },
+    {
+      "slug": "praia-do-castelejo",
+      "supabase_id": "d3b73c18-ff72-4f00-b556-0370fd549fd3",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Castelejo",
+      "name_en": "Castelejo Beach",
+      "region": "Algarve",
+      "subregion": "Vila do Bispo",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "photography",
+        "nature",
+        "hiking-nearby"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.11,
+      "longitude": -8.92,
+      "description_pt": "Praia selvagem a norte de Sagres, com falésias altas e ondas consistentes. Uma das praias menos frequentadas do Algarve ocidental.",
+      "description_en": "Wild beach north of Sagres, with tall cliffs and consistent waves. One of the least-visited beaches on the western Algarve.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "surf.html",
+        "praias-secretas-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Sagres"
+    },
+    {
+      "slug": "praia-de-odeceixe",
+      "supabase_id": "c627b1c9-8467-4729-aa26-15fb6e86e6af",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Odeceixe",
+      "name_en": "Odeceixe Beach",
+      "region": "Alentejo",
+      "subregion": "Aljezur",
+      "beach_type": "river-mouth",
+      "ideal_for": [
+        "surf",
+        "families",
+        "swimming",
+        "nature"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.4333,
+      "longitude": -8.7833,
+      "description_pt": "A Praia de Odeceixe é um dos casos mais singulares da costa portuguesa — a ribeira de Seixe separa a praia do rio do areal oceânico, criando dois ambientes distintos num único espaço: água doce e água atlântica, correntes calmas e ondulação aberta. A qualidade da água é Boa. A praia fica no limite entre o Alentejo e o Algarve, dentro do Parque Natural do Sudoeste Alentejano e Costa Vicentina. O areal é protegido pelos montes envolventes, o que reduz o impacto do vento e cria uma atmosfera de vale junto ao mar.",
+      "description_en": "Beach at the mouth of the Seixe river, on the Algarve-Alentejo border. The river forms a calm natural pool ideal for children, while the ocean offers surf waves.",
+      "related_pages_pt": [
+        "surf.html",
+        "praias-para-surfistas-iniciantes-portugal.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html",
+        "en/beginner-surf-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Aljezur"
+    },
+    {
+      "slug": "praia-de-porto-covo",
+      "supabase_id": "6a12acc8-f776-4b01-96f7-73f9fb096e6d",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Porto Covo",
+      "name_en": "Porto Covo Beach",
+      "region": "Alentejo",
+      "subregion": "Sines",
+      "beach_type": "wild",
+      "ideal_for": [
+        "nature",
+        "sunset",
+        "photography",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": false,
+      "fishing": true,
+      "access": "cliff-path",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.85,
+      "longitude": -8.78,
+      "description_pt": "A Praia de Porto Covo fica no litoral alentejano, adjacente a uma das vilas piscatórias mais bem\r\n  preservadas da costa portuguesa. Insere-se no Parque Natural do Sudoeste Alentejano e Costa Vicentina, numa faixa com rochas\r\n  basálticas, dunas e falésia que caracterizam este trecho atlântico. A qualidade da água é Boa. Porto Covo combina praia de carácter\r\n   bruto com a escala humana de uma pequena vila de pescadores. A Ilha do Pessegueiro, visível da praia, adiciona dimensão histórica\r\n  e visual ao conjunto. Para quem vem do Algarve ou de Lisboa, é frequentemente a paragem que fica na memória.",
+      "description_en": "A small fishing village with wild beaches and dark cliffs. One of the hidden gems of the Alentejo coast.",
+      "related_pages_pt": [
+        "beaches.html",
+        "melhores-praias-por-do-sol.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/best-sunset-beaches.html"
+      ],
+      "booking_region_hint": "Sines"
+    },
+    {
+      "slug": "praia-do-almograve",
+      "supabase_id": "6b2661a4-4126-4ac4-8a03-ec2193cd4494",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Almograve",
+      "name_en": "Almograve Beach",
+      "region": "Alentejo",
+      "subregion": "Odemira",
+      "beach_type": "wild",
+      "ideal_for": [
+        "nature",
+        "photography",
+        "hiking-nearby",
+        "sunset"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": false,
+      "fishing": true,
+      "access": "cliff-path",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.64,
+      "longitude": -8.76,
+      "description_pt": "A Praia do Almograve é uma praia de carácter marcado pelo enquadramento geológico: plataformas rochosas, lajes e piscinas naturais coexistem com o areal estreito, compondo um litoral de textura visual densa. A qualidade da água é Boa. Insere-se na Costa Vicentina, numa zona de baixa pressão turística onde a paisagem é determinada pelas forças naturais, não pela infraestrutura. A ondulação atlântica, as formações rochosas e a luz do fim do dia sobre as lajes tornam esta praia especialmente apelativa para fotografia e exploração à maré baixa.",
+      "description_en": "Wild beach with dramatic rock formations on the Costa Vicentina, inside the Sudoeste Alentejano Natural Park.",
+      "related_pages_pt": [
+        "beaches.html",
+        "melhores-praias-por-do-sol.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/best-sunset-beaches.html"
+      ],
+      "booking_region_hint": "Odemira"
+    },
+    {
+      "slug": "praia-da-arrifana",
+      "supabase_id": "a6625ef3-a4ad-4e38-b74e-856ffc9fa724",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Arrifana",
+      "name_en": "Arrifana Beach",
+      "region": "Alentejo",
+      "subregion": "Aljezur",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surf",
+        "bodyboard",
+        "photography",
+        "nature"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": true,
+      "access": "cliff-path",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.2833,
+      "longitude": -8.875,
+      "description_pt": "Encravada numa enseada rochosa protegida por falésias escuras e perfis abruptos, a Praia da Arrifana faz parte do litoral bravio da Costa Vicentina. A qualidade da água é Boa, e a praia tem carácter surf — as condições atlânticas são frequentes e atraem praticantes durante grande parte do ano. O acesso desce até ao areal através de um caminho que corta a falésia, revelando o Atlântico gradualmente. É uma praia de escala humana, sem a afluência das praias mais conhecidas do Algarve vizinho.",
+      "description_en": "Spectacular surf beach in a cove sheltered by tall cliffs. Regular waves and wild scenery on the Costa Vicentina.",
+      "related_pages_pt": [
+        "surf.html",
+        "praias-secretas-algarve.html",
+        "praias-para-surfistas-iniciantes-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html",
+        "en/beginner-surf-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Aljezur"
+    },
+    {
+      "slug": "praia-da-bordeira",
+      "supabase_id": "37ac39ea-0a07-480a-9147-5aed9a9ae388",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Bordeira",
+      "name_en": "Bordeira Beach",
+      "region": "Alentejo",
+      "subregion": "Aljezur",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "nature",
+        "photography",
+        "hiking-nearby"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.22,
+      "longitude": -8.89,
+      "description_pt": "Praia vasta na foz do Rio Bordeira, perto de Carrapateira. Dunas extensas, ribeira calma e quase sempre pouco concorrida.",
+      "description_en": "A vast beach at the mouth of the Bordeira River near Carrapateira. Extensive dunes, calm river channel, and almost always uncrowded.",
+      "related_pages_pt": [
+        "surf.html",
+        "praias-secretas-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html",
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Aljezur"
+    },
+    {
+      "slug": "praia-de-sesimbra",
+      "supabase_id": "9efe4cc6-cb4a-4265-83c3-c710917810c1",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Sesimbra",
+      "name_en": "Sesimbra Beach",
+      "region": "Lisboa e Setúbal",
+      "subregion": "Sesimbra",
+      "beach_type": "cove",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "snorkelling",
+        "diving"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 38.44,
+      "longitude": -9.1,
+      "description_pt": "A Praia de Sesimbra é uma das praias mais protegidas da costa a sul de Lisboa — a baía onde o areal se instala é abraçada por serras baixas que bloqueiam o vento dominante e criam condições de mar geralmente mais calmas do que o resto do litoral. A qualidade da água é Boa. A vila de Sesimbra, construída sobre o morro que olha para a baía, tem carácter piscatório genuíno — com barcos de pesca, a fortaleza no topo e restauração de marisco que persiste para além da sazonalidade turística. É uma das escapadas preferidas de Lisboa para quem quer praia com vila, não apenas areal.",
+      "description_en": "A natural bay sheltered by Cabo Espichel, with clean water and an authentic fishing village atmosphere.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Sesimbra"
+    },
+    {
+      "slug": "praia-dos-galapinhos",
+      "supabase_id": "3d2dacea-cfcb-4086-9e15-a7b57ec9f2e7",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia dos Galapinhos",
+      "name_en": "Galapinhos Beach",
+      "region": "Lisboa e Setúbal",
+      "subregion": "Setúbal",
+      "beach_type": "natural-reserve",
+      "ideal_for": [
+        "nature",
+        "swimming",
+        "snorkelling",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": false,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "limited",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.475,
+      "longitude": -9,
+      "description_pt": "Eleita repetidamente a praia mais bonita de Portugal. Dentro do Parque Natural da Arrábida, acesso por trilho — sem carro direto à praia.",
+      "description_en": "Repeatedly voted Portugal's most beautiful beach. Inside the Arrábida Natural Park, accessed by trail — no direct road access.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Setúbal"
+    },
+    {
+      "slug": "praia-da-costa-de-caparica",
+      "supabase_id": "49839927-ee16-498b-80a8-f029627fd4c5",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Costa de Caparica",
+      "name_en": "Costa de Caparica Beach",
+      "region": "Oeste",
+      "subregion": "Almada",
+      "beach_type": "urban",
+      "ideal_for": [
+        "surf",
+        "families",
+        "swimming",
+        "beach-volleyball"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "paid-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 38.6333,
+      "longitude": -9.2333,
+      "description_pt": "A Praia da Costa de Caparica é uma das mais extensas do litoral português — um areal que se prolonga por dezenas de quilómetros a sul de Lisboa, com cultura de surf enraizada, transportes regulares desde a capital e um carácter de destino balnear urbano que serve milhares de visitantes diariamente no verão. A qualidade da água é Boa. Cada secção da Caparica tem a sua identidade: do acesso norte mais familiar às zonas sul mais calmas, com as praias de surf a distribuírem-se ao longo de toda a extensão. É a praia de Lisboa por excelência — e um dos destinos balneares com melhor acessibilidade a partir da capital.",
+      "description_en": "Thirty kilometres of beach south of Lisbon, with numbered sections, surf schools and excellent public transport access.",
+      "related_pages_pt": [
+        "beaches.html",
+        "surf.html",
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/surfing-portugal.html",
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Almada"
+    },
+    {
+      "slug": "praia-de-cascais",
+      "supabase_id": "fede421d-0f75-46f7-9248-9a374bc63c4c",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Cascais",
+      "name_en": "Cascais Beach",
+      "region": "Lisboa e Setúbal",
+      "subregion": "Cascais",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "watersports",
+        "nightlife-nearby"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 38.695,
+      "longitude": -9.42,
+      "description_pt": "A Praia de Cascais é a praia da vila — um areal urbano e acessível que fica a poucos minutos a pé do centro histórico de Cascais e da sua marina. A qualidade da água é Boa. A praia tem dimensão contida mas bem localizada, com a baía de Cascais a criar alguma proteção em relação à ondulação aberta do Atlântico. A possibilidade de combinar praia, centro histórico e marina num único passeio é um dos atrativos da visita a Cascais. Para sessões mais longas de praia, as praias adjacentes oferecem mais espaço — mas a Praia de Cascais tem a vantagem imbatível da conveniência e da escala humana da vila.",
+      "description_en": "Urban beach in Cascais town, 30 minutes by train from Lisbon. Calm, with a marina and shops nearby.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Cascais"
+    },
+    {
+      "slug": "ribeira-das-ilhas",
+      "supabase_id": "a9b0eada-8f04-4862-85aa-2892039baecd",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Ribeira d'Ilhas",
+      "name_en": "Ribeira d'Ilhas",
+      "region": "Oeste",
+      "subregion": "Mafra",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surf",
+        "bodyboard",
+        "photography",
+        "nature"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.975,
+      "longitude": -9.42,
+      "description_pt": "A Ribeira d'Ilhas é o break principal da Reserva Mundial de Surf de Ericeira — um point break que se estende ao longo de uma falésia baixa a norte da vila, criando condições que atraem surfistas de todo o mundo durante o inverno e a primavera. A qualidade da água é Boa. A praia tem carácter de surf destination: as tribunas naturais na falésia, a qualidade das ondas direitas e a concentração de surfistas experientes conferem-lhe uma energia diferente das praias de banho convencionais. Em dias de grande ondulação, é um dos espetáculos naturais mais impressionantes desta costa — acessível a pé da vila de Ericeira.",
+      "description_en": "A WCT surf break in Ericeira, Europe's only World Surfing Reserve. World-class waves, suited to experienced surfers.",
+      "related_pages_pt": [
+        "surf.html",
+        "praias-para-surfistas-iniciantes-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Ericeira"
+    },
+    {
+      "slug": "praia-de-peniche",
+      "supabase_id": "ffe1a91f-de57-4ff0-9ad5-d32951851730",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Peniche",
+      "name_en": "Peniche Beach",
+      "region": "Centro",
+      "subregion": "Peniche",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surf",
+        "bodyboard",
+        "photography",
+        "big-wave-watching"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 39.36,
+      "longitude": -9.38,
+      "description_pt": "A zona de Peniche concentra algumas das melhores ondas de Portugal numa só área geográfica — e a Praia de Peniche, exposta à ondulação atlântica frontal, é parte central dessa reputação. A qualidade da água é Boa. A cidade ocupa um promontório rochoso que avança para o Atlântico, o que lhe confere uma relação com o mar particularmente intensa. A Fortaleza de Peniche e a proximidade à Reserva Natural da Berlenga — a alguns quilómetros ao largo — tornam Peniche uma das paragens mais completas da costa da Estremadura.",
+      "description_en": "Peniche hosts Supertubos, one of Europe's best waves and host to the WCT Portugal event. Several beaches around the peninsula.",
+      "related_pages_pt": [
+        "surf.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html",
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Peniche"
+    },
+    {
+      "slug": "praia-da-figueira-da-foz",
+      "supabase_id": "07b0b2c3-f11d-474d-9f5f-02dc87a4be64",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Figueira da Foz",
+      "name_en": "Figueira da Foz Beach",
+      "region": "Centro",
+      "subregion": "Figueira da Foz",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "watersports",
+        "surf"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "paid-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 40.15,
+      "longitude": -8.87,
+      "description_pt": "A Praia da Figueira da Foz é um dos grandes areais urbanos da costa atlântica portuguesa — uma faixa extensa que enquadra a frente de mar de uma das cidades costeiras mais dinâmicas da Beira Litoral. A qualidade da água é Boa. A praia tem boa infraestrutura de suporte, fácil acesso e é um ponto de convergência de famílias, grupos de jovens e surfistas que aproveitam a ondulação regular do Atlântico. O casino da cidade, visível da frente de mar, é um dos elementos arquitetónicos mais marcantes da Figueira — parte de uma herança balnear com raízes no século XIX.",
+      "description_en": "One of Portugal's largest beaches, with vast sand and a historic casino. A popular summer destination in central Portugal.",
+      "related_pages_pt": [
+        "beaches.html",
+        "surf.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Figueira da Foz"
+    },
+    {
+      "slug": "praia-de-sao-pedro-de-moel",
+      "supabase_id": "24dba43c-02fb-40bc-b3a8-d39e1f8ea49e",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de São Pedro de Moel",
+      "name_en": "São Pedro de Moel Beach",
+      "region": "Centro",
+      "subregion": "Marinha Grande",
+      "beach_type": "wild",
+      "ideal_for": [
+        "nature",
+        "surf",
+        "families",
+        "sunset"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 39.76,
+      "longitude": -9.03,
+      "description_pt": "A Praia de S. Pedro de Moel fica encaixada entre o pinhal de Leiria e o Atlântico, num troço da costa de Marinha Grande onde a floresta costeira chega próxima do areal. A qualidade da água é Boa. A localidade tem uma história balnear com raízes nos finais do século XIX, e a arquitetura das casas de veraneio que pontilham o pinhal reflete esse passado. O areal é parcialmente protegido por uma reentrância da costa que oferece algum resguardo em relação ao vento norte. É uma praia com personalidade reconhecível — o cheiro a pinheiro, a textura da areia e a luz filtrada pelo pinhal antes de chegar à praia.",
+      "description_en": "A serene beach between pine trees and rocky headlands, in the heart of the Pinhal de Leiria. Quieter than Nazaré.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Marinha Grande"
+    },
+    {
+      "slug": "praia-de-matosinhos",
+      "supabase_id": "9fd20503-ced1-4e4c-9069-d38c320ef247",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Matosinhos",
+      "name_en": "Matosinhos Beach",
+      "region": "Norte",
+      "subregion": "Matosinhos",
+      "beach_type": "urban",
+      "ideal_for": [
+        "surf",
+        "families",
+        "swimming",
+        "seafood-nearby"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 41.185,
+      "longitude": -8.695,
+      "description_pt": "A Praia de Matosinhos é a praia mais acessível do Porto — areal urbano, de dimensão generosa, com ligação direta à cidade por metro e a escassos minutos do centro. A qualidade da água é Boa. A ondulação atlântica é regular e a praia atrai surfistas com frequência. Matosinhos é também conhecida pela concentração de restaurantes de marisco e peixe fresco que tornam qualquer refeição depois da praia uma extensão natural da visita. É uma praia de cidade — com tudo o que isso implica de conveniência e animação — sem a frieza estética das praias puramente urbanas.",
+      "description_en": "Urban beach 15 minutes from Porto, with direct metro access and the region's best seafood restaurants. Surf school and consistent conditions.",
+      "related_pages_pt": [
+        "beaches.html",
+        "surf.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Matosinhos"
+    },
+    {
+      "slug": "praia-de-espinho",
+      "supabase_id": "63d09050-d513-474a-87f4-3658b18da09a",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Espinho",
+      "name_en": "Espinho Beach",
+      "region": "Norte",
+      "subregion": "Espinho",
+      "beach_type": "urban",
+      "ideal_for": [
+        "surf",
+        "families",
+        "swimming",
+        "sunset"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "restaurant",
+        "disabled"
+      ],
+      "webcam_available": false,
+      "latitude": 40.995,
+      "longitude": -8.65,
+      "description_pt": "A Praia de Espinho é a praia de uma das cidades balneares mais emblemáticas da costa norte — uma cidade fundada sobre a areia, com uma frente de mar definida e uma relação com o Atlântico que remonta às primeiras décadas do turismo balnear em Portugal. A qualidade da água é Boa. A ondulação atlântica é constante e a praia é frequentada por surfistas e por banhistas da grande área do Porto. O casino e a infraestrutura urbana de Espinho são parte de uma herança balnear que posiciona a cidade como praia com história e carácter urbano consolidado.",
+      "description_en": "A wide beach south of Porto, with good surf waves and a lively promenade. Direct train access.",
+      "related_pages_pt": [
+        "beaches.html",
+        "surf.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html",
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Espinho"
+    },
+    {
+      "slug": "praia-de-ofir",
+      "supabase_id": "dd37d1cd-8ecc-45af-b8d2-3ceabf881969",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Ofir",
+      "name_en": "Ofir Beach",
+      "region": "Norte",
+      "subregion": "Esposende",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "nature",
+        "swimming",
+        "sunset"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 41.52,
+      "longitude": -8.785,
+      "description_pt": "A Praia de Ofir situa-se na margem norte da foz do Cávado, em Esposende, com dunas altas, pinhal dunar e uma costa atlântica de carácter selvagem que contrasta com o turismo mais organizado das praias a sul. A qualidade da água é Boa. As dunas de Ofir são das mais significativas do litoral norte — acumulações de areia que chegam a alturas consideráveis e que têm sido objeto de proteção por parte das autoridades ambientais. É uma praia com forte identidade de costa norte: vento, areia, pinheiros e o Atlântico a impor a sua escala.",
+      "description_en": "A dune and pine beach at the mouth of the Cávado River in Esposende. Preserved natural environment and clean water in northern Portugal.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Esposende"
+    },
+    {
+      "slug": "praia-de-dona-ana",
+      "supabase_id": "91b63ef1-7d4f-483a-a8ca-ed2a60b65e00",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Dona Ana",
+      "name_en": "Dona Ana Beach",
+      "region": "Algarve",
+      "subregion": "Lagos",
+      "beach_type": "cove",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "snorkelling",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "wooden-staircase",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0856,
+      "longitude": -8.6719,
+      "description_pt": "Enseada dourada em Lagos com falésias calcárias e águas cristalinas. Muito popular no verão, com acesso por escadas de madeira. Uma das praias mais frequentadas da costa de Lagos.",
+      "description_en": "Golden cove in Lagos with limestone cliffs and crystal-clear water. One of the most popular beaches on the Lagos coast, accessed via wooden stairs.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagos"
+    },
+    {
+      "slug": "praia-de-alvor",
+      "supabase_id": "925ac239-db1f-432b-98ee-7a308ae9a6b8",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Alvor",
+      "name_en": "Alvor Beach",
+      "region": "Algarve",
+      "subregion": "Alvor",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "nature",
+        "fishing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1278,
+      "longitude": -8.5931,
+      "description_pt": "A Praia de Alvor fica na embocadura da ria de Alvor, onde o estuário de águas calmas encontra o Atlântico aberto. A ria oferece zonas de banho mais calmas para famílias e crianças, e a vila mantém carácter genuinamente piscatório.",
+      "description_en": "Wide beach at the Alvor estuary with calm water and easy access — a practical family alternative to the clifftop beaches further east.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Alvor"
+    },
+    {
+      "slug": "praia-de-armacao-de-pera",
+      "supabase_id": "d723c15c-6b6b-4c47-8182-c06313e0e641",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Armação de Pêra",
+      "name_en": "Armação de Pêra Beach",
+      "region": "Algarve",
+      "subregion": "Silves",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunbathing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar",
+        "restaurants"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1,
+      "longitude": -8.3611,
+      "description_pt": "A Praia de Armação de Pêra é uma das praias mais compridas do Algarve central — um areal extenso e bem equipado, diretamente ligado à frente de mar da localidade. A costa adjacente oferece acesso a grutas e formações rochosas fotogénicas.",
+      "description_en": "One of central Algarve's longest urban beaches — wide sands, full facilities, and a traditional fishing village backdrop.",
+      "related_pages_pt": [
+        "praias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/algarve-beaches.html"
+      ],
+      "booking_region_hint": "Armação de Pêra"
+    },
+    {
+      "slug": "ilha-de-tavira",
+      "supabase_id": "081ec673-aec2-4015-b711-4f88b2664914",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Ilha de Tavira",
+      "name_en": "Tavira Island",
+      "region": "Algarve",
+      "subregion": "Tavira",
+      "beach_type": "natural-reserve",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "nature",
+        "birdwatching"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "boat-only",
+      "parking": "none",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1,
+      "longitude": -7.65,
+      "description_pt": "Ilha-barreira da Ria Formosa acessível por ferry a partir de Tavira. Águas calmas e quentes na lagoa, Atlântico mais agitado do lado oceânico. Uma das praias mais queridas do Algarve oriental.",
+      "description_en": "Barrier island in the Ria Formosa lagoon, reached by ferry from Tavira. Calm lagoon water on one side, Atlantic surf on the other.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html",
+        "praias-calmas-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/algarve-beaches.html",
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Tavira"
+    },
+    {
+      "slug": "manta-rota",
+      "supabase_id": "3be6e364-0660-4b97-be03-67b7c4053070",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Manta Rota",
+      "name_en": "Manta Rota Beach",
+      "region": "Algarve",
+      "subregion": "Vila Real de Santo António",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "nature",
+        "sunset"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1706,
+      "longitude": -7.4669,
+      "description_pt": "Praia tranquila no extremo leste do Algarve, junto à Ria Formosa. Água calma, pouca afluência e uma comunidade local que mantém o sítio descomplicado.",
+      "description_en": "Quiet beach at the eastern end of the Algarve near the Ria Formosa. Calm water, low crowds, and a relaxed local feel.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-calmas-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/algarve-beaches.html"
+      ],
+      "booking_region_hint": "Manta Rota"
+    },
+    {
+      "slug": "praia-da-fuseta",
+      "supabase_id": "a45ef0a4-98ff-4eb2-bc3d-3cee21ca5570",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Fuseta",
+      "name_en": "Fuseta Beach",
+      "region": "Algarve",
+      "subregion": "Olhão",
+      "beach_type": "natural-reserve",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "nature",
+        "birdwatching"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "boat-only",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0542,
+      "longitude": -7.7458,
+      "description_pt": "Praia de ilha na Ria Formosa, acessível por ferry a partir da Fuseta. Lagoa interior com água mais quente e calma, rodeada de salinas e zonas de biodiversidade.",
+      "description_en": "Ria Formosa barrier island beach reached by ferry from Fuzeta village. Warmer, calmer lagoon water on the inner side.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-calmas-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/algarve-beaches.html"
+      ],
+      "booking_region_hint": "Olhão"
+    },
+    {
+      "slug": "praia-do-zavial",
+      "supabase_id": "37fd270d-1dd5-4701-af07-f0ede1590069",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Zavial",
+      "name_en": "Zavial Beach",
+      "region": "Algarve",
+      "subregion": "Vila do Bispo",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "nature",
+        "fishing",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": true,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.0394,
+      "longitude": -8.7636,
+      "description_pt": "Praia escondida no sudoeste algarvio com boas condições de surf e acesso por estrada não asfaltada. Pouca infraestrutura, muito carácter.",
+      "description_en": "Hidden west Algarve beach with good surf and a gravel road approach. Few facilities, strong Atlantic character.",
+      "related_pages_pt": [
+        "praias-secretas-algarve.html",
+        "praias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/algarve-beaches.html"
+      ],
+      "booking_region_hint": "Vila do Bispo"
+    },
+    {
+      "slug": "praia-de-beliche",
+      "supabase_id": "fa66de51-13bc-4088-8b94-942d33e525fc",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Beliche",
+      "name_en": "Beliche Beach",
+      "region": "Algarve",
+      "subregion": "Sagres",
+      "beach_type": "cove",
+      "ideal_for": [
+        "surf",
+        "nature",
+        "photography",
+        "swimming"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "limited",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.0178,
+      "longitude": -8.9256,
+      "description_pt": "Pequena enseada de acesso difícil perto do Cabo de São Vicente. Protegida do vento dominante de norte, com ondas consistentes e poucas pessoas.",
+      "description_en": "Small cove near Cabo de São Vicente with sheltered conditions and consistent surf. Hard to reach — few people, strong Atlantic atmosphere.",
+      "related_pages_pt": [
+        "praias-secretas-algarve.html",
+        "praias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/algarve-beaches.html"
+      ],
+      "booking_region_hint": "Sagres"
+    },
+    {
+      "slug": "praia-da-cordoama",
+      "supabase_id": "cd38e95f-282e-4d59-bca9-5ff03d43cee8",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Cordoama",
+      "name_en": "Cordoama Beach",
+      "region": "Algarve",
+      "subregion": "Vila do Bispo",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "nature",
+        "photography",
+        "sunset"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": true,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.1028,
+      "longitude": -8.9172,
+      "description_pt": "Extensa praia selvagem no Parque Natural do Sudoeste Alentejano e Costa Vicentina. Ondulação atlântica, falésias altas e quase nenhuma infraestrutura turística.",
+      "description_en": "Wild Atlantic beach inside the Vicentine Coast Natural Park. Strong swell, high cliffs, and minimal tourist infrastructure.",
+      "related_pages_pt": [
+        "praias-secretas-algarve.html",
+        "surf-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-algarve.html"
+      ],
+      "booking_region_hint": "Vila do Bispo"
+    },
+    {
+      "slug": "praia-da-samoqueira",
+      "supabase_id": "52e176c2-b7e6-4a85-abcf-6cf871464967",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Samoqueira",
+      "name_en": "Samoqueira Beach",
+      "region": "Alentejo",
+      "subregion": "Porto Covo",
+      "beach_type": "wild",
+      "ideal_for": [
+        "nature",
+        "photography",
+        "fishing",
+        "swimming"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": false,
+      "fishing": true,
+      "access": "cliff-path",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.8556,
+      "longitude": -8.7906,
+      "description_pt": "Praia rochosa e selvagem perto de Porto Covo, com plataformas de rocha e piscinas naturais. Integrada no Parque Natural da Costa Vicentina.",
+      "description_en": "Rocky wild beach near Porto Covo with natural rock pools. Part of the Vicentine Coast Natural Park.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Porto Covo"
+    },
+    {
+      "slug": "praia-do-malhao",
+      "supabase_id": "a8e9c668-f606-4100-87ea-b00ea61617e5",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Malhão",
+      "name_en": "Malhão Beach",
+      "region": "Alentejo",
+      "subregion": "Porto Covo",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "nature",
+        "photography",
+        "sunset"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.875,
+      "longitude": -8.7917,
+      "description_pt": "Praia de dunas extensa na Costa Vicentina, com acesso por caminho de areia e ondulação atlântica intensa. Nenhuma infraestrutura — natureza pura.",
+      "description_en": "Vast dune beach on the Vicentine Coast with powerful Atlantic surf and zero infrastructure.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Porto Covo"
+    },
+    {
+      "slug": "praia-de-melides",
+      "supabase_id": "eea6217b-2508-4c9b-b1a8-e9ed888f757d",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Melides",
+      "name_en": "Melides Beach",
+      "region": "Alentejo",
+      "subregion": "Grândola",
+      "beach_type": "wild",
+      "ideal_for": [
+        "nature",
+        "photography",
+        "sunset",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.1875,
+      "longitude": -8.8083,
+      "description_pt": "Praia longa e despovoada com lagoa de água doce adjacente — pinheiros, dunas e uma atmosfera de Alentejo costeiro que o turismo de massa ainda não descobriu completamente.",
+      "description_en": "Long, lightly developed beach with a freshwater lagoon and pine dunes. Coastal Alentejo at its most unhurried.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Grândola"
+    },
+    {
+      "slug": "praia-de-santo-andre",
+      "supabase_id": "92de7432-12a1-4324-8ed2-932692b1e267",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Santo André",
+      "name_en": "Santo André Beach",
+      "region": "Alentejo",
+      "subregion": "Santiago do Cacém",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "nature",
+        "swimming",
+        "birdwatching"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar"
+      ],
+      "webcam_available": false,
+      "latitude": 38.0739,
+      "longitude": -8.8028,
+      "description_pt": "Praia atlântica junto à Lagoa de Santo André, uma das maiores lagoas costeiras de Portugal. Família, natureza e facilidade de acesso a combinar num sítio ainda pouco concorrido.",
+      "description_en": "Atlantic beach next to the Santo André lagoon — one of Portugal's largest coastal lagoons. Good for families and birdwatching.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Santiago do Cacém"
+    },
+    {
+      "slug": "praia-de-santa-eulalia",
+      "supabase_id": "f2061e77-2dfd-4817-bab6-2341672729a4",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Santa Eulália",
+      "name_en": "Santa Eulália Beach",
+      "region": "Algarve",
+      "subregion": "Albufeira",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunbathing"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar",
+        "restaurants"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0833,
+      "longitude": -8.1619,
+      "description_pt": "Praia de areia fina junto a Albufeira, com boa exposição solar, águas protegidas e boa infraestrutura de apoio. Popular entre famílias e turismo de resort.",
+      "description_en": "Fine sand beach near Albufeira with sheltered waters, full facilities, and good sun exposure. Practical family choice.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Albufeira"
+    },
+    {
+      "slug": "praia-do-tamariz",
+      "supabase_id": "f0fbf5a9-75d3-40d3-80be-62fc749588fd",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Tamariz",
+      "name_en": "Tamariz Beach",
+      "region": "Oeste",
+      "subregion": "Estoril",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunbathing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar",
+        "restaurants"
+      ],
+      "webcam_available": false,
+      "latitude": 38.7,
+      "longitude": -9.3944,
+      "description_pt": "Praia urbana em Estoril junto ao casino, com acesso fácil por comboio a partir de Lisboa. Uma das praias mais próximas da capital com infraestrutura completa.",
+      "description_en": "Urban beach at Estoril, a short train ride from Lisbon. Good facilities and reliable access for day trips from the city.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Estoril"
+    },
+    {
+      "slug": "praia-de-sao-joao-do-estoril",
+      "supabase_id": "f893e0a8-9f2e-4533-9093-001877541cf1",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de São João do Estoril",
+      "name_en": "São João do Estoril Beach",
+      "region": "Oeste",
+      "subregion": "Cascais",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunbathing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets"
+      ],
+      "webcam_available": false,
+      "latitude": 38.6944,
+      "longitude": -9.4133,
+      "description_pt": "Praia pequena e familiar em São João do Estoril, entre Estoril e Cascais. Acesso direto por comboio, boa para uma tarde de verão a partir de Lisboa.",
+      "description_en": "Small family beach between Estoril and Cascais. Direct train access from Lisbon — good for an afternoon escape.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Cascais"
+    },
+    {
+      "slug": "praia-de-supertubos",
+      "supabase_id": "0f616614-30d1-488a-986a-acd1caebbe6c",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de Supertubos",
+      "name_en": "Supertubos Beach",
+      "region": "Oeste",
+      "subregion": "Peniche",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surf",
+        "photography",
+        "nature"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 39.3542,
+      "longitude": -9.3978,
+      "description_pt": "Uma das melhores ondas de Portugal — barrel potente com fundo de areia, palco da etapa do WSL Championship Tour desde 2009. Exclusivamente para surfistas experientes.",
+      "description_en": "One of Portugal's best waves — a powerful sand-bottom barrel that hosts the WSL Portugal Pro. Experienced surfers only.",
+      "related_pages_pt": [
+        "surf.html",
+        "praias-para-surfistas-iniciantes-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Peniche"
+    },
+    {
+      "slug": "praia-de-sao-juliao",
+      "supabase_id": "304b2207-d81b-4fef-bdc3-74392d207133",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia de São Julião",
+      "name_en": "São Julião Beach",
+      "region": "Oeste",
+      "subregion": "Ericeira",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surf",
+        "nature",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.97,
+      "longitude": -9.4167,
+      "description_pt": "Praia de surf no trecho norte da Reserva Mundial de Surf da Ericeira. Ondas de qualidade em condições certas, ambiente local e sem infraestrutura turística de massa.",
+      "description_en": "Surf beach in the northern section of the Ericeira World Surfing Reserve. Quality waves in the right conditions, local atmosphere.",
+      "related_pages_pt": [
+        "surf.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Ericeira"
+    },
+    {
+      "slug": "praia-do-martinhal",
+      "supabase_id": "5c45c033-1182-4e59-b0de-61ec81ab38f2",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Martinhal",
+      "name_en": "Martinhal Beach",
+      "region": "Algarve",
+      "subregion": "Sagres",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "nature",
+        "birdwatching"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0183,
+      "longitude": -8.9317,
+      "description_pt": "Praia calma em baía protegida perto de Sagres, com pouca ondulação e boa vista para o vale. Popular entre famílias que ficam na zona do cabo.",
+      "description_en": "Sheltered bay beach near Sagres with calm water and good inland views. Popular with families staying near Cabo de São Vicente.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "praias-familias-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/family-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Sagres"
+    },
+    {
+      "slug": "praia-do-norte",
+      "supabase_id": "74421a75-f67c-45d5-928f-b7fae44adc33",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia do Norte",
+      "name_en": "Praia do Norte",
+      "region": "Centro",
+      "subregion": "Nazaré",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surf",
+        "photography",
+        "nature"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 39.6,
+      "longitude": -9.0736,
+      "description_pt": "A praia das ondas gigantes — local onde Garrett McNamara surfou a maior onda do mundo em 2011 e onde o recorde tem sido batido várias vezes. Apenas para surfistas de big wave profissionais.",
+      "description_en": "Home of the world's biggest waves — where Garrett McNamara broke the world record in 2011. Spectating is welcome; surfing is for big-wave professionals only.",
+      "related_pages_pt": [
+        "surf.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-portugal.html"
+      ],
+      "booking_region_hint": "Nazaré"
+    },
+    {
+      "slug": "praia-da-rainha",
+      "supabase_id": "53d1fa07-14d1-4806-8c8c-d0ec01f35b28",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Rainha",
+      "name_en": "Rainha Beach",
+      "region": "Lisboa e Setúbal",
+      "subregion": "Cascais",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunbathing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard",
+        "toilets"
+      ],
+      "webcam_available": false,
+      "latitude": 38.6958,
+      "longitude": -9.4192,
+      "description_pt": "Praia pequena e central em Cascais, numa baía abrigada com fácil acesso a pé do centro histórico. Boa para uma tarde tranquila sem sair da cidade.",
+      "description_en": "Small sheltered beach in central Cascais, walkable from the old town. A practical afternoon option without leaving the village.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/beaches-near-lisbon.html"
+      ],
+      "booking_region_hint": "Cascais"
+    },
+    {
+      "slug": "praia-de-buarcos",
+      "supabase_id": "63806db3-12a1-4e83-b354-1ac4b44fcb2d",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Buarcos",
+      "name_en": "Buarcos Beach",
+      "region": "Centro",
+      "subregion": "Figueira da Foz",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sunbathing",
+        "fishing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard",
+        "toilets",
+        "bar"
+      ],
+      "webcam_available": false,
+      "latitude": 40.1664,
+      "longitude": -8.8633,
+      "description_pt": "A Praia de Buarcos fica a norte da Figueira da Foz, junto ao bairro de pescadores com o mesmo nome. A presença do Buarcos histórico atrás da praia dá contexto ao lugar — vida marítima e veraneio balnear partilham o mesmo espaço.",
+      "description_en": "Urban beach on the north side of Figueira da Foz bay, with a fishing village backdrop and more intimate scale than the main town beach.",
+      "related_pages_pt": [
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/beaches.html"
+      ],
+      "booking_region_hint": "Figueira da Foz"
+    },
+    {
+      "slug": "praia-de-carrapateira",
+      "supabase_id": "868b17e0-9f74-46b1-8f84-bacc0ff7db94",
+      "status": "live",
+      "last_updated": "2026-04-08",
+      "name_pt": "Praia da Carrapateira",
+      "name_en": "Carrapateira Beach",
+      "region": "Algarve",
+      "subregion": "Aljezur",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surf",
+        "nature",
+        "photography",
+        "sunset"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.1842,
+      "longitude": -8.9,
+      "description_pt": "Praia atlântica selvagem perto da aldeia de Carrapateira, na Costa Vicentina. Ondulação constante, falésias impressionantes e uma aldeia de pescadores que ainda não foi engolida pelo turismo.",
+      "description_en": "Wild Atlantic beach near Carrapateira village on the Vicentine Coast. Consistent swell, dramatic cliffs, and a fishing village that tourism hasn't yet swallowed.",
+      "related_pages_pt": [
+        "praias-secretas-algarve.html",
+        "surf-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/surfing-algarve.html"
+      ],
+      "booking_region_hint": "Aljezur"
+    },
+    {
+      "slug": "faja-da-areia",
+      "supabase_id": "aa950882-863f-42db-81b8-0c5e9d64ba24",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Fajã da Areia",
+      "name_en": "Fajã da Areia",
+      "region": "Madeira",
+      "subregion": "Porto Moniz",
+      "beach_type": "volcanic",
+      "ideal_for": [
+        "photography",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": false,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "limited",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 32.8234,
+      "longitude": -17.2334,
+      "description_pt": "A Fajã da Areia é uma fajã do norte da Ilha da Madeira, formada por uma plataforma de lava que avança para o oceano e cria um espaço de contacto com o mar de carácter muito próprio. A qualidade da água é Boa.",
+      "description_en": "A dramatic lava platform on the north coast of Madeira, where dark volcanic rock meets the deep Atlantic. Remote and preserved.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-madeira.html"
+      ],
+      "related_pages_en": [
+        "en/madeira-beaches.html"
+      ],
+      "booking_region_hint": "Porto Moniz"
+    },
+    {
+      "slug": "ilha-da-culatra",
+      "supabase_id": "89fa1083-95bf-42e7-bd28-ad34740851cf",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Ilha da Culatra",
+      "name_en": "Culatra Island",
+      "region": "Algarve",
+      "subregion": "Olhão",
+      "beach_type": "natural-reserve",
+      "ideal_for": [
+        "swimming",
+        "families",
+        "fishing"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "boat-only",
+      "parking": "none",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.0112,
+      "longitude": -7.8934,
+      "description_pt": "A Ilha da Culatra é uma ilha-barreira no interior da Ria Formosa, acessível apenas de barco a\r\n  partir de Olhão ou Faro.",
+      "description_en": "A barrier island inside Ria Formosa, accessible only by boat from Olhão or Faro. Pristine waters, no cars.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Olhão"
+    },
+    {
+      "slug": "jardim-do-mar",
+      "supabase_id": "ebf82db0-f4b2-4bb7-a1fb-ec6f07e90632",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Jardim do Mar",
+      "name_en": "Jardim do Mar",
+      "region": "Madeira",
+      "subregion": "Calheta",
+      "beach_type": "volcanic",
+      "ideal_for": [
+        "surfing",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "limited",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 32.7234,
+      "longitude": -17.2234,
+      "description_pt": "O Jardim do Mar é uma das mais pequenas e mais carismáticas localidades costeiras da Madeira — uma aldeia na falésia sul da ilha, com casas voltadas para o Atlântico e um dos melhores pontos de surf d.",
+      "description_en": "A charming cliff-side village on Madeira's south coast, famous for its surf break. Volcanic shoreline with raw Atlantic exposure.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-madeira.html"
+      ],
+      "related_pages_en": [
+        "en/madeira-beaches.html"
+      ],
+      "booking_region_hint": "Calheta"
+    },
+    {
+      "slug": "lagoa-de-albufeira",
+      "supabase_id": "e11188da-c19e-4c9d-a2a6-59f777412a05",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Lagoa de Albufeira",
+      "name_en": "Lagoa de Albufeira",
+      "region": "Oeste",
+      "subregion": "Sesimbra",
+      "beach_type": "natural-reserve",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "birdwatching"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.5112,
+      "longitude": -9.1634,
+      "description_pt": "A Lagoa de Albufeira é uma laguna costeira a sul de Lisboa, separada do Atlântico por um cordão de areia que configura dois ambientes de banho distintos: o oceano aberto com ondulação franca, e a lagu.",
+      "description_en": "A coastal lagoon south of Lisbon, separated from the Atlantic by a sand bar. Two worlds in one: calm lagoon and open sea.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Sesimbra"
+    },
+    {
+      "slug": "paul-do-mar",
+      "supabase_id": "fdf3f8dc-a8e9-491e-9c9e-4bea8bb8fa47",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Paul do Mar",
+      "name_en": "Paul do Mar",
+      "region": "Madeira",
+      "subregion": "Calheta",
+      "beach_type": "volcanic",
+      "ideal_for": [
+        "surfing",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": true,
+      "access": "cliff-path",
+      "parking": "limited",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 32.7534,
+      "longitude": -17.2012,
+      "description_pt": "O Paul do Mar é uma aldeia piscatória encravada entre a falésia sul da Madeira e o Atlântico — num espaço estreito onde as casas ficam literalmente entre a rocha e o mar. A qualidade da água é Boa.",
+      "description_en": "A fishing village wedged between Madeira's southern cliffs and the Atlantic — a surf spot with raw volcanic character.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-madeira.html"
+      ],
+      "related_pages_en": [
+        "en/madeira-beaches.html"
+      ],
+      "booking_region_hint": "Calheta"
+    },
+    {
+      "slug": "praia-da-altura",
+      "supabase_id": "efdfab6a-36b9-42a6-8e11-019450a51c86",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Altura",
+      "name_en": "Altura Beach",
+      "region": "Algarve",
+      "subregion": "Castro Marim",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "snorkelling"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1912,
+      "longitude": -7.4234,
+      "description_pt": "A Praia da Altura situa-se no sotavento algarvio, perto da fronteira com Espanha, numa zona de menor densidade turística do que o Algarve central. A qualidade da água é Excelente.",
+      "description_en": "Eastern Algarve beach near the Spanish border, in a quieter tourist zone. Long sandy shore with excellent water quality.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Castro Marim"
+    },
+    {
+      "slug": "praia-da-areia-branca",
+      "supabase_id": "fd1474e1-7acb-4635-822d-df649332769e",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Areia Branca",
+      "name_en": "Areia Branca Beach",
+      "region": "Centro",
+      "subregion": "Lourinhã",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "surfing",
+        "families",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 39.2534,
+      "longitude": -9.2934,
+      "description_pt": "A Praia da Areia Branca fica na costa da Lourinhã, uma zona da Estremadura portuguesa conhecida também pelos seus achados paleontológicos.",
+      "description_en": "A surf-ready beach on the Silver Coast near Lourinhã, known for dinosaur fossil finds and consistent Atlantic swell.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Lourinhã"
+    },
+    {
+      "slug": "praia-da-barra",
+      "supabase_id": "47af766c-c76f-483f-986b-5dbefd6f294a",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Barra",
+      "name_en": "Barra Beach",
+      "region": "Centro",
+      "subregion": "Ílhavo",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 40.6334,
+      "longitude": -8.7456,
+      "description_pt": "A Praia da Barra fica na embocadura da Ria de Aveiro, junto ao canal que liga a laguna ao Atlântico — e é identificada de longe pelo farol listrado de vermelho e branco, um dos mais altos de Portugal.",
+      "description_en": "At the mouth of Ria de Aveiro, marked by Portugal's tallest lighthouse. Wide sandy beach with calm conditions.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Ílhavo"
+    },
+    {
+      "slug": "praia-da-costa-nova",
+      "supabase_id": "26b8762d-0343-4a93-9670-9a86993e7dfd",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Costa Nova",
+      "name_en": "Costa Nova Beach",
+      "region": "Centro",
+      "subregion": "Ílhavo",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "photography",
+        "families",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 40.6012,
+      "longitude": -8.7423,
+      "description_pt": "A Praia da Costa Nova é inseparável das palheiros — as casas de madeira com riscas verticais coloridas que alinham a frente de mar e são um dos cenários mais reconhecíveis da costa de Aveiro. A qualidade da água é Boa.",
+      "description_en": "Famous for its colourful striped beach houses, Costa Nova sits between Ria de Aveiro and the Atlantic. Iconic Portuguese seaside.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Ílhavo"
+    },
+    {
+      "slug": "praia-da-falesia",
+      "supabase_id": "2cb7aca0-9280-4405-8390-3f592e3ef0f5",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Falésia",
+      "name_en": "Falésia Beach",
+      "region": "Algarve",
+      "subregion": "Albufeira",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "swimming",
+        "families",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "wooden-staircase",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0834,
+      "longitude": -8.1234,
+      "description_pt": "A Praia da Falésia estende-se por vários quilómetros de areal entre Vilamoura e Olhos de Água,\r\n  ladeada por falésias de tons avermelhados e ocre que contrastam com o azul do Atlântico.",
+      "description_en": "Several kilometres of pristine sand flanked by striking ochre cliffs between Vilamoura and Olhos de Água. One of the Algarve's most scenic beaches.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Albufeira"
+    },
+    {
+      "slug": "praia-da-fonte-da-telha",
+      "supabase_id": "508706d1-2ddd-4377-8319-75a5bb347435",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Fonte da Telha",
+      "name_en": "Fonte da Telha Beach",
+      "region": "Oeste",
+      "subregion": "Almada",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "swimming",
+        "surfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.5334,
+      "longitude": -9.1823,
+      "description_pt": "A Praia da Fonte da Telha situa-se a sul da Costa de Caparica, numa secção mais afastada dos acessos principais que lhe confere menor afluência e maior tranquilidade durante os meses de verão. A qualidade da água é Boa.",
+      "description_en": "Southern stretch of Costa de Caparica with a wilder, less crowded character and consistent surf conditions.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Almada"
+    },
+    {
+      "slug": "praia-da-foz-do-arelho",
+      "supabase_id": "fefd19c5-2dad-4627-a476-daa13be99352",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Foz do Arelho",
+      "name_en": "Foz do Arelho Beach",
+      "region": "Centro",
+      "subregion": "Caldas da Rainha",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "windsurfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 39.4334,
+      "longitude": -9.2123,
+      "description_pt": "A Praia da Foz do Arelho tem dois lados distintos: o areal atlântico, com ondulação e qualidade da água Boa, e a Lagoa de Óbidos, uma laguna de água calma que permite atividades náuticas sem ondas.",
+      "description_en": "A two-sided beach — ocean waves on one side, calm Óbidos Lagoon on the other. Perfect for families seeking variety.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Caldas da Rainha"
+    },
+    {
+      "slug": "praia-da-gale",
+      "supabase_id": "59de93aa-066b-4d01-9c4e-27f3a40422f1",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Galé",
+      "name_en": "Galé Beach",
+      "region": "Algarve",
+      "subregion": "Albufeira",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "swimming",
+        "families",
+        "snorkelling"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0812,
+      "longitude": -8.2934,
+      "description_pt": "A Praia da Galé fica a poente de Albufeira, já fora da área de maior concentração urbana, numa secção de costa com falésias de calcário e areia branca. A qualidade da água é Excelente.",
+      "description_en": "West of Albufeira, Galé offers cliff-backed sandy bays with excellent water quality away from the main tourist crowds.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Albufeira"
+    },
+    {
+      "slug": "praia-da-luz",
+      "supabase_id": "4325b4a7-62f3-46a7-a66d-ae0ad6e0d374",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Luz",
+      "name_en": "Luz Beach",
+      "region": "Algarve",
+      "subregion": "Lagos",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "snorkelling"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0834,
+      "longitude": -8.7234,
+      "description_pt": "A Praia da Luz é a praia da vila com o mesmo nome, a alguns quilómetros a oeste de Lagos.",
+      "description_en": "A mid-sized beach in the village of Luz, just west of Lagos. Dark rocks frame a sheltered sandy bay popular with families.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagos"
+    },
+    {
+      "slug": "praia-da-murtinheira",
+      "supabase_id": "b5d5f332-d553-49d9-ad92-77d658de945f",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Murtinheira",
+      "name_en": "Murtinheira Beach",
+      "region": "Centro",
+      "subregion": "Figueira da Foz",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "surfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 40.2334,
+      "longitude": -8.8812,
+      "description_pt": "A Praia da Murtinheira situa-se a norte da Figueira da Foz, numa secção da costa de Aveiro onde os areais se sucedem com espaçamento regular e afluência mais baixa do que nas praias principais. A qualidade da água é Boa.",
+      "description_en": "A long, unspoilt sandy beach north of Figueira da Foz where the Aveiro coastline begins. Atlantic swell and open horizons.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Figueira da Foz"
+    },
+    {
+      "slug": "praia-da-senhora-da-rocha",
+      "supabase_id": "6cafdc55-fcea-4e55-b2a1-78995f44b609",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Senhora da Rocha",
+      "name_en": "Senhora da Rocha Beach",
+      "region": "Algarve",
+      "subregion": "Lagoa",
+      "beach_type": "cove",
+      "ideal_for": [
+        "swimming",
+        "photography",
+        "snorkelling"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "wooden-staircase",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0812,
+      "longitude": -8.4234,
+      "description_pt": "A Praia da Senhora da Rocha fica entre Armação de Pêra e Porches, numa enseada delimitada por falésias de calcário com uma pequena ermida no promontório que avança para o mar. A qualidade da água é Excelente.",
+      "description_en": "A sheltered cove between Armação de Pêra and Porches, framed by limestone cliffs and crowned by a small chapel.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagoa"
+    },
+    {
+      "slug": "praia-da-tocha",
+      "supabase_id": "f400d000-20b2-414c-ba38-bae63856431f",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Tocha",
+      "name_en": "Tocha Beach",
+      "region": "Centro",
+      "subregion": "Cantanhede",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "surfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 40.3212,
+      "longitude": -8.8023,
+      "description_pt": "A Praia da Tocha fica no litoral de Cantanhede, entre Aveiro e a Figueira da Foz, numa zona onde o pinhal litoral chega muito próximo do areal. A qualidade da água é Boa.",
+      "description_en": "A pine-backed beach in Cantanhede where the forest meets the dunes. Quiet and unspoilt with good surf.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Cantanhede"
+    },
+    {
+      "slug": "praia-da-torreira",
+      "supabase_id": "e5113c93-c469-489a-8db6-7d877c0de22c",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Torreira",
+      "name_en": "Torreira Beach",
+      "region": "Centro",
+      "subregion": "Murtosa",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "birdwatching"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 40.7512,
+      "longitude": -8.7023,
+      "description_pt": "A Praia da Torreira fica na margem exterior da Ria de Aveiro, numa língua de terra que separa a laguna do Atlântico. A qualidade da água é Boa.",
+      "description_en": "On the outer edge of Ria de Aveiro, a sandy strip between lagoon and Atlantic. Known for fresh seafood and a tranquil pace.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Murtosa"
+    },
+    {
+      "slug": "praia-da-vagueira",
+      "supabase_id": "6b3928b3-4680-4051-b2f1-e3bdb41cab35",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Vagueira",
+      "name_en": "Vagueira Beach",
+      "region": "Centro",
+      "subregion": "Vagos",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "surfing",
+        "swimming",
+        "families"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 40.5534,
+      "longitude": -8.7312,
+      "description_pt": "A Praia da Vagueira situa-se a sul de Aveiro, numa secção da costa da Beira Litoral com areais extensos e condições de ondulação que marcam o perfil desta faixa costeira. A qualidade da água é Boa.",
+      "description_en": "South of Aveiro, a wide Atlantic beach with consistent surf and open sea views. Popular with local surfers and families.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Vagos"
+    },
+    {
+      "slug": "praia-da-vieira",
+      "supabase_id": "885d20c0-e362-4825-b250-b63ffaaf9631",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia da Vieira",
+      "name_en": "Vieira Beach",
+      "region": "Centro",
+      "subregion": "Marinha Grande",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "surfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 39.8934,
+      "longitude": -8.9023,
+      "description_pt": "A Praia da Vieira de Leiria fica no litoral de Marinha Grande, numa zona onde o pinhal de Leiria — uma das florestas costeiras mais antigas de Portugal — bordeja os acessos à praia. A qualidade da água é Boa.",
+      "description_en": "Vieira de Leiria beach sits where Portugal's famous coastal pine forest meets the sea. Long sandy shore backed by dunes.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Marinha Grande"
+    },
+    {
+      "slug": "praia-das-caxinas",
+      "supabase_id": "f7fa6d81-2872-4971-be81-42464b11ac9f",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia das Caxinas",
+      "name_en": "Caxinas Beach",
+      "region": "Norte",
+      "subregion": "Vila do Conde",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "fishing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 41.3567,
+      "longitude": -8.7456,
+      "description_pt": "A Praia das Caxinas fica em Vila do Conde, associada à comunidade piscatória que lhe dá o nome — uma das mais activas da costa norte de Portugal. A qualidade da água é Boa.",
+      "description_en": "Vila do Conde's fishing community beach — an authentic slice of northern Portuguese coastal life with easy access.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Vila do Conde"
+    },
+    {
+      "slug": "praia-das-macas",
+      "supabase_id": "d81736c8-0e7d-4d98-b369-377998fc5c2f",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia das Maçãs",
+      "name_en": "Maçãs Beach",
+      "region": "Oeste",
+      "subregion": "Sintra",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "surfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 38.8134,
+      "longitude": -9.4634,
+      "description_pt": "A Praia das Maçãs fica no litoral de Sintra, numa localidade que ao longo de décadas preservou o carácter de vila balnear de pequena escala — com um elétrico histórico que desce de Sintra até à praia.",
+      "description_en": "A traditional seaside village on the Sintra coast, preserved for decades. Sandy beach with Atlantic surf and a nostalgic feel.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Sintra"
+    },
+    {
+      "slug": "praia-de-apulia",
+      "supabase_id": "51c5eb21-e534-4c5c-98e0-305c78721686",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Apúlia",
+      "name_en": "Apúlia Beach",
+      "region": "Norte",
+      "subregion": "Esposende",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "photography",
+        "families",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 41.5123,
+      "longitude": -8.7834,
+      "description_pt": "A Praia de Apúlia, em Esposende, é conhecida pelas suas formações rochosas que emergem do areal durante a maré baixa, criando um cenário irregular e visualmente interessante. A qualidade da água é Boa.",
+      "description_en": "Low tide reveals dramatic rock formations along the Esposende coastline, creating a striking landscape unique to northern Portugal.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Esposende"
+    },
+    {
+      "slug": "praia-de-carvoeiro",
+      "supabase_id": "23467c12-84bc-4590-a3a8-32412c15fcde",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Carvoeiro",
+      "name_en": "Carvoeiro Beach",
+      "region": "Algarve",
+      "subregion": "Lagoa",
+      "beach_type": "cove",
+      "ideal_for": [
+        "swimming",
+        "families",
+        "snorkelling"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0934,
+      "longitude": -8.4712,
+      "description_pt": "A Praia de Carvoeiro é uma praia de enseada encaixada, com a vila de Carvoeiro a olhar\r\n  diretamente para o mar a partir das falésias.",
+      "description_en": "A compact enclosed cove at the foot of the village of Carvoeiro. Clear water, good amenities and great restaurants nearby.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagoa"
+    },
+    {
+      "slug": "praia-de-ericeira",
+      "supabase_id": "67e04297-3a9a-4e41-808f-cae811d0680b",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Ericeira",
+      "name_en": "Ericeira Beach",
+      "region": "Oeste",
+      "subregion": "Mafra",
+      "beach_type": "surf",
+      "ideal_for": [
+        "surfing",
+        "swimming",
+        "families"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 38.9634,
+      "longitude": -9.4134,
+      "description_pt": "Ericeira é a única Reserva Mundial de Surf da Europa — uma distinção que reconhece a qualidade e variedade de ondas concentradas num raio reduzido de costa, com breaks de referência ao longo do perímetro da vila.",
+      "description_en": "Europe's only World Surfing Reserve. Ericeira offers consistent surf breaks and an authentic fishing-village atmosphere.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-perto-lisboa.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Mafra"
+    },
+    {
+      "slug": "praia-de-esmoriz",
+      "supabase_id": "db7e9098-4293-4b44-a443-d42491916a91",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Esmoriz",
+      "name_en": "Esmoriz Beach",
+      "region": "Norte",
+      "subregion": "Ovar",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "surfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 40.9423,
+      "longitude": -8.6534,
+      "description_pt": "A Praia de Esmoriz fica no limite norte do concelho de Ovar, numa costa plana e extensa que marca o início do litoral da Beira Litoral. A qualidade da água é Boa.",
+      "description_en": "A flat, wide beach on the northern Ovar coast where the Silver Coast begins. Unpretentious and popular with locals.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Ovar"
+    },
+    {
+      "slug": "praia-de-esposende",
+      "supabase_id": "6adf3ccd-9fd2-4bc0-894e-e4c775fb3e71",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Esposende",
+      "name_en": "Esposende Beach",
+      "region": "Norte",
+      "subregion": "Esposende",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "fishing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 41.5312,
+      "longitude": -8.7823,
+      "description_pt": "A Praia de Esposende fica na foz do Rio Cávado, onde o estuário cria uma área de transição entre a água do rio e o Atlântico. A qualidade da água é Boa.",
+      "description_en": "At the Cávado river estuary, Esposende beach blends river, dunes and Atlantic. Peaceful northern Portugal character.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Esposende"
+    },
+    {
+      "slug": "praia-de-faro",
+      "supabase_id": "4b75fb06-7715-4b56-8b37-8f6eb332ae22",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Faro",
+      "name_en": "Faro Beach",
+      "region": "Algarve",
+      "subregion": "Faro",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "birdwatching"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "car-direct",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 36.9934,
+      "longitude": -7.9712,
+      "description_pt": "A Praia de Faro fica numa ilha-barreira da Ria Formosa, acessível por ponte ou de barco a partir da cidade de Faro.",
+      "description_en": "A Ria Formosa barrier island beach near Faro city, reachable by bridge. Wide sand, calm water, and the lagoon's birdlife nearby.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Faro"
+    },
+    {
+      "slug": "praia-de-ferragudo",
+      "supabase_id": "0e3bf570-263f-45c1-afd2-0f9ca232b07c",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Ferragudo",
+      "name_en": "Ferragudo Beach",
+      "region": "Algarve",
+      "subregion": "Lagoa",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "photography"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.1134,
+      "longitude": -8.5334,
+      "description_pt": "A Praia de Ferragudo fica na margem sul do estuário do Rio Arade, com vista direta para a Praia da Rocha e para a cidade de Portimão.",
+      "description_en": "On the south bank of the Arade estuary with direct views across to Praia da Rocha. A charming beach with castle backdrop.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Lagoa"
+    },
+    {
+      "slug": "praia-de-leca-da-palmeira",
+      "supabase_id": "62030703-6711-4653-bc35-b1284f35cd5e",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Leça da Palmeira",
+      "name_en": "Leça da Palmeira Beach",
+      "region": "Norte",
+      "subregion": "Matosinhos",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 41.2034,
+      "longitude": -8.7012,
+      "description_pt": "A Praia de Leça da Palmeira fica no concelho de Matosinhos, a norte do Porto, conhecida também pelas Piscinas das Marés — uma obra do arquiteto Álvaro Siza Vieira integrada nas rochas costeiras que é.",
+      "description_en": "Famous for Álvaro Siza's iconic tidal pools, Leça beach offers bold architecture alongside a wide north-facing Atlantic strand.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Matosinhos"
+    },
+    {
+      "slug": "praia-de-mira",
+      "supabase_id": "d762875e-3d8a-467c-bb1b-efed5b1c42d0",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Mira",
+      "name_en": "Mira Beach",
+      "region": "Centro",
+      "subregion": "Mira",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "birdwatching"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 40.4334,
+      "longitude": -8.7934,
+      "description_pt": "A Praia de Mira fica no litoral de Mira, com a Lagoa de Mira como fundo imediato — uma laguna costeira separada do oceano pelas dunas que criam uma zona de transição entre dois tipos de paisagem.",
+      "description_en": "Backed by Lagoa de Mira, a sheltered coastal lagoon, this beach offers both Atlantic surf and calm lagoon paddling.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Mira"
+    },
+    {
+      "slug": "praia-de-monte-clerigo",
+      "supabase_id": "e1e260e4-5094-4dee-8c90-11a43523e126",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Monte Clérigo",
+      "name_en": "Monte Clérigo Beach",
+      "region": "Algarve",
+      "subregion": "Aljezur",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surfing",
+        "photography",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.3234,
+      "longitude": -8.8634,
+      "description_pt": "A Praia de Monte Clérigo fica na costa noroeste do Algarve, já dentro do território da Costa Vicentina — um litoral protegido onde a densidade urbanística é baixa e o carácter natural prevalece.",
+      "description_en": "A wild Costa Vicentina beach northwest of Aljezur. Protected landscape, powerful surf and stunning cliff scenery.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Aljezur"
+    },
+    {
+      "slug": "praia-de-porto-santo",
+      "supabase_id": "de8ce91b-729b-451d-9eac-1eedd1d62790",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Porto Santo",
+      "name_en": "Porto Santo Beach",
+      "region": "Madeira",
+      "subregion": "Porto Santo",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "wellness"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 33.0634,
+      "longitude": -16.3334,
+      "description_pt": "A Praia de Porto Santo é uma das referências de areia atlântica no arquipélago da Madeira — uma faixa de vários quilómetros de areia clara, quente e de granulometria fina que ocupa quase toda a costa.",
+      "description_en": "Nine kilometres of golden sand on Porto Santo island. The therapeutic properties of its sand are world-renowned.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-madeira.html"
+      ],
+      "related_pages_en": [
+        "en/madeira-beaches.html"
+      ],
+      "booking_region_hint": "Porto Santo"
+    },
+    {
+      "slug": "praia-de-sao-pedro-do-estoril",
+      "supabase_id": "7b053b2b-f6f9-4d2b-b897-e4f4b52f463a",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de S. Pedro do Estoril",
+      "name_en": "São Pedro do Estoril Beach",
+      "region": "Oeste",
+      "subregion": "Cascais",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 38.7012,
+      "longitude": -9.3834,
+      "description_pt": "A Praia de S. Pedro do Estoril é uma das praias mais resguardadas da costa do Estoril — um areal de dimensão contida, parcialmente protegido pelo promontório adjacente, com acesso direto a partir da l.",
+      "description_en": "One of the most sheltered beaches on the Estoril coast — a calm, intimate bay popular with local families.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Cascais"
+    },
+    {
+      "slug": "praia-de-sao-martinho-do-porto",
+      "supabase_id": "6347e27e-d7fe-45bd-9fb8-ff3d7557d100",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de São Martinho do Porto",
+      "name_en": "São Martinho do Porto Beach",
+      "region": "Centro",
+      "subregion": "Alcobaça",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "sailing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 39.5234,
+      "longitude": -9.1423,
+      "description_pt": "A Praia de São Martinho do Porto é singular no contexto da costa atlântica portuguesa: a baía em forma de concha praticamente fechada transforma o que seria um areal atlântico exposto num ambiente de.",
+      "description_en": "A near-circular shell-shaped bay with sheltered waters — unlike anywhere else on the Atlantic coast. Perfect for children.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Alcobaça"
+    },
+    {
+      "slug": "praia-de-sao-torpes",
+      "supabase_id": "dee27f4d-ec13-43b4-a618-4ac272d22cf2",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de São Torpes",
+      "name_en": "São Torpes Beach",
+      "region": "Alentejo",
+      "subregion": "Sines",
+      "beach_type": "wild",
+      "ideal_for": [
+        "surfing",
+        "swimming",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 37.9334,
+      "longitude": -8.8023,
+      "description_pt": "A Praia de São Torpes situa-se a sul de Sines, numa zona de transição entre o litoral industrial do porto e o início da costa alentejana mais selvagem. A qualidade da água é Boa.",
+      "description_en": "Just south of Sines industrial port, São Torpes marks the beginning of the Alentejo coast with wild dunes and surf.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-alentejo-costa.html"
+      ],
+      "related_pages_en": [
+        "en/alentejo-coast-beaches.html"
+      ],
+      "booking_region_hint": "Sines"
+    },
+    {
+      "slug": "praia-de-setubal",
+      "supabase_id": "d8c2c61e-734a-41c5-aec1-66981023cfca",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Setúbal",
+      "name_en": "Setúbal Beach",
+      "region": "Lisboa e Setúbal",
+      "subregion": "Setúbal",
+      "beach_type": "urban",
+      "ideal_for": [
+        "families",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.5244,
+      "longitude": -8.8882,
+      "description_pt": "A Praia de Setúbal situa-se no contexto urbano da cidade de Setúbal, à entrada do estuário do Sado e com a Serra da Arrábida como pano de fundo próximo. A qualidade da água é Boa.",
+      "description_en": "Urban beach at Setúbal city, at the mouth of the Sado estuary with the Serra da Arrábida as backdrop.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Setúbal"
+    },
+    {
+      "slug": "praia-de-troia",
+      "supabase_id": "0b9d2380-38cf-437d-a4e3-4b68158ba2a4",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia de Tróia",
+      "name_en": "Tróia Beach",
+      "region": "Alentejo",
+      "subregion": "Grândola",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "dolphins"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "boat-only",
+      "parking": "free-onsite",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 38.4934,
+      "longitude": -8.8934,
+      "description_pt": "A Praia de Tróia fica na Península de Tróia, uma faixa de areia que separa o Estuário do Sado do Atlântico, acessível de Setúbal por ferry. O areal atlântico é longo, com ondulação aberta e qualidade da água Boa.",
+      "description_en": "The Tróia peninsula: a long sandy spit reached by ferry across the Sado estuary. Dolphins common in the channel.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-alentejo-costa.html"
+      ],
+      "related_pages_en": [
+        "en/alentejo-coast-beaches.html"
+      ],
+      "booking_region_hint": "Grândola"
+    },
+    {
+      "slug": "praia-do-cabedelo",
+      "supabase_id": "10f7f046-fb30-493e-acf0-bf6b2a57858b",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia do Cabedelo",
+      "name_en": "Cabedelo Beach",
+      "region": "Norte",
+      "subregion": "Viana do Castelo",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "surfing",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "boat-only",
+      "parking": "none",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 41.6845,
+      "longitude": -8.8395,
+      "description_pt": "A Praia do Cabedelo fica na margem sul da foz do Rio Lima, em Viana do Castelo, acessível de barco a partir da cidade ou por estrada pela margem sul. A qualidade da água é Boa.",
+      "description_en": "At the south bank of the Lima river mouth in Viana do Castelo, reached by boat. Wide beach with surf and river views.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Viana do Castelo"
+    },
+    {
+      "slug": "praia-do-carvalhal",
+      "supabase_id": "f940e21f-3169-486c-9438-30dd3e503eb3",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia do Carvalhal",
+      "name_en": "Carvalhal Beach",
+      "region": "Alentejo",
+      "subregion": "Grândola",
+      "beach_type": "wild",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "birdwatching"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "free-onsite",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.2312,
+      "longitude": -8.8234,
+      "description_pt": "A Praia do Carvalhal fica na orla costeira da região de Grândola, entre pinheiros e dunas baixas que chegam quase até à berma do areal. A qualidade da água é Boa.",
+      "description_en": "Pine-shaded Alentejo beach near Grândola, where the dunes almost reach the water. Natural and unspoilt.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-alentejo-costa.html"
+      ],
+      "related_pages_en": [
+        "en/alentejo-coast-beaches.html"
+      ],
+      "booking_region_hint": "Grândola"
+    },
+    {
+      "slug": "praia-do-furadouro",
+      "supabase_id": "c63cbf17-1445-4697-aa21-a5b9dff08851",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia do Furadouro",
+      "name_en": "Furadouro Beach",
+      "region": "Norte",
+      "subregion": "Ovar",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "fishing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 40.8912,
+      "longitude": -8.6678,
+      "description_pt": "A Praia do Furadouro é a praia de Ovar — uma localidade com história piscatória que coexiste com o turismo balnear sazonal desta secção da costa norte. A qualidade da água é Boa.",
+      "description_en": "Ovar's main beach — a seaside town with a proud fishing heritage coexisting with summer bathing tourism.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Ovar"
+    },
+    {
+      "slug": "praia-do-meco",
+      "supabase_id": "4b7f7ece-a91f-4ef0-bd4f-f8f280a6b78a",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia do Meco",
+      "name_en": "Meco Beach",
+      "region": "Oeste",
+      "subregion": "Sesimbra",
+      "beach_type": "wild",
+      "ideal_for": [
+        "swimming",
+        "surfing",
+        "photography"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": true,
+      "fishing": false,
+      "access": "sandy-path",
+      "parking": "nearby-free",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 38.4712,
+      "longitude": -9.1534,
+      "description_pt": "A Praia do Meco fica a sul da Costa de Caparica, numa secção do litoral onde o carácter natural começa a substituir a densidade urbana da Caparica. A qualidade da água é Boa.",
+      "description_en": "South of Costa de Caparica, Meco is wilder and less developed — known for its naturist section and strong surf.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Sesimbra"
+    },
+    {
+      "slug": "praia-do-pedrogao",
+      "supabase_id": "c4bea301-56f1-49b5-934d-f576e41f5132",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia do Pedrógão",
+      "name_en": "Pedrógão Beach",
+      "region": "Centro",
+      "subregion": "Leiria",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "surfing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 39.9712,
+      "longitude": -8.9134,
+      "description_pt": "A Praia do Pedrógão situa-se no litoral de Leiria, entre Vieira de Leiria e a Figueira da Foz, numa secção de costa atlântica aberta com areais extensos e ondulação franca. A qualidade da água é Boa.",
+      "description_en": "A long Atlantic beach between Vieira de Leiria and Figueira da Foz. Consistent surf and open sandy shore.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-centro-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/central-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Leiria"
+    },
+    {
+      "slug": "praia-do-peneco",
+      "supabase_id": "084b12c9-a27a-4865-98b4-6932918e3609",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia do Peneco",
+      "name_en": "Peneco Beach",
+      "region": "Algarve",
+      "subregion": "Albufeira",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "swimming",
+        "families",
+        "nightlife"
+      ],
+      "water_quality": "Excelente",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": false,
+      "access": "wooden-staircase",
+      "parking": "nearby-paid",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 37.0912,
+      "longitude": -8.2512,
+      "description_pt": "A Praia do Peneco é a praia mais próxima do centro histórico de Albufeira, acessível a pé a partir da vila velha por um túnel que atravessa a falésia. A qualidade da água é Excelente.",
+      "description_en": "The beach closest to Albufeira's historic old town, reached by a short tunnel. Lively, central and excellent water quality.",
+      "related_pages_pt": [
+        "praias-algarve.html",
+        "best-beaches-algarve.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-algarve.html"
+      ],
+      "booking_region_hint": "Albufeira"
+    },
+    {
+      "slug": "praia-do-seixal",
+      "supabase_id": "b7c02df5-a01e-40e3-8a13-342d56058eb4",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia do Seixal",
+      "name_en": "Seixal Beach",
+      "region": "Madeira",
+      "subregion": "São Vicente",
+      "beach_type": "volcanic",
+      "ideal_for": [
+        "photography",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": false,
+      "surf": false,
+      "fishing": false,
+      "access": "cliff-path",
+      "parking": "limited",
+      "lifeguard": false,
+      "disabled_access": false,
+      "facilities": [],
+      "webcam_available": false,
+      "latitude": 32.8134,
+      "longitude": -17.1134,
+      "description_pt": "A Praia do Seixal é uma das praias mais conhecidas do norte da Madeira — um areal de calhau e areia escura num anfiteatro natural formado por falésias altas de basalto, com uma cascata que desce diret.",
+      "description_en": "One of Madeira's most dramatic north-coast beaches — dark sand and pebbles in a natural amphitheatre carved from volcanic rock.",
+      "related_pages_pt": [
+        "beaches.html",
+        "praias-madeira.html"
+      ],
+      "related_pages_en": [
+        "en/madeira-beaches.html"
+      ],
+      "booking_region_hint": "São Vicente"
+    },
+    {
+      "slug": "praia-grande",
+      "supabase_id": "513d687d-b8f9-4d87-b5a7-c6de1d7d695c",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Praia Grande",
+      "name_en": "Praia Grande",
+      "region": "Oeste",
+      "subregion": "Sintra",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "surfing",
+        "families",
+        "swimming"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": true,
+      "fishing": false,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": false,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 38.8334,
+      "longitude": -9.4723,
+      "description_pt": "A Praia Grande fica no litoral de Sintra, num areal de nome que cumpre a promessa — é efectivamente grande: largo, extenso e exposto à ondulação atlântica desta secção da costa de Sintra-Cascais.",
+      "description_en": "On the Sintra coast, Praia Grande lives up to its name — a wide, long beach with Atlantic surf and open Atlantic horizons.",
+      "related_pages_pt": [
+        "praias-perto-lisboa.html",
+        "beaches.html"
+      ],
+      "related_pages_en": [
+        "en/best-beaches-portugal.html"
+      ],
+      "booking_region_hint": "Sintra"
+    },
+    {
+      "slug": "vila-praia-de-ancora",
+      "supabase_id": "43290bbc-db7f-4b1e-9cb5-a51b644c0ca6",
+      "status": "live",
+      "last_updated": "2026-04-09",
+      "name_pt": "Vila Praia de Âncora",
+      "name_en": "Vila Praia de Âncora",
+      "region": "Norte",
+      "subregion": "Caminha",
+      "beach_type": "sandy",
+      "ideal_for": [
+        "families",
+        "swimming",
+        "fishing"
+      ],
+      "water_quality": "Boa",
+      "family_friendly": true,
+      "surf": false,
+      "fishing": true,
+      "access": "easy-flat",
+      "parking": "nearby-free",
+      "lifeguard": true,
+      "disabled_access": true,
+      "facilities": [
+        "lifeguard"
+      ],
+      "webcam_available": false,
+      "latitude": 41.8089,
+      "longitude": -8.8712,
+      "description_pt": "Vila Praia de Âncora é uma das mais tranquilas localidades costeiras do litoral do Minho — um areal calmo e familiar, numa baía parcialmente resguardada que atenua a ondulação atlântica habitual nesta latitude.",
+      "description_en": "One of the most peaceful coastal spots in Minho — a calm, family-friendly beach near the Âncora river mouth.",
+      "related_pages_pt": [
+        "beaches.html",
+        "best-beaches-portugal.html",
+        "praias-norte-portugal.html"
+      ],
+      "related_pages_en": [
+        "en/northern-portugal-beaches.html"
+      ],
+      "booking_region_hint": "Caminha"
+    }
+  ]
+}

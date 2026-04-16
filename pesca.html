@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pesca em Portugal — Spots, Espécies e Guia · Portugal Travel Hub</title>
   <meta name="description" content="Os melhores spots de pesca em Portugal — de Sagres e Sesimbra aos Açores. Tipo de pesca, espécies alvo, melhor época e guia prático.">
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/pesca.html">
+  <link rel="canonical" href="https://portalturismoportugal.com/pesca.html">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/pesca.html">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/pesca.html">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/pesca.html">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title"       content="Pesca em Portugal — Spots, Espécies e Guia · Portugal Travel Hub">
   <meta property="og:description" content="Os melhores spots de pesca de Portugal — tipo, espécies alvo e guia prático.">
-  <meta property="og:url"         content="https://portal-turismo-portugal.pages.dev/pesca.html">
+  <meta property="og:url"         content="https://portalturismoportugal.com/pesca.html">
   <meta property="og:locale"      content="pt_PT">
   <meta property="og:site_name"   content="Portugal Travel Hub">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
@@ -21,7 +24,7 @@
   <meta name="twitter:title"       content="Pesca em Portugal — Spots, Espécies e Guia · Portugal Travel Hub">
   <meta name="twitter:description" content="Os melhores spots de pesca de Portugal — tipo, espécies alvo e guia prático.">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
-  <meta name="twitter:url"         content="https://portal-turismo-portugal.pages.dev/pesca.html">
+  <meta name="twitter:url"         content="https://portalturismoportugal.com/pesca.html">
 
   <script type="application/ld+json">
   {
@@ -31,15 +34,15 @@
         "@type": "CollectionPage",
         "name": "Pesca em Portugal — Spots, Espécies e Guia",
         "description": "Os melhores spots de pesca de Portugal — tipo, espécies alvo e guia prático.",
-        "url": "https://portal-turismo-portugal.pages.dev/pesca.html",
+        "url": "https://portalturismoportugal.com/pesca.html",
         "inLanguage": "pt-PT",
-        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portal-turismo-portugal.pages.dev/" }
+        "isPartOf": { "@type": "WebSite", "name": "Portugal Travel Hub", "url": "https://portalturismoportugal.com/" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portal-turismo-portugal.pages.dev/" },
-          { "@type": "ListItem", "position": 2, "name": "Pesca em Portugal", "item": "https://portal-turismo-portugal.pages.dev/pesca.html" }
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalturismoportugal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Pesca em Portugal", "item": "https://portalturismoportugal.com/pesca.html" }
         ]
       }
     ]
@@ -116,38 +119,18 @@
     :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
     .skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:var(--white);padding:8px 16px;border-radius:8px;z-index:9999;transition:top 0.2s;}
     .skip-link:focus{top:16px;}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0.01ms!important;}}
-
-    /* ── Navbar ── */
-    .navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background:rgba(10,61,107,0.95);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--glass-border);}
-    .nav-logo{display:flex;align-items:center;gap:10px;font-family:'Bodoni Moda',serif;font-size:1.25rem;color:var(--white);}
-    .nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:10px;display:flex;align-items:center;justify-content:center;}
-    .nav-logo-icon svg{width:20px;height:20px;fill:var(--blue);}
-    .nav-links{display:flex;align-items:center;gap:32px;}
-    .nav-links a{color:rgba(255,255,255,0.85);font-size:0.9rem;letter-spacing:0.03em;transition:color var(--transition);position:relative;}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--transition);}
-    .nav-links a:hover,.nav-links a.active{color:var(--white);}
-    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
-    .nav-actions{display:flex;align-items:center;gap:12px;}
+    
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);cursor:pointer;min-height:44px;}
     .btn-outline{border:1.5px solid var(--glass-border);color:var(--white);backdrop-filter:blur(12px);background:var(--glass);}
     .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
     .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-weight:600;box-shadow:0 4px 20px var(--gold-glow);}
     .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 30px var(--gold-glow);}
-    .nav-toggle{display:none;color:var(--white);min-height:48px;min-width:48px;align-items:center;justify-content:center;border-radius:8px;transition:background var(--transition);}
-    .nav-toggle:hover{background:rgba(255,255,255,0.1);}
-    .nav-toggle svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
     .nav-close{display:none;}
     .nav-backdrop{display:none;}
-    @media(max-width:768px){
-      .nav-actions .btn-outline{display:none;}
-      .nav-toggle{display:flex;}
+    
       .nav-backdrop{display:block;position:fixed;inset:0;z-index:99;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;cursor:pointer;}
       .nav-mobile-open .nav-backdrop{opacity:1;visibility:visible;}
-      .nav-links{display:flex!important;flex-direction:column;align-items:flex-start;position:fixed;top:0;right:0;bottom:0;width:280px;z-index:100;background:rgba(5,35,70,0.99);backdrop-filter:blur(24px) saturate(1.5);border-left:1px solid var(--glass-border);padding:80px 32px 40px;gap:4px;transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;}
-      .nav-mobile-open .nav-links{transform:translateX(0);}
-      .nav-links a{font-size:1.05rem;padding:14px 0;width:100%;min-height:48px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,0.07);}
-      .nav-links a:last-child{border-bottom:none;}
+      .nav-mobile-open
       .nav-close{display:flex;align-items:center;justify-content:center;position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;color:var(--white);background:rgba(255,255,255,0.1);transition:background var(--transition);}
       .nav-close:hover{background:rgba(255,255,255,0.2);}
       .nav-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
@@ -533,8 +516,15 @@
     /* ══ Reveal ══ */
     .reveal-sec{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .reveal-sec.visible{opacity:1;transform:translateY(0);}
-    @media(prefers-reduced-motion:reduce){.reveal-sec{opacity:1;transform:none;transition:none;}}
+    
+    .lang-btn{font-family:'Inter',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;padding:4px 5px;border-radius:4px;transition:color 0.2s;cursor:pointer;min-height:0;}
+    .lang-btn--active{color:var(--gold);cursor:default;}
+    .lang-btn:not(.lang-btn--active):hover{color:rgba(255,255,255,0.90);}
+    /* ── Estilo subtitle ── */
+    .estilo-subtitle{font-size:0.875rem;color:var(--text-mid);line-height:1.65;margin-top:8px;max-width:540px;}
   </style>
+
+<link rel="stylesheet" href="/css/style.css?v=20260416b">
 </head>
 <body>
 
@@ -542,32 +532,39 @@
 
 <!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
-  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
     Portugal Travel Hub
   </a>
-  <div class="nav-backdrop" id="nav-backdrop"></div>
+
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
-    <a href="pesca.html" class="active" role="listitem" aria-current="page">Pesca</a>
+    <a href="pesca.html" role="listitem">Pesca</a>
     <a href="webcams.html" role="listitem">Webcams</a>
     <a href="planear.html" role="listitem">Planear</a>
     <a href="precos.html" role="listitem">Preços</a>
     <a href="parceiros.html" role="listitem">Parceiros</a>
   </div>
+
   <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
     <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <main id="main">
@@ -582,7 +579,7 @@
           <span>Pesca · Atlântico · Portugal</span>
         </div>
         <h1 class="pesca-hero-title" id="pesca-hero-heading">Pescar em<br><em>Portugal</em></h1>
-        <p class="pesca-hero-subtitle">De Sagres e Sesimbra aos Açores — 1 800 km de costa atlântica com charters de big game, rias tranquilas e rocha virgem para todos os perfis de pescador.</p>
+        <p class="pesca-hero-subtitle">De Sagres e Sesimbra aos Açores — 1 800 km de costa atlântica com charters de big game, rias tranquilas e rocha virgem. Use os filtros de estilo e região para encontrar o spot certo para o seu nível e tipo de pesca.</p>
         <div class="pesca-hero-stats-row" aria-label="Resumo do guia">
           <div class="pesca-hero-stat">
             <span class="pesca-hero-stat-value">8</span>
@@ -685,6 +682,7 @@
       <div class="estilo-header">
         <span class="estilo-tag">Como queres pescar?</span>
         <h2 class="estilo-title">Escolhe o teu <em>estilo de pesca</em></h2>
+        <p class="estilo-subtitle">O seu nível de experiência e o tipo de espécie definem o estilo certo. Cada opção leva directamente ao planeamento da saída.</p>
       </div>
       <div class="estilo-grid">
         <a href="planear.html?source=pesca&tipo=pesca&subtipo=costeira&intent=planear" class="estilo-card" data-pesca-estilo="costeira">
@@ -737,12 +735,14 @@
     </div>
     <div class="region-chips-bar" role="group" aria-label="Filtro de região" id="region-chips">
       <button class="chip active" data-region="">Todas as Regiões</button>
+      <button class="chip" data-region="Norte">Norte</button>
       <button class="chip" data-region="Porto">Porto</button>
       <button class="chip" data-region="Centro">Centro</button>
       <button class="chip" data-region="Lisboa">Lisboa</button>
       <button class="chip" data-region="Alentejo">Alentejo</button>
       <button class="chip" data-region="Algarve">Algarve</button>
       <button class="chip" data-region="Açores">Açores</button>
+      <button class="chip" data-region="Madeira">Madeira</button>
     </div>
   </div>
 
@@ -757,7 +757,7 @@
       <div class="guide-header">
         <span class="guide-tag">Guia Editorial</span>
         <h2 class="guide-title">Portugal, uma costa <em>de eleição</em></h2>
-        <p class="guide-subtitle">1 800 km de Atlântico, estuários ricos e arquipélagos remotos tornam Portugal num dos destinos de pesca mais diversificados da Europa.</p>
+        <p class="guide-subtitle">1 800 km de Atlântico, estuários ricos e arquipélagos remotos tornam Portugal num dos destinos de pesca mais diversificados da Europa. Abaixo encontra tudo o que precisa de saber antes de planear a sua saída.</p>
       </div>
       <div class="guide-cards">
         <div class="guide-card">
@@ -1136,6 +1136,7 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   // ── Auth state ────────────────────────────────────────────────────
@@ -1247,6 +1248,159 @@
       season:'Agosto–Outubro', especies:'Atum Rabilho, Espadarte, Wahoo', tecnica:'Big Game / Trolling',
       desc:'Arquipélago vulcânico no Atlântico com fundos abissais e espécies únicas. Atum rabilho de grande porte e espadarte em águas cristalinas — entre os melhores destinos de big game da Europa.',
       tags:['Big Game','Atum Rabilho','Wahoo','Açores'], quality:5
+    },
+    {
+      name:'Rio Lima — Ponte de Lima', region:'Norte', location:'Ponte de Lima, Viana do Castelo',
+      bgClass:'spot-bg--porto', tipo:'Fluvial', tipoKey:'fluvial',
+      tipos:['fluvial'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Março–Outubro', especies:'Truta, Sável, Lampreia', tecnica:'Mosca / Cortiça',
+      desc:'Um dos rios mais bonitos de Portugal. Pesca à mosca para trutas, sável na época de migração (Março–Maio) e lampreia — uma iguaria local.',
+      tags:['Mosca','Truta','Sável','Lampreia','Cenário'], quality:4
+    },
+    {
+      name:'Albufeira do Caniçada', region:'Norte', location:'Terras de Bouro, Braga',
+      bgClass:'spot-bg--porto', tipo:'Fluvial', tipoKey:'fluvial',
+      tipos:['fluvial'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Todo o Ano', especies:'Achigã, Lúcio, Carpa', tecnica:'Spinning / Lure',
+      desc:'Grande albufeira no Parque Nacional Peneda-Gerês. Achigã abundante em zonas de vegetação submersa. Barco recomendado.',
+      tags:['Achigã','Lúcio','Gerês','Barco','Natureza'], quality:4
+    },
+    {
+      name:'Rio Douro — Peso da Régua', region:'Norte', location:'Peso da Régua, Vila Real',
+      bgClass:'spot-bg--porto', tipo:'Fluvial', tipoKey:'fluvial',
+      tipos:['fluvial'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Abril–Outubro', especies:'Barbo, Achigã, Enguia', tecnica:'Spinning / Aparelho de Fundo',
+      desc:'O Douro no coração do Douro Vinhateiro. Barbo de grande porte nas correntes junto às barragens. Combinação perfeita com enoturismo.',
+      tags:['Barbo','Douro Vinhateiro','Enoturismo','Rio'], quality:4
+    },
+    {
+      name:'Praia de Esposende — Costa', region:'Porto', location:'Esposende, Braga',
+      bgClass:'spot-bg--porto', tipo:'Costeira', tipoKey:'costeira',
+      tipos:['costeira'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Abril–Outubro', especies:'Robalo, Dourada, Linguado', tecnica:'Surfcasting / Isco Natural',
+      desc:'Costa arenosa com boa produção de robalo ao entardecer. Pesca de surf com isco natural (minhoca, ameijoa) nos bancos de areia.',
+      tags:['Robalo','Surfcasting','Entardecer','Areia'], quality:3
+    },
+    {
+      name:'Foz do Mondego', region:'Centro', location:'Figueira da Foz, Coimbra',
+      bgClass:'spot-bg--centro', tipo:'Ria & Estuário', tipoKey:'ria',
+      tipos:['ria','costeira'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Todo o Ano', especies:'Robalo, Linguado, Enguia, Tainha', tecnica:'Cortiça / Maré',
+      desc:'Estuário produtivo na Figueira da Foz. Robalo activo nas correntes de maré. Melhor nas 2h antes e depois da baixa-mar.',
+      tags:['Estuário','Robalo','Maré','Linguado'], quality:4
+    },
+    {
+      name:'Albufeira de Castelo de Bode', region:'Centro', location:'Tomar, Santarém',
+      bgClass:'spot-bg--centro', tipo:'Fluvial', tipoKey:'fluvial',
+      tipos:['fluvial'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Todo o Ano', especies:'Achigã, Lúcio, Carpa', tecnica:'Spinning / Lure',
+      desc:'A maior albufeira de Portugal Central. Referência nacional para pesca de achigã — campeonatos regulares. Muitos serviços de guia disponíveis.',
+      tags:['Achigã','Referência Nacional','Campeonatos','Guia'], quality:5
+    },
+    {
+      name:'Albufeira do Maranhão', region:'Alentejo', location:'Avis, Portalegre',
+      bgClass:'spot-bg--alentejo', tipo:'Fluvial', tipoKey:'fluvial',
+      tipos:['fluvial'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Todo o Ano', especies:'Achigã, Lúcio, Perca', tecnica:'Spinning / Lure',
+      desc:'Albufeira tranquila no Alto Alentejo com excelente população de achigã. Pouca pressão de pesca em comparação com outras albufeiras.',
+      tags:['Achigã','Pouca Pressão','Alentejo','Tranquilo'], quality:4
+    },
+    {
+      name:'Costa de Sines — Rocha', region:'Alentejo', location:'Sines, Setúbal',
+      bgClass:'spot-bg--alentejo', tipo:'Rocha', tipoKey:'rocha',
+      tipos:['rocha','costeira'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Todo o Ano', especies:'Sargo, Pargo, Robalo, Corvina', tecnica:'Aparelho de Fundo / Rock Fishing',
+      desc:'Costa rochosa com fundos variados. Rock fishing de qualidade — sargo e pargo nas fendas rochosas, robalo nas praias adjacentes.',
+      tags:['Rock Fishing','Sargo','Pargo','Corvina'], quality:4
+    },
+    {
+      name:'Praia de Porto Covo', region:'Alentejo', location:'Sines, Setúbal',
+      bgClass:'spot-bg--alentejo', tipo:'Costeira', tipoKey:'costeira',
+      tipos:['costeira','rocha'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Primavera–Outono', especies:'Robalo, Sargo, Safia', tecnica:'Spinning / Aparelho',
+      desc:'Pequena praia protegida no Parque Natural do Sudoeste Alentejano. Pesqueiros de qualidade nas pontas rochosas com pouca pressão de pesca.',
+      tags:['Parque Natural','Pouca Pressão','Robalo','Sargo'], quality:3
+    },
+    {
+      name:'Costa Vicentina — Odeceixe', region:'Alentejo', location:'Aljezur, Faro',
+      bgClass:'spot-bg--alentejo', tipo:'Costeira', tipoKey:'costeira',
+      tipos:['costeira'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Março–Outubro', especies:'Robalo, Dourada, Linguado', tecnica:'Surfcasting / Isco Natural',
+      desc:'Pesca de surf em praias selvagens da Costa Vicentina. Robalo activo após noites de temporal. Acesso por trilhos — equipamento portátil.',
+      tags:['Costa Vicentina','Selvagem','Robalo','Surfcasting'], quality:4
+    },
+    {
+      name:'Ria de Alvor', region:'Algarve', location:'Portimão / Lagos',
+      bgClass:'spot-bg--algarve', tipo:'Ria & Estuário', tipoKey:'ria',
+      tipos:['ria'],
+      levelKey:'iniciante', levelLabel:'Iniciante',
+      season:'Todo o Ano', especies:'Robalo, Dourada, Linguado, Choco', tecnica:'Cortiça / Float Rig',
+      desc:'Ria protegida entre Portimão e Lagos. Excelente para pesca de chocos (Outubro–Fevereiro) e robalo nas entradas das valas.',
+      tags:['Choco','Dourada','Ria','Protegida','Iniciante'], quality:4
+    },
+    {
+      name:'Praia da Rocha — Portimão', region:'Algarve', location:'Portimão',
+      bgClass:'spot-bg--algarve', tipo:'Rocha', tipoKey:'rocha',
+      tipos:['rocha','costeira'],
+      levelKey:'iniciante', levelLabel:'Iniciante',
+      season:'Todo o Ano', especies:'Sargo, Bica, Robalo', tecnica:'Aparelho de Fundo',
+      desc:'Estruturas rochosas sob as falésias com populações estáveis de sargo. Melhor ao amanhecer e ao pôr do sol.',
+      tags:['Sargo','Falésias','Amanhecer','Pôr do Sol'], quality:3
+    },
+    {
+      name:'Lagoa dos Salgados', region:'Algarve', location:'Silves / Albufeira',
+      bgClass:'spot-bg--algarve', tipo:'Ria & Estuário', tipoKey:'ria',
+      tipos:['ria'],
+      levelKey:'iniciante', levelLabel:'Iniciante',
+      season:'Todo o Ano', especies:'Tainha, Robalo, Enguia', tecnica:'Cortiça / Noturna',
+      desc:'Lagoa costeira entre Armação de Pêra e Albufeira. Tainha em grande número nas entradas. Pesca noturna produtiva para robalo.',
+      tags:['Tainha','Noturna','Lagoa','Robalo'], quality:3
+    },
+    {
+      name:'Ilha da Culatra — Mar', region:'Algarve', location:'Olhão',
+      bgClass:'spot-bg--algarve', tipo:'Embarcação', tipoKey:'embarcacao',
+      tipos:['embarcacao'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Primavera–Outono', especies:'Dourada, Sargo, Choco, Lula', tecnica:'Jigging / Float Rig',
+      desc:'Fundos de posidónia à volta da ilha com excelente biodiversidade. Pesca de choco (jigging) muito produtiva de Outubro a Janeiro.',
+      tags:['Choco','Jigging','Posidónia','Ilha','Biodiversidade'], quality:4
+    },
+    {
+      name:'Baía de Setúbal', region:'Lisboa', location:'Setúbal / Sesimbra',
+      bgClass:'spot-bg--lisboa', tipo:'Embarcação', tipoKey:'embarcacao',
+      tipos:['embarcacao'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      season:'Todo o Ano', especies:'Pargo, Goraz, Robalo, Linguado', tecnica:'Big Game / Fundo',
+      desc:'Uma das baías mais produtivas de Portugal. Charters disponíveis em Setúbal e Sesimbra. Goraz nos fundos rochosos do Espichel.',
+      tags:['Goraz','Pargo','Charter','Espichel','Baía'], quality:5
+    },
+    {
+      name:'Ribeira Grande — Açores (Mar)', region:'Açores', location:'Ribeira Grande, S. Miguel',
+      bgClass:'spot-bg--acores', tipo:'Embarcação', tipoKey:'embarcacao',
+      tipos:['embarcacao'],
+      levelKey:'experiente', levelLabel:'Experiente',
+      season:'Junho–Outubro', especies:'Marlim, Atum, Espadarte, Wahoo', tecnica:'Big Game / Trolling',
+      desc:'Os Açores são um dos melhores destinos europeus de big game. Marlim azul em Julho–Agosto. Charters disponíveis em vários portos — reserva antecipada obrigatória.',
+      tags:['Big Game','Marlim','Atum','Açores','Charter'], quality:5
+    },
+    {
+      name:'Madeira — Caniçal', region:'Madeira', location:'Caniçal, Madeira',
+      bgClass:'spot-bg--acores', tipo:'Embarcação', tipoKey:'embarcacao',
+      tipos:['embarcacao'],
+      levelKey:'experiente', levelLabel:'Experiente',
+      season:'Maio–Outubro', especies:'Marlim, Atum Rabilho, Wahoo, Dourado', tecnica:'Big Game / Trolling',
+      desc:'Porto de Caniçal é a base dos melhores charters de big game da Madeira. Atum rabilho de grande porte em Junho–Setembro. Águas quentes com correntes ricas em nutrientes.',
+      tags:['Big Game','Marlim','Atum Rabilho','Madeira','Charter'], quality:5
     }
   ];
 
@@ -1441,5 +1595,6 @@
     document.querySelectorAll('.reveal-sec').forEach(el => el.classList.add('visible'));
   }
 </script>
+<script src="/js/lang-switcher.js" defer></script>
 </body>
 </html>

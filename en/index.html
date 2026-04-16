@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+
+  <title>Portugal Travel Hub — Beaches, Webcams, Surf & Fishing in Real Time</title>
+  <meta name="description" content="Portugal's reference beach portal. Real-time conditions, live webcams, surf and fishing forecasts, interactive map — all in one place.">
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://portalturismoportugal.com/en/">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portalturismoportugal.com/en/">
+  <meta property="og:title" content="Portugal Travel Hub — Beaches, Webcams, Surf & Fishing in Real Time">
+  <meta property="og:description" content="Portugal's beach portal. Real-time conditions, live webcams, surf and fishing forecasts — all in one place.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Portugal Travel Hub">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portugal Travel Hub — Beach Conditions, Webcams, Surf & Fishing in Real Time">
+  <meta name="twitter:description" content="Portugal's beach portal. Real-time conditions, live webcams, surf and fishing forecasts — all in one place.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portugal Travel Hub",
+    "url": "https://portalturismoportugal.com",
+    "description": "Portugal's beach portal. Real-time conditions, webcams, surf and fishing.",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://portalturismoportugal.com/beaches.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Hero video poster preload (matches actual poster src) -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" fetchpriority="high">
+
+  <!-- CDN preconnects -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://videos.pexels.com">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css?v=20260416b">
+
+  <style>
+    /* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ── Hero override (moved to style.css) ─────────────────── */
+
+    /* ── Scroll-triggered storytelling: section rhythm ──────── */
+    .page-section {
+      padding: 88px 0;
+    }
+    .page-section--dark {
+      padding: 96px 0;
+    }
+    .section-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .section-header .section-subtitle {
+      max-width: 58ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* ── Dark section title overrides ───────────────────────── */
+    .section--dark .section-title,
+    .section--dark .section-tag {
+      color: var(--white);
+    }
+    .section--dark .section-subtitle {
+      color: rgba(255,255,255,0.72);
+    }
+
+    /* ── Shared card hover (ui-ux-pro-max: cursor + elevation) ─ */
+    .hp-card {
+      transition: transform 200ms cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 200ms cubic-bezier(0.4,0,0.2,1);
+      cursor: default;
+    }
+    .hp-card--link {
+      cursor: pointer;
+    }
+    .hp-card--link:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO 1 — HERO (handled above, no extra rules needed)
+       ══════════════════════════════════════════════════════════ */
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO 2 — CONDIÇÕES EM TEMPO REAL
+       ══════════════════════════════════════════════════════════ */
+    .conditions-bg { background: #ffffff; }
+
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .condition-card {
+      background: var(--off-white);
+      border-radius: var(--radius);
+      padding: 36px 16px 28px;
+      text-align: center;
+      border: 1px solid transparent;
+      transition: transform 200ms cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 200ms cubic-bezier(0.4,0,0.2,1),
+                  border-color 200ms ease;
+    }
+    .condition-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+      border-color: rgba(201,168,76,0.25);
+    }
+    a.condition-card { text-decoration: none; display: block; cursor: pointer; }
+    a.condition-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: var(--radius); }
+
+    .condition-card__icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,61,107,0.08);
+      border-radius: 12px;
+    }
+    .condition-card__icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--blue);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .condition-card__label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--blue);
+      line-height: 1.4;
+      margin: 0 0 10px;
+    }
+    .condition-card__value {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin: 8px 0 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    /* Real-time monitoring cue: subtle live pulse on icon bg */
+    @keyframes live-glow {
+      0%, 100% { background: rgba(10,61,107,0.08); }
+      50%       { background: rgba(10,61,107,0.14); }
+    }
+    .condition-card:nth-child(odd) .condition-card__icon {
+      animation: live-glow 3s ease-in-out infinite;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1023px) {
+      .conditions-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .conditions-grid .condition-card:nth-child(4) { grid-column: 1; }
+      .conditions-grid .condition-card:nth-child(5) { grid-column: 2; }
+    }
+    @media (max-width: 767px) {
+      .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .conditions-grid .condition-card:nth-child(4) { grid-column: auto; }
+      .conditions-grid .condition-card:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: 240px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO 3 — WEBCAMS AO VIVO
+       ══════════════════════════════════════════════════════════ */
+    .webcams-bg { background: var(--blue); }
+
+    .webcams-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .webcam-placeholder {
+      background: linear-gradient(160deg, #082a54 0%, #0e3d6e 50%, #0a3258 100%);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8125rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color 200ms ease, box-shadow 200ms ease;
+    }
+    .webcam-placeholder:hover {
+      border-color: rgba(201,168,76,0.35);
+      box-shadow: 0 0 0 1px rgba(201,168,76,0.18);
+    }
+    .webcam-placeholder svg {
+      width: 44px;
+      height: 44px;
+      stroke: rgba(255,255,255,0.45);
+      fill: none;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+    }
+    .webcam-label {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      text-align: center; margin-top: 4px;
+    }
+    .webcam-label-name {
+      font-size: 0.875rem; font-weight: 600;
+      color: rgba(255,255,255,0.70); letter-spacing: 0.02em;
+    }
+    .webcam-badge {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold);
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.28);
+      padding: 3px 10px; border-radius: 20px;
+    }
+    /* App "em breve" button */
+    .btn-coming-soon {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 32px; border-radius: var(--radius-pill);
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
+      min-height: 48px; border: 1.5px solid rgba(255,255,255,0.20);
+      color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.05);
+      cursor: default; letter-spacing: 0.03em;
+    }
+    .btn-coming-soon-badge {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; background: rgba(201,168,76,0.18);
+      color: var(--gold); border: 1px solid rgba(201,168,76,0.30);
+      padding: 2px 8px; border-radius: 12px;
+    }
+    .webcam-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 16px;
+    }
+    .webcams-cta { text-align: center; }
+
+    @media (max-width: 767px) {
+      .webcams-grid {
+        grid-template-columns: 1fr;
+      }
+      .webcam-side {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO 4 — SURF & PESCA
+       ══════════════════════════════════════════════════════════ */
+    .surf-pesca-bg { background: var(--off-white); }
+
+    .surf-pesca-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--radius);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .sp-card {
+      border-radius: var(--radius-lg);
+      padding: 52px 36px 44px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 200ms cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 200ms cubic-bezier(0.4,0,0.2,1);
+    }
+    .sp-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .sp-card--surf  { background: var(--blue); }
+    .sp-card--pesca { background: var(--blue-mid); }
+
+    .sp-card__icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .sp-card__icon svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .sp-card h3 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 0 10px;
+    }
+    .sp-card p {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.72);
+      margin: 0 0 32px;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 599px) {
+      .surf-pesca-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO 5 — PRAIAS EM DESTAQUE (Supabase)
+       ══════════════════════════════════════════════════════════ */
+    .featured-bg { background: #ffffff; }
+
+    /* Skeleton shimmer (ui-ux-pro-max: progressive loading) */
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .skeleton-base {
+      background: linear-gradient(90deg,
+        #e8edf3 25%,
+        #f4f6f9 50%,
+        #e8edf3 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+    }
+    .fb-skeleton .fb-card-img { height: 210px; border-radius: var(--radius) var(--radius) 0 0; }
+    .fb-skeleton .fb-card-img,
+    .fb-skeleton .skel-line { background: linear-gradient(90deg,#e8edf3 25%,#f4f6f9 50%,#e8edf3 75%); background-size: 200% 100%; animation: shimmer 1.5s ease-in-out infinite; }
+    .fb-skeleton .fb-card-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+    .skel-line { height: 13px; border-radius: 6px; }
+    .skel-line.short { width: 55%; }
+
+    /* Empty & error states */
+    .fb-empty, .fb-error {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 56px 24px;
+      color: var(--text-mid);
+    }
+    .fb-empty p, .fb-error p {
+      font-size: 1rem;
+      margin: 0 0 20px;
+    }
+
+    .fb-cta { text-align: center; margin-top: 44px; }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO 6 — APP
+       ══════════════════════════════════════════════════════════ */
+    .app-bg {
+      background: var(--blue);
+      position: relative;
+      overflow: hidden;
+    }
+    .app-bg::before {
+      content: '';
+      position: absolute;
+      top: -220px; right: -180px;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: var(--gold-glow);
+      pointer-events: none;
+    }
+    .app-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -220px; left: -180px;
+      width: 440px; height: 440px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .app-inner {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .app-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 28px;
+      margin: 30px 0 40px;
+    }
+    .app-feature {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .app-feature svg {
+      width: 15px; height: 15px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO 7 — MONETIZAÇÃO
+       ══════════════════════════════════════════════════════════ */
+    .monetizacao-bg { background: var(--off-white); }
+
+    .monetizacao-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .monet-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 40px 28px 36px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid transparent;
+      transition: transform 200ms cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 200ms cubic-bezier(0.4,0,0.2,1),
+                  border-color 200ms ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .monet-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(201,168,76,0.22);
+    }
+    .monet-card__icon {
+      width: 60px; height: 60px;
+      background: var(--off-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: background 200ms ease;
+    }
+    .monet-card:hover .monet-card__icon {
+      background: rgba(10,61,107,0.07);
+    }
+    .monet-card__icon svg {
+      width: 26px; height: 26px;
+      stroke: var(--blue); fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .monet-card h3 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 6px;
+      line-height: 1.4;
+    }
+    .monet-card__via {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin: 0 0 8px;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .monet-card__desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin: 0 0 18px;
+      line-height: 1.5;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .monet-card .btn { margin-top: auto; width: 100%; }
+
+    @media (max-width: 767px) {
+      .monetizacao-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 499px) {
+      .monetizacao-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       REDUCED MOTION (ui-ux-pro-max: priority 1 accessibility)
+       ══════════════════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      .condition-card,
+      .sp-card,
+      .monet-card,
+      .webcam-placeholder,
+      .hp-card--link {
+        transition: none;
+      }
+      .condition-card__icon {
+        animation: none;
+        background: rgba(10,61,107,0.08);
+      }
+      .skel-line,
+      .fb-skeleton .fb-card-img {
+        animation: none;
+        background: #e8edf3;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       MOBILE SECTION PADDING
+       ══════════════════════════════════════════════════════════ */
+    @media (max-width: 767px) {
+      .page-section      { padding: 64px 0; }
+      .page-section--dark { padding: 72px 0; }
+      .section-header    { margin-bottom: 36px; }
+      .sp-card           { padding: 40px 24px 36px; }
+      .monet-card        { padding: 32px 20px 28px; }
+      .section-inner     { padding: 0 16px; }
+    }
+
+    /* ── Hero actions — mobile conversion pass ─────────────── */
+    /* Fix: HTML uses hero__actions (BEM), old selector was wrong */
+    @media (max-width: 599px) {
+      .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        max-width: 320px;
+      }
+      .hero__actions .btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+      }
+      /* Visually demote secondary CTA so primary leads clearly */
+      .hero__actions .hero-btn-outline {
+        opacity: 0.8;
+        min-height: 44px;
+      }
+    }
+    /* Legacy fallback for .hero-actions if used elsewhere */
+    @media (max-width: 420px) {
+      .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
+      .hero-actions .btn { width: 100%; max-width: 280px; justify-content: center; }
+    }
+
+    /* ── Webcams grid — single col on mobile ────────────────── */
+    @media (max-width: 480px) {
+      .webcam-side {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+      }
+    }
+
+    /* ── Surf+Pesca grid — single col on mobile ─────────────── */
+    @media (max-width: 479px) {
+      .surf-pesca-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO INTENT — NAVEGAÇÃO POR INTENÇÃO
+       ══════════════════════════════════════════════════════════ */
+    .intent-bg { background: #ffffff; }
+
+    .intent-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .intent-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 28px 14px 22px;
+      background: var(--off-white);
+      border-radius: var(--radius);
+      border: 1.5px solid transparent;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 200ms var(--ease),
+                  box-shadow 200ms var(--ease),
+                  border-color 200ms ease;
+    }
+    .intent-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(201,168,76,0.30);
+    }
+    .intent-card__icon {
+      width: 52px; height: 52px;
+      background: rgba(10,61,107,0.07);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+      transition: background 200ms ease;
+    }
+    .intent-card:hover .intent-card__icon { background: rgba(10,61,107,0.13); }
+    .intent-card__icon svg {
+      width: 24px; height: 24px;
+      stroke: var(--blue); fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .intent-card__label {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 5px;
+      line-height: 1.3;
+      transition: color 200ms ease;
+    }
+    .intent-card:hover .intent-card__label { color: var(--blue); }
+    .intent-card__desc {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+    .intent-card__arrow {
+      width: 28px; height: 28px;
+      background: rgba(10,61,107,0.06);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      transition: background 200ms ease, transform 200ms ease;
+      flex-shrink: 0;
+    }
+    .intent-card:hover .intent-card__arrow {
+      background: var(--gold);
+      transform: translateX(2px);
+    }
+    .intent-card__arrow svg {
+      width: 12px; height: 12px;
+      stroke: var(--blue); fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    @media (max-width: 1023px) {
+      .intent-grid { grid-template-columns: repeat(3, 1fr); }
+      .intent-grid .intent-card:nth-child(4) { grid-column: 1; }
+      .intent-grid .intent-card:nth-child(5) { grid-column: 2; }
+    }
+    @media (max-width: 599px) {
+      .intent-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .intent-grid .intent-card:nth-child(4) { grid-column: auto; }
+      .intent-grid .intent-card:nth-child(5) { grid-column: 1 / -1; max-width: 220px; margin: 0 auto; }
+      .intent-card__desc { display: none; }
+      .intent-card { padding: 22px 10px 18px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       SECÇÃO PLANEAR CTA (substitui APP)
+       ══════════════════════════════════════════════════════════ */
+    .planear-cta-bg {
+      background: var(--blue);
+      position: relative;
+      overflow: hidden;
+    }
+    .planear-cta-bg::before {
+      content: '';
+      position: absolute;
+      top: -220px; right: -180px;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: var(--gold-glow);
+      pointer-events: none;
+    }
+    .planear-cta-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -220px; left: -180px;
+      width: 440px; height: 440px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .planear-cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .planear-checklist {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 28px;
+      margin: 22px 0 36px;
+    }
+    .planear-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .planear-check svg {
+      width: 14px; height: 14px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       B2B STRIP (entrada discreta comercial)
+       ══════════════════════════════════════════════════════════ */
+    .b2b-strip {
+      margin-top: 44px;
+      padding: 22px 28px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid rgba(10,61,107,0.09);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .b2b-strip__text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .b2b-strip__label {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .b2b-strip__sub {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--text-mid);
+    }
+    .b2b-strip__actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-sm {
+      padding: 9px 20px !important;
+      font-size: 0.8125rem !important;
+      min-height: 44px !important;
+    }
+    .btn-outline-dark {
+      border: 1.5px solid rgba(10,61,107,0.22);
+      color: var(--blue);
+      background: transparent;
+      font-weight: 500;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .btn-outline-dark:hover {
+      border-color: var(--blue);
+      background: rgba(10,61,107,0.05);
+    }
+    @media (max-width: 599px) {
+      .b2b-strip { flex-direction: column; align-items: flex-start; }
+    }
+    /* ── Editorial guides band ── */
+    .idx-guides-band{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
+    .idx-guides-inner{max-width:1100px;margin:0 auto;}
+    .idx-guides-eyebrow{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .idx-guides-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.55rem,2.8vw,2rem);font-weight:700;color:var(--blue);margin:0 0 28px;line-height:1.2;}
+    .idx-guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    @media(max-width:860px){.idx-guides-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){.idx-guides-grid{grid-template-columns:1fr;gap:14px;}}
+    .idx-guide-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px 20px;text-decoration:none;color:inherit;transition:box-shadow 0.2s,transform 0.2s;}
+    .idx-guide-card:hover{box-shadow:0 8px 32px rgba(10,61,107,0.10);transform:translateY(-2px);}
+    .idx-guide-card-eyebrow{display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+    .idx-guide-card-title{font-family:'Bodoni Moda',serif;font-size:1rem;font-weight:700;color:var(--blue);margin:0 0 10px;line-height:1.3;}
+    .idx-guide-card-desc{font-size:0.875rem;color:var(--text-mid);line-height:1.65;margin:0 0 16px;flex:1;}
+    .idx-guide-card-cta{font-size:0.8125rem;font-weight:600;color:var(--gold);letter-spacing:0.02em;}
+
+    /* ══════════════════════════════════════════════════════════
+       JOURNEY BRIDGE — What's your next step?
+       ══════════════════════════════════════════════════════════ */
+    .journey-bridge { background: var(--off-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .journey-bridge-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .journey-bridge-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .journey-step { display: flex; flex-direction: column; padding: 30px 28px; text-decoration: none; color: inherit; border-right: 1px solid var(--border); transition: background 0.18s; }
+    .journey-step:last-child { border-right: none; }
+    .journey-step:hover { background: var(--white); }
+    .journey-step__eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-family: var(--font-body); }
+    .journey-step__label { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--blue); line-height: 1.3; margin: 0 0 8px; }
+    .journey-step__sub { font-size: 0.8125rem; color: var(--text-mid); line-height: 1.55; flex: 1; margin: 0 0 14px; font-family: var(--font-body); }
+    .journey-step__cta { font-size: 0.8125rem; font-weight: 600; color: var(--gold); font-family: var(--font-body); }
+    @media (max-width: 767px) {
+      .journey-bridge-grid { grid-template-columns: 1fr; }
+      .journey-step { border-right: none; border-bottom: 1px solid var(--border); padding: 22px 20px; }
+      .journey-step:last-child { border-bottom: none; }
+    }
+  </style>
+
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ── Navbar ──────────────────────────────────────────────────── -->
+<nav class="navbar" role="navigation" aria-label="Main navigation" id="navbar">
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    Portugal Travel Hub
+  </a>
+
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+  <div class="nav-links" role="list">
+    <button class="nav-close" id="nav-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="3" x2="21" y2="21"/><line x1="21" y1="3" x2="3" y2="21"/></svg>
+    </button>
+    <a href="/en/beaches.html" role="listitem">Beaches</a>
+    <a href="/en/surf.html" role="listitem">Surf</a>
+    <a href="/en/pesca.html" role="listitem">Fishing</a>
+    <a href="/en/webcams.html" role="listitem">Webcams</a>
+    <a href="/en/planear.html" role="listitem">Plan</a>
+    <a href="/en/precos.html" role="listitem">Pricing</a>
+    <a href="/en/parceiros.html" role="listitem">Partners</a>
+  </div>
+
+  <div class="nav-actions">
+    <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
+    <a href="/en/login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
+    <div class="lang-switcher" aria-label="Language selection">
+      <a href="/" class="lang-btn" data-lang="pt" onclick="try{localStorage.setItem('pth_lang','pt')}catch(_){}" hreflang="pt">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="en">EN</span>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── PRELOADER ────────────────────────────────────────────── -->
+<div id="preloader" class="preloader" aria-hidden="true">
+  <div class="preloader__loader"></div>
+  <div class="preloader__texts">
+    <p class="preloader__text">500+ Beaches</p>
+    <p class="preloader__text">7 Regions</p>
+    <p class="preloader__text">Atlantic</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     MAIN
+     ════════════════════════════════════════════════════════════ -->
+<main id="main">
+
+<!-- ── 1. HERO — SPLIT 50/50 ────────────────────────────────── -->
+<section class="hero" aria-label="Portugal's beach portal">
+  <!-- LEFT: Text content -->
+  <div class="hero__left">
+    <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+    <div class="hero__titles">
+      <h1>
+        <span class="hero__line1">Portugal</span>
+        <span class="hero__line2">through the <i>Ocean</i></span>
+      </h1>
+    </div>
+    <p class="hero__subtitle">
+      500+ beaches, 9 live webcams and curated trip planning for every region of Portugal's Atlantic coast.
+    </p>
+    <div class="hero__actions">
+      <a href="/en/planear.html" class="btn btn-primary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'planear'})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Plan a Trip
+      </a>
+      <a href="/en/beaches.html" class="btn btn-outline hero-btn-outline" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'beaches'})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
+        Explore Beaches
+      </a>
+    </div>
+    <div class="hero__based-in">
+      <span class="hero__based-label">Based in:</span>
+      <span class="hero__location">Lisbon</span>
+      <span class="hero__location">Porto</span>
+      <span class="hero__location">Algarve</span>
+    </div>
+  </div>
+
+  <!-- RIGHT: Video -->
+  <div class="hero__right">
+    <video
+      src="https://videos.pexels.com/video-files/1093662/1093662-hd_1920_1080_30fps.mp4"
+      playsinline autoplay muted loop preload="none"
+      class="hero__video"
+      poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
+      aria-label="Video of Portuguese beaches"
+    ></video>
+    <div class="hero__video-overlay"></div>
+    <div class="hero__right-content">
+      <span class="hero-eyebrow">PORTUGAL · 7 REGIONS · 500+ BEACHES · ATLANTIC</span>
+      <p class="hero__right-tagline">The Atlantic in real time.<br>Independent editorial — no hidden sponsored content.</p>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a href="#conditions" class="hero-scroll" aria-label="See beach conditions">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</section>
+
+<!-- ── INTENT HUB — NAVEGAÇÃO POR INTENÇÃO ────────────────────── -->
+<section class="intent-bg page-section" id="intent" aria-labelledby="intent-title">
+  <div class="section-inner">
+    <div class="section-header reveal" style="margin-bottom:36px;">
+      <div class="section-tag">START HERE</div>
+      <h2 class="section-title" id="intent-title">What are you looking for today?</h2>
+    </div>
+    <nav class="intent-grid" aria-label="Browse by intent">
+
+      <a href="/en/beaches.html" class="intent-card reveal" aria-label="Explore beaches in Portugal">
+        <div class="intent-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/><path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17s2.5 2 5 2 2.5-2 5-2"/></svg>
+        </div>
+        <span class="intent-card__label">Explore Beaches</span>
+        <span class="intent-card__desc">500+ curated beaches across 7 Atlantic regions</span>
+        <div class="intent-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="/en/surf.html" class="intent-card reveal" aria-label="Check surf conditions">
+        <div class="intent-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M2 20c2-2 4-3 6-3 2.5 0 4 1.5 6 1.5 2 0 3.5-1 4-1.5"/><path d="M9 9c0 2.5 1 4.5 3 6"/><path d="M15 3c-2 3-2.5 5.5-1 8"/><path d="M9 9l6-6"/></svg>
+        </div>
+        <span class="intent-card__label">Surf Conditions</span>
+        <span class="intent-card__desc">Waves, swell, wind and recommended spots</span>
+        <div class="intent-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="/en/pesca.html" class="intent-card reveal" aria-label="Check fishing conditions">
+        <div class="intent-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M18 16l-5.5-1.5"/><path d="M9.5 12c1.5 1 4 1.5 4 1.5V8a2.5 2.5 0 0 0-5 0c0 1.5 1 3 1 3"/><path d="M3 16s1.5-3 4-4"/><path d="M9.5 12L6 16"/><circle cx="18" cy="16" r="2"/><path d="M20 16h2"/></svg>
+        </div>
+        <span class="intent-card__label">Fishing Spots</span>
+        <span class="intent-card__desc">Tides, moon phase, water temperature and best spots</span>
+        <div class="intent-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="/en/webcams.html" class="intent-card reveal" aria-label="Watch live beach webcams">
+        <div class="intent-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <span class="intent-card__label">Live Webcams</span>
+        <span class="intent-card__desc">9 live cameras along Portugal's Atlantic coast</span>
+        <div class="intent-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="/en/planear.html" class="intent-card reveal" aria-label="Plan a beach getaway">
+        <div class="intent-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <span class="intent-card__label">Plan a Trip</span>
+        <span class="intent-card__desc">Free custom plan — no sign-up required</span>
+        <div class="intent-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+    </nav>
+  </div>
+</section>
+
+<!-- ── 2. CONDIÇÕES EM TEMPO REAL ──────────────────────────────── -->
+<section class="conditions-bg page-section" id="conditions" aria-labelledby="conditions-title">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">LIVE DATA</div>
+      <h2 class="section-title" id="conditions-title">Conditions updated<br>every minute</h2>
+      <p class="section-subtitle">Water temperature, sea state, beach flag, wind and UV index — available on every beach page.</p>
+    </div>
+    <div class="conditions-grid">
+
+      <a href="/en/beaches.html" class="condition-card hp-card reveal" aria-label="Sea state — view beaches">
+        <div class="condition-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/>
+            <path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/>
+            <path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17s2.5 2 5 2 2.5-2 5-2"/>
+          </svg>
+        </div>
+        <h3 class="condition-card__label">Sea State</h3>
+        <span class="condition-card__value">View per beach →</span>
+      </a>
+
+      <a href="/en/beaches.html" class="condition-card hp-card reveal" aria-label="Water temperature — view beaches">
+        <div class="condition-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+          </svg>
+        </div>
+        <h3 class="condition-card__label">Water Temperature</h3>
+        <span class="condition-card__value">View per beach →</span>
+      </a>
+
+      <a href="/en/beaches.html" class="condition-card hp-card reveal" aria-label="Beach flag — view beaches">
+        <div class="condition-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+            <line x1="4" y1="22" x2="4" y2="15"/>
+          </svg>
+        </div>
+        <h3 class="condition-card__label">Beach Flag</h3>
+        <span class="condition-card__value">View per beach →</span>
+      </a>
+
+      <a href="/en/surf.html" class="condition-card hp-card reveal" aria-label="Wind and swell — view surf spots">
+        <div class="condition-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+          </svg>
+        </div>
+        <h3 class="condition-card__label">Wind &amp; Swell</h3>
+        <span class="condition-card__value">View surf spots →</span>
+      </a>
+
+      <a href="/en/beaches.html" class="condition-card hp-card reveal" aria-label="UV Index — view beaches">
+        <div class="condition-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1"    x2="12"    y2="3"/>
+            <line x1="12" y1="21"   x2="12"    y2="23"/>
+            <line x1="4.22" y1="4.22"  x2="5.64"  y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1"  y1="12"   x2="3"     y2="12"/>
+            <line x1="21" y1="12"   x2="23"    y2="12"/>
+            <line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36"/>
+            <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+          </svg>
+        </div>
+        <h3 class="condition-card__label">UV Index</h3>
+        <span class="condition-card__value">View per beach →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. WEBCAMS AO VIVO ────────────────────────────────────────── -->
+<section class="webcams-bg page-section--dark section--dark" id="webcams" aria-labelledby="webcams-title">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">LIVE FROM THE COAST</div>
+      <h2 class="section-title" id="webcams-title">9 live webcams<br>from the Atlantic</h2>
+      <p class="section-subtitle">Powered by Beachcam — Portugal's most reliable coastal cameras, so you know before you go.</p>
+    </div>
+
+    <div class="webcams-grid">
+      <a href="/en/webcams.html" class="webcam-placeholder reveal" aria-label="Watch Praia do Guincho live webcam">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <div class="webcam-label">
+          <span class="webcam-label-name">Praia do Guincho · Cascais</span>
+          <span class="webcam-badge">LIVE</span>
+        </div>
+      </a>
+      <div class="webcam-side">
+        <a href="/en/webcams.html" class="webcam-placeholder reveal" aria-label="Watch Praia da Nazaré live webcam">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <div class="webcam-label">
+            <span class="webcam-label-name">Praia da Nazaré</span>
+            <span class="webcam-badge">LIVE</span>
+          </div>
+        </a>
+        <a href="/en/webcams.html" class="webcam-placeholder reveal" aria-label="Watch Supertubos · Peniche live webcam">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <div class="webcam-label">
+            <span class="webcam-label-name">Supertubos · Peniche</span>
+            <span class="webcam-badge">LIVE</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="webcams-cta">
+      <a href="/en/webcams.html" class="btn btn-outline" aria-label="View all webcams">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        Watch All 9 Live Webcams
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. SURF & PESCA ──────────────────────────────────────────── -->
+<section class="surf-pesca-bg page-section" id="surf-pesca" aria-labelledby="sp-title">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">SURF & FISHING</div>
+      <h2 class="section-title" id="sp-title">Surf and Fishing with professional data</h2>
+      <p class="section-subtitle">Pro-grade tide, swell and wind data — the same level as specialist platforms, completely free.</p>
+    </div>
+
+    <div class="surf-pesca-grid">
+
+      <div class="sp-card sp-card--surf reveal">
+        <div class="sp-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M2 20c2-2 4-3 6-3 2.5 0 4 1.5 6 1.5 2 0 3.5-1 4-1.5"/>
+            <path d="M9 9c0 2.5 1 4.5 3 6"/>
+            <path d="M15 3c-2 3-2.5 5.5-1 8"/><path d="M9 9l6-6"/>
+          </svg>
+        </div>
+        <h3>Surf</h3>
+        <p>Waves, swell, wind and full conditions for your next session.</p>
+        <a href="/en/surf.html" class="btn btn-primary" aria-label="View surf spots">View Surf Spots</a>
+      </div>
+
+      <div class="sp-card sp-card--pesca reveal">
+        <div class="sp-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 16l-5.5-1.5"/>
+            <path d="M9.5 12c1.5 1 4 1.5 4 1.5V8a2.5 2.5 0 0 0-5 0c0 1.5 1 3 1 3"/>
+            <path d="M3 16s1.5-3 4-4"/>
+            <path d="M9.5 12L6 16"/>
+            <circle cx="18" cy="16" r="2"/>
+            <path d="M20 16h2"/>
+          </svg>
+        </div>
+        <h3>Fishing</h3>
+        <p>Tides, moon phase, water temperature and the right moment to fish.</p>
+        <a href="/en/pesca.html" class="btn btn-primary" aria-label="View fishing spots">View Fishing Spots</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. PRAIAS EM DESTAQUE ─────────────────────────────────────── -->
+<section class="featured-bg page-section featured-beaches" aria-labelledby="fb-title">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">EDITORIAL PICKS</div>
+      <h2 class="section-title" id="fb-title">Featured beaches</h2>
+      <p class="section-subtitle">Hand-picked based on water quality, access, safety flags and seasonal conditions.</p>
+    </div>
+    <div class="fb-grid" id="fb-grid" role="list" aria-label="Featured beaches" aria-live="polite"></div>
+    <div class="fb-cta">
+      <a href="/en/beaches.html" class="btn btn-blue">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        View All Beaches
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOURNEY BRIDGE — What's your next step? ──────────────── -->
+<div class="journey-bridge" aria-label="What's your next step">
+  <div class="journey-bridge-inner">
+    <div class="journey-bridge-grid">
+
+      <a href="/en/beaches.html?source=home-journey&amp;step=discover" class="journey-step">
+        <span class="journey-step__eyebrow">Discovering</span>
+        <span class="journey-step__label">I know the area</span>
+        <span class="journey-step__sub">Filter 500+ beaches by region, type or water quality.</span>
+        <span class="journey-step__cta">Browse all beaches →</span>
+      </a>
+
+      <a href="/en/where-to-stay-algarve-beach.html?source=home-journey&amp;step=stay" class="journey-step">
+        <span class="journey-step__eyebrow">Finding a Stay</span>
+        <span class="journey-step__label">I need somewhere to stay</span>
+        <span class="journey-step__sub">Editorial guide to accommodation near the best Algarve beaches — no hidden ads.</span>
+        <span class="journey-step__cta">See where to stay →</span>
+      </a>
+
+      <a href="/en/planear.html?source=home-journey&amp;step=plan" class="journey-step">
+        <span class="journey-step__eyebrow">Planning Everything</span>
+        <span class="journey-step__label">I want the full plan</span>
+        <span class="journey-step__sub">Beach, accommodation, activities and conditions — personalised for your dates.</span>
+        <span class="journey-step__cta">Build my plan →</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── 6. PLANEAR CTA ─────────────────────────────────────────── -->
+<section class="planear-cta-bg page-section--dark section--dark" id="planear-cta" aria-labelledby="planear-cta-title">
+  <div class="section-inner">
+    <div class="planear-cta-inner">
+      <div class="section-header reveal">
+        <div class="section-tag">PERSONALISED PLANNING</div>
+        <h2 class="section-title" id="planear-cta-title">Your perfect coastal trip<br>starts here</h2>
+        <p class="section-subtitle">Match the right beach with the best conditions for your dates — a full custom plan in minutes, no sign-up needed.</p>
+      </div>
+      <div class="planear-checklist reveal" aria-label="What you can plan">
+        <span class="planear-check">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          The right beach for you
+        </span>
+        <span class="planear-check">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Best conditions by date
+        </span>
+        <span class="planear-check">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Surf and fishing in one spot
+        </span>
+        <span class="planear-check">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Personalised recommendations
+        </span>
+      </div>
+      <div class="reveal" style="text-align:center;">
+        <a href="/en/planear.html" class="btn btn-primary" style="font-size:1rem;padding:16px 44px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Build My Plan
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. MONETIZAÇÃO ────────────────────────────────────────────── -->
+<section class="monetizacao-bg page-section" aria-labelledby="monet-title">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">COMPLETE YOUR TRIP</div>
+      <h2 class="section-title" id="monet-title">Hotels, activities and gear</h2>
+    </div>
+
+    <div class="monetizacao-grid">
+
+      <a href="https://www.booking.com/country/pt.pt-pt.html"
+         target="_blank" rel="noopener noreferrer"
+         class="monet-card hp-card hp-card--link reveal"
+         aria-label="Find coastal hotels on Booking.com">
+        <div class="monet-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Coastal hotels</h3>
+        <p class="monet-card__via">via Booking.com</p>
+        <p class="monet-card__desc">Beachside accommodation across all regions of Portugal.</p>
+        <span class="btn btn-blue" aria-hidden="true">
+          Browse Hotels
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+
+      <a href="https://www.getyourguide.pt/portugal-l33/"
+         target="_blank" rel="noopener noreferrer"
+         class="monet-card hp-card hp-card--link reveal"
+         aria-label="Find activities and tours in Portugal on GetYourGuide">
+        <div class="monet-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h3>Coastal experiences</h3>
+        <p class="monet-card__via">via GetYourGuide</p>
+        <p class="monet-card__desc">Surf lessons, diving, kayaking and guided tours along the coast.</p>
+        <span class="btn btn-blue" aria-hidden="true">
+          Browse Experiences
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+
+      <a href="https://www.amazon.es/s?k=equipamento+surf+praia"
+         target="_blank" rel="noopener noreferrer"
+         class="monet-card hp-card hp-card--link reveal"
+         aria-label="Find surf and beach gear on Amazon">
+        <div class="monet-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <h3>Beach and surf gear</h3>
+        <p class="monet-card__via">via Amazon</p>
+        <p class="monet-card__desc">Boards, wetsuits and accessories delivered to your door.</p>
+        <span class="btn btn-blue" aria-hidden="true">
+          Browse Gear
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+
+    </div>
+    <div class="b2b-strip reveal">
+      <div class="b2b-strip__text">
+        <span class="b2b-strip__label">Do you run a tourism business in Portugal?</span>
+        <span class="b2b-strip__sub">Reach travellers actively planning coastal trips — exactly when they decide.</span>
+      </div>
+      <div class="b2b-strip__actions">
+        <a href="/en/parceiros.html" class="btn btn-blue btn-sm">Partner Plans</a>
+        <a href="/en/media-kit.html" class="btn btn-outline-dark btn-sm">Media Kit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Editorial guides ─────────────────────────────────────── -->
+<section class="idx-guides-band" aria-labelledby="idx-guides-title">
+  <div class="idx-guides-inner">
+    <span class="idx-guides-eyebrow">Editorial Guides</span>
+    <h2 class="idx-guides-title" id="idx-guides-title">Explore by region and experience</h2>
+    <div class="idx-guides-grid">
+      <a href="en/algarve-beaches.html" class="idx-guide-card">
+        <span class="idx-guide-card-eyebrow">Algarve · Zone Guide</span>
+        <p class="idx-guide-card-title">Algarve Beaches</p>
+        <p class="idx-guide-card-desc">East, centre or west? Ria Formosa lagoons, dramatic limestone cliffs, or wild Atlantic coast — find the right zone.</p>
+        <span class="idx-guide-card-cta">Read guide →</span>
+      </a>
+      <a href="en/beaches-near-lisbon.html" class="idx-guide-card">
+        <span class="idx-guide-card-eyebrow">Lisbon · Day Trips</span>
+        <p class="idx-guide-card-title">Beaches Near Lisbon</p>
+        <p class="idx-guide-card-desc">Cascais by train (35 min), Caparica by bus, Arrábida and Comporta by car — guide by distance, access and beach type.</p>
+        <span class="idx-guide-card-cta">Read guide →</span>
+      </a>
+      <a href="en/best-sunset-beaches.html" class="idx-guide-card">
+        <span class="idx-guide-card-eyebrow">Experience · Sunsets</span>
+        <p class="idx-guide-card-title">Best Sunset Beaches</p>
+        <p class="idx-guide-card-desc">Comporta, Sagres, Zambujeira — the west-facing beaches with the most spectacular sunsets in Portugal.</p>
+        <span class="idx-guide-card-cta">Read guide →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        Portugal Travel Hub
+      </div>
+      <p class="footer-tagline">
+        Portugal's reference portal for beaches — conditions, webcams, surf, fishing and trip planning.
+      </p>
+    </div>
+
+    <nav class="footer-col" aria-label="Destinations">
+      <h5>Destinations</h5>
+      <ul>
+        <li><a href="/en/beaches.html?region=Algarve">Algarve</a></li>
+        <li><a href="/en/beaches.html?region=Lisboa">Lisbon</a></li>
+        <li><a href="/en/beaches.html?region=Porto">Porto</a></li>
+        <li><a href="/en/beaches.html?region=Alentejo">Alentejo</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Portal">
+      <h5>Portal</h5>
+      <ul>
+        <li><a href="/en/beaches.html">Beaches</a></li>
+        <li><a href="/en/webcams.html">Webcams</a></li>
+        <li><a href="/en/surf.html">Surf</a></li>
+        <li><a href="/en/pesca.html">Fishing</a></li>
+        <li><a href="/en/planear.html">Plan a Trip</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Partners &amp; Help">
+      <h5>Partners &amp; Help</h5>
+      <ul>
+        <li><a href="/en/parceiros.html">Partners</a></li>
+        <li><a href="/en/media-kit.html">Media Kit</a></li>
+        <li><a href="/en/about.html">About Us</a></li>
+        <li><a href="/en/contact.html">Contact</a></li>
+        <li><a href="/en/privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Portugal Travel Hub. All rights reserved.</span>
+    <span><a href="/en/about.html">About</a> · <a href="/en/contact.html">Contact</a> · <a href="/en/privacy.html">Privacy</a> · <a href="/en/terms.html">Terms</a> · <a href="/cookies.html">Cookies</a></span>
+  </div>
+</footer>
+
+<!-- ── Bottom nav (mobile) ──────────────────────────────────── -->
+<nav class="bottom-nav" aria-label="Quick navigation">
+  <a href="/" class="bottom-nav-item active" aria-label="Home" aria-current="page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="/en/beaches.html" class="bottom-nav-item" aria-label="Beaches">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
+    <span>Beaches</span>
+  </a>
+  <a href="/en/surf.html" class="bottom-nav-item" aria-label="Surf">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+    <span>Surf</span>
+  </a>
+  <a href="/en/pesca.html" class="bottom-nav-item" aria-label="Fishing">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+    <span>Fishing</span>
+  </a>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/js/config.js?v=20260402"></script>
+<script src="/js/animations.js?v=20260402" defer></script>
+<script>
+  // ── Preloader ────────────────────────────────────────────────
+  (function() {
+    var preloader = document.getElementById('preloader');
+    if (!preloader) return;
+    // Skip animation for reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      preloader.classList.add('gone');
+      return;
+    }
+    document.body.style.overflow = 'hidden';
+    var texts = preloader.querySelectorAll('.preloader__text');
+    texts.forEach(function(t, i) {
+      setTimeout(function() { t.style.opacity = '1'; }, 300 + i * 800);
+    });
+    setTimeout(function() { preloader.classList.add('slide-up'); }, 1400);
+    setTimeout(function() {
+      preloader.classList.add('gone');
+      document.body.style.overflow = '';
+    }, 2200);
+  })();
+
+  // ── Spotlight effect ──────────────────────────────────────────
+  const spotlight = document.getElementById('spotlight');
+  if (spotlight && window.matchMedia("(pointer: fine)").matches) {
+    let rafId = null;
+    document.addEventListener('mousemove', (e) => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        spotlight.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px, rgba(201,168,76,0.10), transparent 50%)`;
+      });
+    });
+  }
+
+  // ── Navbar scroll ─────────────────────────────────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Mobile nav drawer ─────────────────────────────────────────
+  const toggle      = document.getElementById('nav-toggle');
+  const navClose    = document.getElementById('nav-close');
+  const navBackdrop = document.getElementById('nav-backdrop');
+
+  function openMobileNav() {
+    navbar.classList.add('nav-mobile-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileNav() {
+    navbar.classList.remove('nav-mobile-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  toggle?.addEventListener('click', () =>
+    navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav()
+  );
+  navClose?.addEventListener('click', closeMobileNav);
+  navBackdrop?.addEventListener('click', closeMobileNav);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+  // ── Page logic ────────────────────────────────────────────────
+  (async () => {
+
+    // ── Scroll reveal — powered by GSAP ScrollTrigger (js/animations.js) ──
+    // Fallback for no-JS: .reveal/.visible CSS still works
+
+    // ── Featured Beaches — static curated list ───────────────────
+    const grid = document.getElementById('fb-grid');
+    if (grid) {
+      const FEATURED = [
+        {
+          href:    'beach.html?id=d9af39d6-f9ae-483d-ab1d-e48a026dfd53',
+          name:    'Praia do Camilo',
+          region:  'Algarve',
+          img:     'https://images.unsplash.com/photo-1651237070396-b2dba667d883?q=80&w=1031&auto=format&fit=crop',
+          quality: 'Excellent'
+        },
+        {
+          href:    'beach.html?id=8d29adfa-7276-4074-bce6-dc1c6b49ae12',
+          name:    'Praia do Guincho',
+          region:  'Lisboa',
+          img:     'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1200&q=80',
+          quality: 'Excellent'
+        },
+        {
+          href:    'beach.html?id=66ee7f6b-018b-408b-8d48-c58d2f73bf8d',
+          name:    'Praia da Marinha',
+          region:  'Algarve',
+          img:     'https://images.unsplash.com/photo-1651237031934-4c1c78b9f1ba?auto=format&fit=crop&w=1200&q=80',
+          quality: 'Excellent'
+        },
+        {
+          href:    'beach.html?id=91f9ac99-a4b2-4793-afba-5b7f79d72d54',
+          name:    'Praia da Comporta',
+          region:  'Lisboa e Setúbal',
+          img:     'https://images.unsplash.com/photo-1542413965-e786216dfcd9?q=80&w=774&auto=format&fit=crop',
+          quality: 'Good'
+        },
+        {
+          href:    'beach.html?id=3d2dacea-cfcb-4086-9e15-a7b57ec9f2e7',
+          name:    'Praia dos Galapinhos',
+          region:  'Lisboa e Setúbal',
+          img:     'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80',
+          quality: 'Excellent'
+        },
+        {
+          href:    'beach.html?id=b699e6b6-e0cb-4620-9355-e1f3074ddde9',
+          name:    'Praia de Moledo',
+          region:  'Norte',
+          img:     'https://images.unsplash.com/photo-1663602657254-b2d9a70590da?q=80&w=870&auto=format&fit=crop',
+          quality: 'Good'
+        }
+      ];
+
+      grid.innerHTML = FEATURED.map(b => `
+        <article class="fb-card reveal" role="listitem" tabindex="0">
+          <a href="${b.href}" class="fb-card-link" aria-label="View ${b.name}, ${b.region}">
+            <div class="fb-card-img">
+              <img src="${b.img}"
+                   alt="${b.name}, ${b.region}."
+                   loading="lazy" width="400" height="250"
+                   onerror="this.onerror=null;this.src='beach-placeholder.svg'">
+            </div>
+            <div class="fb-card-body">
+              <div class="fb-card-meta">${b.region}</div>
+              <h3 class="fb-card-title">${b.name}</h3>
+              <span class="fb-quality-badge">${b.quality}</span>
+            </div>
+          </a>
+        </article>`).join('');
+
+      // Refresh GSAP ScrollTrigger for dynamically loaded cards
+      if (typeof ScrollTrigger !== 'undefined') {
+        gsap.utils.toArray('#fb-grid .reveal').forEach(function(el) {
+          gsap.fromTo(el, { opacity: 0, y: 28 }, {
+            opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+          });
+        });
+        ScrollTrigger.refresh();
+      }
+    }
+  })();
+</script>
+
+<script>
+  // ── Service Worker registration ───────────────────────────────
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .catch(() => { /* SW registration failed silently */ });
+    });
+  }
+
+  // ── Navbar auth state ─────────────────────────────────────────
+  (async () => {
+    try {
+      const user = await getCurrentUser();
+      if (user) {
+        const loginBtn    = document.getElementById('nav-login-btn');
+        const registerBtn = document.getElementById('nav-register-btn');
+        if (loginBtn && registerBtn) {
+          loginBtn.href        = '/dashboard.html';
+          loginBtn.textContent = 'Dashboard';
+          loginBtn.className   = 'btn btn-primary';
+          registerBtn.style.display = 'none';
+        }
+      }
+    } catch (_) {}
+  })();
+
+  // ── PWA install prompt ────────────────────────────────────────
+  (function () {
+    if (localStorage.getItem('pwa-install-dismissed')) return;
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      setTimeout(() => {
+        const banner = document.getElementById('pwa-install-banner');
+        if (banner) banner.style.display = 'block';
+      }, 4000);
+    });
+
+    document.addEventListener('click', (e) => {
+      const banner = document.getElementById('pwa-install-banner');
+      if (!banner) return;
+      if (e.target.closest('#pwa-install-btn')) {
+        banner.style.display = 'none';
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(({ outcome }) => {
+            if (outcome === 'accepted') localStorage.setItem('pwa-install-dismissed', '1');
+            deferredPrompt = null;
+          });
+        }
+      } else if (e.target.closest('#pwa-dismiss-btn')) {
+        banner.style.display = 'none';
+        localStorage.setItem('pwa-install-dismissed', '1');
+      }
+    });
+  })();
+</script>
+
+<!-- PWA install banner -->
+<div id="pwa-install-banner" role="complementary" aria-label="Install app" style="display:none;position:fixed;bottom:80px;left:0;right:0;padding:0 16px;z-index:9000;pointer-events:none;">
+  <div style="max-width:480px;margin:0 auto;background:#0a3d6b;border:1px solid rgba(201,168,76,0.35);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;pointer-events:all;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <img src="/favicon.svg" width="38" height="38" alt="" style="border-radius:8px;flex-shrink:0;">
+    <div style="flex:1;min-width:0;">
+      <p style="margin:0;font-size:0.85rem;font-weight:600;color:#fff;line-height:1.3;">Install Portugal Travel Hub</p>
+      <p style="margin:0;font-size:0.75rem;color:rgba(255,255,255,0.58);line-height:1.3;">Add to home screen for quick access</p>
+    </div>
+    <button id="pwa-install-btn" style="background:linear-gradient(135deg,#c9a84c,#e8c97a);color:#0a3d6b;border:none;border-radius:50px;padding:9px 18px;font-size:0.8rem;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">Install</button>
+    <button id="pwa-dismiss-btn" aria-label="Dismiss install prompt" style="background:transparent;border:none;color:rgba(255,255,255,0.45);cursor:pointer;padding:4px 6px;font-size:1.4rem;line-height:1;flex-shrink:0;">&times;</button>
+  </div>
+</div>
+
+  <script src="/js/lang-switcher.js" defer></script>
+</body>
+</html>

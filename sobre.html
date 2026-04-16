@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre · Portugal Travel Hub</title>
   <meta name="description" content="Conheça a Portugal Travel Hub — o portal premium dedicado a ajudá-lo a descobrir o melhor das praias e destinos de Portugal, do Algarve ao Minho.">
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/sobre.html">
+  <link rel="canonical" href="https://portalturismoportugal.com/sobre.html">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://portal-turismo-portugal.pages.dev/sobre.html">
+  <meta property="og:url" content="https://portalturismoportugal.com/sobre.html">
   <meta property="og:title" content="Sobre · Portugal Travel Hub">
   <meta property="og:description" content="Conheça a Portugal Travel Hub — o portal premium de turismo costeiro dedicado às praias, surf, pesca e webcams de Portugal.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
@@ -27,8 +27,8 @@
     "@type": "AboutPage",
     "name": "Sobre — Portugal Travel Hub",
     "description": "A Portugal Travel Hub é uma plataforma premium de turismo costeiro dedicada a Portugal — praias, surf, pesca, webcams e destinos verificados.",
-    "url": "https://portal-turismo-portugal.pages.dev/sobre.html",
-    "isPartOf": { "@type": "WebSite", "url": "https://portal-turismo-portugal.pages.dev/" }
+    "url": "https://portalturismoportugal.com/sobre.html",
+    "isPartOf": { "@type": "WebSite", "url": "https://portalturismoportugal.com/" }
   }
   </script>
 
@@ -145,24 +145,23 @@
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
-  <link rel="stylesheet" href="css/style.css?v=20260402">
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
+
 </head>
 <body>
 
 <a href="#main" class="skip-link">Saltar para o conteúdo</a>
 
 <nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
-  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
     Portugal Travel Hub
   </a>
-  <div class="nav-backdrop" id="nav-backdrop"></div>
+
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
     <a href="pesca.html" role="listitem">Pesca</a>
@@ -170,15 +169,23 @@
     <a href="planear.html" role="listitem">Planear</a>
     <a href="precos.html" role="listitem">Preços</a>
     <a href="parceiros.html" role="listitem">Parceiros</a>
-    <a href="sobre.html" class="active" role="listitem" aria-current="page">Sobre</a>
   </div>
+
   <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
     <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <nav class="breadcrumb" aria-label="Localização na página">
@@ -196,11 +203,12 @@
 
   <section class="about-section" aria-label="Sobre a Portugal Travel Hub">
     <p class="about-lead reveal">
-      A Portugal Travel Hub nasceu da convicção de que Portugal merece uma plataforma de turismo à altura da sua beleza e diversidade — premium, rigorosa e genuinamente apaixonada pelo país.
+      A Portugal Travel Hub é um portal editorial independente dedicado ao litoral português — construído para quem planeia com critério, não para quem precisa de uma lista qualquer. Rigoroso, verificável e genuinamente apaixonado pelo país.
     </p>
     <div class="about-body">
-      <p class="reveal">Reunimos informação actualizada sobre praias, condições de surf, pesca, webcams e destinos em todo o território nacional — do Algarve ao Minho, da Costa Alentejana aos Açores. Trabalhamos com parceiros certificados e actualizamos regularmente os nossos conteúdos para garantir que a informação que encontra é fiável e relevante.</p>
-      <p class="reveal">A plataforma é concebida para quem planeia viagens com cuidado: quem quer saber o estado real das praias antes de sair de casa, quem procura os melhores spots de surf ou pesca, e quem prefere apoiar parceiros locais de confiança.</p>
+      <p class="reveal">Reunimos e curamos informação sobre praias, condições de surf, pesca, webcams e destinos em todo o território nacional — do Algarve ao Minho, da Costa Alentejana aos Açores. A qualidade da água é baseada em análise da APA. Os parceiros que apresentamos passam por verificação editorial manual. O conteúdo patrocinado, quando existe, é sempre identificado com clareza.</p>
+      <p class="reveal">A plataforma é concebida para quem planeia viagens com cuidado: quem quer saber o estado real das praias antes de sair de casa, quem procura os melhores spots de surf ou pesca, e quem prefere apoiar parceiros locais verificados. Não somos um marketplace nem um motor de pesquisa — somos um guia editorial com responsabilidade sobre o que publicamos.</p>
+      <p class="reveal">A nossa metodologia editorial e o modelo de transparência comercial estão documentados de forma aberta. Qualquer pessoa pode consultar como seleccionamos informação, como identificamos conteúdo comercial e onde estão os limites que protegem a qualidade do portal — nas páginas <a href="metodologia-editorial.html" style="color:var(--blue-mid);font-weight:500;">Metodologia Editorial</a> e <a href="transparencia-comercial.html" style="color:var(--blue-mid);font-weight:500;">Transparência Comercial</a>.</p>
 
       <h2 class="reveal">Os Nossos Valores</h2>
     </div>
@@ -211,7 +219,7 @@
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="value-title">Rigor &amp; Qualidade</div>
-        <p class="value-text">Cada praia, parceiro e informação que apresentamos é verificada. Sem conteúdo pago não identificado, sem atalhos.</p>
+        <p class="value-text">Cada praia, parceiro e informação que apresentamos é verificada. Sem conteúdo pago não identificado, sem listas automáticas, sem atalhos editoriais.</p>
       </div>
       <div class="value-card reveal">
         <div class="value-icon">
@@ -268,11 +276,12 @@
 <footer class="footer" role="contentinfo">
   <div class="footer-bottom">
     <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
-    <span><a href="sobre.html">Sobre</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></span>
+    <span><a href="sobre.html">Sobre</a> · <a href="metodologia-editorial.html">Metodologia</a> · <a href="transparencia-comercial.html">Transparência</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a></span>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   const navbar = document.getElementById('navbar');

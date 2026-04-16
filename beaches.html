@@ -4,17 +4,24 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
   <title>Praias de Portugal — Mapa, Qualidade da Água e Condições · Portugal Travel Hub</title>
   <meta name="description" content="Explore as melhores praias de Portugal — do Algarve à Madeira. Qualidade da água, imagens e informação actualizada.">
-  <link rel="canonical" href="https://portal-turismo-portugal.pages.dev/beaches.html">
+  <link rel="canonical" href="https://portalturismoportugal.com/beaches.html">
+  <link rel="alternate" hreflang="pt" href="https://portalturismoportugal.com/beaches.html">
+  <link rel="alternate" hreflang="en" href="https://portalturismoportugal.com/en/beaches.html">
+  <link rel="alternate" hreflang="x-default" href="https://portalturismoportugal.com/beaches.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://portal-turismo-portugal.pages.dev/beaches.html">
+  <meta property="og:url"         content="https://portalturismoportugal.com/beaches.html">
   <meta property="og:title"       content="Praias de Portugal — Mapa, Qualidade da Água e Condições · Portugal Travel Hub">
   <meta property="og:description" content="Explore as melhores praias de Portugal — do Algarve à Madeira. Qualidade da água, imagens e informação actualizada.">
   <meta property="og:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
@@ -25,7 +32,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Praias de Portugal — Mapa, Qualidade da Água e Condições · Portugal Travel Hub">
   <meta name="twitter:description" content="Explore as melhores praias de Portugal — do Algarve à Madeira. Qualidade da água, imagens e informação actualizada.">
-  <meta name="twitter:url"         content="https://portal-turismo-portugal.pages.dev/beaches.html">
+  <meta name="twitter:url"         content="https://portalturismoportugal.com/beaches.html">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
 
   <!-- Structured Data -->
@@ -37,18 +44,18 @@
         "@type": "CollectionPage",
         "name": "Praias de Portugal",
         "description": "Explore as melhores praias de Portugal — do Algarve à Madeira.",
-        "url": "https://portal-turismo-portugal.pages.dev/beaches.html",
+        "url": "https://portalturismoportugal.com/beaches.html",
         "inLanguage": "pt-PT",
         "isPartOf": {
           "@type": "WebSite",
           "name": "Portugal Travel Hub",
-          "url": "https://portal-turismo-portugal.pages.dev"
+          "url": "https://portalturismoportugal.com"
         }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://portal-turismo-portugal.pages.dev/"},
+          {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalturismoportugal.com/"},
           {"@type": "ListItem", "position": 2, "name": "Praias"}
         ]
       }
@@ -58,7 +65,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://glupdjvdvunogkqgxoui.supabase.co" crossorigin>
 
@@ -96,41 +104,7 @@
     :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
     .skip-link { position: absolute; top: -100%; left: 16px; background: var(--blue); color: var(--white); padding: 8px 16px; border-radius: 8px; z-index: 9999; transition: top 0.2s; }
     .skip-link:focus { top: 16px; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
-
-    /* ── Navbar ── */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5vw; height: 72px;
-      background: rgba(10,61,107,0.95);
-      backdrop-filter: blur(20px) saturate(1.5);
-      border-bottom: 1px solid var(--glass-border);
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      font-family: 'Bodoni Moda', serif; font-size: 1.25rem; color: var(--white);
-    }
-    .nav-logo-icon {
-      width: 36px; height: 36px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      border-radius: 10px; display: flex; align-items: center; justify-content: center;
-    }
-    .nav-logo-icon svg { width: 20px; height: 20px; fill: var(--blue); }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a {
-      color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 400;
-      letter-spacing: 0.03em; transition: color var(--transition); position: relative;
-    }
-    .nav-links a.active,
-    .nav-links a:hover { color: var(--white); }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
-      height: 1px; background: var(--gold); transform: scaleX(0); transition: transform var(--transition);
-    }
-    .nav-links a:hover::after,
-    .nav-links a.active::after { transform: scaleX(1); }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 10px 22px; border-radius: 50px; font-family: 'Inter', sans-serif;
@@ -146,20 +120,12 @@
       color: var(--blue); box-shadow: 0 4px 20px var(--gold-glow);
     }
     .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 30px var(--gold-glow); }
-    .nav-toggle { display: none; color: var(--white); min-height: 48px; min-width: 48px; align-items: center; justify-content: center; border-radius: 8px; transition: background var(--transition); }
-    .nav-toggle:hover { background: rgba(255,255,255,0.1); }
-    .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
     .nav-close { display: none; }
     .nav-backdrop { display: none; }
-    @media (max-width: 768px) {
-      .nav-actions .btn-outline { display: none; }
-      .nav-toggle { display: flex; }
+    
       .nav-backdrop { display: block; position: fixed; inset: 0; z-index: 99; background: rgba(0,0,0,0.55); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; cursor: pointer; }
       .nav-mobile-open .nav-backdrop { opacity: 1; visibility: visible; }
-      .nav-links { display: flex !important; flex-direction: column; align-items: flex-start; position: fixed; top: 0; right: 0; bottom: 0; width: 280px; z-index: 100; background: rgba(5,35,70,0.99); backdrop-filter: blur(24px) saturate(1.5); border-left: 1px solid var(--glass-border); padding: 80px 32px 40px; gap: 4px; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; }
-      .nav-mobile-open .nav-links { transform: translateX(0); }
-      .nav-links a { font-size: 1.05rem; padding: 14px 0; width: 100%; min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .nav-links a:last-child { border-bottom: none; }
+      .nav-mobile-open
       .nav-close { display: flex; align-items: center; justify-content: center; position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; color: var(--white); background: rgba(255,255,255,0.1); transition: background var(--transition); flex-shrink: 0; }
       .nav-close:hover { background: rgba(255,255,255,0.2); }
       .nav-close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
@@ -519,6 +485,18 @@
     .beach-card--excelente { box-shadow: 0 4px 20px rgba(39,174,96,0.10), 0 0 0 1.5px rgba(39,174,96,0.18); border-top: 3px solid var(--gold); }
     .beach-card--excelente:hover { box-shadow: 0 12px 40px rgba(39,174,96,0.16), 0 0 0 1.5px rgba(39,174,96,0.25); }
 
+    /* ── SEO guide cards band ── */
+    .seo-guides-band { background: var(--off-white); padding: 56px 5vw; border-top: 1px solid var(--border); }
+    .seo-guides-inner { max-width: 1100px; margin: 0 auto; }
+    .seo-guides-inner .section-title-lg { margin-bottom: 32px; }
+    .seo-guides-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    @media (max-width: 860px) { .seo-guides-grid { grid-template-columns: 1fr; } }
+    .seo-guide-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 22px 20px; text-decoration: none; color: inherit; transition: box-shadow 0.2s, transform 0.2s; }
+    .seo-guide-card:hover { box-shadow: 0 8px 32px rgba(10,61,107,0.10); transform: translateY(-2px); }
+    .seo-guide-card-title { font-family: 'Bodoni Moda', serif; font-size: 1.05rem; font-weight: 700; color: var(--blue); margin: 0 0 10px; line-height: 1.3; }
+    .seo-guide-card-desc { font-size: 0.875rem; color: var(--text-mid); line-height: 1.65; margin: 0 0 16px; flex: 1; }
+    .seo-guide-cta { font-size: 0.8125rem; font-weight: 600; color: var(--gold); letter-spacing: 0.02em; }
+
     /* ── How to choose section ── */
     .how-section { background: var(--white); padding: 64px 5vw; border-top: 1px solid var(--border); }
     .how-section-inner { max-width: 1200px; margin: 0 auto; }
@@ -593,7 +571,11 @@
       flex-shrink: 0; transition: all 0.2s; box-shadow: 0 4px 20px rgba(201,168,76,0.3);
     }
     .conversion-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
-    @media (max-width: 600px) { .conversion-inner { flex-direction: column; align-items: flex-start; } }
+    
+    .lang-btn{font-family:'Inter',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;padding:4px 5px;border-radius:4px;transition:color 0.2s;cursor:pointer;min-height:0;}
+    .lang-btn--active{color:var(--gold);cursor:default;}
+    .lang-btn:not(.lang-btn--active):hover{color:rgba(255,255,255,0.90);}
+    .lang-sep{color:rgba(255,255,255,0.25);font-size:0.65rem;user-select:none;}
 
     /* ── Vertical crosslinks ── */
     .crosslinks-section { background: var(--off-white); padding: 48px 5vw; border-top: 1px solid var(--border); }
@@ -609,7 +591,14 @@
     .crosslink-desc { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; flex: 1; }
     .crosslink-cta-text { font-size: 0.78rem; font-weight: 600; color: var(--gold); display: flex; align-items: center; gap: 4px; }
     .crosslink-cta-text svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── Guide hint strip ── */
+    .beaches-guide-hint { display:flex; align-items:center; gap:10px; padding:10px 5vw; font-size:0.78rem; color:var(--text-mid); background:rgba(10,61,107,0.03); border-bottom:1px solid var(--border); }
+    .beaches-guide-hint svg { width:15px; height:15px; stroke:var(--blue-mid); fill:none; stroke-width:2; stroke-linecap:round; flex-shrink:0; }
+    @media (max-width: 600px) { .beaches-guide-hint { padding:10px 4vw; } }
   </style>
+
+<link rel="stylesheet" href="/css/style.css?v=20260416b">
 </head>
 <body>
 
@@ -617,19 +606,16 @@
 
 <!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
-  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Início">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
     Portugal Travel Hub
   </a>
 
-  <div class="nav-backdrop" id="nav-backdrop"></div>
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Fechar menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <a href="beaches.html" class="active" role="listitem" aria-current="page">Praias</a>
+    <a href="beaches.html" role="listitem">Praias</a>
     <a href="surf.html" role="listitem">Surf</a>
     <a href="pesca.html" role="listitem">Pesca</a>
     <a href="webcams.html" role="listitem">Webcams</a>
@@ -639,12 +625,20 @@
   </div>
 
   <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
     <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <nav class="breadcrumb" aria-label="Localização na página">
@@ -657,7 +651,7 @@
 <header class="page-header">
   <div class="page-tag">Curadoria editorial · 7 Regiões · Oceano Atlântico</div>
   <h1 class="page-title">Praias de <em>Portugal</em></h1>
-  <p class="page-subtitle">Do Minho ao Algarve, da Madeira aos Açores — descobre as praias mais bonitas de Portugal com curadoria editorial, condições actualizadas e guias de visita completos.</p>
+  <p class="page-subtitle">Do Minho à Sagres, da Madeira às ilhas mais remotas dos Açores — o guia editorial mais completo de praias portuguesas. Use os filtros para encontrar a praia certa: qualidade da água certificada pela APA, tipo de praia e região. Cada card leva-o a detalhes reais — condições, marés, equipamentos e como chegar.</p>
   <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
     <a href="#main" class="btn btn-primary">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
@@ -720,11 +714,12 @@
 <div class="chips-bar" role="group" aria-label="Filtros rápidos">
   <button class="chip active" data-filter="region" data-value="" onclick="setChip(this,'region')">Todas</button>
   <button class="chip" data-filter="region" data-value="Algarve" onclick="setChip(this,'region')">Algarve</button>
-  <button class="chip" data-filter="region" data-value="Lisboa" onclick="setChip(this,'region')">Lisboa</button>
-  <button class="chip" data-filter="region" data-value="Porto" onclick="setChip(this,'region')">Porto</button>
+  <button class="chip" data-filter="region" data-value="Lisboa e Setúbal" onclick="setChip(this,'region')">Lisboa e Setúbal</button>
+  <button class="chip" data-filter="region" data-value="Oeste" onclick="setChip(this,'region')">Oeste</button>
+  <button class="chip" data-filter="region" data-value="Centro" onclick="setChip(this,'region')">Centro</button>
+  <button class="chip" data-filter="region" data-value="Norte" onclick="setChip(this,'region')">Norte</button>
   <button class="chip" data-filter="region" data-value="Alentejo" onclick="setChip(this,'region')">Alentejo</button>
   <button class="chip" data-filter="region" data-value="Madeira" onclick="setChip(this,'region')">Madeira</button>
-  <button class="chip" data-filter="region" data-value="Açores" onclick="setChip(this,'region')">Açores</button>
   <span style="width:1px;background:var(--border);margin:0 4px;align-self:stretch" aria-hidden="true"></span>
   <button class="chip quality-chip" data-filter="quality" data-value="" onclick="setChip(this,'quality')">Qualquer qualidade</button>
   <button class="chip quality-chip" data-filter="quality" data-value="Excelente" onclick="setChip(this,'quality')">Excelente</button>
@@ -737,22 +732,33 @@
 <!-- Region Banner -->
 <div id="region-banner" style="display:none" aria-live="polite"></div>
 
+<!-- Guide hint -->
+<div class="beaches-guide-hint">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+  <span>Cada card mostra qualidade da água (APA), tipo de praia e estado do nadador-salvador. Clique para ver condições completas, marés e como chegar. Prefere uma sugestão? <a href="planear.html?source=beaches-hint" style="color:var(--gold);font-weight:600;white-space:nowrap;">Planear a escapada →</a></span>
+</div>
+
 <!-- Beach grid -->
 <main id="main">
   <section class="beaches-section" aria-label="Listagem de praias">
     <div class="beaches-grid" id="beaches-grid" role="list">
       <!-- skeleton placeholders shown while loading -->
     </div>
-    <!-- Sugere uma praia -->
+    <!-- Sugere uma praia / próximo passo -->
     <div class="suggest-band">
       <div class="suggest-inner">
         <div>
-          <strong>Falta alguma praia?</strong>
-          <span>Partilhe connosco e ajude a tornar este guia mais completo.</span>
+          <strong>Encontrou a praia certa?</strong>
+          <span>Organize a visita — alojamento, marés e atividades em um só lugar. Ou sugira uma praia que falta neste guia.</span>
         </div>
-        <a href="contact.html?assunto=sugestao&subject=Sugestão%20de%20Praia" class="suggest-btn">
-          Sugerir uma Praia
-        </a>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+          <a href="planear.html?source=beaches-suggest&intent=escapada" class="suggest-btn" style="background:var(--gold);color:var(--blue);">
+            Planear Visita
+          </a>
+          <a href="contact.html?assunto=sugestao&subject=Sugestão%20de%20Praia" class="suggest-btn" style="background:transparent;border:1.5px solid rgba(10,61,107,0.20);color:var(--text-mid);">
+            Sugerir uma Praia
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -763,7 +769,7 @@
   <div class="crosslinks-inner">
     <span class="section-eyebrow">Explorar o Portal</span>
     <h2 class="section-title-lg" id="crosslinks-title">Vai além das praias</h2>
-    <p class="section-sub">Combine surf, pesca, webcams ao vivo e planeamento numa experiência costeira completa.</p>
+    <p class="section-sub">Portugal não é só praias. Combine surf nas melhores ondas do Atlântico, webcams ao vivo, previsões de pesca e planeamento personalizado — uma experiência costeira completa.</p>
     <div class="crosslinks-grid">
       <a href="surf.html" class="crosslink-card" aria-label="Explorar surf em Portugal">
         <div class="crosslink-icon" style="background:linear-gradient(135deg,#1a5fa3,#2980d4)">
@@ -801,12 +807,93 @@
   </div>
 </section>
 
+<!-- SEO beach guides -->
+<section class="seo-guides-band" aria-labelledby="beach-guides-title">
+  <div class="seo-guides-inner">
+    <span class="section-eyebrow">Guias de Praia</span>
+    <h2 class="section-title-lg" id="beach-guides-title">Guias aprofundados por região</h2>
+    <div class="seo-guides-grid">
+      <a href="praias-para-surfistas-iniciantes-portugal.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias para Surfistas Iniciantes</p>
+        <p class="seo-guide-card-desc">Ericeira, Peniche, Costa Vicentina — spots de aprendizagem com escolas de surf, ondas acessíveis e fundo de areia.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="onde-ficar-algarve-praia.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Onde Ficar no Algarve Perto da Praia</p>
+        <p class="seo-guide-card-desc">De Lagos a Tavira, zona a zona — onde dormir para acordar a 5 minutos a pé da areia, por estilo e orçamento.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="surf-algarve.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Surf no Algarve</p>
+        <p class="seo-guide-card-desc">Arrifana, Sagres, Salema — os melhores spots do Algarve para surfar por zona, nível de experiência e época do ano.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-algarve.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias do Algarve — Guia por Zona</p>
+        <p class="seo-guide-card-desc">Este, central e oeste: falésias, lagoas da Ria Formosa e costa atlântica selvagem. Encontra a zona certa.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-perto-lisboa.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias Perto de Lisboa</p>
+        <p class="seo-guide-card-desc">Cascais de comboio, Caparica de autocarro, Arrábida e Comporta de carro — guia por distância e tipo de experiência.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="melhores-praias-por-do-sol.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Melhores Praias para o Pôr do Sol</p>
+        <p class="seo-guide-card-desc">Comporta, Sagres, Costa Vicentina — as praias com o pôr do sol mais espetacular de Portugal por zona e acesso.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-familias-algarve.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias para Famílias no Algarve</p>
+        <p class="seo-guide-card-desc">Águas calmas, areias amplas, apoios completos — as melhores praias para crianças pequenas e grupos intergeracionais no Algarve.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-secretas-algarve.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias Secretas do Algarve</p>
+        <p class="seo-guide-card-desc">Trilhos, estradas de terra e acesso por escadas — as praias menos conhecidas com expectativas honestas sobre o que encontras.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-calmas-algarve.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias Calmas no Algarve</p>
+        <p class="seo-guide-card-desc">Lagoas da Ria Formosa, enseadas protegidas e baías resguardadas — guia ao mar mais tranquilo do Algarve por zona.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-para-criancas-portugal.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias para Crianças em Portugal</p>
+        <p class="seo-guide-card-desc">Guia prático por zona — Algarve, Lisboa e arredores. Água segura, nadadores-salvadores e acesso fácil para toda a família.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-norte-portugal.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias do Norte de Portugal</p>
+        <p class="seo-guide-card-desc">Moledo, Viana do Castelo, Ofir e Espinho — costa atlântica verde, estuários protegidos e surf no Norte.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-centro-portugal.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias do Centro de Portugal</p>
+        <p class="seo-guide-card-desc">Peniche (Supertubos), Nazaré (ondas gigantes), Figueira da Foz e Costa Nova — o Centro atlântico zona a zona.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-madeira.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias da Madeira</p>
+        <p class="seo-guide-card-desc">Porto Santo (9 km de areia dourada), piscinas naturais de Porto Moniz e Seixal — a costa vulcânica da Madeira.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+      <a href="praias-alentejo-costa.html" class="seo-guide-card">
+        <p class="seo-guide-card-title">Praias do Alentejo — Costa Vicentina</p>
+        <p class="seo-guide-card-desc">Comporta, Zambujeira do Mar, Odeceixe e Almograve — a costa mais selvagem da Europa Ocidental, protegida por parque natural.</p>
+        <span class="seo-guide-cta">Ler guia →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Como escolher a praia certa -->
 <section class="how-section" aria-labelledby="how-title">
   <div class="how-section-inner">
-    <span class="section-eyebrow">Guia de Escolha</span>
+    <span class="section-eyebrow">Guia de Escolha · Metodologia Editorial</span>
     <h2 class="section-title-lg" id="how-title">Como escolher a praia certa</h2>
-    <p class="section-sub">Cada praia tem a sua personalidade. Selecione o perfil que corresponde ao seu estilo de viagem e veja as sugestões filtradas.</p>
+    <p class="section-sub">Escolha o perfil que corresponde ao seu estilo de viagem — a listagem filtra automaticamente as melhores opções. Combine critérios para uma selecção mais precisa.</p>
+    <p style="font-size:0.82rem;color:var(--text-light);margin-top:-8px;margin-bottom:28px;max-width:680px;">Cada praia neste guia foi avaliada individualmente — qualidade da água por análise da APA, equipamentos verificados, e carácter editorial atribuído com base em contexto real. Sem listas automáticas, sem conteúdo pago não identificado.</p>
     <div class="how-grid">
       <button class="how-card" onclick="filterByProfile('Algarve','Boa')" aria-label="Filtrar praias para família">
         <div class="how-card-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-mid))">
@@ -816,7 +903,7 @@
         <p class="how-card-desc">Águas calmas, serviços de apoio e bandeira azul. Ideal para crianças e grupos multigeracionais.</p>
         <span class="how-card-trigger">Ver praias do Algarve <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </button>
-      <button class="how-card" onclick="filterByProfile('Porto','')" aria-label="Filtrar praias para surf">
+      <button class="how-card" onclick="filterByProfile('Norte','')" aria-label="Filtrar praias para surf">
         <div class="how-card-icon" style="background:linear-gradient(135deg,#1a5fa3,#2980d4)">
           <svg viewBox="0 0 24 24"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 10c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="6"/></svg>
         </div>
@@ -846,16 +933,20 @@
 </section>
 
 <!-- Conversion strip -->
-<section class="conversion-strip" aria-label="Registo gratuito">
+<section class="conversion-strip" aria-label="Planear escapada">
   <div class="conversion-inner">
     <div>
-      <p class="conversion-title">Pronto para escolher a sua praia?</p>
-      <p class="conversion-sub">Crie o seu perfil de viagem e receba recomendações de praias adaptadas ao seu estilo, região e época do ano.</p>
+      <p class="conversion-title">Escolheu a praia. E o alojamento?</p>
+      <p class="conversion-sub">Os melhores sítios para ficar perto das praias portuguesas esgotam-se cedo — especialmente no Verão. Organize a visita agora: planeador, pesquisa de alojamento e mais.</p>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;">
-      <a href="planear.html?source=beaches" class="conversion-cta">
+      <a href="planear.html?source=beaches-conversion" class="conversion-cta">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Planear a Minha Escapada
+      </a>
+      <a href="https://www.booking.com/country/pt.pt-pt.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.30);color:var(--white);font-size:0.875rem;font-weight:500;white-space:nowrap;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.60)';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.30)';this.style.background=''">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Procurar Alojamento
       </a>
       <a href="precos.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.30);color:var(--white);font-size:0.875rem;font-weight:500;white-space:nowrap;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.60)';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.30)';this.style.background=''">
         Ver Planos
@@ -869,36 +960,37 @@
   <div class="footer-inner">
     <div class="footer-col">
       <p class="footer-brand-name">Portugal Travel Hub</p>
-      <p class="footer-brand-desc">O portal de referência para descobrir, planear e viver o melhor de Portugal.</p>
+      <p class="footer-brand-desc">Portugal's reference portal to discover, plan and experience the best of the Atlantic coast.</p>
     </div>
     <div class="footer-col">
-      <h3 class="footer-heading">Destinos</h3>
-      <a href="beaches.html">Praias</a>
+      <h3 class="footer-heading">Destinations</h3>
+      <a href="beaches.html">Beaches</a>
       <a href="surf.html">Surf</a>
-      <a href="pesca.html">Pesca</a>
+      <a href="pesca.html">Fishing</a>
       <a href="webcams.html">Webcams</a>
     </div>
     <div class="footer-col">
-      <h3 class="footer-heading">Empresa</h3>
-      <a href="parceiros.html">Parceiros</a>
-      <a href="precos.html">Preços</a>
-      <a href="planear.html">Planear</a>
-      <a href="contact.html">Contacto</a>
+      <h3 class="footer-heading">Company</h3>
+      <a href="parceiros.html">Partners</a>
+      <a href="precos.html">Pricing</a>
+      <a href="planear.html">Plan</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="footer-col">
       <h3 class="footer-heading">Legal</h3>
-      <a href="privacidade.html">Privacidade</a>
-      <a href="termos.html">Termos</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
       <a href="cookies.html">Cookies</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
-    <span><a href="sobre.html">Sobre</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></span>
+    <span>© 2026 Portugal Travel Hub. All rights reserved.</span>
+    <span><a href="sobre.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="cookies.html">Cookies</a></span>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   // ── Auth state ──────────────────────────────────────────────────────────────
@@ -908,7 +1000,7 @@
       if (user) {
         document.getElementById('nav-login-btn').textContent = 'Dashboard';
         document.getElementById('nav-login-btn').href = 'dashboard.html';
-        document.getElementById('nav-register-btn').textContent = 'Sair';
+        document.getElementById('nav-register-btn').textContent = 'Sign Out';
         document.getElementById('nav-register-btn').href = '#';
         document.getElementById('nav-register-btn').addEventListener('click', (e) => {
           e.preventDefault(); signOut();
@@ -1017,6 +1109,9 @@
 
       const qualityClass = b.water_quality === 'Excelente' ? ' beach-card--excelente' : '';
       const beachUrl  = b.id ? `beach.html?id=${encodeURIComponent(b.id)}` : '#';
+      const beachSlug = (b.name || '').toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
       const planearUrl = `planear.html?source=beaches&beach=${encodeURIComponent(b.name)}&region=${encodeURIComponent(b.region || '')}`;
       // Booking.com affiliate search (aid = affiliate ID from booking.com/affiliate-program)
       const bookingUrl = `https://www.booking.com/searchresults.pt-pt.html?ss=${encodeURIComponent(b.name + ' Portugal')}&aid=XXXXXXX#hotelTmpl`;
@@ -1029,6 +1124,7 @@
                  data-region="${escHtml(b.region || '')}"
                  data-quality="${escHtml(b.water_quality || '')}"
                  data-name="${escHtml(b.name)}"
+                 data-slug="${escHtml(beachSlug)}"
                  tabindex="0"
                  onclick="window.location.href='${beachUrl}'"
                  onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='${beachUrl}'}"
@@ -1068,12 +1164,13 @@
   let activeTipo    = '';
 
   const REGION_BANNERS = {
-    'Algarve':  { title: 'Algarve — Costa Dourada do Sul', desc: 'Falésias dramáticas, águas cristalinas e praias premiadas. A região mais visitada de Portugal.', cta: null },
-    'Lisboa':   { title: 'Lisboa — Costa Atlântica e Arrábida', desc: 'Do Estoril a Sesimbra, passando pela Serra da Arrábida — diversidade de paisagens a menos de 1h da capital.', cta: null },
-    'Porto':    { title: 'Porto — Costa Norte e Surf Atlântico', desc: 'Praias de ondulação forte, areia fina e verde. Destino de surf e natureza na costa noroeste.', cta: null },
-    'Alentejo': { title: 'Alentejo — Costa Vicentina Selvagem', desc: 'A costa mais preservada de Portugal. Praias isoladas, natureza intocada e silêncio garantido.', cta: null },
-    'Madeira':  { title: 'Madeira — Piscinas Naturais e Vulcões', desc: 'Piscinas de lava, costa dramática e paisagem vulcânica única. Uma ilha com mar em cada horizonte.', cta: null },
-    'Açores':   { title: 'Açores — Arquipélago do Atlântico', desc: 'Nove ilhas, cada uma com a sua alma. Piscinas naturais, avistamento de cetáceos e natureza vulcânica.', cta: null }
+    'Algarve':  { title: 'Algarve — Costa Dourada do Sul', desc: 'Falésias dramáticas, águas cristalinas e praias premiadas. A região mais visitada de Portugal.', cta: 'onde-ficar-algarve-praia.html', ctaLabel: 'Onde Ficar no Algarve' },
+    'Lisboa e Setúbal': { title: 'Lisboa e Setúbal — Costa Atlântica e Arrábida', desc: 'Do Estoril a Sesimbra, passando pela Serra da Arrábida — diversidade de paisagens a menos de 1h da capital.', cta: 'onde-ficar-lisboa-setubal-praia.html', ctaLabel: 'Onde Ficar em Lisboa e Setúbal' },
+    'Norte':    { title: 'Norte — Costa Norte e Surf Atlântico', desc: 'Praias de ondulação forte, areia fina e verde. Destino de surf e natureza na costa noroeste.', cta: 'onde-ficar-norte-portugal-praia.html', ctaLabel: 'Onde Ficar no Norte' },
+    'Alentejo': { title: 'Alentejo — Costa Vicentina Selvagem', desc: 'A costa mais preservada de Portugal. Praias isoladas, natureza intocada e silêncio garantido.', cta: 'onde-ficar-costa-alentejo-praia.html', ctaLabel: 'Onde Ficar no Alentejo' },
+    'Oeste':    { title: 'Oeste — Peniche, Ericeira e Costa de Prata', desc: 'Peniche e Ericeira, capitais mundiais do surf, com praias extensas de areia fina e ondas consistentes todo o ano.', cta: 'onde-ficar-oeste-praia.html', ctaLabel: 'Onde Ficar no Oeste' },
+    'Centro':   { title: 'Centro — Nazaré, Figueira da Foz e Costa Atlântica', desc: 'Ondas gigantes da Nazaré, praias quilométricas da Figueira e costa atlântica central pouco explorada.', cta: 'onde-ficar-centro-portugal-praia.html', ctaLabel: 'Onde Ficar no Centro' },
+    'Madeira':  { title: 'Madeira — Piscinas Naturais e Vulcões', desc: 'Piscinas de lava, costa dramática e paisagem vulcânica única. Uma ilha com mar em cada horizonte.', cta: 'onde-ficar-madeira-perto-da-praia.html', ctaLabel: 'Onde Ficar na Madeira' }
   };
 
   function updateRegionBanner(region) {
@@ -1082,7 +1179,7 @@
     if (!region) { banner.style.display = 'none'; return; }
     const data = REGION_BANNERS[region];
     if (!data) { banner.style.display = 'none'; return; }
-    const ctaHtml = data.cta ? `<a href="${data.cta}" class="reg-banner-cta">Saber mais</a>` : '';
+    const ctaHtml = data.cta ? `<a href="${data.cta}?source=beaches" class="reg-banner-cta">${data.ctaLabel}</a>` : '';
     banner.innerHTML = `<div class="reg-banner-inner"><div class="reg-banner-text"><h3>${data.title}</h3><p>${data.desc}</p></div>${ctaHtml}</div>`;
     banner.style.display = 'block';
   }
@@ -1151,12 +1248,12 @@
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       name: 'Praias de Portugal',
-      url: 'https://portal-turismo-portugal.pages.dev/beaches.html',
+      url: 'https://portalturismoportugal.com/beaches.html',
       numberOfItems: beaches.length,
       itemListElement: beaches.slice(0, 50).map((b, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://portal-turismo-portugal.pages.dev/beach.html?id=${b.id}`,
+        url: `https://portalturismoportugal.com/beach.html?id=${b.id}`,
         name: b.name
       }))
     };
@@ -1257,6 +1354,14 @@
     </button>
   </div>
 </nav>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
 
 </body>
 </html>
