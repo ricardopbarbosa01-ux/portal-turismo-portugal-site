@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) – Consent Mode v2 -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',wait_for_update:500});</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+  <script>gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
   <title>Madeira Beaches — Porto Santo, Natural Pools and Volcanic Coast · Portugal Travel Hub</title>
   <meta name="description" content="Guide to Madeira's beaches — Porto Santo (9 km of golden sand), Porto Moniz natural pools and the volcanic coastline of the main island. What to expect and where to go.">
   <link rel="canonical" href="https://portalturismoportugal.com/en/madeira-beaches.html">
@@ -457,5 +459,6 @@ const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.12 });
 reveals.forEach(el => io.observe(el));
 </script>
+  <script src="/js/cookie-consent.js"></script>
 </body>
 </html>
