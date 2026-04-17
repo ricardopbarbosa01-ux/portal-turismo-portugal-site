@@ -244,6 +244,37 @@
     .surf-paywall-text{font-size:0.85rem;font-weight:600;color:var(--blue);line-height:1.4;max-width:220px;}
     .surf-paywall-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-size:0.82rem;font-weight:700;margin-top:4px;transition:transform 0.18s,box-shadow 0.18s;}
     .surf-paywall-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,0.4);}
+    /* ── Beach Alerts ── */
+    .beach-alerts-wrap{margin-top:14px;}
+    .alert-create-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:1.5px solid var(--blue);border-radius:8px;background:transparent;color:var(--blue);font-size:0.82rem;font-weight:600;cursor:pointer;transition:background var(--transition),color var(--transition);}
+    .alert-create-btn:hover{background:var(--blue);color:var(--white);}
+    .alert-create-btn-disabled{opacity:0.45;cursor:not-allowed;position:relative;}
+    .alert-create-btn-disabled:hover{background:transparent!important;color:var(--blue)!important;}
+    .alert-tooltip{display:none;position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:var(--text);color:var(--white);font-size:0.72rem;font-weight:500;padding:5px 10px;border-radius:6px;white-space:nowrap;pointer-events:none;z-index:10;}
+    .alert-create-btn-disabled:hover .alert-tooltip{display:block;}
+    .alerts-list{margin-top:10px;display:flex;flex-direction:column;gap:6px;}
+    .alert-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:0.82rem;color:var(--text-mid);}
+    .alert-item-del{background:none;border:none;color:var(--text-light);font-size:1rem;line-height:1;cursor:pointer;padding:2px 6px;border-radius:4px;transition:color var(--transition);}
+    .alert-item-del:hover{color:#c0392b;}
+    /* Alert Modal */
+    .alert-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.50);z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity 0.22s ease;}
+    .alert-overlay.open{opacity:1;pointer-events:all;}
+    .alert-modal{background:var(--white);border-radius:12px;max-width:420px;width:100%;padding:28px 24px;box-shadow:var(--shadow-lg);transform:scale(0.94);transition:transform 0.22s cubic-bezier(0.4,0,0.2,1);}
+    .alert-overlay.open .alert-modal{transform:scale(1);}
+    .alert-modal-title{font-family:'Bodoni Moda',serif;font-size:1.05rem;color:var(--blue);font-weight:700;margin-bottom:18px;line-height:1.3;}
+    .alert-field{margin-bottom:14px;}
+    .alert-field label{display:block;font-size:0.75rem;font-weight:600;color:var(--text-mid);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.05em;}
+    .alert-field select,.alert-field input[type=number]{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.88rem;color:var(--text);background:var(--white);outline:none;transition:border-color var(--transition);box-sizing:border-box;}
+    .alert-field select:focus,.alert-field input[type=number]:focus{border-color:var(--blue);}
+    .alert-value-row{display:flex;align-items:center;gap:8px;}
+    .alert-value-row input{flex:1;}
+    .alert-unit{font-size:0.85rem;color:var(--text-mid);font-weight:600;min-width:36px;}
+    .alert-actions{display:flex;gap:10px;margin-top:20px;}
+    .alert-save-btn{flex:1;padding:10px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);border:none;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:opacity var(--transition);}
+    .alert-save-btn:hover{opacity:0.88;}
+    .alert-cancel-btn{padding:10px 18px;background:transparent;border:1.5px solid var(--border);border-radius:8px;color:var(--text-mid);font-size:0.88rem;cursor:pointer;transition:border-color var(--transition);}
+    .alert-cancel-btn:hover{border-color:var(--text-mid);}
+    @media(max-width:480px){.alert-modal{padding:22px 16px;}}
 
     /* Como Chegar / Transport */
     .transport-modes{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
@@ -1517,8 +1548,10 @@
 
       // ── Plan check ──
       let isPro = false;
+      let planUser = null;
       try {
-        const { data: { user: planUser } } = await db.auth.getUser();
+        const { data: { user: authUser } } = await db.auth.getUser();
+        planUser = authUser ?? null;
         const plan = planUser?.app_metadata?.plan ?? planUser?.user_metadata?.plan ?? '';
         isPro = plan === 'pro' || plan === 'admin';
       } catch (_) {}
@@ -1606,9 +1639,11 @@
             <div class="surf-now">Agora</div>
           </div>
         </div>
+        <div id="beach-alerts-section"></div>
         ${forecastHtml}`;
 
       sec.style.display = 'block';
+      setupAlertSection(beach, isPro, planUser);
 
     } catch (_) {
       renderFallback();
@@ -1963,6 +1998,176 @@
   document.getElementById('mob-menu-btn')?.addEventListener('click', () => {
     document.getElementById('nav-toggle').click();
   });
+
+  // ── Beach Alerts ─────────────────────────────────────────────────────────────
+  (function() {
+    // Inject modal once into body
+    const modalHtml = `
+      <div class="alert-overlay" id="alert-overlay" role="dialog" aria-modal="true" aria-labelledby="alert-modal-title">
+        <div class="alert-modal">
+          <div class="alert-modal-title" id="alert-modal-title">Novo alerta</div>
+          <div class="alert-field">
+            <label for="alert-condition">Condição</label>
+            <select id="alert-condition">
+              <option value="wave_height|above">Ondas acima de</option>
+              <option value="wave_height|below">Ondas abaixo de</option>
+              <option value="wind_speed|above">Vento acima de</option>
+              <option value="wind_speed|below">Vento abaixo de</option>
+              <option value="temperature|above">Temperatura acima de</option>
+              <option value="temperature|below">Temperatura abaixo de</option>
+            </select>
+          </div>
+          <div class="alert-field">
+            <label for="alert-threshold">Valor</label>
+            <div class="alert-value-row">
+              <input type="number" id="alert-threshold" min="0" step="0.1" placeholder="ex: 1.5">
+              <span class="alert-unit" id="alert-unit">m</span>
+            </div>
+          </div>
+          <div class="alert-actions">
+            <button class="alert-save-btn" id="alert-save-btn">Guardar alerta</button>
+            <button class="alert-cancel-btn" id="alert-cancel-btn">Cancelar</button>
+          </div>
+        </div>
+      </div>`;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+    const overlay   = document.getElementById('alert-overlay');
+    const condSel   = document.getElementById('alert-condition');
+    const threshIn  = document.getElementById('alert-threshold');
+    const unitSpan  = document.getElementById('alert-unit');
+    const saveBtn   = document.getElementById('alert-save-btn');
+    const cancelBtn = document.getElementById('alert-cancel-btn');
+
+    const UNITS = { wave_height: 'm', wind_speed: 'km/h', temperature: '°C' };
+    const PLACEHOLDERS = { wave_height: 'ex: 1.5', wind_speed: 'ex: 20', temperature: 'ex: 22' };
+    const LABELS = {
+      'wave_height|above': 'Ondas acima de', 'wave_height|below': 'Ondas abaixo de',
+      'wind_speed|above': 'Vento acima de',  'wind_speed|below': 'Vento abaixo de',
+      'temperature|above': 'Temperatura acima de', 'temperature|below': 'Temperatura abaixo de'
+    };
+
+    function updateUnit() {
+      const metric = condSel.value.split('|')[0];
+      unitSpan.textContent = UNITS[metric] || '';
+      threshIn.placeholder = PLACEHOLDERS[metric] || '';
+    }
+    condSel.addEventListener('change', updateUnit);
+
+    function openModal() { overlay.classList.add('open'); threshIn.focus(); }
+    function closeModal() { overlay.classList.remove('open'); threshIn.value = ''; condSel.selectedIndex = 0; updateUnit(); }
+
+    cancelBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+    // State
+    let _beach = null;
+    let _userId = null;
+
+    function alertLabel(a) {
+      const key = a.condition + '|' + a.operator;
+      const lbl = LABELS[key] || (a.condition + ' ' + a.operator);
+      return '🔔 ' + lbl + ' ' + a.threshold + ' ' + (UNITS[a.condition] || '');
+    }
+
+    function renderAlertsList(alerts) {
+      const wrap = document.getElementById('beach-alerts-section');
+      if (!wrap) return;
+      const list = wrap.querySelector('.alerts-list');
+      if (!list) return;
+      if (!alerts || !alerts.length) { list.innerHTML = ''; return; }
+      list.innerHTML = alerts.map(a =>
+        `<div class="alert-item" data-id="${a.id}">
+          <span>${alertLabel(a)}</span>
+          <button class="alert-item-del" data-id="${a.id}" title="Apagar alerta" aria-label="Apagar alerta">✕</button>
+        </div>`
+      ).join('');
+      list.querySelectorAll('.alert-item-del').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          await db.from('alerts').delete().eq('id', id).eq('user_id', _userId);
+          btn.closest('.alert-item').remove();
+        });
+      });
+    }
+
+    async function loadAlerts() {
+      if (!_userId || !_beach) return;
+      const { data } = await db.from('alerts')
+        .select('id, condition, operator, threshold')
+        .eq('user_id', _userId)
+        .eq('beach_id', _beach.id);
+      renderAlertsList(data || []);
+    }
+
+    saveBtn.addEventListener('click', async () => {
+      const val = parseFloat(threshIn.value);
+      if (isNaN(val) || val < 0) { threshIn.focus(); return; }
+      const [condition, operator] = condSel.value.split('|');
+      const unit = UNITS[condition] || '';
+      const { error } = await db.from('alerts').insert({
+        user_id:    _userId,
+        beach_id:   _beach.id,
+        beach_name: _beach.name,
+        condition,
+        operator,
+        threshold:  val,
+        unit
+      });
+      if (!error) {
+        closeModal();
+        showToast('Alerta criado! Receberás um email quando as condições forem atingidas.');
+        loadAlerts();
+      }
+    });
+
+    function showToast(msg) {
+      let t = document.getElementById('alerts-toast');
+      if (!t) {
+        t = document.createElement('div');
+        t.id = 'alerts-toast';
+        t.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;padding:12px 22px;border-radius:10px;font-size:0.84rem;font-weight:600;z-index:3000;opacity:0;transition:opacity 0.25s ease;max-width:90vw;text-align:center;pointer-events:none;';
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.opacity = '1';
+      clearTimeout(t._tid);
+      t._tid = setTimeout(() => { t.style.opacity = '0'; }, 4000);
+    }
+
+    window.setupAlertSection = function(beach, isPro, planUser) {
+      _beach  = beach;
+      _userId = planUser?.id ?? null;
+
+      const wrap = document.getElementById('beach-alerts-section');
+      if (!wrap) return;
+
+      const isLoggedIn = !!_userId;
+      if (!isLoggedIn) { wrap.innerHTML = ''; return; }
+
+      document.getElementById('alert-modal-title').textContent =
+        'Novo alerta para ' + (beach.name || 'esta praia');
+
+      if (isPro) {
+        wrap.innerHTML = `<div class="beach-alerts-wrap">
+          <button class="alert-create-btn" id="alert-create-btn">🔔 Criar Alerta</button>
+          <div class="alerts-list"></div>
+        </div>`;
+        document.getElementById('alert-create-btn').addEventListener('click', openModal);
+      } else {
+        wrap.innerHTML = `<div class="beach-alerts-wrap">
+          <button class="alert-create-btn alert-create-btn-disabled" disabled aria-disabled="true">
+            🔔 Criar Alerta
+            <span class="alert-tooltip">Disponível no plano Pro</span>
+          </button>
+        </div>`;
+      }
+
+      updateUnit();
+      if (isPro) loadAlerts();
+    };
+  })();
 </script>
 
 <!-- Mobile bottom nav -->
