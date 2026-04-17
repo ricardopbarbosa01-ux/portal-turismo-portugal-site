@@ -8,6 +8,17 @@
   var STORAGE_KEY = 'cookie_consent';
   var BANNER_ID   = 'cookie-consent-banner';
 
+  // SVG cookie icon — inline, no external dependency, no emoji
+  var COOKIE_SVG =
+    '<svg class="ccb-icon-svg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false" ' +
+      'fill="none" stroke="#1B3A6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M21 12a9 9 0 1 1-9-9c.49 0 .97.04 1.44.1"/>' +
+      '<path d="M15.5 3.5c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z" fill="#1B3A6B" stroke="none"/>' +
+      '<circle cx="9"  cy="9"  r="1" fill="#1B3A6B" stroke="none"/>' +
+      '<circle cx="9"  cy="15" r="1" fill="#1B3A6B" stroke="none"/>' +
+      '<circle cx="14" cy="14" r="1" fill="#1B3A6B" stroke="none"/>' +
+    '</svg>';
+
   // ── Consent Mode v2 helpers ───────────────────────────────────
   function updateConsent(analyticsGranted) {
     if (typeof window.gtag === 'function') {
@@ -28,12 +39,10 @@
     } catch (_) {}
   }
 
-  // ── Apply saved prefs on page load ────────────────────────────
+  // ── Apply saved prefs on page load (no banner) ────────────────
   function applyPrefs(prefs) {
-    if (prefs && prefs.analytics === true) {
-      updateConsent(true);
-    }
-    // denied is already the Consent Mode v2 default set before GA4 loads
+    if (prefs && prefs.analytics === true) updateConsent(true);
+    // 'denied' is already the Consent Mode v2 default set before GA4 loads
   }
 
   // ── Banner markup ─────────────────────────────────────────────
@@ -42,52 +51,91 @@
     el.id = BANNER_ID;
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-label', 'Preferências de cookies');
+    el.setAttribute('aria-modal', 'false');
+
     el.innerHTML =
       '<div class="ccb-inner">' +
-        '<p class="ccb-text">' +
-          'Este site usa <a href="/cookies.html" class="ccb-link">cookies</a> para melhorar a sua ' +
-          'experiência e analisar o tráfego. Pode aceitar todos, rejeitar os não-essenciais, ou personalizar.' +
-        '</p>' +
-        '<div class="ccb-actions">' +
-          '<button class="ccb-btn ccb-btn--accept" id="ccb-accept">Aceitar todos</button>' +
-          '<button class="ccb-btn ccb-btn--reject" id="ccb-reject">Rejeitar não-essenciais</button>' +
-          '<button class="ccb-btn ccb-btn--customize" id="ccb-customize">Personalizar</button>' +
+        '<div class="ccb-main">' +
+          '<span class="ccb-icon" aria-hidden="true">' + COOKIE_SVG + '</span>' +
+          '<p class="ccb-text">' +
+            'Usamos cookies para analisar o tráfego do site. ' +
+            '<a href="/cookies.html" class="ccb-link">Saber mais</a>' +
+          '</p>' +
+          '<div class="ccb-actions">' +
+            '<button class="ccb-btn ccb-btn--accept" id="ccb-accept">Aceitar</button>' +
+            '<button class="ccb-btn ccb-btn--reject"  id="ccb-reject">Rejeitar</button>' +
+            '<button class="ccb-btn ccb-btn--customize" id="ccb-customize" aria-expanded="false" aria-controls="ccb-panel">Personalizar</button>' +
+          '</div>' +
         '</div>' +
-        '<div class="ccb-panel" id="ccb-panel" hidden>' +
-          '<div class="ccb-toggle-row">' +
-            '<div class="ccb-toggle-info">' +
-              '<span class="ccb-toggle-name">Essenciais</span>' +
-              '<span class="ccb-toggle-desc">Necessários para o funcionamento do site. Não podem ser desactivados.</span>' +
+        '<div class="ccb-panel" id="ccb-panel" aria-hidden="true">' +
+          '<div class="ccb-panel-inner">' +
+            '<div class="ccb-toggle-row">' +
+              '<div class="ccb-toggle-info">' +
+                '<span class="ccb-toggle-name">Cookies essenciais</span>' +
+                '<span class="ccb-toggle-desc">Necessários para o funcionamento do site.</span>' +
+              '</div>' +
+              '<label class="ccb-toggle ccb-toggle--disabled" aria-label="Cookies essenciais — sempre activos">' +
+                '<input type="checkbox" checked disabled>' +
+                '<span class="ccb-slider"></span>' +
+                '<span class="ccb-toggle-label">Sempre activos</span>' +
+              '</label>' +
             '</div>' +
-            '<label class="ccb-toggle ccb-toggle--disabled" aria-label="Cookies essenciais sempre activos">' +
-              '<input type="checkbox" checked disabled>' +
-              '<span class="ccb-slider"></span>' +
-            '</label>' +
-          '</div>' +
-          '<div class="ccb-toggle-row">' +
-            '<div class="ccb-toggle-info">' +
-              '<span class="ccb-toggle-name">Analytics (GA4)</span>' +
-              '<span class="ccb-toggle-desc">Permite-nos perceber como usa o site (Google Analytics 4).</span>' +
+            '<div class="ccb-toggle-row">' +
+              '<div class="ccb-toggle-info">' +
+                '<span class="ccb-toggle-name">Cookies de analytics</span>' +
+                '<span class="ccb-toggle-desc">Google Analytics 4 — ajuda-nos a melhorar o site.</span>' +
+              '</div>' +
+              '<label class="ccb-toggle" aria-label="Cookies de analytics">' +
+                '<input type="checkbox" id="ccb-analytics-toggle">' +
+                '<span class="ccb-slider"></span>' +
+              '</label>' +
             '</div>' +
-            '<label class="ccb-toggle" aria-label="Cookies de analytics">' +
-              '<input type="checkbox" id="ccb-analytics-toggle">' +
-              '<span class="ccb-slider"></span>' +
-            '</label>' +
-          '</div>' +
-          '<div class="ccb-panel-actions">' +
-            '<button class="ccb-btn ccb-btn--accept" id="ccb-save">Guardar preferências</button>' +
+            '<div class="ccb-panel-actions">' +
+              '<button class="ccb-btn ccb-btn--accept" id="ccb-save">Guardar preferências</button>' +
+            '</div>' +
           '</div>' +
         '</div>' +
       '</div>';
+
     return el;
   }
 
-  // ── Banner lifecycle ──────────────────────────────────────────
-  function removeBanner() {
-    var b = document.getElementById(BANNER_ID);
-    if (b) b.parentNode.removeChild(b);
+  // ── Panel expand / collapse ───────────────────────────────────
+  function openPanel(btn) {
+    var panel = document.getElementById('ccb-panel');
+    if (!panel) return;
+    panel.classList.add('ccb-panel--open');
+    panel.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.textContent = 'Fechar';
   }
 
+  function closePanel(btn) {
+    var panel = document.getElementById('ccb-panel');
+    if (!panel) return;
+    panel.classList.remove('ccb-panel--open');
+    panel.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = 'Personalizar';
+  }
+
+  // ── Banner dismiss with slide-down animation ──────────────────
+  function dismissBanner() {
+    var b = document.getElementById(BANNER_ID);
+    if (!b) return;
+    b.classList.add('ccb--dismissing');
+    // duration matches CSS (0.3s) — remove after animation
+    var delay = prefersReducedMotion() ? 0 : 320;
+    setTimeout(function () {
+      if (b && b.parentNode) b.parentNode.removeChild(b);
+    }, delay);
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  // ── Wire events ───────────────────────────────────────────────
   function showBanner() {
     var banner = buildBanner();
     document.body.appendChild(banner);
@@ -95,24 +143,21 @@
     document.getElementById('ccb-accept').addEventListener('click', function () {
       savePrefs(true);
       updateConsent(true);
-      removeBanner();
+      dismissBanner();
     });
 
     document.getElementById('ccb-reject').addEventListener('click', function () {
       savePrefs(false);
       updateConsent(false);
-      removeBanner();
+      dismissBanner();
     });
 
     document.getElementById('ccb-customize').addEventListener('click', function () {
       var panel = document.getElementById('ccb-panel');
-      var opening = panel.hasAttribute('hidden');
-      if (opening) {
-        panel.removeAttribute('hidden');
-        this.textContent = 'Fechar';
+      if (panel && panel.classList.contains('ccb-panel--open')) {
+        closePanel(this);
       } else {
-        panel.setAttribute('hidden', '');
-        this.textContent = 'Personalizar';
+        openPanel(this);
       }
     });
 
@@ -120,7 +165,7 @@
       var analyticsOn = document.getElementById('ccb-analytics-toggle').checked;
       savePrefs(analyticsOn);
       updateConsent(analyticsOn);
-      removeBanner();
+      dismissBanner();
     });
   }
 
@@ -129,7 +174,7 @@
     var prefs = getPrefs();
     if (prefs !== null) {
       applyPrefs(prefs);
-      return; // consent already given — no banner
+      return;
     }
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', showBanner);
