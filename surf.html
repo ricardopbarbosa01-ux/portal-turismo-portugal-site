@@ -103,6 +103,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://videos.pexels.com">
+  <link rel="stylesheet" href="/css/style.css">
   <style>
     :root {
       --blue:#0a3d6b;--blue-mid:#1a5fa3;--blue-light:#2980d4;
@@ -145,7 +147,7 @@
 
     /* ── Hero ── */
     .surf-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#050f1f 0%,#0a2a50 55%,#0a3d6b 100%);padding:120px 5vw 84px;text-align:center;}
-    .surf-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.07) 0%,transparent 70%);}
+    .surf-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.07) 0%,transparent 70%);z-index:0;}
     .surf-hero-inner{position:relative;max-width:760px;margin:0 auto;}
     .surf-hero-tag{font-size:0.75rem;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
     .surf-hero-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:var(--white);font-weight:700;line-height:1.08;margin-bottom:20px;}
@@ -157,7 +159,17 @@
     .surf-hero-stat-label{display:block;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);}
     .surf-hero-stat-div{width:1px;height:28px;background:rgba(255,255,255,0.18);flex-shrink:0;}
     .surf-hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    .surf-hero-wave{position:absolute;bottom:-1px;left:0;right:0;width:100%;height:64px;display:block;}
+    .surf-hero-wave{position:absolute;bottom:-1px;left:0;right:0;width:100%;height:64px;display:block;z-index:2;}
+    /* Video background */
+    .surf-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+    .surf-hero-overlay{position:absolute;inset:0;background:rgba(6,13,26,0.65);z-index:1;}
+    /* Mobile: imagem estática de surf em vez de vídeo */
+    @media(max-width:768px){
+      .surf-hero-video{display:none;}
+      .surf-hero{background:url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=70') center/cover no-repeat,linear-gradient(135deg,#050f1f 0%,#0a2a50 55%,#0a3d6b 100%);}
+    }
+    /* Reduced motion: gradient puro */
+    @media(prefers-reduced-motion:reduce){.surf-hero-video{display:none;}.surf-hero *{animation:none!important;}}
 
     /* ── Breadcrumb ── */
     .breadcrumb{padding:16px 5vw 0;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-light);}
@@ -318,37 +330,37 @@
 
     /* ══ Hero 2-col ══ */
     .surf-hero{padding:116px 5vw 0;text-align:left;}
-    .surf-hero-2col{position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:center;z-index:1;}
+    .surf-hero-2col{position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:center;z-index:2;}
     @media(max-width:900px){.surf-hero-2col{grid-template-columns:1fr;gap:36px;text-align:center;}}
     .surf-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.28);border-radius:50px;padding:6px 14px 6px 10px;margin-bottom:24px;}
     .surf-hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
-    .surf-hero-badge span{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);}
-    .surf-hero-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.4rem,5.5vw,4rem);color:var(--white);font-weight:700;line-height:1.06;margin-bottom:20px;}
+    .surf-hero-badge span{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);text-shadow:0 1px 8px rgba(0,0,0,0.55);}
+    .surf-hero-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.4rem,5.5vw,4rem);color:var(--white);font-weight:700;line-height:1.06;margin-bottom:20px;text-shadow:0 2px 28px rgba(0,0,0,0.70),0 1px 6px rgba(0,0,0,0.55);}
     .surf-hero-title em{font-style:italic;color:var(--gold-light);}
-    .surf-hero-subtitle{font-size:clamp(0.97rem,1.7vw,1.08rem);color:rgba(255,255,255,0.72);max-width:520px;margin:0 0 30px;line-height:1.75;}
+    .surf-hero-subtitle{font-size:clamp(0.97rem,1.7vw,1.08rem);color:rgba(255,255,255,0.72);max-width:520px;margin:0 0 30px;line-height:1.75;text-shadow:0 2px 14px rgba(0,0,0,0.65),0 1px 4px rgba(0,0,0,0.45);}
     @media(max-width:900px){.surf-hero-subtitle{margin:0 auto 30px;}}
     .surf-hero-stats-row{display:flex;align-items:center;gap:0;background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:10px 20px;width:fit-content;margin-bottom:28px;}
     @media(max-width:900px){.surf-hero-stats-row{margin:0 auto 28px;}}
     .surf-hero-stat{text-align:center;padding:0 16px;}
-    .surf-hero-stat-value{display:block;font-family:'Bodoni Moda',serif;font-size:1.3rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:2px;}
-    .surf-hero-stat-label{display:block;font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.50);}
+    .surf-hero-stat-value{display:block;font-family:'Bodoni Moda',serif;font-size:1.3rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:2px;text-shadow:0 2px 12px rgba(0,0,0,0.55);}
+    .surf-hero-stat-label{display:block;font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.50);text-shadow:0 1px 6px rgba(0,0,0,0.50);}
     .surf-hero-stat-div{width:1px;height:24px;background:rgba(255,255,255,0.15);flex-shrink:0;}
     .surf-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
     @media(max-width:900px){.surf-hero-actions{justify-content:center;}}
     .surf-hero-trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.09);}
     @media(max-width:900px){.surf-hero-trust{justify-content:center;}}
-    .surf-hero-trust-item{display:flex;align-items:center;gap:6px;font-size:0.76rem;color:rgba(255,255,255,0.50);}
+    .surf-hero-trust-item{display:flex;align-items:center;gap:6px;font-size:0.76rem;color:rgba(255,255,255,0.80);text-shadow:0 1px 6px rgba(0,0,0,0.50);}
     .surf-hero-trust-item svg{width:12px;height:12px;stroke:var(--gold);fill:none;stroke-width:2.5;flex-shrink:0;}
     /* Hero visual card */
-    .surf-hero-visual{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:24px;backdrop-filter:blur(16px);}
+    .surf-hero-visual{background:rgba(6,13,26,0.55);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:24px;backdrop-filter:blur(16px);}
     @media(max-width:900px){.surf-hero-visual{display:none;}}
-    .shv-label{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+    .shv-label{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;text-shadow:0 1px 8px rgba(0,0,0,0.55);}
     .shv-spot-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
     .shv-spot-row:last-child{border-bottom:none;padding-bottom:0;}
     .shv-spot-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .shv-spot-icon svg{width:16px;height:16px;stroke:var(--white);fill:none;stroke-width:1.8;}
-    .shv-spot-name{font-size:0.88rem;font-weight:600;color:var(--white);line-height:1;}
-    .shv-spot-meta{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:2px;}
+    .shv-spot-name{font-size:0.88rem;font-weight:600;color:#FFFFFF;line-height:1;text-shadow:0 2px 20px rgba(0,0,0,0.5);}
+    .shv-spot-meta{font-size:0.7rem;color:rgba(255,255,255,0.65);margin-top:2px;text-shadow:0 1px 6px rgba(0,0,0,0.50);}
     .shv-spot-dots{display:flex;gap:3px;margin-left:auto;flex-shrink:0;}
     .shv-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.20);}
     .shv-dot.on{background:var(--gold);}
@@ -539,6 +551,15 @@
 <main id="main">
   <!-- Hero -->
   <section class="surf-hero" aria-labelledby="surf-hero-heading">
+    <video
+      class="surf-hero-video"
+      id="surf-bg-video"
+      src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4"
+      poster="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1200&q=60"
+      playsinline autoplay muted loop
+      aria-hidden="true"
+    ></video>
+    <div class="surf-hero-overlay" aria-hidden="true"></div>
     <div class="surf-hero-2col">
       <!-- Left -->
       <div>
