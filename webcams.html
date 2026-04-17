@@ -285,6 +285,14 @@
     .tipo-chips-bar::-webkit-scrollbar{display:none;}
     @media(max-width:768px){.tipo-chips-bar{padding:8px 4vw;}}
 
+    /* ── Conditions widget ── */
+    .wcam-conditions{padding:10px 16px;background:#f0f2f5;border-top:1px solid var(--border);border-radius:0;}
+    .wcam-cond-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+    .wcam-cond-item{display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text-mid);white-space:nowrap;}
+    .wcam-cond-unavail{font-size:12px;color:var(--text-light);font-style:italic;}
+    .wcam-cond-skeleton{height:34px;border-radius:8px;background:linear-gradient(90deg,#dde1e8 25%,#edf0f5 50%,#dde1e8 75%);background-size:200% 100%;animation:wcam-shimmer 1.4s ease-in-out infinite;}
+    @keyframes wcam-shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
     /* ── Card secondary footer ── */
     .wcam-footer-secondary{display:flex;align-items:center;gap:8px;padding:8px 18px 14px;flex-wrap:wrap;border-top:1px solid var(--border);}
     .wcam-sec-link{display:inline-flex;align-items:center;gap:4px;font-size:0.7rem;font-weight:500;color:var(--text-light);padding:4px 10px;border-radius:50px;border:1px solid var(--border);transition:all 0.2s;white-space:nowrap;text-decoration:none;min-height:28px;}
@@ -777,7 +785,7 @@
       location:'Praia de Matosinhos, Porto',
       region:'Porto', bgClass:'wcam-bg--porto',
       state:'live', url:'https://beachcam.meo.pt/livecams/praia-de-matosinhos/',
-      tipo:'surf',
+      tipo:'surf', lat:41.1847, lng:-8.6890,
       desc:'Vista para a praia urbana de Matosinhos — ondulação atlântica, correntes e condições de surf da costa norte em câmara permanente.',
       tags:['Surf','Norte','Ondulação']
     },
@@ -786,7 +794,7 @@
       location:'Praia da Póvoa, Porto',
       region:'Porto', bgClass:'wcam-bg--porto',
       state:'pending', url:null,
-      tipo:'praia',
+      tipo:'praia', lat:41.3828, lng:-8.7685,
       desc:'Costa norte com condições típicas de vento onshore. Vista sobre o quebra-mar e extensa praia de areia.',
       tags:['Praia','Norte','Vento']
     },
@@ -795,7 +803,7 @@
       location:'Praia do Norte, Nazaré',
       region:'Centro', bgClass:'wcam-bg--centro',
       state:'live', url:'https://beachcam.meo.pt/livecams/praia-do-norte/',
-      tipo:'surf',
+      tipo:'surf', lat:39.6015, lng:-9.0699,
       desc:'Monitorização contínua do pico que detém o recorde mundial de ondas maiores — câmara permanente sobre a Praia do Norte.',
       tags:['Big Waves','Surf','Recorde Mundial']
     },
@@ -804,7 +812,7 @@
       location:'Supertubos, Peniche',
       region:'Centro', bgClass:'wcam-bg--centro',
       state:'live', url:'https://beachcam.meo.pt/livecams/peniche-supertubos/',
-      tipo:'surf',
+      tipo:'surf', lat:39.3433, lng:-9.3675,
       desc:'Câmara sobre o mítico Supertubos — palco da etapa portuguesa do World Surf League. Condições de barrel em tempo real.',
       tags:['WCT','Barrel','WSL']
     },
@@ -813,7 +821,7 @@
       location:'Praia do Cabedelo, Figueira da Foz',
       region:'Centro', bgClass:'wcam-bg--centro',
       state:'live', url:'https://beachcam.meo.pt/livecams/figueira-da-foz-cabedelo/',
-      tipo:'praia',
+      tipo:'praia', lat:40.1460, lng:-8.8580,
       desc:'Câmara ao vivo sobre o Cabedelo — praia de areia com bancos e swell de noroeste. Boa leitura de condições para toda a região centro.',
       tags:['Praia','Swell','Centro']
     },
@@ -822,7 +830,7 @@
       location:'Ribeira d\'Ilhas, Ericeira',
       region:'Lisboa', bgClass:'wcam-bg--lisboa',
       state:'live', url:'https://beachcam.meo.pt/livecams/ericeira/',
-      tipo:'surf',
+      tipo:'surf', lat:38.9634, lng:-9.4154,
       desc:'Reserva Mundial de Surf em câmara permanente. Monitorize Ribeira d\'Ilhas antes de planear a sua deslocação.',
       tags:['Reserva Mundial','Surf','WSL']
     },
@@ -831,7 +839,7 @@
       location:'Praia do Guincho, Cascais',
       region:'Lisboa', bgClass:'wcam-bg--lisboa',
       state:'live', url:'https://beachcam.meo.pt/livecams/praia-do-guincho/',
-      tipo:'surf',
+      tipo:'surf', lat:38.7266, lng:-9.4734,
       desc:'Leitura do vento noroeste característico do Guincho — ideal para windsurf, kitesurf e surf de onda.',
       tags:['Windsurf','Kite','Vento']
     },
@@ -840,7 +848,7 @@
       location:'Praia da Costa da Caparica, Setúbal',
       region:'Lisboa', bgClass:'wcam-bg--lisboa',
       state:'live', url:'https://beachcam.meo.pt/livecams/costa-da-caparica/',
-      tipo:'praia',
+      tipo:'praia', lat:38.6266, lng:-9.2354,
       desc:'30 km de costa a sul de Lisboa. Vista sobre os bancos de areia com leitura de ondulação de sul e noroeste.',
       tags:['Praia Longa','Surf','Lisboa']
     },
@@ -849,7 +857,7 @@
       location:'Vila Nova de Milfontes, Alentejo',
       region:'Alentejo', bgClass:'wcam-bg--alentejo',
       state:'soon', url:null,
-      tipo:'natureza',
+      tipo:'natureza', lat:37.7251, lng:-8.7938,
       desc:'Costa protegida no Parque Natural do Sudoeste Alentejano. Natureza intocada e acessibilidade controlada.',
       tags:['Parque Natural','Selvagem','Alentejo']
     },
@@ -858,7 +866,7 @@
       location:'Praia da Luz, Lagos',
       region:'Algarve', bgClass:'wcam-bg--algarve',
       state:'live', url:'https://beachcam.meo.pt/livecams/praia-da-luz/',
-      tipo:'praia',
+      tipo:'praia', lat:37.0880, lng:-8.7153,
       desc:'Câmara ao vivo sobre a Praia da Luz — boa referência de condições para a costa barlavento do Algarve.',
       tags:['Algarve','Surf','Lagos']
     },
@@ -867,7 +875,7 @@
       location:'Praia da Rocha, Portimão',
       region:'Algarve', bgClass:'wcam-bg--algarve',
       state:'live', url:'https://beachcam.meo.pt/livecams/praia-da-rocha/',
-      tipo:'praia',
+      tipo:'praia', lat:37.1200, lng:-8.5363,
       desc:'Praia icónica do Algarve com falésias rochosas. Câmara sobre o esporão com vista para o mar aberto.',
       tags:['Falésia','Algarve','Turismo']
     },
@@ -876,7 +884,7 @@
       location:'Praia dos Mosteiros, São Miguel',
       region:'Açores', bgClass:'wcam-bg--acores',
       state:'pending', url:null,
-      tipo:'natureza',
+      tipo:'natureza', lat:37.8871, lng:-25.8277,
       desc:'Costa vulcânica dos Açores com ondulação atlântica de longo período. Mar de águas escuras único no panorama europeu.',
       tags:['Vulcânico','Atlântico','Açores']
     },
@@ -885,11 +893,58 @@
       location:'Baía do Funchal, Madeira',
       region:'Madeira', bgClass:'wcam-bg--madeira',
       state:'soon', url:null,
-      tipo:'pesca',
+      tipo:'pesca', lat:32.6494, lng:-16.9088,
       desc:'Vista panorâmica sobre a baía do Funchal. Monitorização de condições para embarcações, mergulhadores e banhistas.',
       tags:['Mergulho','Baía','Madeira']
     }
   ];
+
+  // ── Conditions cache & helpers ────────────────────────────────────
+  // keyed by webcam name; value = {wave_height, wind_speed, temperature} | null (error) | undefined (not yet fetched)
+  const conditionsCache = {};
+
+  function conditionsHtml(name) {
+    const d = conditionsCache[name];
+    if (d === undefined) return '<div class="wcam-cond-skeleton" aria-hidden="true"></div>';
+    if (d === null) return '<span class="wcam-cond-unavail">Condições indisponíveis</span>';
+    return `<div class="wcam-cond-row">
+      <span class="wcam-cond-item">🌊 Ondas: ${d.wave_height !== null ? d.wave_height.toFixed(1) + 'm' : '—'}</span>
+      <span class="wcam-cond-item">💨 Vento: ${d.wind_speed !== null ? Math.round(d.wind_speed) + ' km/h' : '—'}</span>
+      <span class="wcam-cond-item">🌡️ Temp: ${d.temperature !== null ? Math.round(d.temperature) + '°C' : '—'}</span>
+    </div>`;
+  }
+
+  function applyConditionsToDom(name) {
+    document.querySelectorAll(`[data-cond-spot="${CSS.escape(name)}"]`).forEach(el => {
+      el.innerHTML = conditionsHtml(name);
+    });
+  }
+
+  async function fetchConditionsForWebcam(w) {
+    try {
+      const [marineRes, weatherRes] = await Promise.all([
+        fetch(`https://marine-api.open-meteo.com/v1/marine?latitude=${w.lat}&longitude=${w.lng}&current=wave_height,wave_period&timezone=Europe/Lisbon`),
+        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${w.lat}&longitude=${w.lng}&current=wind_speed_10m,temperature_2m&timezone=Europe/Lisbon`)
+      ]);
+      const [marine, weather] = await Promise.all([marineRes.json(), weatherRes.json()]);
+      conditionsCache[w.name] = {
+        wave_height: marine?.current?.wave_height ?? null,
+        wind_speed:  weather?.current?.wind_speed_10m ?? null,
+        temperature: weather?.current?.temperature_2m ?? null
+      };
+    } catch (_) {
+      conditionsCache[w.name] = null;
+    }
+    applyConditionsToDom(w.name);
+  }
+
+  async function fetchAllConditions() {
+    const pending = WEBCAMS.filter(w => w.lat && w.lng && !(w.name in conditionsCache));
+    for (let i = 0; i < pending.length; i++) {
+      if (i > 0) await new Promise(r => setTimeout(r, 200));
+      fetchConditionsForWebcam(pending[i]); // fire-and-forget per webcam, no await
+    }
+  }
 
   // ── Labels ───────────────────────────────────────────────────────
   const STATE_LABEL = { live:'Disponível', pending:'Em Integração', soon:'Brevemente' };
@@ -1022,6 +1077,7 @@
             <p class="wcam-desc">${esc(w.desc)}</p>
             <div class="wcam-tags">${w.tags.map(t => `<span class="wcam-tag">${esc(t)}</span>`).join('')}</div>
           </div>
+          <div class="wcam-conditions" data-cond-spot="${esc(w.name)}" aria-label="Condições meteorológicas">${conditionsHtml(w.name)}</div>
           <div class="wcam-footer">${actionEl}</div>
           <div class="wcam-footer-secondary">
             <a href="${explorarHref}" class="wcam-sec-link" aria-label="${explorarLabel} na zona de ${esc(w.region)}">
@@ -1059,6 +1115,7 @@
       if (tipoChip) { document.querySelectorAll('#tipo-chips .chip').forEach(c => c.classList.remove('active')); tipoChip.classList.add('active'); }
     }
     applyFilters();
+    fetchAllConditions();
   })();
 </script>
 <script src="/js/lang-switcher.js" defer></script>
