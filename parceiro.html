@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+  <title>Área do Parceiro · Portugal Travel Hub</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="css/style.css?v=20260416b">
+
+  <style>
+    /* ── Layout ── */
+    .account-root {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: calc(100vh - 64px);
+      margin-top: 64px;
+    }
+    .account-sidebar {
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      padding: 32px 24px;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .acc-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1a5fa3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 700; color: var(--white);
+      margin-bottom: 14px; flex-shrink: 0;
+    }
+    .acc-name {
+      font-size: 0.95rem; font-weight: 600; color: var(--white);
+      margin-bottom: 4px; word-break: break-word;
+    }
+    .acc-meta {
+      font-size: 0.75rem; color: rgba(255,255,255,0.5);
+      margin-bottom: 4px; word-break: break-word;
+    }
+    .acc-verified-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+      background: rgba(34,197,94,0.15); color: #4ade80;
+      border: 1px solid rgba(34,197,94,0.30);
+      padding: 3px 9px; border-radius: 20px; margin-bottom: 28px;
+      width: fit-content;
+    }
+    .acc-sidebar-nav {
+      flex: 1; display: flex; flex-direction: column; gap: 2px;
+    }
+    .acc-nav-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 8px;
+      font-size: 0.875rem; font-weight: 500;
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      cursor: pointer; background: none; border: none;
+      font-family: var(--font-body); text-align: left; width: 100%;
+      transition: background 0.15s, color 0.15s;
+    }
+    .acc-nav-link:hover { background: rgba(255,255,255,0.07); color: var(--white); }
+    .acc-nav-link.active { background: rgba(255,255,255,0.12); color: var(--white); font-weight: 600; }
+    .acc-signout {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.8125rem; color: rgba(255,255,255,0.45);
+      cursor: pointer; padding: 10px 0; background: none; border: none;
+      font-family: var(--font-body); transition: color 0.15s;
+      text-align: left; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 16px; width: 100%;
+    }
+    .acc-signout svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+    .acc-signout:hover { color: rgba(255,255,255,0.8); }
+
+    /* ── Main area ── */
+    .account-main {
+      background: var(--off-white);
+      min-height: calc(100vh - 64px);
+      padding: 40px;
+    }
+    .account-topbar { margin-bottom: 32px; }
+    .account-topbar h1 {
+      font-family: var(--font-heading); font-size: 1.5rem;
+      font-weight: 700; color: var(--blue); margin: 0 0 4px;
+    }
+    .account-topbar p { font-size: 0.875rem; color: var(--text-light); margin: 0; }
+
+    /* ── Sections ── */
+    .partner-section { margin-bottom: 40px; }
+    .partner-section h2 {
+      font-family: var(--font-heading); font-size: 1.125rem;
+      font-weight: 700; color: var(--blue);
+      margin: 0 0 16px; padding-bottom: 10px;
+      border-bottom: 2px solid rgba(10,61,107,0.10);
+    }
+
+    /* ── Lead cards ── */
+    .leads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+    .lead-card {
+      background: var(--white);
+      border: 1px solid rgba(10,61,107,0.09);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .lead-card-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .lead-client-name {
+      font-size: 1rem; font-weight: 600; color: var(--blue);
+    }
+    .lead-date {
+      font-size: 0.7rem; color: var(--text-light);
+      white-space: nowrap; margin-left: 8px;
+    }
+    .lead-row {
+      display: flex; align-items: baseline; gap: 6px;
+      font-size: 0.8rem; color: var(--text-body);
+      margin-bottom: 6px;
+    }
+    .lead-row-label {
+      font-weight: 600; color: var(--blue); min-width: 80px; flex-shrink: 0;
+    }
+    .lead-row a { color: var(--gold); text-decoration: none; }
+    .lead-row a:hover { text-decoration: underline; }
+    .lead-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+    .lead-badge {
+      display: inline-flex; align-items: center;
+      background: rgba(10,61,107,0.07); color: var(--blue);
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em;
+      padding: 3px 8px; border-radius: 20px;
+    }
+    .lead-notes {
+      margin-top: 10px; padding: 8px 12px;
+      background: rgba(201,168,76,0.07); border-left: 3px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.8rem; color: var(--text-body); font-style: italic;
+    }
+
+    /* ── Empty / loading states ── */
+    .leads-empty, .leads-loading {
+      padding: 40px 20px; text-align: center;
+      color: var(--text-light); font-size: 0.875rem;
+      background: var(--white); border-radius: 12px;
+      border: 1px solid rgba(10,61,107,0.09);
+    }
+    .leads-loading { display: flex; align-items: center; justify-content: center; gap: 10px; }
+
+    /* ── Profile card ── */
+    .profile-card {
+      background: var(--white);
+      border: 1px solid rgba(10,61,107,0.09);
+      border-radius: 12px; padding: 24px;
+      max-width: 480px;
+    }
+    .profile-row {
+      display: flex; gap: 12px;
+      font-size: 0.875rem; padding: 8px 0;
+      border-bottom: 1px solid rgba(10,61,107,0.06);
+    }
+    .profile-row:last-of-type { border-bottom: none; }
+    .profile-row-label { font-weight: 600; color: var(--blue); min-width: 100px; }
+    .profile-row-value { color: var(--text-body); }
+    .btn-edit-profile {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px; padding: 9px 20px;
+      background: var(--blue); color: var(--white);
+      font-size: 0.8125rem; font-weight: 600;
+      border-radius: 8px; text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn-edit-profile:hover { opacity: 0.85; }
+
+    /* ── Gate screens ── */
+    .gate-screen {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: calc(100vh - 64px); padding: 40px 20px; text-align: center;
+    }
+    .gate-icon { font-size: 3rem; margin-bottom: 16px; }
+    .gate-title { font-family: var(--font-heading); font-size: 1.5rem; color: var(--blue); margin-bottom: 12px; }
+    .gate-text { font-size: 0.9375rem; color: var(--text-light); max-width: 420px; line-height: 1.7; margin-bottom: 24px; }
+    .gate-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px; background: var(--blue); color: var(--white);
+      font-size: 0.875rem; font-weight: 600; border-radius: 8px;
+      text-decoration: none; transition: opacity 0.15s;
+    }
+    .gate-link:hover { opacity: 0.85; }
+
+    /* ── Spinner ── */
+    .spinner-small {
+      width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid rgba(10,61,107,0.15);
+      border-top-color: var(--blue); animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .account-root { grid-template-columns: 1fr; margin-top: 60px; }
+      .account-sidebar {
+        position: static; height: auto; flex-direction: row;
+        flex-wrap: wrap; align-items: center; gap: 12px;
+        padding: 16px 20px;
+      }
+      .acc-avatar { width: 40px; height: 40px; font-size: 1rem; margin-bottom: 0; }
+      .acc-verified-badge { margin-bottom: 0; }
+      .acc-meta { display: none; }
+      .acc-sidebar-nav { flex-direction: row; flex: none; }
+      .acc-signout { margin-top: 0; border-top: none; padding-top: 0; }
+      .account-main { padding: 24px 16px; }
+      .leads-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    Portugal Travel Hub
+  </a>
+  <div class="nav-links" role="list">
+    <a href="beaches.html" role="listitem">Praias</a>
+    <a href="surf.html" role="listitem">Surf</a>
+    <a href="pesca.html" role="listitem">Pesca</a>
+    <a href="webcams.html" role="listitem">Webcams</a>
+    <a href="planear.html" role="listitem">Planear</a>
+    <a href="parceiros.html" role="listitem">Parceiros</a>
+  </div>
+  <div class="nav-actions">
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Gate: sem perfil de parceiro -->
+<div id="gate-no-profile" class="gate-screen" style="display:none;">
+  <div class="gate-icon">🏢</div>
+  <h1 class="gate-title">Sem perfil de parceiro</h1>
+  <p class="gate-text">Não encontrámos um perfil de parceiro associado à sua conta. Candidate-se na página de parceiros para fazer parte da nossa rede.</p>
+  <a href="/parceiros.html#candidatura" class="gate-link">Candidatar-me como parceiro</a>
+</div>
+
+<!-- Gate: candidatura em análise -->
+<div id="gate-pending" class="gate-screen" style="display:none;">
+  <div class="gate-icon">⏳</div>
+  <h1 class="gate-title">Candidatura em análise</h1>
+  <p class="gate-text">A sua candidatura está a ser revista pela nossa equipa. Entraremos em contacto em breve para confirmar a aprovação.</p>
+</div>
+
+<!-- Dashboard (visível apenas quando aprovado=true) -->
+<div id="partner-dashboard" class="account-root" style="display:none;">
+
+  <!-- Sidebar -->
+  <aside class="account-sidebar" aria-label="Perfil do parceiro">
+    <div class="acc-avatar" id="acc-avatar">P</div>
+    <div class="acc-name" id="acc-name">Parceiro</div>
+    <div class="acc-meta" id="acc-type"></div>
+    <div class="acc-meta" id="acc-region"></div>
+    <div class="acc-verified-badge">✓ Parceiro Verificado</div>
+
+    <nav class="acc-sidebar-nav" aria-label="Navegação da área de parceiro">
+      <button class="acc-nav-link active" id="nav-leads" onclick="showSection('leads')">
+        📋 Pedidos de viagem
+      </button>
+      <button class="acc-nav-link" id="nav-profile" onclick="showSection('profile')">
+        👤 O meu perfil
+      </button>
+    </nav>
+
+    <button class="acc-signout" id="signout-btn" aria-label="Terminar sessão">
+      <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Terminar sessão
+    </button>
+  </aside>
+
+  <!-- Main content -->
+  <main class="account-main">
+
+    <!-- Secção: Leads -->
+    <section id="section-leads" aria-label="Pedidos de viagem na sua zona">
+      <div class="account-topbar">
+        <h1>📋 Pedidos de viagem na sua zona</h1>
+        <p>Viajantes que planeiam visitar a sua região e estão à procura de parceiros locais</p>
+      </div>
+      <div class="partner-section">
+        <div id="leads-container" class="leads-loading" aria-live="polite">
+          <div class="spinner-small"></div> A carregar pedidos…
+        </div>
+      </div>
+    </section>
+
+    <!-- Secção: Perfil -->
+    <section id="section-profile" style="display:none;" aria-label="O meu perfil de parceiro">
+      <div class="account-topbar">
+        <h1>👤 O meu perfil</h1>
+        <p>Os seus dados como parceiro verificado</p>
+      </div>
+      <div class="partner-section">
+        <div class="profile-card" id="profile-card">
+          <div class="leads-loading">
+            <div class="spinner-small"></div> A carregar perfil…
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/nav.js?v=20260415"></script>
+<script src="js/config.js?v=20260402"></script>
+<script>
+/* ── Estado global ─────────────────────────────────────────────────── */
+let partnerData = null;
+
+/* ── Auth guard + bootstrap ────────────────────────────────────────── */
+(async () => {
+  const { data: { user } } = await db.auth.getUser();
+  if (!user) { window.location.href = '/login.html'; return; }
+
+  // Buscar perfil do parceiro
+  const { data: partner, error } = await db
+    .from('partners')
+    .select('*')
+    .eq('user_id', user.id)
+    .single();
+
+  if (error || !partner) {
+    document.getElementById('gate-no-profile').style.display = 'flex';
+    return;
+  }
+
+  if (!partner.aprovado) {
+    document.getElementById('gate-pending').style.display = 'flex';
+    return;
+  }
+
+  // Parceiro aprovado — mostrar dashboard
+  partnerData = partner;
+  initDashboard(user, partner);
+})();
+
+/* ── Inicializar dashboard ─────────────────────────────────────────── */
+function initDashboard(user, partner) {
+  document.getElementById('partner-dashboard').style.display = 'grid';
+
+  // Preencher sidebar
+  const initial = (partner.nome || user.email || 'P').charAt(0).toUpperCase();
+  document.getElementById('acc-avatar').textContent = initial;
+  document.getElementById('acc-name').textContent = partner.nome || user.email;
+  document.getElementById('acc-type').textContent = partner.tipo || '';
+  document.getElementById('acc-region').textContent = partner.regiao ? '📍 ' + partner.regiao : '';
+
+  // Logout
+  document.getElementById('signout-btn').addEventListener('click', async () => {
+    await db.auth.signOut();
+    window.location.href = '/';
+  });
+
+  // Carregar leads
+  loadLeads(partner);
+}
+
+/* ── Navegação entre secções ───────────────────────────────────────── */
+function showSection(name) {
+  document.getElementById('section-leads').style.display = name === 'leads' ? '' : 'none';
+  document.getElementById('section-profile').style.display = name === 'profile' ? '' : 'none';
+  document.getElementById('nav-leads').classList.toggle('active', name === 'leads');
+  document.getElementById('nav-profile').classList.toggle('active', name === 'profile');
+
+  if (name === 'profile' && partnerData) renderProfile(partnerData);
+}
+
+/* ── Leads ─────────────────────────────────────────────────────────── */
+async function loadLeads(partner) {
+  const container = document.getElementById('leads-container');
+
+  const { data: leads, error } = await db
+    .from('plan_requests')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    container.className = 'leads-empty';
+    container.textContent = 'Erro ao carregar pedidos. Tente novamente mais tarde.';
+    return;
+  }
+
+  if (!leads || leads.length === 0) {
+    const regiao = partner.regiao || 'a sua região';
+    container.className = 'leads-empty';
+    container.textContent =
+      `Ainda não há pedidos na sua zona. Quando um viajante planear uma viagem para ${regiao}, o pedido aparecerá aqui.`;
+    return;
+  }
+
+  container.className = 'leads-grid';
+  container.innerHTML = leads.map(lead => buildLeadCard(lead)).join('');
+}
+
+function buildLeadCard(lead) {
+  const nome = escapeHtml(lead.nome || lead.name || 'Viajante');
+  const email = escapeHtml(lead.email || '');
+  const emailLink = email
+    ? `<a href="mailto:${email}" rel="noopener noreferrer">${email}</a>`
+    : '—';
+
+  const dataInicio = formatDate(lead.data_inicio || lead.start_date);
+  const dataFim    = formatDate(lead.data_fim    || lead.end_date);
+  const datas = (dataInicio || dataFim)
+    ? `${dataInicio || '?'} → ${dataFim || '?'}`
+    : '—';
+
+  const pessoas   = lead.num_pessoas || lead.pessoas || lead.people || '—';
+  const orcamento = lead.orcamento   || lead.budget  || '';
+  const notas     = escapeHtml(lead.notas || lead.notes || '');
+  const createdAt = formatDate(lead.created_at);
+
+  let interesses = lead.interesses || lead.interests || [];
+  if (typeof interesses === 'string') {
+    try { interesses = JSON.parse(interesses); } catch(_) { interesses = interesses.split(',').map(s => s.trim()); }
+  }
+  const badgesHtml = Array.isArray(interesses) && interesses.length
+    ? `<div class="lead-badges">${interesses.map(i => `<span class="lead-badge">${escapeHtml(String(i))}</span>`).join('')}</div>`
+    : '';
+
+  const notasHtml = notas
+    ? `<div class="lead-notes">"${notas}"</div>`
+    : '';
+
+  return `
+    <article class="lead-card">
+      <div class="lead-card-header">
+        <span class="lead-client-name">${nome}</span>
+        <span class="lead-date">${createdAt}</span>
+      </div>
+      <div class="lead-row"><span class="lead-row-label">Email</span>${emailLink}</div>
+      <div class="lead-row"><span class="lead-row-label">Datas</span>${datas}</div>
+      <div class="lead-row"><span class="lead-row-label">Pessoas</span>${escapeHtml(String(pessoas))}</div>
+      ${orcamento ? `<div class="lead-row"><span class="lead-row-label">Orçamento</span>${escapeHtml(String(orcamento))}</div>` : ''}
+      ${badgesHtml}
+      ${notasHtml}
+    </article>`;
+}
+
+/* ── Perfil ────────────────────────────────────────────────────────── */
+function renderProfile(partner) {
+  const card = document.getElementById('profile-card');
+  const rows = [
+    { label: 'Nome',     value: partner.nome      || '—' },
+    { label: 'Tipo',     value: partner.tipo       || '—' },
+    { label: 'Região',   value: partner.regiao     || '—' },
+    { label: 'Website',  value: partner.website    || '—' },
+    { label: 'Telefone', value: partner.telefone   || '—' },
+  ];
+
+  const subject = encodeURIComponent('Atualizar perfil de parceiro');
+  card.innerHTML = rows.map(r => `
+    <div class="profile-row">
+      <span class="profile-row-label">${escapeHtml(r.label)}</span>
+      <span class="profile-row-value">${escapeHtml(String(r.value))}</span>
+    </div>`).join('') +
+    `<a href="mailto:suporte@portalturismoportugal.com?subject=${subject}" class="btn-edit-profile" rel="noopener noreferrer">
+      ✏️ Editar perfil
+    </a>`;
+}
+
+/* ── Helpers ───────────────────────────────────────────────────────── */
+function formatDate(val) {
+  if (!val) return '';
+  try {
+    const d = new Date(val);
+    if (isNaN(d.getTime())) return String(val);
+    return d.toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', year: 'numeric' });
+  } catch(_) { return String(val); }
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+</script>
+</body>
+</html>
