@@ -189,7 +189,9 @@
 (async () => {
   const { data: { user } } = await db.auth.getUser();
   if (!user) { window.location.href = '/login.html'; return; }
-  if (user.app_metadata?.plan !== 'pro') { window.location.href = '/precos.html'; return; }
+
+  const justPaid = new URLSearchParams(window.location.search).get('activated') === '1';
+  if (user.app_metadata?.plan !== 'pro' && !justPaid) { window.location.href = '/precos.html'; return; }
 
   // Preencher dados do utilizador na sidebar
   const name = user.user_metadata?.full_name || user.email || '';
@@ -204,8 +206,52 @@
     window.location.href = '/';
   });
 
-  // Carregar favoritos
-  await loadFavoritesSection();
+  // Carregar favoritos (se já Pro confirmado)
+  if (user.app_metadata?.plan === 'pro' && !justPaid) {
+    await loadFavoritesSection();
+  }
+
+  // Post-checkout activation confirmation with polling (race condition hardening)
+  if (justPaid) {
+    history.replaceState(null, '', '/conta.html');
+
+    function isProActive(u) { return u?.app_metadata?.plan === 'pro'; }
+
+    const pendingEl = document.createElement('div');
+    pendingEl.id = 'pro-pending';
+    pendingEl.setAttribute('aria-live', 'polite');
+    pendingEl.style.cssText = 'text-align:center;padding:12px 24px;color:var(--gold,#C9A84C);font-size:0.875rem;font-weight:500;';
+    pendingEl.textContent = 'A verificar ativação…';
+    document.querySelector('.account-main')?.prepend(pendingEl);
+
+    const { data: { user: freshUser } } = await db.auth.getUser();
+    if (isProActive(freshUser)) {
+      // Webhook disparou antes do redirect — confirmação imediata
+      pendingEl.remove();
+      await loadFavoritesSection();
+      track('pro_activation_return', { page: 'conta', result: 'immediate' });
+      showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
+    } else {
+      // Poll até role confirmado ou timeout 12s (6 × 2s)
+      let attempts = 0;
+      const MAX_ATTEMPTS = 6;
+      const pollTimer = setInterval(async () => {
+        attempts++;
+        const { data: { user: polled } } = await db.auth.getUser();
+        if (isProActive(polled)) {
+          clearInterval(pollTimer);
+          pendingEl.remove();
+          await loadFavoritesSection();
+          track('pro_activation_return', { page: 'conta', result: 'polled', attempts });
+          showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
+        } else if (attempts >= MAX_ATTEMPTS) {
+          clearInterval(pollTimer);
+          pendingEl.textContent = 'A ativação pode demorar alguns segundos. Atualiza esta página.';
+          pendingEl.style.color = 'var(--text-light)';
+        }
+      }, 2000);
+    }
+  }
 })();
 
 /* ── Favorites (copiado de dashboard.html sem alterações) ──────── */

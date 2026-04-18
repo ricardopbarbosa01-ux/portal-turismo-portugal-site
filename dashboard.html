@@ -903,7 +903,7 @@
   if (!isPro) {
     const emailEnc = encodeURIComponent(user.email || '');
     const lsBase   = 'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/2d56d759-3e65-46cb-9210-ea7c0fce2cb3';
-    const lsUrl    = `${lsBase}?checkout[email]=${emailEnc}&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fdashboard.html%3Factivated%3D1`;
+    const lsUrl    = `${lsBase}?checkout[email]=${emailEnc}&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fconta.html%3Factivated%3D1`;
     const banner   = document.createElement('div');
     banner.id      = 'pro-upgrade-banner';
     banner.innerHTML = `<div style="background:#1B3A6B;color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-radius:8px;margin:16px 24px 0;flex-wrap:wrap;"><span style="font-size:14px;">⚡ <strong>Plano Gratuito</strong> — Faz upgrade para Pro e desbloqueia webcams HD, alertas em tempo real e previsões de 10 dias.</span><a href="${lsUrl}" style="background:#C9A84C;color:#1B3A6B;padding:8px 20px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap;" onclick="track('dashboard_upgrade_banner_click',{page:'dashboard'})">Activar Pro — €4,99/mês</a></div>`;
