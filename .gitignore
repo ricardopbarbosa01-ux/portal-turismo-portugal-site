@@ -16,3 +16,7 @@ smoke-test.png
 /playwright/.auth/
 .claude/
 .mcp.json
+
+# Local environment — credentials never committed
+.env.local
+.env*.local
