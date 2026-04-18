@@ -801,6 +801,11 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
 
+  // ── Security helper ─────────────────────────────────────────────
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+  }
 
   // ── Facility icons & labels ──────────────────────────────────────
   const FACILITY_META = {
@@ -814,7 +819,7 @@
   function buildFacilities(facilities) {
     if (!facilities || !facilities.length) return '';
     return facilities.map(f => {
-      const m = FACILITY_META[f] || { label: f, icon: '<circle cx="12" cy="12" r="10"/>' };
+      const m = FACILITY_META[f] || { label: escapeHtml(f), icon: '<circle cx="12" cy="12" r="10"/>' };
       return `<div class="facility-tag"><svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${m.icon}</svg>${m.label}</div>`;
     }).join('');
   }
@@ -830,7 +835,7 @@
       'Madeira':          { value: 'Ilha Atlântica',           color: '#1a5fa3', bg: 'rgba(41,128,212,0.10)' },
       'Açores':           { value: 'Arquipélago Vulcânico',    color: '#1e8449', bg: 'rgba(39,174,96,0.10)'  },
     };
-    const rt = REGION_TYPES[beach.region] || { value: beach.region || 'Portugal', color: '#0a3d6b', bg: 'rgba(10,61,107,0.08)' };
+    const rt = REGION_TYPES[beach.region] || { value: escapeHtml(beach.region || 'Portugal'), color: '#0a3d6b', bg: 'rgba(10,61,107,0.08)' };
     const Q_COLORS = {
       'Excelente':  { color: '#1e8449', bg: 'rgba(39,174,96,0.10)' },
       'Boa':        { color: '#1a5fa3', bg: 'rgba(41,128,212,0.10)' },
@@ -844,7 +849,7 @@
     const items = [
       { label: 'Tipo de Costa', value: rt.value, color: rt.color, bg: rt.bg,
         icon: '<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>' },
-      ...(beach.water_quality ? [{ label: 'Qualidade da Água', value: beach.water_quality, color: qc.color, bg: qc.bg,
+      ...(beach.water_quality ? [{ label: 'Qualidade da Água', value: escapeHtml(beach.water_quality), color: qc.color, bg: qc.bg,
         icon: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>' }] : []),
       ...(isSurf ? [{ label: 'Surf', value: 'Spot confirmado', color: '#0a3d6b', bg: 'rgba(10,61,107,0.10)',
         icon: '<path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/>' }] : []),
@@ -1039,7 +1044,7 @@
       items.push({ label:'Famílias', sub:'Praia vigiada', color:'#1e8449', bg:'rgba(39,174,96,0.10)',
         icon:'<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>' });
     if (beach.water_quality === 'Excelente' || beach.water_quality === 'Boa')
-      items.push({ label:'Banho e Mergulho', sub:`Água ${beach.water_quality}`, color:'#1a5fa3', bg:'rgba(41,128,212,0.10)',
+      items.push({ label:'Banho e Mergulho', sub:`Água ${escapeHtml(beach.water_quality)}`, color:'#1a5fa3', bg:'rgba(41,128,212,0.10)',
         icon:'<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>' });
     if (hasFac && beach.facilities.includes('restaurant'))
       items.push({ label:'Gastronomia Local', sub:'Apoio de praia', color:'#8a6b10', bg:'rgba(201,168,76,0.12)',
@@ -1176,8 +1181,8 @@
     return `
       <div class="planear-final-band-inner">
         <div class="planear-final-eyebrow">Próximo passo recomendado</div>
-        <h2 class="planear-final-title">Planeia a visita<br>a ${beach.name}</h2>
-        <p class="planear-final-desc">A maioria dos visitantes de ${beach.name} fica em ${beach.region || 'Portugal'} — um bom ponto de partida para estar perto da praia. Combina marés, alojamento e atividades antes que os melhores sítios para ficar se esgotem.</p>
+        <h2 class="planear-final-title">Planeia a visita<br>a ${escapeHtml(beach.name)}</h2>
+        <p class="planear-final-desc">A maioria dos visitantes de ${escapeHtml(beach.name)} fica em ${escapeHtml(beach.region || 'Portugal')} — um bom ponto de partida para estar perto da praia. Combina marés, alojamento e atividades antes que os melhores sítios para ficar se esgotem.</p>
         <div class="planear-final-actions">
           <a href="${planearHref}" class="planear-final-primary" onclick="track('beach_detail_cta_click',{page:'beach',source:'planear_band',beach:'${beach.name.replace(/'/g,'\\x27')}',region:'${(beach.region||'').replace(/'/g,'\\x27')}'})">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -1728,7 +1733,7 @@
           return `<div class="tides-row${isNext ? ' is-next' : ''}">
             <div class="tides-row-icon tide-${t.type}">${t.type === 'high' ? '↑' : '↓'}</div>
             <div class="tides-row-main">
-              <span class="tides-row-label tide-${t.type}">${t.label}</span>
+              <span class="tides-row-label tide-${t.type}">${escapeHtml(t.label)}</span>
               ${isNext ? '<span class="tides-next-badge">Próxima</span>' : ''}
             </div>
             <div class="tides-row-time">${timeStr}</div>
@@ -1773,13 +1778,13 @@
       }).sort((a, b) => b._score - a._score).slice(0, 6);
       grid.innerHTML = ranked.map(b => {
         const parts = [];
-        if (b.town)          parts.push(b.town);
-        if (b.water_quality) parts.push(`Água ${b.water_quality}`);
-        const tag = parts.join(' · ') || b.region || 'Portugal';
+        if (b.town)          parts.push(escapeHtml(b.town));
+        if (b.water_quality) parts.push(`Água ${escapeHtml(b.water_quality)}`);
+        const tag = parts.join(' · ') || escapeHtml(b.region || 'Portugal');
         return `<a href="beach.html?id=${b.id}" class="related-card">
           <span class="related-card-tag">${tag}</span>
-          <span class="related-card-name">${b.name}</span>
-          <span class="related-card-meta">${b.region || 'Portugal'}</span>
+          <span class="related-card-name">${escapeHtml(b.name)}</span>
+          <span class="related-card-meta">${escapeHtml(b.region || 'Portugal')}</span>
           <span class="related-card-cta">Ver ficha <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>`;
       }).join('');
@@ -1874,8 +1879,8 @@
 
       // Badges
       const badges = [];
-      if (beach.region)        badges.push(`<span class="badge badge-region">${beach.region}</span>`);
-      if (beach.water_quality) badges.push(`<span class="badge badge-q-${beach.water_quality.replace(/[^a-zA-Z]/g,'')}">Água ${beach.water_quality}</span>`);
+      if (beach.region)        badges.push(`<span class="badge badge-region">${escapeHtml(beach.region)}</span>`);
+      if (beach.water_quality) badges.push(`<span class="badge badge-q-${beach.water_quality.replace(/[^a-zA-Z]/g,'')}">Água ${escapeHtml(beach.water_quality)}</span>`);
       document.getElementById('hero-badges').innerHTML = badges.join('');
 
       // Breadcrumb
