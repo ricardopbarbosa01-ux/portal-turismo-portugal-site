@@ -729,21 +729,6 @@
 <script src="/js/config.js?v=20260402"></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
-  // ── Auth state ────────────────────────────────────────────────────
-  (async () => {
-    try {
-      const user = await getCurrentUser();
-      const loginBtn = document.getElementById('nav-login-btn');
-      const regBtn   = document.getElementById('nav-register-btn');
-      if (user) {
-        loginBtn.textContent = 'Dashboard';
-        loginBtn.href = '/en/dashboard.html';
-        regBtn.textContent = 'Sign Out';
-        regBtn.href = '#';
-        regBtn.addEventListener('click', e => { e.preventDefault(); signOut(); });
-      }
-    } catch(e) {}
-  })();
 
   // ── Mobile nav ───────────────────────────────────────────────────
   const toggle      = document.getElementById('nav-toggle');

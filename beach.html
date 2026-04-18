@@ -801,19 +801,6 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
 
-  // ── Auth state ──────────────────────────────────────────────────
-  (async () => {
-    try {
-      const { data: { user } } = await db.auth.getUser();
-      if (user) {
-        document.getElementById('nav-login-btn').textContent = 'Dashboard';
-        document.getElementById('nav-login-btn').href = 'dashboard.html';
-        document.getElementById('nav-register-btn').textContent = 'Sign Out';
-        document.getElementById('nav-register-btn').href = '#';
-        document.getElementById('nav-register-btn').addEventListener('click', e => { e.preventDefault(); db.auth.signOut().then(() => { window.location.href = 'index.html'; }); });
-      }
-    } catch(e) {}
-  })();
 
   // ── Facility icons & labels ──────────────────────────────────────
   const FACILITY_META = {

@@ -437,17 +437,6 @@ navToggle?.addEventListener('click', openMenu);
 navClose?.addEventListener('click', closeMenu);
 navBackdrop?.addEventListener('click', closeMenu);
 navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-(async () => {
-  try {
-    const { data: { user } } = await db.auth.getUser();
-    if (user) {
-      const lb = document.getElementById('nav-login-btn');
-      const rb = document.getElementById('nav-register-btn');
-      if (lb) { lb.textContent = 'Dashboard'; lb.href = '../dashboard.html'; }
-      if (rb) { rb.textContent = 'Sign Out'; rb.href = '#'; rb.addEventListener('click', async e => { e.preventDefault(); await db.auth.signOut(); window.location.reload(); }); }
-    }
-  } catch(_) {}
-})();
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -459,6 +448,7 @@ const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }), { threshold: 0.12 });
 reveals.forEach(el => io.observe(el));
 </script>
+  <script src="/js/nav.js?v=20260418"></script>
   <script src="/js/cookie-consent.js"></script>
 </body>
 </html>

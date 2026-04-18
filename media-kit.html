@@ -1042,18 +1042,6 @@ navBackdrop?.addEventListener('click', closeMenu);
 navClose?.addEventListener('click', closeMenu);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-/* ── Auth state ── */
-(async () => {
-  const { data: { user } } = await db.auth.getUser();
-  const loginBtn    = document.getElementById('nav-login-btn');
-  const registerBtn = document.getElementById('nav-register-btn');
-  if (user && loginBtn && registerBtn) {
-    loginBtn.textContent  = 'Dashboard';
-    loginBtn.href         = 'dashboard.html';
-    registerBtn.textContent = user.email?.split('@')[0] || 'Account';
-    registerBtn.href      = 'dashboard.html';
-  }
-})();
 
 /* ── Reveal on scroll ── */
 const io = new IntersectionObserver((entries) => {

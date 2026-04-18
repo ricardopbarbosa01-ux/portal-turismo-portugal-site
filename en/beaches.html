@@ -992,21 +992,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="/js/config.js?v=20260402"></script>
 <script>
-  // ── Auth state ──────────────────────────────────────────────────────────────
-  (async () => {
-    try {
-      const { data: { user } } = await db.auth.getUser();
-      if (user) {
-        document.getElementById('nav-login-btn').textContent = 'Dashboard';
-        document.getElementById('nav-login-btn').href = '/dashboard.html';
-        document.getElementById('nav-register-btn').textContent = 'Sign Out';
-        document.getElementById('nav-register-btn').href = '#';
-        document.getElementById('nav-register-btn').addEventListener('click', (e) => {
-          e.preventDefault(); signOut();
-        });
-      }
-    } catch(e) {}
-  })();
 
   // ── Mobile nav ──────────────────────────────────────────────────────────────
   const toggle = document.getElementById('nav-toggle');

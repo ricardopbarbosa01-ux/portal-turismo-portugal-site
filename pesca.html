@@ -1140,21 +1140,6 @@
 <script src="js/nav.js?v=20260415"></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
-  // ── Auth state ────────────────────────────────────────────────────
-  (async () => {
-    try {
-      const { data: { user } } = await db.auth.getUser();
-      const loginBtn = document.getElementById('nav-login-btn');
-      const regBtn   = document.getElementById('nav-register-btn');
-      if (user) {
-        loginBtn.textContent = 'Dashboard';
-        loginBtn.href = 'dashboard.html';
-        regBtn.textContent = 'Sair';
-        regBtn.href = '#';
-        regBtn.addEventListener('click', async e => { e.preventDefault(); await db.auth.signOut(); location.reload(); });
-      }
-    } catch(e) {}
-  })();
 
   // ── Mobile nav ───────────────────────────────────────────────────
   const toggle      = document.getElementById('nav-toggle');

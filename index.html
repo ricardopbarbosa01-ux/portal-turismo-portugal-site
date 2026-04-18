@@ -1644,22 +1644,6 @@
     });
   }
 
-  // ── Navbar auth state ─────────────────────────────────────────
-  (async () => {
-    try {
-      const user = await getCurrentUser();
-      if (user) {
-        const loginBtn    = document.getElementById('nav-login-btn');
-        const registerBtn = document.getElementById('nav-register-btn');
-        if (loginBtn && registerBtn) {
-          loginBtn.href        = '/dashboard.html';
-          loginBtn.textContent = 'Dashboard';
-          loginBtn.className   = 'btn btn-primary';
-          registerBtn.style.display = 'none';
-        }
-      }
-    } catch (_) {}
-  })();
 
   // ── PWA install prompt ────────────────────────────────────────
   (function () {

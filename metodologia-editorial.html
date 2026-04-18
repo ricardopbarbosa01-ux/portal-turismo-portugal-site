@@ -300,18 +300,6 @@
   navBackdrop?.addEventListener('click', closeMobileNav);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
-  (async () => {
-    try {
-      const user = await getCurrentUser();
-      if (user) {
-        document.getElementById('nav-login-btn').textContent = 'Dashboard';
-        document.getElementById('nav-login-btn').href = 'dashboard.html';
-        document.getElementById('nav-register-btn').textContent = 'Sair';
-        document.getElementById('nav-register-btn').href = '#';
-        document.getElementById('nav-register-btn').addEventListener('click', (e) => { e.preventDefault(); signOut(); });
-      }
-    } catch(e) {}
-  })();
 </script>
   <script src="/js/cookie-consent.js"></script>
 </body>

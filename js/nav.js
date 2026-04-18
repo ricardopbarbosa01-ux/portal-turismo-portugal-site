@@ -1,7 +1,7 @@
 /**
- * nav.js — Mobile navigation handler
- * Replaces inline hamburger JS across all pages.
- * Creates the mobile-menu drawer dynamically from existing nav-links.
+ * nav.js — Navigation handler
+ * - Mobile hamburger menu (drawer built dynamically from .nav-links)
+ * - Navbar auth state: centralised for all pages
  */
 (function () {
   'use strict';
@@ -124,3 +124,34 @@
   }
 
 })();
+
+// ── Navbar auth state (centralised) ──────────────────────────────
+async function initNavAuth() {
+  try {
+    const { data: { user } } = await db.auth.getUser();
+    const loginBtn = document.getElementById('nav-login-btn');
+    const regBtn   = document.getElementById('nav-register-btn');
+    if (!loginBtn || !regBtn) return;
+
+    if (user) {
+      const isAdmin = user.app_metadata?.role === 'admin';
+
+      // Botão principal: Dashboard (admin) ou A Minha Conta (user normal)
+      loginBtn.textContent = isAdmin ? 'Dashboard' : 'A Minha Conta';
+      loginBtn.href        = isAdmin ? '/dashboard.html' : '/conta.html';
+      loginBtn.className   = 'btn btn-primary';
+
+      // Botão secundário: sempre Terminar Sessão
+      regBtn.textContent = 'Terminar Sessão';
+      regBtn.href        = '#';
+      regBtn.className   = 'btn btn-outline';
+      regBtn.addEventListener('click', async function (e) {
+        e.preventDefault();
+        await db.auth.signOut();
+        window.location.href = '/';
+      });
+    }
+  } catch (_) {}
+}
+
+document.addEventListener('DOMContentLoaded', initNavAuth);

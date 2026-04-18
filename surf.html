@@ -1087,21 +1087,6 @@
 <script src="js/config.js?v=20260402"></script>
 <script>
   // ── Auth ─────────────────────────────────────────────────────────
-  (async () => {
-    try {
-      const { data: { user } } = await db.auth.getUser();
-      if (user) {
-        const loginBtn = document.getElementById('nav-login-btn');
-        const regBtn   = document.getElementById('nav-register-btn');
-        if (loginBtn) { loginBtn.textContent = 'My Account'; loginBtn.href = 'dashboard.html'; }
-        if (regBtn) {
-          regBtn.textContent = 'Sign Out';
-          regBtn.href = '#';
-          regBtn.addEventListener('click', async e => { e.preventDefault(); await db.auth.signOut(); location.reload(); });
-        }
-      }
-    } catch(e) {}
-  })();
 
   // ── Mobile nav ───────────────────────────────────────────────────
   const toggle = document.getElementById('nav-toggle');

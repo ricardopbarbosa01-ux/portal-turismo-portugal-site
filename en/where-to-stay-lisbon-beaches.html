@@ -452,17 +452,6 @@ navToggle?.addEventListener('click', openMenu);
 navClose?.addEventListener('click', closeMenu);
 navBackdrop?.addEventListener('click', closeMenu);
 navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-(async () => {
-  try {
-    const { data: { user } } = await db.auth.getUser();
-    if (user) {
-      const lb = document.getElementById('nav-login-btn');
-      const rb = document.getElementById('nav-register-btn');
-      if (lb) { lb.textContent = 'Dashboard'; lb.href = '/en/dashboard.html'; }
-      if (rb) rb.style.display = 'none';
-    }
-  } catch(e) {}
-})();
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -527,6 +516,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   setTimeout(()=>h2.scrollIntoView({behavior:'smooth',block:'start'}),300);
 })();
 </script>
+  <script src="/js/nav.js?v=20260418"></script>
   <script src="/js/cookie-consent.js"></script>
 </body>
 </html>

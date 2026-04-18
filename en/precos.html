@@ -1264,26 +1264,6 @@ navToggle?.addEventListener('click', openMenu);
 navClose?.addEventListener('click', closeMenu);
 navBackdrop?.addEventListener('click', closeMenu);
 
-// ── Auth state ──
-(async () => {
-  try {
-    const { data: { user } } = await db.auth.getUser();
-    if (user) {
-      const loginBtn = document.getElementById('nav-login-btn');
-      const regBtn   = document.getElementById('nav-register-btn');
-      if (loginBtn) { loginBtn.textContent = 'Dashboard'; loginBtn.href = 'dashboard.html'; }
-      if (regBtn)   {
-        regBtn.textContent = 'Sign Out';
-        regBtn.href = '#';
-        regBtn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          await db.auth.signOut();
-          window.location.reload();
-        });
-      }
-    }
-  } catch(_) {}
-})();
 
 // ── LemonSqueezy checkout URLs ───────────────────────────────────────────────
 // Onde colar: LemonSqueezy Dashboard → Store → Products → [Produto] → Variants
@@ -1374,6 +1354,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
   <script src="/js/lang-switcher.js" defer></script>
+  <script src="/js/nav.js?v=20260418"></script>
   <script src="/js/cookie-consent.js"></script>
 </body>
 </html>

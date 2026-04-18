@@ -1122,21 +1122,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="/js/config.js?v=20260402"></script>
 <script>
-  // ── Auth state ────────────────────────────────────────────────────
-  (async () => {
-    try {
-      const { data: { user } } = await db.auth.getUser();
-      const loginBtn = document.getElementById('nav-login-btn');
-      const regBtn   = document.getElementById('nav-register-btn');
-      if (user) {
-        loginBtn.textContent = 'Dashboard';
-        loginBtn.href = '/dashboard.html';
-        regBtn.textContent = 'Sign Out';
-        regBtn.href = '#';
-        regBtn.addEventListener('click', async e => { e.preventDefault(); await db.auth.signOut(); location.reload(); });
-      }
-    } catch(e) {}
-  })();
 
   // ── Mobile nav ───────────────────────────────────────────────────
   const toggle      = document.getElementById('nav-toggle');

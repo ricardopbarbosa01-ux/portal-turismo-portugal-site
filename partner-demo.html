@@ -340,14 +340,6 @@ navClose?.addEventListener('click', closeMenu);
 navBackdrop?.addEventListener('click', closeMenu);
 navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
-(async () => {
-  try {
-    const { data: { user } } = await db.auth.getUser();
-    const loginBtn = document.getElementById('nav-login-btn');
-    const regBtn   = document.getElementById('nav-register-btn');
-    if (user) { loginBtn.textContent = 'Dashboard'; loginBtn.href = 'dashboard.html'; regBtn.style.display = 'none'; }
-  } catch(e) {}
-})();
 </script>
   <script src="/js/cookie-consent.js"></script>
 </body>

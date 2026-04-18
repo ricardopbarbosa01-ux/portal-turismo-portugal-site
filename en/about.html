@@ -323,20 +323,8 @@
   }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Auth state
-  (async () => {
-    try {
-      const user = await getCurrentUser();
-      if (user) {
-        document.getElementById('nav-login-btn').textContent = 'Dashboard';
-        document.getElementById('nav-login-btn').href = '/dashboard.html';
-        document.getElementById('nav-register-btn').textContent = 'Sign Out';
-        document.getElementById('nav-register-btn').href = '#';
-        document.getElementById('nav-register-btn').addEventListener('click', (e) => { e.preventDefault(); signOut(); });
-      }
-    } catch(e) {}
-  })();
 </script>
+  <script src="/js/nav.js?v=20260418"></script>
   <script src="/js/cookie-consent.js"></script>
 </body>
 </html>
