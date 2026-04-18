@@ -282,3 +282,82 @@ test.describe('Touch targets — >= 44x44px at 375px', () => {
 // - .skip-link: padding: 12px 16px, min-height: 44px, display: inline-flex
 // - .footer-bottom a: display: inline-flex, min-height: 44px, min-width: 44px, padding: 4px 6px
 // - .ccb-link: display: inline-flex, min-height: 44px
+
+// ---------------------------------------------------------------------------
+// MOBILE-06: Cookie banner — aparece, accept/reject funciona, persiste após reload
+// Tests run at 375px (iPhone SE 3rd gen) to verify mobile usability
+// ---------------------------------------------------------------------------
+
+test.describe('Cookie banner — aparece e funciona em 375px', () => {
+  test.use({ ...deviceUse('iPhone SE (3rd gen)') }); // 375px — uses helper to strip defaultBrowserType
+
+  test('cookie banner aparece quando não há cookie_consent em localStorage', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
+
+    // Clear any existing consent state to force banner display
+    await page.evaluate(() => localStorage.removeItem('cookie_consent'));
+    await page.reload({ waitUntil: 'domcontentloaded' });
+
+    const banner = page.locator('#cookie-consent-banner');
+    await expect(banner, 'Cookie banner should appear when no consent stored').toBeVisible({ timeout: 5_000 });
+
+    // Banner must be visible (not behind other elements)
+    const box = await banner.boundingBox();
+    expect(box, 'Cookie banner has no bounding box').not.toBeNull();
+    expect(box!.width, 'Cookie banner too narrow for 375px').toBeGreaterThan(200);
+  });
+
+  test('cookie banner — aceitar fecha banner e persiste após reload', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
+    await page.evaluate(() => localStorage.removeItem('cookie_consent'));
+    await page.reload({ waitUntil: 'domcontentloaded' });
+
+    await expect(page.locator('#cookie-consent-banner')).toBeVisible({ timeout: 5_000 });
+
+    // Click accept
+    await page.locator('#ccb-accept').click();
+
+    // Banner must disappear
+    await expect(page.locator('#cookie-consent-banner')).not.toBeVisible({ timeout: 3_000 });
+
+    // localStorage must contain analytics: true
+    const stored = await page.evaluate(() => localStorage.getItem('cookie_consent'));
+    expect(stored, 'cookie_consent not saved to localStorage after accept').not.toBeNull();
+    const prefs = JSON.parse(stored!);
+    expect(prefs.analytics, 'cookie_consent.analytics should be true after accept').toBe(true);
+
+    // After reload, banner must NOT reappear
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await expect(
+      page.locator('#cookie-consent-banner'),
+      'Cookie banner reappeared after reload — state not persisted'
+    ).not.toBeAttached();
+  });
+
+  test('cookie banner — rejeitar fecha banner e persiste após reload', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
+    await page.evaluate(() => localStorage.removeItem('cookie_consent'));
+    await page.reload({ waitUntil: 'domcontentloaded' });
+
+    await expect(page.locator('#cookie-consent-banner')).toBeVisible({ timeout: 5_000 });
+
+    // Click reject
+    await page.locator('#ccb-reject').click();
+
+    // Banner must disappear
+    await expect(page.locator('#cookie-consent-banner')).not.toBeVisible({ timeout: 3_000 });
+
+    // localStorage must contain analytics: false
+    const stored = await page.evaluate(() => localStorage.getItem('cookie_consent'));
+    expect(stored, 'cookie_consent not saved after reject').not.toBeNull();
+    const prefs = JSON.parse(stored!);
+    expect(prefs.analytics, 'cookie_consent.analytics should be false after reject').toBe(false);
+
+    // After reload, banner must NOT reappear
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await expect(
+      page.locator('#cookie-consent-banner'),
+      'Cookie banner reappeared after reload — reject not persisted'
+    ).not.toBeAttached();
+  });
+});
