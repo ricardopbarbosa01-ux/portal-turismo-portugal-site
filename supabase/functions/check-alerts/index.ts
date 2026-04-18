@@ -162,39 +162,37 @@ serve(async () => {
 <html lang="pt">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;padding:0;background:#f4f4f4;font-family:Inter,sans-serif">
-  <div style="max-width:600px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden">
-    <div style="background:#1B3A6B;padding:32px 40px;text-align:center">
+  <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden">
+    <div style="background:#1B3A6B;padding:24px 20px;text-align:center">
       <h1 style="color:#C9A84C;margin:0;font-size:24px">Portugal Travel Hub</h1>
       <p style="color:rgba(255,255,255,0.7);margin:8px 0 0;font-size:14px">Alerta de condições</p>
     </div>
-    <div style="padding:40px">
+    <div style="padding:24px 20px">
       <h2 style="color:#1B3A6B;margin:0 0 8px">O seu alerta foi ativado! 🔔</h2>
       <p style="color:#444;font-size:15px;margin:0 0 24px">
         As condições que definiu em <strong>${alert.beach_name}</strong> foram atingidas.
       </p>
-      <div style="background:#f8f9fa;border-radius:8px;padding:20px;margin:0 0 24px">
-        <table style="width:100%;border-collapse:collapse;font-size:14px">
-          <tr>
-            <td style="padding:8px 0;color:#999;width:140px">Condição</td>
-            <td style="padding:8px 0;color:#1B3A6B;font-weight:600">${condLabel} ${opLabel} ${alert.threshold}${alert.unit}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;color:#999">Valor actual</td>
-            <td style="padding:8px 0;color:#1B3A6B;font-weight:600">${currentFormatted}${alert.unit}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;color:#999">Praia</td>
-            <td style="padding:8px 0;color:#444">${alert.beach_name}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;color:#999">Data/hora</td>
-            <td style="padding:8px 0;color:#444">${nowLabel}</td>
-          </tr>
-        </table>
+      <div style="background:#f8f9fa;border-radius:8px;padding:16px 20px;margin:0 0 24px">
+        <div style="padding:10px 0;border-bottom:1px solid #eee">
+          <div style="color:#999;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 4px">Condição</div>
+          <div style="color:#1B3A6B;font-weight:600;font-size:15px">${condLabel} ${opLabel} ${alert.threshold}${alert.unit}</div>
+        </div>
+        <div style="padding:10px 0;border-bottom:1px solid #eee">
+          <div style="color:#999;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 4px">Valor actual</div>
+          <div style="color:#1B3A6B;font-weight:600;font-size:15px">${currentFormatted}${alert.unit}</div>
+        </div>
+        <div style="padding:10px 0;border-bottom:1px solid #eee">
+          <div style="color:#999;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 4px">Praia</div>
+          <div style="color:#444;font-size:15px">${alert.beach_name}</div>
+        </div>
+        <div style="padding:10px 0">
+          <div style="color:#999;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 4px">Data/hora</div>
+          <div style="color:#444;font-size:15px">${nowLabel}</div>
+        </div>
       </div>
       <div style="text-align:center;margin:28px 0">
         <a href="https://www.portalturismoportugal.com/beach.html?id=${alert.beach_id}"
-           style="background:#C9A84C;color:#1B3A6B;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">
+           style="background:#C9A84C;color:#1B3A6B;display:inline-block;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;width:auto;max-width:100%;box-sizing:border-box">
           Ver condições da praia →
         </a>
       </div>
@@ -202,7 +200,7 @@ serve(async () => {
         Para gerir os seus alertas, visite a página da praia no portal.
       </p>
     </div>
-    <div style="background:#f8f9fa;padding:20px 40px;text-align:center;border-top:1px solid #eee">
+    <div style="background:#f8f9fa;padding:16px 20px;text-align:center;border-top:1px solid #eee">
       <p style="color:#999;font-size:12px;margin:0">
         © 2026 Portugal Travel Hub ·
         <a href="https://www.portalturismoportugal.com" style="color:#999">portalturismoportugal.com</a>
