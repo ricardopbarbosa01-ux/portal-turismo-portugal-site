@@ -27,19 +27,19 @@ import path from 'path';
 // ---------------------------------------------------------------------------
 
 const TIER1_PAGES = [
-  { slug: '01-home-pt',     url: '/',                                    waitFor: 'domcontentloaded' },
-  { slug: '02-home-en',     url: '/en/',                                  waitFor: 'domcontentloaded' },
-  { slug: '03-beaches',     url: '/beaches.html',                         waitFor: 'domcontentloaded' },
-  { slug: '04-beach-detail',url: '/beach.html?id=praia-da-rocha',         waitFor: 'domcontentloaded' }, // domcontentloaded: live tide API
-  { slug: '05-surf',        url: '/surf.html',                            waitFor: 'domcontentloaded' },
-  { slug: '06-precos',      url: '/precos.html',                          waitFor: 'domcontentloaded' },
-  { slug: '07-planear',     url: '/planear.html',                         waitFor: 'domcontentloaded' },
-  { slug: '08-login',       url: '/login.html',                           waitFor: 'domcontentloaded' },
-  { slug: '09-conta',       url: '/conta.html',                           waitFor: 'domcontentloaded' },
-  { slug: '10-parceiros',   url: '/parceiros.html',                       waitFor: 'domcontentloaded' },
-  { slug: '11-contact',     url: '/contact.html',                         waitFor: 'domcontentloaded' },
-  { slug: '12-webcams',     url: '/webcams.html',                         waitFor: 'domcontentloaded' }, // domcontentloaded: polling API
-] as const;
+  { slug: '01-home-pt',     url: '/',                                    waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '02-home-en',     url: '/en/',                                  waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '03-beaches',     url: '/beaches.html',                         waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '04-beach-detail',url: '/beach.html?id=praia-da-rocha',         waitFor: 'domcontentloaded', hasNav: true,  authRequired: false }, // domcontentloaded: live tide API
+  { slug: '05-surf',        url: '/surf.html',                            waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '06-precos',      url: '/precos.html',                          waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '07-planear',     url: '/planear.html',                         waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '08-login',       url: '/login.html',                           waitFor: 'domcontentloaded', hasNav: false, authRequired: false }, // standalone login page — no hamburger nav
+  { slug: '09-conta',       url: '/conta.html',                           waitFor: 'domcontentloaded', hasNav: true,  authRequired: true  }, // redirects to login when unauthenticated
+  { slug: '10-parceiros',   url: '/parceiros.html',                       waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '11-contact',     url: '/contact.html',                         waitFor: 'domcontentloaded', hasNav: true,  authRequired: false },
+  { slug: '12-webcams',     url: '/webcams.html',                         waitFor: 'domcontentloaded', hasNav: true,  authRequired: false }, // domcontentloaded: polling API
+];
 
 // ---------------------------------------------------------------------------
 // Viewport configs
@@ -110,6 +110,13 @@ for (const vp of VIEWPORTS) {
 
     for (const p of TIER1_PAGES) {
       test(`${p.slug} — no overflow at ${vp.label}`, async ({ page }) => {
+        // Auth-required pages redirect when unauthenticated, destroying the execution context.
+        // Overflow for these pages is tested via the screenshot. Auth flow is covered in Plan 02.
+        if (p.authRequired) {
+          test.skip(true, `${p.url}: auth-required — overflow tested in Plan 02 (authenticated flow)`);
+          return;
+        }
+
         await page.goto(p.url, { waitUntil: p.waitFor as 'domcontentloaded' | 'networkidle' });
 
         // Force all GSAP reveal animations to final state to avoid false negatives
@@ -160,6 +167,17 @@ test.describe('Navbar hamburger — opens and closes at 375px', () => {
 
   for (const p of TIER1_PAGES) {
     test(`${p.slug} — nav toggle opens #mobile-menu.open`, async ({ page }) => {
+      // Skip pages without a hamburger nav (e.g. standalone login page)
+      if (!p.hasNav) {
+        test.skip(true, `${p.url}: no hamburger nav on this page (standalone auth page)`);
+        return;
+      }
+      // Skip auth-required pages — they redirect unauthenticated; nav tested in Plan 02
+      if (p.authRequired) {
+        test.skip(true, `${p.url}: auth-required — nav toggle tested in Plan 02 (authenticated flow)`);
+        return;
+      }
+
       await page.goto(p.url, { waitUntil: p.waitFor as 'domcontentloaded' | 'networkidle' });
 
       // Wait for nav.js to initialize and inject #mobile-menu into DOM
@@ -195,6 +213,12 @@ test.describe('Touch targets — >= 44x44px at 375px', () => {
 
   for (const p of TIER1_PAGES) {
     test(`${p.slug} — no touch targets under 44x44px`, async ({ page }) => {
+      // Auth-required pages redirect when unauthenticated — touch targets tested in Plan 02
+      if (p.authRequired) {
+        test.skip(true, `${p.url}: auth-required — touch targets tested in Plan 02 (authenticated flow)`);
+        return;
+      }
+
       await page.goto(p.url, { waitUntil: p.waitFor as 'domcontentloaded' | 'networkidle' });
 
       const violations = await page.evaluate(() => {
@@ -227,3 +251,34 @@ test.describe('Touch targets — >= 44x44px at 375px', () => {
     });
   }
 });
+
+// AUDIT FINDINGS — DEFERRED TO PHASE 2 (CSS Refinement):
+//
+// TOUCH TARGET violations that require changes beyond css/style.css:
+//
+// 1. Inline paragraph links on beaches.html, surf.html, precos.html, planear.html, webcams.html:
+//    - "Planear a escapada →" (style="color:var(--gold);font-weight:600") — height ~16-21px
+//    - "Planear a minha escapada →" (inline style in <p>) — height ~38px (width 203px, height 38px)
+//    - Fix requires: adding padding to inline-styled anchor tags in 10+ HTML files
+//    - Deferred: requires systematic HTML inline-style cleanup across all content pages
+//
+// 2. Login/registo page inline CSS:
+//    - .auth-back link (defined in <style> block in login.html/registo.html) — height 21px
+//    - "Esqueceu a sua palavra-passe?" link (inline in login.html) — height 21px
+//    - "Criar conta gratuita" button in login.html — height 19px
+//    - Fix requires: modifying page-specific <style> blocks and button HTML in auth pages
+//    - Deferred: auth page refactor tracked separately
+//
+// 3. Breadcrumb links (.breadcrumb a or inline breadcrumbs):
+//    - "Início" link on beaches.html, beach.html — width 38px, height 21px
+//    - Fix requires: adding min-height/padding to breadcrumb selectors in each page's inline CSS
+//    - Deferred: breadcrumb component refactor
+//
+// CSS fixes applied in Phase 1 (this plan):
+// - .nav-toggle alias for .hamburger (EN pages nav visibility)
+// - .nav-logo: min-height: 44px
+// - .footer-search-btn: min-height: 44px, min-width: 44px
+// - .footer-col ul li a: display: block, min-height: 44px, padding: 12px 0
+// - .skip-link: padding: 12px 16px, min-height: 44px, display: inline-flex
+// - .footer-bottom a: display: inline-flex, min-height: 44px, min-width: 44px, padding: 4px 6px
+// - .ccb-link: display: inline-flex, min-height: 44px
