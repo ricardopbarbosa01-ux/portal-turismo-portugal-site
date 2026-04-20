@@ -101,6 +101,44 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- ── Guias ── -->
+  <url>
+    <loc>https://portalturismoportugal.com/guias.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portalturismoportugal.com/guias/melhores-praias-algarve.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portalturismoportugal.com/guias/pesca-portugal.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portalturismoportugal.com/guias/praias-perto-lisboa.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portalturismoportugal.com/guias/quando-visitar-portugal.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portalturismoportugal.com/guias/surf-portugal-iniciantes.html</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ── Institutional ── -->
   <url>
     <loc>https://portalturismoportugal.com/metodologia-editorial.html</loc>
