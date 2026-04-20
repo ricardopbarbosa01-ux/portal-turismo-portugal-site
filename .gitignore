@@ -2,12 +2,12 @@ node_modules/
 .wrangler/
 supabase/.temp/
 .zip.zip
-_audit/
 _data/
 test-results/
 smoke-results.json
 smoke-test.png
 *.pdf
+*.bak
 
 # Playwright
 /playwright-report/
