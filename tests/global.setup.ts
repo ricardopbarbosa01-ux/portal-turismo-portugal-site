@@ -28,13 +28,19 @@ setup('authenticate test user', async ({ page }) => {
 
   await page.goto('/login.html', { waitUntil: 'domcontentloaded' });
 
-  // Fill login form — selectors confirmed from login.html
-  await page.fill('#email', email);
-  await page.fill('#password', password);
+  // Dismiss cookie consent if present
+  const acceptBtn = page.locator('button:has-text("Aceitar"), button:has-text("Accept")').first();
+  if (await acceptBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+    await acceptBtn.click();
+  }
+
+  // Fill login form — selectors from login.html (#login-email / #login-password)
+  await page.fill('#login-email', email);
+  await page.fill('#login-password', password);
   await page.click('[type="submit"]');
 
-  // Wait for redirect to conta.html or dashboard
-  await page.waitForURL(/conta\.html|dashboard\.html/, { timeout: 15_000 });
+  // Wait for redirect away from login.html (regular users land on / via dashboard guard)
+  await page.waitForURL(/conta\.html|dashboard\.html|dashboard$|dashboard\/$|pages\.dev\/$|pages\.dev$|portalturismoportugal\.com\/$|portalturismoportugal\.com$/, { timeout: 15_000 });
 
   // Save authenticated state
   await page.context().storageState({ path: AUTH_FILE });

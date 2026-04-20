@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import { config } from 'dotenv';
+config({ path: '.env.local' });
 
 const BASE_URL =
   process.env.PLAYWRIGHT_BASE_URL ?? 'https://portal-turismo-portugal-site.pages.dev';
