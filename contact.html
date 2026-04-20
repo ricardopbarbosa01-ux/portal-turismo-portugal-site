@@ -741,7 +741,17 @@ form.addEventListener('submit', function(e) {
     const existing = JSON.parse(localStorage.getItem('pth_contact_messages') || '[]');
     existing.push(data);
     localStorage.setItem('pth_contact_messages', JSON.stringify(existing));
-    db.from('contact_messages').insert([data]).catch(() => {});
+    db.from('contact_messages').insert([data]).catch((err) => {
+      console.error('Erro ao enviar mensagem:', err);
+      const form = document.querySelector('form') || document.querySelector('.contact-form');
+      if (form) {
+        const errorEl = document.createElement('div');
+        errorEl.style.cssText = 'background:#fee;color:#c00;padding:12px 16px;border-radius:8px;margin-top:12px;font-size:14px;';
+        errorEl.textContent = 'Não foi possível enviar a mensagem. Por favor tente novamente ou contacte-nos por email.';
+        form.appendChild(errorEl);
+        setTimeout(() => errorEl.remove(), 8000);
+      }
+    });
   } catch(_) {}
 
   form.style.display = 'none';
