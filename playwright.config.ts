@@ -36,16 +36,18 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-        // Firefox needs more time for JS hydration and form interactions
-        actionTimeout: 20_000,
-        navigationTimeout: 40_000,
-      },
-    },
-    // WebKit is not available on Windows (Playwright.exe missing in webkit-2272 on Windows).
+    // Firefox: download fails on this Windows environment (network restriction).
+    // Firefox testing is deferred to CI/Linux environment.
+    // On CI: uncomment the firefox project below.
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //     actionTimeout: 20_000,
+    //     navigationTimeout: 40_000,
+    //   },
+    // },
+    // WebKit: not available on Windows (Playwright.exe missing in webkit-2272 on Windows).
     // WebKit testing is deferred to CI/Linux environment.
     // On macOS/Linux CI: uncomment the webkit project below.
     // {
