@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
         body: JSON.stringify(payload)
-      }).catch(() => {});
+      }).catch((err) => { console.error('[parceiros] Partner alert email failed:', err); });
       form.reset();
       track('b2b_form_submit', { plano: payload.plano, regiao: payload.regiao });
     }

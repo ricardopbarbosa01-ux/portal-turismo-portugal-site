@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
         body: JSON.stringify(payload)
-      }).catch(() => {});
+      }).catch((err) => { console.error('[planear] Plan confirm email failed:', err); });
       form.reset();
       track('plan_form_submit', { regiao: payload.regiao, orcamento: payload.orcamento });
     }

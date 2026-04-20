@@ -233,7 +233,7 @@ document.getElementById('form-register').addEventListener('submit', async (e) =>
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
       body: JSON.stringify({ email, name })
-    }).catch(() => {});
+    }).catch((err) => { console.error('[register] Welcome email failed:', err); });
 
     document.getElementById('form-register').reset();
     document.getElementById('pw-strength').classList.remove('visible');
