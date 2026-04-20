@@ -424,7 +424,7 @@
       class="wcam-hero-video"
       id="wcam-bg-video"
       poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60"
-      playsinline autoplay muted loop
+      preload="none" playsinline autoplay muted loop
       aria-hidden="true"
     ></video>
     <div class="wcam-hero-overlay" aria-hidden="true"></div>
@@ -772,8 +772,8 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/nav.js?v=20260415"></script>
-<script src="js/config.js?v=20260402"></script>
+<script src="js/nav.js?v=20260415" defer></script>
+<script src="js/config.js?v=20260402" defer></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
@@ -1149,11 +1149,10 @@
     var v = document.getElementById('wcam-bg-video');
     if (v) {
       v.src = 'https://videos.pexels.com/video-files/1918465/1918465-hd_1920_1080_24fps.mp4';
-      v.load();
     }
   }
 })();
 </script>
-  <script src="/js/cookie-consent.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

@@ -283,8 +283,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/nav.js?v=20260415"></script>
-<script src="js/config.js?v=20260402"></script>
+<script src="js/nav.js?v=20260415" defer></script>
+<script src="js/config.js?v=20260402" defer></script>
 <script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
@@ -299,6 +299,6 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
   document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
 </script>
-  <script src="/js/cookie-consent.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

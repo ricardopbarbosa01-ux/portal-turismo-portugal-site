@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Portugal Travel Hub — Full Logo (Light / Reversed)
+  Use on dark backgrounds: navy hero, dark header, dark section backgrounds.
+  Icon and PORTUGAL wordmark are white; TRAVEL HUB remains gold (always).
+  The gold accent is the one constant across all logo variants — brand anchor.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 64" role="img" aria-label="Portugal Travel Hub">
+  <title>Portugal Travel Hub</title>
+
+  <defs>
+    <style type="text/css">
+      .ptl-serif {
+        font-family: Georgia, 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+      }
+      .ptl-sans {
+        font-family: 'Gill Sans MT', 'Gill Sans', Optima, Calibri, sans-serif;
+      }
+    </style>
+  </defs>
+
+  <!-- ═══════════════════════════════════
+       ICON — white version for dark backgrounds
+       ═══════════════════════════════════ -->
+  <g transform="translate(8, 8)">
+
+    <!-- Outer compass ring (white) -->
+    <circle cx="24" cy="24" r="21" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+
+    <!-- Cardinal ticks: N, S, E (white) -->
+    <line x1="24" y1="3"  x2="24" y2="8"  stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="24" y1="40" x2="24" y2="45" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="40" y1="24" x2="45" y2="24" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Intercardinal marks (white) -->
+    <circle cx="38.9" cy="9.1"  r="0.75" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="9.1"  cy="9.1"  r="0.75" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="38.9" cy="38.9" r="0.75" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="9.1"  cy="38.9" r="0.75" fill="#FFFFFF" opacity="0.5"/>
+
+    <!-- Compass needle: Gold → West (Atlantic). Gold is the immutable anchor. -->
+    <path d="M 5,24 L 24,19 L 24,29 Z" fill="#C9A84C"/>
+
+    <!-- Compass needle: White → East counterbalance -->
+    <path d="M 43,24 L 24,19 L 24,29 Z" fill="#FFFFFF" opacity="0.85"/>
+
+    <!-- Center pivot (white outer, navy inner for contrast) -->
+    <circle cx="24" cy="24" r="2.5" fill="#FFFFFF"/>
+    <circle cx="24" cy="24" r="1"   fill="#1B3A6B"/>
+
+  </g>
+
+  <!-- Vertical rule (white, very subtle) -->
+  <line x1="66" y1="17" x2="66" y2="47" stroke="#FFFFFF" stroke-width="0.75" opacity="0.3"/>
+
+  <!-- ═══════════════════════════════════
+       WORDMARK — reversed (white + gold)
+       ═══════════════════════════════════ -->
+
+  <!-- PORTUGAL (white on dark) -->
+  <text
+    x="78" y="30"
+    class="ptl-serif"
+    font-size="20"
+    font-weight="bold"
+    letter-spacing="3"
+    fill="#FFFFFF">PORTUGAL</text>
+
+  <!-- TRAVEL HUB (gold — unchanged across all variants) -->
+  <text
+    x="79.5" y="45"
+    class="ptl-sans"
+    font-size="10"
+    font-weight="300"
+    letter-spacing="5.5"
+    fill="#C9A84C">TRAVEL HUB</text>
+
+</svg>

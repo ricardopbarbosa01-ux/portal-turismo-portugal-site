@@ -271,10 +271,11 @@
     .alert-value-row input{flex:1;}
     .alert-unit{font-size:0.85rem;color:var(--text-mid);font-weight:600;min-width:36px;}
     .alert-actions{display:flex;gap:10px;margin-top:20px;}
-    .alert-save-btn{flex:1;padding:10px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);border:none;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:opacity var(--transition);}
+    .alert-save-btn{flex:1;padding:14px 10px;min-height:44px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);border:none;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:opacity var(--transition);} /* MOBILE-07: touch target */
     .alert-save-btn:hover{opacity:0.88;}
-    .alert-cancel-btn{padding:10px 18px;background:transparent;border:1.5px solid var(--border);border-radius:8px;color:var(--text-mid);font-size:0.88rem;cursor:pointer;transition:border-color var(--transition);}
+    .alert-cancel-btn{padding:14px 18px;min-height:44px;background:transparent;border:1.5px solid var(--border);border-radius:8px;color:var(--text-mid);font-size:0.88rem;cursor:pointer;transition:border-color var(--transition);} /* MOBILE-07: touch target */
     .alert-cancel-btn:hover{border-color:var(--text-mid);}
+    #alert-condition{height:44px;min-height:44px;padding-top:11px;padding-bottom:11px;font-size:0.88rem;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;} /* MOBILE-07: touch target — appearance:none + explicit height for native select */
     @media(max-width:480px){.alert-modal{padding:22px 16px;}}
 
     /* Como Chegar / Transport */
@@ -783,8 +784,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="js/nav.js?v=20260415"></script>
-<script src="js/config.js?v=20260402"></script>
+<script src="js/nav.js?v=20260415" defer></script>
+<script src="js/config.js?v=20260402" defer></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
   // ── Navbar ──────────────────────────────────────────────────────
@@ -2194,6 +2195,6 @@
 </script>
 <script src="/js/lang-switcher.js" defer></script>
 <script src="/js/favorites.js?v=20260416b" defer></script>
-  <script src="/js/cookie-consent.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

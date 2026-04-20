@@ -241,6 +241,7 @@
     .field textarea {
       width: 100%;
       padding: 11px 14px;
+      min-height: 44px; /* MOBILE-07: touch target */
       border: 1.5px solid rgba(10,61,107,0.14);
       border-radius: var(--radius-sm);
       font-family: 'Inter', sans-serif;
@@ -1491,8 +1492,8 @@
 
 <!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="js/nav.js?v=20260415"></script>
-<script src="js/config.js?v=20260402"></script>
+<script src="js/nav.js?v=20260415" defer></script>
+<script src="js/config.js?v=20260402" defer></script>
 <script>
 // ── Footer year ──
 document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -2040,6 +2041,6 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   <script src="js/lang-switcher.js" defer></script>
   <script src="/js/planear.js"></script>
-  <script src="/js/cookie-consent.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

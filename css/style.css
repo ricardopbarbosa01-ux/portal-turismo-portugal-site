@@ -1833,6 +1833,14 @@ html, body {
   .ccb-inner { padding: 16px; }
 }
 
+/* ── MOBILE-07: Global form input/select touch target minimum ──────────────── */
+/* Native <select> elements often render at 41px on mobile (padding+font).    */
+/* Applies to all form-style selects and inputs across all pages.               */
+select, input[type="text"], input[type="email"], input[type="tel"],
+input[type="number"], input[type="date"], input[type="search"] {
+  min-height: 44px; /* MOBILE-07: touch target — ensures 44×44px minimum */
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   #cookie-consent-banner,
