@@ -216,8 +216,8 @@ async function auditPage(context, pageConfig, viewport, viewportLabel) {
         log(pid, 'PASS', 'Form', `Partner form has ${inputs.length} fields, ${requiredFields.length} required`);
 
         // Pricing tiers visible?
-        const pricingOnPage = await page.evaluate(() => document.body.innerText.includes('19,99'));
-        log(pid, pricingOnPage ? 'PASS' : 'MED', 'Monetization', `Partner pricing €19,99 visible on page: ${pricingOnPage}`);
+        const pricingOnPage = await page.evaluate(() => document.body.innerText.includes('49'));
+        log(pid, pricingOnPage ? 'PASS' : 'MED', 'Monetization', `Partner pricing €49 visible on page: ${pricingOnPage}`);
       }
 
       // Hero CTAs
