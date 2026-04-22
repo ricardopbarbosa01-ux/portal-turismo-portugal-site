@@ -133,24 +133,49 @@ async function initNavAuth() {
     const regBtn   = document.getElementById('nav-register-btn');
     if (!loginBtn || !regBtn) return;
 
-    if (user) {
-      const isAdmin = user.app_metadata?.role === 'admin';
+    if (!user) return;
 
-      // Botão principal: Dashboard (admin) ou A Minha Conta (user normal)
-      loginBtn.textContent = isAdmin ? 'Dashboard' : 'A Minha Conta';
-      loginBtn.href        = isAdmin ? '/dashboard.html' : '/conta.html';
-      loginBtn.className   = 'btn btn-primary';
+    // Resolve destino do botão principal por hierarquia de role
+    let accountHref  = '/conta.html';
+    let accountLabel = 'A Minha Conta';
 
-      // Botão secundário: sempre Terminar Sessão
-      regBtn.textContent = 'Terminar Sessão';
-      regBtn.href        = '#';
-      regBtn.className   = 'btn btn-outline';
-      regBtn.addEventListener('click', async function (e) {
-        e.preventDefault();
-        await db.auth.signOut();
-        window.location.href = '/';
-      });
+    if (user.app_metadata?.role === 'admin') {
+      accountHref  = '/dashboard.html';
+      accountLabel = 'Dashboard';
+    } else if (user.app_metadata?.plan === 'pro') {
+      accountHref  = '/conta.html';
+      accountLabel = 'A Minha Conta';
+    } else {
+      // Verificar se é parceiro aprovado (1 query, 1 coluna)
+      try {
+        const { data: partner } = await db
+          .from('partners')
+          .select('id')
+          .eq('user_id', user.id)
+          .eq('aprovado', true)
+          .maybeSingle();
+        if (partner) {
+          accountHref  = '/parceiro.html';
+          accountLabel = 'Portal Parceiro';
+        }
+      } catch (_) {
+        // Query falhou → fallback seguro: /conta.html
+      }
     }
+
+    loginBtn.textContent = accountLabel;
+    loginBtn.href        = accountHref;
+    loginBtn.className   = 'btn btn-primary';
+
+    // Botão secundário: sempre Terminar Sessão
+    regBtn.textContent = 'Terminar Sessão';
+    regBtn.href        = '#';
+    regBtn.className   = 'btn btn-outline';
+    regBtn.addEventListener('click', async function (e) {
+      e.preventDefault();
+      await db.auth.signOut();
+      window.location.href = '/';
+    });
   } catch (_) {}
 }
 
