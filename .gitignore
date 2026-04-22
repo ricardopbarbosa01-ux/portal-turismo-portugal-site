@@ -20,3 +20,6 @@ smoke-test.png
 # Local environment — credentials never committed
 .env.local
 .env*.local
+
+# Test data — contains UUIDs and seed rows, never commit to production
+_scripts/test-rls-setup.sql

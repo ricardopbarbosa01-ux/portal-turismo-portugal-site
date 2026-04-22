@@ -1596,7 +1596,6 @@ form.addEventListener('submit', async function(e) {
     data_fim:    document.getElementById('f-data-fim').value,
     orcamento:   budget,
     notas:       document.getElementById('f-notas').value.trim(),
-    timestamp:   new Date().toISOString(),
     ...(window._pthSourceCtx || {})
   };
 
@@ -1703,8 +1702,7 @@ form.addEventListener('submit', async function(e) {
         data_inicio: document.getElementById('f-data-inicio').value,
         data_fim:    document.getElementById('f-data-fim').value,
         orcamento:   budget,
-        notas:       document.getElementById('f-notas').value.trim(),
-        timestamp:   new Date().toISOString()
+        notas:       document.getElementById('f-notas').value.trim()
       };
       if (window._pthSourceCtx) { Object.assign(payload, window._pthSourceCtx); }
       try {
@@ -1933,7 +1931,6 @@ form.addEventListener('submit', async function(e) {
     source_partner_name: partnerName,
     source_vertical:     sourceVertical,
     intent_type:         intent,
-    timestamp:           new Date().toISOString(),
     page_url:            window.location.href
   };
 })();
