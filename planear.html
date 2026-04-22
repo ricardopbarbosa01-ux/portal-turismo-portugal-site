@@ -1516,6 +1516,18 @@ navClose?.addEventListener('click', closeMenu);
 navBackdrop?.addEventListener('click', closeMenu);
 navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
+// ── GA4: funil planear ────────────────────────────────────────────────
+(function() {
+  var fNome = document.getElementById('f-nome');
+  if (fNome) {
+    fNome.addEventListener('focus', function onPlanearFocus() {
+      fNome.removeEventListener('focus', onPlanearFocus);
+      if (typeof gtag === 'function') {
+        try { gtag('event', 'lead_planear_iniciado', { page_location: window.location.pathname }); } catch(e) { console.warn('GA event failed:', e); }
+      }
+    });
+  }
+})();
 
 // ── Interest checkboxes ──
 document.querySelectorAll('.interest-item').forEach(item => {
@@ -1676,6 +1688,17 @@ function validateForm() {
         shakeAndReset();
         showToast('Pedido não foi guardado. Tenta novamente ou contacta-nos.', 'error');
         return;
+      }
+
+      if (typeof gtag === 'function') {
+        try {
+          gtag('event', 'lead_planear_submetido', {
+            regiao:     payload.regiao,
+            pessoas:    payload.pessoas,
+            orcamento:  payload.orcamento,
+            interesses: payload.interesses,
+          });
+        } catch(e) { console.warn('GA event failed:', e); }
       }
 
       // Switch to success state on track

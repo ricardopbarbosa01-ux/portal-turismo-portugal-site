@@ -7,6 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('b2b-submit');
   if (!form || !btn) return;
 
+  // ── GA4: funil parceiros ──────────────────────────────────────────────
+  var fNegocio = document.getElementById('f-negocio');
+  if (fNegocio) {
+    fNegocio.addEventListener('focus', function onParceirosIniciado() {
+      fNegocio.removeEventListener('focus', onParceirosIniciado);
+      if (typeof gtag === 'function') {
+        try { gtag('event', 'partner_aplicacao_iniciada'); } catch(e) { console.warn('GA event failed:', e); }
+      }
+    });
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const originalText = btn.textContent;
@@ -33,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('Erro ao enviar. Tente novamente ou contacte-nos directamente.', 'error');
       console.error('partner_leads insert error:', error);
     } else {
+      if (typeof gtag === 'function') {
+        try {
+          gtag('event', 'partner_aplicacao_submetida', {
+            tipo:  payload.tipo,
+            regiao: payload.regiao,
+            plano:  payload.plano,
+          });
+        } catch(e) { console.warn('GA event failed:', e); }
+      }
       showToast('Pedido enviado! A nossa equipa contacta-o em 48h.', 'success');
       fetch('https://glupdjvdvunogkqgxoui.supabase.co/functions/v1/send-partner-alert', {
         method: 'POST',
