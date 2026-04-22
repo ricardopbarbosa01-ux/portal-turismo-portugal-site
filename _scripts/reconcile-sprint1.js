@@ -3,7 +3,7 @@
  * Draft 23 Reconciliation Sprint 1 — 12 priority beaches
  *
  * Usage:
- *   SUPABASE_SERVICE_KEY=<REDACTED_DELETED_KEY_20260422> node _scripts/reconcile-sprint1.js
+ *   SUPABASE_SERVICE_KEY=<service_role_key> node _scripts/reconcile-sprint1.js
  *
  * What it does:
  *   1. Reads 12 target beaches from data/beaches-master.json
