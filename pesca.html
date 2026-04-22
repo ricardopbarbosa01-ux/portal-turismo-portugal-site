@@ -102,6 +102,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://videos.pexels.com">
   <style>
     :root {
       --blue:#0a3d6b;--blue-mid:#1a5fa3;--blue-light:#2980d4;
@@ -155,6 +156,16 @@
     .pesca-hero-stat-div{width:1px;height:28px;background:rgba(255,255,255,0.18);flex-shrink:0;}
     .pesca-hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
     .pesca-hero-wave{position:absolute;bottom:-1px;left:0;right:0;width:100%;height:64px;display:block;}
+    /* Video background */
+    .pesca-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+    .pesca-hero-overlay{position:absolute;inset:0;background:rgba(6,13,26,0.65);z-index:1;}
+    /* Mobile: imagem estática de pesca em vez de vídeo */
+    @media(max-width:768px){
+      .pesca-hero-video{display:none;}
+      .pesca-hero{background:url('https://images.unsplash.com/photo-1545566239-0e0fb08e0c88?auto=format&fit=crop&w=800&q=70') center/cover no-repeat,linear-gradient(135deg,#050f1f 0%,#071c38 55%,#0a3d6b 100%);}
+    }
+    /* Reduced motion: gradient puro */
+    @media(prefers-reduced-motion:reduce){.pesca-hero-video{display:none;}.pesca-hero *{animation:none!important;}}
 
     /* ── Breadcrumb ── */
     .breadcrumb{padding:16px 5vw 0;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-light);}
@@ -576,6 +587,15 @@
 
   <!-- Hero -->
   <section class="pesca-hero" aria-labelledby="pesca-hero-heading">
+    <video
+      class="pesca-hero-video"
+      id="pesca-bg-video"
+      src="https://videos.pexels.com/video-files/5147464/5147464-hd_1920_1080_30fps.mp4"
+      poster="https://images.unsplash.com/photo-1545566239-0e0fb08e0c88?auto=format&fit=crop&w=1200&q=60"
+      preload="none" playsinline autoplay muted loop
+      aria-hidden="true"
+    ></video>
+    <div class="pesca-hero-overlay" aria-hidden="true"></div>
     <div class="pesca-hero-2col">
       <!-- Left -->
       <div>
