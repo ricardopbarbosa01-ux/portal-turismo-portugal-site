@@ -1,11 +1,19 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
+const CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+}
+
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? ''
 const FROM = 'Portugal Travel Hub <ola@portalturismoportugal.com>'
 
 serve(async (req) => {
+  if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS })
+
   const { email, name } = await req.json()
-  if (!email) return new Response('No email', { status: 400 })
+  if (!email) return new Response('No email', { status: 400, headers: CORS })
 
   const firstName = name?.split(' ')[0] || 'Explorador'
 
@@ -64,5 +72,5 @@ serve(async (req) => {
 
   const data = await res.json()
   console.log('send-welcome:', res.status, email, data)
-  return new Response(JSON.stringify(data), { status: res.ok ? 200 : 500 })
+  return new Response(JSON.stringify(data), { status: res.ok ? 200 : 500, headers: CORS })
 })

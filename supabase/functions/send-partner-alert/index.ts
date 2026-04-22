@@ -1,12 +1,20 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
+const CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+}
+
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? ''
 const FROM = 'Portugal Travel Hub <ola@portalturismoportugal.com>'
 const ADMIN_EMAIL = 'parceiros@portalturismoportugal.com'
 
 serve(async (req) => {
+  if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS })
+
   const { negocio, contacto, email, tipo, plano, regiao, mensagem } = await req.json()
-  if (!email) return new Response('No email', { status: 400 })
+  if (!email) return new Response('No email', { status: 400, headers: CORS })
 
   // Email de confirmação para o parceiro
   const partnerHtml = `
@@ -60,5 +68,5 @@ serve(async (req) => {
     })
   ])
 
-  return new Response('OK', { status: 200 })
+  return new Response('OK', { status: 200, headers: CORS })
 })
