@@ -1635,6 +1635,7 @@ function validateForm() {
 
     // Lock and enter loading
     sldTrack.classList.add('sld-loading');
+    const origLabel = sldLabel.textContent;
     sldLabel.textContent = 'A processar...';
     sldThumb.style.transition = 'transform 0.22s ease-out';
     sldFill.style.transition  = 'width 0.22s ease-out';
@@ -1642,14 +1643,14 @@ function validateForm() {
     sldFill.style.width       = '100%';
     sldLabel.style.opacity    = '1';
 
-    setTimeout(function() {
+    setTimeout(async function() {
       // Capture form data (mirrors form submit handler)
       const interests = Array.from(document.querySelectorAll('.interest-item input:checked')).map(function(cb) { return cb.value; });
       const budget    = (document.querySelector('.budget-item.selected input') || {}).value || '';
       const payload = {
         nome:        document.getElementById('f-nome').value.trim(),
         email:       document.getElementById('f-email').value.trim(),
-        interesse:   interests,
+        interesses:  interests,
         regiao:      document.getElementById('f-regiao').value,
         pessoas:     document.getElementById('f-pessoas').value,
         data_inicio: document.getElementById('f-data-inicio').value,
@@ -1667,8 +1668,16 @@ function validateForm() {
         console.warn('[PTH] plan_requests localStorage failed (slider):', lsErr);
       }
 
-      // Supabase — deferred status update after panel shows
-      var _sliderInsert = db.from('plan_requests').insert([payload]);
+      const { error } = await db.from('plan_requests').insert([payload]);
+
+      if (error) {
+        console.error('[PTH] plan_requests insert error (slider):', error);
+        sldTrack.classList.remove('sld-loading');
+        sldLabel.textContent = origLabel;
+        shakeAndReset();
+        showToast('Pedido não foi guardado. Tenta novamente ou contacta-nos.', 'error');
+        return;
+      }
 
       // Switch to success state on track
       sldTrack.classList.remove('sld-loading');
@@ -1681,22 +1690,8 @@ function validateForm() {
         buildRecommendation(payload);
         formSuccess.classList.add('visible');
         formSuccess.focus();
-
-        // Update status badge once Supabase resolves (deferred from above)
         var recStatus = document.getElementById('rec-status');
-        _sliderInsert
-          .then(function(resp) {
-            if (!resp.error) {
-              if (recStatus) recStatus.innerHTML = '✓ Pedido recebido pela equipa.';
-            } else {
-              console.warn('[PTH] plan_requests insert error (slider):', resp.error);
-              if (recStatus) recStatus.innerHTML = 'Guardado localmente. Se não recebermos contacto em 48h, <a href="contact.html">escreva-nos</a>.';
-            }
-          })
-          .catch(function(err) {
-            console.warn('[PTH] plan_requests network error (slider):', err);
-            if (recStatus) recStatus.innerHTML = 'Guardado localmente. Se não recebermos contacto em 48h, <a href="contact.html">escreva-nos</a>.';
-          });
+        if (recStatus) recStatus.innerHTML = '✓ Pedido recebido pela equipa.';
       }, 700);
     }, 1300);
   }
@@ -1898,7 +1893,7 @@ function validateForm() {
 
 // ── Recommendation engine ────────────────────────────────────────────────────
 function buildRecommendation(data) {
-  var interests = data.interesse || [];
+  var interests = data.interesses || [];
   var budget    = data.orcamento || '';
   var regiao    = data.regiao    || '';
   var nome      = data.nome      || '';
