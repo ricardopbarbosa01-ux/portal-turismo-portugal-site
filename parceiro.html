@@ -270,6 +270,14 @@
   <p class="gate-text">A sua candidatura está a ser revista pela nossa equipa. Entraremos em contacto em breve para confirmar a aprovação.</p>
 </div>
 
+<!-- Gate: erro de carregamento -->
+<div id="gate-error" class="gate-screen" style="display:none;">
+  <div class="gate-icon">⚠️</div>
+  <h1 class="gate-title">Erro ao carregar perfil</h1>
+  <p class="gate-text">Não conseguimos carregar a tua informação. Por favor, recarrega a página ou contacta-nos se o problema persistir.</p>
+  <button class="gate-link" onclick="window.location.reload()" style="cursor:pointer;border:none;background:none;font:inherit;">Recarregar</button>
+</div>
+
 <!-- Dashboard (visível apenas quando aprovado=true) -->
 <div id="partner-dashboard" class="account-root" style="display:none;">
 
@@ -343,13 +351,26 @@ let partnerData = null;
   if (!user) { window.location.href = '/login.html'; return; }
 
   // Buscar perfil do parceiro
-  const { data: partner, error } = await db
-    .from('partners')
-    .select('*')
-    .eq('user_id', user.id)
-    .single();
+  let partner, queryError;
+  try {
+    const { data, error } = await db
+      .from('partners')
+      .select('*')
+      .eq('user_id', user.id)
+      .maybeSingle();
+    partner = data;
+    queryError = error;
+  } catch (e) {
+    queryError = e;
+  }
 
-  if (error || !partner) {
+  if (queryError) {
+    console.error('[parceiro] query partners falhou:', queryError);
+    document.getElementById('gate-error').style.display = 'flex';
+    return;
+  }
+
+  if (!partner) {
     document.getElementById('gate-no-profile').style.display = 'flex';
     return;
   }
