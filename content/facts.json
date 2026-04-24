@@ -1,0 +1,30 @@
+{
+  "last_updated": "2026-04-24",
+  "last_audit_commit": "3ef053f",
+  "purpose": "Source of truth for all public-facing facts. Any divergence between PT and EN against this file is a bug.",
+  "facts": {
+    "total_beaches_exact": 107,
+    "beaches_display": "100+",
+    "total_coastal_regions": 7,
+    "total_webcams": 13,
+    "total_surf_spots": 25,
+    "total_fishing_spots": 25,
+    "partner_plan_price_eur": 49,
+    "response_time_business_days": 5,
+    "roadmap_planning_service": "Q3 2026"
+  },
+  "display_strings": {
+    "pt": {
+      "beaches_short": "100+ praias",
+      "beaches_catalogued": "Mais de 100 praias catalogadas",
+      "regions": "7 Regiões",
+      "response_time": "5 dias úteis"
+    },
+    "en": {
+      "beaches_short": "100+ beaches",
+      "beaches_catalogued": "Over 100 curated beaches",
+      "regions": "7 Regions",
+      "response_time": "5 business days"
+    }
+  }
+}
