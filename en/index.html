@@ -58,8 +58,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
 
   <!-- Hero video poster preload (matches actual poster src) -->
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" fetchpriority="high">
@@ -981,8 +981,8 @@
   <!-- RIGHT: Video -->
   <div class="hero__right">
     <video
-      src="https://videos.pexels.com/video-files/1093662/1093662-hd_1920_1080_30fps.mp4"
-      playsinline autoplay muted loop preload="none"
+      data-src="https://videos.pexels.com/video-files/1093662/1093662-hd_1920_1080_30fps.mp4"
+      playsinline muted loop preload="none"
       class="hero__video"
       poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
       aria-label="Video of Portuguese beaches"
@@ -1494,7 +1494,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
 <script src="/js/config.js?v=20260402"></script>
 <script src="/js/animations.js?v=20260402" defer></script>
 <script>
@@ -1704,6 +1704,7 @@
 
   <script src="/js/lang-switcher.js" defer></script>
   <script src="/js/nav.js?v=20260422c" defer></script>
+  <script src="/js/lazy-video.js?v=20260424" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>
