@@ -19,7 +19,7 @@
   --off-white:    #f6f4ef;
   --text:         #1a1a2e;
   --text-mid:     #4a5568;
-  --text-light:   #718096;
+  --text-light:   #566072;
   --surface:      rgba(255,255,255,0.06);
   --glass:        rgba(255,255,255,0.10);
   --glass-border: rgba(255,255,255,0.20);
@@ -980,10 +980,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 20px 0;
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap; gap: 8px;
-  font-size: 0.8rem; color: rgba(255,255,255,0.35);
+  font-size: 0.8rem; color: rgba(255,255,255,0.75);
 }
 .footer-bottom a {
-  color: rgba(255,255,255,0.45); transition: color var(--transition);
+  color: rgba(255,255,255,0.75); transition: color var(--transition);
   display: inline-flex; align-items: center; min-height: 44px; min-width: 44px;
   padding: 4px 6px; /* MOBILE-07: touch target — ensures 44×44px minimum hit area */
 }
@@ -1645,7 +1645,7 @@ html, body {
   margin: 0;
 }
 .ccb-link {
-  color: #C9A84C;
+  color: var(--gold-text);
   text-decoration: underline;
   text-underline-offset: 2px;
   font-weight: 500;
@@ -1698,7 +1698,7 @@ html, body {
 }
 .ccb-btn--customize {
   background: transparent;
-  color: rgba(27,58,107,0.55);
+  color: rgba(27,58,107,0.80);
   border-color: transparent;
   font-weight: 400;
   font-size: 13px;

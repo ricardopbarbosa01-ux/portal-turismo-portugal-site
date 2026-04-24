@@ -112,7 +112,7 @@
       --blue:#0a3d6b;--blue-mid:#1a5fa3;--blue-light:#2980d4;
       --gold:#c9a84c;--gold-light:#e8c97a;--gold-glow:rgba(201,168,76,0.25);
       --white:#ffffff;--off-white:#f6f4ef;
-      --text:#1a1a2e;--text-mid:#4a5568;--text-light:#8892a4;
+      --text:#1a1a2e;--text-mid:#4a5568;--text-light:#566072;
       --border:rgba(10,61,107,0.10);
       --glass:rgba(255,255,255,0.10);--glass-border:rgba(255,255,255,0.20);
       --shadow:0 4px 20px rgba(10,61,107,0.10);
@@ -214,10 +214,10 @@
     .spot-location svg{width:10px;height:10px;stroke:var(--text-light);fill:none;flex-shrink:0;}
     .spot-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:3px;}
     .spot-meta-tag{font-size:0.7rem;font-weight:600;padding:3px 10px;border-radius:50px;}
-    .spot-level--iniciante   {background:rgba(39,174,96,0.10);color:#1e8449;}
-    .spot-level--intermediio {background:rgba(41,128,212,0.10);color:#1a5fa3;}
-    .spot-level--avancado    {background:rgba(230,126,34,0.10);color:#b05e0d;}
-    .spot-level--profissional{background:rgba(201,168,76,0.15);color:#8a6b10;}
+    .spot-level--iniciante   {background:rgba(39,174,96,0.10);color:#1b7641;}
+    .spot-level--intermedio {background:rgba(41,128,212,0.10);color:#1a5fa3;}
+    .spot-level--avancado    {background:rgba(230,126,34,0.10);color:#9e540b;}
+    .spot-level--profissional{background:rgba(201,168,76,0.15);color:#7c600e;}
     .spot-type{font-size:0.78rem;color:var(--text-mid);display:flex;align-items:center;gap:5px;}
     .spot-type svg{width:13px;height:13px;stroke:var(--blue-mid);fill:none;flex-shrink:0;}
     .spot-season{font-size:0.74rem;color:var(--text-light);}
@@ -392,8 +392,8 @@
     .sp-card-eyebrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
     .sp-card-cat{font-size:0.65rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-light);}
     .sp-card-badge{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:50px;}
-    .sp-badge--destaque{background:rgba(201,168,76,0.14);color:#8a6b10;border:1px solid rgba(201,168,76,0.28);}
-    .sp-badge--verificado{background:rgba(39,174,96,0.10);color:#1e8449;border:1px solid rgba(39,174,96,0.22);}
+    .sp-badge--destaque{background:rgba(201,168,76,0.14);color:#7c600e;border:1px solid rgba(201,168,76,0.28);}
+    .sp-badge--verificado{background:rgba(39,174,96,0.10);color:#1b7641;border:1px solid rgba(39,174,96,0.22);}
     .sp-badge--novo{background:rgba(41,128,212,0.10);color:#1a5fa3;border:1px solid rgba(41,128,212,0.22);}
     .sp-card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
     .sp-card-icon svg{width:22px;height:22px;stroke:var(--white);fill:none;stroke-width:1.7;}
@@ -653,7 +653,7 @@
       <div class="level-tabs" role="group" aria-label="Level filter" id="level-tabs">
         <button class="level-tab active" data-level="">All</button>
         <button class="level-tab" data-level="iniciante">Beginner</button>
-        <button class="level-tab" data-level="intermediio">Intermediate</button>
+        <button class="level-tab" data-level="intermedio">Intermediate</button>
         <button class="level-tab" data-level="avancado">Advanced</button>
         <button class="level-tab" data-level="profissional">Professional</button>
       </div>
@@ -729,19 +729,19 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
-        <div class="surf-quem-card" data-profile="intermediio">
+        <div class="surf-quem-card" data-profile="intermedio">
           <div class="surf-quem-icon" style="background:linear-gradient(135deg,#1a5fa3,#2980d4);">
             <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3 class="surf-quem-title">Intermediate</h3>
           <p class="surf-quem-desc">Already catching waves but want to improve? Arrifana (consistent point break) and Guincho (demanding, strong wind) are the right spots to level up with a surf coach.</p>
-          <a href="/en/planear.html?source=surf&tipo=surf&nivel=intermediio&intent=planear" class="surf-quem-link">
+          <a href="/en/planear.html?source=surf&tipo=surf&nivel=intermedio&intent=planear" class="surf-quem-link">
             Find a surf coach
             <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
         <div class="surf-quem-card" data-profile="avancado">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#8a6b10,#c9a84c);">
+          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#7c600e,#c9a84c);">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <h3 class="surf-quem-title">Advanced / Pro</h3>
@@ -1110,7 +1110,7 @@
       name:'Praia do Amado', region:'Algarve', location:'Aljezur',
       bgClass:'spot-bg--algarve', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Beginner–Intermediate',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Summer–Autumn', best_swell:'O / NO', best_wind:'NE',
       desc:'Diverse beach with peaks for all levels. Well-regarded surf school on the Vicentina Coast.',
       tags:['School','All Levels','Vicentina Coast'], quality:4
@@ -1119,7 +1119,7 @@
       name:'Costa da Caparica', region:'Lisboa', location:'Almada',
       bgClass:'spot-bg--lisboa', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Beginner–Intermediate',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Year Round', best_swell:'O', best_wind:'NE / N',
       desc:'30 km of beach with varied peaks. The most accessible surf spot from Lisbon — 20 min by metro from the centre.',
       tags:['Metro','School','Accessible','Family'], quality:4
@@ -1127,8 +1127,8 @@
     {
       name:'Praia do Guincho', region:'Lisboa', location:'Cascais',
       bgClass:'spot-bg--lisboa', type:'Beach Break / Wind',
-      levelKey:'intermediio', levelLabel:'Intermediate–Advanced',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermediate–Advanced',
+      levels:['intermedio','avancado'],
       season:'Autumn–Winter', best_swell:'NO', best_wind:'N',
       desc:'Wild beach with strong swell and constant wind. Favourite of experienced surfers and kitesurfers.',
       tags:['Wind','Kitesurf','Wild','Nature'], quality:4
@@ -1137,7 +1137,7 @@
       name:'Praia de Matosinhos', region:'Porto', location:'Matosinhos',
       bgClass:'spot-bg--porto', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Beginner–Intermediate',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Year Round', best_swell:'NO / O', best_wind:'NE',
       desc:'Porto\'s main surf beach. Easy metro access, regular waves and several surf schools.',
       tags:['Metro','School','Urban','Porto'], quality:3
@@ -1145,8 +1145,8 @@
     {
       name:'Praia da Arrifana', region:'Alentejo', location:'Aljezur',
       bgClass:'spot-bg--alentejo', type:'Point Break / Reef',
-      levelKey:'intermediio', levelLabel:'Intermediate',
-      levels:['intermediio'],
+      levelKey:'intermedio', levelLabel:'Intermediate',
+      levels:['intermedio'],
       season:'Autumn–Spring', best_swell:'NO', best_wind:'NE',
       desc:'Rocky headland with long, consistent waves in a sheltered bay. Wild and unspoilt scenery.',
       tags:['Point Break','Consistent','Wild','Views'], quality:4
@@ -1154,8 +1154,8 @@
     {
       name:'Praia de Santa Bárbara', region:'Açores', location:'Ribeira Grande, S. Miguel',
       bgClass:'spot-bg--acores', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermediate–Advanced',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermediate–Advanced',
+      levels:['intermedio','avancado'],
       season:'October–March', best_swell:'N / NO', best_wind:'SE',
       desc:'The most famous surf spot in the Azores. Powerful waves from the North Atlantic in a unique volcanic landscape.',
       tags:['Azores','Atlantic','Unique Nature','Island'], quality:5

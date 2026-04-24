@@ -14,6 +14,8 @@ smoke-test.png
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+/tests/visual/screenshots/*.png
+/tests/visual/screenshots/*.json
 .claude/
 .mcp.json
 
@@ -23,3 +25,7 @@ smoke-test.png
 
 # Test data — contains UUIDs and seed rows, never commit to production
 _scripts/test-rls-setup.sql
+
+# Scripts de investigação ad-hoc (não commitar)
+/inspect-*.js
+/audit-*.log

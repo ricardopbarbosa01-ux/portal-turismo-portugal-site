@@ -113,7 +113,7 @@
       --blue:#0a3d6b;--blue-mid:#1a5fa3;--blue-light:#2980d4;
       --gold:#c9a84c;--gold-light:#e8c97a;--gold-glow:rgba(201,168,76,0.25);
       --white:#ffffff;--off-white:#f6f4ef;
-      --text:#1a1a2e;--text-mid:#4a5568;--text-light:#8892a4;
+      --text:#1a1a2e;--text-mid:#4a5568;--text-light:#566072;
       --border:rgba(10,61,107,0.10);
       --glass:rgba(255,255,255,0.10);--glass-border:rgba(255,255,255,0.20);
       --shadow:0 4px 20px rgba(10,61,107,0.10);
@@ -176,6 +176,7 @@
 
     /* ── Breadcrumb ── */
     .breadcrumb{padding:16px 5vw 0;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-light);}
+    .breadcrumb span[aria-current="page"]{color:#3d5167;font-weight:500;}
     .breadcrumb a{color:var(--blue-mid);transition:color var(--transition);}
     .breadcrumb a:hover{color:var(--blue);}
     .breadcrumb svg{width:14px;height:14px;stroke:var(--text-light);fill:none;flex-shrink:0;}
@@ -225,10 +226,10 @@
     .spot-location svg{width:10px;height:10px;stroke:var(--text-light);fill:none;flex-shrink:0;}
     .spot-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:3px;}
     .spot-meta-tag{font-size:0.7rem;font-weight:600;padding:3px 10px;border-radius:50px;}
-    .spot-level--iniciante   {background:rgba(39,174,96,0.10);color:#1e8449;}
-    .spot-level--intermediio {background:rgba(41,128,212,0.10);color:#1a5fa3;}
-    .spot-level--avancado    {background:rgba(230,126,34,0.10);color:#b05e0d;}
-    .spot-level--profissional{background:rgba(201,168,76,0.15);color:#8a6b10;}
+    .spot-level--iniciante   {background:rgba(39,174,96,0.10);color:#1b7641;}
+    .spot-level--intermedio {background:rgba(41,128,212,0.10);color:#1a5fa3;}
+    .spot-level--avancado    {background:rgba(230,126,34,0.10);color:#9e540b;}
+    .spot-level--profissional{background:rgba(201,168,76,0.15);color:#7c600e;}
     .spot-type{font-size:0.78rem;color:var(--text-mid);display:flex;align-items:center;gap:5px;}
     .spot-type svg{width:13px;height:13px;stroke:var(--blue-mid);fill:none;flex-shrink:0;}
     .spot-season{font-size:0.74rem;color:var(--text-light);}
@@ -257,7 +258,7 @@
     .surf-guide{background:var(--white);padding:64px 5vw;}
     .guide-inner{max-width:1100px;margin:0 auto;}
     .guide-header{text-align:center;max-width:600px;margin:0 auto 44px;}
-    .guide-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;}
+    .guide-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-text);display:block;margin-bottom:12px;}
     .guide-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--blue);font-weight:700;margin-bottom:12px;line-height:1.15;}
     .guide-title em{font-style:italic;color:var(--blue-mid);}
     .guide-subtitle{font-size:0.95rem;color:var(--text-mid);line-height:1.7;}
@@ -403,8 +404,8 @@
     .sp-card-eyebrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
     .sp-card-cat{font-size:0.65rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-light);}
     .sp-card-badge{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:50px;}
-    .sp-badge--destaque{background:rgba(201,168,76,0.14);color:#8a6b10;border:1px solid rgba(201,168,76,0.28);}
-    .sp-badge--verificado{background:rgba(39,174,96,0.10);color:#1e8449;border:1px solid rgba(39,174,96,0.22);}
+    .sp-badge--destaque{background:rgba(201,168,76,0.14);color:#7c600e;border:1px solid rgba(201,168,76,0.28);}
+    .sp-badge--verificado{background:rgba(39,174,96,0.10);color:#1b7641;border:1px solid rgba(39,174,96,0.22);}
     .sp-badge--novo{background:rgba(41,128,212,0.10);color:#1a5fa3;border:1px solid rgba(41,128,212,0.22);}
     .sp-card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
     .sp-card-icon svg{width:22px;height:22px;stroke:var(--white);fill:none;stroke-width:1.7;}
@@ -437,22 +438,22 @@
     .spb-btn-ghost:hover{border-color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.07);}
 
     /* ══ Full footer ══ */
-    .surf-footer{background:var(--blue);color:var(--white);padding:60px 5vw 32px;}
+    .surf-footer{background:#061e3e;color:var(--white);padding:60px 5vw 32px;}
     .surf-footer-inner{max-width:1120px;margin:0 auto;}
     .surf-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
     @media(max-width:860px){.surf-footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
     @media(max-width:560px){.surf-footer-grid{grid-template-columns:1fr;gap:24px;}}
     .surf-footer-brand{font-family:'Bodoni Moda',serif;font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:8px;}
-    .surf-footer-tagline{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.65;}
-    .surf-footer-col-title{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:14px;}
+    .surf-footer-tagline{font-size:0.8rem;color:rgba(255,255,255,0.80);line-height:1.65;}
+    .surf-footer-col-title{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:14px;}
     .surf-footer-col ul{list-style:none;}
     .surf-footer-col ul li{margin-bottom:9px;}
-    .surf-footer-col ul li a{font-size:0.83rem;color:rgba(255,255,255,0.55);transition:color 0.2s;}
+    .surf-footer-col ul li a{font-size:0.83rem;color:rgba(255,255,255,0.75);transition:color 0.2s;}
     .surf-footer-col ul li a:hover{color:var(--gold-light);}
     .surf-footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;}
-    .surf-footer-copy{font-size:0.73rem;color:rgba(255,255,255,0.32);}
+    .surf-footer-copy{font-size:0.73rem;color:rgba(255,255,255,0.50);}
     .surf-footer-legal{display:flex;gap:18px;}
-    .surf-footer-legal a{font-size:0.73rem;color:rgba(255,255,255,0.32);transition:color 0.2s;}
+    .surf-footer-legal a{font-size:0.73rem;color:rgba(255,255,255,0.50);transition:color 0.2s;}
     .surf-footer-legal a:hover{color:rgba(255,255,255,0.65);}
 
     /* ══ Reveal ══ */
@@ -469,7 +470,7 @@
     /* ══ GYG experiences affiliate block ══ */
     .surf-gyg{background:var(--white);padding:56px 5vw;border-top:1px solid var(--border);}
     .surf-gyg-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
-    .surf-gyg-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .surf-gyg-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px;}
     .surf-gyg-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:8px;}
     .surf-gyg-sub{font-size:0.875rem;color:var(--text-mid);line-height:1.65;max-width:420px;}
     .surf-gyg-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:700;border-radius:50px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 16px rgba(201,168,76,0.32);transition:transform 0.2s,box-shadow 0.2s;flex-shrink:0;min-height:44px;}
@@ -483,7 +484,7 @@
     /* ══ Surf alerts email capture ══ */
     .surf-alerts{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
     .surf-alerts-inner{max-width:520px;margin:0 auto;text-align:center;}
-    .surf-alerts-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .surf-alerts-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px;}
     .surf-alerts-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:8px;}
     .surf-alerts-sub{font-size:0.875rem;color:var(--text-mid);line-height:1.65;margin-bottom:24px;}
     .surf-alerts-form{display:flex;gap:10px;max-width:420px;margin:0 auto 12px;}
@@ -676,7 +677,7 @@
       <div class="level-tabs" role="group" aria-label="Filtro de nível" id="level-tabs">
         <button class="level-tab active" data-level="">Todos</button>
         <button class="level-tab" data-level="iniciante">Iniciante</button>
-        <button class="level-tab" data-level="intermediio">Intermédio</button>
+        <button class="level-tab" data-level="intermedio">Intermédio</button>
         <button class="level-tab" data-level="avancado">Avançado</button>
         <button class="level-tab" data-level="profissional">Profissional</button>
       </div>
@@ -753,19 +754,19 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
-        <div class="surf-quem-card" data-profile="intermediio">
+        <div class="surf-quem-card" data-profile="intermedio">
           <div class="surf-quem-icon" style="background:linear-gradient(135deg,#1a5fa3,#2980d4);">
             <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3 class="surf-quem-title">Intermédio</h3>
           <p class="surf-quem-desc">Já apanha ondas mas quer evoluir? Arrifana (point break consistente) e Guincho (exigente, vento forte) são os spots certos para subir de nível com um surf coach.</p>
-          <a href="planear.html?source=surf&tipo=surf&nivel=intermediio&intent=planear" class="surf-quem-link">
+          <a href="planear.html?source=surf&tipo=surf&nivel=intermedio&intent=planear" class="surf-quem-link">
             Encontrar surf coach
             <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
         <div class="surf-quem-card" data-profile="avancado">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#8a6b10,#c9a84c);">
+          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#7c600e,#c9a84c);">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <h3 class="surf-quem-title">Avançado / Pro</h3>
@@ -1135,7 +1136,7 @@
       name:'Praia do Amado', region:'Algarve', location:'Aljezur',
       bgClass:'spot-bg--algarve', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Verão–Outono', best_swell:'O / NO', best_wind:'NE',
       desc:'Praia diversificada com picos para todos os níveis. Escola de surf com boa reputação na Costa Vicentina.',
       tags:['Escola','Todos os Níveis','Costa Vicentina'], quality:4
@@ -1144,7 +1145,7 @@
       name:'Costa da Caparica', region:'Lisboa', location:'Almada',
       bgClass:'spot-bg--lisboa', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Todo o Ano', best_swell:'O', best_wind:'NE / N',
       desc:'30 km de praia com picos variados. A opção mais acessível de Lisboa — a 20 min de metro do centro.',
       tags:['Metro','Escola','Acessível','Familiar'], quality:4
@@ -1152,8 +1153,8 @@
     {
       name:'Praia do Guincho', region:'Lisboa', location:'Cascais',
       bgClass:'spot-bg--lisboa', type:'Beach Break / Vento',
-      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermédio–Avançado',
+      levels:['intermedio','avancado'],
       season:'Outono–Inverno', best_swell:'NO', best_wind:'N',
       desc:'Praia selvagem com ondulação forte e vento constante. Favorita de surfistas experientes e kitesurfistas.',
       tags:['Vento','Kitesurf','Selvagem','Natureza'], quality:4
@@ -1162,7 +1163,7 @@
       name:'Praia de Matosinhos', region:'Porto', location:'Matosinhos',
       bgClass:'spot-bg--porto', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Todo o Ano', best_swell:'NO / O', best_wind:'NE',
       desc:'A praia de surf do Grande Porto. Fácil acesso de metro, ondas regulares e diversas escolas de surf.',
       tags:['Metro','Escola','Urbano','Porto'], quality:3
@@ -1170,8 +1171,8 @@
     {
       name:'Praia da Arrifana', region:'Alentejo', location:'Aljezur',
       bgClass:'spot-bg--alentejo', type:'Point Break / Reef',
-      levelKey:'intermediio', levelLabel:'Intermédio',
-      levels:['intermediio'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      levels:['intermedio'],
       season:'Outono–Primavera', best_swell:'NO', best_wind:'NE',
       desc:'Ponta rochosa com ondas longas e consistentes numa baía protegida. Cenário selvagem e preservado.',
       tags:['Point Break','Consistente','Selvagem','Vista'], quality:4
@@ -1179,8 +1180,8 @@
     {
       name:'Praia de Santa Bárbara', region:'Açores', location:'Ribeira Grande, S. Miguel',
       bgClass:'spot-bg--acores', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermédio–Avançado',
+      levels:['intermedio','avancado'],
       season:'Outubro–Março', best_swell:'N / NO', best_wind:'SE',
       desc:'O spot mais famoso dos Açores. Ondas potentes do Atlântico Norte numa paisagem vulcânica única.',
       tags:['Açores','Atlântico','Natureza Única','Ilha'], quality:5
@@ -1189,7 +1190,7 @@
       name:'Praia de Moledo', region:'Norte', location:'Caminha',
       bgClass:'spot-bg--porto', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Outono–Primavera', best_swell:'NO', best_wind:'E',
       desc:'Praia extensa na foz do Rio Minho com condições suaves, ideal para iniciantes. Funciona melhor com swell de NW e vento de E.',
       tags:['Iniciante','Foz do Minho','Caminha','Suave'], quality:3
@@ -1197,8 +1198,8 @@
     {
       name:'Praia de Afife', region:'Norte', location:'Viana do Castelo',
       bgClass:'spot-bg--porto', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio',
-      levels:['intermediio'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      levels:['intermedio'],
       season:'Todo o Ano', best_swell:'NO', best_wind:'E / NE',
       desc:'Spot remoto com pouca multidão. Bancadas de areia variáveis que criam picos imprevisíveis. Melhor na maré média com swell de NW.',
       tags:['Remoto','Pouca Multidão','Picos Variáveis'], quality:3
@@ -1207,7 +1208,7 @@
       name:'Praia de Cabedelo', region:'Norte', location:'Viana do Castelo',
       bgClass:'spot-bg--porto', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Todos os Níveis',
-      levels:['iniciante','intermediio','avancado'],
+      levels:['iniciante','intermedio','avancado'],
       season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
       desc:'Uma das praias de surf mais antigas de Portugal. Escolinha de surf histórica, bancadas consistentes e ambiente descontraído.',
       tags:['Histórico','Escola','Todos os Níveis','Consistente'], quality:4
@@ -1225,7 +1226,7 @@
       name:'Praia de Esposende', region:'Norte', location:'Esposende',
       bgClass:'spot-bg--porto', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Outono–Inverno', best_swell:'NO', best_wind:'E / NE',
       desc:'Praia urbana com fácil acesso e parque. Funciona com swell de NW, melhor de manhã antes do vento onshore.',
       tags:['Urbano','Acesso Fácil','Manhã','Escola'], quality:3
@@ -1233,8 +1234,8 @@
     {
       name:'Praia de Ofir', region:'Norte', location:'Esposende',
       bgClass:'spot-bg--porto', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio',
-      levels:['intermediio'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      levels:['intermedio'],
       season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
       desc:'Spot consistente na foz do Cávado. Bancadas de areia bem formadas com ondas tubulares em dias de swell médio.',
       tags:['Consistente','Foz do Cávado','Tubular'], quality:4
@@ -1242,8 +1243,8 @@
     {
       name:'Praia do Furadouro', region:'Centro', location:'Ovar',
       bgClass:'spot-bg--centro', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermédio–Avançado',
+      levels:['intermedio','avancado'],
       season:'Outono–Inverno', best_swell:'N / NO', best_wind:'E',
       desc:'Spot exposed com ondas potentes de Atlântico Norte. Correntes fortes — não recomendado para iniciantes. Melhor com vento de E.',
       tags:['Potente','Correntes','Exposed','Inverno'], quality:3
@@ -1251,8 +1252,8 @@
     {
       name:'Praia de Mira', region:'Centro', location:'Mira',
       bgClass:'spot-bg--centro', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio',
-      levels:['intermediio'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      levels:['intermedio'],
       season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
       desc:'Praia longa e exposta com bancadas de areia que mudam sazonalmente. Pouca multidão fora de época.',
       tags:['Praia Longa','Pouca Multidão','Sazonal'], quality:3
@@ -1260,8 +1261,8 @@
     {
       name:'Praia da Tocha', region:'Centro', location:'Cantanhede',
       bgClass:'spot-bg--centro', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermédio–Avançado',
+      levels:['intermedio','avancado'],
       season:'Outono–Inverno', best_swell:'NO', best_wind:'E / NE',
       desc:'Spot pouco conhecido com ondas de qualidade. Acesso por pinhais — vale a pena explorar em dias de swell limpo de NW.',
       tags:['Pouco Conhecido','Qualidade','Pinhais'], quality:3
@@ -1270,7 +1271,7 @@
       name:'Praia de Buarcos', region:'Centro', location:'Figueira da Foz',
       bgClass:'spot-bg--centro', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Todos os Níveis',
-      levels:['iniciante','intermediio','avancado'],
+      levels:['iniciante','intermedio','avancado'],
       season:'Todo o Ano', best_swell:'NO', best_wind:'NE',
       desc:'Spot urbano da Figueira com fácil acesso. Bancadas variáveis — em dias bons produz ondas tubulares de qualidade.',
       tags:['Urbano','Tubular','Figueira da Foz','Versátil'], quality:3
@@ -1278,8 +1279,8 @@
     {
       name:'Praia da Arrifana', region:'Algarve', location:'Aljezur',
       bgClass:'spot-bg--algarve', type:'Reef / Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermédio–Avançado',
+      levels:['intermedio','avancado'],
       season:'Outono–Primavera', best_swell:'NO', best_wind:'NE',
       desc:'Baía protegida na Costa Vicentina com ondas consistentes. Reef no lado direito para avançados, beach break acessível no centro.',
       tags:['Costa Vicentina','Reef','Protegida','Consistente'], quality:4
@@ -1296,8 +1297,8 @@
     {
       name:'Praia da Zavial', region:'Algarve', location:'Vila do Bispo',
       bgClass:'spot-bg--algarve', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio',
-      levels:['intermediio'],
+      levelKey:'intermedio', levelLabel:'Intermédio',
+      levels:['intermedio'],
       season:'Todo o Ano', best_swell:'S', best_wind:'N / NE',
       desc:'Spot protegido que funciona com swell do Sul — raro em Portugal. Ideal quando o resto do Algarve está flat ou com vento onshore.',
       tags:['Swell Sul','Protegido','Alternativa','Algarve'], quality:3
@@ -1306,7 +1307,7 @@
       name:'Praia da Salema', region:'Algarve', location:'Vila do Bispo',
       bgClass:'spot-bg--algarve', type:'Beach Break',
       levelKey:'iniciante', levelLabel:'Iniciante–Intermédio',
-      levels:['iniciante','intermediio'],
+      levels:['iniciante','intermedio'],
       season:'Verão–Outono', best_swell:'SO', best_wind:'N',
       desc:'Baía pequena com ondas suaves. Popular entre escolas de surf locais nos meses de Verão.',
       tags:['Iniciante','Baía','Escola','Verão'], quality:3
@@ -1315,7 +1316,7 @@
       name:'Praia de Odeceixe', region:'Alentejo', location:'Aljezur',
       bgClass:'spot-bg--alentejo', type:'River Mouth',
       levelKey:'iniciante', levelLabel:'Todos os Níveis',
-      levels:['iniciante','intermediio','avancado'],
+      levels:['iniciante','intermedio','avancado'],
       season:'Todo o Ano', best_swell:'NO', best_wind:'E / NE',
       desc:'Spot único na foz da ribeira de Odeceixe. Lado esquerdo protegido para iniciantes, lado direito com ondas mais potentes.',
       tags:['River Mouth','Único','Todos os Níveis','Costa Vicentina'], quality:4
@@ -1332,8 +1333,8 @@
     {
       name:'Praia de Santa Bárbara', region:'Açores', location:'Ribeira Grande, S. Miguel',
       bgClass:'spot-bg--acores', type:'Beach Break',
-      levelKey:'intermediio', levelLabel:'Intermédio–Avançado',
-      levels:['intermediio','avancado'],
+      levelKey:'intermedio', levelLabel:'Intermédio–Avançado',
+      levels:['intermedio','avancado'],
       season:'Todo o Ano', best_swell:'N / NO', best_wind:'SE',
       desc:'Beach break consistente próximo de Ribeira Grande. Mais acessível que o reef, ideal para surfistas intermédios que visitam os Açores.',
       tags:['Açores','Consistente','Acessível','Ilha'], quality:4

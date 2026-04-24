@@ -79,6 +79,7 @@
       --blue-light: #2980d4;
       --gold:       #c9a84c;
       --gold-light: #e8c97a;
+      --gold-text:  #8c6b14;
       --gold-glow:  rgba(201,168,76,0.25);
       --green:      #27ae60;
       --orange:     #e67e22;
@@ -87,7 +88,7 @@
       --off-white:  #f6f4ef;
       --text:       #1a1a2e;
       --text-mid:   #4a5568;
-      --text-light: #8892a4;
+      --text-light: #566072;
       --border:     rgba(10,61,107,0.10);
       --shadow:     0 4px 20px rgba(10,61,107,0.10);
       --shadow-lg:  0 12px 40px rgba(10,61,107,0.16);
@@ -306,8 +307,8 @@
     .quality-badge {
       font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 50px;
     }
-    .quality--Excelente { background: rgba(39,174,96,0.12);  color: #1e8449; }
-    .quality--Boa       { background: rgba(41,128,212,0.12); color: var(--blue-light); }
+    .quality--Excelente { background: rgba(39,174,96,0.12);  color: #1b7641; }
+    .quality--Boa       { background: rgba(41,128,212,0.12); color: #1565a5; }
     .quality--Suficiente{ background: rgba(230,126,34,0.12); color: var(--orange); }
     .quality--Má        { background: rgba(231,76,60,0.10);  color: var(--red); }
     .active-badge {
@@ -356,9 +357,9 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       display: flex; align-items: center; justify-content: space-between;
       flex-wrap: wrap; gap: 12px;
-      font-size: 0.8rem; color: rgba(255,255,255,0.35);
+      font-size: 0.8rem; color: rgba(255,255,255,0.75);
     }
-    .footer-bottom a { color: rgba(255,255,255,0.5); transition: color var(--transition); }
+    .footer-bottom a { color: rgba(255,255,255,0.75); transition: color var(--transition); }
     .footer-bottom a:hover { color: var(--gold); }
 
     /* Toast (from config.js) */
@@ -505,7 +506,7 @@
     .seo-guide-card:hover { box-shadow: 0 8px 32px rgba(10,61,107,0.10); transform: translateY(-2px); }
     .seo-guide-card-title { font-family: 'Bodoni Moda', serif; font-size: 1.05rem; font-weight: 700; color: var(--blue); margin: 0 0 10px; line-height: 1.3; }
     .seo-guide-card-desc { font-size: 0.875rem; color: var(--text-mid); line-height: 1.65; margin: 0 0 16px; flex: 1; }
-    .seo-guide-cta { font-size: 0.8125rem; font-weight: 600; color: var(--gold); letter-spacing: 0.02em; }
+    .seo-guide-cta { font-size: 0.8125rem; font-weight: 600; color: var(--gold-text); letter-spacing: 0.02em; }
 
     /* ── How to choose section ── */
     .how-section { background: var(--white); padding: 64px 5vw; border-top: 1px solid var(--border); }
@@ -519,10 +520,10 @@
     .how-card-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .how-card-title { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--blue); margin-bottom: 6px; line-height: 1.2; }
     .how-card-desc { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; flex: 1; margin-bottom: 14px; }
-    .how-card-trigger { font-size: 0.78rem; font-weight: 600; color: var(--gold); display: flex; align-items: center; gap: 4px; }
+    .how-card-trigger { font-size: 0.78rem; font-weight: 600; color: var(--gold-text); display: flex; align-items: center; gap: 4px; }
     .how-card-trigger svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
     /* Section labels */
-    .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+    .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 10px; display: block; }
     .section-title-lg { font-family: 'Bodoni Moda', serif; font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; color: var(--blue); margin-bottom: 10px; line-height: 1.2; }
     .section-sub { font-size: 0.92rem; color: var(--text-mid); line-height: 1.65; max-width: 500px; }
     /* Card actions row */
@@ -543,8 +544,8 @@
     .beach-card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
     .beach-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 50px; background: rgba(10,61,107,0.06); color: var(--text-mid); }
     .beach-tag--surf     { background: rgba(41,128,212,0.10); color: #1a5fa3; }
-    .beach-tag--família  { background: rgba(39,174,96,0.10);  color: #1e8449; }
-    .beach-tag--natureza { background: rgba(39,174,96,0.08);  color: #1e8449; }
+    .beach-tag--família  { background: rgba(39,174,96,0.10);  color: #1b7641; }
+    .beach-tag--natureza { background: rgba(39,174,96,0.08);  color: #1b7641; }
     .beach-tag--ilhas    { background: rgba(201,168,76,0.12); color: #8b6914; }
     .beach-tag--pesca    { background: rgba(10,61,107,0.08);  color: var(--blue); }
     .beach-tag--premiada { background: rgba(201,168,76,0.12); color: #8b6914; }
@@ -552,9 +553,10 @@
     .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 40px; }
     .footer-col { display: flex; flex-direction: column; gap: 12px; }
     .footer-brand-name { font-family: 'Bodoni Moda', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .footer-brand-desc { font-size: 0.8rem; line-height: 1.6; color: rgba(255,255,255,0.45); max-width: 220px; }
-    .footer-heading { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
-    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color var(--transition); }
+    .footer-brand-desc { font-size: 0.8rem; line-height: 1.6; color: rgba(255,255,255,0.75); max-width: 220px; }
+    .footer-heading { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.80) !important; margin-bottom: 4px; }
+    nav.footer-col > h3 { color: rgba(255,255,255,0.80) !important; }
+    .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.75); transition: color var(--transition); }
     .footer-col a:hover { color: var(--gold); }
     @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; } }
     @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
@@ -599,7 +601,7 @@
     .crosslink-icon svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .crosslink-title { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--blue); line-height: 1.2; }
     .crosslink-desc { font-size: 0.8rem; color: var(--text-mid); line-height: 1.55; flex: 1; }
-    .crosslink-cta-text { font-size: 0.78rem; font-weight: 600; color: var(--gold); display: flex; align-items: center; gap: 4px; }
+    .crosslink-cta-text { font-size: 0.78rem; font-weight: 600; color: var(--gold-text); display: flex; align-items: center; gap: 4px; }
     .crosslink-cta-text svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
 
     /* ── Guide hint strip ── */
@@ -752,7 +754,7 @@
 <!-- Guide hint -->
 <div class="beaches-guide-hint">
   <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-  <span>Cada card mostra qualidade da água (APA), tipo de praia e estado do nadador-salvador. Clique para ver condições completas, marés e como chegar. Prefere uma sugestão? <a href="planear.html?source=beaches-hint" style="color:var(--gold);font-weight:600;white-space:nowrap;">Planear a escapada →</a></span>
+  <span>Cada card mostra qualidade da água (APA), tipo de praia e estado do nadador-salvador. Clique para ver condições completas, marés e como chegar. Prefere uma sugestão? <a href="planear.html?source=beaches-hint" style="color:#1565a5;font-weight:600;white-space:nowrap;">Planear a escapada →</a></span>
 </div>
 
 <!-- Beach grid -->
@@ -945,7 +947,7 @@
         <span class="how-card-trigger">Ver qualidade Excelente <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </button>
     </div>
-    <p style="margin-top:28px;font-size:0.82rem;color:var(--text-light);text-align:center">Quer uma recomendação personalizada? <a href="planear.html" style="color:var(--gold);font-weight:600">Planear a minha escapada →</a></p>
+    <p style="margin-top:28px;font-size:0.82rem;color:var(--text-light);text-align:center">Quer uma recomendação personalizada? <a href="planear.html" style="color:#1565a5;font-weight:600">Planear a minha escapada →</a></p>
   </div>
 </section>
 
@@ -979,26 +981,26 @@
       <p class="footer-brand-name">Portugal Travel Hub</p>
       <p class="footer-brand-desc">O portal de referência para descobrir, planear e viver o melhor da costa atlântica de Portugal.</p>
     </div>
-    <div class="footer-col">
+    <nav class="footer-col" aria-label="Destinos">
       <h3 class="footer-heading">Destinos</h3>
       <a href="beaches.html">Praias</a>
       <a href="surf.html">Surf</a>
       <a href="pesca.html">Pesca</a>
       <a href="webcams.html">Webcams</a>
-    </div>
-    <div class="footer-col">
+    </nav>
+    <nav class="footer-col" aria-label="Empresa">
       <h3 class="footer-heading">Empresa</h3>
       <a href="parceiros.html">Parceiros</a>
       <a href="precos.html">Preços</a>
       <a href="planear.html">Planear</a>
       <a href="contact.html">Contacto</a>
-    </div>
-    <div class="footer-col">
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
       <h3 class="footer-heading">Legal</h3>
       <a href="privacidade.html">Privacidade</a>
       <a href="terms.html">Termos</a>
       <a href="cookies.html">Cookies</a>
-    </div>
+    </nav>
   </div>
   <div class="footer-bottom">
     <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>

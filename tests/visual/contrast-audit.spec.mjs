@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'fs';
 
-const PAGES = ['/pesca', '/surf', '/praias', '/webcams'];
+const PAGES = ['/pesca', '/surf', '/beaches', '/webcams'];
 const ZOOMS = [0.80, 1.00, 1.25];
 
 test.describe.configure({ mode: 'serial' });
