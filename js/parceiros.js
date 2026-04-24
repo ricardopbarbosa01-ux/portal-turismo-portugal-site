@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         } catch(e) { console.warn('GA event failed:', e); }
       }
-      showToast('Pedido enviado! A nossa equipa contacta-o em 48h.', 'success');
+      showToast('Pedido enviado! A nossa equipa contacta-o em 5 dias úteis.', 'success');
       fetch('https://glupdjvdvunogkqgxoui.supabase.co/functions/v1/send-partner-alert', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
