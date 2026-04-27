@@ -1,0 +1,1239 @@
+{
+  "beaches": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": false
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "Log In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": false
+      },
+      {
+        "text": "Sign Up",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+        "visible": false
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": true,
+        "id": "mobile-menu",
+        "class": "mobile-menu",
+        "display": "none",
+        "height": 0
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "none",
+        "height": 0
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": {
+        "display": "block",
+        "height": 607,
+        "overflow": "auto",
+        "maxHeight": "none"
+      },
+      "navLinks": {
+        "display": "none",
+        "height": 0,
+        "overflow": "visible",
+        "maxHeight": "none",
+        "transform": "none"
+      },
+      "openElements": [
+        "DIV.mobile-menu"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [
+        "Entrar",
+        "Registar"
+      ],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "Log In",
+        "Sign Up",
+        "PT",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners"
+      ]
+    },
+    "overflowDetail": {
+      "scrollWidth": 1289,
+      "clientWidth": 375,
+      "overflow": "auto",
+      "isOverflowing": true,
+      "elementClass": "chips-bar",
+      "hasScrollbar": true
+    },
+    "checkoutBtns": null,
+    "parceirosBtnCheck": null
+  },
+  "surf": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": false
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Sign In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": false
+      },
+      {
+        "text": "Register",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+        "visible": false
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": true,
+        "id": "mobile-menu",
+        "class": "mobile-menu",
+        "display": "none",
+        "height": 0
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "none",
+        "height": 0
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": {
+        "display": "block",
+        "height": 607,
+        "overflow": "auto",
+        "maxHeight": "none"
+      },
+      "navLinks": {
+        "display": "none",
+        "height": 0,
+        "overflow": "visible",
+        "maxHeight": "none",
+        "transform": "none"
+      },
+      "openElements": [
+        "DIV.mobile-menu",
+        "DIV.faq-item"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [
+        "Entrar",
+        "Registar"
+      ],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "PT",
+        "Sign In",
+        "Register",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners"
+      ]
+    },
+    "overflowDetail": {
+      "scrollWidth": 707,
+      "clientWidth": 343,
+      "overflow": "auto",
+      "isOverflowing": true,
+      "elementClass": "region-chips-bar",
+      "hasScrollbar": true
+    },
+    "checkoutBtns": null,
+    "parceirosBtnCheck": null
+  },
+  "pesca": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": false
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Sign In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": false
+      },
+      {
+        "text": "Register",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+        "visible": false
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": true,
+        "id": "mobile-menu",
+        "class": "mobile-menu",
+        "display": "none",
+        "height": 0
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "none",
+        "height": 0
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": {
+        "display": "block",
+        "height": 607,
+        "overflow": "auto",
+        "maxHeight": "none"
+      },
+      "navLinks": {
+        "display": "none",
+        "height": 0,
+        "overflow": "visible",
+        "maxHeight": "none",
+        "transform": "none"
+      },
+      "openElements": [
+        "DIV.mobile-menu"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [
+        "Entrar",
+        "Registar"
+      ],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "PT",
+        "Sign In",
+        "Register",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners"
+      ]
+    },
+    "overflowDetail": {
+      "scrollWidth": 798,
+      "clientWidth": 343,
+      "overflow": "auto",
+      "isOverflowing": true,
+      "elementClass": "region-chips-bar",
+      "hasScrollbar": true
+    },
+    "checkoutBtns": null,
+    "parceirosBtnCheck": null
+  },
+  "webcams": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": false
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Sign In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": false
+      },
+      {
+        "text": "Register",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+        "visible": false
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": true,
+        "id": "mobile-menu",
+        "class": "mobile-menu",
+        "display": "none",
+        "height": 0
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "none",
+        "height": 0
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": {
+        "display": "block",
+        "height": 607,
+        "overflow": "auto",
+        "maxHeight": "none"
+      },
+      "navLinks": {
+        "display": "none",
+        "height": 0,
+        "overflow": "visible",
+        "maxHeight": "none",
+        "transform": "none"
+      },
+      "openElements": [
+        "NAV.navbar",
+        "DIV.mobile-menu"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [
+        "Entrar",
+        "Registar"
+      ],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "PT",
+        "Sign In",
+        "Register",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners"
+      ]
+    },
+    "overflowDetail": {
+      "scrollWidth": 722,
+      "clientWidth": 343,
+      "overflow": "auto",
+      "isOverflowing": true,
+      "elementClass": "region-chips-bar",
+      "hasScrollbar": true
+    },
+    "checkoutBtns": null,
+    "parceirosBtnCheck": null
+  },
+  "planear": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": false
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "Log In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": false
+      },
+      {
+        "text": "Sign Up",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+        "visible": false
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": true,
+        "id": "mobile-menu",
+        "class": "mobile-menu",
+        "display": "none",
+        "height": 0
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "none",
+        "height": 0
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": {
+        "display": "block",
+        "height": 607,
+        "overflow": "auto",
+        "maxHeight": "none"
+      },
+      "navLinks": {
+        "display": "none",
+        "height": 0,
+        "overflow": "visible",
+        "maxHeight": "none",
+        "transform": "none"
+      },
+      "openElements": [
+        "DIV.mobile-menu"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [
+        "Entrar",
+        "Registar"
+      ],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "Log In",
+        "Sign Up",
+        "PT",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners"
+      ]
+    },
+    "overflowDetail": null,
+    "checkoutBtns": null,
+    "parceirosBtnCheck": null
+  },
+  "guides": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": true
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": true
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": true
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": true
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": true
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": true
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": true
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": true
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/guias.html",
+        "visible": false
+      },
+      {
+        "text": "Pro",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Sign In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": true
+      },
+      {
+        "text": "Home",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/",
+        "visible": true
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": false
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "flex",
+        "height": 120
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": null,
+      "navLinks": {
+        "display": "flex",
+        "height": 120,
+        "overflow": "auto",
+        "maxHeight": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "openElements": [
+        "NAV.navbar"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "PT",
+        "Pro",
+        "Sign In",
+        "Home"
+      ]
+    },
+    "overflowDetail": null,
+    "checkoutBtns": null,
+    "parceirosBtnCheck": null
+  },
+  "precos": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": false
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "Log In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": false
+      },
+      {
+        "text": "Sign Up",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+        "visible": false
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": true,
+        "id": "mobile-menu",
+        "class": "mobile-menu",
+        "display": "none",
+        "height": 0
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "none",
+        "height": 0
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": {
+        "display": "block",
+        "height": 607,
+        "overflow": "auto",
+        "maxHeight": "none"
+      },
+      "navLinks": {
+        "display": "none",
+        "height": 0,
+        "overflow": "visible",
+        "maxHeight": "none",
+        "transform": "none"
+      },
+      "openElements": [
+        "DIV.nav-backdrop",
+        "DIV.nav-links",
+        "DIV.mobile-menu"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [
+        "Entrar",
+        "Registar"
+      ],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "Log In",
+        "Sign Up",
+        "PT",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners"
+      ]
+    },
+    "overflowDetail": null,
+    "checkoutBtns": {
+      "checkoutSpecific": [
+        {
+          "text": "Activate Pro",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html?redirect=https%3A%2"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "text": "Start for free",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register"
+        },
+        {
+          "text": "Activate Pro",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html?redirect=https%3A%2"
+        },
+        {
+          "text": "Apply now",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html#candidatura"
+        },
+        {
+          "text": "View Media Kit & Formats",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/media-kit.html"
+        },
+        {
+          "text": "quick application →",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html#candidatura"
+        }
+      ]
+    },
+    "parceirosBtnCheck": null
+  },
+  "parceiros": {
+    "navLanguageCheck": [
+      {
+        "text": "Portugal Travel Hub",
+        "href": "https://portal-turismo-portugal-site.pages.dev/",
+        "visible": true
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      },
+      {
+        "text": "Webcams",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/webcams.html",
+        "visible": false
+      },
+      {
+        "text": "Plan",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+        "visible": false
+      },
+      {
+        "text": "Guides",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/guides.html",
+        "visible": false
+      },
+      {
+        "text": "Pricing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+        "visible": false
+      },
+      {
+        "text": "Partners",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "Log In",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+        "visible": false
+      },
+      {
+        "text": "Sign Up",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+        "visible": false
+      },
+      {
+        "text": "PT",
+        "href": "https://portal-turismo-portugal-site.pages.dev/parceiros.html",
+        "visible": false
+      },
+      {
+        "text": "Beaches",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+        "visible": false
+      },
+      {
+        "text": "Surf",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/surf.html",
+        "visible": false
+      },
+      {
+        "text": "Fishing",
+        "href": "https://portal-turismo-portugal-site.pages.dev/en/pesca.html",
+        "visible": false
+      }
+    ],
+    "mobileMenuState": {
+      "toggleBtn": {
+        "found": true,
+        "class": "nav-toggle",
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "mobileMenu": {
+        "found": true,
+        "id": "mobile-menu",
+        "class": "mobile-menu",
+        "display": "none",
+        "height": 0
+      },
+      "navLinks": {
+        "found": true,
+        "id": "",
+        "class": "nav-links",
+        "display": "none",
+        "height": 0
+      }
+    },
+    "afterClickState": {
+      "mobileMenu": {
+        "display": "block",
+        "height": 607,
+        "overflow": "auto",
+        "maxHeight": "none"
+      },
+      "navLinks": {
+        "display": "none",
+        "height": 0,
+        "overflow": "visible",
+        "maxHeight": "none",
+        "transform": "none"
+      },
+      "openElements": [
+        "DIV.mobile-menu"
+      ]
+    },
+    "ptContentCheck": {
+      "ptWordsInBody": [
+        "Entrar",
+        "Registar"
+      ],
+      "navLinkTexts": [
+        "Portugal Travel Hub",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners",
+        "Log In",
+        "Sign Up",
+        "PT",
+        "Beaches",
+        "Surf",
+        "Fishing",
+        "Webcams",
+        "Plan",
+        "Guides",
+        "Pricing",
+        "Partners"
+      ]
+    },
+    "overflowDetail": null,
+    "checkoutBtns": null,
+    "parceirosBtnCheck": {
+      "submitBtnText": "Submit application",
+      "submitBtnClass": "b2b-submit-gold",
+      "toastExists": false,
+      "successMsgExists": true
+    }
+  }
+}

@@ -1,0 +1,1255 @@
+{
+  "beaches": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV.chips-bar"
+      ],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 315,
+          "y": 8,
+          "w": 44,
+          "h": 44
+        },
+        "menuAfterClick": {
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 0
+        }
+      },
+      "formCheck": null,
+      "filterCheck": {
+        "chipCount": 11,
+        "sampleChips": [
+          "All",
+          "Algarve",
+          "Lisbon & Setúbal",
+          "West Coast",
+          "Central Portugal"
+        ],
+        "selectCount": 2,
+        "filterBarVisible": true
+      },
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/beaches.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Beaches in Portugal — Map, Water Quality and Conditions · Portugal Travel Hub",
+        "metaDesc": "Explore the best beaches in Portugal — from the Algarve to Madeira. Water quality, images and up-to-date information.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/beaches.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/beaches.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/beaches.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/beaches.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV.chips-bar"
+      ],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/beaches.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        }
+      ],
+      "seo": null
+    }
+  },
+  "surf": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV#region-chips.region-chips-bar"
+      ],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 315,
+          "y": 8,
+          "w": 44,
+          "h": 44
+        },
+        "menuAfterClick": {
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 0
+        }
+      },
+      "formCheck": null,
+      "filterCheck": {
+        "chipCount": 8,
+        "sampleChips": [
+          "All Regions",
+          "North",
+          "Porto",
+          "Centro",
+          "Lisboa"
+        ],
+        "selectCount": 0,
+        "filterBarVisible": false
+      },
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/surf.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Surfing in Portugal — Spots, Waves & Guide · Portugal Travel Hub",
+        "metaDesc": "The best surf spots in Portugal — Peniche, Nazaré, Algarve and Azores. Wave profile, recommended level and practical guide.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/surf.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/surf.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/surf.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/surf.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV#region-chips.region-chips-bar"
+      ],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/surf.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        }
+      ],
+      "seo": null
+    }
+  },
+  "pesca": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV#region-chips.region-chips-bar"
+      ],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 315,
+          "y": 8,
+          "w": 44,
+          "h": 44
+        },
+        "menuAfterClick": {
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 0
+        }
+      },
+      "formCheck": null,
+      "filterCheck": {
+        "chipCount": 9,
+        "sampleChips": [
+          "All Regions",
+          "North",
+          "Porto",
+          "Centro",
+          "Lisbon"
+        ],
+        "selectCount": 0,
+        "filterBarVisible": false
+      },
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/pesca.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Fishing in Portugal — Spots, Species & Guide · Portugal Travel Hub",
+        "metaDesc": "The best fishing spots in Portugal — from Sagres and Sesimbra to the Azores. Fishing type, target species, best season and practical guide.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/pesca.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/pesca.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/pesca.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/pesca.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV#region-chips.region-chips-bar"
+      ],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/pesca.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        }
+      ],
+      "seo": null
+    }
+  },
+  "webcams": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV#region-chips.region-chips-bar",
+        "DIV#tipo-chips.tipo-chips-bar"
+      ],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 315,
+          "y": 8,
+          "w": 44,
+          "h": 44
+        },
+        "menuAfterClick": {
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 0
+        }
+      },
+      "formCheck": null,
+      "filterCheck": {
+        "chipCount": 13,
+        "sampleChips": [
+          "All Regions",
+          "Porto",
+          "Centro",
+          "Lisboa",
+          "Alentejo"
+        ],
+        "selectCount": 0,
+        "filterBarVisible": false
+      },
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/webcams.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Portugal Beach Webcams — Live Cameras · Portugal Travel Hub",
+        "metaDesc": "Live webcams from Portugal's best beaches — Nazaré, Peniche, Ericeira, Lagos and more. Check conditions before you leave home.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/webcams.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/webcams.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/webcams.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/webcams.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "DIV#region-chips.region-chips-bar",
+        "DIV#tipo-chips.tipo-chips-bar"
+      ],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/webcams.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Register",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        }
+      ],
+      "seo": null
+    }
+  },
+  "planear": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 315,
+          "y": 8,
+          "w": 44,
+          "h": 44
+        },
+        "menuAfterClick": {
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 0
+        }
+      },
+      "formCheck": [
+        {
+          "id": "plan-form",
+          "action": "https://portal-turismo-portugal-site.pages.dev/en/planear",
+          "fields": [
+            {
+              "type": "text",
+              "name": "nome",
+              "required": true,
+              "visible": true
+            },
+            {
+              "type": "email",
+              "name": "email",
+              "required": true,
+              "visible": true
+            },
+            {
+              "type": "checkbox",
+              "name": "interesse",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "checkbox",
+              "name": "interesse",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "checkbox",
+              "name": "interesse",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "checkbox",
+              "name": "interesse",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "checkbox",
+              "name": "interesse",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "checkbox",
+              "name": "interesse",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "select-one",
+              "name": "regiao",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "select-one",
+              "name": "pessoas",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "date",
+              "name": "data_inicio",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "date",
+              "name": "data_fim",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "radio",
+              "name": "orcamento",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "radio",
+              "name": "orcamento",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "radio",
+              "name": "orcamento",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "radio",
+              "name": "orcamento",
+              "required": false,
+              "visible": false
+            },
+            {
+              "type": "textarea",
+              "name": "notas",
+              "required": false,
+              "visible": true
+            }
+          ],
+          "submitBtn": {
+            "text": "",
+            "visible": true
+          }
+        }
+      ],
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/planear.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Plan Your Portugal Escape — Beach, Surf & Fishing · Portugal Travel Hub",
+        "metaDesc": "Tell us what you're looking for and we'll help plan it — beach, surf, fishing or a full escape. Personalised recommendations for the best of Portugal.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/planear.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/planear.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/planear.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/planear.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/planear.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        }
+      ],
+      "seo": null
+    }
+  },
+  "guides": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "NAV#navbar.navbar"
+      ],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 365,
+          "y": 12,
+          "w": 48,
+          "h": 48
+        },
+        "menuAfterClick": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 120
+        }
+      },
+      "formCheck": null,
+      "filterCheck": {
+        "chipCount": 0,
+        "sampleChips": [],
+        "selectCount": 0,
+        "filterBarVisible": false
+      },
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/guias.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Pro",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Plan a trip",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Explore beaches",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Portugal Travel Guides 2026 — Beaches, Surf, Fishing · Portugal Travel Hub",
+        "metaDesc": "Original, researched and verified content. The details travel guides don't tell you — beaches, surf, fishing and when to visit Portugal.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/guides.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/guias.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/guides.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/guias.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [
+        "NAV#navbar.navbar"
+      ],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/guias.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Pro",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/precos.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Plan a trip",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/planear.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Explore beaches",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/beaches.html",
+          "visible": true
+        }
+      ],
+      "seo": null
+    }
+  },
+  "precos": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 315,
+          "y": 8,
+          "w": 44,
+          "h": 44
+        },
+        "menuAfterClick": {
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 0
+        }
+      },
+      "formCheck": [],
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/precos.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Plans & Pricing — Portugal Travel Hub · Free and Pro",
+        "metaDesc": "Choose the right plan for you. Free access to beaches and webcams, or unlock advanced forecasts, alerts and exclusive content with the Pro plan.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/precos.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/precos.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/precos.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/precos.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/precos.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        }
+      ],
+      "seo": null
+    }
+  },
+  "parceiros": {
+    "375": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [],
+      "navTest": {
+        "found": true,
+        "selector": "#nav-toggle",
+        "class": "nav-toggle",
+        "visible": true,
+        "rect": {
+          "x": 315,
+          "y": 8,
+          "w": 44,
+          "h": 44
+        },
+        "menuAfterClick": {
+          "display": "none",
+          "visibility": "visible",
+          "opacity": "1",
+          "offsetHeight": 0
+        }
+      },
+      "formCheck": [
+        {
+          "id": "b2b-form",
+          "action": "https://portal-turismo-portugal-site.pages.dev/en/parceiros",
+          "fields": [
+            {
+              "type": "text",
+              "name": "negocio",
+              "required": true,
+              "visible": true
+            },
+            {
+              "type": "select-one",
+              "name": "tipo",
+              "required": true,
+              "visible": true
+            },
+            {
+              "type": "select-one",
+              "name": "objetivo",
+              "required": true,
+              "visible": true
+            },
+            {
+              "type": "select-one",
+              "name": "plano_interesse",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "text",
+              "name": "contacto",
+              "required": true,
+              "visible": true
+            },
+            {
+              "type": "email",
+              "name": "email",
+              "required": true,
+              "visible": true
+            },
+            {
+              "type": "text",
+              "name": "localizacao",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "select-one",
+              "name": "regiao",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "url",
+              "name": "website",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "url",
+              "name": "instagram",
+              "required": false,
+              "visible": true
+            },
+            {
+              "type": "textarea",
+              "name": "mensagem",
+              "required": false,
+              "visible": true
+            }
+          ],
+          "submitBtn": {
+            "text": "Submit application",
+            "visible": true
+          }
+        }
+      ],
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/parceiros.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": true
+        }
+      ],
+      "seo": {
+        "title": "Become a Partner on Portugal's Beach Portal · Portugal Travel Hub",
+        "metaDesc": "Place your business on Portugal's leading beach portal. Premium visibility, qualified traffic and verified presence in front of those planning coastal trips.",
+        "lang": "en",
+        "canonical": "https://portalturismoportugal.com/en/parceiros.html",
+        "hreflang": [
+          {
+            "hreflang": "pt",
+            "href": "https://portalturismoportugal.com/parceiros.html"
+          },
+          {
+            "hreflang": "en",
+            "href": "https://portalturismoportugal.com/en/parceiros.html"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://portalturismoportugal.com/parceiros.html"
+          }
+        ]
+      }
+    },
+    "414": {
+      "pageStatus": 200,
+      "consoleMessages": [],
+      "networkErrors": [],
+      "jsErrors": [],
+      "overflow": [],
+      "navTest": null,
+      "formCheck": null,
+      "filterCheck": null,
+      "ctaCheck": [
+        {
+          "tag": "A",
+          "text": "Log In",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Sign Up",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "PT",
+          "href": "https://portal-turismo-portugal-site.pages.dev/parceiros.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Entrar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html",
+          "visible": false
+        },
+        {
+          "tag": "A",
+          "text": "Registar",
+          "href": "https://portal-turismo-portugal-site.pages.dev/en/login.html#register",
+          "visible": false
+        }
+      ],
+      "seo": null
+    }
+  }
+}
