@@ -40,9 +40,24 @@ Nenhuma — sem 404s a corrigir.
 
 ## Resumo
 
-- **P0 fixes aplicados:** 9
-- **P1 fixes aplicados:** 3
+- **P0 fixes aplicados:** 9 ✅
+- **P1 fixes aplicados:** 3 ✅
 - **Total de itens com mudança:** 12
-- **Itens verificados sem mudança (N/A):** 4
-- **Ficheiros HTML modificados:** 7 (beaches, surf, pesca, webcams, planear, precos, parceiros — guides intacto)
-- **Commits granulares:** 4 (brand fix · bottom-nav cleanup · partner-demo path · query strings)
+- **Itens verificados sem mudança (N/A):** 4 (lang-switcher PT links, "How to choose" buttons, links EN existentes, guide links existentes)
+- **Ficheiros HTML modificados:** 7 (beaches, surf, pesca, webcams, planear, precos, parceiros)
+- **guides.html:** intacto (já estava conforme)
+- **Commits granulares aplicados:** 4
+  - `fix(quick-260427-ouv): brand nav-logo aponta para /en/ em planear, precos, parceiros`
+  - `fix(quick-260427-ouv): remover bottom-nav legacy em 5 páginas EN`
+  - `fix(quick-260427-ouv): partner-demo link com path absoluto em parceiros EN`
+  - `fix(quick-260427-ouv): remover query string PT 'assunto=' em links de contact EN`
+- **Status:** auditoria completa, todas as linhas da tabela com status `fixed`
+
+## Validação cross-page final
+
+Executados 5 greps cross-file confirmando:
+- 0 páginas com brand `nav-logo` apontando para `/`
+- 0 páginas com bottom-nav legacy
+- 0 ocorrências de query string `assunto=`
+- 8/8 lang-switchers apontando para slugs PT corretos
+- 0 links relativos `partner-demo.html`
