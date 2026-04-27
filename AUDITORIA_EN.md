@@ -17,9 +17,9 @@
 | 7 | webcams.html  | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 712-end | fixed |
 | 8 | planear.html  | Bottom-nav mobile (`<nav class="bottom-nav">`) presente | P0 | 1468-1490 | fixed |
 | 9 | parceiros.html | Link relativo `href="partner-demo.html"` (sem prefixo `/en/`) — pode falhar fora da raiz `/en/` | P0 | 353 | fixed |
-| 10 | beaches.html | Query string PT `?assunto=sugestao&subject=Beach%20Suggestion` em link de contact (deve ser só `subject=`) | P1 | 760 | pending |
-| 11 | surf.html    | Query string PT `?assunto=parceria&source=surf&tipo=surf&intent=b2b-inbound` em link de contact | P1 | 888 | pending |
-| 12 | pesca.html   | Query string PT `?assunto=parceria&source=pesca&tipo=pesca&intent=b2b-inbound` em link de contact | P1 | 1021 | pending |
+| 10 | beaches.html | Query string PT `?assunto=sugestao&subject=Beach%20Suggestion` em link de contact (deve ser só `subject=`) | P1 | 760 | fixed |
+| 11 | surf.html    | Query string PT `?assunto=parceria&source=surf&tipo=surf&intent=b2b-inbound` em link de contact | P1 | 888 | fixed |
+| 12 | pesca.html   | Query string PT `?assunto=parceria&source=pesca&tipo=pesca&intent=b2b-inbound` em link de contact | P1 | 1021 | fixed |
 
 ## Itens verificados — N/A (sem problema)
 
