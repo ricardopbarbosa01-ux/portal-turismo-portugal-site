@@ -29,3 +29,8 @@ _scripts/test-rls-setup.sql
 # Scripts de investigação ad-hoc (não commitar)
 /inspect-*.js
 /audit-*.log
+
+# Auditorias e scripts ad-hoc
+/audit-*.js
+/_audit/
+/performance-reports/
