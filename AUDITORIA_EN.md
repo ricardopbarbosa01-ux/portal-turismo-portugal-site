@@ -8,9 +8,9 @@
 
 | # | Page | Problema | Severidade | Linha | Status |
 |---|------|----------|------------|-------|--------|
-| 1 | planear.html | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 821 | pending |
-| 2 | precos.html  | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 645 | pending |
-| 3 | parceiros.html | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 300 | pending |
+| 1 | planear.html | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 821 | fixed |
+| 2 | precos.html  | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 645 | fixed |
+| 3 | parceiros.html | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 300 | fixed |
 | 4 | beaches.html  | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente — inconsistente com guides/precos/parceiros | P0 | 1317-1337 | pending |
 | 5 | surf.html     | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 1045-end | pending |
 | 6 | pesca.html    | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 1108-end | pending |
