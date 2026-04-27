@@ -1273,6 +1273,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-decoration: none;
 }
 
+.mobile-lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px 20px;
+}
+.mobile-lang .lang-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+.mobile-lang .lang-btn--active { color: var(--gold); cursor: default; }
+.mobile-lang .lang-btn:not(.lang-btn--active):hover { color: rgba(255,255,255,0.90); }
+
 /* Overlay */
 .mobile-overlay {
   display: none;

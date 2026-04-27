@@ -2,6 +2,7 @@
  * nav.js — Navigation handler
  * - Mobile hamburger menu (drawer built dynamically from .nav-links)
  * - Navbar auth state: centralised for all pages
+ * - i18n: labels and logo href adapt to document.documentElement.lang
  */
 (function () {
   'use strict';
@@ -9,8 +10,37 @@
   var toggle = document.getElementById('nav-toggle');
   if (!toggle) return;
 
+  // ── i18n ─────────────────────────────────────────────────────
+  var lang = (document.documentElement.lang || 'pt').slice(0, 2);
+  var i18n = {
+    pt: {
+      signIn: 'Entrar',
+      signUp: 'Registar',
+      loginHref: '/login.html',
+      registerHref: '/login.html#register',
+      logoHref: '/',
+      menuLabel: 'Menu de navegação'
+    },
+    en: {
+      signIn: 'Sign In',
+      signUp: 'Sign Up',
+      loginHref: '/en/login.html',
+      registerHref: '/en/login.html#register',
+      logoHref: '/en/',
+      menuLabel: 'Navigation menu'
+    }
+  };
+  var t = i18n[lang] || i18n.pt;
+
   // ── Ensure button type is correct (iOS Safari touch fix) ──────
   toggle.setAttribute('type', 'button');
+
+  // ── Logo href safety net ──────────────────────────────────────
+  // Corrects any EN page where the logo still points to root '/'.
+  var logoEl = document.querySelector('.nav-logo');
+  if (logoEl && lang === 'en' && logoEl.getAttribute('href') === '/') {
+    logoEl.setAttribute('href', t.logoHref);
+  }
 
   // ── Build mobile menu dynamically ────────────────────────────
   var menu = document.getElementById('mobile-menu');
@@ -20,7 +50,7 @@
     menu.className = 'mobile-menu';
     menu.setAttribute('aria-hidden', 'true');
     menu.setAttribute('role', 'dialog');
-    menu.setAttribute('aria-label', 'Menu de navegação');
+    menu.setAttribute('aria-label', t.menuLabel);
 
     // Copy main nav links from .nav-links
     var navLinksEl = document.querySelector('.nav-links');
@@ -36,15 +66,26 @@
       });
     }
 
-    // Add login + register at bottom of menu
+    // Add login + register at bottom of menu (i18n labels and hrefs)
     var authDiv = menu.querySelector('.mobile-auth');
     if (!authDiv) {
       var auth = document.createElement('div');
       auth.className = 'mobile-auth';
       auth.innerHTML =
-        '<a href="login.html" class="btn-mobile-login">Entrar</a>' +
-        '<a href="login.html#register" class="btn-mobile-register">Registar</a>';
+        '<a href="' + t.loginHref + '" class="btn-mobile-login">' + t.signIn + '</a>' +
+        '<a href="' + t.registerHref + '" class="btn-mobile-register">' + t.signUp + '</a>';
       menu.appendChild(auth);
+    }
+
+    // Clone desktop lang switcher into mobile menu
+    var desktopLang = document.querySelector('.lang-switcher');
+    if (desktopLang) {
+      var mobileLang = document.createElement('div');
+      mobileLang.className = 'mobile-lang';
+      mobileLang.setAttribute('role', 'navigation');
+      mobileLang.setAttribute('aria-label', lang === 'en' ? 'Language' : 'Idioma');
+      mobileLang.innerHTML = desktopLang.innerHTML;
+      menu.appendChild(mobileLang);
     }
 
     var navbar = document.getElementById('navbar');
