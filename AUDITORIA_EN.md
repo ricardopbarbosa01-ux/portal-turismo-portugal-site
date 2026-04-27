@@ -11,11 +11,11 @@
 | 1 | planear.html | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 821 | fixed |
 | 2 | precos.html  | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 645 | fixed |
 | 3 | parceiros.html | Brand `<a class="nav-logo">` aponta para `/` (PT root) em vez de `/en/` | P0 | 300 | fixed |
-| 4 | beaches.html  | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente — inconsistente com guides/precos/parceiros | P0 | 1317-1337 | pending |
-| 5 | surf.html     | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 1045-end | pending |
-| 6 | pesca.html    | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 1108-end | pending |
-| 7 | webcams.html  | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 712-end | pending |
-| 8 | planear.html  | Bottom-nav mobile (`<nav class="bottom-nav">`) presente | P0 | 1468-1490 | pending |
+| 4 | beaches.html  | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente — inconsistente com guides/precos/parceiros | P0 | 1317-1337 | fixed |
+| 5 | surf.html     | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 1045-end | fixed |
+| 6 | pesca.html    | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 1108-end | fixed |
+| 7 | webcams.html  | Bottom-nav mobile (`<nav class="mobile-bottom-nav">`) presente | P0 | 712-end | fixed |
+| 8 | planear.html  | Bottom-nav mobile (`<nav class="bottom-nav">`) presente | P0 | 1468-1490 | fixed |
 | 9 | parceiros.html | Link relativo `href="partner-demo.html"` (sem prefixo `/en/`) — pode falhar fora da raiz `/en/` | P0 | 353 | pending |
 | 10 | beaches.html | Query string PT `?assunto=sugestao&subject=Beach%20Suggestion` em link de contact (deve ser só `subject=`) | P1 | 760 | pending |
 | 11 | surf.html    | Query string PT `?assunto=parceria&source=surf&tipo=surf&intent=b2b-inbound` em link de contact | P1 | 888 | pending |
