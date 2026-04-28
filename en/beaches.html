@@ -548,7 +548,6 @@
     .footer-col { display: flex; flex-direction: column; gap: 12px; }
     .footer-brand-name { font-family: 'Bodoni Moda', serif; font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
     .footer-brand-desc { font-size: 0.8rem; line-height: 1.6; color: rgba(255,255,255,0.45); max-width: 220px; }
-    .footer-heading { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
     .footer-col a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color var(--transition); }
     .footer-col a:hover { color: var(--gold); }
     @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; } }
@@ -577,10 +576,6 @@
     }
     .conversion-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
     
-    .lang-btn{font-family:'Inter',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;padding:4px 5px;border-radius:4px;transition:color 0.2s;cursor:pointer;min-height:0;}
-    .lang-btn--active{color:var(--gold);cursor:default;}
-    .lang-btn:not(.lang-btn--active):hover{color:rgba(255,255,255,0.90);}
-    .lang-sep{color:rgba(255,255,255,0.25);font-size:0.65rem;user-select:none;}
 
     /* ── Vertical crosslinks ── */
     .crosslinks-section { background: var(--off-white); padding: 48px 5vw; border-top: 1px solid var(--border); }
@@ -638,7 +633,7 @@
     <a href="/en/login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
     <div class="lang-switcher" role="navigation" aria-label="Language">
       <a href="/beaches.html" class="lang-btn" data-lang="pt" aria-label="Português">PT</a>
-      <span style="color:rgba(255,255,255,0.3)">|</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
       <span class="lang-btn lang-btn--active" data-lang="en" aria-current="page" aria-label="English">EN</span>
     </div>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">

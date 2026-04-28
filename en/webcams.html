@@ -342,9 +342,6 @@
     .wcam-sponsor-cta:hover{color:var(--gold);}
     .wcam-sponsor-cta svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;}
     
-    .lang-btn{font-family:'Inter',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;padding:4px 5px;border-radius:4px;transition:color 0.2s;cursor:pointer;min-height:0;}
-    .lang-btn--active{color:var(--gold);cursor:default;}
-    .lang-btn:not(.lang-btn--active):hover{color:rgba(255,255,255,0.90);}
   </style>
 
 <link rel="stylesheet" href="/css/style.css?v=20260428a">
@@ -378,7 +375,7 @@
   <div class="nav-actions">
         <div class="lang-switcher" role="navigation" aria-label="Language">
           <a href="/webcams.html" class="lang-btn" data-lang="pt" aria-label="Português">PT</a>
-          <span style="color:rgba(255,255,255,0.3)">|</span>
+          <span class="lang-sep" aria-hidden="true">|</span>
           <span class="lang-btn lang-btn--active" data-lang="en" aria-current="page" aria-label="English">EN</span>
         </div>
     <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Sign In</a>
