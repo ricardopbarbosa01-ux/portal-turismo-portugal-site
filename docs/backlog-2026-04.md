@@ -1,5 +1,14 @@
 # Backlog Tecnico — Abril 2026
 
+## Imagens — substituições editoriais pendentes
+
+- [ ] Card 3 /en/guides ("Surfing in Portugal for Beginners"): obter foto editorial a cores de surf em Portugal, sem pessoas identificáveis (sem rostos distinguíveis), 16:9 landscape. Actualmente com placeholder temporário (Unsplash praia genérica).
+- [ ] Card 4 /en/guides ("Beaches Near Lisbon"): obter foto de praia perto de Lisboa (Cascais, Caparica, Guincho ou Sesimbra). Actual Unsplash funciona mas está descontextualizado.
+- [ ] Auditoria geral: substituir todas as imagens com pessoas identificáveis em cards e heroes por questões de model release. Risco legal para portal comercial com Pro tier paid.
+- [ ] Imagens já em disco para futura sprint surf.html migration: `ericeira surf.jpg`, `surf nazare.jpg`, `surf peniche.jpg`, `surfer wave atlantic.jpg`, `surfing portugal.jpg` — em `Desktop/Download Geral/videos-pth/`.
+
+---
+
 ## Pendencias surf.html / pesca.html (nao tocar nesta sessao)
 
 | Ficheiro | Linha | Problema |
@@ -46,4 +55,4 @@
 - **Contexto**: `en/beaches.html`, `en/pesca.html`, `en/surf.html`, `en/webcams.html` contêm um bloco inline de ~7 linhas com `function openMobileNav()`, `function closeMobileNav()` e event listeners duplicando o `nav.js`. Pré-existente — nao introduzido pela sprint R2. Reportado por `pth-page-audit` Check 4.
 - **Risco**: Comportamento de navegacao móvel potencialmente duplicado; `nav.js` e o bloco inline podem conflituar.
 - **Accao**: Remover o bloco inline (linhas ~1002–1008 em cada ficheiro). `nav.js` ja e carregado e e a fonte unica de verdade para mobile nav.
-- **Ficheiros**: `en/beaches.html`, `en/pesca.html`, `en/surf.html`, `en/webcams.html`
+- **Ficheiros**: `en/beaches.html`, `en/pesca.html`, `en/surf.html`, `en/webcams.html`, `en/guides.html` (linhas 741–747)
