@@ -1088,23 +1088,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/nav.js?v=20260422c" defer></script>
+<script src="js/chips-fade.js" defer></script>
 <script src="js/config.js?v=20260402"></script>
 <script>
   // ── Auth ─────────────────────────────────────────────────────────
 
-  // ── Mobile nav ───────────────────────────────────────────────────
-  const toggle = document.getElementById('nav-toggle');
-  const navClose = document.getElementById('nav-close');
-  const navBackdrop = document.getElementById('nav-backdrop');
-  const navbarEl = document.getElementById('navbar');
-  function openMobileNav()  { document.body.classList.add('nav-mobile-open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function closeMobileNav() { document.body.classList.remove('nav-mobile-open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-  toggle.addEventListener('click', () => document.body.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
-  navClose?.addEventListener('click', closeMobileNav);
-  navBackdrop?.addEventListener('click', closeMobileNav);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => toggle.click());
+  // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
+  document.getElementById('mob-menu-btn')?.addEventListener('click', () => document.getElementById('nav-toggle').click());
 
   // ── Helper ───────────────────────────────────────────────────────
   function esc(s) {

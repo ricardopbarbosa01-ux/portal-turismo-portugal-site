@@ -1873,3 +1873,23 @@ input[type="number"], input[type="date"], input[type="search"] {
   .ccb-slider::before { transition: none; }
   .ccb-btn { transition: none; }
 }
+
+/* ── Chip bar scroll-fade (mask-image reveals gradient when overflow exists) ── */
+.chips-bar.can-scroll-right,
+.region-chips-bar.can-scroll-right,
+.tipo-chips-bar.can-scroll-right {
+  -webkit-mask-image: linear-gradient(to right, black 0%, black calc(100% - 48px), transparent 100%);
+  mask-image:         linear-gradient(to right, black 0%, black calc(100% - 48px), transparent 100%);
+}
+.chips-bar.can-scroll-left,
+.region-chips-bar.can-scroll-left,
+.tipo-chips-bar.can-scroll-left {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 48px, black 100%);
+  mask-image:         linear-gradient(to right, transparent 0%, black 48px, black 100%);
+}
+.chips-bar.can-scroll-left.can-scroll-right,
+.region-chips-bar.can-scroll-left.can-scroll-right,
+.tipo-chips-bar.can-scroll-left.can-scroll-right {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%);
+  mask-image:         linear-gradient(to right, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%);
+}
