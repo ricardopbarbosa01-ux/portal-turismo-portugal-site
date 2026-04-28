@@ -962,7 +962,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .social-btn:hover { background: rgba(201,168,76,0.18); border-color: rgba(201,168,76,0.35); color: var(--gold); }
 .social-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.footer-col h5 {
+.footer-col h5,
+.footer-heading {
   font-family: var(--font-body); font-size: 0.75rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: rgba(255,255,255,0.4); margin-bottom: 16px;
@@ -1176,9 +1177,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Lang switcher */
 .lang-switcher { display: flex; align-items: center; gap: 4px; }
-.lang-btn { color: rgba(255,255,255,0.7); font-size: 13px; cursor: pointer; text-decoration: none; }
+.lang-btn { color: rgba(255,255,255,0.7); font-size: 13px; padding: 4px 5px; cursor: pointer; text-decoration: none; }
 .lang-btn--active { color: #fff; font-weight: 600; }
-.lang-sep { color: rgba(255,255,255,0.3); }
+.lang-sep { color: rgba(255,255,255,0.3); font-size: 0.65rem; user-select: none; }
 
 /* Auth buttons */
 #nav-login-btn {
