@@ -942,6 +942,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; align-items: center; justify-content: center;
 }
 .footer-logo-icon svg { width: 16px; height: 16px; fill: var(--gold); stroke: none; }
+.footer-brand-icon { display: inline-flex; line-height: 0; }
+.footer-brand-icon svg { width: 32px; height: 32px; fill: var(--gold); stroke: none; }
 .footer-tagline {
   font-size: 0.875rem; line-height: 1.6;
   color: rgba(255,255,255,0.55);
