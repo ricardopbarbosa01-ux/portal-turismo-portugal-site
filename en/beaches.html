@@ -428,6 +428,10 @@
     }
     .hero-stat-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
     .page-header { position: relative; overflow: hidden; }
+    .page-header-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+    .page-header-overlay{position:absolute;inset:0;background:rgba(6,13,26,0.65);z-index:1;}
+    @media(max-width:768px){.page-header-video{display:none;}.page-header{background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=70');background-size:cover;background-position:center;}}
+    @media(prefers-reduced-motion:reduce){.page-header-video{display:none;}}
     .page-header-wave { position: absolute; bottom: -1px; left: 0; right: 0; width: 100%; height: 56px; display: block; }
     @media (max-width: 480px) {
       .hero-stats { padding: 10px 16px; }
@@ -651,6 +655,10 @@
 
 <!-- Page header -->
 <header class="page-header">
+  <video class="page-header-video" poster="https://cdn.portalturismoportugal.com/beaches-hero-poster.jpg" preload="metadata" autoplay muted loop playsinline aria-hidden="true">
+    <source src="https://cdn.portalturismoportugal.com/beaches-hero.mp4" type="video/mp4">
+  </video>
+  <div class="page-header-overlay" aria-hidden="true"></div>
   <div class="page-tag">Editorial curation · 7 Regions · Atlantic Ocean</div>
   <h1 class="page-title">Beaches of <em>Portugal</em></h1>
   <p class="page-subtitle">From the Minho to the Algarve, from Madeira to the Azores — discover Portugal's most beautiful beaches with editorial curation, up-to-date conditions and complete visit guides.</p>

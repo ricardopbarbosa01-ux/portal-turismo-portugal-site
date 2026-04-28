@@ -97,6 +97,10 @@
     /* ── Hero ── */
     .wcam-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#050f1f 0%,#071c38 55%,#0a3d6b 100%);padding:120px 5vw 84px;text-align:center;}
     .wcam-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.06) 0%,transparent 70%);}
+    .wcam-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+    .wcam-hero-overlay{position:absolute;inset:0;background:rgba(6,13,26,0.65);z-index:1;}
+    @media(max-width:768px){.wcam-hero-video{display:none;}}
+    @media(prefers-reduced-motion:reduce){.wcam-hero-video{display:none;}.wcam-hero *{animation:none!important;}}
     .wcam-hero-inner{position:relative;max-width:760px;margin:0 auto;}
     .wcam-hero-tag{font-size:0.75rem;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
     .wcam-hero-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:var(--white);font-weight:700;line-height:1.08;margin-bottom:20px;}
@@ -389,6 +393,14 @@
 
   <!-- Hero -->
   <section class="wcam-hero" aria-label="Portugal beach webcams">
+    <video
+      class="wcam-hero-video"
+      id="wcam-bg-video"
+      poster="https://cdn.portalturismoportugal.com/webcams-hero-poster.jpg"
+      preload="metadata" playsinline autoplay muted loop
+      aria-hidden="true"
+    ></video>
+    <div class="wcam-hero-overlay" aria-hidden="true"></div>
     <div class="wcam-hero-inner">
       <div class="wcam-hero-tag">Portugal · Atlantic · Webcams</div>
       <h1 class="wcam-hero-title">Check before you <em>go</em></h1>
@@ -1028,6 +1040,18 @@
 </script>
 <script src="/js/lang-switcher.js" defer></script>
 <script src="/js/nav.js?v=20260422c" defer></script>
+<script>
+/* Hero video — deferred load: only desktop, only if no reduced-motion */
+(function(){
+  var mq = window.matchMedia('(prefers-reduced-motion:reduce)');
+  if (!mq.matches && window.innerWidth > 768) {
+    var v = document.getElementById('wcam-bg-video');
+    if (v) {
+      v.src = 'https://cdn.portalturismoportugal.com/webcams-hero.mp4';
+    }
+  }
+})();
+</script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>
