@@ -36,3 +36,14 @@
 - **Estimativa**: 2–4 h (investigacao + testes)
 - **Contexto**: GSAP 3.12.5 usa `eval()` internamente. Investigar se build sem eval e possivel ou migrar para versao local com SRI hash.
 - **Ficheiros**: todos os HTML com GSAP, `_headers`
+
+---
+
+## Nav / JS — Abril 2026 (sprint 4, pth-page-audit Check 4)
+
+### [BACKLOG] Remover handlers inline `openMobileNav`/`closeMobileNav` das 4 paginas EN
+- **Estimativa**: 15–20 min
+- **Contexto**: `en/beaches.html`, `en/pesca.html`, `en/surf.html`, `en/webcams.html` contêm um bloco inline de ~7 linhas com `function openMobileNav()`, `function closeMobileNav()` e event listeners duplicando o `nav.js`. Pré-existente — nao introduzido pela sprint R2. Reportado por `pth-page-audit` Check 4.
+- **Risco**: Comportamento de navegacao móvel potencialmente duplicado; `nav.js` e o bloco inline podem conflituar.
+- **Accao**: Remover o bloco inline (linhas ~1002–1008 em cada ficheiro). `nav.js` ja e carregado e e a fonte unica de verdade para mobile nav.
+- **Ficheiros**: `en/beaches.html`, `en/pesca.html`, `en/surf.html`, `en/webcams.html`
