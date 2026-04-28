@@ -34,3 +34,8 @@ _scripts/test-rls-setup.sql
 /audit-*.js
 /_audit/
 /performance-reports/
+
+# Vídeos grandes — servidos via R2 CDN, não commitar
+/videos/*.mp4
+/videos/*.webm
+/videos/*.mov
