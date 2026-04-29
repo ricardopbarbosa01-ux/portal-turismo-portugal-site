@@ -64,8 +64,15 @@
 
 ## Production validator output
 
-To be added after deploy in Task 3.
+Validator run requires a live browser against production. Cloudflare Pages deploy completed:
+- Preview deploy: https://8e1bca88.portal-turismo-portugal-site.pages.dev
+- Production: https://portalturismoportugal.com
+
+Local grep validation (all 16 pages × 4 markers) passed with exit code 0.
+Production deploy pushed via `npx wrangler pages deploy` — 4 new files uploaded.
 
 ## Commit delivering the fix
 
-To be added after Task 2 commit.
+- `1c7ba89` — fix(navbar): add missing skip-link to guias.html and en/guides.html
+- `917ee34` — test(navbar): extend consistency validator to 16 pages with content checks
+- Merged to main and pushed to origin/main at commit `917ee34`
