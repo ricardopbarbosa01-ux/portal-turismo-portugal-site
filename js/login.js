@@ -228,12 +228,7 @@ document.getElementById('form-register').addEventListener('submit', async (e) =>
       return;
     }
 
-    // Fire-and-forget welcome email
-    fetch('https://glupdjvdvunogkqgxoui.supabase.co/functions/v1/send-welcome', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
-      body: JSON.stringify({ email, name })
-    }).catch((err) => { console.error('[register] Welcome email failed:', err); });
+    // Email welcome enviado via DB trigger trigger_user_confirmed (ver docs/migrations/2026-04-29-email-triggers.sql)
 
     document.getElementById('form-register').reset();
     document.getElementById('pw-strength').classList.remove('visible');
