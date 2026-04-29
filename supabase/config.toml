@@ -1,0 +1,8 @@
+[functions.send-welcome]
+verify_jwt = true
+
+[functions.send-plan-confirm]
+verify_jwt = true
+
+[functions.send-partner-alert]
+verify_jwt = true
