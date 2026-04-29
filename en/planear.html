@@ -391,6 +391,7 @@
     }
     .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
     .form-submit-btn svg { width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2.5; }
+    .cf-turnstile { margin: 1rem 0; display: flex; justify-content: center; }
     .form-disclaimer {
       margin-top: 14px;
       font-size: 0.75rem;
@@ -810,7 +811,7 @@
       .success-btn-primary, .success-btn-outline { justify-content: center; }
     }
   </style>
-
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -1202,6 +1203,7 @@
                 </span>
               </div>
             </div>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADFrwvqNt1FGaqkB" data-theme="auto"></div>
             <!-- Visually hidden submit button preserved for form semantics / Enter-key in inputs -->
             <button type="submit" id="submit-btn" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" tabindex="-1" aria-hidden="true"></button>
             <p class="form-disclaimer">
@@ -1596,10 +1598,26 @@ form.addEventListener('submit', async function(e) {
     console.warn('[PTH] plan_requests localStorage failed:', lsErr);
   }
 
-  const { error } = await db.from('plan_requests').insert([data]);
+  const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value || '';
+  if (!turnstileToken) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = origBtnText;
+    showToast('Anti-bot verification missing. Please reload the page.', 'error');
+    return;
+  }
 
-  if (error) {
-    console.error('[PTH] plan_requests insert error:', error);
+  try {
+    const res = await fetch(SUPABASE_URL + '/functions/v1/submit-plan-request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+      body: JSON.stringify({ turnstileToken, ...data })
+    });
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      throw new Error(d.error || 'HTTP ' + res.status);
+    }
+  } catch (err) {
+    console.error('[PTH] plan_requests submit error:', err);
     submitBtn.disabled = false;
     submitBtn.textContent = origBtnText;
     showToast('Request not saved. Please try again or contact us.', 'error');
@@ -1702,10 +1720,27 @@ form.addEventListener('submit', async function(e) {
         console.warn('[PTH] plan_requests localStorage failed (slider):', lsErr);
       }
 
-      const { error } = await db.from('plan_requests').insert([payload]);
+      const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value || '';
+      if (!turnstileToken) {
+        sldTrack.classList.remove('sld-loading');
+        sldLabel.textContent = origLabel;
+        shakeAndReset();
+        showToast('Anti-bot verification missing. Please reload the page.', 'error');
+        return;
+      }
 
-      if (error) {
-        console.error('[PTH] plan_requests insert error (slider):', error);
+      try {
+        const res = await fetch(SUPABASE_URL + '/functions/v1/submit-plan-request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+          body: JSON.stringify({ turnstileToken, ...payload })
+        });
+        if (!res.ok) {
+          const d = await res.json().catch(() => ({}));
+          throw new Error(d.error || 'HTTP ' + res.status);
+        }
+      } catch (err) {
+        console.error('[PTH] plan_requests submit error (slider):', err);
         sldTrack.classList.remove('sld-loading');
         sldLabel.textContent = origLabel;
         shakeAndReset();

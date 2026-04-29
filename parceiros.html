@@ -289,8 +289,9 @@
     .btm-gold:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(201,168,76,0.55);}
     .btm-ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border:1.5px solid rgba(255,255,255,0.28);color:var(--white);font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:500;border-radius:50px;text-decoration:none;transition:border-color 0.25s,background 0.25s;}
     .btm-ghost:hover{border-color:rgba(255,255,255,0.60);background:rgba(255,255,255,0.08);}
+    .cf-turnstile { margin: 1rem 0; display: flex; justify-content: center; }
   </style>
-
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -844,6 +845,7 @@
               </div>
             </div>
             <!-- Submit -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADFrwvqNt1FGaqkB" data-theme="auto"></div>
             <div style="margin-top:20px;">
               <button type="submit" class="b2b-submit-gold" id="b2b-submit">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
