@@ -1,12 +1,20 @@
 /**
  * tools/test-navbar-consistency.js
- * Navbar consistency validator — 8 pages × 5 viewports = 40 checks
+ * Navbar consistency validator — 16 pages × 5 viewports = 80 checks + content presence
  *
  * Usage:
  *   node tools/test-navbar-consistency.js [baseUrl]
  *
  * baseUrl defaults to https://portal-turismo-portugal-site.pages.dev
  * Pass https://portalturismoportugal.com to validate production.
+ *
+ * Exits non-zero if ANY of the following fail on any page:
+ *   - skipLinkPresent (a.skip-link[href="#main"])
+ *   - langSwitcherPresent (.lang-switcher)
+ *   - loginBtn present (#nav-login-btn)
+ *   - registerBtn present (#nav-register-btn)
+ *   - viewport-based visibility checks (navLinks, langSwitcher, hamburger)
+ *   - button in-viewport checks at ≥1101px
  */
 
 const { chromium } = require('playwright');
@@ -15,13 +23,21 @@ const BASE_URL = process.argv[2] || 'https://portal-turismo-portugal-site.pages.
 
 const PAGES = [
   '/',
-  '/precos.html',
-  '/guias.html',
-  '/parceiros.html',
+  '/beaches.html',
+  '/surf.html',
+  '/pesca.html',
+  '/webcams.html',
   '/planear.html',
+  '/guias.html',
+  '/precos.html',
+  '/parceiros.html',
   '/en/',
+  '/en/beaches.html',
+  '/en/surf.html',
+  '/en/pesca.html',
+  '/en/webcams.html',
+  '/en/planear.html',
   '/en/guides.html',
-  '/guias/melhores-praias-algarve.html',
 ];
 
 const VIEWPORTS = [768, 1100, 1280, 1440, 1920];
@@ -69,13 +85,18 @@ async function measureNavbar(page, url, viewportWidth) {
 
     return {
       height: Math.round(navbarRect.height),
-      navLinksVisible:   isVisible(navLinks),
+      navLinksVisible:     isVisible(navLinks),
       langSwitcherVisible: isVisible(langSw),
-      hamburgerVisible:  isVisible(hamburger),
-      loginInViewport:   inViewport(loginBtn),
-      registerInViewport: inViewport(registerBtn),
-      loginDisplay:      loginBtn  ? window.getComputedStyle(loginBtn).display  : 'missing',
-      registerDisplay:   registerBtn ? window.getComputedStyle(registerBtn).display : 'missing',
+      hamburgerVisible:    isVisible(hamburger),
+      loginInViewport:     inViewport(loginBtn),
+      registerInViewport:  inViewport(registerBtn),
+      loginDisplay:        loginBtn    ? window.getComputedStyle(loginBtn).display    : 'missing',
+      registerDisplay:     registerBtn ? window.getComputedStyle(registerBtn).display : 'missing',
+      // Content presence checks (DOM-level — not visibility-dependent)
+      skipLinkPresent:     !!document.querySelector('a.skip-link[href="#main"]'),
+      langSwitcherPresent: !!document.querySelector('.lang-switcher'),
+      loginBtnPresent:     !!document.getElementById('nav-login-btn'),
+      registerBtnPresent:  !!document.getElementById('nav-register-btn'),
     };
   });
 }
@@ -85,11 +106,12 @@ async function run() {
   const results = [];
   let passed = 0;
   let failed = 0;
+  const contentFailures = [];
 
   console.log(`\nNavbar Consistency Test — ${BASE_URL}`);
-  console.log('='.repeat(72));
+  console.log('='.repeat(80));
   console.log(`${'Page'.padEnd(40)} ${'VP'.padEnd(6)} ${'NavLinks'.padEnd(10)} ${'LangSw'.padEnd(8)} ${'Burger'.padEnd(8)} Height Status`);
-  console.log('-'.repeat(72));
+  console.log('-'.repeat(80));
 
   // Collect baseline height at 1440px from /precos.html (reference page)
   const page = await browser.newPage();
@@ -114,6 +136,17 @@ async function run() {
           const exp = EXPECT[vp];
           const checks = [];
 
+          // Content presence checks (always required, viewport-independent)
+          if (!data.skipLinkPresent)
+            checks.push('skip-link: MISSING');
+          if (!data.langSwitcherPresent)
+            checks.push('lang-switcher: MISSING');
+          if (!data.loginBtnPresent)
+            checks.push('#nav-login-btn: MISSING');
+          if (!data.registerBtnPresent)
+            checks.push('#nav-register-btn: MISSING');
+
+          // Viewport-based visibility checks
           if (data.navLinksVisible !== exp.navLinksVisible)
             checks.push(`navLinks: got ${data.navLinksVisible} want ${exp.navLinksVisible}`);
           if (data.langSwitcherVisible !== exp.langSwitcherVisible)
@@ -132,6 +165,10 @@ async function run() {
           result.status = checks.length === 0 ? 'PASS' : 'FAIL';
           result.error = checks.join(' | ');
           result.data = data;
+
+          if (checks.some(c => c.includes('MISSING'))) {
+            contentFailures.push(`${pagePath} @${vp}px: ${checks.filter(c => c.includes('MISSING')).join(', ')}`);
+          }
         }
       } catch (e) {
         result.status = 'ERROR';
@@ -158,10 +195,17 @@ async function run() {
 
   await browser.close();
 
-  console.log('='.repeat(72));
-  console.log(`\nResult: ${passed} PASS / ${failed} FAIL out of ${results.length} checks`);
+  const total = results.length;
+  console.log('='.repeat(80));
+  console.log(`\nResult: ${passed} PASS / ${failed} FAIL out of ${total} checks`);
+
+  if (contentFailures.length > 0) {
+    console.log('\n✗ Content presence failures (DOM-level):');
+    contentFailures.forEach(f => console.log('  ' + f));
+  }
+
   if (failed === 0) {
-    console.log('\n✓ 40/40 PASS — navbar is consistent across all pages and viewports.');
+    console.log(`\n✓ ${total}/${total} PASS — navbar is consistent across all ${PAGES.length} pages and viewports.`);
   } else {
     console.log('\n✗ Some checks failed — see rows above.');
   }
