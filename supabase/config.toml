@@ -1,3 +1,9 @@
+[functions.submit-plan-request]
+verify_jwt = false
+
+[functions.submit-partner-lead]
+verify_jwt = false
+
 [functions.send-welcome]
 verify_jwt = true
 
