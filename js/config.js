@@ -47,16 +47,16 @@ async function redirectIfAuthed(redirectTo = '/dashboard.html') {
 
 // ─── User Role ────────────────────────────────────────────────────────────────
 
+// WARNING: returns user-editable metadata. NOT for authorization decisions.
+// For privilege checks, use isAdminUser() or check user.app_metadata directly.
 function getUserRole(user) {
   return user?.user_metadata?.role || 'user';
 }
 
+// Authorization check — uses app_metadata only (server-controlled, not user-editable)
 function isAdminUser(user) {
   if (!user) return false;
-  return (
-    user.app_metadata?.role === 'admin' ||
-    user.user_metadata?.role === 'admin'
-  );
+  return user.app_metadata?.role === 'admin';
 }
 
 // ─── Beaches CRUD ─────────────────────────────────────────────────────────────
