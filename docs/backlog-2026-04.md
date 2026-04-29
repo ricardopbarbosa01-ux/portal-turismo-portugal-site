@@ -2,8 +2,6 @@
 
 ## Imagens — substituições editoriais pendentes
 
-- [ ] Card 3 /en/guides ("Surfing in Portugal for Beginners"): obter foto editorial a cores de surf em Portugal, sem pessoas identificáveis (sem rostos distinguíveis), 16:9 landscape. Actualmente com placeholder temporário (Unsplash praia genérica).
-- [ ] Card 4 /en/guides ("Beaches Near Lisbon"): obter foto de praia perto de Lisboa (Cascais, Caparica, Guincho ou Sesimbra). Actual Unsplash funciona mas está descontextualizado.
 - [ ] Auditoria geral: substituir todas as imagens com pessoas identificáveis em cards e heroes por questões de model release. Risco legal para portal comercial com Pro tier paid.
 - [ ] Imagens já em disco para futura sprint surf.html migration: `ericeira surf.jpg`, `surf nazare.jpg`, `surf peniche.jpg`, `surfer wave atlantic.jpg`, `surfing portugal.jpg` — em `Desktop/Download Geral/videos-pth/`.
 
