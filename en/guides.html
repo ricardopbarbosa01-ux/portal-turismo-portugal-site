@@ -115,6 +115,20 @@
       .nav-close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
       .nav-actions .btn-outline { display: none; }
     }
+    /* Mid-viewport: hamburger replaces desktop nav (769–1100px) */
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .nav-links { display: none; }
+      #nav-login-btn,
+      #nav-register-btn { display: none; }
+    }
+    /* Compressed laptop (1101–1280px) — prevent Register overflow on EN long labels */
+    @media (min-width: 1101px) and (max-width: 1280px) {
+      .nav-links { gap: 4px; }
+      .nav-links a { font-size: 0.8rem; padding: 6px 4px; }
+      .nav-actions { gap: 6px; }
+      .nav-actions .btn { padding: 7px 12px; font-size: 0.8rem; }
+      .lang-switcher { display: none; }
+    }
 
     /* ── Hero (no video, dark navy gradient) ── */
     .guides-hero {
