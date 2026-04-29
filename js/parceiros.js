@@ -38,11 +38,32 @@ document.addEventListener('DOMContentLoaded', () => {
       mensagem: document.getElementById('f-mensagem').value.trim(),
     };
 
-    const { error } = await db.from('partner_leads').insert([payload]);
+    const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value || '';
+    if (!turnstileToken) {
+      showToast('Verificação anti-robôs em falta. Recarrega a página.', 'error');
+      btn.disabled = false;
+      btn.textContent = originalText;
+      return;
+    }
 
-    if (error) {
+    let submitOk = false;
+    try {
+      const res = await fetch(SUPABASE_URL + '/functions/v1/submit-partner-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+        body: JSON.stringify({ turnstileToken, ...payload })
+      });
+      if (!res.ok) {
+        const d = await res.json().catch(() => ({}));
+        throw new Error(d.error || 'HTTP ' + res.status);
+      }
+      submitOk = true;
+    } catch (err) {
+      console.error('partner_leads submit error:', err);
+    }
+
+    if (!submitOk) {
       showToast('Erro ao enviar. Tente novamente ou contacte-nos directamente.', 'error');
-      console.error('partner_leads insert error:', error);
     } else {
       if (typeof gtag === 'function') {
         try {

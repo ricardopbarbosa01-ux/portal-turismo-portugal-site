@@ -33,16 +33,30 @@ document.addEventListener('DOMContentLoaded', () => {
       notas: document.getElementById('f-notas').value.trim(),
     };
 
-    const { error } = await db.from('plan_requests').insert([payload]);
+    const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value || '';
+    if (!turnstileToken) {
+      showToast('Verificação anti-robôs em falta. Recarrega a página.', 'error');
+      btn.disabled = false;
+      btn.textContent = originalText;
+      return;
+    }
 
-    if (error) {
-      showToast('Erro ao enviar. Tente novamente.', 'error');
-      console.error('plan_requests insert error:', error);
-    } else {
+    try {
+      const res = await fetch(SUPABASE_URL + '/functions/v1/submit-plan-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+        body: JSON.stringify({ turnstileToken, ...payload })
+      });
+      if (!res.ok) {
+        const d = await res.json().catch(() => ({}));
+        throw new Error(d.error || 'HTTP ' + res.status);
+      }
       showToast('Pedido recebido! Enviamos o seu plano em 24h.', 'success');
-      // Email plan-confirm enviado via DB trigger trigger_plan_request_created
       form.reset();
       track('plan_form_submit', { regiao: payload.regiao, orcamento: payload.orcamento });
+    } catch (err) {
+      showToast('Erro ao enviar. Tente novamente.', 'error');
+      console.error('plan_requests submit error:', err);
     }
 
     btn.disabled = false;
