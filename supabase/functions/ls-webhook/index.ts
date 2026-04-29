@@ -1,3 +1,6 @@
+// Security: webhook signature is REQUIRED.
+// Both empty secret and missing signature header reject the request (fail-closed).
+// Fix applied 2026-04-29 — addresses audit finding (Vector A + Vector B bypass).
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
@@ -6,7 +9,11 @@ const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? ''
 const SUPABASE_SERVICE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
 
 async function verifySignature(body: string, sig: string): Promise<boolean> {
-  if (!WEBHOOK_SECRET || !sig) return true
+  if (!WEBHOOK_SECRET) {
+    console.error('CRITICAL: LEMONSQUEEZY_WEBHOOK_SECRET not configured — rejecting all webhooks')
+    return false
+  }
+  if (!sig) return false
   const key = await crypto.subtle.importKey(
     'raw', new TextEncoder().encode(WEBHOOK_SECRET),
     { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']
