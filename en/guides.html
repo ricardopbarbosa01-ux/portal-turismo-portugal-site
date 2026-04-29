@@ -473,11 +473,8 @@
     </div>
     Portugal Travel Hub
   </a>
-  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
   <div class="nav-links" role="list">
-    <button class="nav-close" id="nav-close" aria-label="Close menu">
-      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
     <a href="/en/beaches.html" role="listitem">Beaches</a>
     <a href="/en/surf.html" role="listitem">Surf</a>
     <a href="/en/pesca.html" role="listitem">Fishing</a>
@@ -487,18 +484,22 @@
     <a href="/en/precos.html" role="listitem">Pricing</a>
     <a href="/en/parceiros.html" role="listitem">Partners</a>
   </div>
+
   <div class="nav-actions">
     <div class="lang-switcher" aria-label="Language selection">
-      <a href="/guias.html" class="lang-btn" data-lang="pt" hreflang="pt">PT</a>
+      <a href="/guias.html" class="lang-btn" data-lang="pt" onclick="try{localStorage.setItem('pth_lang','pt')}catch(_){}" hreflang="pt">PT</a>
       <span class="lang-sep" aria-hidden="true">|</span>
       <span class="lang-btn lang-btn--active" aria-current="true" hreflang="en">EN</span>
     </div>
-    <a href="/en/precos.html" class="btn btn-outline">Pro</a>
-    <a href="/en/login.html" class="btn btn-primary" id="nav-auth-btn">Log In</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
+    <a href="/en/login.html#register" class="btn btn-primary" id="nav-register-btn">Register</a>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
+
 </nav>
 
 <!-- Hero -->
@@ -733,17 +734,6 @@
 
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
-  const navbar = document.getElementById('navbar');
-  const toggle = document.getElementById('nav-toggle');
-  const navClose = document.getElementById('nav-close');
-  const navBackdrop = document.getElementById('nav-backdrop');
-  function openMobileNav() { navbar.classList.add('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
-  function closeMobileNav() { navbar.classList.remove('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-  toggle?.addEventListener('click', () => navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
-  navClose?.addEventListener('click', closeMobileNav);
-  navBackdrop?.addEventListener('click', closeMobileNav);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
 </script>
 <script src="/js/lang-switcher.js" defer></script>
 <script src="/js/nav.js?v=20260422c" defer></script>
