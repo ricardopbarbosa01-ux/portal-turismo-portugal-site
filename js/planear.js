@@ -40,11 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('plan_requests insert error:', error);
     } else {
       showToast('Pedido recebido! Enviamos o seu plano em 24h.', 'success');
-      fetch('https://glupdjvdvunogkqgxoui.supabase.co/functions/v1/send-plan-confirm', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
-        body: JSON.stringify(payload)
-      }).catch((err) => { console.error('[planear] Plan confirm email failed:', err); });
+      // Email plan-confirm enviado via DB trigger trigger_plan_request_created
       form.reset();
       track('plan_form_submit', { regiao: payload.regiao, orcamento: payload.orcamento });
     }
