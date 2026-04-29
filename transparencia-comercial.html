@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="css/style.css?v=20260428a">
 
   <style>
-    :root {
+:root {
       --blue: #0a3d6b; --blue-mid: #1a5fa3; --gold: #c9a84c; --gold-light: #e8c97a;
       --white: #ffffff; --off-white: #f6f4ef; --text: #1a1a2e; --text-mid: #4a5568;
       --glass: rgba(255,255,255,0.10); --glass-border: rgba(255,255,255,0.20);
@@ -56,46 +56,11 @@
     .skip-link { position: absolute; top: -100%; left: 16px; background: var(--blue); color: var(--white); padding: 8px 16px; border-radius: 8px; z-index: 9999; transition: top 0.2s; }
     .skip-link:focus { top: 16px; }
 
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5vw; height: 72px;
-      background: rgba(10,61,107,0.95); backdrop-filter: blur(20px) saturate(1.5);
-      border-bottom: 1px solid var(--glass-border); transition: background var(--transition);
-    }
-    .navbar.scrolled { background: rgba(10,61,107,0.99); }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Bodoni Moda', serif; font-size: 1.25rem; color: var(--white); }
-    .nav-logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .nav-logo-icon svg { width: 20px; height: 20px; fill: var(--blue); }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { color: rgba(255,255,255,0.85); font-size: 0.9rem; font-weight: 400; letter-spacing: 0.03em; transition: color var(--transition); position: relative; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform var(--transition); }
-    .nav-links a:hover { color: var(--white); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; transition: var(--transition); cursor: pointer; min-height: 44px; }
     .btn-outline { border: 1.5px solid var(--glass-border); color: var(--white); backdrop-filter: blur(12px); background: var(--glass); }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
     .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font-weight: 600; }
     .btn-primary:hover { transform: translateY(-1px); }
-    .nav-toggle { display: none; color: var(--white); min-height: 48px; min-width: 48px; align-items: center; justify-content: center; border-radius: 8px; transition: background var(--transition); }
-    .nav-toggle:hover { background: rgba(255,255,255,0.1); }
-    .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
-    .nav-close { display: none; }
-    .nav-backdrop { display: none; }
-    @media (max-width: 768px) {
-      .nav-actions .btn-outline { display: none; }
-      .nav-toggle { display: flex; }
-      .nav-backdrop { display: block; position: fixed; inset: 0; z-index: 99; background: rgba(0,0,0,0.55); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; cursor: pointer; }
-      .nav-mobile-open .nav-backdrop { opacity: 1; visibility: visible; }
-      .nav-links { display: flex !important; flex-direction: column; align-items: flex-start; position: fixed; top: 0; right: 0; bottom: 0; width: 280px; z-index: 100; background: rgba(5,35,70,0.99); backdrop-filter: blur(24px) saturate(1.5); border-left: 1px solid var(--glass-border); padding: 80px 32px 40px; gap: 4px; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; }
-      .nav-mobile-open .nav-links { transform: translateX(0); }
-      .nav-links a { font-size: 1.05rem; padding: 14px 0; width: 100%; min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .nav-links a:last-child { border-bottom: none; }
-      .nav-close { display: flex; align-items: center; justify-content: center; position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; color: var(--white); background: rgba(255,255,255,0.1); transition: background var(--transition); flex-shrink: 0; }
-      .nav-close:hover { background: rgba(255,255,255,0.2); }
-      .nav-close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
-    }
 
     .breadcrumb { padding: 88px 5vw 0; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-mid); }
     .breadcrumb a { color: var(--blue-mid); transition: color var(--transition); }
@@ -143,7 +108,7 @@
     .footer-bottom { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: rgba(255,255,255,0.65); flex-wrap: wrap; gap: 8px; }
     .footer-bottom a { color: rgba(255,255,255,0.75); transition: color var(--transition); }
     .footer-bottom a:hover { color: var(--gold); }
-  </style>
+</style>
 
 </head>
 <body>
@@ -305,20 +270,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/nav.js?v=20260422c" defer></script>
 <script src="js/config.js?v=20260408"></script>
-<script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-  const toggle = document.getElementById('nav-toggle');
-  const navClose = document.getElementById('nav-close');
-  const navBackdrop = document.getElementById('nav-backdrop');
-  function openMobileNav() { navbar.classList.add('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
-  function closeMobileNav() { navbar.classList.remove('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-  toggle?.addEventListener('click', () => navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
-  navClose?.addEventListener('click', closeMobileNav);
-  navBackdrop?.addEventListener('click', closeMobileNav);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
-</script>
+
   <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

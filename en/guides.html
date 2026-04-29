@@ -63,7 +63,7 @@
   <link rel="stylesheet" href="/css/style.css?v=20260417b">
 
   <style>
-    :root {
+:root {
       --navy:#1B3A6B;--navy-dark:#0d2b4e;--navy-mid:#1a5fa3;--navy-light:#2980d4;
       --gold:#C9A84C;--gold-light:#e8c97a;--gold-glow:rgba(201,168,76,0.25);
       --coral:#E07A5F;
@@ -81,54 +81,11 @@
     a { text-decoration: none; color: inherit; }
     :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 
-    /* ── Navbar ── */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5vw; height: 72px;
-      background: rgba(10,61,107,0.95); backdrop-filter: blur(20px) saturate(1.5);
-      border-bottom: 1px solid var(--glass-border);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); }
-    .nav-logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .nav-logo-icon svg { width: 20px; height: 20px; fill: var(--navy); }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { color: rgba(255,255,255,0.82); font-size: 0.88rem; font-weight: 400; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .nav-links a.active { font-weight: 600; }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 50px; font-size: 0.875rem; font-weight: 500; transition: all 0.2s; cursor: pointer; min-height: 44px; }
     .btn-outline { border: 1.5px solid var(--glass-border); color: var(--white); background: var(--glass); }
     .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); font-weight: 600; }
-    .nav-toggle { display: none; color: var(--white); min-height: 48px; min-width: 48px; align-items: center; justify-content: center; border-radius: 8px; background: none; border: none; cursor: pointer; }
-    .nav-toggle svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
-    .nav-close { display: none; }
-    .nav-backdrop { display: none; }
-    @media (max-width: 768px) {
-      .nav-toggle { display: flex; }
-      .nav-backdrop { display: block; position: fixed; inset: 0; z-index: 99; background: rgba(0,0,0,0.55); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; cursor: pointer; }
-      .nav-mobile-open .nav-backdrop { opacity: 1; visibility: visible; }
-      .nav-links { display: flex !important; flex-direction: column; align-items: flex-start; position: fixed; top: 0; right: 0; bottom: 0; width: 280px; z-index: 100; background: rgba(5,35,70,0.99); backdrop-filter: blur(24px); border-left: 1px solid var(--glass-border); padding: 80px 32px 40px; gap: 4px; transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; }
-      .nav-mobile-open .nav-links { transform: translateX(0); }
-      .nav-links a { font-size: 1.05rem; padding: 14px 0; width: 100%; min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .nav-close { display: flex; align-items: center; justify-content: center; position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; color: var(--white); background: rgba(255,255,255,0.1); border: none; cursor: pointer; }
-      .nav-close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
-      .nav-actions .btn-outline { display: none; }
-    }
     /* Mid-viewport: hamburger replaces desktop nav (769–1100px) */
-    @media (min-width: 769px) and (max-width: 1100px) {
-      .nav-links { display: none; }
-      #nav-login-btn,
-      #nav-register-btn { display: none; }
-    }
     /* Compressed laptop (1101–1280px) — prevent Register overflow on EN long labels */
-    @media (min-width: 1101px) and (max-width: 1280px) {
-      .nav-links { gap: 4px; }
-      .nav-links a { font-size: 0.8rem; padding: 6px 4px; }
-      .nav-actions { gap: 6px; }
-      .nav-actions .btn { padding: 7px 12px; font-size: 0.8rem; }
-      .lang-switcher { display: none; }
-    }
 
     /* ── Hero (no video, dark navy gradient) ── */
     .guides-hero {
@@ -476,7 +433,7 @@
         padding: 100px 20px 72px;
       }
     }
-  </style>
+</style>
 </head>
 <body>
 
