@@ -1318,11 +1318,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .mobile-menu { top: 60px; height: calc(100vh - 60px); }
 }
 
-/* ── TABLET (769-1024px) ── */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* ── INTERMEDIATE / TABLET-LANDSCAPE (769-1100px) — hamburger ativa cedo
+       para evitar overflow do Register em /en/ (labels longos) ── */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .navbar { padding: 0 16px; }
+  .nav-links { display: none; }
+  .lang-switcher { display: none; }
+  #nav-login-btn { display: none; }
+  #nav-register-btn { display: none; }
+  .hamburger,
+  .nav-toggle { display: flex; }
+}
+
+/* ── LAPTOP COMPRIMIDO (1101-1280px) — encolhe links/CTAs para evitar
+       corte do Register em /en/ ── */
+@media (min-width: 1101px) and (max-width: 1280px) {
+  .nav-links { gap: 2px; }
   .nav-links a { font-size: 13px; padding: 6px 6px; }
   .lang-switcher { display: none; }
-  #nav-register-btn { padding: 6px 10px; font-size: 13px; }
+  #nav-login-btn { padding: 6px 10px; font-size: 13px; }
+  #nav-register-btn { padding: 6px 12px; font-size: 13px; }
+  .nav-actions { gap: 6px; }
 }
 
 /* ============================================
