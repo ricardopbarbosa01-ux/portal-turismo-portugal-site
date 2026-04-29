@@ -48,14 +48,13 @@
   <link rel="stylesheet" href="/css/style.css?v=20260428a">
 
   <style>
-    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; transition: var(--transition); cursor: pointer; min-height: 44px; }
     .btn-outline { border: 1.5px solid var(--glass-border); color: var(--white); backdrop-filter: blur(12px); background: var(--glass); }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
     .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font-weight: 600; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.40); }
-    @media (max-width: 640px) { .nav-actions .btn-outline { display: none; } }
 
     /* ── Page hero ── */
     .page-hero {
@@ -114,7 +113,7 @@
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-  </style>
+</style>
 
 </head>
 <body>
@@ -301,35 +300,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="/js/config.js?v=20260402"></script>
-<script>
-  // Footer year
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-  // Navbar scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 30);
-  }, { passive: true });
-
-  // Mobile nav
-  const toggle = document.getElementById('nav-toggle');
-  const navClose = document.getElementById('nav-close');
-  const navBackdrop = document.getElementById('nav-backdrop');
-  function openMobileNav() { navbar.classList.add('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
-  function closeMobileNav() { navbar.classList.remove('nav-mobile-open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
-  toggle?.addEventListener('click', () => navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav());
-  navClose?.addEventListener('click', closeMobileNav);
-  navBackdrop?.addEventListener('click', closeMobileNav);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
-
-  // Reveal animation
-  const io = new IntersectionObserver((entries) => entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-  }), { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-</script>
   <script src="/js/nav.js?v=20260422c" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>

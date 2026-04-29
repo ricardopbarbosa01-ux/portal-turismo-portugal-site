@@ -72,7 +72,7 @@
   <link rel="stylesheet" href="/css/style.css?v=20260428a">
 
   <style>
-    /* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
+/* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
     :focus-visible {
       outline: 2px solid var(--gold);
       outline-offset: 3px;
@@ -886,7 +886,7 @@
       .journey-step { border-right: none; border-bottom: 1px solid var(--border); padding: 22px 20px; }
       .journey-step:last-child { border-bottom: none; }
     }
-  </style>
+</style>
 
 </head>
 <body>
@@ -1497,153 +1497,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
 <script src="/js/config.js?v=20260402"></script>
 <script src="/js/animations.js?v=20260402" defer></script>
-<script>
-  // ── Preloader ────────────────────────────────────────────────
-  (function() {
-    var preloader = document.getElementById('preloader');
-    if (!preloader) return;
-    // Skip animation for reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      preloader.classList.add('gone');
-      return;
-    }
-    document.body.style.overflow = 'hidden';
-    var texts = preloader.querySelectorAll('.preloader__text');
-    texts.forEach(function(t, i) {
-      setTimeout(function() { t.style.opacity = '1'; }, 300 + i * 800);
-    });
-    setTimeout(function() { preloader.classList.add('slide-up'); }, 1400);
-    setTimeout(function() {
-      preloader.classList.add('gone');
-      document.body.style.overflow = '';
-    }, 2200);
-  })();
 
-  // ── Spotlight effect ──────────────────────────────────────────
-  const spotlight = document.getElementById('spotlight');
-  if (spotlight && window.matchMedia("(pointer: fine)").matches) {
-    let rafId = null;
-    document.addEventListener('mousemove', (e) => {
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => {
-        spotlight.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px, rgba(201,168,76,0.10), transparent 50%)`;
-      });
-    });
-  }
-
-  // ── Navbar scroll ─────────────────────────────────────────────
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  // ── Mobile nav drawer ─────────────────────────────────────────
-  const toggle      = document.getElementById('nav-toggle');
-  const navClose    = document.getElementById('nav-close');
-  const navBackdrop = document.getElementById('nav-backdrop');
-
-  function openMobileNav() {
-    navbar.classList.add('nav-mobile-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobileNav() {
-    navbar.classList.remove('nav-mobile-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  toggle?.addEventListener('click', () =>
-    navbar.classList.contains('nav-mobile-open') ? closeMobileNav() : openMobileNav()
-  );
-  navClose?.addEventListener('click', closeMobileNav);
-  navBackdrop?.addEventListener('click', closeMobileNav);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMobileNav));
-
-  // ── Page logic ────────────────────────────────────────────────
-  (async () => {
-
-    // ── Scroll reveal — powered by GSAP ScrollTrigger (js/animations.js) ──
-    // Fallback for no-JS: .reveal/.visible CSS still works
-
-    // ── Featured Beaches — static curated list ───────────────────
-    const grid = document.getElementById('fb-grid');
-    if (grid) {
-      const FEATURED = [
-        {
-          href:    'beach.html?id=d9af39d6-f9ae-483d-ab1d-e48a026dfd53',
-          name:    'Praia do Camilo',
-          region:  'Algarve',
-          img:     'https://images.unsplash.com/photo-1651237070396-b2dba667d883?q=80&w=1031&auto=format&fit=crop',
-          quality: 'Excellent'
-        },
-        {
-          href:    'beach.html?id=8d29adfa-7276-4074-bce6-dc1c6b49ae12',
-          name:    'Praia do Guincho',
-          region:  'Lisboa',
-          img:     'https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1200&q=80',
-          quality: 'Excellent'
-        },
-        {
-          href:    'beach.html?id=66ee7f6b-018b-408b-8d48-c58d2f73bf8d',
-          name:    'Praia da Marinha',
-          region:  'Algarve',
-          img:     'https://images.unsplash.com/photo-1651237031934-4c1c78b9f1ba?auto=format&fit=crop&w=1200&q=80',
-          quality: 'Excellent'
-        },
-        {
-          href:    'beach.html?id=91f9ac99-a4b2-4793-afba-5b7f79d72d54',
-          name:    'Praia da Comporta',
-          region:  'Lisboa e Setúbal',
-          img:     'https://images.unsplash.com/photo-1542413965-e786216dfcd9?q=80&w=774&auto=format&fit=crop',
-          quality: 'Good'
-        },
-        {
-          href:    'beach.html?id=3d2dacea-cfcb-4086-9e15-a7b57ec9f2e7',
-          name:    'Praia dos Galapinhos',
-          region:  'Lisboa e Setúbal',
-          img:     'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80',
-          quality: 'Excellent'
-        },
-        {
-          href:    'beach.html?id=b699e6b6-e0cb-4620-9355-e1f3074ddde9',
-          name:    'Praia de Moledo',
-          region:  'Norte',
-          img:     'https://images.unsplash.com/photo-1663602657254-b2d9a70590da?q=80&w=870&auto=format&fit=crop',
-          quality: 'Good'
-        }
-      ];
-
-      grid.innerHTML = FEATURED.map(b => `
-        <article class="fb-card reveal" role="listitem" tabindex="0">
-          <a href="${b.href}" class="fb-card-link" aria-label="View ${b.name}, ${b.region}">
-            <div class="fb-card-img">
-              <img src="${b.img}"
-                   alt="${b.name}, ${b.region}."
-                   loading="lazy" width="400" height="250"
-                   onerror="this.onerror=null;this.src='beach-placeholder.svg'">
-            </div>
-            <div class="fb-card-body">
-              <div class="fb-card-meta">${b.region}</div>
-              <h3 class="fb-card-title">${b.name}</h3>
-              <span class="fb-quality-badge">${b.quality}</span>
-            </div>
-          </a>
-        </article>`).join('');
-
-      // Refresh GSAP ScrollTrigger for dynamically loaded cards
-      if (typeof ScrollTrigger !== 'undefined') {
-        gsap.utils.toArray('#fb-grid .reveal').forEach(function(el) {
-          gsap.fromTo(el, { opacity: 0, y: 28 }, {
-            opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out',
-            scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
-          });
-        });
-        ScrollTrigger.refresh();
-      }
-    }
-  })();
-</script>
 
 <script>
   // ── Service Worker registration ───────────────────────────────
