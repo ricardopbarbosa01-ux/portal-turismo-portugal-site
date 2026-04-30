@@ -1302,7 +1302,7 @@
     if (tipoEl) tipoEl.value = paramTipo;
   }
 
-  loadBeaches().then(() => { if (paramQ || paramRegion || paramTipo) applyFilters(); });
+  document.addEventListener('DOMContentLoaded', () => { loadBeaches().then(() => { if (paramQ || paramRegion || paramTipo) applyFilters(); }); });
 
   // ── Beach card click tracking (delegated) ────────────────────────
   document.getElementById('beaches-grid').addEventListener('click', function(e) {
