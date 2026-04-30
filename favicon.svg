@@ -1,4 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#0a3d6b"/>
-  <path d="M16 5C12.13 5 9 8.13 9 12c0 5.25 7 15 7 15s7-9.75 7-15c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#c9a84c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .ink { stroke: #0B1B2B; fill: #0B1B2B; }
+    .gold { stroke: #C9A24B; }
+    @media (prefers-color-scheme: dark) {
+      .ink { stroke: #F2E8D5; fill: #F2E8D5; }
+    }
+  </style>
+  <g class="ink" fill="none">
+    <line x1="32" y1="32" x2="32" y2="78" stroke-width="8" stroke-linecap="square"/>
+    <circle cx="32" cy="22" r="6" stroke="none"/>
+    <line x1="22" y1="78" x2="42" y2="78" stroke-width="8" stroke-linecap="square"/>
+    <path d="M 32 38 Q 72 38 72 54 Q 72 70 32 70" stroke-width="8" stroke-linecap="square"/>
+  </g>
+  <path class="gold" d="M 8 90 Q 22 84 36 90 T 64 90 T 92 90" stroke-width="4" fill="none" stroke-linecap="round"/>
 </svg>

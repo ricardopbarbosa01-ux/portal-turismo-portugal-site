@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="atmosphere" cx="35%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1A2D43" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0B1B2B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0B1B2B"/>
+  <rect width="1200" height="630" fill="url(#atmosphere)"/>
+
+  <!-- P-Farol mark, left side -->
+  <g transform="translate(120, 175) scale(2.8)">
+    <g stroke="#F2E8D5" fill="none">
+      <line x1="32" y1="32" x2="32" y2="78" stroke-width="8" stroke-linecap="square"/>
+      <circle cx="32" cy="22" r="6" fill="#F2E8D5" stroke="none"/>
+      <line x1="22" y1="78" x2="42" y2="78" stroke-width="8" stroke-linecap="square"/>
+      <path d="M 32 38 Q 72 38 72 54 Q 72 70 32 70" stroke-width="8" stroke-linecap="square"/>
+    </g>
+    <path d="M 8 90 Q 22 84 36 90 T 64 90 T 92 90" stroke="#C9A24B" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Vertical divider, subtle -->
+  <line x1="500" y1="180" x2="500" y2="450" stroke="#C9A24B" stroke-width="1" opacity="0.35"/>
+
+  <!-- Eyebrow label -->
+  <text x="540" y="208" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="16" letter-spacing="3" fill="#C9A24B" font-weight="500">PORTUGAL TRAVEL HUB</text>
+
+  <!-- Main slogan -->
+  <text x="540" y="270" font-family="'Fraunces', 'Times New Roman', serif" font-size="54" fill="#F2E8D5" font-weight="600">
+    <tspan x="540" dy="0">The Portugal that</tspan>
+    <tspan x="540" dy="64">doesn&#8217;t show up on</tspan>
+    <tspan x="540" dy="64" font-style="italic">the booking sites.</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="540" y="478" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="16" letter-spacing="2" fill="#F2E8D5" opacity="0.7">VERIFIED BY LOCALS &#183; NEVER AUCTIONED</text>
+
+  <!-- Footer URL -->
+  <text x="540" y="540" font-family="'IBM Plex Sans', 'Helvetica', sans-serif" font-size="18" fill="#F2E8D5" opacity="0.5">portalturismoportugal.com</text>
+</svg>
