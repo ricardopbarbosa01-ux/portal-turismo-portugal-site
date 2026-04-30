@@ -39,3 +39,15 @@ _scripts/test-rls-setup.sql
 /videos/*.mp4
 /videos/*.webm
 /videos/*.mov
+
+# GSD (Get Stuff Done) plugin artifacts — Claude Code internal planning
+.planning/
+
+# Navbar audit screenshots — local visual diffs, not production
+/tools/screenshots-navbar/
+
+# Audit reports — local-only, sensitive findings stay out of repo
+/docs/audit-*.md
+
+# README files from imported asset packages (e.g. icon packs)
+/README.md
