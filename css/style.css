@@ -496,9 +496,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.08; font-weight: 700;
   color: var(--text); margin: 0;
 }
-/* EN H1 — slightly smaller because the manifesto headline is longer in English ("The Portugal that doesn't show up on the booking sites" is 52 chars vs 48 in PT). Scales down ~15% to keep CTAs above the fold at 100% zoom on standard laptops. */
+/* EN H1 — significantly smaller than PT because the manifesto headline is longer in English ("The Portugal that doesn't show up on the booking sites" is 52 chars vs 48 in PT). Caps at ~51px to ensure CTAs remain above the fold at 100% zoom on standard laptops. Visual parity sacrificed for functional priority. */
 html[lang="en"] .hero__titles h1 {
-  font-size: clamp(2.4rem, 4.7vw, 4.1rem);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
 }
 .hero__line1, .hero__line2 {
   display: block; opacity: 0; transform: translateY(40px);
