@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=20260430">
+  <link rel="stylesheet" href="/css/style.css?v=20260504">
 
   <style>
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
@@ -207,6 +207,9 @@
     .help-topics { display:flex; flex-direction:column; gap:7px; margin-bottom:28px; }
     .help-topic { display:flex; align-items:center; gap:10px; font-size:0.85rem; color:var(--text-mid); line-height:1.4; }
     .help-topic-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+    /* ── Turnstile ── */
+    .cf-turnstile { margin: 1rem 0; display: flex; justify-content: center; }
 </style>
 
 </head>
@@ -456,6 +459,8 @@
             <span class="field-error" id="err-message">Por favor escreva a sua mensagem.</span>
           </div>
 
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADFrwvqNt1FGaqkB" data-theme="auto"></div>
+
           <button type="submit" class="form-submit-btn" id="submit-btn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
             <span>Enviar Mensagem</span>
@@ -608,8 +613,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="js/nav.js?v=20260422c" defer></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="js/nav.js?v=20260504" defer></script>
+<script src="/js/config.js?v=20260504" defer></script>
 <script>
 // ── Footer year ──
 document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -715,7 +720,7 @@ function showFieldError(inputId, errId, show) {
   err.classList.toggle('visible', show);
 }
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', async function(e) {
   e.preventDefault();
   let valid = true;
 
@@ -738,23 +743,46 @@ form.addEventListener('submit', function(e) {
 
   if (!valid) return;
 
+  const data = { name, email, subject, message, timestamp: new Date().toISOString(), ...(window._pthSourceCtx || {}) };
+
+  // PRESERVE localStorage backup (UX optimistic)
   try {
-    const data = { name, email, subject, message, timestamp: new Date().toISOString(), ...(window._pthSourceCtx || {}) };
     const existing = JSON.parse(localStorage.getItem('pth_contact_messages') || '[]');
     existing.push(data);
     localStorage.setItem('pth_contact_messages', JSON.stringify(existing));
-    db.from('contact_messages').insert([data]).catch((err) => {
-      console.error('Erro ao enviar mensagem:', err);
-      const form = document.querySelector('form') || document.querySelector('.contact-form');
-      if (form) {
-        const errorEl = document.createElement('div');
-        errorEl.style.cssText = 'background:#fee;color:#c00;padding:12px 16px;border-radius:8px;margin-top:12px;font-size:14px;';
-        errorEl.textContent = 'Não foi possível enviar a mensagem. Por favor tente novamente ou contacte-nos por email.';
-        form.appendChild(errorEl);
-        setTimeout(() => errorEl.remove(), 8000);
-      }
-    });
   } catch(_) {}
+
+  // Turnstile token validation
+  const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value || '';
+  if (!turnstileToken) {
+    const errorEl = document.createElement('div');
+    errorEl.style.cssText = 'background:#fee;color:#c00;padding:12px 16px;border-radius:8px;margin-top:12px;font-size:14px;';
+    errorEl.textContent = 'Verificação anti-robôs em falta. Recarrega a página e tenta novamente.';
+    form.appendChild(errorEl);
+    setTimeout(() => errorEl.remove(), 8000);
+    return;
+  }
+
+  // Submit via Edge Function
+  try {
+    const res = await fetch(SUPABASE_URL + '/functions/v1/submit-contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+      body: JSON.stringify({ turnstileToken, ...data })
+    });
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      throw new Error(d.error || ('HTTP ' + res.status));
+    }
+  } catch (err) {
+    console.error('Erro ao enviar mensagem:', err);
+    const errorEl = document.createElement('div');
+    errorEl.style.cssText = 'background:#fee;color:#c00;padding:12px 16px;border-radius:8px;margin-top:12px;font-size:14px;';
+    errorEl.textContent = 'Não foi possível enviar a mensagem. Por favor tente novamente ou contacte-nos por email.';
+    form.appendChild(errorEl);
+    setTimeout(() => errorEl.remove(), 8000);
+    return;  // do not hide form on failure
+  }
 
   form.style.display = 'none';
   formSuccess.classList.add('visible');
@@ -784,6 +812,7 @@ const io = new IntersectionObserver(
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="js/lang-switcher.js" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
