@@ -476,15 +476,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
  * This was confirmed via supabase/functions/ls-webhook/index.ts which writes plan='pro'.
  */
 document.addEventListener('DOMContentLoaded', async () => {
-  // window.db is initialised by /js/config.js (loaded as defer)
-  const supa = window.db;
-  if (!supa) {
-    console.error('[pro/welcome] supabase client not available');
-    showState('fallback');
-    return;
-  }
-
-  // ── State containers ──────────────────────────────────────────────────────
+  // ── State containers — declared first so showState() can reference them ───
   const states = {
     loading:    document.getElementById('state-loading'),
     pro:        document.getElementById('state-pro'),
@@ -496,13 +488,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   const magicLinkContainer = document.getElementById('magic-link-container');
 
   function showState(key) {
-    // Hide all hero states
     Object.entries(states).forEach(([k, el]) => {
       if (el) el.hidden = (k !== key);
     });
-    // Show/hide supplementary containers
     if (nextStepsContainer) nextStepsContainer.hidden = (key !== 'pro');
     if (magicLinkContainer) magicLinkContainer.hidden = (key !== 'magic');
+  }
+
+  // config.js declares `db` as a top-level const — accessible by name, not as window.db
+  const supa = db;
+  if (!supa) {
+    console.error('[pro/welcome] supabase client not available');
+    showState('fallback');
+    return;
   }
 
   // ── Main auth check ───────────────────────────────────────────────────────
