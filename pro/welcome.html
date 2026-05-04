@@ -475,6 +475,129 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
  * IMPORTANT: The profiles table uses `plan` (text 'pro'|'free'), NOT `is_pro` (boolean).
  * This was confirmed via supabase/functions/ls-webhook/index.ts which writes plan='pro'.
  */
+
+// ── i18n — bilingual PT/EN ────────────────────────────────────────────────
+const i18n = {
+  pt: {
+    heroTitle: 'Bem-vindo ao PTH Pro 🎉',
+    heroSubtitle: 'Pagamento confirmado. Tens acesso completo a alertas, favoritos e plano personalizado.',
+    nextStepsHeading: 'Começa agora com o teu plano Pro',
+    card1Title: 'Ativar alertas de praia/surf',
+    card1Body: 'Recebe avisos quando as condições estiverem ideais para a tua atividade preferida.',
+    card1Cta: 'Configurar alertas',
+    card2Title: 'Guardar primeiros favoritos',
+    card2Body: 'Acede rapidamente às tuas praias preferidas sem precisar de pesquisar de novo.',
+    card2Cta: 'Explorar praias',
+    card3Title: 'Plano de viagem personalizado',
+    card3Body: 'Indica a região e datas — recebes um itinerário curado adaptado às tuas preferências.',
+    card3Cta: 'Planear viagem',
+    accountCta: 'Ir para a minha conta',
+    magicTitle: 'Ativa o teu Pro',
+    magicSubtitle: 'Indica o email usado no checkout LemonSqueezy. Enviamos-te um link mágico para acederes à tua conta Pro.',
+    magicPlaceholder: 'o-teu-email@exemplo.com',
+    magicButton: 'Ativar Pro',
+    magicSent: 'Enviámos-te um link para {email}. Confirma para ativar o Pro.',
+    magicErrorInvalid: 'Indica um email válido.',
+    magicErrorGeneric: 'Algo correu mal. Tenta de novo ou contacta ola@portalturismoportugal.com',
+    loadingTitle: 'A confirmar o teu Pro...',
+    loadingSubtitle: 'Demora apenas alguns segundos.',
+    fallbackTitle: 'Pagamento confirmado, ativação em curso',
+    fallbackBody: 'O pagamento foi confirmado mas a ativação está em processamento. Vais receber um email em minutos. Dúvidas: ola@portalturismoportugal.com'
+  },
+  en: {
+    heroTitle: 'Welcome to PTH Pro 🎉',
+    heroSubtitle: 'Payment confirmed. You now have full access to alerts, favourites and personalised trip plans.',
+    nextStepsHeading: 'Get started with your Pro plan',
+    card1Title: 'Activate beach/surf alerts',
+    card1Body: 'Get notified when conditions are ideal for your preferred activity.',
+    card1Cta: 'Set up alerts',
+    card2Title: 'Save your first favourites',
+    card2Body: 'Quickly access your favourite beaches without searching again.',
+    card2Cta: 'Browse beaches',
+    card3Title: 'Personalised trip plan',
+    card3Body: 'Tell us the region and dates — receive a curated itinerary tailored to your preferences.',
+    card3Cta: 'Plan trip',
+    accountCta: 'Go to my account',
+    magicTitle: 'Activate your Pro',
+    magicSubtitle: 'Enter the email used at LemonSqueezy checkout. We will send you a magic link to access your Pro account.',
+    magicPlaceholder: 'your-email@example.com',
+    magicButton: 'Activate Pro',
+    magicSent: 'We sent a link to {email}. Confirm to activate Pro.',
+    magicErrorInvalid: 'Enter a valid email.',
+    magicErrorGeneric: 'Something went wrong. Try again or contact ola@portalturismoportugal.com',
+    loadingTitle: 'Confirming your Pro...',
+    loadingSubtitle: 'This only takes a few seconds.',
+    fallbackTitle: 'Payment confirmed, activation in progress',
+    fallbackBody: 'Payment confirmed but activation is processing. You will receive an email shortly. Questions: ola@portalturismoportugal.com'
+  }
+};
+
+// ── Language detection ─────────────────────────────────────────────────────
+const params = new URLSearchParams(location.search);
+const langParam = params.get('lang');
+const browserLang = (navigator.language || 'pt').toLowerCase().startsWith('en') ? 'en' : 'pt';
+const lang = (langParam === 'en' || langParam === 'pt') ? langParam : browserLang;
+const t = i18n[lang];
+document.documentElement.lang = lang;
+
+// ── Apply translations to DOM ──────────────────────────────────────────────
+function applyTranslations() {
+  // State: pro
+  const proHero = document.querySelector('#state-pro h1');
+  if (proHero) proHero.textContent = t.heroTitle;
+  const proSub = document.querySelector('#state-pro p');
+  if (proSub) proSub.textContent = t.heroSubtitle;
+
+  const nsHeading = document.querySelector('.next-steps-heading');
+  if (nsHeading) nsHeading.textContent = t.nextStepsHeading;
+
+  const cards = document.querySelectorAll('.next-step-card');
+  const cardData = [
+    { title: t.card1Title, body: t.card1Body, cta: t.card1Cta },
+    { title: t.card2Title, body: t.card2Body, cta: t.card2Cta },
+    { title: t.card3Title, body: t.card3Body, cta: t.card3Cta }
+  ];
+  cards.forEach((card, i) => {
+    if (!cardData[i]) return;
+    const h3 = card.querySelector('h3');
+    const p = card.querySelector('p');
+    const btn = card.querySelector('.btn');
+    if (h3) h3.textContent = cardData[i].title;
+    if (p) p.textContent = cardData[i].body;
+    if (btn) btn.textContent = cardData[i].cta;
+  });
+
+  const accountCta = document.querySelector('.welcome-cta-row .btn');
+  if (accountCta) accountCta.textContent = t.accountCta;
+
+  // Magic link section
+  const magicHeading = document.getElementById('magic-heading');
+  if (magicHeading) magicHeading.textContent = t.magicTitle;
+  const magicSub = document.querySelector('.magic-link-section > p');
+  if (magicSub) magicSub.textContent = t.magicSubtitle;
+  const magicEmail = document.getElementById('magic-email');
+  if (magicEmail) magicEmail.placeholder = t.magicPlaceholder;
+  const magicSubmit = document.getElementById('magic-submit');
+  if (magicSubmit) magicSubmit.textContent = t.magicButton;
+
+  // State: processing
+  const procH1 = document.querySelector('#state-processing h1');
+  if (procH1) procH1.textContent = t.loadingTitle;
+  const procP = document.querySelector('#state-processing p');
+  if (procP) procP.textContent = t.loadingSubtitle;
+
+  // State: fallback (innerHTML safe — t.fallbackBody is hardcoded i18n; mailto built from own constant, not user input)
+  const fbH1 = document.querySelector('#state-fallback h1');
+  if (fbH1) fbH1.textContent = t.fallbackTitle;
+  const fbP = document.querySelector('#state-fallback p');
+  if (fbP) {
+    fbP.innerHTML = t.fallbackBody.replace(
+      'ola@portalturismoportugal.com',
+      '<a href="mailto:ola@portalturismoportugal.com">ola@portalturismoportugal.com</a>'
+    );
+  }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   // ── State containers — declared first so showState() can reference them ───
   const states = {
@@ -486,6 +609,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
   const nextStepsContainer = document.getElementById('next-steps-container');
   const magicLinkContainer = document.getElementById('magic-link-container');
+
+  // Apply i18n translations before any state becomes visible
+  applyTranslations();
 
   function showState(key) {
     Object.entries(states).forEach(([k, el]) => {
@@ -582,7 +708,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Client-side email validation (regex) — no innerHTML, uses textContent
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        feedback.textContent = 'Indica um email válido.';
+        feedback.textContent = t.magicErrorInvalid;
         return;
       }
 
@@ -597,14 +723,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
         if (error) throw error;
         // Security: use textContent — never innerHTML with user input
-        feedback.textContent = 'Enviámos-te um link para ' + email + '. Confirma para ativar o Pro.';
-        btn.textContent = 'Link enviado';
+        feedback.textContent = t.magicSent.replace('{email}', email);
+        btn.textContent = lang === 'en' ? 'Link sent' : 'Link enviado';
         if (window.track) window.track('pro_welcome_magic_link_sent', {});
       } catch (err) {
         console.error('[pro/welcome] magic link error:', err);
-        feedback.textContent = 'Não foi possível enviar o link. Tenta novamente em instantes ou contacta ola@portalturismoportugal.com.';
+        feedback.textContent = t.magicErrorGeneric;
         btn.disabled = false;
-        btn.textContent = 'Ativar Pro';
+        btn.textContent = t.magicButton;
       }
     });
   }
