@@ -482,6 +482,7 @@
     .surf-alerts-success.visible{display:flex;}
     .surf-alerts-success svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;flex-shrink:0;}
     @media(max-width:480px){.surf-alerts-form{flex-direction:column;}.surf-alerts-btn{width:100%;justify-content:center;}}
+    .cf-turnstile { margin: 1rem 0; display: flex; justify-content: center; }
     /* ── SEO guide cards band ── */
     .seo-guides-band{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
     .seo-guides-inner{max-width:1100px;margin:0 auto;}
@@ -490,6 +491,7 @@
 </style>
 
 <link rel="stylesheet" href="/css/style.css?v=20260430">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -922,6 +924,7 @@
         <input type="email" class="surf-alerts-input" id="surf-alerts-email"
                placeholder="your@email.com" required autocomplete="email"
                aria-label="Your email for surf alerts">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADFrwvqNt1FGaqkB" data-theme="auto"></div>
         <button type="submit" class="surf-alerts-btn" id="surf-alerts-btn">Subscribe</button>
       </form>
       <div class="surf-alerts-success" id="surf-alerts-success" role="status" aria-live="polite">
@@ -1043,19 +1046,20 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260504" defer></script>
 
 
 <script>
 // ── Surf alerts email capture ─────────────────────────────────────────────
 (function () {
+  var SUPABASE_ANON_KEY = 'sb_publishable_HKdE2IRmz9lMDcg4p3l1tw_HiTdD4nw';
   var form    = document.getElementById('surf-alerts-form');
   var emailEl = document.getElementById('surf-alerts-email');
   var btn     = document.getElementById('surf-alerts-btn');
   var success = document.getElementById('surf-alerts-success');
   if (!form) return;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
     var email = emailEl.value.trim();
     var valid = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -1063,6 +1067,18 @@
       emailEl.focus();
       emailEl.style.borderColor = '#dc2626';
       setTimeout(function () { emailEl.style.borderColor = ''; }, 2000);
+      return;
+    }
+
+    // Turnstile token (scoped to THIS form — never document.querySelector)
+    var tokenEl = form.querySelector('[name="cf-turnstile-response"]');
+    var turnstileToken = (tokenEl && tokenEl.value) ? tokenEl.value : '';
+    if (!turnstileToken) {
+      var errEl = document.createElement('div');
+      errEl.style.cssText = 'background:#fee;color:#c00;padding:8px 12px;border-radius:6px;margin-top:8px;font-size:13px;';
+      errEl.textContent = 'Anti-bot verification missing. Reload the page and try again.';
+      form.appendChild(errEl);
+      setTimeout(function () { errEl.remove(); }, 8000);
       return;
     }
 
@@ -1076,16 +1092,33 @@
       localStorage.setItem('pth_surf_subscribers', JSON.stringify(stored));
     } catch (_) {}
 
-    // 2. Show success immediately — don't gate UI on network
+    // 2. Submit via Edge Function (gate UI on real result, like 4A contact form)
+    try {
+      var res = await fetch('https://glupdjvdvunogkqgxoui.supabase.co/functions/v1/submit-surf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+        body: JSON.stringify({ turnstileToken: turnstileToken, email: email, source: 'en/surf.html' })
+      });
+      if (!res.ok) {
+        var d = await res.json().catch(function () { return {}; });
+        throw new Error(d.error || ('HTTP ' + res.status));
+      }
+    } catch (err) {
+      console.error('surf-alerts submit error:', err);
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+      var errEl2 = document.createElement('div');
+      errEl2.style.cssText = 'background:#fee;color:#c00;padding:8px 12px;border-radius:6px;margin-top:8px;font-size:13px;';
+      errEl2.textContent = 'Subscription failed. Please try again in a moment.';
+      form.appendChild(errEl2);
+      setTimeout(function () { errEl2.remove(); }, 8000);
+      return;
+    }
+
+    // 3. Success
     form.style.display = 'none';
     success.classList.add('visible');
     success.focus();
-
-    // 3. Attempt Supabase insert in background — fails silently until table is created
-    var payload = { email: email, subscribed_at: new Date().toISOString(), source: 'en/surf.html' };
-    if (typeof db !== 'undefined') {
-      db.from('surf_subscribers').insert([payload]).catch(function () {});
-    }
   });
 })();
 </script>
