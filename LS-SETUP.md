@@ -64,9 +64,10 @@ login.html?redirect=https%3A%2F%2Fportalturismoportugal.lemonsqueezy.com%2Fcheck
 
 **New redirect target:** `/pro/welcome.html`
 
-> Note: The `ls_order={order_id}` query param is injected by the LS Dashboard
-> redirect URL setting (not the `success_url` param). If the dashboard redirect
-> is set, it takes precedence over `success_url`. Keep both in sync.
+> **CRITICAL:** The LS Dashboard "Redirect URL after purchase" field for both Pro variants
+> MUST be left EMPTY. If a URL is entered there, it overrides the `success_url` query param
+> in the checkout link, breaking the per-language redirect (PT → /pro/welcome.html,
+> EN → /pro/welcome.html?lang=en). Leave the field empty so LS uses the link's success_url.
 
 ---
 
@@ -124,15 +125,17 @@ Same diff as 3b above — identical href, same replacement.
 ```
 https://portalturismoportugal.com/conta.html?activated=1
 ```
-(or empty — if empty, `success_url` param in the checkout link takes effect)
 
 **AFTER:**
 ```
-https://portalturismoportugal.com/pro/welcome.html?ls_order={order_id}
+(EMPTY — leave blank)
 ```
 
-The `{order_id}` template variable is substituted by LemonSqueezy at redirect time.
-The `pro/welcome.html` page reads it via `new URLSearchParams(location.search).get('ls_order')`.
+Leaving the LS Dashboard "Redirect URL after purchase" field empty causes LemonSqueezy to fall back
+to the `checkout[success_url]` param in the checkout link. This is required because the PT and EN
+checkout links pass different `success_url` values (`/pro/welcome.html` vs `/pro/welcome.html?lang=en`).
+If a URL is entered in the dashboard field, it overrides the per-link `success_url` and both languages
+would land on the same URL, breaking the bilingual onboarding flow.
 
 ---
 
@@ -151,25 +154,24 @@ The `pro/welcome.html` page reads it via `new URLSearchParams(location.search).g
 5. Click the **Variants** tab (or scroll to the Variants section)
 6. Click the **monthly variant** to open its settings
 
-### Step 2 — Update redirect URL for monthly variant
+### Step 2 — Clear redirect URL for monthly variant (leave EMPTY)
 
 1. Scroll to the **"Redirect URL after purchase"** field  
    (also labelled "Thank-you redirect URL" in some dashboard versions)
-2. Clear the current value
-3. Enter:
-   ```
-   https://portalturismoportugal.com/pro/welcome.html?ls_order={order_id}
-   ```
+2. Clear any existing value — **leave the field completely EMPTY**
+3. Do NOT enter any URL here
+   > **Why:** The LS Dashboard redirect URL overrides the `success_url` query param from the
+   > checkout link. Because the PT checkout link passes `success_url=/pro/welcome.html` and the
+   > EN checkout link passes `success_url=/pro/welcome.html?lang=en`, the dashboard field MUST
+   > remain empty so LemonSqueezy honours the per-language `success_url` from each link.
 4. Click **Save** (or **Update variant**)
 
-### Step 3 — Repeat for the annual Pro variant
+### Step 3 — Clear redirect URL for annual Pro variant (leave EMPTY)
 
 1. Return to the **Variants** tab of the same product
 2. Click the **annual variant** to open its settings
-3. Repeat Step 2 — same redirect URL:
-   ```
-   https://portalturismoportugal.com/pro/welcome.html?ls_order={order_id}
-   ```
+3. Repeat Step 2 — **leave the "Redirect URL after purchase" field EMPTY**
+   > Same rationale: the field must be empty so LS uses the `success_url` from the checkout link.
 4. Click **Save**
 
 ### Step 4 — Verify webhook configuration
@@ -245,10 +247,10 @@ Run these checks after deploying, in order.
 
 ### 6c. Dashboard redirect URL confirmation
 
-- [ ] LS Dashboard → Products → Pro monthly variant → Redirect URL field shows:
-  `https://portalturismoportugal.com/pro/welcome.html?ls_order={order_id}`
-- [ ] LS Dashboard → Products → Pro annual variant → Redirect URL field shows:
-  `https://portalturismoportugal.com/pro/welcome.html?ls_order={order_id}`
+- [ ] LS Dashboard → Products → Pro monthly variant → Redirect URL field is EMPTY
+- [ ] LS Dashboard → Products → Pro annual variant → Redirect URL field is EMPTY
+- [ ] precos.html (PT) success_url points to /pro/welcome.html (no ?lang param)
+- [ ] en/precos.html (EN) success_url points to /pro/welcome.html?lang=en
 
 ### 6d. No regressions
 
@@ -274,23 +276,27 @@ If the `pro/welcome.html` page has a critical bug in production:
    npx wrangler pages deploy . --project-name portal-turismo-portugal-site --commit-dirty=true
    ```
 
-### Option B — Override via LS Dashboard only (faster, no code deploy)
+### Option B — Set LS Dashboard redirect URL as emergency override (faster, no code deploy)
 
 1. LS Dashboard → Products → Pro monthly variant → Redirect URL
-2. Replace with:
+2. Enter:
    ```
    https://portalturismoportugal.com/conta.html?activated=1
    ```
 3. Repeat for annual variant
-4. This is effective immediately — no code deploy needed
-5. The `success_url` param in the checkout link still points to `welcome.html`
-   but the LS Dashboard redirect URL takes precedence, so users land on `conta.html`
+4. Click **Save** — this is effective immediately, no code deploy needed
+5. **Note:** This overrides all checkout link `success_url` params — both PT and EN users will
+   land on `conta.html`. Only use as emergency fallback while `pro/welcome.html` is fixed.
 
-### Option C — Emergency: remove redirect URL from LS Dashboard
+### Option C — Confirm field is already empty (current correct state)
 
-1. LS Dashboard → clear the "Redirect URL after purchase" field entirely for both variants
-2. LemonSqueezy then falls back to the `checkout[success_url]` param in the link
-3. If step 2 from rollback Option A was done concurrently, users land on `conta.html`
+The current design intentionally leaves the LS Dashboard "Redirect URL after purchase" field EMPTY.
+If the field is already empty and everything is working correctly, no action is needed.
+
+To verify the field is empty:
+1. LS Dashboard → Products → Pro monthly variant → "Redirect URL after purchase" field
+2. Confirm it is blank
+3. Repeat for annual variant
 
 ---
 

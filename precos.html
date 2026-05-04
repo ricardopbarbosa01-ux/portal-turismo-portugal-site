@@ -65,7 +65,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260430">
+  <link rel="stylesheet" href="/css/style.css?v=20260504">
 
   <style>
 /* ── Focus ── */
@@ -792,7 +792,7 @@
           Suporte prioritário por email
         </li>
       </ul>
-      <a href="login.html?redirect=https%3A%2F%2Fportalturismoportugal.lemonsqueezy.com%2Fcheckout%2Fbuy%2F2d56d759-3e65-46cb-9210-ea7c0fce2cb3%3Fenabled%3D1475549%26checkout%5Bsuccess_url%5D%3Dhttps%3A%2F%2Fportalturismoportugal.com%2Fconta.html%3Factivated%3D1#register" id="cta-pro" class="plan-cta gold" onclick="track('pricing_activate_pro_click',{page:'precos',plan:document.getElementById('billing-toggle').getAttribute('aria-checked')==='true'?'annual':'monthly'});if(typeof gtag==='function'){try{gtag('event','pro_checkout_iniciado',{plano:'pro',preco:'4.99',moeda:'EUR'});}catch(e){console.warn('GA event failed:',e);}}">Ativar Pro</a>
+      <a href="login.html?redirect=https%3A%2F%2Fportalturismoportugal.lemonsqueezy.com%2Fcheckout%2Fbuy%2F2d56d759-3e65-46cb-9210-ea7c0fce2cb3%3Fenabled%3D1475549%26checkout%5Bsuccess_url%5D%3Dhttps%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html#register" id="cta-pro" class="plan-cta gold" onclick="track('pricing_activate_pro_click',{page:'precos',plan:document.getElementById('billing-toggle').getAttribute('aria-checked')==='true'?'annual':'monthly'});if(typeof gtag==='function'){try{gtag('event','pro_checkout_iniciado',{plano:'pro',preco:'4.99',moeda:'EUR'});}catch(e){console.warn('GA event failed:',e);}}">Ativar Pro</a>
       <p style="text-align:center;margin-top:10px;font-size:0.75rem;color:rgba(255,255,255,0.55);line-height:1.4;">
         🔒 Checkout seguro via LemonSqueezy · Cancele quando quiser
       </p>
@@ -1211,7 +1211,7 @@
 <!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/nav.js?v=20260422c" defer></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260504" defer></script>
 <script>
 // ── Footer year ──
 document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -1238,8 +1238,8 @@ navBackdrop?.addEventListener('click', closeMenu);
 // Onde colar: LemonSqueezy Dashboard → Store → Products → [Produto] → Variants
 //             → copiar o "Checkout link" de cada variante
 const LS_CHECKOUT = {
-  pro_monthly: 'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/2d56d759-3e65-46cb-9210-ea7c0fce2cb3?enabled=1475549&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fconta.html%3Factivated%3D1',
-  pro_annual:  'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/5cc5346d-1dfa-4cdf-9632-45effbf8d943?checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fconta.html%3Factivated%3D1',
+  pro_monthly: 'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/2d56d759-3e65-46cb-9210-ea7c0fce2cb3?enabled=1475549&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html',
+  pro_annual:  'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/5cc5346d-1dfa-4cdf-9632-45effbf8d943?checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html',
 };
 
 // ── Billing toggle ──
