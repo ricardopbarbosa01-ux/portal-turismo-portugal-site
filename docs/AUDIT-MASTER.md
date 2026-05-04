@@ -11,20 +11,21 @@
 | Severity | Count |
 |----------|-------|
 | Critical | 11    |
-| High     | 14    |
-| Medium   | 16    |
-| Low      | 8     |
+| High     | 16    |
+| Medium   | 18    |
+| Low      | 10    |
 | Info     | 3     |
-| **Total**| **52**|
+| **Total**| **58**|
 
 ### By Status
 
-| Status   | Count |
-|----------|-------|
-| RESOLVED | 24    |
-| OPEN     | 16    |
-| UNKNOWN  | 12    |
-| WONTFIX  | 0     |
+| Status           | Count |
+|------------------|-------|
+| RESOLVED         | 29    |
+| OPEN             | 17    |
+| BLOCKED EXTERNAL | 1     |
+| UNKNOWN          | 12    |
+| WONTFIX          | 0     |
 
 ---
 
@@ -34,7 +35,7 @@
 
 | ID | Severity | Status | Title | Source |
 |----|----------|--------|-------|--------|
-| SEC-01 | Critical | OPEN | Email relay open: send-welcome/send-plan-confirm/send-partner-alert accept anonymous POST without auth | audit-security-2026-04-29.md:59-110 |
+| SEC-01 | Critical | RESOLVED | Email relay open: send-welcome/send-plan-confirm/send-partner-alert accept anonymous POST without auth. **Evidence**: Edge Functions submit-plan-request, submit-partner-lead, submit-contact, submit-surf all migrated to Turnstile + verify_jwt false; anon_insert policies on contact_messages and surf_subscribers dropped (commits 260504-l95, 260504-m9v) | audit-security-2026-04-29.md:59-110 |
 | SEC-02 | High | OPEN | Privilege escalation via isAdminUser() accepting user_metadata.role (user-editable) | audit-security-2026-04-29.md:114-145; audit-rls-2026-04.md:300-315 |
 | SEC-03 | High | OPEN | ls-webhook: verifySignature() is fail-open when WEBHOOK_SECRET is empty | audit-security-2026-04-29.md:150-193 |
 | SEC-04 | High | OPEN | conta.html: free user can access Pro UI via ?activated=1 without timeout redirect | audit-security-2026-04-29.md:199-227 |
@@ -50,8 +51,8 @@
 
 | ID | Severity | Status | Title | Source |
 |----|----------|--------|-------|--------|
-| RLS-01 | Critical | OPEN | alerts table has no RLS in code — cross-user read/delete/insert of alerts | audit-rls-2026-04.md:185-209; audit-security-2026-04-29.md:259-268 |
-| RLS-02 | Critical | OPEN | favorites table has no RLS in code — cross-user read/modify of favorites | audit-rls-2026-04.md:158-181; audit-security-2026-04-29.md:271-280 |
+| RLS-01 | Critical | RESOLVED | alerts table has no RLS in code — cross-user read/delete/insert of alerts. **Evidence**: `pg_policies` has `user_own_alerts` ALL for authenticated — audit was outdated (verified 04/05/2026) | audit-rls-2026-04.md:185-209; audit-security-2026-04-29.md:259-268 |
+| RLS-02 | Critical | RESOLVED | favorites table has no RLS in code — cross-user read/modify of favorites. **Evidence**: `user_own_favorites` ALL + `favorites.user_id NOT NULL` applied 04/05/2026 | audit-rls-2026-04.md:158-181; audit-security-2026-04-29.md:271-280 |
 | RLS-03 | High | UNKNOWN | beaches table has no RLS in code — createBeach/updateBeach/deleteBeach exposed via anon key (dead code, unverified in Dashboard) | audit-rls-2026-04.md:138-155; audit-security-2026-04-29.md:283-293 |
 | RLS-04 | Medium | UNKNOWN | profiles table has no RLS in code — future frontend reads would expose plan/ls_subscription_id to all authenticated users | audit-rls-2026-04.md:213-231 |
 | RLS-05 | Low | UNKNOWN | reference_ports table has no RLS in code (public static data, low risk) | audit-rls-2026-04.md:235-249 |
@@ -59,6 +60,8 @@
 | RLS-07 | Medium | UNKNOWN | partners table: no INSERT policy for authenticated non-admin — may block partner self-registration flow | audit-rls-2026-04.md:76-80; audit-rls-2026-04.md:351 |
 | RLS-08 | Medium | UNKNOWN | plan_requests and partner_leads: anon INSERT WITH CHECK (true) — no DB-level field validation, spam/flood possible | audit-rls-2026-04.md:55-57; audit-rls-2026-04.md:95-98 |
 | RLS-09 | High | RESOLVED | lead_meta: overly permissive crm_operators_all policy replaced by admin_all_lead_meta in migration | audit-rls-2026-04.md:33-37; audit-security-2026-04-29.md:20 |
+| RLS-10 | High | RESOLVED | auth read partner_leads and auth read plan_requests had using_clause=true — any authenticated user could read all entries; both policies dropped. "partner reads matching leads" also dropped (semantic duplicate of partner_select_own_region) | session 04/05/2026 |
+| RLS-11 | Medium | RESOLVED | 7 duplicate policy pairs (alerts, favorites, partners ×2, partner_leads, plan_requests, profiles) cleaned up | session 04/05/2026 |
 
 ### SEO (SEO)
 
@@ -94,6 +97,10 @@
 | BUG-11 | Medium | RESOLVED | Silent catch blocks in contact forms and planear/parceiros — user-facing errors added | STATE.md 260420-gxm commit 239c550 |
 | BUG-12 | High | RESOLVED | beach.html XSS via innerHTML — escapeHtml() added to 14 call sites | STATE.md 260418-u0y commit 184ce4c |
 | BUG-13 | High | RESOLVED | crossorigin="anonymous" missing on video elements — added to beaches.html, surf.html, webcams.html | STATE.md 260421-j9v commit 7f4c926 |
+| BUG-VIS-01 | High | OPEN | surf.html newsletter form: Turnstile widget squeezes email input — email input width reduced, breaking form UX and conversion | session 04/05/2026 |
+| BUG-VIS-02 | Medium | OPEN | Hero CTAs ("Explorar Spots", "Planear Escapada de Surf") fall below viewport at 100% browser zoom on 1080p and 1440p screens | session 04/05/2026 |
+| BUG-CONTACT-01 | Low | OPEN | contact.html shows success state even if INSERT fails — optimistic UX masks backend errors from user | session 04/05/2026 |
+| BUG-CMSG-01 | Low | OPEN | contact_messages table has `timestamp` column as text (not timestamptz) and all payload fields are nullable — schema cleanup needed | session 04/05/2026 |
 
 ### Brand (BRAND)
 
@@ -135,7 +142,7 @@
 | ID | Severity | Status | Title | Source |
 |----|----------|--------|-------|--------|
 | LS-01 | Critical | UNKNOWN | ls-webhook deployed without --no-verify-jwt — all deliveries returned 401, Pro activation broken (may be fixed, needs verification) | lemonsqueezy-config-audit-2026-04-27.md:54-84 |
-| LS-02 | Critical | OPEN | LemonSqueezy identity verification REJECTED — live mode and payouts blocked | lemonsqueezy-config-audit-2026-04-27.md:130-138, 200-206 |
+| LS-02 | Critical | BLOCKED EXTERNAL | LemonSqueezy identity verification REJECTED — live mode and payouts blocked. Not a technical bug — commercial blocker pending LS support response or direct Stripe migration | lemonsqueezy-config-audit-2026-04-27.md:130-138, 200-206 |
 | LS-03 | High | OPEN | No webhook configured for live mode — Pro activation will not work in production after live mode activated | lemonsqueezy-config-audit-2026-04-27.md:195-196 |
 | LS-04 | High | OPEN | subscription_cancelled and subscription_expired events not subscribed in LS webhook — code handles them but LS never sends them | lemonsqueezy-config-audit-2026-04-27.md:50-51, 197 |
 | LS-05 | Medium | OPEN | No LemonSqueezy API keys created (neither test nor live) — no server-side API calls or debug capability | lemonsqueezy-config-audit-2026-04-27.md:119-123, 207 |
@@ -162,15 +169,12 @@
 
 | ID | Severity | Title | Source |
 |----|----------|-------|--------|
-| SEC-01 | Critical | Email relay open: anonymous POST to send-* Edge Functions allows unlimited spam | audit-security-2026-04-29.md:59-110 |
-| RLS-01 | Critical | alerts table: no RLS — cross-user read/insert/delete of alerts (GDPR breach) | audit-rls-2026-04.md:185-209 |
-| RLS-02 | Critical | favorites table: no RLS — cross-user read/modify of favorites (GDPR breach) | audit-rls-2026-04.md:158-181 |
-| LS-02 | Critical | LemonSqueezy identity verification REJECTED — live mode blocked | lemonsqueezy-config-audit-2026-04-27.md:130-138 |
 | SEC-02 | High | isAdminUser() accepts user_metadata.role — any free user can self-promote to admin in UI | audit-security-2026-04-29.md:114-145 |
 | SEC-03 | High | ls-webhook fail-open: missing WEBHOOK_SECRET → any unauthenticated POST activates Pro | audit-security-2026-04-29.md:150-193 |
 | SEC-04 | High | conta.html: free user sees Pro UI indefinitely via ?activated=1 — no timeout redirect | audit-security-2026-04-29.md:199-227 |
 | LS-03 | High | No live mode webhook configured — Pro activation broken in production | lemonsqueezy-config-audit-2026-04-27.md:195-196 |
 | LS-04 | High | subscription_cancelled + subscription_expired not subscribed in LS — cancellation not processed | lemonsqueezy-config-audit-2026-04-27.md:50-51 |
+| BUG-VIS-01 | High | surf.html newsletter form: Turnstile widget squeezes email input — email input width reduced, breaking form UX | session 04/05/2026 |
 | SEC-05 | Medium | HSTS absent from _headers — SSL-strip possible on untrusted networks | audit-security-2026-04-29.md:234-255 |
 | SEC-06 | Medium | ingest-tides, ingest-waves, check-alerts accept unauthenticated invocation | audit-security-2026-04-29.md:261-295 |
 | SEC-07 | Medium | CSP has unsafe-inline + unsafe-eval — weakened XSS protection | audit-security-2026-04-29.md:299-317 |
@@ -178,6 +182,7 @@
 | GDPR-04 | Medium | favorites table no RLS — GDPR violation (behavior data exposed) | audit-rls-2026-04.md:168-174 |
 | LS-05 | Medium | No LemonSqueezy API keys — no server-side debug or API calls possible | lemonsqueezy-config-audit-2026-04-27.md:119-123 |
 | LS-06 | Medium | checkout success_url only in client-side JS — no product-level fallback in LS | lemonsqueezy-config-audit-2026-04-27.md:106-113 |
+| BUG-VIS-02 | Medium | Hero CTAs ("Explorar Spots", "Planear Escapada de Surf") fall below viewport at 100% browser zoom on 1080p and 1440p | session 04/05/2026 |
 
 ---
 

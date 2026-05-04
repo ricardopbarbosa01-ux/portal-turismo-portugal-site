@@ -104,5 +104,36 @@ Single source of truth for pre-launch audit findings: [`docs/AUDIT-MASTER.md`](d
 - Before opening a new audit, search AUDIT-MASTER.md by category ID prefix (SEC-, RLS-, BUG-, EN-, LS-, etc.) to avoid re-reporting known issues.
 - Source docs in `docs/audit-*.md`, `docs/BUG_AUDIT.md`, and `docs/audits/` remain for historical detail; do not edit them — write new findings into AUDIT-MASTER.md.
 
+## Pre-deploy ritual (mandatory for any HTML/CSS/JS change)
+
+Before approving any deploy that touches HTML/CSS/JS:
+
+1. Take screenshot of the production page BEFORE the change (use https://www.portalturismoportugal.com/...)
+2. Apply change locally
+3. Take screenshot AFTER the change in same viewport (mobile 375px AND desktop 1280px)
+4. Side-by-side compare. Look for:
+   - Elements that disappeared
+   - Layout shifts (flex/grid broke)
+   - Z-index conflicts
+   - Forms with elements squeezed
+   - CTAs out of viewport
+5. Only then deploy
+
+This ritual exists because automated functional tests (11/11 checks pass) do NOT catch visual regressions. A widget can be functionally working and visually broken at the same time.
+
+## Regression watchlist
+
+Pages/components with history of breaking. Re-validate visually after ANY change touching them or their shared CSS/JS:
+
+| Page/component | Last broke | Why | Watch for |
+|---|---|---|---|
+| surf.html newsletter form | 04/05/2026 | Turnstile widget added inside inline form, squeezes email input | Email input width, widget layout, success state visibility |
+| home/hero CTAs (any page with hero) | 04/05/2026 | At 100% browser zoom, CTAs ("Explorar Spots", "Planear Escapada") fall below viewport on hero | Test 100% zoom on 1080p and 1440p |
+| dashboard.html admin role check | 04/05/2026 | Line 887 uses user.app_metadata.role !== 'admin' redirect — works only if app_metadata.role is set; profiles.plan column is the source of truth for Pro/free, not for admin | If admin redirect fails: check raw_user_meta_data vs app_metadata |
+| welcome.html JS scope | 04/05/2026 | const db top-level in config.js does NOT become window.db; any inline script using db must be wrapped in DOMContentLoaded with typeof db check | TDZ errors, "db is not defined" |
+| All forms with Turnstile | ongoing | Site key 0x4AAAAAADFrwvqNt1FGaqkB does not work on localhost — only production. For local tests use 1x00000000000000000000AA (always-pass) | Form submits returning 403 in local but 200 in prod = Turnstile config issue |
+
+When introducing a new Quick Task, scan this watchlist for overlap and re-test those scenarios.
+
 ## Important note
 This repository is optimized by doing the smallest commercially meaningful next step, not by broad exploration.
