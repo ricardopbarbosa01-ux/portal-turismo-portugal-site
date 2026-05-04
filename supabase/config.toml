@@ -12,3 +12,6 @@ verify_jwt = true
 
 [functions.send-partner-alert]
 verify_jwt = true
+
+[functions.check-alerts]
+verify_jwt = true
