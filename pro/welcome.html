@@ -479,6 +479,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 // ── i18n — bilingual PT/EN ────────────────────────────────────────────────
 const i18n = {
   pt: {
+    pageTitle: 'Bem-vindo ao Pro — Portugal Travel Hub',
     heroTitle: 'Bem-vindo ao PTH Pro 🎉',
     heroSubtitle: 'Pagamento confirmado. Tens acesso completo a alertas, favoritos e plano personalizado.',
     nextStepsHeading: 'Começa agora com o teu plano Pro',
@@ -505,6 +506,7 @@ const i18n = {
     fallbackBody: 'O pagamento foi confirmado mas a ativação está em processamento. Vais receber um email em minutos. Dúvidas: ola@portalturismoportugal.com'
   },
   en: {
+    pageTitle: 'Welcome to Pro — Portugal Travel Hub',
     heroTitle: 'Welcome to PTH Pro 🎉',
     heroSubtitle: 'Payment confirmed. You now have full access to alerts, favourites and personalised trip plans.',
     nextStepsHeading: 'Get started with your Pro plan',
@@ -542,6 +544,7 @@ document.documentElement.lang = lang;
 
 // ── Apply translations to DOM ──────────────────────────────────────────────
 function applyTranslations() {
+  document.title = t.pageTitle;
   // State: pro
   const proHero = document.querySelector('#state-pro h1');
   if (proHero) proHero.textContent = t.heroTitle;
