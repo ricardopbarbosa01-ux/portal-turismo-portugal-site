@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="/css/style.css?v=20260430">
+  <link rel="stylesheet" href="/css/style.css?v=20260504">
 
   <style>
     /* ── Dashboard layout ── */
@@ -869,7 +869,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/nav.js?v=20260422c" defer></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260504" defer></script>
 <script>
 /* ═══════════════════════════════════════════════════════════════════
    PORTUGAL TRAVEL HUB · CRM DASHBOARD
@@ -883,7 +883,17 @@
 
 
 /* ── Auth guard ────────────────────────────────────────────────── */
-(async () => {
+// Wrapped in DOMContentLoaded so `db` (top-level const in deferred /js/config.js) is in scope.
+// Same pattern as Portal-turismo-site/pro/welcome.html (lines 604–740).
+document.addEventListener('DOMContentLoaded', async () => {
+  // config.js declares `db` as a top-level const — accessible by name, not as window.db.
+  // Use typeof to safely probe without triggering ReferenceError if config.js failed to load.
+  if (typeof db === 'undefined' || !db) {
+    console.error('[dashboard] supabase client not available — redirecting to login');
+    window.location.href = '/login.html';
+    return;
+  }
+
   const { data: { user } } = await db.auth.getUser();
   if (!user) { window.location.href = '/login.html'; return; }
   if (user.app_metadata?.role !== 'admin') { window.location.href = '/'; return; }
@@ -932,13 +942,11 @@
     // getUser() always hits Supabase Auth REST — never reads stale JWT cache
     const { data: { user: freshUser } } = await db.auth.getUser();
     if (isProActive(freshUser)) {
-      // Webhook fired before redirect — immediate confirm
       pendingEl.remove();
       if (badge) badge.hidden = false;
       track('pro_activation_return', { page: 'dashboard', result: 'immediate' });
       showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
     } else {
-      // Poll until role is confirmed or 12s timeout (6 × 2s)
       let attempts = 0;
       const MAX_ATTEMPTS = 6;
       const pollTimer = setInterval(async () => {
@@ -958,12 +966,13 @@
       }, 2000);
     }
   }
-})();
 
-document.getElementById('signout-btn').addEventListener('click', async e => {
-  e.preventDefault();
-  await db.auth.signOut();
-  location.reload();
+  // ── Signout handler (inside DCL so `db` is in scope and #signout-btn exists) ──
+  document.getElementById('signout-btn').addEventListener('click', async e => {
+    e.preventDefault();
+    await db.auth.signOut();
+    location.reload();
+  });
 });
 
 /* ── Mobile sidebar ────────────────────────────────────────────── */
