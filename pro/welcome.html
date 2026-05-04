@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0a3d6b">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+  <!-- Google tag (gtag.js) – Consent Mode v2 -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',wait_for_update:500});</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
+  <script>gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+  <title>Bem-vindo ao Pro — Portugal Travel Hub</title>
+  <meta name="description" content="Ativaste o Pro. Começa por configurar alertas, guardar favoritos e planear a tua próxima viagem.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://portalturismoportugal.com/pro/welcome.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css?v=20260504">
+
+  <style>
+    /* ── Focus ── */
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+    /* ── Buttons (local) ── */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; transition: var(--transition); cursor: pointer; min-height: 44px; }
+    .btn-outline { border: 1.5px solid var(--blue); color: var(--blue); background: transparent; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-text); }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font-weight: 600; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.40); }
+
+    /* ── Welcome hero ── */
+    .welcome-hero {
+      background: linear-gradient(135deg, var(--blue) 0%, #1a5fa3 60%, #0d4f8a 100%);
+      padding: 120px 5vw 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 640px) { .welcome-hero { padding-top: 80px; padding-bottom: 48px; } }
+    .welcome-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .welcome-hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+
+    .welcome-hero h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .welcome-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+
+    /* ── Processing / loading states ── */
+    .welcome-state-section {
+      padding: 80px 5vw;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .welcome-state-section h2 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .welcome-state-section p {
+      color: var(--text-mid);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .welcome-state-section a[href^="mailto"] {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    /* ── Spinner ── */
+    @keyframes welcome-spin { to { transform: rotate(360deg); } }
+    .welcome-spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(10,61,107,0.15);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: welcome-spin 1s linear infinite;
+      margin: 0 auto 24px;
+    }
+
+    /* ── Loading state inline ── */
+    #state-loading {
+      padding: 120px 5vw;
+      text-align: center;
+    }
+    #state-loading p { color: rgba(255,255,255,0.82); margin-top: 8px; }
+    #state-loading .welcome-spinner {
+      border-color: rgba(255,255,255,0.25);
+      border-top-color: var(--white);
+    }
+
+    /* ── Next steps (pro confirmed) ── */
+    .next-steps-section {
+      padding: 64px 5vw;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .next-steps-heading {
+      text-align: center;
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      color: var(--blue);
+      margin-bottom: 40px;
+    }
+    .next-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 800px) { .next-steps-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .next-steps-grid { grid-template-columns: 1fr; } }
+
+    .next-step-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .next-step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .next-step-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .next-step-icon svg { width: 24px; height: 24px; fill: var(--white); }
+    .next-step-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin: 0;
+    }
+    .next-step-card p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .next-step-card .btn {
+      margin-top: auto;
+      width: 100%;
+      justify-content: center;
+      min-height: 44px;
+    }
+
+    /* ── Welcome CTA row ── */
+    .welcome-cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    .welcome-cta-row .btn { min-height: 44px; }
+
+    /* ── Magic link form ── */
+    .magic-link-section {
+      padding: 80px 5vw;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .magic-link-section h2 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .magic-link-section > p {
+      color: var(--text-mid);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .magic-link-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .magic-link-form input[type="email"] {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1.5px solid rgba(10,61,107,0.2);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color var(--transition);
+    }
+    .magic-link-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--blue);
+    }
+    .magic-link-form button[type="submit"] {
+      min-height: 44px;
+      width: 100%;
+      justify-content: center;
+    }
+    #magic-feedback {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+      min-height: 1.4em;
+    }
+    #magic-feedback:not(:empty) { margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<!-- Skip link -->
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    Portugal Travel Hub
+  </a>
+
+  <div class="nav-links" role="list">
+    <a href="/beaches.html" role="listitem">Praias</a>
+    <a href="/surf.html" role="listitem">Surf</a>
+    <a href="/pesca.html" role="listitem">Pesca</a>
+    <a href="/webcams.html" role="listitem">Webcams</a>
+    <a href="/planear.html" role="listitem">Planear</a>
+    <a href="/guias.html" role="listitem">Guias</a>
+    <a href="/precos.html" role="listitem">Preços</a>
+    <a href="/parceiros.html" role="listitem">Parceiros</a>
+  </div>
+
+  <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/conta.html" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
+    <a href="/login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="/login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+</nav>
+
+<!-- ══ MAIN ════════════════════════════════════════════════════════════ -->
+<main id="main">
+
+<!-- ── Hero / State container ── -->
+<section class="welcome-hero" aria-label="Onboarding Pro">
+  <div class="welcome-hero-inner">
+
+    <!-- State: loading (initial, shown before auth check) -->
+    <div id="state-loading">
+      <div class="welcome-spinner" role="status" aria-label="A verificar a tua conta"></div>
+      <p>A verificar a tua conta...</p>
+    </div>
+
+    <!-- State: pro confirmed -->
+    <div id="state-pro" hidden>
+      <h1>Bem-vindo ao PTH Pro &#127881;</h1>
+      <p>Pagamento confirmado. Tens acesso completo a alertas, favoritos e plano personalizado.</p>
+    </div>
+
+    <!-- State: processing (webhook still running) -->
+    <div id="state-processing" hidden>
+      <div class="welcome-spinner" role="status" aria-label="A confirmar ativação"></div>
+      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(1.8rem,5vw,3rem);color:var(--white);margin-bottom:16px;">A confirmar o teu Pro...</h1>
+      <p>Aguarda um momento. Estamos a sincronizar com LemonSqueezy.</p>
+    </div>
+
+    <!-- State: fallback (polling timed out) -->
+    <div id="state-fallback" hidden>
+      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(1.8rem,5vw,3rem);color:var(--white);margin-bottom:16px;">Pagamento confirmado, ativação em curso</h1>
+      <p>O pagamento foi confirmado mas a ativação está em processamento. Vais receber um email em minutos.<br>Dúvidas: <a href="mailto:ola@portalturismoportugal.com" style="color:var(--gold-light);text-decoration:underline;">ola@portalturismoportugal.com</a></p>
+    </div>
+
+    <!-- State: magic link (not logged in) -->
+    <div id="state-magic-link" hidden>
+      <!-- intentionally empty in hero — content in section below -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Pro confirmed: next steps ── -->
+<div id="next-steps-container" hidden>
+  <section class="next-steps-section">
+    <h2 class="next-steps-heading">Começa agora com o teu plano Pro</h2>
+    <div class="next-steps-grid">
+
+      <!-- Card 1: Alertas -->
+      <div class="next-step-card">
+        <div class="next-step-icon" aria-hidden="true">
+          <!-- Bell icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+          </svg>
+        </div>
+        <h3>Ativar alertas de praia/surf</h3>
+        <p>Recebe avisos quando as condições estiverem ideais para a tua atividade preferida.</p>
+        <a href="/beaches.html" class="btn btn-primary">Configurar alertas</a>
+      </div>
+
+      <!-- Card 2: Favoritos -->
+      <div class="next-step-card">
+        <div class="next-step-icon" aria-hidden="true">
+          <!-- Heart icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <h3>Guardar primeiros favoritos</h3>
+        <p>Acede rapidamente às tuas praias preferidas sem precisar de pesquisar de novo.</p>
+        <a href="/beaches.html" class="btn btn-primary">Explorar praias</a>
+      </div>
+
+      <!-- Card 3: Planear -->
+      <div class="next-step-card">
+        <div class="next-step-icon" aria-hidden="true">
+          <!-- Map/compass icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+          </svg>
+        </div>
+        <h3>Plano de viagem personalizado</h3>
+        <p>Indica a região e datas — recebes um itinerário curado adaptado às tuas preferências.</p>
+        <a href="/planear.html" class="btn btn-primary">Planear viagem</a>
+      </div>
+
+    </div>
+
+    <div class="welcome-cta-row">
+      <a href="/conta.html" class="btn btn-outline">Ir para a minha conta</a>
+    </div>
+  </section>
+</div>
+
+<!-- ── Magic link section (shown when user is not logged in) ── -->
+<div id="magic-link-container" hidden>
+  <section class="magic-link-section" aria-labelledby="magic-heading">
+    <h2 id="magic-heading">Ativa o teu Pro</h2>
+    <p>Indica o email usado no checkout LemonSqueezy. Enviamos-te um link mágico para acederes à tua conta Pro.</p>
+    <form class="magic-link-form" id="magic-link-form" novalidate>
+      <input
+        type="email"
+        id="magic-email"
+        required
+        placeholder="o-teu-email@exemplo.com"
+        autocomplete="email"
+        aria-label="Email da conta"
+      >
+      <button type="submit" class="btn btn-primary" id="magic-submit">Ativar Pro</button>
+      <p id="magic-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</div>
+
+</main>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════ -->
+<footer class="footer" aria-label="Footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-brand">
+        <div class="footer-brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        </div>
+        <span>Portugal Travel Hub</span>
+      </div>
+      <p class="footer-tagline">O seu portal premium para as praias de Portugal — condições em tempo real, webcams e previsões.</p>
+    </div>
+    <nav class="footer-col" aria-label="Destinos">
+      <h3 class="footer-heading">Destinos</h3>
+      <a href="/beaches.html">Praias</a>
+      <a href="/surf.html">Surf</a>
+      <a href="/pesca.html">Pesca</a>
+      <a href="/webcams.html">Webcams</a>
+    </nav>
+    <nav class="footer-col" aria-label="Empresa">
+      <h3 class="footer-heading">Empresa</h3>
+      <a href="/sobre.html">Sobre Nós</a>
+      <a href="/precos.html">Preços</a>
+      <a href="/parceiros.html">Parceiros</a>
+      <a href="/planear.html">Planear</a>
+      <a href="/contact.html">Contacto</a>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h3 class="footer-heading">Legal</h3>
+      <a href="/privacidade.html">Privacidade</a>
+      <a href="/terms.html">Termos</a>
+      <a href="/cookies.html">Cookies</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="footer-year">2026</span> Portugal Travel Hub. Todos os direitos reservados.</p>
+    <span><a href="/sobre.html">Sobre</a> · <a href="/contact.html">Contacto</a> · <a href="/privacidade.html">Privacidade</a> · <a href="/terms.html">Termos</a> · <a href="/cookies.html">Cookies</a></span>
+  </div>
+</footer>
+
+<!-- Supabase SDK (must load before config.js) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/js/nav.js?v=20260504" defer></script>
+<script src="/js/config.js?v=20260504" defer></script>
+
+<script>
+// ── Footer year ──
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+/** pro/welcome.html — Auth-state detection & onboarding page
+ * Depends on: config.js (window.db, window.track, window.showToast)
+ *
+ * Auth states handled:
+ *   1. Pro confirmed  — profile.plan === 'pro' → show 3 onboarding cards
+ *   2. Processing     — authenticated but plan !== 'pro' → poll every 2s (max 5 attempts = 10s)
+ *   3. Fallback       — polling timeout or auth error → show support email
+ *   4. Magic link     — no session → show OTP email form
+ *
+ * IMPORTANT: The profiles table uses `plan` (text 'pro'|'free'), NOT `is_pro` (boolean).
+ * This was confirmed via supabase/functions/ls-webhook/index.ts which writes plan='pro'.
+ */
+document.addEventListener('DOMContentLoaded', async () => {
+  // window.db is initialised by /js/config.js (loaded as defer)
+  const supa = window.db;
+  if (!supa) {
+    console.error('[pro/welcome] supabase client not available');
+    showState('fallback');
+    return;
+  }
+
+  // ── State containers ──────────────────────────────────────────────────────
+  const states = {
+    loading:    document.getElementById('state-loading'),
+    pro:        document.getElementById('state-pro'),
+    processing: document.getElementById('state-processing'),
+    fallback:   document.getElementById('state-fallback'),
+    magic:      document.getElementById('state-magic-link'),
+  };
+  const nextStepsContainer = document.getElementById('next-steps-container');
+  const magicLinkContainer = document.getElementById('magic-link-container');
+
+  function showState(key) {
+    // Hide all hero states
+    Object.entries(states).forEach(([k, el]) => {
+      if (el) el.hidden = (k !== key);
+    });
+    // Show/hide supplementary containers
+    if (nextStepsContainer) nextStepsContainer.hidden = (key !== 'pro');
+    if (magicLinkContainer) magicLinkContainer.hidden = (key !== 'magic');
+  }
+
+  // ── Main auth check ───────────────────────────────────────────────────────
+  try {
+    const { data: { session } } = await supa.auth.getSession();
+
+    if (!session) {
+      showState('magic');
+      wireMagicLinkForm();
+      return;
+    }
+
+    // NOTA: a coluna real é `plan` (text 'pro'|'free'), não `is_pro` boolean.
+    // Mapeamos: profile.plan === 'pro' → utilizador Pro confirmado.
+    const { data: profile, error: profileError } = await supa
+      .from('profiles')
+      .select('plan, plan_expires_at')
+      .eq('id', session.user.id)
+      .single();
+
+    if (profileError) {
+      console.error('[pro/welcome] profile fetch error:', profileError);
+      showState('fallback');
+      return;
+    }
+
+    if (profile?.plan === 'pro') {
+      showState('pro');
+      if (window.track) window.track('pro_welcome_view', { state: 'pro_confirmed' });
+    } else {
+      showState('processing');
+      if (window.track) window.track('pro_welcome_view', { state: 'processing' });
+      pollProStatus(session.user.id, 0);
+    }
+
+  } catch (err) {
+    console.error('[pro/welcome] auth/profile error:', err);
+    showState('fallback');
+  }
+
+  // ── Polling: check every 2s, max 5 attempts = 10s total ──────────────────
+  async function pollProStatus(userId, attempts) {
+    if (attempts >= 5) {
+      showState('fallback');
+      if (window.track) window.track('pro_welcome_polling_timeout', {});
+      return;
+    }
+    setTimeout(async () => {
+      try {
+        const { data: profile } = await supa
+          .from('profiles')
+          .select('plan')
+          .eq('id', userId)
+          .single();
+        if (profile?.plan === 'pro') {
+          showState('pro');
+          if (window.track) window.track('pro_welcome_view', { state: 'pro_confirmed_after_poll', attempts: attempts + 1 });
+        } else {
+          pollProStatus(userId, attempts + 1);
+        }
+      } catch (err) {
+        console.error('[pro/welcome] poll error:', err);
+        pollProStatus(userId, attempts + 1);
+      }
+    }, 2000);
+  }
+
+  // ── Magic link form handler ───────────────────────────────────────────────
+  function wireMagicLinkForm() {
+    const form     = document.getElementById('magic-link-form');
+    const input    = document.getElementById('magic-email');
+    const btn      = document.getElementById('magic-submit');
+    const feedback = document.getElementById('magic-feedback');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = (input.value || '').trim();
+
+      // Client-side email validation (regex) — no innerHTML, uses textContent
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        feedback.textContent = 'Indica um email válido.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'A enviar...';
+      feedback.textContent = '';
+
+      try {
+        const { error } = await supa.auth.signInWithOtp({
+          email,
+          options: { emailRedirectTo: window.location.origin + '/pro/welcome.html' }
+        });
+        if (error) throw error;
+        // Security: use textContent — never innerHTML with user input
+        feedback.textContent = 'Enviámos-te um link para ' + email + '. Confirma para ativar o Pro.';
+        btn.textContent = 'Link enviado';
+        if (window.track) window.track('pro_welcome_magic_link_sent', {});
+      } catch (err) {
+        console.error('[pro/welcome] magic link error:', err);
+        feedback.textContent = 'Não foi possível enviar o link. Tenta novamente em instantes ou contacta ola@portalturismoportugal.com.';
+        btn.disabled = false;
+        btn.textContent = 'Ativar Pro';
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
