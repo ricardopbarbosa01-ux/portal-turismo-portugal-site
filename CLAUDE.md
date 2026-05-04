@@ -95,5 +95,14 @@ Use the right tooling in this order:
 2. Project-specific skill and hook to reduce rediscovery/log noise
 3. Only after that consider design/media MCPs like Stitch, 21st.dev, or Nano Banana 2
 
+## Auditoria
+
+Single source of truth for pre-launch audit findings: [`docs/AUDIT-MASTER.md`](docs/AUDIT-MASTER.md).
+
+- Consolidates 9 source audit documents (security, RLS, SEO, content, bugs, brand, performance, accessibility, GDPR, LemonSqueezy, EN/PT parity).
+- Status RESOLVED requires inline code evidence; default is UNKNOWN.
+- Before opening a new audit, search AUDIT-MASTER.md by category ID prefix (SEC-, RLS-, BUG-, EN-, LS-, etc.) to avoid re-reporting known issues.
+- Source docs in `docs/audit-*.md`, `docs/BUG_AUDIT.md`, and `docs/audits/` remain for historical detail; do not edit them — write new findings into AUDIT-MASTER.md.
+
 ## Important note
 This repository is optimized by doing the smallest commercially meaningful next step, not by broad exploration.
