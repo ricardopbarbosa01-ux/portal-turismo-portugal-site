@@ -1065,8 +1065,8 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/js/nav.js?v=20260505b" defer></script>
-<script src="/js/config.js?v=20260505b" defer></script>
+<script src="/js/nav.js?v=20260505c" defer></script>
+<script src="/js/config.js?v=20260505c" defer></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
@@ -1075,7 +1075,11 @@
     navbar.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 
-  (async () => {
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (typeof db === 'undefined' || !db) {
+      console.error('Supabase client (db) not loaded — paywall remains visible');
+      return;
+    }
     let isPro = false;
     try {
       const { data: { session } } = await db.auth.getSession();
@@ -1108,7 +1112,7 @@
         ctaRow.innerHTML = '<a href="/precos.html" class="cta-gold" style="font-size:0.875rem;">Desbloquear guia completo — €4,99/mês</a>';
       }
     }
-  })();
+  });
 </script>
 </body>
 </html>
