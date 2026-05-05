@@ -118,6 +118,7 @@ Before approving any deploy that touches HTML/CSS/JS:
    - Forms with elements squeezed
    - CTAs out of viewport
 5. Only then deploy
+6. **After deploy** — Run the 5-URL smoke test from /docs/smoke-test.md. If any test fails, run `git revert HEAD` and redeploy immediately.
 
 This ritual exists because automated functional tests (11/11 checks pass) do NOT catch visual regressions. A widget can be functionally working and visually broken at the same time.
 
@@ -146,6 +147,35 @@ When fixing ANY bug (visual, functional, security, data), the closing checklist 
 4. Reference the fix commit hash in the SUMMARY.md so future audits can git blame back
 
 Failing to add a watchlist entry means the bug WILL regress. Treat this rule as non-skippable.
+
+## Task scope contracts (mandatory before any code change)
+
+Before writing code for ANY task, the agent MUST declare in writing:
+
+1. **Files in scope**: explicit list of files this task may modify (e.g., "Files: surf.html, en/surf.html").
+2. **Lines/sections in scope** when known (e.g., "Lines 489-510 .surf-alerts-form CSS rule").
+3. **Out of scope**: anything not declared above is OFF-LIMITS for modification.
+
+When the user gives a task framed as "cleanup X across multiple files" (e.g., "remove navbar CSS from all pages"), the agent MUST:
+
+- Declare an EXPLICIT pattern that defines what is being removed (e.g., regex or string match).
+- Confirm BEFORE running that the pattern only matches the intended content.
+- Show a sample dry-run on 1-2 files first; user approves before scaling to all files.
+- Never use broad delete operations like "remove inline scripts" or "clean up styles" without a precise selector.
+
+Failing this rule produces incidents like BUG-BEACH-01 (commit 2abc649 deleted 2300+ JS lines in beach.html / en/beach.html during a "navbar cleanup" task).
+
+## Pre-commit ritual (mandatory before every commit)
+
+Before running `git commit`, the agent MUST:
+
+1. Run `git diff --stat` and inspect the result.
+2. Compare with the declared "Files in scope" from the Task scope contract.
+3. If the diff touches files NOT declared in scope, ABORT the commit, report the unexpected files to the user, and ask for explicit confirmation.
+4. If the diff touches lines or counts WAY OUT OF PROPORTION to what was declared (e.g., declared "alter ~3 lines" but diff shows "+1364 lines"), ABORT and confirm.
+5. Only proceed with commit after the diff matches expectation.
+
+This ritual exists because automated tests do not catch "wrong file modified" — they only catch "code is broken". A commit that silently deletes a working script will pass all unit tests because there are no unit tests covering that script.
 
 ## Important note
 This repository is optimized by doing the smallest commercially meaningful next step, not by broad exploration.
