@@ -442,7 +442,7 @@
     @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
     @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
 </style>
-  <link rel="stylesheet" href="/css/style.css?v=20260430">
+  <link rel="stylesheet" href="/css/style.css?v=20260505">
 
 </head>
 <body>
@@ -683,7 +683,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260505" defer></script>
 
 
 <script>
@@ -821,8 +821,8 @@ document.addEventListener('DOMContentLoaded', function() {
       tips:    ['Arrábida has a daily car limit — arrive before 9:30 or use alternative public transport', 'The North Atlantic water is colder than in the Algarve: even in August it may not exceed 20°C', 'The train from Cais do Sodré reaches Cascais in 40 min — a practical and cheap alternative to driving']
     },
     'Porto': {
-      food:    ['Seafood restaurant in Matosinhos: Porto's shellfish neighbourhood, 15 min from the centre, at local prices', 'Francesinha and northern petiscos in local tascas — Porto's food is as good as the views', 'Grilled sardines and vinho verde at bars by the River Douro, in the late afternoon'],
-      explore: ['Porto's historic centre is UNESCO World Heritage — set aside half a day to get lost in the streets', 'Port wine cellars in Vila Nova de Gaia: tour with tasting, Douro view included', 'Foz do Douro: where the river meets the ocean — classic sunset walk, without excessive tourism'],
+      food:    ['Seafood restaurant in Matosinhos: Porto\'s shellfish neighbourhood, 15 min from the centre, at local prices', 'Francesinha and northern petiscos in local tascas — Porto\'s food is as good as the views', 'Grilled sardines and vinho verde at bars by the River Douro, in the late afternoon'],
+      explore: ['Porto\'s historic centre is UNESCO World Heritage — set aside half a day to get lost in the streets', 'Port wine cellars in Vila Nova de Gaia: tour with tasting, Douro view included', 'Foz do Douro: where the river meets the ocean — classic sunset walk, without excessive tourism'],
       tips:    ['The swell on the northern coast is more powerful than in the south — check conditions before entering the water', 'The metro reaches Foz and Matosinhos — handy to avoid summer parking problems', 'Unstable Atlantic climate: always bring a waterproof layer, even in the height of August']
     },
     'Alentejo': {
@@ -1449,7 +1449,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!beach.region) return;
     try {
       const { data: related } = await db.from('beaches')
-        .select('id, name, region, subregion, beach_type, water_quality, town, is_surf_spot')
+        .select('id, name, region, water_quality, town')
         .eq('region', beach.region)
         .eq('is_active', true)
         .neq('id', beach.id)
@@ -1498,7 +1498,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     try {
       const { data: beach, error } = await db.from('beaches')
-        .select('id, name, region, subregion, beach_type, description, image_url, water_quality, facilities, latitude, longitude, is_active, town, is_surf_spot')
+        .select('id, name, region, description, image_url, water_quality, facilities, latitude, longitude, is_active, town')
         .eq('id', id)
         .single();
 
