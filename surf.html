@@ -138,7 +138,7 @@
     .btn-blue:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
     .nav-close{display:none;}
     .nav-backdrop{display:none;}
-    
+    @media(max-width:768px){
       .nav-backdrop{display:block;position:fixed;inset:0;z-index:99;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;cursor:pointer;}
       .nav-mobile-open .nav-backdrop{opacity:1;visibility:visible;}
       .nav-mobile-open
