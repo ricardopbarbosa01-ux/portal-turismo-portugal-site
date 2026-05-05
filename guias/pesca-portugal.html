@@ -898,8 +898,8 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/js/nav.js?v=20260505" defer></script>
-<script src="/js/config.js?v=20260505" defer></script>
+<script src="/js/nav.js?v=20260505b" defer></script>
+<script src="/js/config.js?v=20260505b" defer></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
@@ -913,7 +913,8 @@
   (async () => {
     let isPro = false;
     try {
-      const { data: { user } } = await db.auth.getUser();
+      const { data: { session } } = await db.auth.getSession();
+      const user = session?.user;
       if (user) {
         const authBtn = document.getElementById('nav-auth-btn');
         if (authBtn) { authBtn.textContent = 'Conta'; authBtn.href = '/conta.html'; }
