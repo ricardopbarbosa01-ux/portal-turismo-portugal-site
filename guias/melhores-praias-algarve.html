@@ -896,8 +896,8 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/js/nav.js?v=20260422c" defer></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/nav.js?v=20260505" defer></script>
+<script src="/js/config.js?v=20260505" defer></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
@@ -915,8 +915,16 @@
       if (user) {
         const authBtn = document.getElementById('nav-auth-btn');
         if (authBtn) { authBtn.textContent = 'Conta'; authBtn.href = '/conta.html'; }
-        const plan = user.user_metadata?.plan || '';
-        isPro = plan === 'pro' || plan === 'admin';
+        try {
+          const { data: profile } = await db
+            .from('profiles')
+            .select('plan')
+            .eq('id', user.id)
+            .maybeSingle();
+          isPro = profile?.plan === 'pro';
+        } catch (_) {
+          isPro = false;
+        }
       }
     } catch (e) {
       // Supabase indisponível — trata como anónimo
