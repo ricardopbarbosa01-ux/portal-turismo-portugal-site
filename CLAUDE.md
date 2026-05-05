@@ -132,8 +132,20 @@ Pages/components with history of breaking. Re-validate visually after ANY change
 | dashboard.html admin role check | 04/05/2026 | Line 887 uses user.app_metadata.role !== 'admin' redirect — works only if app_metadata.role is set; profiles.plan column is the source of truth for Pro/free, not for admin | If admin redirect fails: check raw_user_meta_data vs app_metadata |
 | welcome.html JS scope | 04/05/2026 | const db top-level in config.js does NOT become window.db; any inline script using db must be wrapped in DOMContentLoaded with typeof db check | TDZ errors, "db is not defined" |
 | All forms with Turnstile | ongoing | Site key 0x4AAAAAADFrwvqNt1FGaqkB does not work on localhost — only production. For local tests use 1x00000000000000000000AA (always-pass) | Form submits returning 403 in local but 200 in prod = Turnstile config issue |
+| /beach.html (and /en/beach.html) | 05/05/2026 | Entire inline beach-loading script (1362 lines PT / 981 lines EN) accidentally deleted by navbar CSS cleanup commit 2abc649 — also needs DOMContentLoaded wrap because config.js uses defer | Test loading state with valid beach id; verify spinner disappears and content renders; verify error fallback shown if id missing or DB error |
 
 When introducing a new Quick Task, scan this watchlist for overlap and re-test those scenarios.
+
+### Mandatory rule for closing any bug fix
+
+When fixing ANY bug (visual, functional, security, data), the closing checklist MUST include:
+
+1. Add an entry to the Regression watchlist table above with: page/component, date, root cause one-liner, what to watch
+2. If the bug class is new, add a new row. If it matches an existing row, append the date to the "Last broke" cell as comma-separated dates (e.g., "04/05/2026, 12/06/2026")
+3. The pre-deploy ritual screenshot pair (before/after) is mandatory — no exception for "trivial" fixes
+4. Reference the fix commit hash in the SUMMARY.md so future audits can git blame back
+
+Failing to add a watchlist entry means the bug WILL regress. Treat this rule as non-skippable.
 
 ## Important note
 This repository is optimized by doing the smallest commercially meaningful next step, not by broad exploration.
