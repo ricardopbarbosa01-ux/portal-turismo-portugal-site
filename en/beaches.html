@@ -982,6 +982,309 @@
 
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof db === 'undefined' || !db) {
+    console.error('[en/beaches] Supabase client (db) not loaded');
+    return;
+  }
+
+  // ── Helpers ─────────────────────────────────────────────────────────────────
+  function escHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function updateCount(beaches) {
+    const n = beaches.length;
+    const html = `<strong>${n}</strong> beach${n !== 1 ? 'es' : ''}`;
+    const filterCount = document.getElementById('filter-count');
+    const resultsStrip = document.getElementById('results-strip');
+    if (filterCount) filterCount.innerHTML = html;
+    if (resultsStrip) resultsStrip.innerHTML = html;
+  }
+
+  // ── Beaches data & render ───────────────────────────────────────────────────
+  let allBeaches = [];
+
+  function deriveTags(b) {
+    const tags = [];
+    const desc = (b.description || '').toLowerCase();
+    const region = (b.region || '').toLowerCase();
+    const fac = Array.isArray(b.facilities) ? b.facilities : [];
+    if (b.is_surf_spot || desc.includes('surf') || desc.includes('onda') || region === 'porto') tags.push('surf');
+    if (fac.includes('lifeguard') || desc.includes('famil') || desc.includes('famíl') || desc.includes('criança') || region === 'algarve') tags.push('família');
+    if (desc.includes('naturez') || desc.includes('isolad') || region === 'alentejo') tags.push('natureza');
+    if (region === 'madeira' || region === 'açores') tags.push('ilhas');
+    if (desc.includes('pesc')) tags.push('pesca');
+    if (b.water_quality === 'Excelente') tags.push('premiada');
+    return tags;
+  }
+
+  function showSkeletons() {
+    const grid = document.getElementById('beaches-grid');
+    grid.innerHTML = Array.from({ length: 8 }, () => `
+      <div class="skeleton-card" role="listitem" aria-hidden="true">
+        <div class="skeleton skeleton-img"></div>
+        <div class="skeleton-body">
+          <div class="skeleton skeleton-line skeleton-line--title"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line skeleton-line--short"></div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderBeaches(beaches) {
+    const grid = document.getElementById('beaches-grid');
+
+    if (!beaches.length) {
+      grid.innerHTML = `
+        <div class="state-premium-empty" role="status">
+          <div class="state-premium-empty__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
+          </div>
+          <p class="state-premium-empty__title">No beaches found</p>
+          <p class="state-premium-empty__sub">Try adjusting the filters or explore all available regions.</p>
+          <button class="btn-clear" onclick="clearFilters()">Clear filters</button>
+        </div>`;
+      updateCount({ length: 0 });
+      return;
+    }
+
+    updateCount(beaches);
+
+    grid.innerHTML = beaches.map(b => {
+      const hasImage = b.image_url && String(b.image_url).trim();
+      const mediaHtml = hasImage
+        ? `<img class="beach-card-img" src="${escHtml(b.image_url)}" alt="${escHtml(b.name)}" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : '';
+      const fallbackHtml = `<div class="beach-card-fallback"${hasImage ? ' style="display:none"' : ''}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
+        <span>${escHtml(b.region || 'Portugal')}</span>
+      </div>`;
+
+      const qualityHtml = b.water_quality
+        ? `<span class="quality-badge quality--${escHtml(b.water_quality)}">${escHtml(b.water_quality)}</span>`
+        : '';
+
+      const descHtml = b.description
+        ? `<p class="beach-card-desc">${escHtml(b.description)}</p>`
+        : '';
+
+      const qualityClass = b.water_quality === 'Excelente' ? ' beach-card--excelente' : '';
+      const beachUrl  = b.id ? `/en/beach.html?id=${encodeURIComponent(b.id)}` : '#';
+      const beachSlug = (b.name || '').toLowerCase()
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const planearUrl = `/en/planear.html?source=beaches&beach=${encodeURIComponent(b.name)}&region=${encodeURIComponent(b.region || '')}`;
+      const bookingUrl = `https://www.booking.com/searchresults.en-us.html?ss=${encodeURIComponent(b.name + ' Portugal')}&aid=XXXXXXX#hotelTmpl`;
+      const tagsArr   = deriveTags(b);
+      const tagsHtml  = tagsArr.length ? `<div class="beach-card-tags">${tagsArr.slice(0,3).map(t => `<span class="beach-tag beach-tag--${t}">${t}</span>`).join('')}</div>` : '';
+
+      return `
+        <article class="beach-card${qualityClass}" role="listitem"
+                 data-beach-id="${escHtml(String(b.id))}"
+                 data-region="${escHtml(b.region || '')}"
+                 data-quality="${escHtml(b.water_quality || '')}"
+                 data-name="${escHtml(b.name)}"
+                 data-slug="${escHtml(beachSlug)}"
+                 tabindex="0"
+                 onclick="window.location.href='${beachUrl}'"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='${beachUrl}'}"
+                 style="cursor:pointer;display:flex;flex-direction:column;">
+          <div class="beach-card-img-wrap">
+            ${mediaHtml}${fallbackHtml}
+            ${b.region ? `<span class="beach-region-badge">${escHtml(b.region)}</span>` : ''}
+          </div>
+          <div class="beach-card-body">
+            <h2 class="beach-card-name">${escHtml(b.name)}</h2>
+            ${descHtml}
+            ${tagsHtml}
+            <div class="beach-card-footer">
+              ${qualityHtml}
+            </div>
+            <div class="beach-card-actions">
+              <a href="${beachUrl}" class="beach-card-cta-btn" onclick="event.stopPropagation()" aria-label="View details for ${escHtml(b.name)}">
+                View Beach
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="${planearUrl}" class="beach-card-planear" onclick="event.stopPropagation()" aria-label="Plan visit to ${escHtml(b.name)}">
+                Plan
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </a>
+            </div>
+            <a href="${bookingUrl}" class="beach-card-booking" onclick="event.stopPropagation()" target="_blank" rel="noopener noreferrer" aria-label="See accommodation near ${escHtml(b.name)} on Booking.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              See nearby accommodation
+            </a>
+          </div>
+        </article>`;
+    }).join('');
+  }
+
+  let activeRegion  = '';
+  let activeQuality = '';
+  let activeTipo    = '';
+
+  const REGION_BANNERS = {
+    'Algarve':          { title: 'Algarve — The Golden Coast',                      desc: 'Dramatic cliffs, crystal-clear waters and award-winning beaches. Portugal\'s most visited region.',                                        cta: null, ctaLabel: null },
+    'Lisboa e Setúbal': { title: 'Lisbon & Setúbal — Atlantic Coast & Arrábida',    desc: 'From Estoril to Sesimbra, through the Arrábida mountains — diverse landscapes less than 1 h from the capital.',                          cta: null, ctaLabel: null },
+    'Norte':            { title: 'North — Northern Coast and Atlantic Surf',         desc: 'Powerful surf, fine sand and greenery. A surf and nature destination on the northwest coast.',                                             cta: null, ctaLabel: null },
+    'Alentejo':         { title: 'Alentejo — Wild Vicentina Coast',                 desc: 'Portugal\'s most pristine coastline. Isolated beaches, untouched nature and guaranteed silence.',                                          cta: null, ctaLabel: null },
+    'Oeste':            { title: 'West Coast — Peniche, Ericeira & Costa de Prata', desc: 'Peniche and Ericeira, world surf capitals, with long fine-sand beaches and consistent waves year-round.',                                  cta: null, ctaLabel: null },
+    'Centro':           { title: 'Central Portugal — Nazaré, Figueira & Atlantic',  desc: 'Nazaré\'s giant waves, Figueira\'s kilometre-long beaches and the largely unexplored central Atlantic coast.',                            cta: null, ctaLabel: null },
+    'Madeira':          { title: 'Madeira — Natural Pools and Volcanoes',            desc: 'Lava pools, dramatic coastline and unique volcanic landscape. An island with sea at every horizon.',                                       cta: null, ctaLabel: null }
+  };
+
+  function updateRegionBanner(region) {
+    const banner = document.getElementById('region-banner');
+    if (!banner) return;
+    if (!region) { banner.style.display = 'none'; return; }
+    const data = REGION_BANNERS[region];
+    if (!data) { banner.style.display = 'none'; return; }
+    const ctaHtml = data.cta ? `<a href="${data.cta}?source=beaches" class="reg-banner-cta">${data.ctaLabel}</a>` : '';
+    banner.innerHTML = `<div class="reg-banner-inner"><div class="reg-banner-text"><h3>${data.title}</h3><p>${data.desc}</p></div>${ctaHtml}</div>`;
+    banner.style.display = 'block';
+  }
+
+  window.setChip = function(el, filterType) {
+    document.querySelectorAll(`.chip[data-filter="${filterType}"]`).forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    if (filterType === 'region')  { activeRegion  = el.dataset.value; updateRegionBanner(activeRegion); }
+    if (filterType === 'quality') activeQuality = el.dataset.value;
+    applyFilters();
+  };
+
+  function applyFilters() {
+    const term = document.getElementById('search-input').value.toLowerCase();
+    const sortVal = document.getElementById('sort-select').value;
+    const hasFilters = !!(term || activeRegion || activeQuality || activeTipo);
+    document.querySelector('.filters-bar').classList.toggle('has-active', hasFilters);
+    let filtered = allBeaches.filter(b => {
+      const matchName    = !term          || b.name.toLowerCase().includes(term) || (b.region || '').toLowerCase().includes(term);
+      const matchRegion  = !activeRegion  || b.region === activeRegion;
+      const matchQuality = !activeQuality || b.water_quality === activeQuality;
+      const matchTipo    = !activeTipo    || deriveTags(b).includes(activeTipo);
+      return matchName && matchRegion && matchQuality && matchTipo;
+    });
+    if (sortVal === 'alpha') {
+      filtered = [...filtered].sort((a, b) => a.name.localeCompare(b.name, 'en'));
+    } else if (sortVal === 'quality') {
+      const q = { Excelente: 0, Boa: 1, Suficiente: 2, Má: 3 };
+      filtered = [...filtered].sort((a, b) => (q[a.water_quality] ?? 4) - (q[b.water_quality] ?? 4));
+    }
+    renderBeaches(filtered);
+  }
+
+  window.clearFilters = function() {
+    activeRegion  = '';
+    activeQuality = '';
+    activeTipo    = '';
+    document.getElementById('search-input').value = '';
+    document.getElementById('sort-select').value  = 'default';
+    document.getElementById('tipo-select').value  = '';
+    document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.toggle('active', c.dataset.value === ''));
+    document.querySelectorAll('.chip[data-filter="quality"]').forEach(c => c.classList.toggle('active', c.dataset.value === ''));
+    document.getElementById('region-banner').style.display = 'none';
+    document.querySelector('.filters-bar').classList.remove('has-active');
+    renderBeaches(allBeaches);
+  };
+
+  window.filterByProfile = function(region, quality) {
+    activeRegion  = region  || '';
+    activeQuality = quality || '';
+    document.getElementById('search-input').value = '';
+    document.getElementById('sort-select').value = 'default';
+    document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.toggle('active', c.dataset.value === activeRegion));
+    document.querySelectorAll('.chip[data-filter="quality"]').forEach(c => c.classList.toggle('active', c.dataset.value === activeQuality));
+    updateRegionBanner(activeRegion);
+    const hasFilters = !!(activeRegion || activeQuality);
+    document.querySelector('.filters-bar').classList.toggle('has-active', hasFilters);
+    applyFilters();
+    document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  function injectItemListLd(beaches) {
+    const existing = document.querySelector('script[data-ld="itemlist"]');
+    if (existing) existing.remove();
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Beaches in Portugal',
+      url: 'https://portalturismoportugal.com/en/beaches.html',
+      numberOfItems: beaches.length,
+      itemListElement: beaches.slice(0, 50).map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `https://portalturismoportugal.com/en/beach.html?id=${b.id}`,
+        name: b.name
+      }))
+    };
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.dataset.ld = 'itemlist';
+    s.textContent = JSON.stringify(ld);
+    document.head.appendChild(s);
+  }
+
+  window.loadBeaches = async function() {
+    showSkeletons();
+    try {
+      allBeaches = await getBeaches();
+      renderBeaches(allBeaches);
+      injectItemListLd(allBeaches);
+      if (allBeaches.length > 0) {
+        const heroStats = document.getElementById('hero-stats');
+        const heroCount = document.getElementById('hero-stat-count');
+        if (heroStats && heroCount) {
+          heroCount.textContent = allBeaches.length;
+          heroStats.style.display = 'flex';
+        }
+      }
+    } catch(e) {
+      document.getElementById('beaches-grid').innerHTML = `
+        <div class="state-premium-empty" role="alert">
+          <div class="state-premium-empty__icon" style="background:linear-gradient(135deg,rgba(231,76,60,0.10),rgba(231,76,60,0.05))">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="stroke:#c0392b"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <p class="state-premium-empty__title" style="color:#c0392b">Error loading beaches</p>
+          <p class="state-premium-empty__sub">${escHtml(e.message)}</p>
+          <button class="btn-clear" onclick="loadBeaches()">Try again</button>
+        </div>`;
+    }
+  };
+
+  document.getElementById('search-input').addEventListener('input', applyFilters);
+  document.getElementById('sort-select').addEventListener('change', applyFilters);
+  document.getElementById('tipo-select').addEventListener('change', e => { activeTipo = e.target.value; applyFilters(); });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramQ      = urlParams.get('q');
+  const paramRegion = urlParams.get('region');
+  const paramTipo   = urlParams.get('tipo');
+  if (paramQ) document.getElementById('search-input').value = paramQ;
+  if (paramRegion) {
+    activeRegion = paramRegion;
+    const chip = document.querySelector(`.chip[data-filter="region"][data-value="${paramRegion}"]`);
+    if (chip) { document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.remove('active')); chip.classList.add('active'); }
+    updateRegionBanner(paramRegion);
+  }
+  if (paramTipo) {
+    activeTipo = paramTipo;
+    const tipoEl = document.getElementById('tipo-select');
+    if (tipoEl) tipoEl.value = paramTipo;
+  }
+
+  loadBeaches().then(() => { if (paramQ || paramRegion || paramTipo) applyFilters(); });
+
+  document.getElementById('beaches-grid').addEventListener('click', function(e) {
+    const card = e.target.closest('.beach-card');
+    if (card) track('beach_card_view_click', { page: 'en/beaches', beach: card.dataset.name || '', region: card.dataset.region || '' });
+  });
+});
+</script>
+
+<script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
