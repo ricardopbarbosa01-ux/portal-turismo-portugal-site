@@ -321,6 +321,8 @@
     width="1920" height="1080"
     fetchpriority="high"
     onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0d2b4e 0%,#1B3A6B 100%)';"
+    onerror="autoFixImage(this)"
+    data-fallback-keyword="lisbon panoramic view tagus river"
   >
   <div class="mag-hero__overlay" aria-hidden="true"></div>
   <div class="mag-hero__inner">
@@ -966,5 +968,6 @@
   });
 </script>
 <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/image-autofix.js" defer></script>
 </body>
 </html>
