@@ -150,7 +150,7 @@ When introducing a new Quick Task, scan this watchlist for overlap and re-test t
 
 **Estado por fase:**
 - Fase 1 — DB schema + Storage bucket: ✅ migrations + docs criados, pendente apply manual
-- Fase 2 — Edge Function pexels-fetch-and-store: pendente
+- Fase 2 — Edge Function pexels-fetch-and-store: ✅ código criado, pendente deploy + teste
 - Fase 3 — Script populate-images.js (Node): pendente
 - Fase 4 — Adapter HTML/CSS: pendente
 - Fase 5 — Atribuição Pexels: pendente
