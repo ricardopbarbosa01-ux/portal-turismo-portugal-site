@@ -711,6 +711,360 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/config.js?v=20260430" defer></script>
 
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
+  document.getElementById('mob-menu-btn')?.addEventListener('click', () => document.getElementById('nav-toggle').click());
+
+  // ── XSS helper ───────────────────────────────────────────────────
+  function esc(s) {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Data ─────────────────────────────────────────────────────────
+  // state: 'live' = active external link | 'pending' = Integrating | 'soon' = Coming Soon
+  // tipo: 'surf' | 'praia' | 'familia' | 'natureza' | 'pesca'
+  const WEBCAMS = [
+    {
+      name:'Matosinhos',
+      location:'Praia de Matosinhos, Porto',
+      region:'Porto', bgClass:'wcam-bg--porto',
+      state:'live', url:'https://beachcam.meo.pt/livecams/praia-de-matosinhos/',
+      tipo:'surf', lat:41.1847, lng:-8.6890,
+      desc:'Live view of Matosinhos urban beach — Atlantic swell, currents and surf conditions on the northern coast.',
+      tags:['Surf','North','Swell']
+    },
+    {
+      name:'Póvoa de Varzim',
+      location:'Praia da Póvoa, Porto',
+      region:'Porto', bgClass:'wcam-bg--porto',
+      state:'pending', url:null,
+      tipo:'praia', lat:41.3828, lng:-8.7685,
+      desc:'Northern coast with typical onshore wind conditions. View over the breakwater and long sandy beach.',
+      tags:['Beach','North','Wind']
+    },
+    {
+      name:'Nazaré',
+      location:'Praia do Norte, Nazaré',
+      region:'Centro', bgClass:'wcam-bg--centro',
+      state:'live', url:'https://beachcam.meo.pt/livecams/praia-do-norte/',
+      tipo:'surf', lat:39.6015, lng:-9.0699,
+      desc:'Continuous monitoring of the peak that holds the world record for the biggest waves — permanent camera over Praia do Norte.',
+      tags:['Big Waves','Surf','World Record']
+    },
+    {
+      name:'Peniche — Supertubos',
+      location:'Supertubos, Peniche',
+      region:'Centro', bgClass:'wcam-bg--centro',
+      state:'live', url:'https://beachcam.meo.pt/livecams/peniche-supertubos/',
+      tipo:'surf', lat:39.3433, lng:-9.3675,
+      desc:'Camera over the mythical Supertubos — venue of the Portuguese leg of the World Surf League. Real-time barrel conditions.',
+      tags:['WCT','Barrel','WSL']
+    },
+    {
+      name:'Figueira da Foz',
+      location:'Praia do Cabedelo, Figueira da Foz',
+      region:'Centro', bgClass:'wcam-bg--centro',
+      state:'live', url:'https://beachcam.meo.pt/livecams/figueira-da-foz-cabedelo/',
+      tipo:'praia', lat:40.1460, lng:-8.8580,
+      desc:'Live camera over Cabedelo — sandy beach with sandbars and northwest swell. Good conditions reading for the entire central region.',
+      tags:['Beach','Swell','Central']
+    },
+    {
+      name:'Ericeira',
+      location:'Ribeira d\'Ilhas, Ericeira',
+      region:'Lisboa', bgClass:'wcam-bg--lisboa',
+      state:'live', url:'https://beachcam.meo.pt/livecams/ericeira/',
+      tipo:'surf', lat:38.9634, lng:-9.4154,
+      desc:'World Surf Reserve on permanent camera. Monitor Ribeira d\'Ilhas before planning your trip.',
+      tags:['World Reserve','Surf','WSL']
+    },
+    {
+      name:'Cascais — Guincho',
+      location:'Praia do Guincho, Cascais',
+      region:'Lisboa', bgClass:'wcam-bg--lisboa',
+      state:'live', url:'https://beachcam.meo.pt/livecams/praia-do-guincho/',
+      tipo:'surf', lat:38.7266, lng:-9.4734,
+      desc:'Reading the characteristic northwest wind at Guincho — ideal for windsurfing, kitesurfing and wave surfing.',
+      tags:['Windsurf','Kite','Wind']
+    },
+    {
+      name:'Costa da Caparica',
+      location:'Praia da Costa da Caparica, Setúbal',
+      region:'Lisboa', bgClass:'wcam-bg--lisboa',
+      state:'live', url:'https://beachcam.meo.pt/livecams/costa-da-caparica/',
+      tipo:'praia', lat:38.6266, lng:-9.2354,
+      desc:'30 km of coast south of Lisbon. View over the sandbars with south and northwest swell reading.',
+      tags:['Long Beach','Surf','Lisbon']
+    },
+    {
+      name:'Costa Vicentina',
+      location:'Vila Nova de Milfontes, Alentejo',
+      region:'Alentejo', bgClass:'wcam-bg--alentejo',
+      state:'soon', url:null,
+      tipo:'natureza', lat:37.7251, lng:-8.7938,
+      desc:'Protected coast in the Southwest Alentejo Natural Park. Untouched nature and controlled access.',
+      tags:['Natural Park','Wild','Alentejo']
+    },
+    {
+      name:'Lagos — Praia da Luz',
+      location:'Praia da Luz, Lagos',
+      region:'Algarve', bgClass:'wcam-bg--algarve',
+      state:'live', url:'https://beachcam.meo.pt/livecams/praia-da-luz/',
+      tipo:'praia', lat:37.0880, lng:-8.7153,
+      desc:'Live camera over Praia da Luz — good conditions reference for the Barlavento coast of the Algarve.',
+      tags:['Algarve','Surf','Lagos']
+    },
+    {
+      name:'Portimão — Praia da Rocha',
+      location:'Praia da Rocha, Portimão',
+      region:'Algarve', bgClass:'wcam-bg--algarve',
+      state:'live', url:'https://beachcam.meo.pt/livecams/praia-da-rocha/',
+      tipo:'praia', lat:37.1200, lng:-8.5363,
+      desc:'Iconic Algarve beach with rocky cliffs. Camera on the groyne with open sea view.',
+      tags:['Cliff','Algarve','Tourism']
+    },
+    {
+      name:'Açores — São Miguel',
+      location:'Praia dos Mosteiros, São Miguel',
+      region:'Açores', bgClass:'wcam-bg--acores',
+      state:'pending', url:null,
+      tipo:'natureza', lat:37.8871, lng:-25.8277,
+      desc:'Volcanic Azores coastline with long-period Atlantic swell. Dark-water sea unique in the European panorama.',
+      tags:['Volcanic','Atlantic','Azores']
+    },
+    {
+      name:'Funchal — Bay',
+      location:'Baía do Funchal, Madeira',
+      region:'Madeira', bgClass:'wcam-bg--madeira',
+      state:'soon', url:null,
+      tipo:'pesca', lat:32.6494, lng:-16.9088,
+      desc:'Panoramic view over Funchal Bay. Monitoring conditions for boats, divers and swimmers.',
+      tags:['Diving','Bay','Madeira']
+    }
+  ];
+
+  // ── Conditions cache & helpers ────────────────────────────────────
+  const conditionsCache = {};
+
+  function conditionsHtml(name) {
+    const d = conditionsCache[name];
+    if (d === undefined) return '<div class="wcam-cond-skeleton" aria-hidden="true"></div>';
+    if (d === null) return '<span class="wcam-cond-unavail">Conditions unavailable</span>';
+    const waveAlert = d.wave_height !== null && d.wave_height > 2 ? ' wcam-cond-alert' : '';
+    return `<div class="wcam-cond-row">
+      <span class="wcam-cond-item${waveAlert}">🌊 ${d.wave_height !== null ? d.wave_height.toFixed(1) + 'm' : '—'}</span>
+      <span class="wcam-cond-item">💨 ${d.wind_speed !== null ? Math.round(d.wind_speed) + ' km/h' : '—'}</span>
+      <span class="wcam-cond-item">🌡️ ${d.temperature !== null ? Math.round(d.temperature) + '°C' : '—'}</span>
+    </div>`;
+  }
+
+  function applyConditionsToDom(name) {
+    document.querySelectorAll(`[data-cond-spot="${CSS.escape(name)}"]`).forEach(el => {
+      el.innerHTML = conditionsHtml(name);
+    });
+  }
+
+  async function fetchConditionsForWebcam(w) {
+    try {
+      const [marineRes, weatherRes] = await Promise.all([
+        fetch(`https://marine-api.open-meteo.com/v1/marine?latitude=${w.lat}&longitude=${w.lng}&current=wave_height,wave_period&timezone=Europe/Lisbon`),
+        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${w.lat}&longitude=${w.lng}&current=wind_speed_10m,temperature_2m&timezone=Europe/Lisbon`)
+      ]);
+      const [marine, weather] = await Promise.all([marineRes.json(), weatherRes.json()]);
+      conditionsCache[w.name] = {
+        wave_height: marine?.current?.wave_height ?? null,
+        wind_speed:  weather?.current?.wind_speed_10m ?? null,
+        temperature: weather?.current?.temperature_2m ?? null
+      };
+    } catch (_) {
+      conditionsCache[w.name] = null;
+    }
+    applyConditionsToDom(w.name);
+  }
+
+  async function fetchAllConditions() {
+    const pending = WEBCAMS.filter(w => w.lat && w.lng && !(w.name in conditionsCache));
+    for (let i = 0; i < pending.length; i++) {
+      if (i > 0) await new Promise(r => setTimeout(r, 200));
+      fetchConditionsForWebcam(pending[i]); // fire-and-forget per webcam, no await
+    }
+  }
+
+  // ── Labels ───────────────────────────────────────────────────────
+  const STATE_LABEL = { live:'Available', pending:'Integrating', soon:'Coming Soon' };
+
+  // ── Filter state ─────────────────────────────────────────────────
+  let activeRegion = '';
+  let searchQuery  = '';
+  let activeTipo   = '';
+
+  document.querySelectorAll('#region-chips .chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#region-chips .chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      activeRegion = btn.dataset.region;
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('#tipo-chips .chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#tipo-chips .chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      activeTipo = btn.dataset.tipo;
+      applyFilters();
+    });
+  });
+
+  document.getElementById('wcam-search').addEventListener('input', e => {
+    searchQuery = e.target.value.trim().toLowerCase();
+    applyFilters();
+  });
+
+  window.clearFilters = function() {
+    activeRegion = '';
+    searchQuery  = '';
+    activeTipo   = '';
+    document.getElementById('wcam-search').value = '';
+    document.querySelectorAll('#region-chips .chip').forEach(c => c.classList.toggle('active', c.dataset.region === ''));
+    document.querySelectorAll('#tipo-chips .chip').forEach(c => c.classList.toggle('active', c.dataset.tipo === ''));
+    renderWebcams(WEBCAMS);
+  };
+
+  window.filterByWhenUse = function(tipo) {
+    activeTipo = tipo;
+    document.querySelectorAll('#tipo-chips .chip').forEach(c => c.classList.toggle('active', c.dataset.tipo === tipo));
+    applyFilters();
+    document.getElementById('webcams').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  function applyFilters() {
+    const filtered = WEBCAMS.filter(w => {
+      const matchRegion = !activeRegion || w.region === activeRegion;
+      const matchSearch = !searchQuery  ||
+        w.name.toLowerCase().includes(searchQuery) ||
+        w.location.toLowerCase().includes(searchQuery) ||
+        w.tags.some(t => t.toLowerCase().includes(searchQuery));
+      const matchTipo   = !activeTipo   || w.tipo === activeTipo ||
+        (activeTipo === 'praia' && (w.tipo === 'praia' || w.tipo === 'familia'));
+      return matchRegion && matchSearch && matchTipo;
+    });
+    renderWebcams(filtered);
+  }
+
+  // ── Render ───────────────────────────────────────────────────────
+  function renderWebcams(list) {
+    const grid  = document.getElementById('wcam-grid');
+    const count = document.getElementById('wcam-count');
+    const n = list.length;
+    count.innerHTML = `<strong>${n}</strong> webcam${n !== 1 ? 's' : ''}`;
+
+    if (!n) {
+      grid.innerHTML = `
+        <div class="wcam-empty" role="status">
+          <div class="wcam-empty-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <p class="wcam-empty-title">No webcams found</p>
+          <p class="wcam-empty-sub">Try other filters or search a different location.</p>
+          <button class="btn-reset" onclick="clearFilters()">View all webcams</button>
+        </div>`;
+      return;
+    }
+
+    grid.innerHTML = list.map(w => {
+      const isLive   = w.state === 'live';
+      const btnClass = `wcam-btn wcam-btn--${esc(w.state)}`;
+
+      const actionEl = isLive
+        ? `<a href="${esc(w.url)}" class="${btnClass}" target="_blank" rel="noopener noreferrer"
+              aria-label="Watch ${esc(w.name)} live via Beachcam (opens in new tab)">
+             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+             Watch Live
+           </a>`
+        : `<a href="/en/beaches.html?region=${encodeURIComponent(w.region)}" class="wcam-btn wcam-btn--region" aria-label="Discover beaches in ${esc(w.region)}">
+             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
+             Discover Beaches
+           </a>`;
+
+      const explorarHref  = w.tipo === 'surf' ? '/en/surf.html' : w.tipo === 'pesca' ? '/en/pesca.html' : `/en/beaches.html?region=${encodeURIComponent(w.region)}`;
+      const explorarLabel = w.tipo === 'surf' ? 'View Surf' : w.tipo === 'pesca' ? 'View Fishing' : 'View Beaches';
+      const planearHref   = `/en/planear.html?source=webcams&webcam_spot=${encodeURIComponent(w.name)}&region=${encodeURIComponent(w.region)}&tipo=${encodeURIComponent(w.tipo||'')}`;
+
+      return `
+        <article class="wcam-card" role="listitem"
+                 data-spot="${esc(w.name)}"
+                 data-region="${esc(w.region)}"
+                 data-tipo="${esc(w.tipo||'')}"
+                 data-state="${esc(w.state)}">
+          <div class="wcam-visual">
+            <div class="wcam-visual-bg ${esc(w.bgClass)}">
+              <svg class="wcam-visual-wave" viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                <path d="M0,80 C80,40 160,100 240,70 C320,40 370,90 400,70 L400,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/>
+                <path d="M0,96 C60,68 140,106 240,86 C320,66 365,102 400,86 L400,120 L0,120 Z" fill="rgba(255,255,255,0.04)"/>
+              </svg>
+            </div>
+            <div class="wcam-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <div class="wcam-visual-meta">
+              <span class="wcam-region-badge">${esc(w.region)}</span>
+              <span class="wcam-status wcam-status--${esc(w.state)}">${STATE_LABEL[w.state]}</span>
+            </div>
+          </div>
+          <div class="wcam-body">
+            <h2 class="wcam-name">${esc(w.name)}</h2>
+            <div class="wcam-location">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              ${esc(w.location)}
+            </div>
+            <p class="wcam-desc">${esc(w.desc)}</p>
+            <div class="wcam-tags">${w.tags.map(t => `<span class="wcam-tag">${esc(t)}</span>`).join('')}</div>
+          </div>
+          <div class="wcam-conditions" data-cond-spot="${esc(w.name)}" aria-label="Weather conditions">${conditionsHtml(w.name)}</div>
+          <div class="wcam-footer">${actionEl}</div>
+          <div class="wcam-footer-secondary">
+            <a href="${explorarHref}" class="wcam-sec-link" aria-label="${explorarLabel} near ${esc(w.region)}">
+              ${explorarLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="${planearHref}" class="wcam-sec-link" aria-label="Plan a visit to ${esc(w.name)}">
+              Plan this Area<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </a>
+          </div>
+        </article>`;
+    }).join('');
+  }
+
+  // ── URL params pre-filter ─────────────────────────────────────────
+  (function() {
+    const p = new URLSearchParams(window.location.search);
+    const r = p.get('region') || '';
+    const q = p.get('q')      || '';
+    if (r) {
+      const chip = document.querySelector(`#region-chips .chip[data-region="${CSS.escape(r)}"]`);
+      if (chip) {
+        document.querySelectorAll('#region-chips .chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeRegion = r;
+      }
+    }
+    if (q) {
+      searchQuery = q.toLowerCase();
+      document.getElementById('wcam-search').value = q;
+    }
+    const t = p.get('tipo') || '';
+    if (t) {
+      activeTipo = t;
+      const tipoChip = document.querySelector(`#tipo-chips .chip[data-tipo="${CSS.escape(t)}"]`);
+      if (tipoChip) { document.querySelectorAll('#tipo-chips .chip').forEach(c => c.classList.remove('active')); tipoChip.classList.add('active'); }
+    }
+    applyFilters();
+    fetchAllConditions();
+  })();
+</script>
 <script src="/js/lang-switcher.js" defer></script>
 <script src="/js/nav.js?v=20260422c" defer></script>
 <script>
