@@ -134,6 +134,7 @@ Pages/components with history of breaking. Re-validate visually after ANY change
 | welcome.html JS scope | 04/05/2026 | const db top-level in config.js does NOT become window.db; any inline script using db must be wrapped in DOMContentLoaded with typeof db check | TDZ errors, "db is not defined" |
 | All forms with Turnstile | ongoing | Site key 0x4AAAAAADFrwvqNt1FGaqkB does not work on localhost — only production. For local tests use 1x00000000000000000000AA (always-pass) | Form submits returning 403 in local but 200 in prod = Turnstile config issue |
 | /beach.html (and /en/beach.html) | 05/05/2026 | Entire inline beach-loading script (1362 lines PT / 981 lines EN) accidentally deleted by navbar CSS cleanup commit 2abc649 — also needs DOMContentLoaded wrap because config.js uses defer | Test loading state with valid beach id; verify spinner disappears and content renders; verify error fallback shown if id missing or DB error |
+| /en/beaches.html, /en/pesca.html, /en/surf.html, /en/webcams.html | 05/05/2026 | Listing JS handlers (~300 lines each) deleted by commit 2abc649 "navbar cleanup" — same root cause as BUG-BEACH-01. Pattern: navbar cleanup script over-matched and deleted unrelated `<script>` blocks containing listing handlers | After ANY navbar/cleanup task touching multiple files: smoke test ALL EN pages with dynamic listings (beaches, pesca, surf, webcams). Run line-count diff PT vs EN — ratio < 75% suggests deletion |
 
 When introducing a new Quick Task, scan this watchlist for overlap and re-test those scenarios.
 
