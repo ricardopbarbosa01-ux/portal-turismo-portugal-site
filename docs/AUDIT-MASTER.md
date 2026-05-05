@@ -21,8 +21,8 @@
 
 | Status           | Count |
 |------------------|-------|
-| RESOLVED         | 29    |
-| OPEN             | 17    |
+| RESOLVED         | 30    |
+| OPEN             | 16    |
 | BLOCKED EXTERNAL | 1     |
 | UNKNOWN          | 12    |
 | WONTFIX          | 0     |
@@ -36,7 +36,7 @@
 | ID | Severity | Status | Title | Source |
 |----|----------|--------|-------|--------|
 | SEC-01 | Critical | RESOLVED | Email relay open: send-welcome/send-plan-confirm/send-partner-alert accept anonymous POST without auth. **Evidence**: Edge Functions submit-plan-request, submit-partner-lead, submit-contact, submit-surf all migrated to Turnstile + verify_jwt false; anon_insert policies on contact_messages and surf_subscribers dropped (commits 260504-l95, 260504-m9v) | audit-security-2026-04-29.md:59-110 |
-| SEC-02 | High | OPEN | Privilege escalation via isAdminUser() accepting user_metadata.role (user-editable) | audit-security-2026-04-29.md:114-145; audit-rls-2026-04.md:300-315 |
+| SEC-02 | High | RESOLVED | Privilege escalation via user_metadata.plan in 5 /guias/ pages — replaced with profiles.plan (DB source of truth, RLS-protected). Cosmetic dashboard.html Pro badge also aligned. **Evidence**: guias/melhores-praias-algarve.html, guias/pesca-portugal.html, guias/praias-perto-lisboa.html, guias/quando-visitar-portugal.html, guias/surf-portugal-iniciantes.html + dashboard.html — branch fix/sec-02-privilege-escalation (session 05/05/2026) | audit-security-2026-04-29.md:114-145; audit-rls-2026-04.md:300-315 |
 | SEC-03 | High | OPEN | ls-webhook: verifySignature() is fail-open when WEBHOOK_SECRET is empty | audit-security-2026-04-29.md:150-193 |
 | SEC-04 | High | OPEN | conta.html: free user can access Pro UI via ?activated=1 without timeout redirect | audit-security-2026-04-29.md:199-227 |
 | SEC-05 | Medium | OPEN | HSTS header absent from _headers — HTTP downgrade attack possible on untrusted networks | audit-security-2026-04-29.md:234-255 |
@@ -169,7 +169,6 @@
 
 | ID | Severity | Title | Source |
 |----|----------|-------|--------|
-| SEC-02 | High | isAdminUser() accepts user_metadata.role — any free user can self-promote to admin in UI | audit-security-2026-04-29.md:114-145 |
 | SEC-03 | High | ls-webhook fail-open: missing WEBHOOK_SECRET → any unauthenticated POST activates Pro | audit-security-2026-04-29.md:150-193 |
 | SEC-04 | High | conta.html: free user sees Pro UI indefinitely via ?activated=1 — no timeout redirect | audit-security-2026-04-29.md:199-227 |
 | LS-03 | High | No live mode webhook configured — Pro activation broken in production | lemonsqueezy-config-audit-2026-04-27.md:195-196 |
