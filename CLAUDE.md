@@ -144,6 +144,30 @@ Pages/components with history of breaking. Re-validate visually after ANY change
 
 When introducing a new Quick Task, scan this watchlist for overlap and re-test those scenarios.
 
+### IMG-FETCH-STORE (em curso — Fase 1 concluída 2026-05-06)
+
+**Sistema:** Substituição do autofix on-demand Pexels por fetch-and-store em Supabase Storage.
+
+**Estado por fase:**
+- Fase 1 — DB schema + Storage bucket: ✅ migrations + docs criados, pendente apply manual
+- Fase 2 — Edge Function pexels-fetch-and-store: pendente
+- Fase 3 — Script populate-images.js (Node): pendente
+- Fase 4 — Adapter HTML/CSS: pendente
+- Fase 5 — Atribuição Pexels: pendente
+- Fase 6 — Validação produção: pendente
+
+**Decisões arquiteturais (não re-discutir):**
+- Cards estáticos de guias + heroes CSS → hardcode no HTML/CSS, sem tabela auxiliar
+- Optimização (resize 1600px + WebP) → no script Node, não na Edge Function
+- Curadoria → tudo automático, com dry-run + relatório HTML revisável antes de UPDATEs
+- Vídeos hero (cdn.portalturismoportugal.com/*.mp4) → NÃO TOCAR
+
+**NÃO fazer:**
+- Não criar tabela `card_images` (decisão do conselho 2026-05-05: hardcode é a escolha certa para conteúdo estático)
+- Não popular `beaches.image_url` com URLs Pexels diretas — sempre Storage URLs
+- Não correr populate sem dry-run primeiro
+- Não tocar em /pro/welcome.html, /index.html, .claude/worktrees/*
+
 ### Mandatory rule for closing any bug fix
 
 When fixing ANY bug (visual, functional, security, data), the closing checklist MUST include:
