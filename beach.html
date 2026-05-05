@@ -497,7 +497,7 @@
     @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
     @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
 </style>
-  <link rel="stylesheet" href="/css/style.css?v=20260430">
+  <link rel="stylesheet" href="/css/style.css?v=20260505">
 
 <!-- cache-bust: 1776339162134 -->
 </head>
@@ -751,7 +751,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/nav.js?v=20260422c" defer></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260505" defer></script>
 
 
 <script>
@@ -1713,7 +1713,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!beach.region) return;
     try {
       const { data: related } = await db.from('beaches')
-        .select('id, name, region, subregion, beach_type, water_quality, town, is_surf_spot')
+        .select('id, name, region, water_quality, town')
         .eq('region', beach.region)
         .eq('is_active', true)
         .neq('id', beach.id)
