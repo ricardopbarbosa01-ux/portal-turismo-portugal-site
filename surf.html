@@ -321,7 +321,6 @@
       .spots-section{padding:24px 4vw 48px;}
     }
     @media(max-width:540px){
-      .surf-hero{padding:100px 4vw 72px;}
       .surf-hero-actions{flex-direction:column;align-items:center;}
       .surf-hero-stat{padding:0 14px;}
       .spots-grid{grid-template-columns:1fr;gap:16px;}
@@ -333,6 +332,11 @@
 
     /* ══ Hero 2-col ══ */
     .surf-hero{padding:116px 5vw 0;text-align:left;}
+    @media(max-height:1000px) and (min-width:541px){
+      .surf-hero{padding:80px 5vw 0;}
+      .surf-hero-stats,.surf-hero-stats-row{margin-bottom:20px;}
+      .surf-hero-subtitle{margin-bottom:20px;}
+    }
     .surf-hero-2col{position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:center;z-index:2;}
     @media(max-width:900px){.surf-hero-2col{grid-template-columns:1fr;gap:36px;text-align:center;}}
     .surf-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.28);border-radius:50px;padding:6px 14px 6px 10px;margin-bottom:24px;}
