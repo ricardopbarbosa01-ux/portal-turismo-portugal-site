@@ -91,9 +91,20 @@ Prioritize in this order unless the user says otherwise:
 - Restructure homepage 10→7 secções: NEW `#what-youll-find` com 3-card grid (Condições do mar, Webcams ao vivo, Surf e Pesca). `planear-cta` agora inclui sub-banda de guides (idx-guides-band fundida). Secções `#conditions`, `#webcams`, `#surf-pesca`, `.idx-guides-band` escondidas via CSS (`display:none`) — HTML preservado para reversibilidade.
 - CSS cache bumped para `?v=20260506-6cd`.
 
+### Fase 6C-E → ✅ redesign cinemático do hero principal (2026-05-06)
+- SVG clip-path em onda fluida vertical (`#hero-wave-clip`, `clipPathUnits="objectBoundingBox"`) — vídeo dentro de shape orgânico em Chrome/Firefox; border-radius assimétrico como fallback universal
+- Tipografia outline+solid mix: "O/Portugal/que/nos" em `-webkit-text-stroke 1.5px` navy vazado, "não/aparece" e "sites de reservas" solid navy
+- "sites de reservas" agora navy com underline dourado animado L→R — resolve bug crítico (texto branco sobre fundo areia = 1:1 contraste)
+- Animação entrada staggered ~2.5s: kicker (0.2s) → 9 palavras (0.4–1.2s) → sub (1.8s) → CTAs (2.0s) → underline grow (1.6s)
+- Cursor-reactive parallax: `.hero__media` (6px) + `.hero__text` counter-move (3px), EASE 0.06, `hover:none` skip, `prefers-reduced-motion` skip
+- Setinha down (`.hero-scroll`) removida — era não-funcional
+- Mobile fallback: `clip-path: none; border-radius: 4px 60px 4px 60px` via `@media (max-width: 768px)` (iOS Safari não suporta `clip-path: url()` em HTML)
+- `prefers-reduced-motion`: `animation: none; opacity: 1; transform: none` em todos os elementos animados
+- CSS cache bumped para `?v=20260506-6ce`
+
 ### TODOs
 - Páginas escondidas.html e en/hidden-beaches.html: produzir conteúdo editorial real (10 praias verificadas + fotos + texto)
-- Fase 6C-E (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
+- Fase 6C-F (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
 
 ## Hard guardrails
 - Do not touch auth logic without proven reason
@@ -196,6 +207,7 @@ When introducing a new Quick Task, scan this watchlist for overlap and re-test t
 - Fase 6A → ✅ Documento de curadoria editorial criado (`docs/editorial/curadoria-2026-05-06.md`). Worksheet com 21 praias (UUIDs reais da BD, links Wikimedia Category + Search por praia, 3 campos vazios por praia, SQL UPDATE batch template). Fase 6B (preenchimento manual + execução SQL + populate-images.js) pendente.
 - Fase 6B → ✅ Atribuição visível (caption + tooltip) em beach.html, beaches.html, en/beach.html, en/beaches.html. CC BY-SA compliance. Caption discreta abaixo da imagem (11px, opacidade 0.6) com link clicável para source_url. Tooltip on hover/tap mostra autor · licença. Conta.html, dashboard.html, pro/welcome.html, index.html NÃO tocados.
 - Fase 6B.1 → ✅ caption agora não-clicável (Padrão B), tooltip on hover mantém link. CC BY-SA compliance preservada via texto visível + tooltip + data-source-url.
+- Fase 6C-E → ✅ redesign cinemático do hero principal: SVG clip-path em onda fluida vertical, tipografia outline+solid mix, underline dourado animado em "sites de reservas" (resolve bug branco invisível), entrada staggered ~2.5s, cursor-reactive parallax, setinha down removida. Fallback border-radius assimétrico para iOS Safari.
 - Fase 4.5 — Adapter HTML/CSS: pendente
 - Fase 6 — Atribuição Pexels: ✅ entregue em Fase 6B
 - Fase 7 — Validação produção: pendente
