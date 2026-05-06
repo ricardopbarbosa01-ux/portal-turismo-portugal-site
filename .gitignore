@@ -20,8 +20,10 @@ smoke-test.png
 .mcp.json
 
 # Local environment — credentials never committed
+.env
 .env.local
 .env*.local
+# Environment secrets (NEVER COMMIT)
 
 # Test data — contains UUIDs and seed rows, never commit to production
 _scripts/test-rls-setup.sql

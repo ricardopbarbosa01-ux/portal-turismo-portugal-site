@@ -101,7 +101,7 @@
 | BUG-VIS-02 | Medium | OPEN | Hero CTAs ("Explorar Spots", "Planear Escapada de Surf") fall below viewport at 100% browser zoom on 1080p and 1440p screens | session 04/05/2026 |
 | BUG-CONTACT-01 | Low | OPEN | contact.html shows success state even if INSERT fails — optimistic UX masks backend errors from user | session 04/05/2026 |
 | BUG-CMSG-01 | Low | OPEN | contact_messages table has `timestamp` column as text (not timestamptz) and all payload fields are nullable — schema cleanup needed | session 04/05/2026 |
-| BUG-IMG-FETCH-STORE | Medium | EM CURSO | Substituir autofix on-demand Pexels por fetch-and-store em Supabase Storage. Supersedes BUG-IMG-AUTOFIX (safety net mantido até Fase 6). ~110 praias + 41 cards estáticos + 3 heroes = ~154 imagens. Fase 1 (schema + bucket docs + RLS policies + verify script) concluída 2026-05-06, pendente apply manual. Fase 2 entregue: Edge Function pexels-fetch-and-store criada (idempotente, beach-only, sem optimização — fica para Fase 3). Próximo: deploy + teste manual, depois Fase 3 script Node. | session 05/05/2026 |
+| BUG-IMG-FETCH-STORE | Medium | EM CURSO | Substituir autofix on-demand Pexels por fetch-and-store em Supabase Storage. Supersedes BUG-IMG-AUTOFIX (safety net mantido até Fase 6). ~110 praias + 41 cards estáticos + 3 heroes = ~154 imagens. Fase 1 (schema + bucket docs + RLS policies + verify script) concluída 2026-05-06, pendente apply manual. Fase 2 entregue: Edge Function pexels-fetch-and-store criada (idempotente, beach-only, sem optimização — fica para Fase 3). Fase 3 entregue: script Node populate-images.js (dry-run default, --apply opcional, sharp + WebP, relatório HTML grelha). Próximo: install deps + dry-run + apply. | session 05/05/2026 |
 
 ### Brand (BRAND)
 
