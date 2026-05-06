@@ -63,7 +63,7 @@ if (!SUPABASE_URL || !SERVICE_ROLE_KEY || !ANON_KEY) {
 
 const APPLY = process.argv.includes("--apply");
 const MODE = APPLY ? "APPLY" : "DRY-RUN";
-const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/pexels-fetch-and-store`;
+const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/pexels-fetch-and-store-v4`;
 const RATE_LIMIT_MS = 500;
 const MAX_WIDTH = 1600;
 const JPEG_QUALITY = 82;
@@ -119,6 +119,7 @@ for (const beach of beaches) {
     storage_url: null,
     storage_url_webp: null,
     photographer: null,
+    source: null,
     pexels_id: null,
     query_used: null,
     error: null,
@@ -153,6 +154,7 @@ for (const beach of beaches) {
     if (fnData.pexels_id) usedPexelsIds.add(fnData.pexels_id);
     result.storage_url = fnData.storage_url;
     result.photographer = fnData.photographer;
+    result.source = fnData.source ?? null;
     result.pexels_id = fnData.pexels_id;
     result.query_used = fnData.query_used ?? null;
     result.diversification = fnData.diversification ?? null;
@@ -261,13 +263,22 @@ const cards = results
   .map((r) => {
     const previewUrl = r.storage_url ?? "";
     const border = r.status === "ok" ? "#3a7" : "#c33";
+    const sourceBadgeColor = r.source === "manual"
+      ? "#C9A24B"
+      : r.source === "wikipedia_infobox"
+        ? "#6B7A3F"
+        : "#E07A26";
+    const sourceBadge = r.source
+      ? `<span style="display:inline-block;margin-top:6px;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;background:${sourceBadgeColor};color:#fff;">${escape(r.source)}</span>`
+      : "";
     return `
     <div class="card" style="border: 2px solid ${border};">
       <img src="${escape(previewUrl)}" alt="${escape(r.name)}" loading="lazy" />
       <div class="meta">
         <div class="name">${escape(r.name)}</div>
         <div class="region">${escape(r.region ?? "—")}</div>
-        <div class="query">Query: <code>${escape(r.query_used ?? "(cached, no new query)")}</code></div>
+        ${sourceBadge}
+        <div class="query" style="margin-top:6px;">Query: <code>${escape(r.query_used ?? "(cached, no new query)")}</code></div>
         ${r.diversification ? `<div class="diversification" style="font-size:11px;color:#aaa;margin-top:4px;">attempt ${r.diversification.attempts_taken} · pos ${r.diversification.position_picked} · suffix: ${escape(r.diversification.suffix_used)} · excluded: ${r.diversification.excluded_count}</div>` : ""}
         <div class="photographer">Photo: ${escape(r.photographer ?? "—")}</div>
         ${r.bytes_original ? `<div class="bytes">Sizes: ${(r.bytes_original / 1024).toFixed(0)}KB → ${(r.bytes_optimised / 1024).toFixed(0)}KB jpeg / ${(r.bytes_webp / 1024).toFixed(0)}KB webp</div>` : ""}

@@ -154,15 +154,19 @@ When introducing a new Quick Task, scan this watchlist for overlap and re-test t
 - Fase 3 — Script populate-images.js (Node): ✅ script criado, pendente dry-run + apply
 - Fase 3.5 → ✅ Edge Function v2 com diversification (paginação aleatória posição 3-12, exclude_pexels_ids opt-in tracking, rotação de sufixos visuais). Resolve fotos repetidas detectadas no dry-run 2026-05-06. Pendente novo dry-run.
 - Fase 4 → ✅ Edge Function v3 multi-source criada (Wikipedia/Wikimedia/Pexels), pendente deploy + 5-test gate validation + apply to 109. **Nota:** v2 mantida em paralelo durante validação. NÃO apagar até v3 validada com 5 praias-teste.
+- Fase 5 → ✅ Sistema híbrido (Edge Function v4 simplificada + override manual via image_curated_*), pendente deploy + curadoria editorial
 - Fase 4.5 — Adapter HTML/CSS: pendente
-- Fase 5 — Atribuição Pexels: pendente
-- Fase 6 — Validação produção: pendente
+- Fase 6 — Atribuição Pexels: pendente
+- Fase 7 — Validação produção: pendente
 
 **Decisões arquiteturais (não re-discutir):**
 - Cards estáticos de guias + heroes CSS → hardcode no HTML/CSS, sem tabela auxiliar
 - Optimização (resize 1600px + WebP) → no script Node, não na Edge Function
 - Curadoria → tudo automático, com dry-run + relatório HTML revisável antes de UPDATEs
 - Vídeos hero (cdn.portalturismoportugal.com/*.mp4) → NÃO TOCAR
+- Camadas Wikimedia geo-search e text-search abandonadas — provaram apanhar ficheiros irrelevantes (florestas, homónimos noutras regiões como Fajã da Ribeira da Areia Açores quando se queria Madeira).
+- v4 substitui funcionalmente a v2 e v3 mas mantém ambas vivas durante validação. Apagar quando v4 confirmada com 109 praias.
+- Override manual via image_curated_url/author/source_url tem prioridade absoluta sobre Wikipedia e Pexels. image_curated_* são campos de input editorial e nunca são escritos pela Edge Function.
 
 **NÃO fazer:**
 - Não criar tabela `card_images` (decisão do conselho 2026-05-05: hardcode é a escolha certa para conteúdo estático)
