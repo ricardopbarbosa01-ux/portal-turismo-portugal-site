@@ -152,6 +152,7 @@ When introducing a new Quick Task, scan this watchlist for overlap and re-test t
 - Fase 1 — DB schema + Storage bucket: ✅ migrations + docs criados, pendente apply manual
 - Fase 2 — Edge Function pexels-fetch-and-store: ✅ código criado, pendente deploy + teste
 - Fase 3 — Script populate-images.js (Node): ✅ script criado, pendente dry-run + apply
+- Fase 3.5 → ✅ Edge Function v2 com diversification (paginação aleatória posição 3-12, exclude_pexels_ids opt-in tracking, rotação de sufixos visuais). Resolve fotos repetidas detectadas no dry-run 2026-05-06. Pendente novo dry-run.
 - Fase 4 — Adapter HTML/CSS: pendente
 - Fase 5 — Atribuição Pexels: pendente
 - Fase 6 — Validação produção: pendente

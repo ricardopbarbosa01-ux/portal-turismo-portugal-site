@@ -70,3 +70,66 @@ $body = @{ kind = "beach"; beach_id = "PUT-A-REAL-UUID-HERE"; query = "Praia da 
 - **Attribution:** obrigatório pelo Pexels TOS — o campo `photographer` deve ser exibido ao lado da imagem no front-end.
 - **Storage path:** `card-images/beaches/{beach_id}.jpg` — upsert com `cacheControl: 31536000` (1 ano).
 - **Fase 3:** o script Node `_scripts/populate-images.js` itererá todos os beaches sem `image_storage_url` e chamará esta função em lote.
+
+---
+
+## Diversification (v2)
+
+A v2 da função resolve o problema de fotos repetidas detectado no dry-run de 2026-05-06 (~30-50/109 praias receberam as mesmas 5-10 fotos virais do Pexels).
+
+### Três intervenções
+
+**1. Paginação aleatória com posição variável**
+Em vez de pedir `per_page=1` e usar a primeira foto, a v2 pede `per_page=15` e escolhe uma posição aleatória entre 3 e 12. Isso salta as 2-3 fotos mais virais/recorrentes que dominam o topo dos resultados para queries genéricas.
+
+**2. `exclude_pexels_ids` — tracking cross-request**
+O cliente (script Node) mantém um `Set` de `pexels_id` já recebidos e envia-o no body de cada chamada. A função evita devolver qualquer foto já usada na mesma sessão.
+
+**3. Rotação de sufixos visuais**
+A cada tentativa, é adicionado um sufixo diferente à query base (`cliffs`, `coast`, `sand`, `ocean`, `shore`, `atlantic`, `rocky beach`, `aerial view`, `sunset`, `waves`), diversificando os resultados sem perder relevância geográfica.
+
+### Algoritmo `findPhoto`
+
+1. Para cada attempt (1–4):
+   - Suffix: `VISUAL_SUFFIXES[(attempt-1) % VISUAL_SUFFIXES.length]`
+   - Query: `${baseQuery} ${suffix}`
+   - Page aleatória: 1–3
+   - `per_page=15`, posição aleatória 3–12
+   - Se foto não está em `excludeIds` → retorna
+   - Se todas excluídas → próximo attempt
+2. Fallback (após 4 attempts): query base, `per_page=1`, posição 0 — aceita qualquer resultado
+
+### Resposta com diversification (v2, `cached: false`)
+
+```json
+{
+  "storage_url": "https://...",
+  "photographer": "Nome",
+  "pexels_id": "12345678",
+  "query_used": "Praia da Rocha Algarve beach portugal coast",
+  "source": "pexels",
+  "cached": false,
+  "diversification": {
+    "attempts_taken": 2,
+    "position_picked": 7,
+    "suffix_used": "coast",
+    "excluded_count": 12
+  }
+}
+```
+
+### Exemplo com `exclude_pexels_ids` (PowerShell)
+
+```powershell
+$body = @{
+  kind = "beach"
+  beach_id = "PUT-A-REAL-UUID-HERE"
+  exclude_pexels_ids = @("12345678", "87654321")
+} | ConvertTo-Json
+
+Invoke-RestMethod `
+  -Uri "https://glupdjvdvunogkqgxoui.supabase.co/functions/v1/pexels-fetch-and-store" `
+  -Method Post `
+  -Headers @{ "Authorization" = "Bearer $env:SUPABASE_ANON_KEY"; "Content-Type" = "application/json" } `
+  -Body $body
+```

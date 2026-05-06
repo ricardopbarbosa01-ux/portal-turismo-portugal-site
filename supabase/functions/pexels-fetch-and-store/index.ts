@@ -3,17 +3,17 @@
 // POST /functions/v1/pexels-fetch-and-store
 //
 // Body (JSON):
-//   { kind: "beach", beach_id: "uuid-here", query?: "optional override" }
+//   { kind: "beach", beach_id: "uuid-here", query?: "optional override", exclude_pexels_ids?: ["id1","id2"] }
 //
 // Behaviour:
 //   1. If kind=beach and beach already has image_storage_url → return existing (idempotent)
 //   2. Build query: explicit override > "<beach.name> <beach.region> beach portugal"
-//   3. Call Pexels API (1 result, landscape, large size)
+//   3. Call Pexels API with diversification (per_page=15, random position 3-12, suffix rotation)
 //   4. Download the photo bytes
 //   5. Upload to Supabase Storage: card-images/beaches/{beach_id}.jpg
 //   6. Get public URL
 //   7. UPDATE beaches SET image_storage_url, image_photographer, image_pexels_id, image_query_used, image_updated_at
-//   8. Return { storage_url, photographer, pexels_id, source: "pexels", cached: false }
+//   8. Return { storage_url, photographer, pexels_id, source: "pexels", cached: false, diversification: {...} }
 //
 // Errors: graceful with structured JSON { error, details }, never crash silently.
 
@@ -46,6 +46,65 @@ const json = (body: unknown, status = 200, extraHeaders: Record<string, string> 
     headers: { "Content-Type": "application/json", ...extraHeaders },
   });
 
+// ── Diversification constants ──────────────────────────────────────────────────
+const VISUAL_SUFFIXES = [
+  "cliffs", "coast", "sand", "ocean", "shore",
+  "atlantic", "rocky beach", "aerial view", "sunset", "waves",
+];
+const PER_PAGE = 15;
+const MIN_POSITION = 3;
+const MAX_POSITION = 12;
+const MAX_ATTEMPTS = 4;
+const pickInt = (min: number, max: number) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
+
+type PhotoResult = {
+  photo: Record<string, unknown>;
+  attempt: number;
+  queryUsed: string;
+  positionPicked: number;
+  suffixUsed: string;
+};
+
+async function findPhoto(
+  baseQuery: string,
+  excludeIds: Set<string>,
+): Promise<PhotoResult | null> {
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const suffix = VISUAL_SUFFIXES[(attempt - 1) % VISUAL_SUFFIXES.length];
+    const q = `${baseQuery} ${suffix}`;
+    const page = pickInt(1, 3);
+    const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&per_page=${PER_PAGE}&orientation=landscape&size=large&page=${page}`;
+    const res = await fetch(url, { headers: { Authorization: PEXELS_API_KEY } });
+    if (!res.ok) continue;
+    const data = await res.json();
+    const photos: Record<string, unknown>[] = data.photos ?? [];
+    if (photos.length === 0) continue;
+
+    const startPos = Math.min(pickInt(MIN_POSITION, MAX_POSITION), photos.length - 1);
+    for (let i = startPos; i < photos.length; i++) {
+      const candidate = photos[i] as { id?: number; photographer?: string; src?: Record<string, string> };
+      if (!excludeIds.has(String(candidate.id ?? ""))) {
+        return { photo: candidate, attempt, queryUsed: q, positionPicked: i, suffixUsed: suffix };
+      }
+    }
+  }
+  // Fallback: base query, per_page=1, position 0 — accept any result
+  const fallbackUrl = `https://api.pexels.com/v1/search?query=${encodeURIComponent(baseQuery)}&per_page=1&orientation=landscape&size=large`;
+  const fallbackRes = await fetch(fallbackUrl, { headers: { Authorization: PEXELS_API_KEY } });
+  if (!fallbackRes.ok) return null;
+  const fallbackData = await fallbackRes.json();
+  const fallbackPhoto = fallbackData.photos?.[0];
+  if (!fallbackPhoto) return null;
+  return {
+    photo: fallbackPhoto,
+    attempt: MAX_ATTEMPTS + 1,
+    queryUsed: baseQuery,
+    positionPicked: 0,
+    suffixUsed: "fallback",
+  };
+}
+
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin");
   const cors = corsHeaders(origin);
@@ -58,7 +117,7 @@ Deno.serve(async (req) => {
     return json({ error: "method_not_allowed" }, 405, cors);
   }
 
-  let body: { kind?: string; beach_id?: string; query?: string };
+  let body: { kind?: string; beach_id?: string; query?: string; exclude_pexels_ids?: string[] };
   try {
     body = await req.json();
   } catch {
@@ -109,27 +168,26 @@ Deno.serve(async (req) => {
     return json({ error: "empty_query", details: "beach has no name/region and no override given" }, 400, cors);
   }
 
-  // Step 3 — Pexels search
-  const pexelsUrl = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=1&orientation=landscape&size=large`;
-  const pexelsRes = await fetch(pexelsUrl, {
-    headers: { Authorization: PEXELS_API_KEY },
-  });
+  // Parse excludeIds from body
+  const excludeIds = new Set<string>(
+    Array.isArray(body.exclude_pexels_ids) ? body.exclude_pexels_ids.map(String) : []
+  );
 
-  if (!pexelsRes.ok) {
-    return json(
-      { error: "pexels_api_error", details: `${pexelsRes.status} ${pexelsRes.statusText}` },
-      502,
-      cors,
-    );
-  }
-
-  const pexelsData = await pexelsRes.json();
-  const photo = pexelsData.photos?.[0];
-  if (!photo) {
+  // Step 3 — Pexels search (with diversification)
+  const photoResult = await findPhoto(query, excludeIds);
+  if (!photoResult) {
     return json({ error: "no_pexels_result", details: `query: ${query}` }, 404, cors);
   }
+  const {
+    photo,
+    attempt: attemptsTaken,
+    queryUsed: actualQueryUsed,
+    positionPicked,
+    suffixUsed,
+  } = photoResult;
 
-  const photoUrl: string = photo.src?.large2x ?? photo.src?.large ?? photo.src?.original;
+  const p = photo as { src?: Record<string, string>; photographer?: string; id?: number };
+  const photoUrl: string = p.src?.large2x ?? p.src?.large ?? p.src?.original ?? "";
   if (!photoUrl) {
     return json({ error: "no_photo_url", details: "pexels response missing src" }, 502, cors);
   }
@@ -168,9 +226,9 @@ Deno.serve(async (req) => {
     .from("beaches")
     .update({
       image_storage_url: storageUrl,
-      image_photographer: photo.photographer ?? null,
-      image_pexels_id: String(photo.id ?? ""),
-      image_query_used: query,
+      image_photographer: p.photographer ?? null,
+      image_pexels_id: String(p.id ?? ""),
+      image_query_used: actualQueryUsed,
       image_updated_at: new Date().toISOString(),
     })
     .eq("id", beach.id);
@@ -182,11 +240,17 @@ Deno.serve(async (req) => {
   return json(
     {
       storage_url: storageUrl,
-      photographer: photo.photographer ?? null,
-      pexels_id: String(photo.id ?? ""),
-      query_used: query,
+      photographer: p.photographer ?? null,
+      pexels_id: String(p.id ?? ""),
+      query_used: actualQueryUsed,
       source: "pexels",
       cached: false,
+      diversification: {
+        attempts_taken: attemptsTaken,
+        position_picked: positionPicked,
+        suffix_used: suffixUsed,
+        excluded_count: excludeIds.size,
+      },
     },
     200,
     cors,

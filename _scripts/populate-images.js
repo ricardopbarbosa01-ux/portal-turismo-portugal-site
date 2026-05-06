@@ -104,6 +104,8 @@ if (beaches.length === 0) {
 const results = [];
 let processed = 0;
 
+const usedPexelsIds = new Set();
+
 for (const beach of beaches) {
   processed++;
   const label = `[${processed}/${beaches.length}] ${beach.name} (${beach.region ?? "?"})`;
@@ -123,6 +125,7 @@ for (const beach of beaches) {
     bytes_original: null,
     bytes_optimised: null,
     bytes_webp: null,
+    diversification: null,
   };
 
   try {
@@ -134,7 +137,11 @@ for (const beach of beaches) {
         Authorization: `Bearer ${ANON_KEY}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ kind: "beach", beach_id: beach.id }),
+      body: JSON.stringify({
+        kind: "beach",
+        beach_id: beach.id,
+        exclude_pexels_ids: Array.from(usedPexelsIds),
+      }),
     });
 
     if (!fnRes.ok) {
@@ -143,10 +150,12 @@ for (const beach of beaches) {
     }
 
     const fnData = await fnRes.json();
+    if (fnData.pexels_id) usedPexelsIds.add(fnData.pexels_id);
     result.storage_url = fnData.storage_url;
     result.photographer = fnData.photographer;
     result.pexels_id = fnData.pexels_id;
     result.query_used = fnData.query_used ?? null;
+    result.diversification = fnData.diversification ?? null;
 
     // 2b. Download original
     const imgRes = await fetch(fnData.storage_url);
@@ -259,6 +268,7 @@ const cards = results
         <div class="name">${escape(r.name)}</div>
         <div class="region">${escape(r.region ?? "—")}</div>
         <div class="query">Query: <code>${escape(r.query_used ?? "(cached, no new query)")}</code></div>
+        ${r.diversification ? `<div class="diversification" style="font-size:11px;color:#aaa;margin-top:4px;">attempt ${r.diversification.attempts_taken} · pos ${r.diversification.position_picked} · suffix: ${escape(r.diversification.suffix_used)} · excluded: ${r.diversification.excluded_count}</div>` : ""}
         <div class="photographer">Photo: ${escape(r.photographer ?? "—")}</div>
         ${r.bytes_original ? `<div class="bytes">Sizes: ${(r.bytes_original / 1024).toFixed(0)}KB → ${(r.bytes_optimised / 1024).toFixed(0)}KB jpeg / ${(r.bytes_webp / 1024).toFixed(0)}KB webp</div>` : ""}
         ${r.status === "fail" ? `<div class="error">ERROR: ${escape(r.error)}</div>` : ""}
