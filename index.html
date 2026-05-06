@@ -80,7 +80,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260506-6ce">
+  <link rel="stylesheet" href="/css/style.css?v=20260506-6cf-alt3">
 
   <style>
     /* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
@@ -957,9 +957,9 @@
      ════════════════════════════════════════════════════════════ -->
 <main id="main">
 
-<!-- ── 1. HERO — Cinematic SVG Masking (Fase 6C-E) ───────────── -->
-<section class="hero" aria-label="O portal de praias de Portugal">
-  <!-- SVG clip-path definition (offscreen, referenced by .hero__media) -->
+<!-- ── 1. HERO — Editorial Video Intercept (Fase 6C-F Alt 3) ──── -->
+<section class="hero hero--alt3" aria-label="O portal de praias de Portugal">
+  <!-- SVG clip-path wave definition (used by hero__media via clip-path: url()) -->
   <svg class="hero__svg-defs" aria-hidden="true">
     <defs>
       <clipPath id="hero-wave-clip" clipPathUnits="objectBoundingBox">
@@ -968,43 +968,47 @@
     </defs>
   </svg>
 
-  <div class="hero__inner">
-    <!-- Text column -->
-    <div class="hero__text">
-      <p class="hero__kicker">PORTUGAL · 7 REGIÕES · 100+ PRAIAS · ATLÂNTICO</p>
-      <h1 class="hero__headline">
-        <span class="hero__word hero__word--outline" data-word="0">O</span>
-        <span class="hero__word hero__word--outline" data-word="1">Portugal</span>
-        <span class="hero__word hero__word--outline" data-word="2">que</span><br>
-        <span class="hero__word hero__word--solid" data-word="3">não</span>
-        <span class="hero__word hero__word--solid" data-word="4">aparece</span><br>
-        <span class="hero__word hero__word--outline" data-word="5">nos</span>
-        <span class="hero__word hero__word--solid hero__word--underlined" data-word="6">sites<span class="hero__underline" aria-hidden="true"></span></span>
-        <span class="hero__word hero__word--solid hero__word--underlined" data-word="7">de<span class="hero__underline" aria-hidden="true"></span></span>
-        <span class="hero__word hero__word--solid hero__word--underlined" data-word="8">reservas<span class="hero__underline" aria-hidden="true"></span></span>
-      </h1>
-      <p class="hero__sub">Verificado por quem cá vive. Nunca leiloado.</p>
-      <div class="hero__actions">
-        <a href="planear.html" class="hero__cta hero__cta--primary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'planear'})">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Começar a explorar
-        </a>
-        <a href="our-story.html" class="hero__cta hero__cta--secondary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'our-story'})">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
-          A nossa história
-        </a>
-      </div>
-    </div>
+  <!-- Video layer (absolute, right ~65%, paints before content via DOM order) -->
+  <div class="hero__media">
+    <video class="hero__video"
+      data-src="https://cdn.portalturismoportugal.com/homepage-hero.mp4"
+      playsinline muted loop preload="none"
+      poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.webp"
+      aria-label="Vídeo de praias portuguesas"
+    ></video>
+    <div class="hero__media-overlay" aria-hidden="true"></div>
+  </div>
 
-    <!-- Video column: clip-path wave shape (SVG) -->
-    <div class="hero__media">
-      <video class="hero__video"
-        data-src="https://cdn.portalturismoportugal.com/homepage-hero.mp4"
-        playsinline muted loop preload="none"
-        poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.webp"
-        aria-label="Vídeo de praias portuguesas"
-      ></video>
-      <div class="hero__media-overlay" aria-hidden="true"></div>
+  <!-- Content layer (relative, no z-index — headline mix-blend-mode crosses into video) -->
+  <div class="hero__content">
+    <p class="hero__kicker">PORTUGAL · 7 REGIÕES · 100+ PRAIAS · ATLÂNTICO</p>
+    <h1 class="hero__headline">
+      <span class="hero__line">
+        <span class="hero__word" style="--i:0">O</span>
+        <span class="hero__word" style="--i:1">Portugal</span>
+        <span class="hero__word" style="--i:2">que</span>
+      </span>
+      <span class="hero__line">
+        <span class="hero__word" style="--i:3">não</span>
+        <span class="hero__word" style="--i:4">aparece</span>
+        <span class="hero__word" style="--i:5">nos</span>
+      </span>
+      <span class="hero__line">
+        <span class="hero__word" style="--i:6">sites</span>
+        <span class="hero__word" style="--i:7">de</span>
+        <span class="hero__word" style="--i:8">reservas.</span>
+      </span>
+    </h1>
+    <p class="hero__sub">Verificado por quem cá vive — Nunca leiloado.</p>
+    <div class="hero__actions">
+      <a href="planear.html" class="hero__cta hero__cta--primary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'planear'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Começar a explorar
+      </a>
+      <a href="our-story.html" class="hero__cta hero__cta--secondary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'our-story'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
+        A nossa história
+      </a>
     </div>
   </div>
 </section>
@@ -1843,7 +1847,7 @@
     })();
   </script>
 
-  <!-- Hero cursor-reactive parallax (Fase 6C-E) -->
+  <!-- Hero cursor-reactive parallax (Fase 6C-F: media only — content transform skipped to preserve mix-blend-mode) -->
   <script>
     (function () {
       var hero = document.querySelector('.hero');
@@ -1851,8 +1855,7 @@
       if (window.matchMedia('(hover: none)').matches) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       var media = hero.querySelector('.hero__media');
-      var text  = hero.querySelector('.hero__text');
-      if (!media || !text) return;
+      if (!media) return;
       var rafId = null;
       var targetX = 0, targetY = 0, currentX = 0, currentY = 0;
       var EASE = 0.06;
@@ -1860,7 +1863,6 @@
         currentX += (targetX - currentX) * EASE;
         currentY += (targetY - currentY) * EASE;
         media.style.transform = 'translate(' + (currentX * 6) + 'px,' + (currentY * 6) + 'px)';
-        text.style.transform  = 'translate(' + (-currentX * 3) + 'px,' + (-currentY * 2) + 'px)';
         if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
           rafId = requestAnimationFrame(animate);
         } else { rafId = null; }
