@@ -58,6 +58,18 @@ Prioritize in this order unless the user says otherwise:
 - pesca.html
 - webcams.html
 
+## Fase 6C — Imagens e Curadoria Editorial
+
+### Fase 6C-A → ✅ card persuasivo homepage (2026-05-06)
+- Card `hero-secondary` adicionado a index.html e en/index.html com headline "As 10 praias que ninguém no Booking encontra"
+- Páginas placeholder criadas: /escondidas.html e /en/hidden-beaches.html (noindex, em curadoria)
+- Foto Praia da Ursa hardcoded de Wikimedia Commons (URL: `c/c8/Nature's_canvas.jpg`, 1920px thumb)
+
+### TODOs
+- Praia da Ursa: criar entry na BD beaches + curadoria image_curated_url para servir foto via Storage em vez de hardcoded
+- Páginas escondidas.html e en/hidden-beaches.html: produzir conteúdo editorial real (10 praias verificadas + fotos + texto)
+- Fase 6C-B: substituir Unsplash hardcoded em 85 ficheiros restantes (out of scope hoje)
+
 ## Hard guardrails
 - Do not touch auth logic without proven reason
 - Do not touch LemonSqueezy flow without proven reason
