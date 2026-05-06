@@ -158,6 +158,7 @@ When introducing a new Quick Task, scan this watchlist for overlap and re-test t
 - Fase 5.5 → ✅ v4 ajustada com filtro anti-P&B na Camada Pexels (keyword + avg_color saturation < 0.10), pendente re-teste Fajã da Areia
 - Fase 6A → ✅ Documento de curadoria editorial criado (`docs/editorial/curadoria-2026-05-06.md`). Worksheet com 21 praias (UUIDs reais da BD, links Wikimedia Category + Search por praia, 3 campos vazios por praia, SQL UPDATE batch template). Fase 6B (preenchimento manual + execução SQL + populate-images.js) pendente.
 - Fase 6B → ✅ Atribuição visível (caption + tooltip) em beach.html, beaches.html, en/beach.html, en/beaches.html. CC BY-SA compliance. Caption discreta abaixo da imagem (11px, opacidade 0.6) com link clicável para source_url. Tooltip on hover/tap mostra autor · licença. Conta.html, dashboard.html, pro/welcome.html, index.html NÃO tocados.
+- Fase 6B.1 → ✅ caption agora não-clicável (Padrão B), tooltip on hover mantém link. CC BY-SA compliance preservada via texto visível + tooltip + data-source-url.
 - Fase 4.5 — Adapter HTML/CSS: pendente
 - Fase 6 — Atribuição Pexels: ✅ entregue em Fase 6B
 - Fase 7 — Validação produção: pendente

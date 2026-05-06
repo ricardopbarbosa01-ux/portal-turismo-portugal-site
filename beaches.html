@@ -604,7 +604,7 @@
     @media (max-width: 600px) { .beaches-guide-hint { padding:10px 4vw; } }
   </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260506-6b">
+<link rel="stylesheet" href="/css/style.css?v=20260506-6b1">
 </head>
 <body>
 
@@ -1020,21 +1020,14 @@
     const source = b.image_source;
     if (!source) return '';
     const author = escHtml(b.image_photographer || '');
-    const url = escHtml(b.image_source_url || '');
     if (source === 'manual') {
-      return url && author
-        ? `Foto: <a href="${url}" rel="noopener" target="_blank">${author}</a>`
-        : author ? `Foto: ${author}` : '';
+      return author ? `Foto: ${author}` : '';
     }
     if (source === 'wikipedia_infobox') {
-      return url
-        ? `Foto: <a href="${url}" rel="noopener" target="_blank">Wikipedia</a>`
-        : 'Foto: Wikipedia';
+      return 'Foto: Wikipedia';
     }
     if (source === 'pexels') {
-      return url && author
-        ? `Foto: <a href="${url}" rel="noopener" target="_blank">${author}</a> / Pexels`
-        : author ? `Foto: ${author} / Pexels` : 'Foto: Pexels';
+      return author ? `Foto: ${author} / Pexels` : 'Foto: Pexels';
     }
     return '';
   }
@@ -1158,7 +1151,7 @@
               ${mediaHtml}${fallbackHtml}
               ${b.region ? `<span class="beach-region-badge">${escHtml(b.region)}</span>` : ''}
             </div>${caption ? `
-            <figcaption class="beach-card-attribution">${caption}</figcaption>` : ''}
+            <figcaption class="beach-card-attribution" data-source-url="${escHtml(b.image_source_url || '')}">${caption}</figcaption>` : ''}
           </figure>
           <div class="beach-card-body">
             <h2 class="beach-card-name">${escHtml(b.name)}</h2>

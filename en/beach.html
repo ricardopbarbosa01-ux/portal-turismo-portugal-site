@@ -442,7 +442,7 @@
     @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
     @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
 </style>
-  <link rel="stylesheet" href="/css/style.css?v=20260506-6b">
+  <link rel="stylesheet" href="/css/style.css?v=20260506-6b1">
 
 </head>
 <body>
@@ -882,21 +882,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const source = b.image_source;
     if (!source) return '';
     const author = esc(b.image_photographer || '');
-    const url = esc(b.image_source_url || '');
     if (source === 'manual') {
-      return url && author
-        ? `Photo: <a href="${url}" rel="noopener" target="_blank">${author}</a>`
-        : author ? `Photo: ${author}` : '';
+      return author ? `Photo: ${author}` : '';
     }
     if (source === 'wikipedia_infobox') {
-      return url
-        ? `Photo: <a href="${url}" rel="noopener" target="_blank">Wikipedia</a>`
-        : 'Photo: Wikipedia';
+      return 'Photo: Wikipedia';
     }
     if (source === 'pexels') {
-      return url && author
-        ? `Photo: <a href="${url}" rel="noopener" target="_blank">${author}</a> / Pexels`
-        : author ? `Photo: ${author} / Pexels` : 'Photo: Pexels';
+      return author ? `Photo: ${author} / Pexels` : 'Photo: Pexels';
     }
     return '';
   }

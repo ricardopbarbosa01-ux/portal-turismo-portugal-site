@@ -590,7 +590,7 @@
     @media (max-width: 600px) { .beaches-guide-hint { padding:10px 4vw; } }
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260506-6b">
+<link rel="stylesheet" href="/css/style.css?v=20260506-6b1">
 </head>
 <body>
 
@@ -998,21 +998,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const source = b.image_source;
     if (!source) return '';
     const author = escHtml(b.image_photographer || '');
-    const url = escHtml(b.image_source_url || '');
     if (source === 'manual') {
-      return url && author
-        ? `Photo: <a href="${url}" rel="noopener" target="_blank">${author}</a>`
-        : author ? `Photo: ${author}` : '';
+      return author ? `Photo: ${author}` : '';
     }
     if (source === 'wikipedia_infobox') {
-      return url
-        ? `Photo: <a href="${url}" rel="noopener" target="_blank">Wikipedia</a>`
-        : 'Photo: Wikipedia';
+      return 'Photo: Wikipedia';
     }
     if (source === 'pexels') {
-      return url && author
-        ? `Photo: <a href="${url}" rel="noopener" target="_blank">${author}</a> / Pexels`
-        : author ? `Photo: ${author} / Pexels` : 'Photo: Pexels';
+      return author ? `Photo: ${author} / Pexels` : 'Photo: Pexels';
     }
     return '';
   }
@@ -1133,7 +1126,7 @@ document.addEventListener('DOMContentLoaded', function () {
               ${mediaHtml}${fallbackHtml}
               ${b.region ? `<span class="beach-region-badge">${escHtml(b.region)}</span>` : ''}
             </div>${caption ? `
-            <figcaption class="beach-card-attribution">${caption}</figcaption>` : ''}
+            <figcaption class="beach-card-attribution" data-source-url="${escHtml(b.image_source_url || '')}">${caption}</figcaption>` : ''}
           </figure>
           <div class="beach-card-body">
             <h2 class="beach-card-name">${escHtml(b.name)}</h2>
