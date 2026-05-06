@@ -241,4 +241,8 @@
 
 ## Fase 6C-A — Entregue 2026-05-06
 
-Fase 6C-A entregue: card persuasivo homepage + páginas /escondidas placeholder. Headline `As 10 praias que ninguém no Booking encontra`. Foto Wikimedia Praia da Ursa hardcoded (futuro: migrar para Storage). 85 ficheiros restantes com Unsplash são fase 6C-B (não hoje).
+Fase 6C-A entregue: card persuasivo homepage + páginas /escondidas placeholder. Headline `As 10 praias que ninguém no Booking encontra`. Foto Wikimedia Praia da Ursa hardcoded (futuro: migrar para Storage). 85 ficheiros restantes com Unsplash são fase 6C-C (não hoje).
+
+## Fase 6C-B — Entregue 2026-05-06
+
+Redesign editorial cinemático do hero-secondary (skill frontend-design invocada). Layout 2-coluna 60/40 com número "10" como âncora visual (Fraunces 300, clamp 108px–210px). Foto Praia da Ursa migrada de Wikimedia (CSP block) para Supabase Storage (UUID a0529d77-b688-4293-ba11-8f023a69e4cf). Background navy sólido `#07152A` em vez de fullscreen photo overlay. Animação fade-in-up staggered via IntersectionObserver (threshold 0.25). Fraunces + IBM Plex Mono carregadas via Google Fonts. CSS cache `?v=20260506-6cb`. CSP problem do 6C-A resolvido — imagem agora servida a partir de supabase.co (já na allowlist).

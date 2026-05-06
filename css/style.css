@@ -1968,109 +1968,229 @@ input[type="number"], input[type="date"], input[type="search"] {
   }
 }
 
-/* === Hero secondary: hidden beaches CTA === */
+/* === Hero secondary: hidden beaches CTA — Fase 6C-B editorial cinematic === */
+
+/* Animation keyframes */
+@keyframes hs-fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Section shell — deep navy, no background photo */
 .hero-secondary {
-  position: relative;
-  min-height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(rgba(11, 27, 43, 0.55), rgba(11, 27, 43, 0.65)),
-                    url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Nature%27s_canvas.jpg/1920px-Nature%27s_canvas.jpg');
-  background-size: cover;
-  background-position: center;
-  color: var(--areia, #F2E8D5);
-  text-align: center;
-  padding: 80px 24px;
-  margin: 64px 0 32px;
+  background-color: #07152A;
+  color: #F2E8D5;
+  margin: 64px 0 0;
+  padding: 80px 40px;
   overflow: hidden;
 }
 
-.hero-secondary__content {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
+/* Inner grid — 60/40 split */
+.hero-secondary__inner {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: 56px;
+  max-width: 1160px;
+  margin: 0 auto;
+  align-items: center;
 }
 
-.hero-secondary__eyebrow {
-  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
-  font-size: 12px;
-  letter-spacing: 0.18em;
+/* ── Text column ──────────────────────────────────────────────── */
+
+/* All children start invisible; animation sets them to visible */
+.hero-secondary__text-column > * {
+  opacity: 0;
+}
+
+.hero-secondary[data-animate="in"] .hero-secondary__text-column > * {
+  animation: hs-fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-secondary[data-animate="in"] .hero-secondary__kicker      { animation-delay: 0.00s; }
+.hero-secondary[data-animate="in"] .hero-secondary__number-row  { animation-delay: 0.10s; }
+.hero-secondary[data-animate="in"] .hero-secondary__divider     { animation-delay: 0.22s; }
+.hero-secondary[data-animate="in"] .hero-secondary__sub         { animation-delay: 0.34s; }
+.hero-secondary[data-animate="in"] .hero-secondary__cta         { animation-delay: 0.46s; }
+
+/* Kicker — mono eyebrow */
+.hero-secondary__kicker {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--dourado, #C9A24B);
-  margin: 0 0 16px;
-  opacity: 0.9;
+  color: #C9A24B;
+  opacity: 0.85;
+  margin: 0 0 20px;
 }
 
+/* Number-row — giant "10" anchored left, headline beside it */
+.hero-secondary__number-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+/* Giant drop-cap number */
+.hero-secondary__number {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(108px, 16vw, 210px);
+  line-height: 0.85;
+  color: #C9A24B;
+  opacity: 0.9;
+  flex-shrink: 0;
+  margin-right: 16px;
+  /* Pull the number up to bleed into the kicker space */
+  margin-top: -12px;
+  letter-spacing: -0.04em;
+}
+
+/* Headline — stacks beside the giant number */
 .hero-secondary__headline {
-  font-family: var(--font-display, 'Fraunces', serif);
-  font-weight: 700;
-  font-size: clamp(28px, 5vw, 48px);
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3.4vw, 46px);
   line-height: 1.15;
-  margin: 0 0 16px;
+  color: #F2E8D5;
+  /* Align baseline with bottom of number */
+  align-self: flex-end;
+  padding-bottom: 8px;
+  margin: 0;
   text-wrap: balance;
 }
 
-.hero-secondary__sub {
-  font-family: var(--font-body, 'IBM Plex Sans', sans-serif);
-  font-size: clamp(15px, 2vw, 18px);
-  line-height: 1.5;
-  margin: 0 0 32px;
-  opacity: 0.92;
-  max-width: 580px;
-  margin-left: auto;
-  margin-right: auto;
+/* Gold divider line */
+.hero-secondary__divider {
+  display: block;
+  width: 60px;
+  border: none;
+  border-top: 1px solid #C9A24B;
+  margin: 28px 0 32px;
+  opacity: 0.75;
 }
 
+/* Sub-headline */
+.hero-secondary__sub {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.65;
+  color: #F2E8D5;
+  opacity: 0.78;
+  margin: 0 0 40px;
+  max-width: 380px;
+}
+
+/* CTA button */
 .hero-secondary__cta {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 32px;
-  background: var(--dourado, #C9A24B);
-  color: var(--navy-deep, #050D17);
-  font-family: var(--font-body, 'IBM Plex Sans', sans-serif);
+  gap: 10px;
+  padding: 16px 36px;
+  background: #C9A24B;
+  color: #07152A;
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  border-radius: 4px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  border-radius: 3px;
+  transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
 }
 
 .hero-secondary__cta:hover {
   transform: translateY(-2px);
-  background: var(--areia, #F2E8D5);
+  background: #e8c97a;
+  box-shadow: 0 8px 28px rgba(201, 162, 75, 0.38);
 }
 
-.hero-secondary__cta span {
-  transition: transform 0.2s ease;
+.hero-secondary__cta-arrow {
+  display: inline-block;
+  transition: transform 0.22s ease;
 }
 
-.hero-secondary__cta:hover span {
-  transform: translateX(4px);
+.hero-secondary__cta:hover .hero-secondary__cta-arrow {
+  transform: translateX(6px);
 }
 
-.hero-secondary__attribution {
-  position: absolute;
-  bottom: 12px;
-  right: 16px;
-  z-index: 2;
-  font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  color: var(--areia, #F2E8D5);
-  opacity: 0.5;
-  letter-spacing: 0.02em;
+/* ── Image column ─────────────────────────────────────────────── */
+.hero-secondary__image-column {
+  position: relative;
   margin: 0;
+  /* Slight upward offset to create visual tension with the text column */
+  margin-top: -24px;
 }
 
-@media (max-width: 640px) {
+.hero-secondary__image-column img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 28px 64px -16px rgba(0, 0, 0, 0.55),
+              0 8px 24px -8px rgba(0, 0, 0, 0.35);
+}
+
+/* Subtle dark vignette around photo edges */
+.hero-secondary__image-column::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(7, 21, 42, 0.45) 100%);
+  pointer-events: none;
+}
+
+/* Attribution caption — Padrão B */
+.hero-secondary__attribution {
+  display: block;
+  margin-top: 10px;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-size: 10px;
+  color: #F2E8D5;
+  opacity: 0.45;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+/* ── Responsive — mobile ≤768px ───────────────────────────────── */
+@media (max-width: 768px) {
   .hero-secondary {
-    min-height: 400px;
-    padding: 60px 20px;
+    padding: 56px 24px 64px;
+    margin: 48px 0 0;
   }
+
+  .hero-secondary__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* On mobile: image goes ABOVE the text */
+  .hero-secondary__image-column {
+    order: -1;
+    margin-top: 0;
+  }
+
+  .hero-secondary__image-column img {
+    max-height: 380px;
+    aspect-ratio: unset;
+    width: 100%;
+  }
+
+  .hero-secondary__number {
+    font-size: clamp(88px, 22vw, 140px);
+  }
+
+  .hero-secondary__headline {
+    font-size: clamp(22px, 5.5vw, 34px);
+  }
+
+  .hero-secondary__sub {
+    max-width: 100%;
+  }
+
   .hero-secondary__attribution {
-    font-size: 9px;
-    bottom: 8px;
-    right: 12px;
+    text-align: left;
   }
 }

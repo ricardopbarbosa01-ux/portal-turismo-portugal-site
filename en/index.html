@@ -69,8 +69,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
 
   <!-- Hero video poster preload (matches actual poster src) -->
   <link rel="preload" as="image" type="image/webp" href="https://cdn.portalturismoportugal.com/homepage-hero-poster.webp" fetchpriority="high">
@@ -80,7 +80,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260506-6c">
+  <link rel="stylesheet" href="/css/style.css?v=20260506-6cb">
 
   <style>
 /* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
@@ -1005,25 +1005,38 @@
   </a>
 </section>
 
-    <!-- Persuasive card: hidden beaches -->
+    <!-- Persuasive card: hidden beaches — Phase 6C-B editorial cinematic -->
     <section class="hero-secondary" id="hidden-beaches-cta" aria-labelledby="hidden-beaches-headline">
-      <div class="hero-secondary__overlay"></div>
-      <div class="hero-secondary__content">
-        <p class="hero-secondary__eyebrow">Discover authentic Portugal</p>
-        <h2 class="hero-secondary__headline" id="hidden-beaches-headline">
-          10 beaches that don't show up on Booking
-        </h2>
-        <p class="hero-secondary__sub">
-          Verified by residents. Not on any top-50 list.
-        </p>
-        <a href="/en/hidden-beaches.html" class="hero-secondary__cta">
-          Discover them
-          <span aria-hidden="true">→</span>
-        </a>
+      <div class="hero-secondary__inner">
+        <div class="hero-secondary__text-column">
+          <p class="hero-secondary__kicker">Discover authentic Portugal</p>
+          <div class="hero-secondary__number-row">
+            <span class="hero-secondary__number" aria-hidden="true">10</span>
+            <h2 class="hero-secondary__headline" id="hidden-beaches-headline">
+              beaches that don't<br>show up on Booking
+            </h2>
+          </div>
+          <hr class="hero-secondary__divider" aria-hidden="true">
+          <p class="hero-secondary__sub">
+            Verified by residents.<br>
+            Not on any top-50 list.
+          </p>
+          <a href="/en/hidden-beaches.html" class="hero-secondary__cta">
+            <span>Discover them</span>
+            <span class="hero-secondary__cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <figure class="hero-secondary__image-column">
+          <img
+            src="https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/card-images/beaches/a0529d77-b688-4293-ba11-8f023a69e4cf.jpg"
+            alt="Praia da Ursa, Sintra — vertical cliffs and the Atlantic"
+            loading="lazy"
+          />
+          <figcaption class="hero-secondary__attribution" data-source-url="https://commons.wikimedia.org/wiki/File:Mar_na_Praia_da_Ursa.jpg">
+            Praia da Ursa · Photo: Wikimedia
+          </figcaption>
+        </figure>
       </div>
-      <figcaption class="hero-secondary__attribution" data-source-url="https://commons.wikimedia.org/wiki/File:Nature's_canvas.jpg">
-        Photo: Praia da Ursa · Wikimedia
-      </figcaption>
     </section>
 
 <!-- ── INTENT HUB — NAVEGAÇÃO POR INTENÇÃO ────────────────────── -->
@@ -1607,5 +1620,23 @@
   <script src="/js/nav.js?v=20260422c" defer></script>
   <script src="/js/lazy-video.js?v=20260424" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
+  <script>
+    (function() {
+      var heroSecondary = document.getElementById('hidden-beaches-cta');
+      if (!heroSecondary || !('IntersectionObserver' in window)) {
+        if (heroSecondary) heroSecondary.dataset.animate = 'in';
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            heroSecondary.dataset.animate = 'in';
+            observer.unobserve(heroSecondary);
+          }
+        });
+      }, { threshold: 0.25 });
+      observer.observe(heroSecondary);
+    })();
+  </script>
 </body>
 </html>

@@ -65,10 +65,22 @@ Prioritize in this order unless the user says otherwise:
 - Páginas placeholder criadas: /escondidas.html e /en/hidden-beaches.html (noindex, em curadoria)
 - Foto Praia da Ursa hardcoded de Wikimedia Commons (URL: `c/c8/Nature's_canvas.jpg`, 1920px thumb)
 
+### Fase 6C-B → ✅ redesign editorial cinemático do hero-secondary (2026-05-06)
+- Skill frontend-design invocada — direção estética magazine editorial comprometida
+- Layout 2-coluna 60/40 (desktop): coluna texto + foto vertical Praia da Ursa
+- Foto migrada de Wikimedia (CSP block) para Supabase Storage (UUID `a0529d77-b688-4293-ba11-8f023a69e4cf`)
+- Número "10" como âncora visual: Fraunces 300 clamp(108px→210px), ouro opacity 0.9
+- Hierarquia: kicker IBM Plex Mono → número+headline → linha dourada → sub → CTA
+- Background: `#07152A` (navy profundo) em vez de fullscreen photo overlay
+- CTA: padding generoso 16×36px, hover lift + gold glow + arrow slide
+- Foto: sombra dramática + vinheta radial via ::after pseudo-element
+- Animação: IntersectionObserver threshold 0.25, staggered fade-in-up 5 elementos
+- Fraunces + IBM Plex Mono adicionadas ao Google Fonts (index.html + en/index.html)
+- CSS cache bumped para `?v=20260506-6cb`
+
 ### TODOs
-- Praia da Ursa: criar entry na BD beaches + curadoria image_curated_url para servir foto via Storage em vez de hardcoded
 - Páginas escondidas.html e en/hidden-beaches.html: produzir conteúdo editorial real (10 praias verificadas + fotos + texto)
-- Fase 6C-B: substituir Unsplash hardcoded em 85 ficheiros restantes (out of scope hoje)
+- Fase 6C-C (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
 
 ## Hard guardrails
 - Do not touch auth logic without proven reason
