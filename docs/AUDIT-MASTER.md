@@ -238,3 +238,7 @@
 - Cross-doc duplicates merged into one ID with all sources cited.
 - The 3 `AUDITORIA_EN_*` files at project root were superseded by this document and deleted (see git log).
 - STATE.md Quick Tasks Completed table used as primary evidence for RESOLVED status.
+
+## Fase 6C-A — Entregue 2026-05-06
+
+Fase 6C-A entregue: card persuasivo homepage + páginas /escondidas placeholder. Headline `As 10 praias que ninguém no Booking encontra`. Foto Wikimedia Praia da Ursa hardcoded (futuro: migrar para Storage). 85 ficheiros restantes com Unsplash são fase 6C-B (não hoje).
