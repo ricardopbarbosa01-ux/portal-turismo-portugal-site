@@ -102,9 +102,19 @@ Prioritize in this order unless the user says otherwise:
 - `prefers-reduced-motion`: `animation: none; opacity: 1; transform: none` em todos os elementos animados
 - CSS cache bumped para `?v=20260506-6ce`
 
+### Fase 6C-G → ✅ heroes pesca/surf/webcams — estilo cinemático Alt 3 (2026-05-06)
+- 6 ficheiros afetados: pesca.html, surf.html, webcams.html (PT) + en/pesca.html, en/surf.html, en/webcams.html (EN)
+- Novo componente CSS reutilizável `.page-hero` em css/style.css — reusa keyframes heroMediaReveal/heroWordReveal/heroFadeUp do hero principal
+- SVG `#hero-wave-clip` adicionado inline antes de `<main>` em cada página
+- Fraunces + IBM Plex Mono adicionados via Google Fonts (substituindo DM Sans)
+- Fotos próprias do Storage: PESCA (bda7327b), SURF (7f6e2b93 · Wikimedia Sergey Mysovskiy), WEBCAMS (ec40e481)
+- Cursor parallax (EASE 0.06, hover:none + prefers-reduced-motion guarded) em todas as 6 páginas
+- CSS cache bumped para `?v=20260506-6cg`
+- 85 → 82 ficheiros restantes com Unsplash hardcoded
+
 ### TODOs
 - Páginas escondidas.html e en/hidden-beaches.html: produzir conteúdo editorial real (10 praias verificadas + fotos + texto)
-- Fase 6C-F (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
+- Fase 6C-H (futuro): substituir Unsplash hardcoded nos 82 ficheiros restantes
 
 ## Hard guardrails
 - Do not touch auth logic without proven reason
@@ -209,6 +219,7 @@ When introducing a new Quick Task, scan this watchlist for overlap and re-test t
 - Fase 6B.1 → ✅ caption agora não-clicável (Padrão B), tooltip on hover mantém link. CC BY-SA compliance preservada via texto visível + tooltip + data-source-url.
 - Fase 6C-E → ✅ redesign cinemático do hero principal: SVG clip-path em onda fluida vertical, tipografia outline+solid mix, underline dourado animado em "sites de reservas" (resolve bug branco invisível), entrada staggered ~2.5s, cursor-reactive parallax, setinha down removida. Fallback border-radius assimétrico para iOS Safari.
 - Fase 6C-F (EXPERIMENTAL na branch `feature/hero-alt3-experiment`) → hero Alt 3 com video intercept + mix-blend-mode: difference. Headline Fraunces 600 clamp(48px–112px) atravessa o vídeo — texto quasi-preto sobre areia, inverte onde cruza pixels escuros do vídeo. Fallback @supports e mobile (<1024px) colapsa para layout sem intercept. Parallax: apenas hero__media move-se (hero__content excluído para preservar stacking context correcto). Decisão de merge para feature/fetch-and-store-phase-1 depende de validação visual do utilizador.
+- Fase 6C-G → ✅ heroes pesca/surf/webcams (PT+EN, 6 ficheiros) com estilo cinemático Alt 3 (.page-hero CSS reutilizável). Fotos próprias do Storage. SVG clip-path onda + Fraunces + mix-blend-mode: difference. Cursor parallax. CSS cache `?v=20260506-6cg`. 85→82 ficheiros restantes com Unsplash.
 - Fase 4.5 — Adapter HTML/CSS: pendente
 - Fase 6 — Atribuição Pexels: ✅ entregue em Fase 6B
 - Fase 7 — Validação produção: pendente
