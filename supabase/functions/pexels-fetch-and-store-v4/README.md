@@ -101,6 +101,52 @@ POST /functions/v1/pexels-fetch-and-store-v4
 
 v2 and v3 remain deployed in parallel until v4 is validated across all 109 beaches.
 
+## Monochrome filter (Phase 5.5)
+
+Pexels occasionally returns black-and-white or near-monochrome photos that are
+visually incongruent for a tourism portal. v4 applies two combined filters **inside
+`tryPexels` only** (Layers 0 and 1 are pre-curated and trusted):
+
+### Filter 1 — keyword match
+
+Checks `photo.alt` and `photo.description` (concatenated, lower-cased) against:
+
+```
+"black and white", "black-and-white", "monochrome", "monochromatic",
+"b&w", "bw photo", "preto e branco", "p&b", "grayscale", "greyscale"
+```
+
+If any keyword matches → candidate rejected, move to next position / next attempt.
+
+### Filter 2 — avg_color saturation
+
+Pexels includes an `avg_color` hex field per photo (e.g. `"#A1B2C3"`).  
+The function converts this to HSL saturation (0..1) using the standard formula:
+
+```
+lightness = (max + min) / 2
+saturation = delta / (2 - max - min)  if lightness > 0.5
+           = delta / (max + min)       otherwise
+```
+
+If saturation < **0.10** → likely monochrome → candidate rejected.
+
+Threshold 0.10 is conservative: lightly saturated but clearly coloured photos pass,
+truly B&W photos fall.
+
+### Fallback behaviour
+
+| Scenario | Outcome |
+|----------|---------|
+| Colour candidate found | Return it; `mono_fallback: false` |
+| All positions mono or excluded (some pages) | Try next attempt with different suffix |
+| All 4 attempts exhausted, but ≥1 non-excluded mono found | Accept first mono candidate; `mono_fallback: true` |
+| All attempts failed + no non-excluded candidate at all | Fall through to final per_page=1 fallback; `mono_fallback: isLikelyMonochrome(result)` |
+
+Debug: the `diversification` object in the response now includes `mono_rejected_count`
+(total photos rejected by filters this request) and `mono_fallback` (true if accepted
+a mono candidate as last resort).
+
 ## Deploy
 
 ```bash

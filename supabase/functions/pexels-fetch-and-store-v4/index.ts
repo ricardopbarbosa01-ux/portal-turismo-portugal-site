@@ -70,6 +70,8 @@ type PhotoCandidate = {
     position_picked: number;
     suffix_used: string;
     excluded_count: number;
+    mono_rejected_count: number;
+    mono_fallback: boolean;
   };
 };
 
@@ -102,6 +104,50 @@ const MAX_POSITION = 12;
 const MAX_ATTEMPTS = 4;
 const pickInt = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
+
+// ── Monochrome filter (applied in Pexels layer only) ──────────────────────────
+
+const MONO_KEYWORDS = [
+  "black and white",
+  "black-and-white",
+  "monochrome",
+  "monochromatic",
+  "b&w",
+  "bw photo",
+  "preto e branco",
+  "p&b",
+  "grayscale",
+  "greyscale",
+];
+
+const SATURATION_THRESHOLD = 0.10; // below this, treat as monochrome
+
+const hexToSaturation = (hex: string): number => {
+  if (!hex || typeof hex !== "string") return 1;
+  const clean = hex.replace("#", "").trim();
+  if (clean.length !== 6) return 1;
+  const r = parseInt(clean.slice(0, 2), 16) / 255;
+  const g = parseInt(clean.slice(2, 4), 16) / 255;
+  const b = parseInt(clean.slice(4, 6), 16) / 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const lightness = (max + min) / 2;
+  if (max === min) return 0;
+  const delta = max - min;
+  return lightness > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+};
+
+const isLikelyMonochrome = (photo: Record<string, unknown>): boolean => {
+  const text = `${photo?.alt ?? ""} ${photo?.description ?? ""}`.toLowerCase();
+  for (const kw of MONO_KEYWORDS) {
+    if (text.includes(kw)) return true;
+  }
+  if (photo?.avg_color && typeof photo.avg_color === "string") {
+    const sat = hexToSaturation(photo.avg_color);
+    if (sat < SATURATION_THRESHOLD) return true;
+  }
+  return false;
+};
 
 // ── Layer 0: Manual curated override ─────────────────────────────────────────
 // Editor sets image_curated_url in Supabase Table Editor.
@@ -150,12 +196,22 @@ async function tryWikipediaInfobox(beachName: string): Promise<PhotoCandidate | 
 
 // ── Layer 2: Pexels (v2/v3 diversification logic) ─────────────────────────────
 // Random page (1-3) + random start position (3-12) + rotating visual suffix.
+// Skips monochrome candidates (keyword match on alt/description + avg_color saturation < 0.10).
 // Falls back to base query with per_page=1 if all attempts are excluded.
 
 async function tryPexels(
   baseQuery: string,
   excludeIds: Set<string>,
 ): Promise<PhotoCandidate | null> {
+  let monoRejectedCount = 0;
+  let monoFallbackCandidate: {
+    photo: Record<string, unknown>;
+    attempt: number;
+    i: number;
+    suffix: string;
+    q: string;
+  } | null = null;
+
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     const suffix = VISUAL_SUFFIXES[(attempt - 1) % VISUAL_SUFFIXES.length];
     const q = `${baseQuery} ${suffix}`;
@@ -171,60 +227,101 @@ async function tryPexels(
 
     const startPos = Math.min(pickInt(MIN_POSITION, MAX_POSITION), photos.length - 1);
     for (let i = startPos; i < photos.length; i++) {
-      const candidate = photos[i] as {
-        id?: number;
-        photographer?: string;
-        src?: Record<string, string>;
-        url?: string;
-      };
-      if (!excludeIds.has(String(candidate.id ?? ""))) {
-        const photoUrl = candidate.src?.large2x ?? candidate.src?.large ?? candidate.src?.original ?? "";
-        if (!photoUrl) continue;
-        return {
-          url: photoUrl,
-          author: candidate.photographer ?? null,
-          license: "Pexels License",
-          source_url: candidate.url ?? `https://www.pexels.com/photo/${candidate.id ?? ""}/`,
-          source: "pexels",
-          pexels_id: String(candidate.id ?? ""),
-          query_used: q,
-          diversification: {
-            attempts_taken: attempt,
-            position_picked: i,
-            suffix_used: suffix,
-            excluded_count: excludeIds.size,
-          },
-        };
+      const candidate = photos[i];
+      const candidateId = String((candidate.id as number | undefined) ?? "");
+
+      if (excludeIds.has(candidateId)) continue;
+
+      if (isLikelyMonochrome(candidate)) {
+        monoRejectedCount++;
+        if (!monoFallbackCandidate) {
+          monoFallbackCandidate = { photo: candidate, attempt, i, suffix, q };
+        }
+        continue;
       }
+
+      const src = candidate.src as Record<string, string> | undefined;
+      const photoUrl = src?.large2x ?? src?.large ?? src?.original ?? "";
+      if (!photoUrl) continue;
+      return {
+        url: photoUrl,
+        author: (candidate.photographer as string | undefined) ?? null,
+        license: "Pexels License",
+        source_url:
+          (candidate.url as string | undefined) ??
+          `https://www.pexels.com/photo/${candidateId}/`,
+        source: "pexels",
+        pexels_id: candidateId,
+        query_used: q,
+        diversification: {
+          attempts_taken: attempt,
+          position_picked: i,
+          suffix_used: suffix,
+          excluded_count: excludeIds.size,
+          mono_rejected_count: monoRejectedCount,
+          mono_fallback: false,
+        },
+      };
     }
   }
 
-  // Final fallback: base query, per_page=1, accept any result
+  // All attempts × positions failed — use first non-excluded mono candidate as last resort
+  if (monoFallbackCandidate) {
+    const { photo: candidate, attempt, i, suffix, q } = monoFallbackCandidate;
+    const candidateId = String((candidate.id as number | undefined) ?? "");
+    const src = candidate.src as Record<string, string> | undefined;
+    const photoUrl = src?.large2x ?? src?.large ?? src?.original ?? "";
+    if (photoUrl) {
+      return {
+        url: photoUrl,
+        author: (candidate.photographer as string | undefined) ?? null,
+        license: "Pexels License",
+        source_url:
+          (candidate.url as string | undefined) ??
+          `https://www.pexels.com/photo/${candidateId}/`,
+        source: "pexels",
+        pexels_id: candidateId,
+        query_used: q,
+        diversification: {
+          attempts_taken: attempt,
+          position_picked: i,
+          suffix_used: suffix,
+          excluded_count: excludeIds.size,
+          mono_rejected_count: monoRejectedCount,
+          mono_fallback: true,
+        },
+      };
+    }
+  }
+
+  // Final fallback: base query, per_page=1, accept any result (even mono)
   const fallbackUrl =
     `https://api.pexels.com/v1/search?query=${encodeURIComponent(baseQuery)}` +
     `&per_page=1&orientation=landscape&size=large`;
   const fallbackRes = await fetch(fallbackUrl, { headers: { Authorization: PEXELS_API_KEY } });
   if (!fallbackRes.ok) return null;
   const fallbackData = await fallbackRes.json();
-  const p = fallbackData.photos?.[0] as
-    | { id?: number; photographer?: string; src?: Record<string, string>; url?: string }
-    | undefined;
+  const p = fallbackData.photos?.[0] as Record<string, unknown> | undefined;
   if (!p) return null;
-  const photoUrl = p.src?.large2x ?? p.src?.large ?? p.src?.original ?? "";
+  const pId = String((p.id as number | undefined) ?? "");
+  const pSrc = p.src as Record<string, string> | undefined;
+  const photoUrl = pSrc?.large2x ?? pSrc?.large ?? pSrc?.original ?? "";
   if (!photoUrl) return null;
   return {
     url: photoUrl,
-    author: p.photographer ?? null,
+    author: (p.photographer as string | undefined) ?? null,
     license: "Pexels License",
-    source_url: p.url ?? `https://www.pexels.com/photo/${p.id ?? ""}/`,
+    source_url: (p.url as string | undefined) ?? `https://www.pexels.com/photo/${pId}/`,
     source: "pexels",
-    pexels_id: String(p.id ?? ""),
+    pexels_id: pId,
     query_used: baseQuery,
     diversification: {
       attempts_taken: MAX_ATTEMPTS + 1,
       position_picked: 0,
       suffix_used: "fallback",
       excluded_count: excludeIds.size,
+      mono_rejected_count: monoRejectedCount,
+      mono_fallback: isLikelyMonochrome(p),
     },
   };
 }

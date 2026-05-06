@@ -155,6 +155,7 @@ When introducing a new Quick Task, scan this watchlist for overlap and re-test t
 - Fase 3.5 → ✅ Edge Function v2 com diversification (paginação aleatória posição 3-12, exclude_pexels_ids opt-in tracking, rotação de sufixos visuais). Resolve fotos repetidas detectadas no dry-run 2026-05-06. Pendente novo dry-run.
 - Fase 4 → ✅ Edge Function v3 multi-source criada (Wikipedia/Wikimedia/Pexels), pendente deploy + 5-test gate validation + apply to 109. **Nota:** v2 mantida em paralelo durante validação. NÃO apagar até v3 validada com 5 praias-teste.
 - Fase 5 → ✅ Sistema híbrido (Edge Function v4 simplificada + override manual via image_curated_*), pendente deploy + curadoria editorial
+- Fase 5.5 → ✅ v4 ajustada com filtro anti-P&B na Camada Pexels (keyword + avg_color saturation < 0.10), pendente re-teste Fajã da Areia
 - Fase 4.5 — Adapter HTML/CSS: pendente
 - Fase 6 — Atribuição Pexels: pendente
 - Fase 7 — Validação produção: pendente
