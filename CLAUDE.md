@@ -86,9 +86,14 @@ Prioritize in this order unless the user says otherwise:
 - Cursor-reactive parallax: divider (4px max) + foto (6px max) via requestAnimationFrame, EASE 0.08 — suave e GPU-only (transform único). `hover:none` → skip, `prefers-reduced-motion` → skip
 - CSS cache bumped para `?v=20260506-6cc`
 
+### Fase 6C-D → ✅ hero wrapper border-radius + restructure homepage 10→7 secções (2026-05-06)
+- Hero wrapper (`hero__right`): border-radius assimétrico `4px 64px 4px 64px` (desktop) / `4px 40px 4px 40px` (mobile), box-shadow profundidade. Consistência visual com hero-secondary "10 praias". Zero alteração ao `<video>` element ou URLs CDN.
+- Restructure homepage 10→7 secções: NEW `#what-youll-find` com 3-card grid (Condições do mar, Webcams ao vivo, Surf e Pesca). `planear-cta` agora inclui sub-banda de guides (idx-guides-band fundida). Secções `#conditions`, `#webcams`, `#surf-pesca`, `.idx-guides-band` escondidas via CSS (`display:none`) — HTML preservado para reversibilidade.
+- CSS cache bumped para `?v=20260506-6cd`.
+
 ### TODOs
 - Páginas escondidas.html e en/hidden-beaches.html: produzir conteúdo editorial real (10 praias verificadas + fotos + texto)
-- Fase 6C-D (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
+- Fase 6C-E (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
 
 ## Hard guardrails
 - Do not touch auth logic without proven reason
