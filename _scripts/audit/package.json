@@ -1,0 +1,13 @@
+{
+  "name": "pth-audit",
+  "version": "1.0.0",
+  "description": "Playwright visual + link audit for Portugal Travel Hub",
+  "private": true,
+  "scripts": {
+    "inventory": "node pages-inventory.js",
+    "audit": "node audit-runner.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.1"
+  }
+}

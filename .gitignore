@@ -53,3 +53,10 @@ _scripts/test-rls-setup.sql
 
 # README files from imported asset packages (e.g. icon packs)
 /README.md
+
+# Playwright visual audit — heavy local outputs, not for repo
+_scripts/audit/node_modules/
+_scripts/audit/screenshots/
+_scripts/audit/audit-results.json
+_scripts/audit/pages.json
+_scripts/audit/package-lock.json
