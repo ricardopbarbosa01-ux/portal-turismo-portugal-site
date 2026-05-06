@@ -497,7 +497,7 @@
     @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
     @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
 </style>
-  <link rel="stylesheet" href="/css/style.css?v=20260505">
+  <link rel="stylesheet" href="/css/style.css?v=20260506-6b">
 
 <!-- cache-bust: 1776339162134 -->
 </head>
@@ -593,6 +593,7 @@
         <div class="beach-badges" id="hero-badges"></div>
       </div>
     </div>
+    <p id="hero-attribution" class="hero-attribution" style="display:none"></p>
 
     <div class="beach-content">
       <!-- Facilities -->
@@ -761,6 +762,29 @@ document.addEventListener('DOMContentLoaded', function() {
   function escapeHtml(str) {
     if (!str) return '';
     return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+  }
+
+  function captionHtml(b) {
+    const source = b.image_source;
+    if (!source) return '';
+    const author = escapeHtml(b.image_photographer || '');
+    const url = escapeHtml(b.image_source_url || '');
+    if (source === 'manual') {
+      return url && author
+        ? `Foto: <a href="${url}" rel="noopener" target="_blank">${author}</a>`
+        : author ? `Foto: ${author}` : '';
+    }
+    if (source === 'wikipedia_infobox') {
+      return url
+        ? `Foto: <a href="${url}" rel="noopener" target="_blank">Wikipedia</a>`
+        : 'Foto: Wikipedia';
+    }
+    if (source === 'pexels') {
+      return url && author
+        ? `Foto: <a href="${url}" rel="noopener" target="_blank">${author}</a> / Pexels`
+        : author ? `Foto: ${author} / Pexels` : 'Foto: Pexels';
+    }
+    return '';
   }
 
   // ── Facility icons & labels ──────────────────────────────────────
@@ -1764,7 +1788,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     try {
       const { data: beach, error } = await db.from('beaches')
-        .select('id, name, region, description, image_url, water_quality, facilities, latitude, longitude, is_active, town')
+        .select('id, name, region, description, image_url, image_storage_url, image_source, image_photographer, image_source_url, image_license, water_quality, facilities, latitude, longitude, is_active, town')
         .eq('id', id)
         .single();
 
@@ -1810,14 +1834,25 @@ document.addEventListener('DOMContentLoaded', function() {
       // Hero
       const heroImg = document.getElementById('hero-img');
       heroImg.onerror = () => { heroImg.onerror = null; heroImg.src = '/beach-placeholder.svg'; };
-      if (beach.image_url) {
-        heroImg.src = beach.image_url;
+      const heroImgSrc = beach.image_storage_url || beach.image_url;
+      if (heroImgSrc) {
+        heroImg.src = heroImgSrc;
         heroImg.alt = `Praia ${beach.name} — ${beach.region || 'Portugal'}`;
       } else {
         heroImg.src = '/beach-placeholder.svg';
         heroImg.alt = `Praia em Portugal`;
       }
       document.getElementById('hero-name').textContent = beach.name;
+
+      // Hero image attribution
+      const attrEl = document.getElementById('hero-attribution');
+      if (attrEl) {
+        const caption = captionHtml(beach);
+        if (caption) {
+          attrEl.innerHTML = caption;
+          attrEl.style.display = '';
+        }
+      }
 
       // Populate favorite button data attrs
       const favBtn = document.querySelector('[data-favorite-btn]');

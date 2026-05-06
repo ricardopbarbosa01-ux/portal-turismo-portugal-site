@@ -590,7 +590,7 @@
     @media (max-width: 600px) { .beaches-guide-hint { padding:10px 4vw; } }
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260430">
+<link rel="stylesheet" href="/css/style.css?v=20260506-6b">
 </head>
 <body>
 
@@ -994,6 +994,39 @@ document.addEventListener('DOMContentLoaded', function () {
     return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  function captionHtml(b) {
+    const source = b.image_source;
+    if (!source) return '';
+    const author = escHtml(b.image_photographer || '');
+    const url = escHtml(b.image_source_url || '');
+    if (source === 'manual') {
+      return url && author
+        ? `Photo: <a href="${url}" rel="noopener" target="_blank">${author}</a>`
+        : author ? `Photo: ${author}` : '';
+    }
+    if (source === 'wikipedia_infobox') {
+      return url
+        ? `Photo: <a href="${url}" rel="noopener" target="_blank">Wikipedia</a>`
+        : 'Photo: Wikipedia';
+    }
+    if (source === 'pexels') {
+      return url && author
+        ? `Photo: <a href="${url}" rel="noopener" target="_blank">${author}</a> / Pexels`
+        : author ? `Photo: ${author} / Pexels` : 'Photo: Pexels';
+    }
+    return '';
+  }
+
+  function tooltipText(b) {
+    const license = b.image_license || '';
+    const author = b.image_photographer || '';
+    const parts = [];
+    if (author) parts.push(author);
+    if (license) parts.push(license);
+    if (b.image_source_url) parts.push('click to view source');
+    return parts.join(' · ');
+  }
+
   function updateCount(beaches) {
     const n = beaches.length;
     const html = `<strong>${n}</strong> beach${n !== 1 ? 'es' : ''}`;
@@ -1054,9 +1087,12 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCount(beaches);
 
     grid.innerHTML = beaches.map(b => {
-      const hasImage = b.image_url && String(b.image_url).trim();
+      const imgSrc = b.image_storage_url || b.image_url || '';
+      const hasImage = imgSrc && String(imgSrc).trim();
+      const caption = captionHtml(b);
+      const tooltip = tooltipText(b);
       const mediaHtml = hasImage
-        ? `<img class="beach-card-img" src="${escHtml(b.image_url)}" alt="${escHtml(b.name)}" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        ? `<img class="beach-card-img" src="${escHtml(imgSrc)}" alt="${escHtml(b.name)}" loading="lazy" decoding="async"${tooltip ? ` title="${escHtml(tooltip)}"` : ''} onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
         : '';
       const fallbackHtml = `<div class="beach-card-fallback"${hasImage ? ' style="display:none"' : ''}>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
@@ -1092,10 +1128,13 @@ document.addEventListener('DOMContentLoaded', function () {
                  onclick="window.location.href='${beachUrl}'"
                  onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='${beachUrl}'}"
                  style="cursor:pointer;display:flex;flex-direction:column;">
-          <div class="beach-card-img-wrap">
-            ${mediaHtml}${fallbackHtml}
-            ${b.region ? `<span class="beach-region-badge">${escHtml(b.region)}</span>` : ''}
-          </div>
+          <figure class="beach-card-figure"${b.image_source ? ` data-source="${escHtml(b.image_source)}"` : ''}>
+            <div class="beach-card-img-wrap">
+              ${mediaHtml}${fallbackHtml}
+              ${b.region ? `<span class="beach-region-badge">${escHtml(b.region)}</span>` : ''}
+            </div>${caption ? `
+            <figcaption class="beach-card-attribution">${caption}</figcaption>` : ''}
+          </figure>
           <div class="beach-card-body">
             <h2 class="beach-card-name">${escHtml(b.name)}</h2>
             ${descHtml}

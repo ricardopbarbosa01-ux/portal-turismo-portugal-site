@@ -1913,3 +1913,69 @@ input[type="number"], input[type="date"], input[type="search"] {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%);
   mask-image:         linear-gradient(to right, transparent 0%, black 48px, black calc(100% - 48px), transparent 100%);
 }
+
+/* ── Beach card image attribution (Phase 6B — CC BY-SA compliance) ─────────── */
+.beach-card-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.beach-card-attribution {
+  font-size: 11px;
+  font-family: var(--font-mono, monospace);
+  color: var(--areia-deep, #E5D6B5);
+  opacity: 0.6;
+  margin-top: 4px;
+  padding: 0 8px 6px;
+  text-align: right;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.beach-card-attribution a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  transition: opacity 0.2s;
+}
+
+.beach-card-attribution a:hover {
+  opacity: 1;
+  border-bottom-color: var(--dourado, #C9A24B);
+}
+
+.hero-attribution {
+  font-size: 11px;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-light, #8a9ab0);
+  opacity: 0.7;
+  text-align: right;
+  padding: 4px 16px 0;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.hero-attribution a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  transition: opacity 0.2s;
+}
+
+.hero-attribution a:hover {
+  opacity: 1;
+  border-bottom-color: var(--dourado, #C9A24B);
+}
+
+@media (max-width: 640px) {
+  .beach-card-attribution {
+    font-size: 10px;
+    padding: 0 6px 4px;
+  }
+  .hero-attribution {
+    font-size: 10px;
+    padding: 3px 12px 0;
+  }
+}
