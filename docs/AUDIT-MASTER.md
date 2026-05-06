@@ -246,3 +246,7 @@ Fase 6C-A entregue: card persuasivo homepage + páginas /escondidas placeholder.
 ## Fase 6C-B — Entregue 2026-05-06
 
 Redesign editorial cinemático do hero-secondary (skill frontend-design invocada). Layout 2-coluna 60/40 com número "10" como âncora visual (Fraunces 300, clamp 108px–210px). Foto Praia da Ursa migrada de Wikimedia (CSP block) para Supabase Storage (UUID a0529d77-b688-4293-ba11-8f023a69e4cf). Background navy sólido `#07152A` em vez de fullscreen photo overlay. Animação fade-in-up staggered via IntersectionObserver (threshold 0.25). Fraunces + IBM Plex Mono carregadas via Google Fonts. CSS cache `?v=20260506-6cb`. CSP problem do 6C-A resolvido — imagem agora servida a partir de supabase.co (já na allowlist).
+
+## Fase 6C-C — Entregue 2026-05-06
+
+Fase 6C-C entregue: refinamentos AI-modern aplicados ao hero-secondary (gradient text no número, breathing animation 6s, divider com gradient fade, foto com border-radius assimétrico, background com SVG noise overlay + gradient diagonal, cursor-reactive parallax via requestAnimationFrame). Acessibilidade: prefers-reduced-motion respeitado, hover:none detectado para mobile. CSS cache bumped para `?v=20260506-6cc`. Ficheiros modificados: `css/style.css`, `index.html`, `en/index.html`, `CLAUDE.md`, `docs/AUDIT-MASTER.md`.

@@ -80,7 +80,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260506-6cb">
+  <link rel="stylesheet" href="/css/style.css?v=20260506-6cc">
 
   <style>
 /* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
@@ -1636,6 +1636,42 @@
         });
       }, { threshold: 0.25 });
       observer.observe(heroSecondary);
+    })();
+  </script>
+  <script>
+    // Cursor-reactive parallax — divider + photo, max 4-6px, rAF-batched
+    (function() {
+      var card = document.getElementById('hidden-beaches-cta');
+      if (!card) return;
+      if (window.matchMedia('(hover: none)').matches) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var divider = card.querySelector('.hero-secondary__divider');
+      var image   = card.querySelector('.hero-secondary__image-column img');
+
+      var rafId = null;
+      var targetX = 0, targetY = 0;
+      var currentX = 0, currentY = 0;
+      var MAX_D = 4, MAX_I = 6, EASE = 0.08;
+
+      function tick() {
+        currentX += (targetX - currentX) * EASE;
+        currentY += (targetY - currentY) * EASE;
+        if (divider) divider.style.transform = 'translateX(' + (currentX * MAX_D) + 'px)';
+        if (image)   image.style.transform   = 'translate(' + (currentX * MAX_I) + 'px,' + (currentY * MAX_I) + 'px)';
+        rafId = requestAnimationFrame(tick);
+      }
+
+      card.addEventListener('mousemove', function(e) {
+        var r = card.getBoundingClientRect();
+        targetX = ((e.clientX - r.left)  / r.width  - 0.5) * 2;
+        targetY = ((e.clientY - r.top)   / r.height - 0.5) * 2;
+        if (!rafId) tick();
+      });
+
+      card.addEventListener('mouseleave', function() {
+        targetX = 0; targetY = 0;
+      });
     })();
   </script>
 </body>

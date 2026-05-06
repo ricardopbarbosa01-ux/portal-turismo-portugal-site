@@ -78,9 +78,17 @@ Prioritize in this order unless the user says otherwise:
 - Fraunces + IBM Plex Mono adicionadas ao Google Fonts (index.html + en/index.html)
 - CSS cache bumped para `?v=20260506-6cb`
 
+### Fase 6C-C → ✅ refinamentos AI-modern do hero-secondary (2026-05-06)
+- Foto: border-radius assimétrico `4px 64px 4px 64px` (desktop) / `4px 40px 4px 40px` (mobile) — clipping orgânico nos cantos opostos
+- Divider: `border-top` substituído por `linear-gradient` com fade transparent → dourado → transparent (80px, sem opacidade fixa)
+- Background: SVG noise overlay via `::before` (mix-blend: overlay, opacity 0.4) + gradient diagonal `#07152A → #0B1B2B → #0F2235` — warmth subtilíssimo no canto superior direito
+- Número "10": gradient text dourado→âmbar 135deg, `drop-shadow` filter, `breathe` animation 6s ease-in-out infinite (scale 1.0→1.015→1.0)
+- Cursor-reactive parallax: divider (4px max) + foto (6px max) via requestAnimationFrame, EASE 0.08 — suave e GPU-only (transform único). `hover:none` → skip, `prefers-reduced-motion` → skip
+- CSS cache bumped para `?v=20260506-6cc`
+
 ### TODOs
 - Páginas escondidas.html e en/hidden-beaches.html: produzir conteúdo editorial real (10 praias verificadas + fotos + texto)
-- Fase 6C-C (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
+- Fase 6C-D (futuro): substituir Unsplash hardcoded em 85 ficheiros restantes
 
 ## Hard guardrails
 - Do not touch auth logic without proven reason

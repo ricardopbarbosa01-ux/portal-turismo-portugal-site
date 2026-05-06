@@ -1976,16 +1976,31 @@ input[type="number"], input[type="date"], input[type="search"] {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Section shell — deep navy, no background photo */
+/* Section shell — deep navy, diagonal gradient + noise overlay */
 .hero-secondary {
-  background-color: #07152A;
+  background:
+    radial-gradient(ellipse at top right, rgba(201, 162, 75, 0.04) 0%, transparent 60%),
+    linear-gradient(135deg, #07152A 0%, #0B1B2B 60%, #0F2235 100%);
   color: #F2E8D5;
   margin: 64px 0 0;
   padding: 80px 40px;
   overflow: hidden;
+  position: relative;
 }
 
-/* Inner grid — 60/40 split */
+/* SVG noise texture — subtle digital grain, mix-blend: overlay */
+.hero-secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.6'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+/* Inner grid — 60/40 split; above noise layer */
 .hero-secondary__inner {
   display: grid;
   grid-template-columns: 60fr 40fr;
@@ -1993,6 +2008,8 @@ input[type="number"], input[type="date"], input[type="search"] {
   max-width: 1160px;
   margin: 0 auto;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 /* ── Text column ──────────────────────────────────────────────── */
@@ -2032,19 +2049,40 @@ input[type="number"], input[type="date"], input[type="search"] {
   margin: 0 0 8px;
 }
 
-/* Giant drop-cap number */
+/* Giant drop-cap number — gradient text + subtle breathe */
 .hero-secondary__number {
   font-family: 'Fraunces', Georgia, serif;
   font-weight: 300;
   font-size: clamp(108px, 16vw, 210px);
   line-height: 0.85;
-  color: #C9A24B;
-  opacity: 0.9;
+  background: linear-gradient(
+    135deg,
+    #C9A24B 0%,
+    #D4B362 35%,
+    #E07A26 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 4px 24px rgba(201, 162, 75, 0.15));
+  animation: breathe 6s ease-in-out infinite;
+  will-change: transform;
   flex-shrink: 0;
   margin-right: 16px;
-  /* Pull the number up to bleed into the kicker space */
   margin-top: -12px;
   letter-spacing: -0.04em;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.015); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-secondary__number {
+    animation: none;
+  }
 }
 
 /* Headline — stacks beside the giant number */
@@ -2061,14 +2099,23 @@ input[type="number"], input[type="date"], input[type="search"] {
   text-wrap: balance;
 }
 
-/* Gold divider line */
+/* Gold divider — gradient fade edges, cursor-reactive hook */
 .hero-secondary__divider {
   display: block;
-  width: 60px;
+  width: 80px;
+  height: 1px;
   border: none;
-  border-top: 1px solid #C9A24B;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #C9A24B 30%,
+    #C9A24B 70%,
+    transparent 100%
+  );
   margin: 28px 0 32px;
-  opacity: 0.75;
+  transform: translateX(0);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 /* Sub-headline */
@@ -2127,17 +2174,18 @@ input[type="number"], input[type="date"], input[type="search"] {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: 4px 64px 4px 64px;
   box-shadow: 0 28px 64px -16px rgba(0, 0, 0, 0.55),
               0 8px 24px -8px rgba(0, 0, 0, 0.35);
+  will-change: transform;
 }
 
-/* Subtle dark vignette around photo edges */
+/* Subtle dark vignette around photo edges — matches asymmetric radius */
 .hero-secondary__image-column::after {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 2px;
+  border-radius: 4px 64px 4px 64px;
   background: radial-gradient(ellipse at center, transparent 55%, rgba(7, 21, 42, 0.45) 100%);
   pointer-events: none;
 }
@@ -2176,6 +2224,7 @@ input[type="number"], input[type="date"], input[type="search"] {
     max-height: 380px;
     aspect-ratio: unset;
     width: 100%;
+    border-radius: 4px 40px 4px 40px;
   }
 
   .hero-secondary__number {
