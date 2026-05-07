@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<title>Media Kit 2026 — Portugal Travel Hub</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --nd:#050D17;
+  --nv:#0B1B2B;
+  --ar:#F2E8D5;
+  --do:#C9A24B;
+  --wh:#FFFFFF;
+  --ch:#1A1A1A;
+}
+
+@page{size:A4;margin:0;}
+@media print{
+  @page{size:A4;margin:0;}
+  body{margin:0;}
+  .page{page-break-after:always;}
+  .page:last-child{page-break-after:avoid;}
+}
+
+body{
+  font-family:'Inter','IBM Plex Sans',sans-serif;
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+  background:#fff;
+}
+
+.page{
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  position:relative;
+  page-break-after:always;
+}
+.page:last-child{page-break-after:avoid;}
+
+/* ─── PAGE 1: COVER ─────────────────────────────────────── */
+.p1{
+  background:linear-gradient(155deg,var(--nd) 0%,#071528 50%,#0c2040 100%);
+  display:flex;
+  flex-direction:column;
+  padding:17mm 18mm 14mm;
+}
+
+.p1-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.p1-badge{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  background:rgba(201,162,75,0.10);
+  border:1px solid rgba(201,162,75,0.25);
+  border-radius:50mm;
+  padding:2mm 5mm;
+}
+.p1-badge-dot{width:5px;height:5px;background:var(--do);border-radius:50%;}
+.p1-badge-text{
+  font-size:7pt;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(201,162,75,0.85);
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p1-lang{
+  font-size:7pt;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.30);
+  font-family:'Inter',sans-serif;
+}
+
+.p1-hero{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding-bottom:12mm;
+}
+
+.p1-eyebrow{
+  font-size:7pt;font-weight:400;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(201,162,75,0.55);
+  margin-bottom:7mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p1-hl{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:47pt;font-weight:700;
+  line-height:1.04;
+  color:var(--wh);
+  letter-spacing:-0.015em;
+  margin-bottom:8mm;
+  max-width:155mm;
+}
+
+.p1-rule{
+  width:14mm;height:1.5px;
+  background:var(--do);
+  margin-bottom:7mm;
+  opacity:0.75;
+}
+
+.p1-tagline{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:15pt;font-style:italic;font-weight:400;
+  color:var(--do);
+  line-height:1.45;
+  max-width:130mm;
+}
+
+.p1-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,0.09);
+  padding-top:5mm;
+}
+
+.p1-logo{display:flex;align-items:center;gap:6px;}
+.p1-logo svg{width:18px;height:18px;}
+.p1-logo-text{
+  font-size:8pt;font-weight:600;
+  color:rgba(255,255,255,0.70);
+  font-family:'Inter',sans-serif;
+}
+.p1-url{
+  font-size:7.5pt;
+  color:rgba(255,255,255,0.38);
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+/* ─── PAGE 2: MANIFESTO ──────────────────────────────────── */
+.p2{
+  display:grid;
+  grid-template-columns:1fr 68mm;
+  height:297mm;
+}
+
+.p2-main{
+  background:var(--ar);
+  padding:15mm 9mm 13mm 18mm;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.p2-eyebrow{
+  font-size:6.5pt;font-weight:700;
+  letter-spacing:0.20em;text-transform:uppercase;
+  color:var(--do);margin-bottom:4mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p2-hl{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:30pt;font-weight:700;
+  color:var(--nd);line-height:1.06;
+  margin-bottom:6mm;
+}
+
+.p2-body{
+  font-size:10.5pt;line-height:1.72;
+  color:#222;
+  font-family:'IBM Plex Sans',sans-serif;
+  font-weight:300;
+  flex:1;
+}
+.p2-body p{margin-bottom:3.5mm;}
+.p2-body p:last-child{margin-bottom:0;}
+.p2-body em{font-style:italic;color:#111;}
+
+.p2-sig{
+  margin-top:5mm;padding-top:4mm;
+  border-top:1px solid rgba(5,13,23,0.14);
+  font-size:8pt;color:rgba(5,13,23,0.50);
+  font-family:'Inter',sans-serif;font-weight:500;
+  line-height:1.5;
+}
+
+.p2-aside{
+  background:var(--nd);
+  padding:16mm 9mm 14mm 9mm;
+  display:flex;
+  align-items:center;
+}
+
+.p2-pull{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:17pt;font-style:italic;font-weight:400;
+  color:var(--wh);line-height:1.48;
+  position:relative;padding-top:7mm;
+}
+.p2-pull::before{
+  content:'';position:absolute;top:0;left:0;
+  width:11mm;height:2px;background:var(--do);
+}
+
+/* ─── PAGE 3: POSITIONING ────────────────────────────────── */
+.p3{
+  background:var(--nv);
+  padding:14mm 18mm 13mm;
+  display:flex;flex-direction:column;
+}
+
+.p3-eyebrow{
+  font-size:6.5pt;font-weight:700;
+  letter-spacing:0.20em;text-transform:uppercase;
+  color:rgba(201,162,75,0.70);margin-bottom:3mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p3-hl{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:31pt;font-weight:700;
+  color:var(--do);line-height:1.07;
+  margin-bottom:8mm;max-width:140mm;
+}
+
+.p3-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5mm;flex:1;
+}
+
+.p3-col{
+  border-radius:4mm;padding:7mm 8mm;
+}
+.p3-col-ind{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.09);
+}
+.p3-col-pth{
+  background:rgba(201,162,75,0.07);
+  border:1px solid rgba(201,162,75,0.22);
+}
+
+.p3-col-lbl{
+  font-size:6.5pt;font-weight:700;
+  letter-spacing:0.16em;text-transform:uppercase;
+  margin-bottom:3mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+.p3-col-ind .p3-col-lbl{color:rgba(255,255,255,0.38);}
+.p3-col-pth .p3-col-lbl{color:var(--do);}
+
+.p3-col-title{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:13pt;font-weight:700;
+  line-height:1.2;margin-bottom:4.5mm;
+}
+.p3-col-ind .p3-col-title{color:rgba(255,255,255,0.65);}
+.p3-col-pth .p3-col-title{color:var(--wh);}
+
+.p3-bullets{list-style:none;display:flex;flex-direction:column;gap:3mm;}
+.p3-bullet{
+  display:flex;align-items:flex-start;gap:6px;
+  font-size:9.5pt;line-height:1.52;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+.p3-col-ind .p3-bullet{color:rgba(255,255,255,0.52);}
+.p3-col-pth .p3-bullet{color:rgba(255,255,255,0.88);}
+
+.p3-col-ind .p3-bullet::before{content:'—';color:rgba(255,255,255,0.25);font-weight:700;flex-shrink:0;margin-top:1px;}
+.p3-col-pth .p3-bullet::before{content:'→';color:var(--do);font-weight:700;flex-shrink:0;margin-top:1px;}
+
+.p3-bottom{
+  margin-top:7mm;padding-top:6mm;
+  border-top:1px solid rgba(201,162,75,0.18);
+}
+.p3-quote{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:19pt;font-style:italic;
+  color:var(--do);line-height:1.30;
+}
+
+/* ─── PAGE 4: COVERAGE ───────────────────────────────────── */
+.p4{
+  background:var(--ar);
+  padding:12mm 18mm 11mm;
+  display:flex;flex-direction:column;
+}
+
+.p4-eyebrow{
+  font-size:6.5pt;font-weight:700;
+  letter-spacing:0.20em;text-transform:uppercase;
+  color:var(--do);margin-bottom:2.5mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p4-hl{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:27pt;font-weight:700;
+  color:var(--nd);line-height:1.08;
+  margin-bottom:7mm;
+}
+
+.p4-sec{
+  font-size:6pt;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(5,13,23,0.42);margin-bottom:3mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p4-regions{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:3mm;margin-bottom:7mm;
+}
+.p4-region{
+  background:var(--nd);
+  border-radius:2.5mm;
+  padding:4.5mm 2.5mm;
+  text-align:center;
+}
+.p4-rnum{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:18pt;font-weight:700;
+  color:var(--do);line-height:1;margin-bottom:2mm;
+}
+.p4-rname{
+  font-size:7pt;font-weight:500;
+  color:rgba(255,255,255,0.78);
+  font-family:'Inter',sans-serif;line-height:1.3;
+}
+
+.p4-themes{
+  display:flex;gap:2.5mm;flex-wrap:wrap;margin-bottom:7mm;
+}
+.p4-theme{
+  background:rgba(5,13,23,0.08);
+  border:1px solid rgba(5,13,23,0.12);
+  border-radius:50mm;
+  padding:2mm 5mm;
+  font-size:9pt;font-weight:500;
+  color:var(--nv);
+  font-family:'Inter',sans-serif;
+}
+
+.p4-persona{
+  background:var(--nd);border-radius:4mm;
+  padding:7mm 8mm;
+  display:grid;grid-template-columns:auto 1fr;
+  gap:7mm;align-items:start;
+  margin-bottom:4.5mm;
+}
+.p4-avatar{
+  width:17mm;height:17mm;
+  background:rgba(201,162,75,0.13);
+  border-radius:50%;
+  border:1.5px solid rgba(201,162,75,0.32);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.p4-pname{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:14pt;font-weight:700;
+  color:var(--wh);margin-bottom:1.5mm;
+}
+.p4-psub{
+  font-size:8.5pt;color:var(--do);
+  font-family:'IBM Plex Sans',sans-serif;margin-bottom:3mm;
+}
+.p4-facts{display:flex;gap:2.5mm;flex-wrap:wrap;}
+.p4-fact{
+  font-size:7.5pt;color:rgba(255,255,255,0.58);
+  background:rgba(255,255,255,0.06);
+  border-radius:50mm;padding:1.5mm 3.5mm;
+  font-family:'Inter',sans-serif;
+}
+
+.p4-footnote{
+  font-size:6.5pt;
+  color:rgba(5,13,23,0.40);
+  font-family:'IBM Plex Sans',sans-serif;
+  font-style:italic;line-height:1.55;
+}
+
+/* ─── PAGE 5: PARTNERSHIP ────────────────────────────────── */
+.p5{
+  background:var(--nv);
+  padding:12mm 18mm 11mm;
+  display:flex;flex-direction:column;
+}
+
+.p5-eyebrow{
+  font-size:6.5pt;font-weight:700;
+  letter-spacing:0.20em;text-transform:uppercase;
+  color:rgba(201,162,75,0.70);margin-bottom:2.5mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p5-hl{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:27pt;font-weight:700;
+  color:var(--do);line-height:1.08;
+  margin-bottom:6mm;
+}
+
+.p5-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4mm;margin-bottom:6mm;
+}
+.p5-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:3.5mm;padding:5.5mm 6mm;
+}
+.p5-cnum{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:20pt;font-weight:700;
+  color:rgba(201,162,75,0.20);
+  line-height:1;margin-bottom:2mm;
+}
+.p5-cname{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:12pt;font-weight:700;
+  color:var(--wh);line-height:1.2;margin-bottom:2mm;
+}
+.p5-cdesc{
+  font-size:8.5pt;
+  color:rgba(255,255,255,0.58);
+  line-height:1.55;
+  font-family:'IBM Plex Sans',sans-serif;
+  margin-bottom:3mm;
+}
+.p5-cprice{
+  font-size:7pt;font-weight:700;
+  letter-spacing:0.10em;text-transform:uppercase;
+  color:var(--do);
+  background:rgba(201,162,75,0.10);
+  border:1px solid rgba(201,162,75,0.22);
+  border-radius:50mm;
+  display:inline-block;
+  padding:1.5mm 4mm;
+  font-family:'Inter',sans-serif;
+}
+
+.p5-divider{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,162,75,0.35),transparent);
+  margin-bottom:5mm;
+}
+
+.p5-crit-lbl{
+  font-size:6pt;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(201,162,75,0.55);margin-bottom:3mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p5-crits{display:flex;flex-direction:column;gap:2.5mm;}
+.p5-crit{
+  display:flex;align-items:flex-start;gap:5px;
+  font-size:8.5pt;color:rgba(255,255,255,0.72);
+  line-height:1.48;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+.p5-crit::before{
+  content:'✓';color:#4ade80;font-size:9pt;
+  flex-shrink:0;margin-top:1px;
+}
+
+.p5-note{
+  margin-top:4mm;padding-top:3.5mm;
+  border-top:1px solid rgba(255,255,255,0.07);
+  font-size:7.5pt;
+  color:rgba(255,255,255,0.38);
+  font-style:italic;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+/* ─── PAGE 6: CONTACT ────────────────────────────────────── */
+.p6{
+  background:linear-gradient(155deg,var(--nd) 0%,var(--nv) 65%,#0f2540 100%);
+  padding:18mm 18mm 14mm;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+
+.p6-top{flex:1;display:flex;flex-direction:column;justify-content:center;}
+
+.p6-eyebrow{
+  font-size:6.5pt;font-weight:700;
+  letter-spacing:0.20em;text-transform:uppercase;
+  color:rgba(201,162,75,0.70);margin-bottom:5mm;
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p6-hl{
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:52pt;font-weight:700;
+  color:var(--wh);line-height:0.96;
+  margin-bottom:5mm;
+}
+
+.p6-sub{
+  font-size:12pt;
+  color:rgba(255,255,255,0.60);
+  line-height:1.60;
+  max-width:130mm;margin-bottom:10mm;
+  font-family:'IBM Plex Sans',sans-serif;
+  font-weight:300;
+}
+
+.p6-contacts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3.5mm 8mm;
+  margin-bottom:8mm;
+}
+.p6-contact{display:flex;align-items:center;gap:4mm;}
+.p6-cicon{
+  width:8mm;height:8mm;
+  background:rgba(201,162,75,0.12);
+  border-radius:2mm;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.p6-clbl{
+  font-size:6pt;text-transform:uppercase;
+  letter-spacing:0.14em;color:var(--do);
+  font-weight:700;font-family:'Inter',sans-serif;
+}
+.p6-cval{
+  font-size:8.5pt;color:rgba(255,255,255,0.80);
+  font-family:'IBM Plex Sans',sans-serif;line-height:1.3;
+}
+
+.p6-brand{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:3mm;
+  padding:3.5mm 5mm;
+  margin-bottom:8mm;
+  display:flex;align-items:center;gap:4mm;
+}
+.p6-brand-lbl{
+  font-size:7pt;font-weight:600;
+  color:rgba(255,255,255,0.42);
+  font-family:'Inter',sans-serif;
+}
+.p6-brand-url{
+  font-size:8pt;color:var(--do);
+  font-family:'IBM Plex Sans',sans-serif;
+}
+
+.p6-footer{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:4.5mm;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.p6-copy{
+  font-size:7pt;color:rgba(255,255,255,0.30);
+  font-family:'IBM Plex Sans',sans-serif;
+}
+.p6-tag{
+  font-size:8pt;font-style:italic;
+  color:rgba(201,162,75,0.50);
+  font-family:'Bodoni Moda',Georgia,serif;
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ P1: CAPA ══════════════ -->
+<section class="page p1">
+  <div class="p1-top">
+    <div class="p1-badge">
+      <span class="p1-badge-dot"></span>
+      <span class="p1-badge-text">Media Kit · 2026</span>
+    </div>
+    <span class="p1-lang">PT</span>
+  </div>
+
+  <div class="p1-hero">
+    <div class="p1-eyebrow">Portugal Travel Hub — Parcerias</div>
+    <h1 class="p1-hl">O Portugal<br>que não aparece<br>nos sites<br>de reservas.</h1>
+    <div class="p1-rule"></div>
+    <p class="p1-tagline">Verificado por locais.<br>Nunca leiloado.</p>
+  </div>
+
+  <footer class="p1-footer">
+    <div class="p1-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      <span class="p1-logo-text">Portugal Travel Hub</span>
+    </div>
+    <span class="p1-url">portalturismoportugal.com</span>
+  </footer>
+</section>
+
+<!-- ══════════════ P2: MANIFESTO ══════════════ -->
+<section class="page p2">
+  <div class="p2-main">
+    <div class="p2-eyebrow">Manifesto</div>
+    <h2 class="p2-hl">Como tudo<br>começou.</h2>
+    <div class="p2-body">
+      <p>Trabalhei vinte anos em hotelaria. Algarve, Dublin, Brasil. Fui director de hotel com 80 quartos, recepcionista com uma chave de quarto numa pensão, e tudo o que há entre essas duas coisas.</p>
+      <p>Num dia de verão de 2019, um hóspede chamado Mr. Cole — vinha de Manchester, estava com a mulher pela primeira vez em Portugal — aproximou-se do balcão de check-in e fez-me a pergunta que muda uma perspectiva: <em>"Há algum sítio onde os locais vão realmente? Não o que está no Booking."</em></p>
+      <p>Abri a gaveta. Retirei a pasta de cartolina azul. Era a pasta dos parceiros de comissão — os restaurantes que nos pagavam 15% por cada cliente enviado, as escolas de surf que entravam no pacote porque assinaram o contrato, os barcos de pesca no mapa porque alguém pagou pela posição.</p>
+      <p>Entreguei a pasta a Mr. Cole e disse: <em>"Temos estas sugestões."</em></p>
+      <p>No dia seguinte, cruzei-me com ele no corredor. Tinham ido jantar a um dos restaurantes da pasta. Disse que estava bem. Mas havia qualquer coisa no tom — aquela resignação educada dos turistas que percebem que foram encaminhados, não recomendados.</p>
+      <p>Fui para o escritório, fechei a porta, e fiquei a olhar para a pasta azul por um longo tempo.</p>
+      <p>O Portugal Travel Hub nasceu da recusa de ser mais uma pasta azul. Não listamos negócios porque pagam pela posição. Verificamos negócios porque cumprem padrões editoriais.</p>
+    </div>
+    <div class="p2-sig">Ricardo Barbosa, Founder · 20 anos em hotelaria · Algarve, Dublin, Brasil</div>
+  </div>
+
+  <aside class="p2-aside">
+    <blockquote class="p2-pull">
+      "Existem dois Portugais — o que aparece nas plataformas de reservas, e o que existe por detrás."
+    </blockquote>
+  </aside>
+</section>
+
+<!-- ══════════════ P3: POSICIONAMENTO ══════════════ -->
+<section class="page p3">
+  <div class="p3-eyebrow">Modelo de negócio</div>
+  <h2 class="p3-hl">Por que não leiloamos posição.</h2>
+
+  <div class="p3-cols">
+    <div class="p3-col p3-col-ind">
+      <div class="p3-col-lbl">O modelo da indústria</div>
+      <div class="p3-col-title">Booking · Expedia · TripAdvisor</div>
+      <ul class="p3-bullets">
+        <li class="p3-bullet">Posição determinada por quem paga mais — pay-to-rank aplicado em cada pesquisa</li>
+        <li class="p3-bullet">Comissões de 15–25% por reserva, deduzidas para sempre</li>
+        <li class="p3-bullet">Boost fees obrigatórios para sair das páginas 3 e 4</li>
+        <li class="p3-bullet">Os mesmos 10 resultados em todas as pesquisas de todas as regiões</li>
+      </ul>
+    </div>
+
+    <div class="p3-col p3-col-pth">
+      <div class="p3-col-lbl">O modelo PTH</div>
+      <div class="p3-col-title">Portugal Travel Hub</div>
+      <ul class="p3-bullets">
+        <li class="p3-bullet">Verificação editorial, não visibilidade paga — a selecção é independente</li>
+        <li class="p3-bullet">Sem leilões, sem bidding, sem comissões por reserva</li>
+        <li class="p3-bullet">Selo editorial "Parceiro Verificado" — qualifica, não compra posição</li>
+        <li class="p3-bullet">Parceria mensal fixa — previsibilidade e transparência total</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="p3-bottom">
+    <p class="p3-quote">"Pagamos pela verificação, não pela posição."</p>
+  </div>
+</section>
+
+<!-- ══════════════ P4: COBERTURA ══════════════ -->
+<section class="page p4">
+  <div class="p4-eyebrow">Cobertura editorial</div>
+  <h2 class="p4-hl">O que cobrimos. Quem alcançamos.</h2>
+
+  <div class="p4-sec">6 regiões costeiras</div>
+  <div class="p4-regions">
+    <div class="p4-region"><div class="p4-rnum">01</div><div class="p4-rname">Norte</div></div>
+    <div class="p4-region"><div class="p4-rnum">02</div><div class="p4-rname">Centro</div></div>
+    <div class="p4-region"><div class="p4-rnum">03</div><div class="p4-rname">Alentejo</div></div>
+    <div class="p4-region"><div class="p4-rnum">04</div><div class="p4-rname">Algarve</div></div>
+    <div class="p4-region"><div class="p4-rnum">05</div><div class="p4-rname">Açores</div></div>
+    <div class="p4-region"><div class="p4-rnum">06</div><div class="p4-rname">Madeira</div></div>
+  </div>
+
+  <div class="p4-sec">5 temáticas editoriais</div>
+  <div class="p4-themes">
+    <span class="p4-theme">Praias</span>
+    <span class="p4-theme">Surf</span>
+    <span class="p4-theme">Pesca</span>
+    <span class="p4-theme">Webcams ao vivo</span>
+    <span class="p4-theme">Planeamento de viagem</span>
+  </div>
+
+  <div class="p4-sec">Persona-alvo — viajante tipo</div>
+  <div class="p4-persona">
+    <div class="p4-avatar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,162,75,0.65)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </div>
+    <div>
+      <div class="p4-pname">James, 47 — Surrey, Reino Unido</div>
+      <div class="p4-psub">£80–150k / ano · Planeia com 4–6 meses de antecedência</div>
+      <div class="p4-facts">
+        <span class="p4-fact">Times Travel</span>
+        <span class="p4-fact">Condé Nast Traveller</span>
+        <span class="p4-fact">Monocle</span>
+        <span class="p4-fact">Surf · vela · pesca</span>
+        <span class="p4-fact">Foge das multidões</span>
+        <span class="p4-fact">Estadia 10–14 dias</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="p4-footnote">† Fonte: INE 2024 — O Reino Unido é o primeiro mercado emissor de turistas para Portugal, representando 14,7% das dormidas totais registadas. A audiência do portal reflecte esta dominância geográfica.</p>
+</section>
+
+<!-- ══════════════ P5: PARCERIA ══════════════ -->
+<section class="page p5">
+  <div class="p5-eyebrow">Modelos de colaboração</div>
+  <h2 class="p5-hl">Como funcionam parcerias.</h2>
+
+  <div class="p5-cards">
+    <div class="p5-card">
+      <div class="p5-cnum">01</div>
+      <div class="p5-cname">Spotlight em página de praia</div>
+      <p class="p5-cdesc">Perfil em posição premium nas páginas de praia da sua região — foto, descrição e link directo. Visibilidade no momento exacto em que o viajante decide onde ir.</p>
+      <span class="p5-cprice">Sob proposta</span>
+    </div>
+    <div class="p5-card">
+      <div class="p5-cnum">02</div>
+      <div class="p5-cname">Slot de webcam ao vivo</div>
+      <p class="p5-cdesc">Presença contextual junto a feeds de webcam costeira em tempo real. Utilizadores de alta frequência que regressam diariamente — máxima recorrência de exposição.</p>
+      <span class="p5-cprice">Sob proposta</span>
+    </div>
+    <div class="p5-card">
+      <div class="p5-cnum">03</div>
+      <div class="p5-cname">Perfil premium de parceiro</div>
+      <p class="p5-cdesc">Página pública exclusiva com editorial completo, badge "Parceiro Verificado", contacto e link. Indexada nos motores de busca com Schema markup de negócio local.</p>
+      <span class="p5-cprice">Sob proposta</span>
+    </div>
+    <div class="p5-card">
+      <div class="p5-cnum">04</div>
+      <div class="p5-cname">Campanha sazonal</div>
+      <p class="p5-cdesc">Integração contextual em guias temáticos e artigos do portal em períodos de pico — editorial, não publicidade disfarçada. Negociado caso a caso com proposta à medida.</p>
+      <span class="p5-cprice">Sob proposta</span>
+    </div>
+  </div>
+
+  <div class="p5-divider"></div>
+
+  <div class="p5-crit-lbl">Critérios de elegibilidade</div>
+  <div class="p5-crits">
+    <div class="p5-crit">Negócio real e verificável — presença online activa e descoberta de forma independente</div>
+    <div class="p5-crit">Reviews positivas em plataformas públicas (mínimo 4.0 no Google ou TripAdvisor)</div>
+    <div class="p5-crit">Material fotográfico de qualidade representativo do espaço e do serviço</div>
+    <div class="p5-crit">Compromisso de resposta a leads capturados pelo portal em 5 dias úteis</div>
+    <div class="p5-crit">Serviço directamente relevante para o turismo costeiro — surf, pesca, alojamento, náutica ou natureza</div>
+  </div>
+
+  <p class="p5-note">Cada parceiro recebe proposta personalizada em 48h após qualificação editorial.</p>
+</section>
+
+<!-- ══════════════ P6: CONTACTO ══════════════ -->
+<section class="page p6">
+  <div class="p6-top">
+    <div class="p6-eyebrow">Contacto · Parcerias</div>
+    <h2 class="p6-hl">Vamos<br>falar.</h2>
+    <p class="p6-sub">Se o seu negócio cabe na linha editorial, o processo é simples. Resposta em 48 horas.</p>
+
+    <div class="p6-contacts">
+      <div class="p6-contact">
+        <div class="p6-cicon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(201,162,75,0.80)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="p6-clbl">B2B · Parcerias</div>
+          <div class="p6-cval">parceiros@portalturismoportugal.com</div>
+        </div>
+      </div>
+
+      <div class="p6-contact">
+        <div class="p6-cicon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(201,162,75,0.80)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="p6-clbl">Geral</div>
+          <div class="p6-cval">ola@portalturismoportugal.com</div>
+        </div>
+      </div>
+
+      <div class="p6-contact">
+        <div class="p6-cicon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(201,162,75,0.80)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="p6-clbl">LinkedIn</div>
+          <div class="p6-cval">linkedin.com/in/ricardobarbosa-pth</div>
+        </div>
+      </div>
+
+      <div class="p6-contact">
+        <div class="p6-cicon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(201,162,75,0.80)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="p6-clbl">Website</div>
+          <div class="p6-cval">portalturismoportugal.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p6-brand">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(201,162,75,0.55)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span class="p6-brand-lbl">Assets da marca:</span>
+      <span class="p6-brand-url">portalturismoportugal.com/brand</span>
+    </div>
+  </div>
+
+  <footer class="p6-footer">
+    <span class="p6-copy">© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span class="p6-tag">Verified by locals. Never auctioned.</span>
+  </footer>
+</section>
+
+</body>
+</html>

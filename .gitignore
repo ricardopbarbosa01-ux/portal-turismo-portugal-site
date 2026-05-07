@@ -62,3 +62,4 @@ _scripts/audit/pages.json
 _scripts/audit/package-lock.json
 
 !media-kit.pdf
+!media-kit-en.pdf
