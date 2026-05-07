@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -432,7 +432,7 @@
     .seo-guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260506-6cg">
+<link rel="stylesheet" href="/css/style.css?v=20260507-mob">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/js/image-autofix.js"></script>
 </head>
@@ -923,12 +923,12 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="/js/config.js?v=20260504" defer></script>
+<script src="/js/config.js?v=20260507-mob" defer></script>
 
 <script>
 
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => document.getElementById('nav-toggle').click());
+  document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
 
   // ── Helper ───────────────────────────────────────────────────────
   function esc(s) {

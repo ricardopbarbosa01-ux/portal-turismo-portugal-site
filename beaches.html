@@ -410,9 +410,9 @@
 
     @media (max-width: 768px) {
       .mobile-bottom-nav { display: block; }
-      body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
+      body { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
       .toast { bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important; right: 16px !important; left: 16px !important; }
-      .chips-bar { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 10px 4vw; }
+      .chips-bar { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 10px 4vw; mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%); -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%); }
       .chips-bar::-webkit-scrollbar { display: none; }
       .chip { min-height: 44px; flex-shrink: 0; padding: 10px 18px; font-size: 0.85rem; }
       .filters-bar { padding: 12px 4vw; gap: 8px; }
@@ -607,7 +607,7 @@
     @media (max-width: 600px) { .beaches-guide-hint { padding:10px 4vw; } }
   </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260506-6b1">
+<link rel="stylesheet" href="/css/style.css?v=20260507-mob">
 </head>
 <body>
 
@@ -1008,7 +1008,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/nav.js?v=20260422c" defer></script>
 <script src="js/chips-fade.js" defer></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260507-mob" defer></script>
 <script>
 
   // nav.js handles #nav-toggle (mobile hamburger + Escape + overlay close)
@@ -1346,13 +1346,17 @@
   });
 
   // ── Mobile bottom nav actions ────────────────────────────────────
-  document.getElementById('mob-search-btn')?.addEventListener('click', () => {
-    const inp = document.getElementById('search-input');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => inp.focus(), 300);
-  });
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => {
-    document.getElementById('nav-toggle').click();
+  // DOMContentLoaded required: buttons are in HTML after this script block
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('mob-search-btn')?.addEventListener('click', () => {
+      const inp = document.getElementById('search-input');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => inp.focus(), 300);
+    });
+    document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.getElementById('nav-toggle').click();
+    });
   });
 </script>
 
@@ -1387,5 +1391,6 @@
 </script>
 
   <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/beaches-paginate.js?v=20260507-mob" defer></script>
 </body>
 </html>

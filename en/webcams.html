@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -316,7 +316,7 @@
     .wcam-sponsor-cta svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;}
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260506-6cg">
+<link rel="stylesheet" href="/css/style.css?v=20260507-mob">
   <script src="/js/image-autofix.js"></script>
 </head>
 <body>
@@ -692,13 +692,13 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260507-mob" defer></script>
 
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => document.getElementById('nav-toggle').click());
+  document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
 
   // ── XSS helper ───────────────────────────────────────────────────
   function esc(s) {

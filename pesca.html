@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
@@ -162,7 +162,7 @@
     .tipo-tab.active{background:var(--blue);color:var(--white);border-color:var(--blue);}
     .spot-count{margin-left:auto;font-size:0.8rem;color:var(--text-light);white-space:nowrap;}
     .spot-count strong{color:var(--blue);}
-    .region-chips-bar{padding:10px 5vw;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-top:1px solid var(--border);}
+    .region-chips-bar{padding:10px 5vw;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-top:1px solid var(--border);mask-image:linear-gradient(to right,black calc(100% - 28px),transparent 100%);-webkit-mask-image:linear-gradient(to right,black calc(100% - 28px),transparent 100%);}
     .region-chips-bar::-webkit-scrollbar{display:none;}
     .chip{padding:6px 16px;border-radius:50px;border:1.5px solid var(--border);background:var(--off-white);color:var(--text-mid);font-size:0.78rem;font-weight:500;cursor:pointer;transition:all var(--transition);min-height:34px;white-space:nowrap;display:inline-flex;align-items:center;flex-shrink:0;}
     .chip:hover{border-color:var(--blue-mid);color:var(--blue);}
@@ -475,7 +475,7 @@
     .estilo-subtitle{font-size:0.875rem;color:var(--text-mid);line-height:1.65;margin-top:8px;max-width:540px;}
   </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260506-6cg">
+<link rel="stylesheet" href="/css/style.css?v=20260507-mob">
   <script src="/js/image-autofix.js"></script>
 </head>
 <body>
@@ -1036,11 +1036,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/nav.js?v=20260422c" defer></script>
 <script src="js/chips-fade.js" defer></script>
-<script src="/js/config.js?v=20260430" defer></script>
+<script src="/js/config.js?v=20260507-mob" defer></script>
 <script>
 
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => document.getElementById('nav-toggle').click());
+  document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
 
   // ── XSS helper ───────────────────────────────────────────────────
   function esc(s) {
@@ -1470,6 +1470,7 @@
 </script>
 <script src="/js/lang-switcher.js" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/beaches-paginate.js?v=20260507-mob" defer></script>
 <script>
   (function() {
     var hero = document.querySelector('.page-hero');

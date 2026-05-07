@@ -674,7 +674,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 480px) {
-  .hero__headline { font-size: clamp(24px, 10vw, 40px); }
+  .hero__headline { font-size: clamp(24px, 10vw, 40px); overflow-wrap: break-word; hyphens: auto; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__cta { justify-content: center; }
 }
@@ -891,6 +891,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 768px) {
   .page-hero__headline {
     font-size: clamp(32px, 7vw, 56px);
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   .page-hero__actions {
     flex-direction: column;
@@ -1391,7 +1393,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
   }
   /* Body padding so content isn't hidden behind bottom nav */
-  body:has(.bottom-nav) { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.bottom-nav) { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
   /* Toast above bottom nav */
   .toast { bottom: calc(70px + env(safe-area-inset-bottom, 0px)); right: 16px; }
 }
@@ -2684,4 +2686,31 @@ input[type="number"], input[type="date"], input[type="search"] {
   .planear-cta__guides-list a {
     text-align: center;
   }
+}
+
+/* ── Progressive pagination Load More button ─────────────────────────────── */
+.load-more-btn {
+  display: block;
+  margin: 32px auto;
+  padding: 14px 36px;
+  background: var(--navy, #0B1B2B);
+  color: var(--areia, #F2E8D5);
+  border: none;
+  border-radius: 4px 16px 4px 16px;
+  font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  min-height: 44px;
+  min-width: 160px;
+}
+.load-more-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.load-more-btn:active {
+  transform: translateY(0);
 }
