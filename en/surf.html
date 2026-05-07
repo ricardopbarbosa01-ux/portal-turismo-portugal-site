@@ -104,8 +104,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <style>
 :root {
@@ -137,25 +137,6 @@
     .btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);}
     .btn-blue:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
 
-    /* ── Hero ── */
-    .surf-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#050f1f 0%,#0a2a50 55%,#0a3d6b 100%);padding:120px 5vw 84px;text-align:center;}
-    .surf-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.07) 0%,transparent 70%);}
-    .surf-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-    .surf-hero-overlay{position:absolute;inset:0;background:rgba(6,13,26,0.78);z-index:1;}
-    @media(max-width:768px){.surf-hero-video{display:none;}}
-    @media(prefers-reduced-motion:reduce){.surf-hero-video{display:none;}.surf-hero *{animation:none!important;}}
-    .surf-hero-inner{position:relative;max-width:760px;margin:0 auto;}
-    .surf-hero-tag{font-size:0.75rem;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-    .surf-hero-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:var(--white);font-weight:700;line-height:1.08;margin-bottom:20px;}
-    .surf-hero-title em{font-style:italic;color:var(--gold-light);}
-    .surf-hero-subtitle{font-size:1.05rem;color:rgba(255,255,255,0.72);max-width:540px;margin:0 auto 28px;line-height:1.7;}
-    .surf-hero-stats{display:flex;align-items:center;justify-content:center;margin-bottom:28px;background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:12px 24px;width:fit-content;margin-left:auto;margin-right:auto;}
-    .surf-hero-stat{text-align:center;padding:0 20px;}
-    .surf-hero-stat-value{display:block;font-family:'Bodoni Moda',serif;font-size:1.4rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:2px;}
-    .surf-hero-stat-label{display:block;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.82);}
-    .surf-hero-stat-div{width:1px;height:28px;background:rgba(255,255,255,0.18);flex-shrink:0;}
-    .surf-hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    .surf-hero-wave{position:absolute;bottom:-1px;left:0;right:0;width:100%;height:64px;display:block;}
 
     /* ── Breadcrumb ── */
     .breadcrumb{padding:16px 5vw 0;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-light);}
@@ -304,8 +285,6 @@
       .spots-section{padding:24px 4vw 48px;}
     }
     @media(max-width:540px){
-      .surf-hero-actions{flex-direction:column;align-items:center;}
-      .surf-hero-stat{padding:0 14px;}
       .spots-grid{grid-template-columns:1fr;gap:16px;}
       .guide-cards{grid-template-columns:1fr;}
       .surf-faq{padding:40px 4vw;}
@@ -313,49 +292,6 @@
       .surf-cta{padding:40px 4vw;}
     }
 
-    /* ══ Hero 2-col ══ */
-    .surf-hero{padding:116px 5vw 80px;text-align:left;}
-    @media(max-height:1000px) and (min-width:541px){
-      .surf-hero{padding:80px 5vw 80px;}
-      .surf-hero-stats,.surf-hero-stats-row{margin-bottom:20px;}
-      .surf-hero-subtitle{margin-bottom:20px;}
-    }
-    .surf-hero-2col{position:relative;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:center;z-index:1;}
-    @media(max-width:900px){.surf-hero-2col{grid-template-columns:1fr;gap:36px;text-align:center;}}
-    .surf-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.28);border-radius:50px;padding:6px 14px 6px 10px;margin-bottom:24px;}
-    .surf-hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
-    .surf-hero-badge span{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);}
-    .surf-hero-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.4rem,5.5vw,4rem);color:var(--white);font-weight:700;line-height:1.06;margin-bottom:20px;}
-    .surf-hero-title em{font-style:italic;color:var(--gold-light);}
-    .surf-hero-subtitle{font-size:clamp(0.97rem,1.7vw,1.08rem);color:rgba(255,255,255,0.72);max-width:520px;margin:0 0 30px;line-height:1.75;}
-    @media(max-width:900px){.surf-hero-subtitle{margin:0 auto 30px;}}
-    .surf-hero-stats-row{display:flex;align-items:center;gap:0;background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:10px 20px;width:fit-content;margin-bottom:28px;}
-    @media(max-width:900px){.surf-hero-stats-row{margin:0 auto 28px;}}
-    .surf-hero-stat{text-align:center;padding:0 16px;}
-    .surf-hero-stat-value{display:block;font-family:'Bodoni Moda',serif;font-size:1.3rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:2px;}
-    .surf-hero-stat-label{display:block;font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.82);}
-    .surf-hero-stat-div{width:1px;height:24px;background:rgba(255,255,255,0.15);flex-shrink:0;}
-    .surf-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
-    @media(max-width:900px){.surf-hero-actions{justify-content:center;}}
-    .surf-hero-trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.09);}
-    @media(max-width:900px){.surf-hero-trust{justify-content:center;}}
-    .surf-hero-trust-item{display:flex;align-items:center;gap:6px;font-size:0.76rem;color:rgba(255,255,255,0.80);}
-    .surf-hero-trust-item svg{width:12px;height:12px;stroke:var(--gold);fill:none;stroke-width:2.5;flex-shrink:0;}
-    /* Hero visual card */
-    .surf-hero-visual{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:24px;backdrop-filter:blur(16px);}
-    @media(max-width:900px){.surf-hero-visual{display:none;}}
-    .shv-label{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-    .shv-spot-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
-    .shv-spot-row:last-child{border-bottom:none;padding-bottom:0;}
-    .shv-spot-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .shv-spot-icon svg{width:16px;height:16px;stroke:var(--white);fill:none;stroke-width:1.8;}
-    .shv-spot-name{font-size:0.88rem;font-weight:600;color:var(--white);line-height:1;}
-    .shv-spot-meta{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:2px;}
-    .shv-spot-dots{display:flex;gap:3px;margin-left:auto;flex-shrink:0;}
-    .shv-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.20);}
-    .shv-dot.on{background:var(--gold);}
-    .surf-hero-wave-svg{display:block;margin-top:0;}
-    @media(max-width:540px){.surf-hero{padding:88px 4vw 48px;}}
 
     /* ══ Who Is It For ══ */
     .surf-quem{background:var(--white);padding:72px 5vw;}
@@ -493,7 +429,7 @@
     .seo-guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260430">
+<link rel="stylesheet" href="/css/style.css?v=20260506-6cg">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/js/image-autofix.js"></script>
 </head>
@@ -537,114 +473,48 @@
   </div>
 </nav>
 
+<svg style="position:absolute;width:0;height:0;pointer-events:none" aria-hidden="true">
+  <defs>
+    <clipPath id="hero-wave-clip" clipPathUnits="objectBoundingBox">
+      <path d="M 0.0,0.0 C 0.15,0.05 0.05,0.20 0.18,0.32 C 0.30,0.42 0.10,0.55 0.20,0.68 C 0.32,0.78 0.12,0.90 0.18,1.0 L 1.0,1.0 L 1.0,0.0 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
 <main id="main">
   <!-- Hero -->
-  <section class="surf-hero" aria-labelledby="surf-hero-heading">
-    <video
-      class="surf-hero-video"
-      id="surf-bg-video"
-      src="https://cdn.portalturismoportugal.com/surf-hero.mp4"
-      poster="https://cdn.portalturismoportugal.com/surf-hero-poster.jpg"
-      preload="metadata" playsinline autoplay muted loop
-      aria-hidden="true"
-    ></video>
-    <div class="surf-hero-overlay" aria-hidden="true"></div>
-    <div class="surf-hero-2col">
-      <!-- Left -->
-      <div>
-        <div class="surf-hero-badge">
-          <span class="surf-hero-badge-dot" aria-hidden="true"></span>
-          <span>Surf · Atlantic · Portugal</span>
-        </div>
-        <h1 class="surf-hero-title" id="surf-hero-heading">Surfing in<br><em>Portugal</em></h1>
-        <p class="surf-hero-subtitle">From Supertubos and Nazaré to the deserted beaches of the Vicentina Coast — world-class spots for all levels, with editorial guide and certified schools.</p>
-        <div class="surf-hero-stats-row" aria-label="Guide summary">
-          <div class="surf-hero-stat">
-            <span class="surf-hero-stat-value">8</span>
-            <span class="surf-hero-stat-label">Spots</span>
-          </div>
-          <div class="surf-hero-stat-div" aria-hidden="true"></div>
-          <div class="surf-hero-stat">
-            <span class="surf-hero-stat-value">7</span>
-            <span class="surf-hero-stat-label">Regions</span>
-          </div>
-          <div class="surf-hero-stat-div" aria-hidden="true"></div>
-          <div class="surf-hero-stat">
-            <span class="surf-hero-stat-value">12 months</span>
-            <span class="surf-hero-stat-label">Active season</span>
-          </div>
-        </div>
-        <div class="surf-hero-actions">
-          <a href="#spots" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-            Explore Spots
-          </a>
-          <a href="/en/planear.html?source=surf&tipo=surf&intent=planear" class="btn btn-outline">Plan Your Surf Trip</a>
-        </div>
-        <div class="surf-hero-trust" aria-label="Guide guarantees">
-          <span class="surf-hero-trust-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Verified spots
-          </span>
-          <span class="surf-hero-trust-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Certified schools
-          </span>
-          <span class="surf-hero-trust-item">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Independent editorial guide
-          </span>
-        </div>
-      </div>
-
-      <!-- Right: CSS visual card -->
-      <div class="surf-hero-visual" aria-hidden="true">
-        <p class="shv-label">Featured Spots</p>
-        <div class="shv-spot-row">
-          <div class="shv-spot-icon" style="background:linear-gradient(135deg,#050e1e,#0a2848);">
-            <svg viewBox="0 0 24 24"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-          </div>
-          <div>
-            <p class="shv-spot-name">Supertubos</p>
-            <p class="shv-spot-meta">Peniche · Advanced · WSL</p>
-          </div>
-          <div class="shv-spot-dots"><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span></div>
-        </div>
-        <div class="shv-spot-row">
-          <div class="shv-spot-icon" style="background:linear-gradient(135deg,#1c1005,#3a2408);">
-            <svg viewBox="0 0 24 24"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-          </div>
-          <div>
-            <p class="shv-spot-name">Praia do Amado</p>
-            <p class="shv-spot-meta">Algarve · Beginner–Interm.</p>
-          </div>
-          <div class="shv-spot-dots"><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot"></span></div>
-        </div>
-        <div class="shv-spot-row">
-          <div class="shv-spot-icon" style="background:linear-gradient(135deg,#082040,#103870);">
-            <svg viewBox="0 0 24 24"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-          </div>
-          <div>
-            <p class="shv-spot-name">Costa da Caparica</p>
-            <p class="shv-spot-meta">Lisbon · All Levels</p>
-          </div>
-          <div class="shv-spot-dots"><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot"></span></div>
-        </div>
-        <div class="shv-spot-row">
-          <div class="shv-spot-icon" style="background:linear-gradient(135deg,#041810,#0a2c1e);">
-            <svg viewBox="0 0 24 24"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-          </div>
-          <div>
-            <p class="shv-spot-name">Santa Bárbara</p>
-            <p class="shv-spot-meta">Azores · Intermediate–Advanced</p>
-          </div>
-          <div class="shv-spot-dots"><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span><span class="shv-dot on"></span></div>
-        </div>
+  <section class="page-hero" aria-label="Surfing in Portugal">
+    <div class="page-hero__media">
+      <img class="page-hero__image"
+           src="https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/card-images/beaches/7f6e2b93-211c-4e22-87ff-f1565a019ca6.jpg"
+           alt="Surfing in Portugal — Praia do Norte, Nazaré"
+           loading="eager">
+      <div class="page-hero__media-overlay" aria-hidden="true"></div>
+      <p class="page-hero__attribution" data-source-url="https://commons.wikimedia.org/wiki/File:Nazaré_-_Surfing_the_Biggest_Wave.jpg">Photo: Wikimedia · Sergey Mysovskiy</p>
+    </div>
+    <div class="page-hero__content">
+      <p class="page-hero__kicker">SURF IN PORTUGAL · NAZARÉ AND COAST</p>
+      <h1 class="page-hero__headline">
+        <span class="page-hero__line">
+          <span class="page-hero__word" style="--i:0">Where</span>
+          <span class="page-hero__word" style="--i:1">Nazaré</span>
+        </span>
+        <span class="page-hero__line">
+          <span class="page-hero__word" style="--i:2">shows</span>
+          <span class="page-hero__word" style="--i:3">the</span>
+          <span class="page-hero__word" style="--i:4">real</span>
+          <span class="page-hero__word" style="--i:5">Atlantic.</span>
+        </span>
+      </h1>
+      <p class="page-hero__sub">From Supertubos and Nazaré to the deserted beaches of the Vicentina Coast — world-class spots for all levels, with editorial guide and certified schools.</p>
+      <div class="page-hero__actions">
+        <a href="#spots" class="page-hero__cta page-hero__cta--primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
+          Explore Spots
+        </a>
+        <a href="/en/planear.html?source=surf&tipo=surf&intent=planear" class="page-hero__cta page-hero__cta--secondary">Plan Your Surf Trip</a>
       </div>
     </div>
-    <svg class="surf-hero-wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" style="display:block;margin-top:48px;width:100%;">
-      <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#f6f4ef"/>
-    </svg>
   </section>
 
   <!-- Breadcrumb -->
@@ -1566,5 +1436,35 @@
 <script src="/js/lang-switcher.js" defer></script>
 <script src="/js/nav.js?v=20260422c" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
+<script>
+  (function() {
+    var hero = document.querySelector('.page-hero');
+    if (!hero) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var media = hero.querySelector('.page-hero__media');
+    if (!media) return;
+    var rafId = null, targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+    var EASE = 0.06;
+    function animate() {
+      currentX += (targetX - currentX) * EASE;
+      currentY += (targetY - currentY) * EASE;
+      media.style.transform = 'translate(' + (currentX * 6) + 'px, ' + (currentY * 6) + 'px)';
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        rafId = requestAnimationFrame(animate);
+      } else { rafId = null; }
+    }
+    hero.addEventListener('mousemove', function(e) {
+      var rect = hero.getBoundingClientRect();
+      targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      if (!rafId) animate();
+    });
+    hero.addEventListener('mouseleave', function() {
+      targetX = 0; targetY = 0;
+      if (!rafId) animate();
+    });
+  })();
+</script>
 </body>
 </html>

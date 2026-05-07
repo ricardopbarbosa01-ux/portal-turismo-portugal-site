@@ -20,8 +20,10 @@ smoke-test.png
 .mcp.json
 
 # Local environment — credentials never committed
+.env
 .env.local
 .env*.local
+# Environment secrets (NEVER COMMIT)
 
 # Test data — contains UUIDs and seed rows, never commit to production
 _scripts/test-rls-setup.sql
@@ -51,3 +53,12 @@ _scripts/test-rls-setup.sql
 
 # README files from imported asset packages (e.g. icon packs)
 /README.md
+
+# Playwright visual audit — heavy local outputs, not for repo
+_scripts/audit/node_modules/
+_scripts/audit/screenshots/
+_scripts/audit/audit-results.json
+_scripts/audit/pages.json
+_scripts/audit/package-lock.json
+
+!media-kit.pdf

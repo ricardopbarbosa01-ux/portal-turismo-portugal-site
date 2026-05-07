@@ -54,7 +54,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <style>
 :root {
@@ -85,26 +86,6 @@
     .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 30px var(--gold-glow);}
     
     }
-
-    /* ── Hero ── */
-    .wcam-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#050f1f 0%,#071c38 55%,#0a3d6b 100%);padding:120px 5vw 84px;text-align:center;}
-    .wcam-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.06) 0%,transparent 70%);}
-    .wcam-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-    .wcam-hero-overlay{position:absolute;inset:0;background:rgba(6,13,26,0.65);z-index:1;}
-    @media(max-width:768px){.wcam-hero-video{display:none;}}
-    @media(prefers-reduced-motion:reduce){.wcam-hero-video{display:none;}.wcam-hero *{animation:none!important;}}
-    .wcam-hero-inner{position:relative;max-width:760px;margin:0 auto;}
-    .wcam-hero-tag{font-size:0.75rem;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-    .wcam-hero-title{font-family:'Bodoni Moda',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:var(--white);font-weight:700;line-height:1.08;margin-bottom:20px;}
-    .wcam-hero-title em{font-style:italic;color:var(--gold-light);}
-    .wcam-hero-subtitle{font-size:1.05rem;color:rgba(255,255,255,0.72);max-width:560px;margin:0 auto 28px;line-height:1.7;}
-    .wcam-hero-stats{display:flex;align-items:center;justify-content:center;margin-bottom:28px;background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:12px 24px;width:fit-content;margin-left:auto;margin-right:auto;}
-    .wcam-hero-stat{text-align:center;padding:0 20px;}
-    .wcam-hero-stat-value{display:block;font-family:'Bodoni Moda',serif;font-size:1.4rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:2px;}
-    .wcam-hero-stat-label{display:block;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);}
-    .wcam-hero-stat-div{width:1px;height:28px;background:rgba(255,255,255,0.18);flex-shrink:0;}
-    .wcam-hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    .wcam-hero-wave{position:absolute;bottom:-1px;left:0;right:0;width:100%;height:64px;display:block;}
 
     /* ── Breadcrumb ── */
     .breadcrumb{padding:16px 5vw 0;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-light);}
@@ -272,9 +253,6 @@
       .wcam-partner-inner{flex-direction:column;align-items:flex-start;}
     }
     @media(max-width:540px){
-      .wcam-hero{padding:100px 4vw 72px;}
-      .wcam-hero-actions{flex-direction:column;align-items:center;}
-      .wcam-hero-stat{padding:0 14px;}
       .wcam-grid{grid-template-columns:1fr;gap:16px;}
       .value-cards{grid-template-columns:1fr;}
       .cta-cards{grid-template-columns:1fr;}
@@ -335,7 +313,7 @@
     .wcam-sponsor-cta svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5;}
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260430">
+<link rel="stylesheet" href="/css/style.css?v=20260506-6cg">
   <script src="/js/image-autofix.js"></script>
 </head>
 <body>
@@ -378,49 +356,50 @@
   </div>
 </nav>
 
+<svg style="position:absolute;width:0;height:0;pointer-events:none" aria-hidden="true">
+  <defs>
+    <clipPath id="hero-wave-clip" clipPathUnits="objectBoundingBox">
+      <path d="M 0.0,0.0 C 0.15,0.05 0.05,0.20 0.18,0.32 C 0.30,0.42 0.10,0.55 0.20,0.68 C 0.32,0.78 0.12,0.90 0.18,1.0 L 1.0,1.0 L 1.0,0.0 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
 <main id="main">
 
   <!-- Hero -->
-  <section class="wcam-hero" aria-label="Portugal beach webcams">
-    <video
-      class="wcam-hero-video"
-      id="wcam-bg-video"
-      poster="https://cdn.portalturismoportugal.com/webcams-hero-poster.jpg"
-      preload="metadata" playsinline autoplay muted loop
-      aria-hidden="true"
-    ></video>
-    <div class="wcam-hero-overlay" aria-hidden="true"></div>
-    <div class="wcam-hero-inner">
-      <div class="wcam-hero-tag">Portugal · Atlantic · Webcams</div>
-      <h1 class="wcam-hero-title">Check before you <em>go</em></h1>
-      <p class="wcam-hero-subtitle">Nazaré, Peniche, Ericeira, Guincho, Caparica, Portimão and more — 13 webcams via Beachcam to check the sea conditions before you leave and plan the perfect escape.</p>
-      <div class="wcam-hero-stats" aria-label="Summary">
-        <div class="wcam-hero-stat">
-          <span class="wcam-hero-stat-value">9</span>
-          <span class="wcam-hero-stat-label">via Beachcam</span>
-        </div>
-        <div class="wcam-hero-stat-div"></div>
-        <div class="wcam-hero-stat">
-          <span class="wcam-hero-stat-value">7</span>
-          <span class="wcam-hero-stat-label">Regions</span>
-        </div>
-        <div class="wcam-hero-stat-div"></div>
-        <div class="wcam-hero-stat">
-          <span class="wcam-hero-stat-value">Beachcam</span>
-          <span class="wcam-hero-stat-label">Verified Source</span>
-        </div>
-      </div>
-      <div class="wcam-hero-actions">
-        <a href="#webcams" class="btn btn-primary">
+  <!-- Hero -->
+  <section class="page-hero" aria-label="Portugal beach webcams">
+    <div class="page-hero__media">
+      <img class="page-hero__image"
+           src="https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/card-images/beaches/ec40e481-5ec8-4f82-b728-535987fc0eb6.jpg"
+           alt="Portugal beach webcams — aerial view of the coast"
+           loading="eager">
+      <div class="page-hero__media-overlay" aria-hidden="true"></div>
+      <p class="page-hero__attribution" data-source-url="https://www.pexels.com/">Photo: Pexels</p>
+    </div>
+    <div class="page-hero__content">
+      <p class="page-hero__kicker">WEBCAMS · LIVE FROM THE COAST</p>
+      <h1 class="page-hero__headline">
+        <span class="page-hero__line">
+          <span class="page-hero__word" style="--i:0">See</span>
+          <span class="page-hero__word" style="--i:1">the</span>
+          <span class="page-hero__word" style="--i:2">beaches</span>
+        </span>
+        <span class="page-hero__line">
+          <span class="page-hero__word" style="--i:3">before</span>
+          <span class="page-hero__word" style="--i:4">you</span>
+          <span class="page-hero__word" style="--i:5">go.</span>
+        </span>
+      </h1>
+      <p class="page-hero__sub">Nazaré, Peniche, Ericeira, Guincho, Caparica, Portimão and more — live webcams to check sea conditions before you leave.</p>
+      <div class="page-hero__actions">
+        <a href="#webcams" class="page-hero__cta page-hero__cta--primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
           View Webcams
         </a>
-        <a href="/en/login.html#register" class="btn btn-outline">Create Free Account</a>
+        <a href="/en/login.html#register" class="page-hero__cta page-hero__cta--secondary">Create Free Account</a>
       </div>
     </div>
-    <svg class="wcam-hero-wave" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#f6f4ef"/>
-    </svg>
   </section>
 
   <!-- Breadcrumb -->
@@ -1081,5 +1060,35 @@
 })();
 </script>
   <script src="/js/cookie-consent.js" defer></script>
+<script>
+  (function() {
+    var hero = document.querySelector('.page-hero');
+    if (!hero) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var media = hero.querySelector('.page-hero__media');
+    if (!media) return;
+    var rafId = null, targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+    var EASE = 0.06;
+    function animate() {
+      currentX += (targetX - currentX) * EASE;
+      currentY += (targetY - currentY) * EASE;
+      media.style.transform = 'translate(' + (currentX * 6) + 'px, ' + (currentY * 6) + 'px)';
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        rafId = requestAnimationFrame(animate);
+      } else { rafId = null; }
+    }
+    hero.addEventListener('mousemove', function(e) {
+      var rect = hero.getBoundingClientRect();
+      targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      if (!rafId) animate();
+    });
+    hero.addEventListener('mouseleave', function() {
+      targetX = 0; targetY = 0;
+      if (!rafId) animate();
+    });
+  })();
+</script>
 </body>
 </html>

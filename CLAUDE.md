@@ -58,6 +58,64 @@ Prioritize in this order unless the user says otherwise:
 - pesca.html
 - webcams.html
 
+## Fase 6C — Imagens e Curadoria Editorial
+
+### Fase 6C-A → ✅ card persuasivo homepage (2026-05-06)
+- Card `hero-secondary` adicionado a index.html e en/index.html com headline "As 10 praias que ninguém no Booking encontra"
+- Páginas placeholder criadas: /escondidas.html e /en/hidden-beaches.html (noindex, em curadoria)
+- Foto Praia da Ursa hardcoded de Wikimedia Commons (URL: `c/c8/Nature's_canvas.jpg`, 1920px thumb)
+
+### Fase 6C-B → ✅ redesign editorial cinemático do hero-secondary (2026-05-06)
+- Skill frontend-design invocada — direção estética magazine editorial comprometida
+- Layout 2-coluna 60/40 (desktop): coluna texto + foto vertical Praia da Ursa
+- Foto migrada de Wikimedia (CSP block) para Supabase Storage (UUID `a0529d77-b688-4293-ba11-8f023a69e4cf`)
+- Número "10" como âncora visual: Fraunces 300 clamp(108px→210px), ouro opacity 0.9
+- Hierarquia: kicker IBM Plex Mono → número+headline → linha dourada → sub → CTA
+- Background: `#07152A` (navy profundo) em vez de fullscreen photo overlay
+- CTA: padding generoso 16×36px, hover lift + gold glow + arrow slide
+- Foto: sombra dramática + vinheta radial via ::after pseudo-element
+- Animação: IntersectionObserver threshold 0.25, staggered fade-in-up 5 elementos
+- Fraunces + IBM Plex Mono adicionadas ao Google Fonts (index.html + en/index.html)
+- CSS cache bumped para `?v=20260506-6cb`
+
+### Fase 6C-C → ✅ refinamentos AI-modern do hero-secondary (2026-05-06)
+- Foto: border-radius assimétrico `4px 64px 4px 64px` (desktop) / `4px 40px 4px 40px` (mobile) — clipping orgânico nos cantos opostos
+- Divider: `border-top` substituído por `linear-gradient` com fade transparent → dourado → transparent (80px, sem opacidade fixa)
+- Background: SVG noise overlay via `::before` (mix-blend: overlay, opacity 0.4) + gradient diagonal `#07152A → #0B1B2B → #0F2235` — warmth subtilíssimo no canto superior direito
+- Número "10": gradient text dourado→âmbar 135deg, `drop-shadow` filter, `breathe` animation 6s ease-in-out infinite (scale 1.0→1.015→1.0)
+- Cursor-reactive parallax: divider (4px max) + foto (6px max) via requestAnimationFrame, EASE 0.08 — suave e GPU-only (transform único). `hover:none` → skip, `prefers-reduced-motion` → skip
+- CSS cache bumped para `?v=20260506-6cc`
+
+### Fase 6C-D → ✅ hero wrapper border-radius + restructure homepage 10→7 secções (2026-05-06)
+- Hero wrapper (`hero__right`): border-radius assimétrico `4px 64px 4px 64px` (desktop) / `4px 40px 4px 40px` (mobile), box-shadow profundidade. Consistência visual com hero-secondary "10 praias". Zero alteração ao `<video>` element ou URLs CDN.
+- Restructure homepage 10→7 secções: NEW `#what-youll-find` com 3-card grid (Condições do mar, Webcams ao vivo, Surf e Pesca). `planear-cta` agora inclui sub-banda de guides (idx-guides-band fundida). Secções `#conditions`, `#webcams`, `#surf-pesca`, `.idx-guides-band` escondidas via CSS (`display:none`) — HTML preservado para reversibilidade.
+- CSS cache bumped para `?v=20260506-6cd`.
+
+### Fase 6C-E → ✅ redesign cinemático do hero principal (2026-05-06)
+- SVG clip-path em onda fluida vertical (`#hero-wave-clip`, `clipPathUnits="objectBoundingBox"`) — vídeo dentro de shape orgânico em Chrome/Firefox; border-radius assimétrico como fallback universal
+- Tipografia outline+solid mix: "O/Portugal/que/nos" em `-webkit-text-stroke 1.5px` navy vazado, "não/aparece" e "sites de reservas" solid navy
+- "sites de reservas" agora navy com underline dourado animado L→R — resolve bug crítico (texto branco sobre fundo areia = 1:1 contraste)
+- Animação entrada staggered ~2.5s: kicker (0.2s) → 9 palavras (0.4–1.2s) → sub (1.8s) → CTAs (2.0s) → underline grow (1.6s)
+- Cursor-reactive parallax: `.hero__media` (6px) + `.hero__text` counter-move (3px), EASE 0.06, `hover:none` skip, `prefers-reduced-motion` skip
+- Setinha down (`.hero-scroll`) removida — era não-funcional
+- Mobile fallback: `clip-path: none; border-radius: 4px 60px 4px 60px` via `@media (max-width: 768px)` (iOS Safari não suporta `clip-path: url()` em HTML)
+- `prefers-reduced-motion`: `animation: none; opacity: 1; transform: none` em todos os elementos animados
+- CSS cache bumped para `?v=20260506-6ce`
+
+### Fase 6C-G → ✅ heroes pesca/surf/webcams — estilo cinemático Alt 3 (2026-05-06)
+- 6 ficheiros afetados: pesca.html, surf.html, webcams.html (PT) + en/pesca.html, en/surf.html, en/webcams.html (EN)
+- Novo componente CSS reutilizável `.page-hero` em css/style.css — reusa keyframes heroMediaReveal/heroWordReveal/heroFadeUp do hero principal
+- SVG `#hero-wave-clip` adicionado inline antes de `<main>` em cada página
+- Fraunces + IBM Plex Mono adicionados via Google Fonts (substituindo DM Sans)
+- Fotos próprias do Storage: PESCA (bda7327b), SURF (7f6e2b93 · Wikimedia Sergey Mysovskiy), WEBCAMS (ec40e481)
+- Cursor parallax (EASE 0.06, hover:none + prefers-reduced-motion guarded) em todas as 6 páginas
+- CSS cache bumped para `?v=20260506-6cg`
+- 85 → 82 ficheiros restantes com Unsplash hardcoded
+
+### TODOs
+- Páginas escondidas.html e en/hidden-beaches.html: produzir conteúdo editorial real (10 praias verificadas + fotos + texto)
+- Fase 6C-H (futuro): substituir Unsplash hardcoded nos 82 ficheiros restantes
+
 ## Hard guardrails
 - Do not touch auth logic without proven reason
 - Do not touch LemonSqueezy flow without proven reason
@@ -143,6 +201,43 @@ Pages/components with history of breaking. Re-validate visually after ANY change
 | All card `<img>` PT+EN (BUG-IMG-AUTOFIX) | 05/05/2026 | Cards used hardcoded Unsplash URLs — many were 404 (invented/mistyped photo IDs). Auto-healing system installed (commits e5d4b91, 91babd3, 7e9db21): `onerror` calls `pexels-search` Edge Function with keyword fallback → 30-day cache in `image_cache` table + localStorage. Fallback final: CSS gradient. Confirmed 404: `guias/surf-portugal-iniciantes.html` hero (`photo-1502680390548-bdbac40e4ce3`). | After ANY new card with `<img>`: add `onerror="autoFixImage(this)"` + `data-fallback-keyword="english keywords"`. Add `<script src="/js/image-autofix.js" defer></script>` to page if not already present. Keywords must be in EN (Pexels API has better EN coverage). TODO: add Pexels photographer attribution tooltip to UI. |
 
 When introducing a new Quick Task, scan this watchlist for overlap and re-test those scenarios.
+
+### IMG-FETCH-STORE (em curso — Fase 1 concluída 2026-05-06)
+
+**Sistema:** Substituição do autofix on-demand Pexels por fetch-and-store em Supabase Storage.
+
+**Estado por fase:**
+- Fase 1 — DB schema + Storage bucket: ✅ migrations + docs criados, pendente apply manual
+- Fase 2 — Edge Function pexels-fetch-and-store: ✅ código criado, pendente deploy + teste
+- Fase 3 — Script populate-images.js (Node): ✅ script criado, pendente dry-run + apply
+- Fase 3.5 → ✅ Edge Function v2 com diversification (paginação aleatória posição 3-12, exclude_pexels_ids opt-in tracking, rotação de sufixos visuais). Resolve fotos repetidas detectadas no dry-run 2026-05-06. Pendente novo dry-run.
+- Fase 4 → ✅ Edge Function v3 multi-source criada (Wikipedia/Wikimedia/Pexels), pendente deploy + 5-test gate validation + apply to 109. **Nota:** v2 mantida em paralelo durante validação. NÃO apagar até v3 validada com 5 praias-teste.
+- Fase 5 → ✅ Sistema híbrido (Edge Function v4 simplificada + override manual via image_curated_*), pendente deploy + curadoria editorial
+- Fase 5.5 → ✅ v4 ajustada com filtro anti-P&B na Camada Pexels (keyword + avg_color saturation < 0.10), pendente re-teste Fajã da Areia
+- Fase 6A → ✅ Documento de curadoria editorial criado (`docs/editorial/curadoria-2026-05-06.md`). Worksheet com 21 praias (UUIDs reais da BD, links Wikimedia Category + Search por praia, 3 campos vazios por praia, SQL UPDATE batch template). Fase 6B (preenchimento manual + execução SQL + populate-images.js) pendente.
+- Fase 6B → ✅ Atribuição visível (caption + tooltip) em beach.html, beaches.html, en/beach.html, en/beaches.html. CC BY-SA compliance. Caption discreta abaixo da imagem (11px, opacidade 0.6) com link clicável para source_url. Tooltip on hover/tap mostra autor · licença. Conta.html, dashboard.html, pro/welcome.html, index.html NÃO tocados.
+- Fase 6B.1 → ✅ caption agora não-clicável (Padrão B), tooltip on hover mantém link. CC BY-SA compliance preservada via texto visível + tooltip + data-source-url.
+- Fase 6C-E → ✅ redesign cinemático do hero principal: SVG clip-path em onda fluida vertical, tipografia outline+solid mix, underline dourado animado em "sites de reservas" (resolve bug branco invisível), entrada staggered ~2.5s, cursor-reactive parallax, setinha down removida. Fallback border-radius assimétrico para iOS Safari.
+- Fase 6C-F (EXPERIMENTAL na branch `feature/hero-alt3-experiment`) → hero Alt 3 com video intercept + mix-blend-mode: difference. Headline Fraunces 600 clamp(48px–112px) atravessa o vídeo — texto quasi-preto sobre areia, inverte onde cruza pixels escuros do vídeo. Fallback @supports e mobile (<1024px) colapsa para layout sem intercept. Parallax: apenas hero__media move-se (hero__content excluído para preservar stacking context correcto). Decisão de merge para feature/fetch-and-store-phase-1 depende de validação visual do utilizador.
+- Fase 6C-G → ✅ heroes pesca/surf/webcams (PT+EN, 6 ficheiros) com estilo cinemático Alt 3 (.page-hero CSS reutilizável). Fotos próprias do Storage. SVG clip-path onda + Fraunces + mix-blend-mode: difference. Cursor parallax. CSS cache `?v=20260506-6cg`. 85→82 ficheiros restantes com Unsplash.
+- Fase 4.5 — Adapter HTML/CSS: pendente
+- Fase 6 — Atribuição Pexels: ✅ entregue em Fase 6B
+- Fase 7 — Validação produção: pendente
+
+**Decisões arquiteturais (não re-discutir):**
+- Cards estáticos de guias + heroes CSS → hardcode no HTML/CSS, sem tabela auxiliar
+- Optimização (resize 1600px + WebP) → no script Node, não na Edge Function
+- Curadoria → tudo automático, com dry-run + relatório HTML revisável antes de UPDATEs
+- Vídeos hero (cdn.portalturismoportugal.com/*.mp4) → NÃO TOCAR
+- Camadas Wikimedia geo-search e text-search abandonadas — provaram apanhar ficheiros irrelevantes (florestas, homónimos noutras regiões como Fajã da Ribeira da Areia Açores quando se queria Madeira).
+- v4 substitui funcionalmente a v2 e v3 mas mantém ambas vivas durante validação. Apagar quando v4 confirmada com 109 praias.
+- Override manual via image_curated_url/author/source_url tem prioridade absoluta sobre Wikipedia e Pexels. image_curated_* são campos de input editorial e nunca são escritos pela Edge Function.
+
+**NÃO fazer:**
+- Não criar tabela `card_images` (decisão do conselho 2026-05-05: hardcode é a escolha certa para conteúdo estático)
+- Não popular `beaches.image_url` com URLs Pexels diretas — sempre Storage URLs
+- Não correr populate sem dry-run primeiro
+- Não tocar em /pro/welcome.html, /index.html, .claude/worktrees/*
 
 ### Mandatory rule for closing any bug fix
 
