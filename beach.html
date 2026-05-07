@@ -1329,13 +1329,13 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>`).join('');
   }
 
-  function toggleAcc(id) {
+  window.toggleAcc = function toggleAcc(id) {
     const item = document.getElementById(id);
     if (!item) return;
     const isOpen = item.classList.contains('open');
     item.classList.toggle('open', !isOpen);
     item.querySelector('.acc-header').setAttribute('aria-expanded', String(!isOpen));
-  }
+  };
 
   // ── Mar & Ondulação — dados reais Open-Meteo Marine (gratuito, sem API key) ──
   async function loadWaves(beach) {
