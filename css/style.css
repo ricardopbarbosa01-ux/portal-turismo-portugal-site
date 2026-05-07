@@ -1391,7 +1391,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
   }
   /* Body padding so content isn't hidden behind bottom nav */
-  body:has(.bottom-nav) { padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.bottom-nav) { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
   /* Toast above bottom nav */
   .toast { bottom: calc(70px + env(safe-area-inset-bottom, 0px)); right: 16px; }
 }
