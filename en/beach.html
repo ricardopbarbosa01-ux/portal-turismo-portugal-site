@@ -445,7 +445,7 @@
     @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
     @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
 </style>
-  <link rel="stylesheet" href="/css/style.css?v=20260507-mob">
+  <link rel="stylesheet" href="/css/style.css?v=20260507-hf1">
 
 </head>
 <body>
@@ -687,7 +687,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="/js/config.js?v=20260507-mob" defer></script>
+<script src="/js/config.js?v=20260507-hf1" defer></script>
 
 
 <script>
@@ -1262,13 +1262,13 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>`).join('');
   }
 
-  function toggleAcc(id) {
+  window.toggleAcc = function toggleAcc(id) {
     const item = document.getElementById(id);
     if (!item) return;
     const isOpen = item.classList.contains('open');
     item.classList.toggle('open', !isOpen);
     item.querySelector('.acc-header').setAttribute('aria-expanded', String(!isOpen));
-  }
+  };
 
   // Sea & Swell — real data from Open-Meteo Marine (free, no API key)
   async function loadWaves(beach) {
@@ -1698,9 +1698,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const target = (mapSec && mapSec.style.display !== 'none') ? mapSec : document.getElementById('tides-section');
     target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => {
-    document.getElementById('nav-toggle').click();
-  });
+  document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
 });
 </script>
 
@@ -1733,7 +1731,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 </script>
 <script src="/js/lang-switcher.js" defer></script>
-  <script src="/js/nav.js?v=20260422c" defer></script>
+  <script src="/js/nav.js?v=20260507-hf1" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>
