@@ -966,7 +966,7 @@
   // ── Auth ─────────────────────────────────────────────────────────
 
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => document.getElementById('nav-toggle').click());
+  document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
 
   // ── Helper ───────────────────────────────────────────────────────
   function esc(s) {

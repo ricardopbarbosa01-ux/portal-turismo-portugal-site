@@ -745,6 +745,7 @@
 <script src="/js/config.js?v=20260507-mob" defer></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
+  document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
 
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {

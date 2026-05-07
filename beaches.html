@@ -1346,13 +1346,17 @@
   });
 
   // ── Mobile bottom nav actions ────────────────────────────────────
-  document.getElementById('mob-search-btn')?.addEventListener('click', () => {
-    const inp = document.getElementById('search-input');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => inp.focus(), 300);
-  });
-  document.getElementById('mob-menu-btn')?.addEventListener('click', () => {
-    document.getElementById('nav-toggle').click();
+  // DOMContentLoaded required: buttons are in HTML after this script block
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('mob-search-btn')?.addEventListener('click', () => {
+      const inp = document.getElementById('search-input');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => inp.focus(), 300);
+    });
+    document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.getElementById('nav-toggle').click();
+    });
   });
 </script>
 
