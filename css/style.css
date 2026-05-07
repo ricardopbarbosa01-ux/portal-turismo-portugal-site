@@ -2687,3 +2687,30 @@ input[type="number"], input[type="date"], input[type="search"] {
     text-align: center;
   }
 }
+
+/* ── Progressive pagination Load More button ─────────────────────────────── */
+.load-more-btn {
+  display: block;
+  margin: 32px auto;
+  padding: 14px 36px;
+  background: var(--navy, #0B1B2B);
+  color: var(--areia, #F2E8D5);
+  border: none;
+  border-radius: 4px 16px 4px 16px;
+  font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  min-height: 44px;
+  min-width: 160px;
+}
+.load-more-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.load-more-btn:active {
+  transform: translateY(0);
+}
