@@ -2714,3 +2714,64 @@ input[type="number"], input[type="date"], input[type="search"] {
 .load-more-btn:active {
   transform: translateY(0);
 }
+
+/* ============================================================
+   HOTFIX 2 — P1 mobile issues (2026-05-07)
+   ============================================================ */
+
+/* ── FIX 2A: /planear form horizontal centering on mobile ────────────────────
+   Root cause: MOBILE OVERFLOW FIX block (line ~1636) adds padding-left/right
+   16px !important to ALL <section> AND <main>, creating 32px total gutters per
+   side on 375px viewport (form card ends up 311px instead of 343px).
+   Fix: remove section-level padding on .plan-layout so <main>'s 16px is the
+   sole gutter. Force 1-col grid for belt-and-suspenders. */
+@media (max-width: 768px) {
+  .plan-layout {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── FIX 2B: /precos comparison table — scroll affordance ───────────────────
+   .compare-scroll-wrap replaces the bare <div style="overflow-x:auto;"> on the
+   4-col comparison table (Funcionalidade / Grátis / Pro / Partner).
+   Provides: horizontal scroll, touch momentum, fade-right affordance, min-width
+   so columns have legible widths when scrolled. Desktop unaffected. */
+.compare-scroll-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 768px) {
+  .compare-scroll-wrap {
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 32px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 32px), transparent 100%);
+  }
+  .compare-scroll-wrap .compare-table {
+    min-width: 500px;
+  }
+}
+
+/* ── FIX 2C: Compact editorial footer on mobile ──────────────────────────────
+   Hide DESTINOS / PORTAL / PARCEIROS nav columns on mobile (≤768px).
+   Essential links (Sobre, Contacto, Privacidade, Termos) already present in
+   .footer-bottom. Desktop (≥769px) unchanged. */
+@media (max-width: 768px) {
+  .footer-col {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding-bottom: 20px;
+  }
+  .footer {
+    padding-top: 28px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 0;
+  }
+}
