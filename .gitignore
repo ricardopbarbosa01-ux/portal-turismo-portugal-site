@@ -65,3 +65,7 @@ _scripts/audit/package-lock.json
 !media-kit-en.pdf
 _scripts/auto-tag-report.html
 _scripts/auto-tag-corrections.json
+
+# QA editorial audit artifacts
+_scripts/audit/screenshots-editorial/
+_scripts/audit/qa-editorial-report.md
