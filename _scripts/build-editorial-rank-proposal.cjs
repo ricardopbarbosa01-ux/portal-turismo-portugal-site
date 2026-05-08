@@ -104,10 +104,11 @@ const NATIONAL_ICONS = new Set([
 /**
  * Calcula o score editorial de uma praia.
  *
- * Critérios (máx. ~20 pontos):
+ * Critérios (v2 — boost curadoria 2026-05-08):
+ *   +60 Imagem curada manualmente (image_curated_url != null) — sinal dominante
+ *   +10 Imagem premium não-Pexels (image_source != 'pexels' && != null)
  *   +4  Ícone nacional (NATIONAL_ICONS)
  *   +3  Curadoria prioritária (CURATED_WORKSHEET)
- *   +3  Imagem curada manualmente (image_curated_url != null)
  *   +2  Tag surf (surf_spot editorial relevance)
  *   +2  Tag wild_nature (unicidade paisagística)
  *   +1  Tag family (apelo mainstream)
@@ -134,8 +135,15 @@ function scoreBeach(beach) {
     reasons.push('worksheet curadoria (+3)');
   }
   if (beach.image_curated_url) {
-    score += 3;
-    reasons.push('imagem curada (+3)');
+    score += 60;
+    reasons.push(`imagem curada manual (${beach.image_source || 'manual'}) (+60)`);
+  } else if (beach.image_source === 'wikipedia_infobox') {
+    score += 15;
+    reasons.push('imagem Wikipedia infobox (+15)');
+  }
+  if (beach.image_source && beach.image_source !== 'pexels') {
+    score += 10;
+    reasons.push('imagem premium não-Pexels (+10)');
   }
   if (tags.includes('surf')) {
     score += 2;
@@ -342,7 +350,7 @@ async function main() {
   // Fetch beaches
   const { data: beaches, error } = await supabase
     .from('beaches')
-    .select('id, name, region, subregion, tags, tag_sources, image_curated_url, description, is_surf_spot, beach_type, water_quality')
+    .select('id, name, region, subregion, tags, tag_sources, image_curated_url, image_source, description, is_surf_spot, beach_type, water_quality')
     .eq('is_active', true)
     .neq('region', 'Hero')
     .order('name', { ascending: true });
@@ -394,6 +402,14 @@ async function main() {
   console.log('');
   console.log('Next step: Ricardo revê editorial-rank-proposal.md, aprova/ajusta,');
   console.log('           depois B-2 aplica editorial_rank à BD.');
+
+  console.log('');
+  console.log('=== TOP 25 NOVO (✅ = imagem curada manualmente) ===');
+  console.log('─'.repeat(65));
+  scored.slice(0, 25).forEach((b, i) => {
+    const curated = b.image_curated_url ? '✅' : '  ';
+    console.log(`  ${String(i + 1).padStart(2)}. [${String(b._score).padStart(3)}] ${curated} ${b.name} (${b.region})`);
+  });
 }
 
 main().catch(err => {
