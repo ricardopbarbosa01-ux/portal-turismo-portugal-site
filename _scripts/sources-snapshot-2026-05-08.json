@@ -1,0 +1,25 @@
+{
+  "generated": "2026-05-08T08:56:53.564Z",
+  "sources": {
+    "surf": {
+      "source_label": "WSL/World Surfing Reserve/Visit Madeira/FPS",
+      "consulted": "worldsurfleague.com, visitportugal.com/ericeira-surfing-reserve, visitmadeira.com/surf, surfingportugal.com — 2026-05-08",
+      "beach_count": 24
+    },
+    "fishing": {
+      "source_label": "DGRM/Comunidades Piscatórias",
+      "consulted": "dgrm.pt/defesa, repositorio-aberto.up.pt (Comunidades Piscatórias Norte) — 2026-05-08",
+      "beach_count": 22
+    },
+    "wild_nature": {
+      "source_label": "ICNF Áreas Protegidas/UNESCO",
+      "consulted": "icnf.pt/areasprotegidas, wikipedia.org/Áreas_protegidas_de_Portugal, en.wikipedia.org/Southwest_Alentejo_and_Vicentine_Coast — 2026-05-08",
+      "beach_count": 42
+    },
+    "family": {
+      "source_label": "ABAE Bandeira Azul 2025",
+      "consulted": "bandeiraazul.abaae.pt/galardoados/galardoados-2025/, publico.pt 2025-04-30 — 2026-05-08",
+      "beach_count": 72
+    }
+  }
+}
