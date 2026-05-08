@@ -685,45 +685,87 @@
 
 <!-- Filters -->
 <div class="filters-bar" role="search" aria-label="Filter beaches">
-  <div class="filter-search">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" id="search-input" placeholder="Search beach..." aria-label="Search by name">
+  <div class="filters-top-row">
+    <div class="search-input-wrapper">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        type="text"
+        id="beach-search-input"
+        class="search-input"
+        placeholder="Search beach..."
+        aria-label="Search beach">
+    </div>
+
+    <div class="sort-dropdown-wrapper">
+      <button
+        id="sort-button"
+        class="sort-button"
+        aria-haspopup="listbox"
+        aria-expanded="false">
+        <span class="sort-label-prefix">Sort:</span>
+        <span class="sort-current-value" id="sort-current-value">Editorial highlights</span>
+        <span class="sort-chevron" aria-hidden="true">▾</span>
+      </button>
+      <ul
+        id="sort-options"
+        class="sort-options"
+        role="listbox"
+        aria-label="Sort options"
+        hidden>
+        <li role="option" data-sort="editorial" data-default="true" aria-selected="true">Editorial highlights</li>
+        <li role="option" data-sort="alpha" aria-selected="false">A → Z</li>
+        <li role="option" data-sort="quality" aria-selected="false">Best water quality</li>
+        <li role="option" data-sort="nearest" data-pro="true" aria-selected="false">
+          <span class="lock-icon" aria-hidden="true">🔒</span>
+          Nearest
+          <span class="pro-badge">PRO</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="results-count">
+      <span id="results-count-value">111</span> beaches
+    </div>
   </div>
-  <select id="sort-select" class="filter-select" aria-label="Sort by">
-    <option value="default">Featured</option>
-    <option value="alpha">A → Z</option>
-    <option value="quality">Best quality</option>
-  </select>
-  <select id="tipo-select" class="filter-select" aria-label="Filter by type">
-    <option value="">All types</option>
-    <option value="surf">Surf</option>
-    <option value="família">Family</option>
-    <option value="natureza">Nature</option>
-    <option value="ilhas">Islands</option>
-    <option value="pesca">Fishing</option>
-    <option value="premiada">Excellent</option>
-  </select>
-  <span class="filter-count" id="filter-count" aria-live="polite"></span>
-  <button class="filter-clear" id="filter-clear" aria-label="Clear all filters" onclick="clearFilters()">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    Clear
-  </button>
 </div>
 
-<!-- Region + Quality chips -->
-<div class="chips-bar" role="group" aria-label="Quick filters">
-  <button class="chip active" data-filter="region" data-value="" onclick="setChip(this,'region')">All</button>
-  <button class="chip" data-filter="region" data-value="Algarve" onclick="setChip(this,'region')">Algarve</button>
-  <button class="chip" data-filter="region" data-value="Lisboa e Setúbal" onclick="setChip(this,'region')">Lisbon &amp; Setúbal</button>
-  <button class="chip" data-filter="region" data-value="Oeste" onclick="setChip(this,'region')">West Coast</button>
-  <button class="chip" data-filter="region" data-value="Centro" onclick="setChip(this,'region')">Central Portugal</button>
-  <button class="chip" data-filter="region" data-value="Norte" onclick="setChip(this,'region')">Northern Portugal</button>
-  <button class="chip" data-filter="region" data-value="Alentejo" onclick="setChip(this,'region')">Alentejo</button>
-  <button class="chip" data-filter="region" data-value="Madeira" onclick="setChip(this,'region')">Madeira</button>
-  <span style="width:1px;background:var(--border);margin:0 4px;align-self:stretch" aria-hidden="true"></span>
-  <button class="chip quality-chip" data-filter="quality" data-value="" onclick="setChip(this,'quality')">Any quality</button>
-  <button class="chip quality-chip" data-filter="quality" data-value="Excelente" onclick="setChip(this,'quality')">Excellent</button>
-  <button class="chip quality-chip" data-filter="quality" data-value="Boa" onclick="setChip(this,'quality')">Good</button>
+<!-- Filter chip groups -->
+<div class="chip-groups" role="group" aria-label="Quick filters">
+
+  <div class="chip-group" data-category="region">
+    <span class="chip-group-label">Region</span>
+    <div class="chips-bar" data-chips-bar="region">
+      <button class="chip" data-region="all" aria-pressed="true">All</button>
+      <button class="chip" data-region="Algarve" aria-pressed="false">Algarve</button>
+      <button class="chip" data-region="Lisboa e Setúbal" aria-pressed="false">Lisbon &amp; Setúbal</button>
+      <button class="chip" data-region="Oeste" aria-pressed="false">West Coast</button>
+      <button class="chip" data-region="Centro" aria-pressed="false">Central Portugal</button>
+      <button class="chip" data-region="Norte" aria-pressed="false">Northern Portugal</button>
+      <button class="chip" data-region="Alentejo" aria-pressed="false">Alentejo</button>
+      <button class="chip" data-region="Madeira" aria-pressed="false">Madeira</button>
+    </div>
+  </div>
+
+  <div class="chip-group" data-category="quality">
+    <span class="chip-group-label">Water quality</span>
+    <div class="chips-bar" data-chips-bar="quality">
+      <button class="chip" data-quality="all" aria-pressed="true">Any</button>
+      <button class="chip" data-quality="Excelente" aria-pressed="false">Excellent</button>
+      <button class="chip" data-quality="Boa" aria-pressed="false">Good</button>
+    </div>
+  </div>
+
+  <div class="chip-group" data-category="tags">
+    <span class="chip-group-label">Ideal for</span>
+    <div class="chips-bar" data-chips-bar="tags">
+      <button class="chip" data-tag="all" aria-pressed="true">All</button>
+      <button class="chip" data-tag="family" aria-pressed="false">Families</button>
+      <button class="chip" data-tag="surf" aria-pressed="false">Surf</button>
+      <button class="chip" data-tag="fishing" aria-pressed="false">Fishing</button>
+      <button class="chip" data-tag="wild_nature" aria-pressed="false">Wild nature</button>
+    </div>
+  </div>
+
 </div>
 
 <!-- Mobile results strip -->
@@ -982,6 +1024,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="/js/config.js?v=20260507-mob" defer></script>
+<script src="/js/beaches-filters.js?v=20260508-hf3" defer></script>
 
 
 <script>
@@ -1120,6 +1163,10 @@ document.addEventListener('DOMContentLoaded', function () {
                  data-quality="${escHtml(b.water_quality || '')}"
                  data-name="${escHtml(b.name)}"
                  data-slug="${escHtml(beachSlug)}"
+                 data-tags="${escHtml((Array.isArray(b.tags) ? b.tags : []).join(','))}"
+                 data-editorial-rank="${b.editorial_rank || ''}"
+                 data-lat="${b.latitude || ''}"
+                 data-lng="${b.longitude || ''}"
                  tabindex="0"
                  onclick="window.location.href='${beachUrl}'"
                  onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='${beachUrl}'}"
@@ -1157,10 +1204,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('');
   }
 
-  let activeRegion  = '';
-  let activeQuality = '';
-  let activeTipo    = '';
-
   const REGION_BANNERS = {
     'Algarve':          { title: 'Algarve — The Golden Coast',                      desc: 'Dramatic cliffs, crystal-clear waters and award-winning beaches. Portugal\'s most visited region.',                                        cta: null, ctaLabel: null },
     'Lisboa e Setúbal': { title: 'Lisbon & Setúbal — Atlantic Coast & Arrábida',    desc: 'From Estoril to Sesimbra, through the Arrábida mountains — diverse landscapes less than 1 h from the capital.',                          cta: null, ctaLabel: null },
@@ -1182,61 +1225,9 @@ document.addEventListener('DOMContentLoaded', function () {
     banner.style.display = 'block';
   }
 
+  // Legacy compat stubs — real logic lives in js/beaches-filters.js (BeachFilters)
   window.setChip = function(el, filterType) {
-    document.querySelectorAll(`.chip[data-filter="${filterType}"]`).forEach(c => c.classList.remove('active'));
-    el.classList.add('active');
-    if (filterType === 'region')  { activeRegion  = el.dataset.value; updateRegionBanner(activeRegion); }
-    if (filterType === 'quality') activeQuality = el.dataset.value;
-    applyFilters();
-  };
-
-  function applyFilters() {
-    const term = document.getElementById('search-input').value.toLowerCase();
-    const sortVal = document.getElementById('sort-select').value;
-    const hasFilters = !!(term || activeRegion || activeQuality || activeTipo);
-    document.querySelector('.filters-bar').classList.toggle('has-active', hasFilters);
-    let filtered = allBeaches.filter(b => {
-      const matchName    = !term          || b.name.toLowerCase().includes(term) || (b.region || '').toLowerCase().includes(term);
-      const matchRegion  = !activeRegion  || b.region === activeRegion;
-      const matchQuality = !activeQuality || b.water_quality === activeQuality;
-      const matchTipo    = !activeTipo    || deriveTags(b).includes(activeTipo);
-      return matchName && matchRegion && matchQuality && matchTipo;
-    });
-    if (sortVal === 'alpha') {
-      filtered = [...filtered].sort((a, b) => a.name.localeCompare(b.name, 'en'));
-    } else if (sortVal === 'quality') {
-      const q = { Excelente: 0, Boa: 1, Suficiente: 2, Má: 3 };
-      filtered = [...filtered].sort((a, b) => (q[a.water_quality] ?? 4) - (q[b.water_quality] ?? 4));
-    }
-    renderBeaches(filtered);
-  }
-
-  window.clearFilters = function() {
-    activeRegion  = '';
-    activeQuality = '';
-    activeTipo    = '';
-    document.getElementById('search-input').value = '';
-    document.getElementById('sort-select').value  = 'default';
-    document.getElementById('tipo-select').value  = '';
-    document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.toggle('active', c.dataset.value === ''));
-    document.querySelectorAll('.chip[data-filter="quality"]').forEach(c => c.classList.toggle('active', c.dataset.value === ''));
-    document.getElementById('region-banner').style.display = 'none';
-    document.querySelector('.filters-bar').classList.remove('has-active');
-    renderBeaches(allBeaches);
-  };
-
-  window.filterByProfile = function(region, quality) {
-    activeRegion  = region  || '';
-    activeQuality = quality || '';
-    document.getElementById('search-input').value = '';
-    document.getElementById('sort-select').value = 'default';
-    document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.toggle('active', c.dataset.value === activeRegion));
-    document.querySelectorAll('.chip[data-filter="quality"]').forEach(c => c.classList.toggle('active', c.dataset.value === activeQuality));
-    updateRegionBanner(activeRegion);
-    const hasFilters = !!(activeRegion || activeQuality);
-    document.querySelector('.filters-bar').classList.toggle('has-active', hasFilters);
-    applyFilters();
-    document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
+    // no-op: new chips use data-region/data-quality/data-tag + event delegation
   };
 
   function injectItemListLd(beaches) {
@@ -1268,6 +1259,8 @@ document.addEventListener('DOMContentLoaded', function () {
       allBeaches = await getBeaches();
       renderBeaches(allBeaches);
       injectItemListLd(allBeaches);
+      // Hand data to BeachFilters (handles URL params + initial sort/filter)
+      if (window.BeachFilters) window.BeachFilters.setData(allBeaches);
       if (allBeaches.length > 0) {
         const heroStats = document.getElementById('hero-stats');
         const heroCount = document.getElementById('hero-stat-count');
@@ -1289,28 +1282,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  document.getElementById('search-input').addEventListener('input', applyFilters);
-  document.getElementById('sort-select').addEventListener('change', applyFilters);
-  document.getElementById('tipo-select').addEventListener('change', e => { activeTipo = e.target.value; applyFilters(); });
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const paramQ      = urlParams.get('q');
-  const paramRegion = urlParams.get('region');
-  const paramTipo   = urlParams.get('tipo');
-  if (paramQ) document.getElementById('search-input').value = paramQ;
-  if (paramRegion) {
-    activeRegion = paramRegion;
-    const chip = document.querySelector(`.chip[data-filter="region"][data-value="${paramRegion}"]`);
-    if (chip) { document.querySelectorAll('.chip[data-filter="region"]').forEach(c => c.classList.remove('active')); chip.classList.add('active'); }
-    updateRegionBanner(paramRegion);
-  }
-  if (paramTipo) {
-    activeTipo = paramTipo;
-    const tipoEl = document.getElementById('tipo-select');
-    if (tipoEl) tipoEl.value = paramTipo;
-  }
-
-  loadBeaches().then(() => { if (paramQ || paramRegion || paramTipo) applyFilters(); });
+  loadBeaches();
 
   document.getElementById('beaches-grid').addEventListener('click', function(e) {
     const card = e.target.closest('.beach-card');
