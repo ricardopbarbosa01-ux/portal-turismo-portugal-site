@@ -11,18 +11,18 @@
 | Severity | Count |
 |----------|-------|
 | Critical | 11    |
-| High     | 16    |
+| High     | 17    |
 | Medium   | 18    |
 | Low      | 10    |
 | Info     | 3     |
-| **Total**| **58**|
+| **Total**| **59**|
 
 ### By Status
 
 | Status           | Count |
 |------------------|-------|
 | RESOLVED         | 30    |
-| OPEN             | 16    |
+| OPEN             | 17    |
 | BLOCKED EXTERNAL | 1     |
 | UNKNOWN          | 12    |
 | WONTFIX          | 0     |
@@ -101,6 +101,7 @@
 | BUG-VIS-02 | Medium | OPEN | Hero CTAs ("Explorar Spots", "Planear Escapada de Surf") fall below viewport at 100% browser zoom on 1080p and 1440p screens | session 04/05/2026 |
 | BUG-CONTACT-01 | Low | OPEN | contact.html shows success state even if INSERT fails — optimistic UX masks backend errors from user | session 04/05/2026 |
 | BUG-CMSG-01 | Low | OPEN | contact_messages table has `timestamp` column as text (not timestamptz) and all payload fields are nullable — schema cleanup needed | session 04/05/2026 |
+| BUG-I18N-CARDS-EN | High | OPEN | Beach cards (beaches.html, beach.html, en/beaches.html, en/beach.html) render name/description/tags from DB in Portuguese even on EN routes — `beaches` table has no EN translation columns (`name_en`, `description_en`). Workaround: i18n notice banner injected in 43 EN pages (quick-260508-fz4, commit 175e0e0). Fix: add `name_en`/`description_en` columns to `beaches` table + adapt card rendering JS to select correct column by lang. | session 08/05/2026 |
 | BUG-IMG-FETCH-STORE | Medium | EM CURSO | Substituir autofix on-demand Pexels por fetch-and-store em Supabase Storage. Supersedes BUG-IMG-AUTOFIX (safety net mantido até Fase 6). ~110 praias + 41 cards estáticos + 3 heroes = ~154 imagens. Fase 1 (schema + bucket docs + RLS policies + verify script) concluída 2026-05-06, pendente apply manual. Fase 2 entregue: Edge Function pexels-fetch-and-store criada (idempotente, beach-only, sem optimização — fica para Fase 3). Fase 3 entregue: script Node populate-images.js (dry-run default, --apply opcional, sharp + WebP, relatório HTML grelha). Próximo: install deps + dry-run + apply. Fase 3.5 entregue: Edge Function v2 com diversification (3 intervenções: paginação aleatória posição 3-12, exclude_pexels_ids opt-in, rotação de sufixos visuais). Resolve problema de fotos repetidas detectado no dry-run de 2026-05-06. Fase 4 entregue: Edge Function v3 multi-source (Wikipedia infobox > Wikimedia geo-search > Wikimedia text search > Pexels fallback). 4 camadas com filtragem positive/negative keywords. v2 paralela mantida. Pendente: deploy + 5-praia gate test + populate completo. Fase 5 entregue: sistema híbrido (Edge Function v4 + override manual via image_curated_*). v4 simplifica para 3 caminhos: manual → Wikipedia infobox → Pexels. Camadas Wikimedia geo/text descartadas após teste real (apanharam Madeira_west_coast_forest e Fajã da Ribeira da Areia Açores quando se queria Fajã da Areia Madeira). v2 e v3 mantidas em paralelo até v4 validada com 109 praias. Fase 5.5 entregue: filtro anti-P&B em v4 Pexels. Detectada foto P&B no teste Fajã da Areia (Madeira) — ajuste in-place com 2 critérios combinados (keyword match no alt + saturação HSL calculada do avg_color hex). Threshold 0.10 conservador. Fase 6A entregue: documento `docs/editorial/curadoria-2026-05-06.md` com worksheet de 21 praias (UUIDs reais, links Wikimedia, SQL batch template). Fase 6B entregue: caption discreta + tooltip on hover nas 4 páginas públicas (beach.html, beaches.html, en/beach.html, en/beaches.html). Compliance CC BY-SA: atribuição visível (11px, opacidade 0.6, link clicável para source_url). Conta.html e dashboard.html não tocados (páginas privadas). CSS `?v=20260506-6b` em todos os 4 ficheiros. Fase 6B.1 entregue: switch para Padrão B (caption não-clicável, tooltip mantém link). Decisão tomada após preview revelar conflito UX entre caption e click no card. source_url preservada em data-source-url no figcaption. CSS `?v=20260506-6b1`. | session 06/05/2026 |
 
 ### Brand (BRAND)
