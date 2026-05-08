@@ -34,84 +34,131 @@ const REPORT_PATH = resolve(__dirname, 'auto-tag-report.html');
 const CORRECTIONS_PATH = resolve(__dirname, 'auto-tag-corrections.json');
 
 // =============================================
-// TAGGING RULES
+// TAGGING RULES — calibrated against real DB vocabulary
 // =============================================
+// 3-tier system per category:
+//   strong_positive  → any 1 hit → tag (unless strong_negative)
+//   weak_positive    → ≥2 hits   → tag (unless strong_negative)
+//   strong_negative  → overrides any positive match
 
 const RULES = {
   family: {
     label: 'Famílias',
-    positive: [
-      /\bfam[ií]l[iy]a/i,
-      /\bcrian[çc]a/i,
-      /\babrigada/i,
-      /\b[áa]guas?\s+calmas?\b/i,
-      /\b[áa]guas?\s+rasas?\b/i,
-      /\blaguna\b/i,
-      /\bpiscinas?\s+naturais\b/i,
-      /\bsem\s+ondas\b/i,
-      /\bondas?\s+suaves?\b/i,
-      /\btranquila\b/i,
-      /\bprotegida\b/i,
+    // Editor uses these when explicitly describing family suitability
+    strong_positive: [
+      /\bfam[ií]li[ao]s?\b/i,          // família/famílias
+      /\bfamiliar\b/i,                   // "praia familiar", "ambiente familiar"
+      /\bcrian[çc]a[s]?\b/i,            // criança/crianças
+      /\blag(?:una|oa)s?\b/i,             // laguna / lagoa (Ria Formosa, coastal lagoons)
+      /\bpiscinas?\s+naturais?\b/i,      // natural rock pools = calm
     ],
-    negative: [
-      /fal[ée]sia[s]?\s+perigosa[s]?/i,
-      /correntes?\s+perigosas?/i,
-      /n[ãa]o\s+recomendada\s+para\s+crian[çc]as/i,
+    // Each weak alone is ambiguous; ≥2 confirms family suitability
+    weak_positive: [
+      /\b[aá]guas?\s+calmas?\b/i,         // águas calmas / Água calma
+      /\b[aá]gua\s+mais\s+calma\b/i,    // água mais calma
+      /\bmar\s+calmo\b/i,                // mar calmo
+      /\btranquil[ao]s?\b/i,             // tranquila/tranquilas
+      /\babrigada[s]?\b/i,               // sheltered beach
+      /\bresguardada[s]?\b/i,            // sheltered/protected
+      /\brasa[s]?\b/i,                   // shallow water
+      /\bsem\s+ondas\b/i,               // no waves
+      /\bondas?\s+suaves?\b/i,           // gentle waves
+      /\bnadador.salvador\b/i,           // lifeguard present
+      /\bsalva.vidas\b/i,                // lifeguard present
+      /\bbandeira\s+azul\b/i,            // Blue Flag = family certified
+      /\btranquilidade\b/i,              // tranquilidade (noun form)
+    ],
+    strong_negative: [
+      /ondula[çc][ãa]o\s+(?:intensa|forte|perigosa)/i,
+      /ondas?\s+(?:intensas?|fortes?|grandes?|violentas?)/i,
+      /correntes?\s+(?:perigosas?|fortes?)/i,
+      /n[ãa]o\s+recomendada\s+para/i,
     ],
   },
+
   surf: {
     label: 'Surf',
-    positive: [
-      /\bsurf\b(?!\s*shop)/i,
-      /\bonda[s]?\s+consistentes?\b/i,
-      /\bbodyboard\b/i,
-      /\bwindsurf\b/i,
-      /\bkitesurf\b/i,
-      /\bspot\s+de\s+surf\b/i,
-      /\bondula[çc][ãa]o\b/i,
-      /\bswells?\b/i,
+    // "surf" as a sport keyword is the primary signal — no need for ondulação
+    strong_positive: [
+      /\bsurf\b/i,                       // surf (activity/culture)
+      /\bsurfistas?\b/i,                 // surfistas
+      /\bbodyboard\b/i,                  // bodyboard
+      /\bwindsurf\b/i,                   // windsurf
+      /\bkitesurf\b/i,                   // kitesurf
     ],
-    negative: [
+    weak_positive: [
+      /\bspot\b/i,                       // spot de surf
+      /\bonda[s]?\s+consistentes?\b/i,   // ondas consistentes
+      /\bpoint\s+break\b/i,
+      /\bbeach\s+break\b/i,
+    ],
+    strong_negative: [
       /loja\s+de\s+surf/i,
-      /aulas?\s+de\s+surf\s+perto/i,
     ],
   },
+
   fishing: {
     label: 'Pesca',
-    positive: [
-      /\bpesca\s+(?:desportiva|recreativa|à\s+linha|de\s+cana)\b/i,
-      /\bpescadores?\s+(?:locais|frequentam|costumam)\b/i,
-      /\bzona\s+de\s+pesca\b/i,
-      /\bpesca\s+à\s+linha\b/i,
-      /\bpesca\s+desde\b/i,
-      /\bpesca\s+(?:é|e)\s+(?:praticada|comum|frequente)\b/i,
-      /\bpracticam\s+pesca\b/i,
-      /\bhabitual(?:mente)?\s+para\s+pesca\b/i,
+    // Editor uses "piscatório/a" and "barcos de pesca" for active fishing ports
+    strong_positive: [
+      /piscat[óo]ri[ao]\b/i,             // piscatório/piscatória (9 beaches)
+      /barcos?\s+de\s+pesca\b/i,         // barcos de pesca
+      /pesca\s+artesanal\b/i,            // pesca artesanal
+      /artes\s+de\s+pesca\b/i,           // artes de pesca
+      /porto\s+(?:de\s+pesca|pesqueiro)\b/i, // porto de pesca/pesqueiro
     ],
-    negative: [
-      /\baldeia\s+de\s+pescadores\b/i,
-      /\bantigos?\s+pescadores?\b/i,
-      /\btradi[çc][ãa]o\s+piscat[óo]ria\b/i,
+    // "pesca" alone is ambiguous; need a companion weak signal
+    weak_positive: [
+      /\bpesca\b/i,                      // pesca (generic mention)
+      /\bpescadores?\b/i,                // pescador/pescadores
+      /\bisco\b/i,                       // bait fishing
+      /\bcana\s+de\s+pesca\b/i,          // cana de pesca
+      /\bmarisqueiras?\b/i,              // seafood restaurants = fishing port
     ],
+    strong_negative: [],
   },
+
   wild_nature: {
     label: 'Natureza selvagem',
-    positive: [
-      /\breserva\s+(?:natural|biol[óo]gica)\b/i,
-      /\bparque\s+natural\b/i,
-      /\bselvagem\b/i,
-      /\bisolada\b/i,
-      /\bvirgem\b/i,
-      /\binacess[íi]vel\b/i,
-      /\bdeserta\b/i,
-      /\bsem\s+infraestrutura\b/i,
-      /\bfal[ée]sias?\s+imponentes?\b/i,
-      /\bdunas?\s+protegidas?\b/i,
+    // Editor uses parque/reserva/selvagem for explicitly protected/wild beaches
+    strong_positive: [
+      /\bparque\s+natural\b/i,            // parque natural (13 beaches)
+      /\breserva\s+natural\b/i,           // reserva natural
+      /\bselvage(?:m|ns?)\b/i,              // selvagem (singular) + selvagens (plural)
+      /\bvirgem\b/i,                      // virgem (untouched)
+      /natureza\s+pura\b/i,               // "natureza pura"
+      /nenhuma\s+infraestrutura\b/i,      // "nenhuma infraestrutura"
+      /sem\s+infra(?:-|\s*)estrutura\b/i, // "sem infraestrutura"
+      /costa\s+vicentina\b/i,             // Costa Vicentina (protected national park coast)
     ],
-    negative: [
-      /pr[óo]xima\s+da\s+cidade/i,
+    // Geomorphic + access features — need ≥2 to signal wild
+    weak_positive: [
+      /\bisolada?\b/i,                    // isolada
+      /\bdespovoada?\b/i,                 // despovoada
+      /\bdeserta?\b/i,                    // deserta
+      /\bremota?\b/i,                     // remota
+      /\bescondida?\b/i,                  // escondida
+      /\bpreserva(?:d[ao]s?)?\b/i,         // preserva / preservada / preservadas
+      /\bprotegida?\b/i,                  // protegida
+      /\bquietude\b/i,                    // quietude
+      /pouco\s+(?:conhecida|frequentada|concorrida)\b/i, // low footfall signal
+      /turismo\s+.{0,25}n[ãa]o\s+descobriu/i, // "turismo de massa não descobriu"
+      /fora\s+do\s+roteiro\b/i,
+      /\bdunas?\b/i,                      // duna/dunas (16 beaches)
+      /\bdunar[es]*\b/i,                  // dunar/dunares (dune landscape adjective)
+      /\bfal[ée]sia[s]?\b/i,              // falésia/falésias (36 beaches)
+      /\bagreste[s]?\b/i,                 // agreste
+      /\binacess[íi]vel\b/i,              // inacessível
+      /\bpinhal\b/i,                      // pinhal (coastal pine forest)
+      /\bnaturistas?\b/i,                 // naturista = nudist = wild undeveloped beach
+      /\bgrutas?\b/i,                     // gruta/grutas = sea caves in cliffs = wild coast
+      /(?:de\s+)?dif[íi]cil\s+acesso\b|acesso\s+dif[íi]cil\b/i, // hard access = wild
+      /acesso\s+por\s+caminho\b/i,        // rough track access = wild
+    ],
+    strong_negative: [
       /muito\s+frequentada/i,
       /\blotada\b/i,
+      /infraestrutura\s+completa/i,
     ],
   },
 };
@@ -119,7 +166,7 @@ const RULES = {
 const TAG_KEYS = Object.keys(RULES);
 
 // =============================================
-// MATCHING LOGIC
+// MATCHING LOGIC — 3-tier with confidence levels
 // =============================================
 
 function matchTags(description) {
@@ -129,22 +176,34 @@ function matchTags(description) {
   const matchDetails = {};
 
   for (const [key, rule] of Object.entries(RULES)) {
-    const positiveMatches = rule.positive.filter(rx => rx.test(description));
-    const negativeMatches = rule.negative.filter(rx => rx.test(description));
+    const strongPos = rule.strong_positive.filter(rx => rx.test(description));
+    const weakPos = (rule.weak_positive || []).filter(rx => rx.test(description));
+    const strongNeg = rule.strong_negative.filter(rx => rx.test(description));
 
-    if (positiveMatches.length > 0 && negativeMatches.length === 0) {
+    if (strongNeg.length > 0 && strongPos.length === 0) {
+      // Strong negative with no strong positive → skip
+      if (strongPos.length > 0 || weakPos.length >= 2) {
+        matchDetails[key] = {
+          matched: false,
+          reason: 'strong_negative override',
+          strong_positive: strongPos.map(rx => rx.source),
+          strong_negative: strongNeg.map(rx => rx.source),
+        };
+      }
+      continue;
+    }
+
+    const tagByStrong = strongPos.length > 0;
+    const tagByWeak = weakPos.length >= 2 && strongPos.length === 0;
+
+    if (tagByStrong || tagByWeak) {
       matched.push(key);
       matchDetails[key] = {
         matched: true,
-        positive: positiveMatches.map(rx => rx.source),
-        negative: [],
-      };
-    } else if (positiveMatches.length > 0 && negativeMatches.length > 0) {
-      matchDetails[key] = {
-        matched: false,
-        positive: positiveMatches.map(rx => rx.source),
-        negative: negativeMatches.map(rx => rx.source),
-        reason: 'positive matched but negative override applied',
+        confidence: tagByStrong ? 'high' : 'medium',
+        strong_positive: strongPos.map(rx => rx.source),
+        weak_positive: weakPos.map(rx => rx.source),
+        strong_negative: strongNeg.map(rx => rx.source),
       };
     }
   }
@@ -216,6 +275,10 @@ function generateHTMLReport(results) {
       .filter(([, v]) => !v.matched && v.reason)
       .map(([k, v]) => `<small style="color:#999;">⚠️ ${k}: ${v.reason}</small>`)
       .join('<br>');
+    const confidenceNotes = Object.entries(r.matchDetails || {})
+      .filter(([, v]) => v.matched && v.confidence === 'medium')
+      .map(([k]) => `<small style="color:#C9A24B;">〰 ${k}: medium confidence</small>`)
+      .join('<br>');
 
     const desc = (r.description || '').substring(0, 220);
     const descTrunc = r.description && r.description.length > 220 ? desc + '…' : desc;
@@ -225,7 +288,7 @@ function generateHTMLReport(results) {
       <td><span class="beach-name">${r.name}</span></td>
       <td><span class="description">${descTrunc}</span></td>
       <td>${TAG_KEYS.map(key => tagBadge(key, r.proposedTags.includes(key))).join('')}</td>
-      <td>${r.notes || ''}${conflictNotes}</td>
+      <td>${r.notes || ''}${conflictNotes}${confidenceNotes}</td>
     </tr>`;
   }).join('\n');
 
