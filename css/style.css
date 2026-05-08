@@ -3129,3 +3129,29 @@ input[type="number"], input[type="date"], input[type="search"] {
     flex: 0 0 auto;
   }
 }
+
+/* --- i18n notice banner (EN pages only) --- */
+.i18n-notice {
+  background: rgba(10,61,107,0.07);
+  border-bottom: 1px solid rgba(10,61,107,0.12);
+  padding: 9px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--blue);
+  line-height: 1.4;
+}
+.i18n-notice-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--blue);
+  opacity: 0.5;
+  padding: 2px 6px;
+  flex-shrink: 0;
+}
+.i18n-notice-close:hover { opacity: 1; }
