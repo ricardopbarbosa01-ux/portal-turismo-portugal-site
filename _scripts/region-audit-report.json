@@ -1,0 +1,100 @@
+[
+  {
+    "id": "ffe1a91f-de57-4ff0-9ad5-d32951851730",
+    "name": "Praia de Peniche",
+    "currentRegion": "Centro",
+    "suggestedRegion": "Oeste",
+    "matchedKey": "peniche"
+  },
+  {
+    "id": "37ac39ea-0a07-480a-9147-5aed9a9ae388",
+    "name": "Praia da Bordeira",
+    "currentRegion": "Alentejo",
+    "suggestedRegion": "Algarve",
+    "matchedKey": "bordeira"
+  },
+  {
+    "id": "e1e260e4-5094-4dee-8c90-11a43523e126",
+    "name": "Praia de Monte Clérigo",
+    "currentRegion": "Alentejo",
+    "suggestedRegion": "Algarve",
+    "matchedKey": "aljezur"
+  },
+  {
+    "id": "b04adbca-20fc-44e0-b947-066978b8fffc",
+    "name": "Praia do Amado",
+    "currentRegion": "Alentejo",
+    "suggestedRegion": "Algarve",
+    "matchedKey": "amado"
+  },
+  {
+    "id": "a6625ef3-a4ad-4e38-b74e-856ffc9fa724",
+    "name": "Praia da Arrifana",
+    "currentRegion": "Alentejo",
+    "suggestedRegion": "Algarve",
+    "matchedKey": "arrifana"
+  },
+  {
+    "id": "c627b1c9-8467-4729-aa26-15fb6e86e6af",
+    "name": "Praia de Odeceixe",
+    "currentRegion": "Alentejo",
+    "suggestedRegion": "Algarve",
+    "matchedKey": "odeceixe"
+  },
+  {
+    "id": "91f9ac99-a4b2-4793-afba-5b7f79d72d54",
+    "name": "Praia da Comporta",
+    "currentRegion": "Lisboa e Setúbal",
+    "suggestedRegion": "Alentejo",
+    "matchedKey": "comporta"
+  },
+  {
+    "id": "6347e27e-d7fe-45bd-9fb8-ff3d7557d100",
+    "name": "Praia de São Martinho do Porto",
+    "currentRegion": "Centro",
+    "suggestedRegion": "Oeste",
+    "matchedKey": "são martinho"
+  },
+  {
+    "id": "f0fbf5a9-75d3-40d3-80be-62fc749588fd",
+    "name": "Praia do Tamariz",
+    "currentRegion": "Oeste",
+    "suggestedRegion": "Lisboa e Setúbal",
+    "matchedKey": "estoril"
+  },
+  {
+    "id": "49839927-ee16-498b-80a8-f029627fd4c5",
+    "name": "Praia da Costa de Caparica",
+    "currentRegion": "Oeste",
+    "suggestedRegion": "Lisboa e Setúbal",
+    "matchedKey": "caparica"
+  },
+  {
+    "id": "508706d1-2ddd-4377-8319-75a5bb347435",
+    "name": "Praia da Fonte da Telha",
+    "currentRegion": "Oeste",
+    "suggestedRegion": "Lisboa e Setúbal",
+    "matchedKey": "caparica"
+  },
+  {
+    "id": "406a09d1-daa7-44b3-aa19-3a13b4aab711",
+    "name": "Praia de Carcavelos",
+    "currentRegion": "Oeste",
+    "suggestedRegion": "Lisboa e Setúbal",
+    "matchedKey": "cascais"
+  },
+  {
+    "id": "f893e0a8-9f2e-4533-9093-001877541cf1",
+    "name": "Praia de São João do Estoril",
+    "currentRegion": "Oeste",
+    "suggestedRegion": "Lisboa e Setúbal",
+    "matchedKey": "cascais"
+  },
+  {
+    "id": "7b053b2b-f6f9-4d2b-b897-e4f4b52f463a",
+    "name": "Praia de S. Pedro do Estoril",
+    "currentRegion": "Oeste",
+    "suggestedRegion": "Lisboa e Setúbal",
+    "matchedKey": "cascais"
+  }
+]
