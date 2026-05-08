@@ -176,6 +176,11 @@
   </div>
 </nav>
 
+<div class="i18n-notice" id="i18n-notice" role="status">
+  <span>🇬🇧 <strong>English version</strong> — some beach details may appear in Portuguese while we complete translations.</span>
+  <button class="i18n-notice-close" onclick="this.parentElement.remove();try{localStorage.setItem('i18n-notice-ok','1')}catch(e){}" aria-label="Dismiss">✕</button>
+</div>
+<script>try{if(localStorage.getItem('i18n-notice-ok'))document.getElementById('i18n-notice').style.display='none'}catch(e){}</script>
 <main id="main">
 
 <header class="seo-hero" aria-labelledby="page-h1">
