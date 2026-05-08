@@ -2775,3 +2775,357 @@ input[type="number"], input[type="date"], input[type="search"] {
     padding: 16px 0;
   }
 }
+
+/* ============================================
+   FILTERS BAR v2 — Hotfix 3 Bloco B-2 (2026-05-08)
+   3 chip-groups: Region / Water quality / Ideal for
+   Sort dropdown with Pro gating
+   (Old .chips-bar rules above are preserved — other pages may use them)
+   ============================================ */
+
+.filters-top-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  min-width: 240px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 46px;
+  background: #fff;
+  border: 1px solid rgba(11, 27, 43, 0.12);
+  border-radius: 4px 24px 4px 24px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  color: var(--navy, #0B1B2B);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--dourado, #C9A24B);
+  box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Sort dropdown */
+.sort-dropdown-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px;
+  background: #fff;
+  border: 1px solid rgba(11, 27, 43, 0.12);
+  border-radius: 4px 24px 4px 24px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  color: var(--navy, #0B1B2B);
+  cursor: pointer;
+  min-height: 48px;
+  white-space: nowrap;
+  transition: border-color 0.15s;
+}
+
+.sort-button:hover,
+.sort-button[aria-expanded="true"] {
+  border-color: var(--dourado, #C9A24B);
+}
+
+.sort-label-prefix {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.sort-current-value { font-weight: 500; }
+.sort-chevron { font-size: 11px; opacity: 0.55; }
+
+.sort-options {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid rgba(11, 27, 43, 0.12);
+  border-radius: 4px 24px 4px 24px;
+  box-shadow: 0 12px 32px rgba(11, 27, 43, 0.12);
+  padding: 8px;
+  margin: 0;
+  list-style: none;
+  z-index: 200;
+}
+
+.sort-options[hidden] { display: none; }
+
+.sort-options li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-radius: 4px 12px 4px 12px;
+  font-size: 14px;
+  color: var(--navy, #0B1B2B);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.sort-options li:hover { background: rgba(11, 27, 43, 0.05); }
+
+.sort-options li[aria-selected="true"] {
+  background: var(--navy, #0B1B2B);
+  color: #F2E8D5;
+}
+
+.lock-icon { font-size: 12px; opacity: 0.7; }
+
+.pro-badge {
+  margin-left: auto;
+  padding: 2px 7px;
+  background: var(--dourado, #C9A24B);
+  color: var(--navy, #0B1B2B);
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.results-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--navy, #0B1B2B);
+  opacity: 0.65;
+  white-space: nowrap;
+}
+
+#results-count-value {
+  font-weight: 700;
+  opacity: 1;
+  color: var(--navy, #0B1B2B);
+}
+
+/* Chip groups container */
+.chip-groups {
+  padding: 16px 16px 20px;
+  background: var(--areia, #F6F4EF);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-bottom: 1px solid rgba(11, 27, 43, 0.07);
+}
+
+.chip-group {
+  position: relative;
+}
+
+.chip-group-label {
+  display: block;
+  margin-bottom: 8px;
+  padding-left: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--navy, #0B1B2B);
+  opacity: 0.55;
+  font-weight: 500;
+}
+
+/* Chips within groups use the existing .chip style but override active state */
+.chip-group .chips-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  /* Remove scroll from inline chips-bar within group on desktop */
+  overflow-x: visible;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+/* New aria-pressed active state (complements old .active class) */
+.chip[aria-pressed="true"] {
+  background: var(--navy, #0B1B2B);
+  color: #F2E8D5;
+  border-color: var(--navy, #0B1B2B);
+}
+
+/* Disabled chips (0 results) */
+.chip[aria-disabled="true"] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Pro upsell modal */
+.pro-upsell-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 27, 43, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.pro-upsell-modal[open] { display: flex; }
+
+.pro-upsell-content {
+  max-width: 440px;
+  width: 100%;
+  background: #F6F4EF;
+  border-radius: 4px 32px 4px 32px;
+  padding: 32px 28px 28px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(11, 27, 43, 0.28);
+}
+
+.pro-upsell-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--navy, #0B1B2B);
+  opacity: 0.45;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pro-upsell-close:hover { opacity: 0.9; }
+
+.pro-upsell-icon { font-size: 36px; margin-bottom: 10px; }
+
+.pro-upsell-content h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: var(--navy, #0B1B2B);
+}
+
+.pro-upsell-content p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--navy, #0B1B2B);
+  opacity: 0.8;
+  margin-bottom: 22px;
+}
+
+.pro-upsell-cta {
+  display: inline-block;
+  padding: 13px 28px;
+  background: var(--dourado, #C9A24B);
+  color: var(--navy, #0B1B2B);
+  border-radius: 4px 16px 4px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.pro-upsell-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 162, 75, 0.35);
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 768px) {
+  .filters-top-row {
+    gap: 10px;
+  }
+
+  .sort-dropdown-wrapper {
+    width: 100%;
+    order: 1;
+  }
+
+  .sort-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sort-options {
+    left: 0;
+    right: 0;
+    min-width: 0;
+  }
+
+  .results-count {
+    width: 100%;
+    text-align: right;
+    order: 2;
+  }
+
+  .chip-groups {
+    padding: 12px 0 16px;
+    gap: 12px;
+  }
+
+  .chip-group {
+    padding: 0 16px;
+  }
+
+  .chip-group-label {
+    padding-left: 0;
+  }
+
+  .chip-group .chips-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin: 0 -16px;
+    padding: 2px 16px 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Restore scroll fade for mobile */
+    mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+  }
+
+  .chip-group .chips-bar::-webkit-scrollbar { display: none; }
+
+  .chip-group .chips-bar .chip {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+  }
+}
