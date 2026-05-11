@@ -62,7 +62,7 @@ function isAdminUser(user) {
 // ─── Beaches CRUD ─────────────────────────────────────────────────────────────
 
 async function getBeaches(search = '') {
-  let q = db.from('beaches').select('*').order('name');
+  let q = db.from('beaches').select('*').eq('is_active', true).order('name');
   if (search) q = q.ilike('name', `%${search}%`);
   const { data, error } = await q;
   if (error) throw error;
