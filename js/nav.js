@@ -71,9 +71,16 @@
     if (!authDiv) {
       var auth = document.createElement('div');
       auth.className = 'mobile-auth';
-      auth.innerHTML =
-        '<a href="' + t.loginHref + '" class="btn-mobile-login">' + t.signIn + '</a>' +
-        '<a href="' + t.registerHref + '" class="btn-mobile-register">' + t.signUp + '</a>';
+      var loginA = document.createElement('a');
+      loginA.href = t.loginHref;
+      loginA.className = 'btn-mobile-login';
+      loginA.textContent = t.signIn;
+      auth.appendChild(loginA);
+      var regA = document.createElement('a');
+      regA.href = t.registerHref;
+      regA.className = 'btn-mobile-register';
+      regA.textContent = t.signUp;
+      auth.appendChild(regA);
       menu.appendChild(auth);
     }
 
@@ -84,7 +91,9 @@
       mobileLang.className = 'mobile-lang';
       mobileLang.setAttribute('role', 'navigation');
       mobileLang.setAttribute('aria-label', lang === 'en' ? 'Language' : 'Idioma');
-      mobileLang.innerHTML = desktopLang.innerHTML;
+      Array.from(desktopLang.childNodes).forEach(function(node) {
+        mobileLang.appendChild(node.cloneNode(true));
+      });
       menu.appendChild(mobileLang);
     }
 

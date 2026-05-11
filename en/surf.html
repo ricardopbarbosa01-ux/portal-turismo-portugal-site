@@ -432,7 +432,7 @@
     .seo-guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260507-hf2">
+<link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/js/image-autofix.js"></script>
 </head>
@@ -941,6 +941,19 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  // TrustedTypes-compatible innerHTML helper
+  const _setHTML = (function() {
+    var _p = null;
+    try {
+      if (window.trustedTypes && window.trustedTypes.createPolicy) {
+        _p = window.trustedTypes.createPolicy('pth-html', { createHTML: function(s) { return s; } });
+      }
+    } catch(e) {}
+    return function(el, html) {
+      if (_p) { el.innerHTML = _p.createHTML(html); } else { el.innerHTML = html; }
+    };
+  })();
+
   // ── Data ─────────────────────────────────────────────────────────
   const SPOTS = [
     {
@@ -1219,10 +1232,14 @@
     const grid  = document.getElementById('spots-grid');
     const count = document.getElementById('spot-count');
     const n = spots.length;
-    count.innerHTML = `<strong>${n}</strong> spot${n!==1?'s':''}`;
+    count.textContent = '';
+    const _strong = document.createElement('strong');
+    _strong.textContent = String(n);
+    count.appendChild(_strong);
+    count.appendChild(document.createTextNode(` spot${n!==1?'s':''}`));
 
     if (!n) {
-      grid.innerHTML = `
+      _setHTML(grid, `
         <div class="spots-empty" role="status">
           <div class="spots-empty-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
@@ -1230,11 +1247,11 @@
           <p class="spots-empty-title">No spots found</p>
           <p class="spots-empty-sub">Try other filters or explore all available regions.</p>
           <button class="btn-reset" onclick="clearFilters()">View all spots</button>
-        </div>`;
+        </div>`);
       return;
     }
 
-    grid.innerHTML = spots.map(s => `
+    _setHTML(grid, spots.map(s => `
       <article class="spot-card" role="listitem">
         <div class="spot-visual">
           <div class="spot-visual-bg ${esc(s.bgClass)}">
@@ -1274,7 +1291,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
         </div>
-      </article>`).join('');
+      </article>`).join(''));
   }
 
   // ── FAQ ──────────────────────────────────────────────────────────
@@ -1317,7 +1334,7 @@
     item.querySelector('.faq-header').setAttribute('aria-expanded', String(!open));
   };
 
-  document.getElementById('faq-list').innerHTML = FAQS.map((f,i) => `
+  _setHTML(document.getElementById('faq-list'), FAQS.map((f,i) => `
     <div class="faq-item${i===0?' open':''}" id="faq-${i}">
       <button class="faq-header" onclick="toggleFaq('faq-${i}')" aria-expanded="${i===0}" aria-controls="faq-body-${i}">
         <span class="faq-question">${esc(f.q)}</span>
@@ -1326,7 +1343,7 @@
       <div class="faq-body" id="faq-body-${i}" role="region">
         <p class="faq-answer">${esc(f.a)}</p>
       </div>
-    </div>`).join('');
+    </div>`).join(''));
 
   // ── Init ─────────────────────────────────────────────────────────
   renderSpots(SPOTS);
