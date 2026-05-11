@@ -194,7 +194,16 @@
   if (!user) { window.location.href = '/login.html'; return; }
 
   const justPaid = new URLSearchParams(window.location.search).get('activated') === '1';
-  if (user.app_metadata?.plan !== 'pro' && !justPaid) { window.location.href = '/precos.html'; return; }
+  
+  // Read plan from profiles (DB source of truth, RLS-protected) — SEC-02/SEC-04 fix
+  async function fetchPlan(userId) {
+    try {
+      const { data: profile } = await db.from('profiles').select('plan').eq('id', userId).maybeSingle();
+      return profile?.plan || 'free';
+    } catch (e) { return 'free'; }
+  }
+  const userPlan = await fetchPlan(user.id);
+  if (userPlan !== 'pro' && !justPaid) { window.location.href = '/precos.html'; return; }
 
   // Preencher dados do utilizador na sidebar
   const name = user.user_metadata?.full_name || user.email || '';
@@ -210,7 +219,7 @@
   });
 
   // Carregar favoritos (se já Pro confirmado)
-  if (user.app_metadata?.plan === 'pro' && !justPaid) {
+  if (userPlan === 'pro' && !justPaid) {
     await loadFavoritesSection();
   }
 
@@ -218,7 +227,11 @@
   if (justPaid) {
     history.replaceState(null, '', '/conta.html');
 
-    function isProActive(u) { return u?.app_metadata?.plan === 'pro'; }
+    async function isProActive(u) {
+      if (!u) return false;
+      const p = await fetchPlan(u.id);
+      return p === 'pro';
+    }
 
     const pendingEl = document.createElement('div');
     pendingEl.id = 'pro-pending';
@@ -228,7 +241,7 @@
     document.querySelector('.account-main')?.prepend(pendingEl);
 
     const { data: { user: freshUser } } = await db.auth.getUser();
-    if (isProActive(freshUser)) {
+    if (await isProActive(freshUser)) {
       // Webhook disparou antes do redirect — confirmação imediata
       pendingEl.remove();
       await loadFavoritesSection();
@@ -241,7 +254,7 @@
       const pollTimer = setInterval(async () => {
         attempts++;
         const { data: { user: polled } } = await db.auth.getUser();
-        if (isProActive(polled)) {
+        if (await isProActive(polled)) {
           clearInterval(pollTimer);
           pendingEl.remove();
           await loadFavoritesSection();
@@ -249,8 +262,11 @@
           showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
         } else if (attempts >= MAX_ATTEMPTS) {
           clearInterval(pollTimer);
-          pendingEl.textContent = 'A ativação pode demorar alguns segundos. Atualiza esta página.';
+          pendingEl.textContent = 'Ativação não confirmada. Vais ser redirecionado.';
           pendingEl.style.color = 'var(--text-light)';
+          track('pro_activation_return', { page: 'conta', result: 'timeout' });
+          // SEC-04 fix: redirect free user out of Pro UI after timeout
+          setTimeout(() => { window.location.href = '/precos.html?activation_pending=1'; }, 3000);
         }
       }, 2000);
     }
