@@ -69,7 +69,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="/css/style.css?v=20260507-hf2">
+  <link rel="stylesheet" href="/css/style.css?v=20260508-guias">
 
   <style>
 :root {
@@ -259,6 +259,14 @@
     @media(max-width:768px){.mobile-bottom-nav{display:block;}body{padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));}}
 
     .hidden{display:none!important;}
+
+    /* Hotfix mobile — compactar footer, evitar coverage bottom nav */
+    @media(max-width:768px){
+      .footer-col{display:none!important;}
+      .footer-grid{grid-template-columns:1fr!important;gap:0!important;padding-bottom:20px!important;}
+      .footer-brand{grid-column:1!important;}
+      .footer{padding-top:28px;padding-bottom:80px!important;}
+    }
 </style>
   <script src="/js/image-autofix.js"></script>
 </head>
