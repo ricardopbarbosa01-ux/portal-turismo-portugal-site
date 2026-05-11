@@ -1475,7 +1475,7 @@
 
 <!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="/js/config.js?v=20260508-isactive" defer></script>
+<script src="/js/config.js?v=20260511-planefix" defer></script>
 <script>
 // ── Footer year ──
 document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -1588,10 +1588,10 @@ form.addEventListener('submit', async function(e) {
     email:       document.getElementById('f-email').value.trim(),
     interesses:  interests,
     regiao:      document.getElementById('f-regiao').value,
-    pessoas:     document.getElementById('f-pessoas').value,
-    data_inicio: document.getElementById('f-data-inicio').value,
-    data_fim:    document.getElementById('f-data-fim').value,
-    orcamento:   budget,
+    pessoas:     (document.getElementById('f-pessoas').value || null),
+    data_inicio: (document.getElementById('f-data-inicio').value || null),
+    data_fim:    (document.getElementById('f-data-fim').value || null),
+    orcamento:   (budget || null),
     notas:       document.getElementById('f-notas').value.trim(),
     ...(window._pthSourceCtx || {})
   };
@@ -1711,10 +1711,10 @@ form.addEventListener('submit', async function(e) {
         email:       document.getElementById('f-email').value.trim(),
         interesses:  interests,
         regiao:      document.getElementById('f-regiao').value,
-        pessoas:     document.getElementById('f-pessoas').value,
-        data_inicio: document.getElementById('f-data-inicio').value,
-        data_fim:    document.getElementById('f-data-fim').value,
-        orcamento:   budget,
+        pessoas:     (document.getElementById('f-pessoas').value || null),
+        data_inicio: (document.getElementById('f-data-inicio').value || null),
+        data_fim:    (document.getElementById('f-data-fim').value || null),
+        orcamento:   (budget || null),
         notas:       document.getElementById('f-notas').value.trim()
       };
       if (window._pthSourceCtx) { Object.assign(payload, window._pthSourceCtx); }
