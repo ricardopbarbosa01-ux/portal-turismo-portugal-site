@@ -3215,3 +3215,58 @@ input[type="number"], input[type="date"], input[type="search"] {
   .mediakit-cta-block { padding: 32px 20px; margin: 32px 16px; }
   .mediakit-cta-button { font-size: 13px; padding: 14px 20px; }
 }
+
+/* ============================================
+   ACCESSIBILITY — Tap targets WCAG 2.1 AA (2026-05-11)
+   Resolves 81 pages flagged in QA Mobile Bulk audit.
+   Per WCAG SC 2.5.5: interactive elements ≥44×44 CSS px.
+   Exceptions: inline links inside body text (excluded via :not).
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Buttons and standalone interactive elements */
+  button:not([disabled]),
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"]:not(a),
+  .btn,
+  .button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Standalone links (cards, CTAs, nav items) — not inline body links */
+  a.btn,
+  a.button,
+  a.cta,
+  a[role="button"],
+  .nav-link,
+  .mobile-nav-item,
+  .chip,
+  .filter-chip,
+  .footer-bottom a,
+  nav a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Form inputs */
+  input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    min-height: 44px;
+  }
+
+  /* Checkboxes/radios stay native size but have 44px clickable area via padding */
+  label:has(> input[type="checkbox"]),
+  label:has(> input[type="radio"]) {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 0;
+  }
+}

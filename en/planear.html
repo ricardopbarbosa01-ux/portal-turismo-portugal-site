@@ -68,7 +68,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260507-hf2">
+  <link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
 
   <style>
 .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 22px; border-radius:50px; font-family:'Inter',sans-serif; font-size:0.875rem; font-weight:500; transition:var(--transition); cursor:pointer; min-height:44px; }
@@ -1636,7 +1636,7 @@ form.addEventListener('submit', async function(e) {
   formSuccess.classList.add('visible');
   formSuccess.focus();
   const recStatus = document.getElementById('rec-status');
-  if (recStatus) recStatus.innerHTML = '✓ Request received by our team.';
+  if (recStatus) recStatus.textContent = '✓ Request received by our team.';
 });
 
 // ── Slide-to-confirm button ──────────────────────────────────────
@@ -1777,7 +1777,7 @@ form.addEventListener('submit', async function(e) {
         formSuccess.classList.add('visible');
         formSuccess.focus();
         var recStatus = document.getElementById('rec-status');
-        if (recStatus) recStatus.innerHTML = '✓ Request received by our team.';
+        if (recStatus) recStatus.textContent = '✓ Request received by our team.';
       }, 700);
     }, 1300);
   }
@@ -1842,6 +1842,19 @@ form.addEventListener('submit', async function(e) {
     e.preventDefault();
     confirmSubmit();
   });
+})();
+
+// TrustedTypes-compatible innerHTML helper for this page
+(function() {
+  var _p = null;
+  try {
+    if (window.trustedTypes && window.trustedTypes.createPolicy) {
+      _p = window.trustedTypes.createPolicy('pth-html', { createHTML: function(s) { return s; } });
+    }
+  } catch(e) {}
+  window._setHTML = function(el, html) {
+    if (_p) { el.innerHTML = _p.createHTML(html); } else { el.innerHTML = html; }
+  };
 })();
 
 // ── Context from referral source ─────────────────────────────────
@@ -1932,12 +1945,12 @@ form.addEventListener('submit', async function(e) {
     }
 
     if (title) {
-      bannerEl.innerHTML = `
+      _setHTML(bannerEl, `
         <div class="context-banner-icon" aria-hidden="true">${icon}</div>
         <div class="context-banner-text">
           <strong>${title}</strong>
           ${subtext ? `<span>${subtext}</span>` : ''}
-        </div>`;
+        </div>`);
       bannerEl.style.display = 'flex';
       requestAnimationFrame(() => requestAnimationFrame(() => bannerEl.classList.add('visible')));
     }
@@ -1960,7 +1973,7 @@ form.addEventListener('submit', async function(e) {
     else if (source === 'pesca')     primary = BTN.pesca;
     else if (source === 'webcams')   primary = BTN.webcams;
     else if (source === 'partner-demo') primary = BTN.partner;
-    actionsEl.innerHTML = primary + BTN.gyg + BTN.booking;
+    _setHTML(actionsEl, primary + BTN.gyg + BTN.booking);
   }
 
   // ── Payload context for pth_plan_requests ─────────────────────────
@@ -2094,7 +2107,7 @@ function buildRecommendation(data) {
     var ctaHtml = STRONG_MATCH
       ? primaryBtn + zoneBookingBtn + stayBtn + gygBtn
       : primaryBtn + bookingBtn + stayBtn + gygBtn;
-    actionsEl.innerHTML = ctaHtml;
+    _setHTML(actionsEl, ctaHtml);
     actionsEl.addEventListener('click', function(e) {
       var a = e.target.closest('a');
       if (a) track('planner_recommendation_cta_click', { page: 'planear', destination: dest, interest: interests.join(','), region: regiao });
