@@ -23,6 +23,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://portalturismoportugal.com/surf-portugal.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://portalturismoportugal.com/pesca.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -347,6 +353,12 @@
   <url>
     <loc>https://portalturismoportugal.com/praias-para-surfistas-iniciantes-portugal.html</loc>
     <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://portalturismoportugal.com/praias-surf-iniciantes-algarve.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
