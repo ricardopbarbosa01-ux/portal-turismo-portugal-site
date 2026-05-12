@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="/css/style.css?v=20260512b">
+  <link rel="stylesheet" href="/css/style.css?v=20260512-patch">
 
   <style>
     .account-root {
@@ -150,14 +150,6 @@
     <div class="acc-email" id="acc-email"></div>
     <div class="acc-pro-badge">★ Pro</div>
 
-    <nav class="acc-sidebar-nav" aria-label="Navegação da conta">
-      <a href="beaches.html" class="acc-nav-link">🏖️ Praias</a>
-      <a href="surf.html" class="acc-nav-link">🏄 Surf</a>
-      <a href="pesca.html" class="acc-nav-link">🎣 Pesca</a>
-      <a href="webcams.html" class="acc-nav-link">📷 Webcams</a>
-      <a href="planear.html" class="acc-nav-link">🗓️ Planear</a>
-    </nav>
-
     <button class="acc-signout" id="signout-btn" aria-label="Terminar sessão">
       <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
       Terminar sessão
@@ -201,8 +193,8 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="js/nav.js?v=20260422c" defer></script>
-<script src="/js/config.js?v=20260508-isactive" defer></script>
+<script src="js/nav.js?v=20260512-patch" defer></script>
+<script src="/js/config.js?v=20260512-patch" defer></script>
 <script>
 /* ── Auth guard + init ─────────────────────────────────────────── */
 (function () {
@@ -364,8 +356,8 @@ async function removeFavorite(beachId, beachName, beachRegion) {
   loadFavoritesSection();
 }
 </script>
-<script src="/js/alertas-manager.js?v=20260512" defer></script>
-<script src="/js/favorites.js?v=20260416b" defer></script>
+<script src="/js/alertas-manager.js?v=20260512-patch" defer></script>
+<script src="/js/favorites.js?v=20260512-patch" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>
