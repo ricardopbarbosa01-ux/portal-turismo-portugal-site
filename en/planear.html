@@ -1624,9 +1624,13 @@ form.addEventListener('submit', async function(e) {
     }
   } catch (err) {
     console.error('[PTH] plan_requests submit error:', err);
-    submitBtn.disabled = false;
-    submitBtn.textContent = origBtnText;
     showToast('Request not saved. Please try again or contact us.', 'error');
+    form.style.display = 'none';
+    buildRecommendation(data);
+    formSuccess.classList.add('visible');
+    formSuccess.focus();
+    const recStatus = document.getElementById('rec-status');
+    if (recStatus) recStatus.textContent = "Request saved locally. We'll try sending again soon.";
     return;
   }
 

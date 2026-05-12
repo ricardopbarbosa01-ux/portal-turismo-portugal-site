@@ -3,8 +3,10 @@
  * Depende de: config.js (db, showToast, track, getCurrentUser)
  */
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('b2b-form');
-  const btn = document.getElementById('b2b-submit');
+  const form    = document.getElementById('b2b-form');
+  const btn     = document.getElementById('b2b-submit');
+  const success = document.getElementById('b2b-success');
+  const pending = document.getElementById('b2b-pending');
   if (!form || !btn) return;
 
   // ── GA4: funil parceiros ──────────────────────────────────────────────
@@ -62,9 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('partner_leads submit error:', err);
     }
 
+    // Fallback: save locally on failure
     if (!submitOk) {
-      showToast('Erro ao enviar. Tente novamente ou contacte-nos directamente.', 'error');
-    } else {
+      try {
+        const arr = JSON.parse(localStorage.getItem('pth_partner_leads') || '[]');
+        arr.push({ ...payload, timestamp: new Date().toISOString() });
+        localStorage.setItem('pth_partner_leads', JSON.stringify(arr));
+      } catch (lsErr) {
+        console.warn('[PTH] partner_leads localStorage failed:', lsErr);
+      }
+    }
+
+    // Persistent state — hide form, show result panel
+    form.style.display = 'none';
+    if (submitOk) {
       if (typeof gtag === 'function') {
         try {
           gtag('event', 'partner_aplicacao_submetida', {
@@ -76,8 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       showToast('Pedido enviado! A nossa equipa contacta-o em 5 dias úteis.', 'success');
       // Email partner-alert enviado via DB trigger trigger_partner_lead_created
-      form.reset();
       track('b2b_form_submit', { plano: payload.plano, regiao: payload.regiao });
+      if (success) { success.classList.add('vis'); success.focus(); }
+    } else {
+      if (pending) { pending.classList.add('vis'); pending.focus(); }
     }
 
     btn.disabled = false;

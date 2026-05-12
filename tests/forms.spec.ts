@@ -8,11 +8,30 @@ type MockResult = 'success' | 'error';
 
 async function mockSupabase(route: Route, result: MockResult) {
   if (result === 'success') {
-    await route.fulfill({ status: 201, contentType: 'application/json', body: '[]' });
+    await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true }) });
   } else {
-    await route.fulfill({ status: 500, contentType: 'application/json', body: JSON.stringify({ message: 'mock error' }) });
+    await route.fulfill({ status: 500, contentType: 'application/json', body: JSON.stringify({ error: 'mock error' }) });
   }
 }
+
+// Block Turnstile CDN and inject fake token — prevents Turnstile from overwriting token value
+test.beforeEach(async ({ page }) => {
+  await page.route('**/challenges.cloudflare.com/turnstile/**', route => route.abort());
+  await page.addInitScript(() => {
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('form#b2b-form, form#plan-form').forEach(function(form) {
+        var input = form.querySelector('[name="cf-turnstile-response"]');
+        if (!input) {
+          input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'cf-turnstile-response';
+          form.appendChild(input);
+        }
+        input.value = 'XXXX.DUMMY.TOKEN.XXXX';
+      });
+    });
+  });
+});
 
 async function fillB2bForm(page: import('@playwright/test').Page) {
   await page.fill('#f-negocio', 'Test Business');
@@ -39,7 +58,7 @@ test.describe('BUG-007 — Parceiros PT — 3 estados de feedback', () => {
   });
 
   test('Estado 1 — sucesso real: Supabase OK → #b2b-success visível', async ({ page }) => {
-    await page.route('**/rest/v1/partner_leads**', route => mockSupabase(route, 'success'));
+    await page.route('**/functions/v1/submit-partner-lead**', route => mockSupabase(route, 'success'));
     await fillB2bForm(page);
     await page.click('#b2b-submit');
 
@@ -49,7 +68,7 @@ test.describe('BUG-007 — Parceiros PT — 3 estados de feedback', () => {
   });
 
   test('Estado 2 — pendente/local: Supabase 500 + localStorage OK → #b2b-pending visível', async ({ page }) => {
-    await page.route('**/rest/v1/partner_leads**', route => mockSupabase(route, 'error'));
+    await page.route('**/functions/v1/submit-partner-lead**', route => mockSupabase(route, 'error'));
     await fillB2bForm(page);
     await page.click('#b2b-submit');
 
@@ -59,7 +78,7 @@ test.describe('BUG-007 — Parceiros PT — 3 estados de feedback', () => {
   });
 
   test('prevenção de duplo submit: formulário oculto após submissão', async ({ page }) => {
-    await page.route('**/rest/v1/partner_leads**', route => mockSupabase(route, 'success'));
+    await page.route('**/functions/v1/submit-partner-lead**', route => mockSupabase(route, 'success'));
     await fillB2bForm(page);
     await page.click('#b2b-submit');
     await expect(page.locator('#b2b-success')).toBeVisible({ timeout: 8000 });
@@ -79,7 +98,7 @@ test.describe('BUG-007 — Parceiros EN — 3 estados de feedback', () => {
   });
 
   test('Estado 1 — sucesso real: Supabase OK → #b2b-success visível', async ({ page }) => {
-    await page.route('**/rest/v1/partner_leads**', route => mockSupabase(route, 'success'));
+    await page.route('**/functions/v1/submit-partner-lead**', route => mockSupabase(route, 'success'));
     await fillB2bForm(page);
     await page.click('#b2b-submit');
     await expect(page.locator('#b2b-success')).toBeVisible({ timeout: 8000 });
@@ -87,7 +106,7 @@ test.describe('BUG-007 — Parceiros EN — 3 estados de feedback', () => {
   });
 
   test('Estado 2 — pendente/local: Supabase 500 → #b2b-pending visível', async ({ page }) => {
-    await page.route('**/rest/v1/partner_leads**', route => mockSupabase(route, 'error'));
+    await page.route('**/functions/v1/submit-partner-lead**', route => mockSupabase(route, 'error'));
     await fillB2bForm(page);
     await page.click('#b2b-submit');
     await expect(page.locator('#b2b-pending')).toBeVisible({ timeout: 8000 });
@@ -117,7 +136,7 @@ test.describe('BUG-008 — Planner PT — 3 estados de feedback', () => {
   });
 
   test('Estado 1 — sucesso real: Supabase OK → #form-success visível + rec-status confirma', async ({ page }) => {
-    await page.route('**/rest/v1/plan_requests**', route => mockSupabase(route, 'success'));
+    await page.route('**/functions/v1/submit-plan-request**', route => mockSupabase(route, 'success'));
     await fillPlannerForm(page);
     await page.evaluate(() => (document.getElementById('plan-form') as HTMLFormElement).requestSubmit());
 
@@ -127,7 +146,7 @@ test.describe('BUG-008 — Planner PT — 3 estados de feedback', () => {
   });
 
   test('Estado 2 — pendente/local: Supabase 500 → #form-success visível + rec-status mostra fallback', async ({ page }) => {
-    await page.route('**/rest/v1/plan_requests**', route => mockSupabase(route, 'error'));
+    await page.route('**/functions/v1/submit-plan-request**', route => mockSupabase(route, 'error'));
     await fillPlannerForm(page);
     await page.evaluate(() => (document.getElementById('plan-form') as HTMLFormElement).requestSubmit());
 
@@ -148,7 +167,7 @@ test.describe('BUG-008 — Planner EN — 3 estados de feedback', () => {
   });
 
   test('Estado 1 — sucesso real: Supabase OK → rec-status confirma', async ({ page }) => {
-    await page.route('**/rest/v1/plan_requests**', route => mockSupabase(route, 'success'));
+    await page.route('**/functions/v1/submit-plan-request**', route => mockSupabase(route, 'success'));
     await fillPlannerForm(page);
     await page.evaluate(() => (document.getElementById('plan-form') as HTMLFormElement).requestSubmit());
 
@@ -157,7 +176,7 @@ test.describe('BUG-008 — Planner EN — 3 estados de feedback', () => {
   });
 
   test('Estado 2 — pendente/local: Supabase 500 → rec-status mostra fallback EN', async ({ page }) => {
-    await page.route('**/rest/v1/plan_requests**', route => mockSupabase(route, 'error'));
+    await page.route('**/functions/v1/submit-plan-request**', route => mockSupabase(route, 'error'));
     await fillPlannerForm(page);
     await page.evaluate(() => (document.getElementById('plan-form') as HTMLFormElement).requestSubmit());
 

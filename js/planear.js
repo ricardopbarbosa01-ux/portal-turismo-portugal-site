@@ -3,8 +3,10 @@
  * Depende de: config.js (db, showToast, track)
  */
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('plan-form');
-  const btn = document.getElementById('submit-btn');
+  const form        = document.getElementById('plan-form');
+  const btn         = document.getElementById('submit-btn');
+  const formSuccess = document.getElementById('form-success');
+  const recStatus   = document.getElementById('rec-status');
   if (!form || !btn) return;
 
   form.addEventListener('submit', async (e) => {
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    let submitOk = false;
     try {
       const res = await fetch(SUPABASE_URL + '/functions/v1/submit-plan-request', {
         method: 'POST',
@@ -51,12 +54,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const d = await res.json().catch(() => ({}));
         throw new Error(d.error || 'HTTP ' + res.status);
       }
-      showToast('Pedido recebido! Enviamos o seu plano em 24h.', 'success');
-      form.reset();
+      submitOk = true;
       track('plan_form_submit', { regiao: payload.regiao, orcamento: payload.orcamento });
     } catch (err) {
-      showToast('Erro ao enviar. Tente novamente.', 'error');
       console.error('plan_requests submit error:', err);
+      try {
+        const arr = JSON.parse(localStorage.getItem('pth_plan_requests') || '[]');
+        arr.push({ ...payload, timestamp: new Date().toISOString() });
+        localStorage.setItem('pth_plan_requests', JSON.stringify(arr));
+      } catch (lsErr) {
+        console.warn('[PTH] plan_requests localStorage failed:', lsErr);
+      }
+    }
+
+    // Persistent success state — always show after submit attempt
+    form.style.display = 'none';
+    if (formSuccess) {
+      formSuccess.classList.add('visible');
+      formSuccess.focus();
+    }
+    if (recStatus) {
+      recStatus.textContent = submitOk
+        ? '✓ Pedido recebido pela equipa.'
+        : 'Pedido guardado localmente. Tentaremos enviar em breve.';
+    }
+    if (submitOk) {
+      showToast('Pedido recebido! Enviamos o seu plano em 24h.', 'success');
     }
 
     btn.disabled = false;
