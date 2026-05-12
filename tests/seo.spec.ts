@@ -9,16 +9,16 @@ const hreflangPages = [
   {
     label:     'Homepage PT',
     url:       '/',
-    canonical: /portal-turismo-portugal[^/]*\.pages\.dev\/$/,
-    hreflangPT:/portal-turismo-portugal[^/]*\.pages\.dev\/$/,
-    hreflangEN:/portal-turismo-portugal[^/]*\.pages\.dev\/en\//,
+    canonical: /portalturismoportugal\.com\/$/,
+    hreflangPT:/portalturismoportugal\.com\/$/,
+    hreflangEN:/portalturismoportugal\.com\/en\//,
   },
   {
     label:     'Homepage EN',
     url:       '/en/',
-    canonical: /portal-turismo-portugal[^/]*\.pages\.dev\/en\//,
-    hreflangPT:/portal-turismo-portugal[^/]*\.pages\.dev\/$/,
-    hreflangEN:/portal-turismo-portugal[^/]*\.pages\.dev\/en\//,
+    canonical: /portalturismoportugal\.com\/en\//,
+    hreflangPT:/portalturismoportugal\.com\/$/,
+    hreflangEN:/portalturismoportugal\.com\/en\//,
   },
   {
     label:     'Planear PT',
