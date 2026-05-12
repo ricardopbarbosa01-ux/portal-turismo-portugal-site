@@ -443,7 +443,7 @@
     }
 </style>
 
-<link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
+<link rel="stylesheet" href="/css/style.css?v=20260512-bnav">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/js/image-autofix.js"></script>
 </head>
@@ -1501,6 +1501,29 @@
       if (!rafId) animate();
     });
   })();
+</script>
+<nav class="mobile-bottom-nav" aria-label="Quick navigation">
+  <div class="mobile-bottom-nav-inner">
+    <a href="/en/" class="mobile-nav-item" aria-label="Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/></svg>
+      Home
+    </a>
+    <a href="/en/beaches.html" class="mobile-nav-item" aria-label="Beaches">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 20c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="10"/></svg>
+      Beaches
+    </a>
+    <a href="/en/surf.html" class="mobile-nav-item active" aria-label="Surf" aria-current="page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M8 6l4-4 4 4"/></svg>
+      Surf
+    </a>
+    <button class="mobile-nav-item" id="mob-menu-btn" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      Menu
+    </button>
+  </div>
+</nav>
+<script>
+  document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
 </script>
 </body>
 </html>
