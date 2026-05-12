@@ -185,48 +185,142 @@ async function initNavAuth() {
 
     if (!user) return;
 
-    // Resolve destino do botão principal por hierarquia de role
-    let accountHref  = '/conta.html';
-    let accountLabel = 'A Minha Conta';
+    // ── Role detection (parallel queries) ──────────────────────
+    const isAdmin = user.app_metadata?.role === 'admin';
 
-    if (user.app_metadata?.role === 'admin') {
-      accountHref  = '/dashboard.html';
-      accountLabel = 'Dashboard';
-    } else if (user.app_metadata?.plan === 'pro') {
-      accountHref  = '/conta.html';
-      accountLabel = 'A Minha Conta';
-    } else {
-      // Verificar se é parceiro aprovado (1 query, 1 coluna)
-      try {
-        const { data: partner } = await db
-          .from('partners')
-          .select('id')
-          .eq('user_id', user.id)
-          .eq('aprovado', true)
-          .maybeSingle();
-        if (partner) {
-          accountHref  = '/parceiro.html';
-          accountLabel = 'Portal Parceiro';
-        }
-      } catch (_) {
-        // Query falhou → fallback seguro: /conta.html
+    // isPro: profiles.plan is the source of truth (SEC-04).
+    // Cache in sessionStorage for 60s to avoid repeated DB hits.
+    let isPro = false;
+    let isPartner = false;
+
+    try {
+      const cacheKey = `pth_user_plan_${user.id}`;
+      const cached = sessionStorage.getItem(cacheKey);
+      let planFromCache = null;
+
+      if (cached) {
+        try {
+          const { plan, ts } = JSON.parse(cached);
+          if (Date.now() - ts < 60000) {
+            planFromCache = plan;
+            isPro = plan === 'pro';
+          } else {
+            sessionStorage.removeItem(cacheKey);
+          }
+        } catch (_) { sessionStorage.removeItem(cacheKey); }
       }
+
+      if (planFromCache === null) {
+        // Cache miss or stale — fetch profiles + partners in parallel
+        const [profileRes, partnerRes] = await Promise.all([
+          db.from('profiles').select('plan').eq('id', user.id).single(),
+          db.from('partners').select('id').eq('user_id', user.id).eq('aprovado', true).maybeSingle()
+        ]);
+        const plan = profileRes.data?.plan ?? 'free';
+        isPro = plan === 'pro';
+        sessionStorage.setItem(cacheKey, JSON.stringify({ plan, ts: Date.now() }));
+        isPartner = !!(partnerRes?.data);
+      } else {
+        // Plan from cache — still need partner check (not cached)
+        const { data: partnerData } = await db
+          .from('partners').select('id')
+          .eq('user_id', user.id).eq('aprovado', true).maybeSingle();
+        isPartner = !!partnerData;
+      }
+    } catch (_) {
+      // Profiles/partner query failed — graceful fallback: isPro = false, isPartner = false
     }
 
-    loginBtn.textContent = accountLabel;
-    loginBtn.href        = accountHref;
-    loginBtn.className   = 'btn btn-primary';
+    // ── i18n ───────────────────────────────────────────────────
+    const lang = (document.documentElement.lang || 'pt').slice(0, 2);
+    const isEN = lang === 'en';
 
-    // Botão secundário: sempre Terminar Sessão
-    regBtn.textContent = 'Terminar Sessão';
-    regBtn.href        = '#';
-    regBtn.className   = 'btn btn-outline';
-    regBtn.addEventListener('click', async function (e) {
-      e.preventDefault();
-      await db.auth.signOut();
-      window.location.href = '/';
-    });
+    // ── Nav rendering by role combination ──────────────────────
+    //
+    // Dual-link scenarios (primary role + A Minha Conta + signout link):
+    //   admin+Pro, partner+Pro
+    //
+    // Single-link scenarios (primary + Terminar Sessão):
+    //   admin only, partner only, Pro only, free
+
+    if (isAdmin && isPro) {
+      // Primary: Dashboard (gold); Secondary: A Minha Conta (outline); Inline signout link
+      loginBtn.textContent = 'Dashboard';
+      loginBtn.href        = '/dashboard.html';
+      loginBtn.className   = 'btn btn-primary';
+
+      regBtn.textContent = isEN ? 'My Account' : 'A Minha Conta';
+      regBtn.href        = isEN ? '/en/conta.html' : '/conta.html';
+      regBtn.className   = 'btn btn-outline';
+
+      _appendSignoutLink(regBtn, isEN);
+
+    } else if (isPartner && isPro) {
+      // Primary: Portal Parceiro (gold); Secondary: A Minha Conta (outline); Inline signout link
+      loginBtn.textContent = isEN ? 'Partner Portal' : 'Portal Parceiro';
+      loginBtn.href        = '/parceiro.html';
+      loginBtn.className   = 'btn btn-primary';
+
+      regBtn.textContent = isEN ? 'My Account' : 'A Minha Conta';
+      regBtn.href        = isEN ? '/en/conta.html' : '/conta.html';
+      regBtn.className   = 'btn btn-outline';
+
+      _appendSignoutLink(regBtn, isEN);
+
+    } else if (isAdmin) {
+      // Admin only (no Pro): Dashboard + Terminar Sessão
+      loginBtn.textContent = 'Dashboard';
+      loginBtn.href        = '/dashboard.html';
+      loginBtn.className   = 'btn btn-primary';
+
+      _makeSignoutBtn(regBtn, isEN);
+
+    } else if (isPartner) {
+      // Partner only (no Pro): Portal Parceiro + Terminar Sessão
+      loginBtn.textContent = isEN ? 'Partner Portal' : 'Portal Parceiro';
+      loginBtn.href        = '/parceiro.html';
+      loginBtn.className   = 'btn btn-primary';
+
+      _makeSignoutBtn(regBtn, isEN);
+
+    } else {
+      // Pro or free: A Minha Conta + Terminar Sessão
+      loginBtn.textContent = isEN ? 'My Account' : 'A Minha Conta';
+      loginBtn.href        = isEN ? '/en/conta.html' : '/conta.html';
+      loginBtn.className   = 'btn btn-primary';
+
+      _makeSignoutBtn(regBtn, isEN);
+    }
+
   } catch (_) {}
+}
+
+// Helper: turn regBtn into "Terminar Sessão" with signout handler
+function _makeSignoutBtn(btn, isEN) {
+  btn.textContent = isEN ? 'Sign Out' : 'Terminar Sessão';
+  btn.href        = '#';
+  btn.className   = 'btn btn-outline';
+  btn.addEventListener('click', async function (e) {
+    e.preventDefault();
+    await db.auth.signOut();
+    window.location.href = isEN ? '/en/' : '/';
+  });
+}
+
+// Helper: append small "Terminar sessão" link after btn (dual-link mode)
+function _appendSignoutLink(btn, isEN) {
+  var existing = btn.parentElement && btn.parentElement.querySelector('.nav-signout-link');
+  if (existing) return; // idempotent
+  var a = document.createElement('a');
+  a.className = 'nav-signout-link';
+  a.href = '#';
+  a.textContent = isEN ? 'Sign out' : 'Terminar sessão';
+  a.addEventListener('click', async function (e) {
+    e.preventDefault();
+    await db.auth.signOut();
+    window.location.href = isEN ? '/en/' : '/';
+  });
+  if (btn.parentElement) btn.parentElement.appendChild(a);
 }
 
 document.addEventListener('DOMContentLoaded', initNavAuth);
