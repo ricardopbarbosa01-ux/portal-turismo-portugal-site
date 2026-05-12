@@ -3478,3 +3478,7 @@ input[type="number"], input[type="date"], input[type="search"] {
   .alerta-action-btn { min-height: 44px; font-size: 0.82rem; }
 }
 /* ─── /Alertas Manager ───────────────────────────────────────────────────── */
+
+/* ─── Nav signout link (dual-role: admin+Pro, partner+Pro) ─────────────────── */
+.nav-signout-link { font-size: 0.8rem; color: #888; text-decoration: none; margin-left: 12px; }
+.nav-signout-link:hover { text-decoration: underline; color: #555; }
