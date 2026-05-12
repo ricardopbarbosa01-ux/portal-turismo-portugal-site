@@ -500,7 +500,7 @@
     @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
     @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
 </style>
-  <link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
+  <link rel="stylesheet" href="/css/style.css?v=20260512">
 
 <!-- cache-bust: 1776339162134 -->
 </head>
@@ -2098,6 +2098,7 @@ document.addEventListener('DOMContentLoaded', function() {
         closeModal();
         showToast('Alerta criado! Receberás um email quando as condições forem atingidas.');
         loadAlerts();
+        _showAlertOnboardingBanner();
       }
     });
 
@@ -2146,6 +2147,30 @@ document.addEventListener('DOMContentLoaded', function() {
       updateUnit();
       if (isPro) loadAlerts();
     };
+
+    function _showAlertOnboardingBanner() {
+      const KEY   = 'pth_alerts_onboarding_count';
+      const count = parseInt(localStorage.getItem(KEY) || '0', 10);
+      if (count >= 3) return;
+
+      const wrap = document.getElementById('beach-alerts-section');
+      if (!wrap) return;
+
+      const existing = wrap.querySelector('.alert-onboarding-banner');
+      if (existing) { existing.remove(); }
+
+      const banner = document.createElement('div');
+      banner.className = 'alert-onboarding-banner';
+      banner.innerHTML = 'Alerta criado. Gere todos os teus alertas em <a href="/conta.html#alertas">A minha conta</a>.'
+        + '<button class="alert-onboarding-dismiss" aria-label="Fechar">✕</button>';
+      wrap.appendChild(banner);
+
+      banner.querySelector('.alert-onboarding-dismiss').addEventListener('click', () => {
+        banner.remove();
+      });
+
+      localStorage.setItem(KEY, String(count + 1));
+    }
   })();
 });
 </script>

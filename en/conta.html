@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- META VERIFICATIONS — site ownership proofs for third-party services -->
+  <meta name="verification" content="d0777839626596440c5ac94e27e8b9e8" /> <!-- Awin -->
+  <!-- /META VERIFICATIONS -->
+  <!-- Google tag (gtag.js) – Consent Mode v2 -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',wait_for_update:500});</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
+  <script>gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+  <title>My Account — Favourites &amp; Alerts · Portugal Travel Hub</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="/css/style.css?v=20260512">
+
+  <style>
+    .account-root {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: calc(100vh - 64px);
+      margin-top: 64px;
+    }
+    .account-sidebar {
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      padding: 32px 24px;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .acc-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #1a5fa3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 700; color: var(--white);
+      margin-bottom: 14px; flex-shrink: 0;
+    }
+    .acc-name {
+      font-size: 0.95rem; font-weight: 600; color: var(--white);
+      margin-bottom: 4px; word-break: break-word;
+    }
+    .acc-email {
+      font-size: 0.75rem; color: rgba(255,255,255,0.45);
+      margin-bottom: 14px; word-break: break-word;
+    }
+    .acc-pro-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+      background: rgba(201,168,76,0.18); color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.30);
+      padding: 3px 9px; border-radius: 20px; margin-bottom: 28px;
+      width: fit-content;
+    }
+    .acc-sidebar-nav {
+      flex: 1;
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .acc-nav-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 8px;
+      font-size: 0.875rem; font-weight: 500;
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+    .acc-nav-link:hover { background: rgba(255,255,255,0.07); color: var(--white); }
+    .acc-nav-link.active { background: rgba(255,255,255,0.12); color: var(--white); font-weight: 600; }
+    .acc-signout {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.8125rem; color: rgba(255,255,255,0.45);
+      cursor: pointer; padding: 10px 0; background: none; border: none;
+      font-family: var(--font-body); transition: color 0.15s;
+      text-align: left; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 16px; width: 100%;
+    }
+    .acc-signout svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+    .acc-signout:hover { color: rgba(255,255,255,0.8); }
+
+    .account-main {
+      background: var(--off-white);
+      min-height: calc(100vh - 64px);
+      padding: 40px 40px;
+    }
+    .account-topbar {
+      margin-bottom: 28px;
+    }
+    .account-topbar h1 {
+      font-family: var(--font-heading); font-size: 1.5rem;
+      font-weight: 700; color: var(--blue); margin: 0 0 4px;
+    }
+    .account-topbar p {
+      font-size: 0.875rem; color: var(--text-light); margin: 0;
+    }
+
+    @media (max-width: 860px) {
+      .account-root { grid-template-columns: 1fr; margin-top: 60px; }
+      .account-sidebar {
+        position: static; height: auto; flex-direction: row;
+        flex-wrap: wrap; align-items: center; gap: 12px;
+        padding: 16px 20px;
+      }
+      .acc-avatar { width: 40px; height: 40px; font-size: 1rem; margin-bottom: 0; }
+      .acc-pro-badge { margin-bottom: 0; }
+      .acc-email { display: none; }
+      .acc-sidebar-nav { flex-direction: row; flex: none; }
+      .acc-signout { margin-top: 0; border-top: none; padding-top: 0; }
+      .account-main { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Main navigation" id="navbar">
+  <a href="/en/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    Portugal Travel Hub
+  </a>
+  <div class="nav-links" role="list">
+    <a href="/en/beaches.html" role="listitem">Beaches</a>
+    <a href="/en/surf.html" role="listitem">Surf</a>
+    <a href="/en/pesca.html" role="listitem">Fishing</a>
+    <a href="/en/webcams.html" role="listitem">Webcams</a>
+    <a href="/planear.html" role="listitem">Planner</a>
+    <a href="/guias.html" role="listitem">Guides</a>
+    <a href="/parceiros.html" role="listitem">Partners</a>
+  </div>
+  <div class="nav-actions">
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="account-root">
+  <!-- Sidebar -->
+  <aside class="account-sidebar" aria-label="Account profile">
+    <div class="acc-avatar" id="acc-avatar">?</div>
+    <div class="acc-name" id="acc-name">Loading…</div>
+    <div class="acc-email" id="acc-email"></div>
+    <div class="acc-pro-badge">★ Pro</div>
+
+    <nav class="acc-sidebar-nav" aria-label="Account navigation">
+      <a href="/en/beaches.html" class="acc-nav-link">🏖️ Beaches</a>
+      <a href="/en/surf.html" class="acc-nav-link">🏄 Surf</a>
+      <a href="/en/pesca.html" class="acc-nav-link">🎣 Fishing</a>
+      <a href="/en/webcams.html" class="acc-nav-link">📷 Webcams</a>
+      <a href="/planear.html" class="acc-nav-link">🗓️ Planner</a>
+    </nav>
+
+    <button class="acc-signout" id="signout-btn" aria-label="Sign out">
+      <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Sign out
+    </button>
+  </aside>
+
+  <!-- Main -->
+  <main class="account-main" aria-label="My account">
+    <div class="account-topbar">
+      <h1>⭐ Your favourite beaches</h1>
+      <p>Quick access to the beaches you saved</p>
+    </div>
+
+    <div class="favorites-header">
+      <div></div>
+      <a href="/en/beaches.html" class="btn-add-favorite">+ Explore beaches</a>
+    </div>
+
+    <div id="favorites-grid" class="favorites-grid">
+      <div class="favorites-loading">
+        <div class="spinner-small"></div> Loading favourites…
+      </div>
+    </div>
+
+    <!-- ── Alerts ──────────────────────────────────────────────────── -->
+    <section id="alertas" aria-labelledby="alertas-heading" style="margin-top:48px;">
+      <div class="account-topbar" style="margin-bottom:16px;">
+        <h2 id="alertas-heading" style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--blue);margin:0 0 4px;">🔔 My Alerts</h2>
+        <p style="font-size:0.875rem;color:var(--text-light);margin:0;">Condition alerts created from beach pages</p>
+      </div>
+
+      <div id="alertas-empty" class="alertas-empty hidden">
+        You haven't created any alerts yet. Create one on any beach page.
+      </div>
+      <ul id="alertas-list" class="alertas-list" role="list"></ul>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/js/nav.js?v=20260422c" defer></script>
+<script src="/js/config.js?v=20260508-isactive" defer></script>
+<script>
+/* ── Auth guard + init ─────────────────────────────────────────── */
+(function () {
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (typeof db === 'undefined') return;
+
+    const { data: { user } } = await db.auth.getUser();
+    if (!user) { window.location.href = '/en/login.html'; return; }
+
+    const justPaid = new URLSearchParams(window.location.search).get('activated') === '1';
+
+    async function fetchPlan(userId) {
+      try {
+        const { data: profile } = await db.from('profiles').select('plan').eq('id', userId).maybeSingle();
+        return profile?.plan || 'free';
+      } catch (e) { return 'free'; }
+    }
+    const userPlan = await fetchPlan(user.id);
+    if (userPlan !== 'pro' && !justPaid) { window.location.href = '/en/precos.html'; return; }
+
+    const name = user.user_metadata?.full_name || user.email || '';
+    const initial = (user.user_metadata?.full_name || user.email || '?').charAt(0).toUpperCase();
+    document.getElementById('acc-avatar').textContent = initial;
+    document.getElementById('acc-name').textContent = name;
+    document.getElementById('acc-email').textContent = user.email || '';
+
+    document.getElementById('signout-btn').addEventListener('click', async () => {
+      await db.auth.signOut();
+      window.location.href = '/en/';
+    });
+
+    if (userPlan === 'pro' && !justPaid) {
+      await loadFavouritesSection();
+      window.initAlertasManager?.();
+    }
+
+    if (justPaid) {
+      history.replaceState(null, '', '/en/conta.html');
+
+      async function isProActive(u) {
+        if (!u) return false;
+        const p = await fetchPlan(u.id);
+        return p === 'pro';
+      }
+
+      const pendingEl = document.createElement('div');
+      pendingEl.id = 'pro-pending';
+      pendingEl.setAttribute('aria-live', 'polite');
+      pendingEl.style.cssText = 'text-align:center;padding:12px 24px;color:var(--gold,#C9A84C);font-size:0.875rem;font-weight:500;';
+      pendingEl.textContent = 'Verifying activation…';
+      document.querySelector('.account-main')?.prepend(pendingEl);
+
+      const { data: { user: freshUser } } = await db.auth.getUser();
+      if (await isProActive(freshUser)) {
+        pendingEl.remove();
+        await loadFavouritesSection();
+        window.initAlertasManager?.();
+        track('pro_activation_return', { page: 'en_conta', result: 'immediate' });
+        showToast('Pro plan activated! Welcome to Pro.', 'success');
+      } else {
+        let attempts = 0;
+        const MAX_ATTEMPTS = 6;
+        const pollTimer = setInterval(async () => {
+          attempts++;
+          const { data: { user: polled } } = await db.auth.getUser();
+          if (await isProActive(polled)) {
+            clearInterval(pollTimer);
+            pendingEl.remove();
+            await loadFavouritesSection();
+            window.initAlertasManager?.();
+            track('pro_activation_return', { page: 'en_conta', result: 'polled', attempts });
+            showToast('Pro plan activated! Welcome to Pro.', 'success');
+          } else if (attempts >= MAX_ATTEMPTS) {
+            clearInterval(pollTimer);
+            pendingEl.textContent = 'Activation not confirmed. You will be redirected.';
+            pendingEl.style.color = 'var(--text-light)';
+            track('pro_activation_return', { page: 'en_conta', result: 'timeout' });
+            setTimeout(() => { window.location.href = '/en/precos.html?activation_pending=1'; }, 3000);
+          }
+        }, 2000);
+      }
+    }
+  });
+})();
+
+async function loadFavouritesSection() {
+  const grid = document.getElementById('favorites-grid');
+  if (!grid) return;
+
+  grid.innerHTML = '<div class="favorites-loading"><div class="spinner-small"></div> Loading favourites…</div>';
+
+  const favs = await getFavorites();
+
+  if (!favs.length) {
+    grid.innerHTML = `
+      <div class="favorites-empty">
+        <div class="favorites-empty-icon">🏖️</div>
+        <p>You haven\'t saved any favourites yet.</p>
+        <a href="/en/beaches.html" class="btn-explore-beaches">Explore beaches</a>
+      </div>`;
+    return;
+  }
+
+  const ids = favs.map(f => f.beach_id);
+  const { data: beaches } = await db
+    .from('beaches')
+    .select('id, name, region, image_url, water_quality, latitude, longitude')
+    .in('id', ids);
+
+  const beachMap = {};
+  (beaches || []).forEach(b => { beachMap[b.id] = b; });
+
+  grid.innerHTML = favs.map(f => {
+    const b = beachMap[f.beach_id] || {};
+    const img = b.image_url || '/images/beach-placeholder.jpg';
+    const region = b.region || f.beach_region || 'Portugal';
+    const quality = b.water_quality || '';
+    const qualityBadge = quality
+      ? `<span class="fav-badge fav-badge--${quality.toLowerCase()}">${quality}</span>`
+      : '';
+
+    return `
+      <div class="fav-card">
+        <a href="/en/beach.html?id=${f.beach_id}" class="fav-card-img-link">
+          <div class="fav-card-img" style="background-image:url(\'${img}\')">
+            <div class="fav-card-overlay"></div>
+            <div class="fav-card-badges">${qualityBadge}</div>
+          </div>
+        </a>
+        <div class="fav-card-body">
+          <div class="fav-card-info">
+            <a href="/en/beach.html?id=${f.beach_id}" class="fav-card-name">${f.beach_name}</a>
+            <span class="fav-card-region">📍 ${region}</span>
+          </div>
+          <div class="fav-card-actions">
+            <a href="/en/beach.html?id=${f.beach_id}" class="btn-fav-view">View beach</a>
+            <button class="btn-fav-remove" title="Remove favourite"
+              onclick="removeFavourite('${f.beach_id}', '${f.beach_name}', '${region}')">
+              ✕
+            </button>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+async function removeFavourite(beachId, beachName, beachRegion) {
+  await toggleFavorite(beachId, beachName, beachRegion);
+  loadFavouritesSection();
+}
+</script>
+<script src="/js/alertas-manager.js?v=20260512" defer></script>
+<script src="/js/favorites.js?v=20260416b" defer></script>
+<script src="/js/cookie-consent.js" defer></script>
+</body>
+</html>
