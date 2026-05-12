@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
+  <link rel="stylesheet" href="/css/style.css?v=20260512">
 
   <style>
     .account-root {
@@ -165,7 +165,7 @@
   </aside>
 
   <!-- Main -->
-  <main class="account-main" aria-label="As minhas praias favoritas">
+  <main class="account-main" aria-label="A minha conta">
     <div class="account-topbar">
       <h1>⭐ As tuas praias favoritas</h1>
       <p>Acesso rápido às praias que guardaste no portal</p>
@@ -181,6 +181,19 @@
         <div class="spinner-small"></div> A carregar favoritos...
       </div>
     </div>
+
+    <!-- ── Alertas ─────────────────────────────────────────────────── -->
+    <section id="alertas" aria-labelledby="alertas-heading" style="margin-top:48px;">
+      <div class="account-topbar" style="margin-bottom:16px;">
+        <h2 id="alertas-heading" style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--blue);margin:0 0 4px;">🔔 Meus Alertas</h2>
+        <p style="font-size:0.875rem;color:var(--text-light);margin:0;">Alertas de condições criados nas páginas de praia</p>
+      </div>
+
+      <div id="alertas-empty" class="alertas-empty hidden">
+        Ainda não criaste alertas. Cria um na página de qualquer praia.
+      </div>
+      <ul id="alertas-list" class="alertas-list" role="list"></ul>
+    </section>
   </main>
 </div>
 
@@ -189,7 +202,10 @@
 <script src="/js/config.js?v=20260508-isactive" defer></script>
 <script>
 /* ── Auth guard + init ─────────────────────────────────────────── */
-(async () => {
+(function () {
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (typeof db === 'undefined') return;
+
   const { data: { user } } = await db.auth.getUser();
   if (!user) { window.location.href = '/login.html'; return; }
 
@@ -218,9 +234,10 @@
     window.location.href = '/';
   });
 
-  // Carregar favoritos (se já Pro confirmado)
+  // Carregar favoritos e alertas (se já Pro confirmado)
   if (userPlan === 'pro' && !justPaid) {
     await loadFavoritesSection();
+    window.initAlertasManager?.();
   }
 
   // Post-checkout activation confirmation with polling (race condition hardening)
@@ -245,6 +262,7 @@
       // Webhook disparou antes do redirect — confirmação imediata
       pendingEl.remove();
       await loadFavoritesSection();
+      window.initAlertasManager?.();
       track('pro_activation_return', { page: 'conta', result: 'immediate' });
       showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
     } else {
@@ -258,6 +276,7 @@
           clearInterval(pollTimer);
           pendingEl.remove();
           await loadFavoritesSection();
+          window.initAlertasManager?.();
           track('pro_activation_return', { page: 'conta', result: 'polled', attempts });
           showToast('Plano Pro ativado com sucesso! Bem-vindo ao Pro.', 'success');
         } else if (attempts >= MAX_ATTEMPTS) {
@@ -271,6 +290,7 @@
       }, 2000);
     }
   }
+  });
 })();
 
 /* ── Favorites (copiado de dashboard.html sem alterações) ──────── */
@@ -341,6 +361,7 @@ async function removeFavorite(beachId, beachName, beachRegion) {
   loadFavoritesSection();
 }
 </script>
+<script src="/js/alertas-manager.js?v=20260512" defer></script>
 <script src="/js/favorites.js?v=20260416b" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
