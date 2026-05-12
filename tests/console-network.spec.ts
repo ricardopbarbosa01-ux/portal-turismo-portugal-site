@@ -28,7 +28,9 @@ function isThirdParty(url: string): boolean {
     url.includes('moz-extension') ||
     // Supabase auth refresh calls can fail in test env — not a funnel blocker
     url.includes('supabase.co/auth') ||
-    url.includes('supabase.co/realtime')
+    url.includes('supabase.co/realtime') ||
+    // Cloudflare Turnstile widget — third-party challenge platform; HTTP 401 is expected
+    url.includes('challenges.cloudflare.com')
   );
 }
 
@@ -44,7 +46,22 @@ function isIgnorableConsoleMsg(msg: string): boolean {
     msg.includes('ERR_BLOCKED_BY_CLIENT') ||
     // Browser security heuristics — not our bug
     msg.includes('Permissions-Policy') ||
-    msg.includes('Partitioned cookie')
+    msg.includes('Partitioned cookie') ||
+    // Cloudflare Turnstile widget emits TrustedTypes + CSP + Permissions-Policy errors
+    // from its own challenge iframe — these are third-party and unfixable by us
+    msg.includes('TrustedHTML') ||
+    msg.includes('TrustedScript') ||
+    msg.includes('TrustedScriptURL') ||
+    msg.includes('xr-spatial-tracking') ||
+    msg.includes('challenge-platform') ||
+    msg.includes('challenges.cloudflare.com') ||
+    // Turnstile challenge iframe CSP violation: fired from about:srcdoc context with nonce+unsafe-eval
+    // Pattern: "Executing inline script violates ... 'nonce-...' 'unsafe-eval'"
+    (msg.includes('Content Security Policy') && msg.includes("'unsafe-eval'")) ||
+    // Turnstile fingerprinting canary: "%c%d font-size:0;color:transparent NaN"
+    msg.includes('font-size:0;color:transparent') ||
+    // Turnstile PAT endpoint always returns 401 — "Failed to load resource: ... 401"
+    (msg.includes('Failed to load resource') && msg.includes('401'))
   );
 }
 

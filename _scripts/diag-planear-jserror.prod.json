@@ -1,0 +1,314 @@
+{
+  "results": [
+    {
+      "url": "https://www.portalturismoportugal.com/planear.html",
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "This document requires 'TrustedHTML' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedHTML' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScriptURL' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScriptURL' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-jo5uM4tREv4egz9kq2onDf' 'unsafe-eval''. Either the 'unsafe-inline' keyword, a hash ('sha256-eJGI0Ik4oYe/PKLDOt4wcN76wYs8h+Ew05pMzdY6xG8='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+          "location": {
+            "url": "about:srcdoc",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-jo5uM4tREv4egz9kq2onDf' 'unsafe-eval''. Either the 'unsafe-inline' keyword, a hash ('sha256-eJGI0Ik4oYe/PKLDOt4wcN76wYs8h+Ew05pMzdY6xG8='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+          "location": {
+            "url": "about:srcdoc",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "%c%d font-size:0;color:transparent NaN",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 188489
+          }
+        },
+        {
+          "text": "%c%d font-size:0;color:transparent NaN",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 188489
+          }
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 ()",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/9fa9068c9d8aa10f/1778584737026/4fc32fedc2320bcd61ef24c17ba1c44d88c5f81a2c03634734edeb878cd2da25/ZB4aGD61iezsL9l",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Permissions policy violation: xr-spatial-tracking is not allowed in this document.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Permissions policy violation: xr-spatial-tracking is not allowed in this document.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        }
+      ],
+      "requestFailed": [],
+      "httpErrors": [
+        {
+          "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/9fa9068c9d8aa10f/1778584737026/4fc32fedc2320bcd61ef24c17ba1c44d88c5f81a2c03634734edeb878cd2da25/ZB4aGD61iezsL9l",
+          "status": 401
+        }
+      ],
+      "networkActivity": [
+        "https://www.portalturismoportugal.com/planear.html",
+        "https://www.portalturismoportugal.com/planear",
+        "https://www.portalturismoportugal.com/js/config.js?v=20260511-planefix",
+        "https://www.portalturismoportugal.com/css/style.css?v=20260511-a11y",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js",
+        "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js",
+        "https://www.portalturismoportugal.com/js/planear.js",
+        "https://www.portalturismoportugal.com/js/cookie-consent.js",
+        "https://www.portalturismoportugal.com/js/lang-switcher.js",
+        "https://www.portalturismoportugal.com/js/nav.js?v=20260422c",
+        "https://challenges.cloudflare.com/turnstile/v0/b/883a1f27d85f/api.js",
+        "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/2l01z/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/cmg/1",
+        "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+        "https://fonts.gstatic.com/s/bodonimoda/v28/aFTB7PxzY382XsXX63LUYJSPUqb0qojSAq1rZLnza9xSXgM.woff2",
+        "https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/flow/ov1/296031686:1778584233:xRIq3Q4w-FHjNOpQhOvEcH_zbbDogjZ9uxEVFm9lj-4/9fa9068c9d8aa10f/4f_MmEksiPOT3AuFUPFYdTr0xze6UlwsilTjSguvRsk-1778584736-1.2.1.1-LAcZp5FAyD6sBRjJq2D_AyD_0MGtMECQmj3vTZMgUMof9v.bL5woWEmW8zs2dcyu",
+        "blob:https://challenges.cloudflare.com/271673cb-35e2-43f6-be3f-b20fedf9f9d0",
+        "blob:https://challenges.cloudflare.com/271673cb-35e2-43f6-be3f-b20fedf9f9d0"
+      ]
+    },
+    {
+      "url": "https://www.portalturismoportugal.com/en/planear.html",
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "This document requires 'TrustedHTML' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedHTML' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScriptURL' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScriptURL' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-axqAdggJZSZffrt2o2h2wS' 'unsafe-eval''. Either the 'unsafe-inline' keyword, a hash ('sha256-eJGI0Ik4oYe/PKLDOt4wcN76wYs8h+Ew05pMzdY6xG8='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+          "location": {
+            "url": "about:srcdoc",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'nonce-axqAdggJZSZffrt2o2h2wS' 'unsafe-eval''. Either the 'unsafe-inline' keyword, a hash ('sha256-eJGI0Ik4oYe/PKLDOt4wcN76wYs8h+Ew05pMzdY6xG8='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked.",
+          "location": {
+            "url": "about:srcdoc",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "This document requires 'TrustedScript' assignment. The action has been blocked.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Permissions policy violation: xr-spatial-tracking is not allowed in this document.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Permissions policy violation: xr-spatial-tracking is not allowed in this document.",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 ()",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/9fa906a97e2ac534/1778584741702/93659db00326b39dd54aadb9d8251cc22b1ca54fc8dcbdf4a187e80db4ba3b78/jiZx2fQ3WKAEGIc",
+            "lineNumber": 0,
+            "columnNumber": 0
+          }
+        },
+        {
+          "text": "%c%d font-size:0;color:transparent NaN",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 218868
+          }
+        },
+        {
+          "text": "%c%d font-size:0;color:transparent NaN",
+          "location": {
+            "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+            "lineNumber": 0,
+            "columnNumber": 218868
+          }
+        }
+      ],
+      "requestFailed": [],
+      "httpErrors": [
+        {
+          "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/9fa906a97e2ac534/1778584741702/93659db00326b39dd54aadb9d8251cc22b1ca54fc8dcbdf4a187e80db4ba3b78/jiZx2fQ3WKAEGIc",
+          "status": 401
+        }
+      ],
+      "networkActivity": [
+        "https://www.portalturismoportugal.com/en/planear.html",
+        "https://www.portalturismoportugal.com/en/planear",
+        "https://www.portalturismoportugal.com/css/style.css?v=20260511-a11y",
+        "https://www.portalturismoportugal.com/js/lang-switcher.js",
+        "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js",
+        "https://www.portalturismoportugal.com/js/config.js?v=20260511-planefix",
+        "https://www.portalturismoportugal.com/js/cookie-consent.js",
+        "https://www.portalturismoportugal.com/js/nav.js?v=20260422c",
+        "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js",
+        "https://challenges.cloudflare.com/turnstile/v0/b/883a1f27d85f/api.js",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/ov2/av0/rch/s3ja3/0x4AAAAAADFrwvqNt1FGaqkB/auto/fbE/new/normal?lang=auto",
+        "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+        "https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/cmg/1",
+        "https://fonts.gstatic.com/s/bodonimoda/v28/aFTB7PxzY382XsXX63LUYJSPUqb0qojSAq1rZLnza9xSXgM.woff2",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/flow/ov1/2001549999:1778580688:xPLphmoVlsLv8MgvrF0jEm5Uyvx55bstMdk04sjv3MA/9fa906a97e2ac534/7lNIIdRG00lL0hHd2nSQQujVFJ19vfQJSyHl7dKj1PM-1778584741-1.2.1.1-bSQrAEr5mMyFZESfiEBNABiXPMm2dNtwygKYme7hbr8kH10oIVSq2.2gpVDJ51qm",
+        "blob:https://challenges.cloudflare.com/3b27d1d8-e974-4168-a715-c28354c06349",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/d/9fa906a97e2ac534/1778584741701/fS1W3pQwXRIGS7b",
+        "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/9fa906a97e2ac534/1778584741702/93659db00326b39dd54aadb9d8251cc22b1ca54fc8dcbdf4a187e80db4ba3b78/jiZx2fQ3WKAEGIc"
+      ]
+    }
+  ]
+}

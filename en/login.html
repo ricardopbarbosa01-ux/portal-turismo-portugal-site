@@ -752,10 +752,14 @@
     ? _redirectParam : null;
 
   // If already authenticated, skip login form and go straight to the redirect target
-  (async () => {
-    const { data: { user } } = await db.auth.getUser();
-    if (user) { window.location.href = _safeRedirect || '/dashboard.html'; }
-  })();
+  // Deferred until DOMContentLoaded so config.js (defer) has already run and db is defined
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (typeof db === 'undefined') return;
+    try {
+      const { data: { user } } = await db.auth.getUser();
+      if (user) { window.location.href = _safeRedirect || '/dashboard.html'; }
+    } catch(e) { console.warn('[login] auth check failed:', e); }
+  });
 
   // ── Password visibility toggle ──────────────────────────────────────
   function togglePassword(inputId, btn) {
