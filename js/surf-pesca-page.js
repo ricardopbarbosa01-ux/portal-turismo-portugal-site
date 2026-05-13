@@ -383,6 +383,17 @@
     renderFaqs(kind);
     if (kind === 'surf')    initSurfFilters();
     if (kind === 'fishing') initFishingFilters();
+    var revealEls = document.querySelectorAll('.reveal-sec');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.07 });
+      revealEls.forEach(function(el) { obs.observe(el); });
+    } else {
+      revealEls.forEach(function(el) { el.classList.add('visible'); });
+    }
   }
 
   // ── Public API ────────────────────────────────────────────────────────────────
