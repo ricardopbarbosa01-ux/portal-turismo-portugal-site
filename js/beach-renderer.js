@@ -374,6 +374,101 @@
 
       // JSON-LD description fallback
       jsonLdDesc: function (name, region) { return 'Praia ' + name + ' em ' + (region || 'Portugal') + ', Portugal.'; },
+
+      // ── Surf page i18n ───────────────────────────────────────────────────────
+      surf: {
+        spotCount: function (n) { return '<strong>' + n + '</strong> spot' + (n !== 1 ? 's' : ''); },
+        emptyTitle: 'Sem spots encontrados',
+        emptySub:   'Tente outros filtros ou explore todas as regiões disponíveis.',
+        emptyCta:   'Ver todos os spots',
+        levelLabel: { iniciante: 'Iniciante', intermedio: 'Intermédio', avancado: 'Avançado', profissional: 'Profissional' },
+        levelLabelComposite: {
+          iniciante_intermedio: 'Iniciante–Intermédio',
+          intermedio_avancado:  'Intermédio–Avançado',
+        },
+        swellLabel:  'Swell',
+        windLabel:   'Vento',
+        seasonLabel: 'Melhor época',
+        exploreRegion:     'Explorar região',
+        exploreRegionAria: function (r) { return 'Praias de ' + r; },
+        metaTitle:       'Surf em Portugal — Spots, Ondas e Guia · Portugal Travel Hub',
+        metaDescription: 'Os melhores spots de surf em Portugal — de Peniche e Nazaré ao Algarve e Açores. Perfil de onda, nível recomendado e guia prático.',
+        faqs: [
+          {
+            q: 'Quando é a melhor época para surfar em Portugal?',
+            a: 'Outubro a Abril é a época de ouro — o Atlântico Norte gera swells consistentes e potentes. O Verão (Junho–Setembro) é ideal para iniciantes: ondas mais pequenas, água mais quente (19–22°C) e melhores condições para aulas em escola.'
+          },
+          {
+            q: 'Qual o spot mais adequado para principiantes?',
+            a: 'Costa da Caparica (Lisboa) e Praia do Amado (Algarve) são as duas melhores opções. Ambas têm escolas de surf certificadas, ondas adequadas para aprender e boa infraestrutura de apoio.'
+          },
+          {
+            q: 'É necessário saber nadar para aprender surf?',
+            a: 'Sim — é essencial saber nadar confortavelmente antes de entrar ao mar com uma prancha. As escolas de surf exigem capacidade básica de natação e realizam uma avaliação inicial antes das aulas.'
+          },
+          {
+            q: 'Qual o equipamento básico necessário?',
+            a: 'Prancha (disponível para aluguer em todas as escolas), fato de neoprene (obrigatório de Outubro a Abril, recomendado nos outros meses) e protetor solar resistente à água. Nada mais é necessário para começar.'
+          },
+          {
+            q: 'Posso surfar em Portugal durante todo o ano?',
+            a: 'Sim. Portugal tem ondas em todas as estações. No Verão as condições são mais suaves, ideais para iniciantes. No Outono e Inverno as ondas são maiores e mais consistentes, ideais para níveis intermédio e avançado.'
+          },
+          {
+            q: 'Quanto custa uma aula de surf em Portugal?',
+            a: 'Uma aula de grupo de 2 horas custa entre 25€ e 45€ por pessoa, dependendo da escola e da região. Aulas particulares variam entre 60€ e 100€. A maioria das escolas inclui prancha e fato de neoprene no preço. No Algarve e Lisboa os preços tendem a ser ligeiramente mais elevados do que na Costa de Prata.'
+          },
+          {
+            q: 'É perigoso surfar em Portugal para iniciantes?',
+            a: 'Em spots adequados para iniciantes, com escola e instrutor certificado, o surf é uma atividade segura. É fundamental não entrar sozinho ao mar sem instrução — rip currents, correntes de retorno e bancos de areia submersos podem surpreender quem não conhece o local. Aprender com escola certificada é fortemente recomendado.'
+          }
+        ],
+      },
+
+      // ── Fishing page i18n ────────────────────────────────────────────────────
+      fishing: {
+        spotCount: function (n) { return '<strong>' + n + '</strong> spot' + (n !== 1 ? 's' : ''); },
+        emptyTitle: 'Sem spots encontrados',
+        emptySub:   'Tente outros filtros ou explore todos os tipos e regiões disponíveis.',
+        emptyCta:   'Ver todos os spots',
+        levelLabel: { iniciante: 'Iniciante', intermedio: 'Intermédio', experiente: 'Experiente', profissional: 'Profissional' },
+        tipoLabel:  { rocha: 'Rocha', ria: 'Ria & Estuário', costeira: 'Costeira', embarcacao: 'Embarcação', fluvial: 'Fluvial' },
+        seasonLabel:   'Melhor época',
+        especiesLabel: 'Espécies',
+        saveCta:       'Guardar',
+        metaTitle:       'Pesca em Portugal — Spots, Espécies e Guia · Portugal Travel Hub',
+        metaDescription: 'Os melhores spots de pesca em Portugal — de Sagres e Sesimbra aos Açores. Tipo de pesca, espécies-alvo, melhor época e guia prático.',
+        faqs: [
+          {
+            q: 'Preciso de licença para pescar em Portugal?',
+            a: 'Sim. A pesca lúdica em Portugal requer licença emitida pelo ICNF (Instituto da Conservação da Natureza e das Florestas). A licença anual tem custo acessível e pode ser obtida online no portal do ICNF ou em lojas de pesca. Em zonas protegidas podem existir restrições adicionais — consulte sempre antes de pescar.'
+          },
+          {
+            q: 'Qual é a melhor época para pesca em Portugal?',
+            a: 'Depende da espécie e do tipo de pesca. Para atum e espadim em mar alto: Junho a Outubro. Para sável e lampreia nos rios: Março a Junho. Para robalão e pargo na costa: todo o ano com pico no Outono e Inverno. A Ria Formosa e a Ria de Aveiro são produtivas ao longo de todo o ano.'
+          },
+          {
+            q: 'Posso pescar sem barco em Portugal?',
+            a: 'Sim. A pesca de costa — em praias (surfcasting), rochas e pontões — não requer embarcação e é acessível em toda a costa continental. Requer apenas a licença adequada e o equipamento certo. Molhes, quebra-mares e esporões são também boas opções de acesso sem barco.'
+          },
+          {
+            q: 'O que preciso de levar para uma saída de pesca?',
+            a: 'Para pesca de costa: cana ou colher, carreto, linha, anzóis, isco (natural ou artificial) e licença. Para pesca de embarcação: o operador geralmente fornece equipamento. Recomendamos colete salva-vidas, proteção solar, água e lanche. Consulte sempre a previsão meteorológica antes de sair.'
+          },
+          {
+            q: 'Existem barcos fretados para iniciantes no Algarve?',
+            a: 'Sim. Vários operadores em Portimão, Vilamoura e Lagos oferecem saídas para iniciantes com equipamento incluído e guia experiente a bordo — ideal para quem quer uma experiência de pesca em mar alto sem equipamento próprio. Reserva antecipada é recomendada no Verão.'
+          },
+          {
+            q: 'Quanto custa alugar um barco de pesca em Portugal?',
+            a: 'Uma saída partilhada (shared trip) custa entre 40€ e 80€ por pessoa por meio-dia. Fretamento exclusivo varia entre 200€ e 600€ por dia, dependendo do barco e da zona. Os Açores têm os preços mais elevados devido ao tipo de pesca de big game. No Algarve, Portimão e Vilamoura oferecem as melhores opções de fretamento partilhado para iniciantes.'
+          },
+          {
+            q: 'Quais são as espécies mais comuns na pesca de costa em Portugal?',
+            a: 'Na pesca de costa as espécies mais comuns são: robalo, dourada, sargo, pargo, ruivo e linguado. Na pesca de embarcação costeira: carapau, peixe-espada, safio e garoupa. Em mar alto nos Açores e Madeira: atum rabilho, wahoo, espadim e mahi-mahi. A época do ano e o tipo de fundo determinam as espécies disponíveis em cada zona.'
+          }
+        ],
+      },
     },
 
     // ── ENGLISH ────────────────────────────────────────────────────────────────
@@ -727,7 +822,102 @@
       },
 
       jsonLdDesc: function (name, region) { return 'Beach ' + name + ' in ' + (region || 'Portugal') + ', Portugal.'; },
+
+    // ── Surf page i18n ─────────────────────────────────────────────────────────
+    surf: {
+      spotCount: function (n) { return '<strong>' + n + '</strong> spot' + (n !== 1 ? 's' : ''); },
+      emptyTitle: 'No spots found',
+      emptySub:   'Try other filters or explore all available regions.',
+      emptyCta:   'View all spots',
+      levelLabel: { iniciante: 'Beginner', intermedio: 'Intermediate', avancado: 'Advanced', profissional: 'Professional' },
+      levelLabelComposite: {
+        iniciante_intermedio: 'Beginner–Intermediate',
+        intermedio_avancado:  'Intermediate–Advanced',
+      },
+      swellLabel:  'Swell',
+      windLabel:   'Wind',
+      seasonLabel: 'Best season',
+      exploreRegion:     'Explore region',
+      exploreRegionAria: function (r) { return 'Beaches in ' + r; },
+      metaTitle:       'Surfing in Portugal — Spots, Waves & Guide · Portugal Travel Hub',
+      metaDescription: 'The best surf spots in Portugal — Peniche, Nazaré, Algarve and Azores. Wave profile, recommended level and practical guide.',
+      faqs: [
+        {
+          q: 'When is the best time to surf in Portugal?',
+          a: 'October to April is the golden season — the North Atlantic generates consistent, powerful swells. Summer (June–September) is ideal for beginners: smaller waves, warmer water (19–22°C) and better conditions for surf lessons.'
+        },
+        {
+          q: 'Which spot is best for beginners?',
+          a: 'Costa da Caparica (Lisbon) and Praia do Amado (Algarve) are the two top choices. Both have certified surf schools, waves suitable for learning and good support infrastructure.'
+        },
+        {
+          q: 'Do I need to know how to swim to learn surfing?',
+          a: 'Yes — you must be able to swim comfortably before entering the sea with a board. Surf schools require basic swimming ability and carry out an initial assessment before lessons begin.'
+        },
+        {
+          q: 'What basic equipment do I need?',
+          a: 'A surfboard (available to rent at all schools), a wetsuit (essential from October to April, recommended in other months) and water-resistant sunscreen. Nothing else is needed to get started.'
+        },
+        {
+          q: 'Can I surf in Portugal all year round?',
+          a: 'Yes. Portugal has waves in every season. In summer conditions are gentler, ideal for beginners. In autumn and winter waves are larger and more consistent, ideal for intermediate and advanced surfers.'
+        },
+        {
+          q: 'How much does a surf lesson cost in Portugal?',
+          a: 'A 2-hour group lesson costs between €25 and €45 per person, depending on the school and region. Private lessons range from €60 to €100. Most schools include board and wetsuit in the price. In the Algarve and Lisbon prices tend to be slightly higher than on the Silver Coast.'
+        },
+        {
+          q: 'Is surfing in Portugal dangerous for beginners?',
+          a: 'At spots suitable for beginners, with a certified school and instructor, surfing is a safe activity. It is essential not to enter the sea alone without instruction — rip currents and submerged sandbars can surprise those unfamiliar with the spot. Learning with a certified school is strongly recommended.'
+        }
+      ],
     },
+
+    // ── Fishing page i18n ──────────────────────────────────────────────────────
+    fishing: {
+      spotCount: function (n) { return '<strong>' + n + '</strong> spot' + (n !== 1 ? 's' : ''); },
+      emptyTitle: 'No spots found',
+      emptySub:   'Try other filters or explore all available types and regions.',
+      emptyCta:   'View all spots',
+      levelLabel: { iniciante: 'Beginner', intermedio: 'Intermediate', experiente: 'Experienced', profissional: 'Professional' },
+      tipoLabel:  { rocha: 'Rocks', ria: 'Lagoon & Estuary', costeira: 'Coastal', embarcacao: 'Boat', fluvial: 'Freshwater' },
+      seasonLabel:   'Best season',
+      especiesLabel: 'Species',
+      saveCta:       'Save',
+      metaTitle:       'Fishing in Portugal — Spots, Species & Guide · Portugal Travel Hub',
+      metaDescription: 'The best fishing spots in Portugal — from Sagres and Sesimbra to the Azores. Fishing type, target species, best season and practical guide.',
+      faqs: [
+        {
+          q: 'Do I need a licence to fish in Portugal?',
+          a: 'Yes. Recreational fishing in Portugal requires a licence issued by ICNF (Institute for Nature Conservation and Forests). The annual licence is affordable and can be obtained online on the ICNF portal or in tackle shops. Additional restrictions may apply in protected areas — always check before fishing.'
+        },
+        {
+          q: 'What is the best season for fishing in Portugal?',
+          a: 'It depends on the species and type of fishing. For bluefin tuna and billfish offshore: June to October. For shad and lamprey in rivers: March to June. For bass and bream on the coast: year-round with a peak in autumn and winter. Ria Formosa and Ria de Aveiro are productive throughout the year.'
+        },
+        {
+          q: 'Can I fish without a boat in Portugal?',
+          a: 'Yes. Shore fishing — on beaches (surfcasting), rocks and piers — requires no boat and is accessible all along the mainland coast. You only need the appropriate licence and the right gear. Jetties, breakwaters and groynes are also good access points without a boat.'
+        },
+        {
+          q: 'What do I need to bring for a fishing trip?',
+          a: 'For shore fishing: rod or lure rod, reel, line, hooks, bait (natural or artificial) and licence. For boat fishing: the operator usually provides equipment. We recommend a life jacket, sun protection, water and a snack. Always check the weather forecast before heading out.'
+        },
+        {
+          q: 'Are there chartered boats for beginners in the Algarve?',
+          a: 'Yes. Several operators in Portimão, Vilamoura and Lagos offer trips for beginners with equipment included and an experienced skipper on board — ideal for those wanting an offshore fishing experience without their own gear. Advance booking is recommended in summer.'
+        },
+        {
+          q: 'How much does it cost to rent a fishing boat in Portugal?',
+          a: 'A shared trip costs between €40 and €80 per person for a half-day. Exclusive charter varies between €200 and €600 per day depending on the vessel and location. The Azores has the highest prices due to the big game style of fishing. In the Algarve, Portimão and Vilamoura offer the best shared charter options for beginners.'
+        },
+        {
+          q: 'What are the most common species for shore fishing in Portugal?',
+          a: 'The most common species for shore fishing are: bass, sea bream, bream, pargo, red mullet and sole. For inshore boat fishing: horse mackerel, scabbardfish, conger eel and grouper. Offshore in the Azores and Madeira: bluefin tuna, wahoo, billfish and mahi-mahi. The time of year and type of seabed determine which species are available in each area.'
+        }
+      ],
+    },
+  },
   }; // end I18N_STRINGS
 
   // ── detectLang ─────────────────────────────────────────────────────────────
