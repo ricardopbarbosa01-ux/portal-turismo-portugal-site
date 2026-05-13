@@ -17,6 +17,7 @@
       position: relative;
       overflow: hidden;
     }
+    .page-hero { display: block; min-height: auto; align-items: initial; }
     @media (max-width: 640px) { .page-hero { padding-top: 80px; padding-bottom: 44px; } }
     .page-hero::before {
       content: '';
@@ -61,6 +62,9 @@
       color: var(--white);
       line-height: 1.12;
       margin-bottom: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .page-hero h1 em { font-style: italic; color: var(--gold-light); }
     .page-hero p {
