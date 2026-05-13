@@ -616,6 +616,7 @@
   </style>
 
 <link rel="stylesheet" href="/css/style.css?v=20260512-bnav">
+<script src="/js/beach-renderer.js?v=20260512-i18n" defer></script>
 </head>
 <body>
 
@@ -1110,7 +1111,8 @@
 
   function deriveTags(b) {
     const tags = [];
-    const desc = (b.description || '').toLowerCase();
+    const _LANG = (window.BeachRenderer && window.BeachRenderer.detectLang) ? window.BeachRenderer.detectLang() : 'pt';
+    const desc = ((b.i18n && b.i18n.description && b.i18n.description[_LANG] || '') + ' ' + (b.description || '')).toLowerCase();
     const region = (b.region || '').toLowerCase();
     const fac = Array.isArray(b.facilities) ? b.facilities : [];
     // surf: use is_surf_spot field directly (more reliable than text-matching)
@@ -1140,6 +1142,7 @@
 
   function renderBeaches(beaches) {
     const grid = document.getElementById('beaches-grid');
+    const _LANG = (window.BeachRenderer && window.BeachRenderer.detectLang) ? window.BeachRenderer.detectLang() : 'pt';
 
     if (!beaches.length) {
       grid.innerHTML = `
@@ -1174,8 +1177,9 @@
         ? `<span class="quality-badge quality--${escHtml(b.water_quality)}">${escHtml(b.water_quality)}</span>`
         : '';
 
-      const descHtml = b.description
-        ? `<p class="beach-card-desc">${escHtml(b.description)}</p>`
+      const descText = (b.i18n && b.i18n.description && b.i18n.description[_LANG]) || b.description || '';
+      const descHtml = descText
+        ? `<p class="beach-card-desc">${escHtml(descText)}</p>`
         : '';
 
       const qualityClass = b.water_quality === 'Excelente' ? ' beach-card--excelente' : '';

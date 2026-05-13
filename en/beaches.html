@@ -598,6 +598,7 @@
 </style>
 
 <link rel="stylesheet" href="/css/style.css?v=20260512-bnav">
+<script src="/js/beach-renderer.js?v=20260512-i18n" defer></script>
 </head>
 <body>
 
@@ -1044,6 +1045,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('[en/beaches] Supabase client (db) not loaded');
     return;
   }
+  const LANG = (window.BeachRenderer && window.BeachRenderer.detectLang) ? window.BeachRenderer.detectLang() : 'en';
+  const T    = (window.BeachRenderer && window.BeachRenderer.getT)       ? window.BeachRenderer.getT()       : {};
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
   function escHtml(str) {
@@ -1091,10 +1094,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function deriveTags(b) {
     const tags = [];
-    const desc = (b.description || '').toLowerCase();
+    const desc = ((b.i18n && b.i18n.description && b.i18n.description[LANG] || '') + ' ' + (b.description || '')).toLowerCase();
     const region = (b.region || '').toLowerCase();
     const fac = Array.isArray(b.facilities) ? b.facilities : [];
-    if (b.is_surf_spot || desc.includes('surf') || desc.includes('onda') || region === 'porto') tags.push('surf');
+    if (b.is_surf_spot || desc.includes('surf') || desc.includes('onda') || desc.includes('wave') || region === 'porto') tags.push('surf');
     if (fac.includes('lifeguard') || desc.includes('famil') || desc.includes('famíl') || desc.includes('criança') || region === 'algarve') tags.push('família');
     if (desc.includes('naturez') || desc.includes('isolad') || region === 'alentejo') tags.push('natureza');
     if (region === 'madeira' || region === 'açores') tags.push('ilhas');
@@ -1117,7 +1120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     `).join('');
   }
 
-  function renderBeaches(beaches) {
+  window.renderBeaches = function(beaches) {
     const grid = document.getElementById('beaches-grid');
 
     if (!beaches.length) {
@@ -1149,12 +1152,14 @@ document.addEventListener('DOMContentLoaded', function () {
         <span>${escHtml(b.region || 'Portugal')}</span>
       </div>`;
 
+      const qualityLabel = (T.waterQuality && T.waterQuality[b.water_quality]) || b.water_quality || '';
       const qualityHtml = b.water_quality
-        ? `<span class="quality-badge quality--${escHtml(b.water_quality)}">${escHtml(b.water_quality)}</span>`
+        ? `<span class="quality-badge quality--${escHtml(b.water_quality)}">${escHtml(qualityLabel)}</span>`
         : '';
 
-      const descHtml = b.description
-        ? `<p class="beach-card-desc">${escHtml(b.description)}</p>`
+      const descText = (b.i18n && b.i18n.description && b.i18n.description[LANG]) || b.description || '';
+      const descHtml = descText
+        ? `<p class="beach-card-desc">${escHtml(descText)}</p>`
         : '';
 
       const qualityClass = b.water_quality === 'Excelente' ? ' beach-card--excelente' : '';
