@@ -533,6 +533,15 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
   .estilo-section{padding:36px 4vw 28px;}
 }
 
+/* ── Mobile footer collapse (matches .footer behaviour from style.css:2758) ── */
+@media(max-width:768px){
+  .surf-footer-col,.pesca-footer-col{display:none;}
+  .surf-footer-grid,.pesca-footer-grid{grid-template-columns:1fr!important;gap:0!important;padding-bottom:12px;margin-bottom:0;}
+  .surf-footer,.pesca-footer{padding:24px 4vw 0;}
+  .surf-footer-bottom,.pesca-footer-bottom{flex-direction:column;align-items:center;gap:8px;padding-top:14px;}
+  .surf-footer-legal,.pesca-footer-legal{flex-wrap:wrap;justify-content:center;gap:12px;}
+}
+
 /* ── Print ── */
 @media print{
   .mobile-bottom-nav,.surf-filters,.pesca-filters,
