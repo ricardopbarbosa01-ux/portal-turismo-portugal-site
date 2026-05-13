@@ -106,7 +106,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20260513-i18n10">
+  <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20260513-i18n11">
 
 <link rel="stylesheet" href="/css/style.css?v=20260513-i18n10">
   <script src="/js/image-autofix.js"></script>
@@ -596,51 +596,63 @@
 
 </main>
 
-<footer class="pesca-footer" role="contentinfo">
-  <div class="pesca-footer-inner">
-    <div class="pesca-footer-grid">
-      <div>
-        <p class="pesca-footer-brand">Portugal Travel Hub</p>
-        <p class="pesca-footer-tagline">O portal de referência das praias de Portugal. Guia editorial, planeamento e descoberta — da pesca ao surf e ecoturismo costeiro.</p>
+<footer class="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        Portugal Travel Hub
       </div>
-      <nav class="pesca-footer-col" aria-label="Portal">
-        <p class="pesca-footer-col-title">Portal</p>
-        <ul>
-          <li><a href="beaches.html">Praias</a></li>
-          <li><a href="surf.html">Surf</a></li>
-          <li><a href="pesca.html" aria-current="page">Pesca</a></li>
-          <li><a href="webcams.html">Webcams</a></li>
-          <li><a href="planear.html">Planear</a></li>
-        </ul>
-      </nav>
-      <nav class="pesca-footer-col" aria-label="Empresa">
-        <p class="pesca-footer-col-title">Empresa</p>
-        <ul>
-          <li><a href="sobre.html">Sobre Nós</a></li>
-          <li><a href="precos.html">Preços</a></li>
-          <li><a href="parceiros.html">Parceiros</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-        </ul>
-      </nav>
-      <nav class="pesca-footer-col" aria-label="Legal">
-        <p class="pesca-footer-col-title">Legal</p>
-        <ul>
-          <li><a href="privacidade.html">Privacidade</a></li>
-          <li><a href="termos.html">Termos</a></li>
-          <li><a href="cookies.html">Cookies</a></li>
-        </ul>
-      </nav>
+      <p class="footer-tagline">
+        O portal de referência de praias em Portugal — condições, webcams, surf, pesca e planeamento de viagens.
+      </p>
+      <form class="footer-search-form" role="search" aria-label="Pesquisar praia">
+        <div class="footer-search-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="footer-search-input" placeholder="Pesquisar praia..." aria-label="Pesquisar praia">
+          <button type="submit" class="footer-search-btn" aria-label="Pesquisar">Ir</button>
+        </div>
+      </form>
     </div>
-    <div class="pesca-footer-bottom">
-      <p class="pesca-footer-copy">&copy; 2026 Portugal Travel Hub. Todos os direitos reservados.</p>
-      <nav class="pesca-footer-legal" aria-label="Links legais">
-        <a href="sobre.html">Sobre</a>
-        <a href="contact.html">Contacto</a>
-        <a href="privacidade.html">Privacidade</a>
-        <a href="termos.html">Termos</a>
-        <a href="cookies.html">Cookies</a>
-      </nav>
-    </div>
+
+    <nav class="footer-col" aria-label="Destinos">
+      <h3 class="footer-heading">Destinos</h3>
+      <ul>
+        <li><a href="beaches.html?region=Algarve">Algarve</a></li>
+        <li><a href="beaches.html?region=Lisboa">Lisboa</a></li>
+        <li><a href="beaches.html?region=Porto">Porto</a></li>
+        <li><a href="beaches.html?region=Alentejo">Alentejo</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Portal">
+      <h3 class="footer-heading">Portal</h3>
+      <ul>
+        <li><a href="beaches.html">Praias</a></li>
+        <li><a href="webcams.html">Webcams</a></li>
+        <li><a href="surf.html">Surf</a></li>
+        <li><a href="pesca.html">Pesca</a></li>
+        <li><a href="planear.html">Planear Viagem</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Parceiros &amp; Ajuda">
+      <h3 class="footer-heading">Parceiros &amp; Ajuda</h3>
+      <ul>
+        <li><a href="parceiros.html">Parceiros</a></li>
+        <li><a href="media-kit.html">Media Kit</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="privacidade.html">Privacidade</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span><a href="sobre.html">Sobre</a> · <a href="metodologia-editorial.html">Metodologia</a> · <a href="transparencia-comercial.html">Transparência</a> · <a href="contact.html">Contacto</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a></span>
   </div>
 </footer>
 
@@ -684,6 +696,14 @@
       return;
     }
     window.SurfPescaPage.renderAll('fishing');
+    const footerSearchForm = document.querySelector('.footer-search-form');
+    if (footerSearchForm) {
+      footerSearchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const q = document.getElementById('footer-search-input')?.value.trim();
+        if (q) window.location.href = 'beaches.html?q=' + encodeURIComponent(q);
+      });
+    }
   });
 </script>
 <script src="/js/lang-switcher.js" defer></script>
