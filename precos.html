@@ -68,7 +68,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
+  <link rel="stylesheet" href="/css/style.css?v=20260513-n2x">
 
   <style>
 /* ── Focus ── */
@@ -89,6 +89,8 @@
       position: relative;
       overflow: hidden;
     }
+    /* Override BEM .page-hero flex layout from css/style.css (260513-n2x) */
+    .page-hero { display: block; min-height: auto; align-items: initial; }
     @media (max-width: 640px) { .page-hero { padding-top: 80px; padding-bottom: 48px; } }
     .page-hero::before {
       content: '';
@@ -113,6 +115,9 @@
       color: var(--white);
       line-height: 1.15;
       margin-bottom: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .page-hero p {
       font-size: 1.1rem;

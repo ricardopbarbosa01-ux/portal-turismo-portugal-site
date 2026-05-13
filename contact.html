@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
+  <link rel="stylesheet" href="/css/style.css?v=20260513-n2x">
 
   <style>
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
@@ -52,10 +52,12 @@
 
     /* ── Hero ── */
     .page-hero { background:linear-gradient(150deg,var(--blue) 0%,#0d4880 50%,#1a5fa3 100%); padding:130px 5vw 80px; text-align:center; position:relative; overflow:hidden; }
+    /* Override BEM .page-hero flex layout from css/style.css (260513-n2x) */
+    .page-hero { display: block; min-height: auto; align-items: initial; }
     @media (max-width:640px) { .page-hero { padding-top:80px; padding-bottom:48px; } }
     .page-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 50% at 20% 80%,rgba(201,168,76,0.10) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 80% 20%,rgba(41,128,212,0.15) 0%,transparent 60%); pointer-events:none; }
     .page-hero-eyebrow { display:inline-block; font-family:'Inter',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
-    .page-hero h1 { font-family:'Bodoni Moda',Georgia,serif; font-size:clamp(2.2rem,5.5vw,3.8rem); font-weight:700; color:var(--white); line-height:1.12; margin-bottom:20px; }
+    .page-hero h1 { font-family:'Bodoni Moda',Georgia,serif; font-size:clamp(2.2rem,5.5vw,3.8rem); font-weight:700; color:var(--white); line-height:1.12; margin-bottom:20px; max-width:900px; margin-left:auto; margin-right:auto; }
     .page-hero h1 em { font-style:italic; color:var(--gold-light); }
     .page-hero > p { font-size:clamp(1rem,2vw,1.1rem); color:rgba(255,255,255,0.78); max-width:540px; margin:0 auto 36px; line-height:1.7; }
     .hero-trust { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
