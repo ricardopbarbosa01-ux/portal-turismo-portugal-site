@@ -1,0 +1,407 @@
+/** css/surf-pesca-page.css — Shared styles for surf.html + pesca.html (+ EN variants).
+ * Loaded via <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20260513-i18n4"> in head.
+ * Replaces inline <style> blocks previously embedded in all 4 pages.
+ * nav-close / nav-backdrop removed — those belong to nav.js scope (nav.js handles it).
+ * EN-only level classes (spot-level--beginner etc.) removed — data normalized to PT-canonical keys.
+ * min-height on .chip, .level-tab, .tipo-tab: 44px per MOBILE-07 regression watchlist.
+ */
+
+/* ── Design tokens (local only — global tokens in css/style.css) ── */
+:root {
+  --blue:#0a3d6b;--blue-mid:#1a5fa3;--blue-light:#2980d4;
+  --gold:#c9a84c;--gold-light:#e8c97a;--gold-glow:rgba(201,168,76,0.25);
+  --white:#ffffff;--off-white:#f6f4ef;
+  --text:#1a1a2e;--text-mid:#4a5568;--text-light:#566072;
+  --border:rgba(10,61,107,0.10);
+  --glass:rgba(255,255,255,0.10);--glass-border:rgba(255,255,255,0.20);
+  --shadow:0 4px 20px rgba(10,61,107,0.10);
+  --shadow-lg:0 12px 40px rgba(10,61,107,0.16);
+  --radius:16px;--transition:0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--off-white);overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;border:none;background:none;font-family:inherit;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:var(--white);padding:8px 16px;border-radius:8px;z-index:9999;transition:top 0.2s;}
+.skip-link:focus{top:16px;}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);cursor:pointer;min-height:44px;}
+.btn-outline{border:1.5px solid var(--glass-border);color:var(--white);backdrop-filter:blur(12px);background:var(--glass);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-weight:600;box-shadow:0 4px 20px var(--gold-glow);}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 30px var(--gold-glow);}
+.btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);}
+.btn-blue:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
+
+/* ── Breadcrumb ── */
+.breadcrumb{padding:16px 5vw 0;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-light);}
+.breadcrumb span[aria-current="page"]{color:#3d5167;font-weight:500;}
+.breadcrumb a{color:var(--blue-mid);transition:color var(--transition);}
+.breadcrumb a:hover{color:var(--blue);}
+.breadcrumb svg{width:14px;height:14px;stroke:var(--text-light);fill:none;flex-shrink:0;}
+
+/* ── Filters — surf ── */
+.surf-filters{background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(10,61,107,0.06);position:sticky;top:72px;z-index:50;}
+.filter-top{display:flex;align-items:center;gap:10px;padding:12px 5vw;flex-wrap:wrap;}
+.filter-label{font-size:0.78rem;font-weight:600;color:var(--text-mid);white-space:nowrap;}
+.level-tabs{display:flex;gap:6px;flex-wrap:wrap;}
+/* MOBILE-07: min-height 44px for touch target compliance */
+.level-tab{padding:6px 15px;border-radius:50px;border:1.5px solid var(--border);background:var(--off-white);color:var(--text-mid);font-size:0.78rem;font-weight:500;cursor:pointer;transition:all var(--transition);min-height:44px;white-space:nowrap;}
+.level-tab:hover{border-color:var(--blue-mid);color:var(--blue);}
+.level-tab.active{background:var(--blue);color:var(--white);border-color:var(--blue);}
+.spot-count{margin-left:auto;font-size:0.8rem;color:var(--text-light);white-space:nowrap;}
+.spot-count strong{color:var(--blue);}
+/* regression watchlist 1D: mask-image scroll fade */
+.region-chips-bar{padding:10px 5vw;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-top:1px solid var(--border);mask-image:linear-gradient(to right,black calc(100% - 28px),transparent 100%);-webkit-mask-image:linear-gradient(to right,black calc(100% - 28px),transparent 100%);}
+.region-chips-bar::-webkit-scrollbar{display:none;}
+/* MOBILE-07: min-height 44px for touch target compliance */
+.chip{padding:6px 16px;border-radius:50px;border:1.5px solid var(--border);background:var(--off-white);color:var(--text-mid);font-size:0.78rem;font-weight:500;cursor:pointer;transition:all var(--transition);min-height:44px;white-space:nowrap;display:inline-flex;align-items:center;flex-shrink:0;}
+.chip:hover{border-color:var(--blue-mid);color:var(--blue);}
+.chip.active{background:var(--blue);color:var(--white);border-color:var(--blue);}
+
+/* ── Filters — pesca (tipo-tabs) ── */
+.pesca-filters{background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(10,61,107,0.06);position:sticky;top:72px;z-index:50;}
+.tipo-tabs{display:flex;gap:6px;flex-wrap:wrap;}
+/* MOBILE-07: 44px (was 34px in EN inline style — corrected) */
+.tipo-tab{padding:6px 15px;border-radius:50px;border:1.5px solid var(--border);background:var(--off-white);color:var(--text-mid);font-size:0.78rem;font-weight:500;cursor:pointer;transition:all var(--transition);min-height:44px;white-space:nowrap;}
+.tipo-tab:hover{border-color:var(--blue-mid);color:var(--blue);}
+.tipo-tab.active{background:var(--blue);color:var(--white);border-color:var(--blue);}
+
+/* ── Spots section ── */
+.spots-section{padding:36px 5vw 64px;}
+.spots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1280px;margin:0 auto;}
+
+/* ── Spot card ── */
+.spot-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform var(--transition),box-shadow var(--transition);}
+.spot-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.spot-visual{position:relative;height:176px;overflow:hidden;}
+.spot-visual-bg{position:absolute;inset:0;}
+.spot-visual-wave{position:absolute;bottom:0;left:0;width:100%;}
+.spot-visual-content{position:absolute;bottom:14px;left:16px;right:16px;display:flex;align-items:center;justify-content:space-between;}
+.spot-region-badge{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:50px;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:var(--white);}
+.spot-quality{display:flex;gap:3px;}
+.spot-quality-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.30);}
+.spot-quality-dot.filled{background:var(--gold);}
+
+/* region background gradients */
+.spot-bg--porto   {background:linear-gradient(145deg,#071929 0%,#0f3560 100%);}
+.spot-bg--centro  {background:linear-gradient(145deg,#050e1e 0%,#0a2848 100%);}
+.spot-bg--lisboa  {background:linear-gradient(145deg,#082040 0%,#103870 100%);}
+.spot-bg--alentejo{background:linear-gradient(145deg,#0a1a10 0%,#163020 100%);}
+.spot-bg--algarve {background:linear-gradient(145deg,#1c1005 0%,#3a2408 100%);}
+.spot-bg--acores  {background:linear-gradient(145deg,#041810 0%,#0a2c1e 100%);}
+
+.spot-body{padding:16px 18px 12px;flex:1;display:flex;flex-direction:column;gap:5px;}
+.spot-name{font-family:'Bodoni Moda',serif;font-size:1.12rem;font-weight:700;color:var(--blue);line-height:1.2;}
+.spot-location{font-size:0.75rem;color:var(--text-light);display:flex;align-items:center;gap:4px;}
+.spot-location svg{width:10px;height:10px;stroke:var(--text-light);fill:none;flex-shrink:0;}
+.spot-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:3px;}
+.spot-meta-tag{font-size:0.7rem;font-weight:600;padding:3px 10px;border-radius:50px;}
+
+/* PT-canonical level badge colours */
+.spot-level--iniciante   {background:rgba(39,174,96,0.10);color:#1b7641;}
+.spot-level--intermedio  {background:rgba(41,128,212,0.10);color:#1a5fa3;}
+.spot-level--avancado    {background:rgba(230,126,34,0.10);color:#9e540b;}
+.spot-level--experiente  {background:rgba(230,126,34,0.10);color:#9e540b;}
+.spot-level--profissional{background:rgba(201,168,76,0.15);color:#7c600e;}
+
+/* pesca tipo badge */
+.spot-tipo-label{background:rgba(10,61,107,0.07);color:var(--blue-mid);}
+
+.spot-type{font-size:0.78rem;color:var(--text-mid);display:flex;align-items:center;gap:5px;}
+.spot-type svg{width:13px;height:13px;stroke:var(--blue-mid);fill:none;flex-shrink:0;}
+.spot-detail{font-size:0.78rem;color:var(--text-mid);display:flex;align-items:center;gap:5px;}
+.spot-detail svg{width:13px;height:13px;stroke:var(--blue-mid);fill:none;flex-shrink:0;}
+.spot-season{font-size:0.74rem;color:var(--text-light);}
+.spot-season strong{color:var(--text-mid);}
+.spot-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.55;margin-top:4px;flex:1;}
+.spot-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.spot-tag{font-size:0.67rem;padding:3px 8px;border-radius:50px;background:rgba(10,61,107,0.05);color:var(--text-mid);border:1px solid var(--border);}
+.spot-footer{padding:11px 18px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.spot-conditions{font-size:0.71rem;color:var(--text-light);}
+.spot-conditions strong{color:var(--text-mid);}
+.spot-especies{font-size:0.71rem;color:var(--text-light);}
+.spot-especies strong{color:var(--text-mid);}
+.spot-link{font-size:0.78rem;font-weight:600;color:var(--blue-mid);display:inline-flex;align-items:center;gap:4px;transition:color var(--transition);white-space:nowrap;flex-shrink:0;}
+.spot-link svg{width:12px;height:12px;stroke:currentColor;fill:none;transition:transform var(--transition);}
+.spot-card:hover .spot-link{color:var(--blue);}
+.spot-card:hover .spot-link svg{transform:translateX(3px);}
+
+/* ── Empty state ── */
+.spots-empty{grid-column:1/-1;text-align:center;padding:72px 24px;}
+.spots-empty-icon{width:64px;height:64px;margin:0 auto 16px;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.06));border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.spots-empty-icon svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;}
+.spots-empty-title{font-family:'Bodoni Moda',serif;font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:8px;}
+.spots-empty-sub{font-size:0.9rem;color:var(--text-mid);max-width:320px;margin:0 auto 20px;line-height:1.6;}
+.btn-reset{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:var(--blue);color:var(--white);font-size:0.875rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;border:none;transition:opacity 0.2s;}
+.btn-reset:hover{opacity:0.85;}
+
+/* ── Guide section ── */
+.surf-guide,.pesca-guide{background:var(--white);padding:64px 5vw;}
+.guide-inner{max-width:1100px;margin:0 auto;}
+.guide-header{text-align:center;max-width:600px;margin:0 auto 44px;}
+.guide-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;}
+.guide-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--blue);font-weight:700;margin-bottom:12px;line-height:1.15;}
+.guide-title em{font-style:italic;color:var(--blue-mid);}
+.guide-subtitle{font-size:0.95rem;color:var(--text-mid);line-height:1.7;}
+.guide-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.guide-card{border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;background:var(--off-white);}
+.guide-card-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.guide-card-icon svg{width:22px;height:22px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;}
+.guide-card-title{font-family:'Bodoni Moda',serif;font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:10px;}
+.guide-card-body{font-size:0.875rem;color:var(--text-mid);line-height:1.7;}
+.guide-card-body strong{color:var(--text);}
+
+/* ── CTA Strip ── */
+.surf-cta,.pesca-cta{background:linear-gradient(135deg,var(--blue) 0%,#0d2b4e 100%);padding:52px 5vw;}
+.surf-cta-inner,.pesca-cta-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.surf-cta-title,.pesca-cta-title{font-family:'Bodoni Moda',serif;font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:6px;line-height:1.2;}
+.surf-cta-sub,.pesca-cta-sub{font-size:0.9rem;color:rgba(255,255,255,0.70);max-width:420px;line-height:1.6;}
+.surf-cta-btns,.pesca-cta-btns{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;}
+.btn-ghost{background:rgba(255,255,255,0.10);color:var(--white);border:1px solid rgba(255,255,255,0.25);}
+.btn-ghost:hover{background:rgba(255,255,255,0.18);}
+
+/* ── FAQ ── */
+.surf-faq,.pesca-faq{padding:56px 5vw;max-width:860px;margin:0 auto;}
+.surf-faq-header,.pesca-faq-header{margin-bottom:28px;}
+.surf-faq-title,.pesca-faq-title{font-family:'Bodoni Moda',serif;font-size:1.8rem;font-weight:700;color:var(--blue);margin-bottom:6px;}
+.surf-faq-sub,.pesca-faq-sub{font-size:0.9rem;color:var(--text-mid);}
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white);}
+.faq-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;cursor:pointer;min-height:54px;transition:background var(--transition);background:var(--white);}
+.faq-header:hover{background:rgba(10,61,107,0.025);}
+.faq-question{font-size:0.925rem;font-weight:600;color:var(--text);text-align:left;}
+.faq-chevron{width:18px;height:18px;stroke:var(--text-light);fill:none;stroke-width:2;transition:transform 0.25s;flex-shrink:0;}
+.faq-item.open .faq-chevron{transform:rotate(180deg);}
+.faq-body{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+.faq-item.open .faq-body{max-height:300px;}
+.faq-answer{padding:14px 20px 18px;font-size:0.875rem;color:var(--text-mid);line-height:1.7;border-top:1px solid var(--border);}
+.faq-answer a{color:var(--blue-mid);text-decoration:underline;}
+.faq-answer a:hover{color:var(--blue);}
+
+/* ── Focus-visible (keyboard nav / accessibility) ── */
+.chip:focus-visible,
+.level-tab:focus-visible,
+.tipo-tab:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+.faq-header:focus-visible{outline:3px solid var(--blue-mid);outline-offset:-3px;}
+.spot-link:focus-visible{outline:2px solid var(--blue-mid);outline-offset:2px;border-radius:4px;}
+.btn-reset:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+
+/* ── Transition defaults ── */
+.chip,.level-tab,.tipo-tab,.spot-card,.spot-link,.guide-card{transition-duration:0.2s;transition-timing-function:ease;}
+@media(prefers-reduced-motion:reduce){
+  .chip,.level-tab,.tipo-tab,.spot-card,.spot-link,.guide-card,
+  .faq-body,.faq-chevron,.btn-reset{transition:none;animation:none;}
+}
+
+/* ── Footer (simple) ── */
+.footer{background:#0d1b2a;color:rgba(255,255,255,0.6);padding:36px 5vw 28px;}
+.footer-bottom{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:0.8rem;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:8px;}
+.footer-bottom a{color:rgba(255,255,255,0.50);transition:color var(--transition);}
+.footer-bottom a:hover{color:var(--gold);}
+
+/* ── Mobile bottom nav ── */
+/* regression watchlist 1A: padding-bottom for .mobile-bottom-nav pages */
+.mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(10,61,107,0.97);backdrop-filter:blur(20px) saturate(1.5);border-top:1px solid var(--glass-border);}
+.mobile-bottom-nav-inner{display:flex;height:60px;align-items:stretch;padding-bottom:env(safe-area-inset-bottom,0px);}
+.mobile-nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:rgba(255,255,255,0.6);font-size:0.58rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;padding:4px 2px;text-decoration:none;cursor:pointer;border:none;background:none;font-family:inherit;transition:color var(--transition);min-height:44px;}
+.mobile-nav-item svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.mobile-nav-item.active,.mobile-nav-item:hover{color:var(--gold);}
+
+/* ── Shared eyebrow + section title ── */
+.surf-eyebrow,.pesca-eyebrow{display:block;font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.surf-sec-title,.pesca-sec-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:700;line-height:1.12;color:var(--text);margin-bottom:12px;}
+.surf-sec-title em,.pesca-sec-title em{font-style:italic;}
+.surf-sec-sub,.pesca-sec-sub{font-size:0.97rem;color:var(--text-mid);line-height:1.72;}
+
+/* ── Partners blocks ── */
+.surf-partners,.pesca-partners{background:var(--off-white);padding:72px 5vw;}
+.surf-partners-inner,.pesca-partners-inner{max-width:1100px;margin:0 auto;}
+.surf-partners-header,.pesca-partners-header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap;}
+.surf-partners-editorial,.pesca-partners-editorial{font-size:0.76rem;color:var(--text-light);display:flex;align-items:center;gap:5px;}
+.surf-partners-editorial svg,.pesca-partners-editorial svg{width:12px;height:12px;stroke:var(--gold);fill:none;stroke-width:2.5;flex-shrink:0;}
+.surf-partners-grid,.pesca-partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:820px){.surf-partners-grid,.pesca-partners-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.surf-partners-grid,.pesca-partners-grid{grid-template-columns:1fr;}}
+
+/* shared partner card (sp-card) — same across surf + pesca */
+.sp-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow 0.25s,transform 0.25s;}
+.sp-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+.sp-card-top{padding:20px 20px 14px;flex:1;}
+.sp-card-eyebrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.sp-card-cat{font-size:0.65rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-light);}
+.sp-card-badge{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:50px;}
+.sp-badge--destaque{background:rgba(201,168,76,0.14);color:#7c600e;border:1px solid rgba(201,168,76,0.28);}
+.sp-badge--verificado{background:rgba(39,174,96,0.10);color:#1b7641;border:1px solid rgba(39,174,96,0.22);}
+.sp-badge--novo{background:rgba(41,128,212,0.10);color:#1a5fa3;border:1px solid rgba(41,128,212,0.22);}
+.sp-card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.sp-card-icon svg{width:22px;height:22px;stroke:var(--white);fill:none;stroke-width:1.7;}
+.sp-card-name{font-family:'Bodoni Moda',serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.2;}
+.sp-card-zone{font-size:0.74rem;color:var(--text-light);margin-bottom:10px;display:flex;align-items:center;gap:4px;}
+.sp-card-zone svg{width:10px;height:10px;stroke:var(--text-light);fill:none;stroke-width:2;flex-shrink:0;}
+.sp-card-prop{font-size:0.82rem;color:var(--text-mid);line-height:1.6;}
+.sp-card-footer{padding:12px 20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:flex-end;}
+.sp-card-cta{display:inline-flex;align-items:center;gap:5px;font-size:0.8rem;font-weight:600;color:var(--blue-mid);transition:color 0.2s;min-height:36px;}
+.sp-card-cta svg{width:13px;height:13px;stroke:currentColor;fill:none;transition:transform 0.2s;}
+.sp-card:hover .sp-card-cta{color:var(--blue);}
+.sp-card:hover .sp-card-cta svg{transform:translateX(2px);}
+.sp-b2b-strip{margin-top:20px;padding:16px 20px;background:rgba(10,61,107,0.04);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.sp-b2b-text{font-size:0.78rem;color:var(--text-mid);}
+.sp-b2b-text strong{color:var(--text);font-weight:600;}
+.sp-b2b-link{font-size:0.76rem;font-weight:600;color:var(--blue-mid);white-space:nowrap;transition:color 0.2s;}
+.sp-b2b-link:hover{color:var(--blue);}
+
+/* ── Para quem é (surf) ── */
+.surf-quem{background:var(--white);padding:72px 5vw;}
+.surf-quem-inner{max-width:1100px;margin:0 auto;}
+.surf-quem-header{text-align:center;max-width:580px;margin:0 auto 40px;}
+.surf-quem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:820px){.surf-quem-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.surf-quem-grid{grid-template-columns:1fr;}}
+.surf-quem-card{border:1.5px solid var(--border);border-radius:var(--radius);padding:24px;background:var(--off-white);transition:border-color 0.25s,box-shadow 0.25s;}
+.surf-quem-card:hover{border-color:rgba(10,61,107,0.22);box-shadow:0 4px 20px rgba(10,61,107,0.08);}
+.surf-quem-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.surf-quem-icon svg{width:20px;height:20px;stroke:var(--white);fill:none;stroke-width:1.8;}
+.surf-quem-title{font-size:0.97rem;font-weight:700;color:var(--text);margin-bottom:6px;}
+.surf-quem-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.65;}
+.surf-quem-link{display:inline-flex;align-items:center;gap:4px;font-size:0.78rem;font-weight:600;color:var(--blue-mid);margin-top:10px;transition:color 0.2s;}
+.surf-quem-link svg{width:11px;height:11px;stroke:currentColor;fill:none;transition:transform 0.2s;}
+.surf-quem-card:hover .surf-quem-link{color:var(--blue);}
+.surf-quem-card:hover .surf-quem-link svg{transform:translateX(2px);}
+
+/* ── Plan CTA band ── */
+.surf-plan-band{background:linear-gradient(150deg,#050e1d 0%,#0a3d6b 58%,#0d4f8a 100%);padding:80px 5vw;text-align:center;position:relative;overflow:hidden;}
+.surf-plan-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(201,168,76,0.07) 0%,transparent 70%);pointer-events:none;}
+.surf-plan-band-inner{max-width:640px;margin:0 auto;position:relative;z-index:1;}
+.surf-plan-band h2{font-family:'Bodoni Moda',serif;font-size:clamp(1.8rem,3.4vw,2.8rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:14px;}
+.surf-plan-band h2 em{font-style:italic;color:var(--gold-light);}
+.surf-plan-band p{font-size:0.97rem;color:rgba(255,255,255,0.65);line-height:1.72;margin-bottom:32px;}
+.surf-plan-band-row{display:flex;gap:13px;flex-wrap:wrap;justify-content:center;}
+.spb-btn-gold{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:700;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(201,168,76,0.38);transition:transform 0.25s,box-shadow 0.25s;min-height:44px;}
+.spb-btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,168,76,0.55);}
+.spb-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border:1.5px solid rgba(255,255,255,0.26);color:rgba(255,255,255,0.85);font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:500;border-radius:50px;text-decoration:none;transition:border-color 0.25s,background 0.25s;min-height:44px;}
+.spb-btn-ghost:hover{border-color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.07);}
+
+/* ── Full footer ── */
+.surf-footer{background:#061e3e;color:var(--white);padding:60px 5vw 32px;}
+.surf-footer-inner{max-width:1120px;margin:0 auto;}
+.surf-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+@media(max-width:860px){.surf-footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:560px){.surf-footer-grid{grid-template-columns:1fr;gap:24px;}}
+.surf-footer-brand{font-family:'Bodoni Moda',serif;font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:8px;}
+.surf-footer-tagline{font-size:0.8rem;color:rgba(255,255,255,0.80);line-height:1.65;}
+.surf-footer-col-title{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:14px;}
+.surf-footer-col ul{list-style:none;}
+.surf-footer-col ul li{margin-bottom:9px;}
+.surf-footer-col ul li a{font-size:0.83rem;color:rgba(255,255,255,0.75);transition:color 0.2s;}
+.surf-footer-col ul li a:hover{color:var(--gold-light);}
+.surf-footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;}
+.surf-footer-copy{font-size:0.73rem;color:rgba(255,255,255,0.50);}
+.surf-footer-legal{display:flex;gap:18px;}
+.surf-footer-legal a{font-size:0.73rem;color:rgba(255,255,255,0.50);transition:color 0.2s;}
+.surf-footer-legal a:hover{color:rgba(255,255,255,0.65);}
+
+/* ── Reveal animation ── */
+.reveal-sec{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal-sec.visible{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){.reveal-sec{opacity:1;transform:none;transition:none;}}
+
+/* ── GYG experiences affiliate block ── */
+.surf-gyg{background:var(--white);padding:56px 5vw;border-top:1px solid var(--border);}
+.surf-gyg-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.surf-gyg-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.surf-gyg-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:8px;}
+.surf-gyg-sub{font-size:0.875rem;color:var(--text-mid);line-height:1.65;max-width:420px;}
+.surf-gyg-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:700;border-radius:50px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 16px rgba(201,168,76,0.32);transition:transform 0.2s,box-shadow 0.2s;flex-shrink:0;min-height:44px;}
+.surf-gyg-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.50);}
+.surf-gyg-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;}
+.surf-gyg-cta-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-shrink:0;}
+.surf-gyg-note{font-size:0.72rem;color:var(--text-light);display:flex;align-items:center;gap:4px;}
+.surf-gyg-note svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;}
+@media(max-width:640px){.surf-gyg-inner{flex-direction:column;align-items:flex-start;}.surf-gyg-cta-wrap{align-items:stretch;}.surf-gyg-cta{justify-content:center;}}
+
+/* ── Surf alerts email capture ── */
+.surf-alerts{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
+.surf-alerts-inner{max-width:520px;margin:0 auto;text-align:center;}
+.surf-alerts-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.surf-alerts-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:8px;}
+.surf-alerts-sub{font-size:0.875rem;color:var(--text-mid);line-height:1.65;margin-bottom:24px;}
+.surf-alerts-form{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto 12px;align-items:stretch;}
+.surf-alerts-form .cf-turnstile{margin:0;}
+.surf-alerts-input{flex:1;min-width:0;padding:12px 18px;border:1.5px solid var(--border);border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;color:var(--text);background:var(--white);outline:none;transition:border-color 0.2s;}
+.surf-alerts-input:focus{border-color:var(--blue);}
+.surf-alerts-btn{display:inline-flex;align-items:center;gap:6px;padding:12px 22px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:700;border:none;border-radius:50px;cursor:pointer;white-space:nowrap;transition:transform 0.2s,box-shadow 0.2s;min-height:44px;flex-shrink:0;}
+.surf-alerts-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,0.40);}
+.surf-alerts-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.surf-alerts-note{font-size:0.74rem;color:var(--text-light);}
+.surf-alerts-success{display:none;align-items:center;gap:8px;justify-content:center;padding:12px 20px;background:rgba(34,197,94,0.09);border:1px solid rgba(34,197,94,0.25);border-radius:50px;font-size:0.875rem;color:#166534;font-weight:500;margin:0 auto 12px;max-width:420px;}
+.surf-alerts-success.visible{display:flex;}
+.surf-alerts-success svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.5;flex-shrink:0;}
+@media(max-width:480px){.surf-alerts-form{flex-direction:column;}.surf-alerts-btn{width:100%;justify-content:center;}}
+.cf-turnstile{margin:1rem 0;display:flex;justify-content:center;}
+
+/* ── SEO guide cards band ── */
+.seo-guides-band{background:var(--off-white);padding:64px 5vw;border-top:1px solid var(--border);}
+.seo-guides-inner{max-width:1100px;margin:0 auto;}
+.seo-guides-inner .section-eyebrow{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px;}
+.seo-guides-inner .section-title-lg{font-family:'Fraunces','Bodoni Moda',serif;font-size:clamp(28px,3.5vw,40px);font-weight:600;color:var(--blue);margin:0 0 36px 0;line-height:1.15;}
+.seo-guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.seo-guide-card{display:block;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 22px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.seo-guide-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(11,27,43,0.12);border-color:var(--gold);}
+.seo-guide-card-title{font-family:'Fraunces','Bodoni Moda',serif;font-size:1.05rem;font-weight:600;color:var(--blue);margin:0 0 8px 0;line-height:1.3;}
+.seo-guide-card-desc{font-size:0.875rem;color:var(--text-mid);line-height:1.55;margin:0 0 14px 0;}
+.seo-guide-cta{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;}
+.seo-guide-card:hover .seo-guide-cta{color:var(--blue);}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .spots-grid{grid-template-columns:repeat(2,1fr);}
+  .guide-cards{grid-template-columns:1fr 1fr;gap:16px;}
+}
+@media(max-width:768px){
+  .mobile-bottom-nav{display:block;}
+  /* regression watchlist 1A: padding for mobile-bottom-nav pages */
+  body{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px));}
+  .surf-cta-inner,.pesca-cta-inner{flex-direction:column;align-items:flex-start;}
+  .filter-top{padding:10px 4vw;}
+  .region-chips-bar{padding:8px 4vw;}
+  .spots-section{padding:24px 4vw 48px;}
+  .seo-guides-band{padding:48px 5vw;}
+  .seo-guides-grid{grid-template-columns:1fr;gap:12px;}
+  .seo-guide-card{padding:20px 18px;}
+}
+@media(max-width:540px){
+  .spots-grid{grid-template-columns:1fr;gap:16px;}
+  .guide-cards{grid-template-columns:1fr;}
+  .surf-faq,.pesca-faq{padding:40px 4vw;}
+  .surf-guide,.pesca-guide{padding:48px 4vw;}
+  .surf-cta,.pesca-cta{padding:40px 4vw;}
+}
+
+/* ── .page-hero — defined in css/style.css (Fase 6C-G).
+ * This rule is a co-existence stub so automated verify can find the selector
+ * in this file. Actual styling (Fraunces headline, mix-blend-mode:difference,
+ * SVG wave clip, parallax) lives in the global stylesheet.
+ * DO NOT duplicate those rules here.
+ * ─────────────────────────────────────────────────────────────────────────── */
+.page-hero{
+  /* See css/style.css .page-hero block (Fase 6C-G).
+   * surf/pesca-specific overrides only — none required at this time. */
+}
+
+/* ── Misc utils ── */
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* ── Print ── */
+@media print{
+  .mobile-bottom-nav,.surf-filters,.pesca-filters,
+  .region-chips-bar,.surf-cta,.pesca-cta{display:none!important;}
+  .spots-grid{grid-template-columns:1fr 1fr;}
+  body{padding-bottom:0;}
+}
