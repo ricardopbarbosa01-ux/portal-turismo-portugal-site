@@ -1600,7 +1600,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 768px) {
   .navbar { padding: 0 16px; height: 60px; }
   .nav-links { display: none; }
-  .lang-switcher { display: none; }
   #nav-login-btn { display: none; }
   #nav-register-btn { display: none; }
   .hamburger,
