@@ -469,6 +469,39 @@
           }
         ],
       },
+
+      // ── Webcams page i18n ────────────────────────────────────────────────────
+      webcams: {
+        stateLabel: { live: 'Disponível', pending: 'Em Integração', soon: 'Brevemente' },
+        searchPlaceholder: 'Praia ou localidade…',
+        filterLabel: 'Filtrar:',
+        allRegions: 'Todas as Regiões',
+        allTypes: 'Todos os tipos',
+        condUnavail: 'Condições indisponíveis',
+        emptyTitle: 'Sem webcams encontradas',
+        emptySub: 'Tente outros filtros ou pesquise outra localização.',
+        emptyReset: 'Ver todas as webcams',
+        countTemplate: function (n) { return '<strong>' + n + '</strong> webcam' + (n !== 1 ? 's' : ''); },
+        actionLive: 'Ver ao Vivo',
+        actionBeaches: 'Descobrir Praias',
+        actionExplore: { surf: 'Ver Surf', pesca: 'Ver Pesca', default: 'Ver Praias' },
+        actionPlan: 'Planear nesta Zona',
+      },
+
+      // ── Guias hub page i18n ──────────────────────────────────────────────────
+      guias: {
+        badgeNew: 'NOVO',
+        readTimeUnit: 'min de leitura',
+        readCta: 'Ler guia',
+        proTitle: 'Conteúdo exclusivo Pro',
+        proDesc: 'Cada guia tem uma secção gratuita e conteúdo exclusivo para membros Pro — listas detalhadas, mapas, alertas de condições e actualizações sazonais.',
+        proCta: 'Ver planos — €4,99/mês',
+        ctaPlan: 'Planear viagem',
+        ctaBeaches: 'Explorar praias',
+        breadcrumbCurrent: 'Guias',
+        heroUpdated: 'Actualizado Abril 2026',
+        heroGuideCount: '5 guias',
+      },
     },
 
     // ── ENGLISH ────────────────────────────────────────────────────────────────
@@ -916,6 +949,39 @@
           a: 'The most common species for shore fishing are: bass, sea bream, bream, pargo, red mullet and sole. For inshore boat fishing: horse mackerel, scabbardfish, conger eel and grouper. Offshore in the Azores and Madeira: bluefin tuna, wahoo, billfish and mahi-mahi. The time of year and type of seabed determine which species are available in each area.'
         }
       ],
+    },
+
+    // ── Webcams page i18n ──────────────────────────────────────────────────────
+    webcams: {
+      stateLabel: { live: 'Available', pending: 'Integrating', soon: 'Coming Soon' },
+      searchPlaceholder: 'Beach or location…',
+      filterLabel: 'Filter:',
+      allRegions: 'All Regions',
+      allTypes: 'All types',
+      condUnavail: 'Conditions unavailable',
+      emptyTitle: 'No webcams found',
+      emptySub: 'Try other filters or search another location.',
+      emptyReset: 'View all webcams',
+      countTemplate: function (n) { return '<strong>' + n + '</strong> webcam' + (n !== 1 ? 's' : ''); },
+      actionLive: 'Watch Live',
+      actionBeaches: 'Discover Beaches',
+      actionExplore: { surf: 'View Surf', pesca: 'View Fishing', default: 'View Beaches' },
+      actionPlan: 'Plan in this Area',
+    },
+
+    // ── Guides hub page i18n ───────────────────────────────────────────────────
+    guias: {
+      badgeNew: 'NEW',
+      readTimeUnit: 'min read',
+      readCta: 'Read guide',
+      proTitle: 'Exclusive Pro content',
+      proDesc: 'Each guide has a free section and exclusive content for Pro members — detailed lists, maps, condition alerts and seasonal updates.',
+      proCta: 'View plans — €4.99/mo',
+      ctaPlan: 'Plan a trip',
+      ctaBeaches: 'Explore beaches',
+      breadcrumbCurrent: 'Guides',
+      heroUpdated: 'Updated April 2026',
+      heroGuideCount: '10+ guides',
     },
   },
   }; // end I18N_STRINGS
