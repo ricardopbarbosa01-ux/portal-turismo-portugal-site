@@ -1,0 +1,436 @@
+:root {
+      --blue:#0a3d6b;--blue-mid:#1a5fa3;--blue-light:#2980d4;
+      --gold:#c9a84c;--gold-light:#e8c97a;--gold-glow:rgba(201,168,76,0.25);
+      --white:#ffffff;--off-white:#f6f4ef;--text:#1a1a2e;--text-mid:#4a5568;--text-light:#566072;
+      --border:rgba(10,61,107,0.10);
+      --glass:rgba(255,255,255,0.10);--glass-border:rgba(255,255,255,0.20);
+      --shadow:0 4px 16px rgba(10,61,107,0.10),0 12px 40px rgba(10,61,107,0.12);
+      --shadow-lg:0 8px 32px rgba(10,61,107,0.16),0 24px 64px rgba(10,61,107,0.14);
+      --radius:16px;--transition:0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:16px;}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--off-white);overflow-x:hidden;}
+    img{display:block;max-width:100%;}
+    a{text-decoration:none;color:inherit;}
+    button{cursor:pointer;border:none;background:none;font-family:inherit;}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important;}}
+    .reveal-sec{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .reveal-sec.visible{opacity:1;transform:translateY(0);}
+    @media(prefers-reduced-motion:reduce){.reveal-sec{opacity:1;transform:none;transition:none;}}
+
+    .skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:var(--white);padding:8px 16px;border-radius:8px;z-index:9999;transition:top 0.2s;}
+    .skip-link:focus{top:16px;}
+
+    /* Navbar */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);cursor:pointer;min-height:44px;}
+    .btn-outline{border:1.5px solid var(--glass-border);color:var(--white);backdrop-filter:blur(12px);background:var(--glass);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-weight:600;}
+    .btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);}
+    .btn-blue:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
+
+    /* Breadcrumb */
+    .breadcrumb{padding:88px 5vw 0;display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-light);}
+    .breadcrumb a{color:var(--blue-mid);transition:color var(--transition);}
+    .breadcrumb a:hover{color:var(--blue);}
+    .breadcrumb svg{width:14px;height:14px;stroke:var(--text-light);fill:none;flex-shrink:0;}
+
+    /* Hero */
+    .beach-hero{position:relative;width:100%;height:64vh;min-height:400px;max-height:660px;overflow:hidden;background:linear-gradient(135deg,rgba(10,61,107,0.4),rgba(10,61,107,0.2));}
+    .beach-hero img{width:100%;height:100%;object-fit:cover;}
+    .beach-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,25,55,0.80) 0%,rgba(5,25,55,0.30) 45%,transparent 70%);}
+    .beach-hero-title{position:absolute;bottom:32px;left:5vw;right:5vw;}
+    .beach-hero-title h1{font-family:'Bodoni Moda',serif;font-size:clamp(2rem,5vw,3.5rem);color:var(--white);font-weight:700;line-height:1.1;margin-bottom:12px;}
+    .beach-badges{display:flex;flex-wrap:wrap;gap:8px;}
+    .badge{padding:5px 14px;border-radius:50px;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;}
+    .badge-region{background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);color:var(--white);border:1px solid rgba(255,255,255,0.3);}
+    .badge-q-Excelente{background:rgba(39,174,96,0.85);color:#fff;}
+    .badge-q-Boa{background:rgba(41,128,212,0.85);color:#fff;}
+    .badge-q-Suficiente{background:rgba(230,126,34,0.85);color:#fff;}
+    .badge-q-Má{background:rgba(231,76,60,0.85);color:#fff;}
+    .badge-q-Ma{background:rgba(231,76,60,0.85);color:#fff;}
+
+    /* Content */
+    .beach-content{max-width:900px;margin:0 auto;padding:40px 5vw 80px;}
+
+    /* Facilities */
+    .facilities-strip{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}
+    .facility-tag{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:50px;background:var(--white);border:1px solid var(--border);font-size:0.8rem;color:var(--text-mid);box-shadow:0 1px 4px rgba(10,61,107,0.06);}
+    .facility-tag svg{width:14px;height:14px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;}
+
+    /* Description */
+    .beach-desc-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:12px;}
+    .beach-desc-section p{font-size:0.95rem;color:var(--text-mid);line-height:1.8;margin-bottom:16px;}
+
+    /* Tides */
+    .tides-section{margin-top:40px;}
+    .tides-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:4px;}
+    .tides-subtitle{font-size:0.8rem;color:var(--text-light);margin-bottom:16px;letter-spacing:0.02em;}
+    .tides-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+    .tides-day{padding:0;}
+    .tides-day + .tides-day{border-top:2px solid var(--off-white);}
+    .tides-day-label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);padding:11px 20px 9px;background:var(--off-white);}
+    .tides-row{display:flex;align-items:center;gap:14px;padding:13px 20px;border-bottom:1px solid var(--border);transition:background 0.18s;}
+    .tides-row:last-child{border-bottom:none;}
+    .tides-row.is-next{background:rgba(201,168,76,0.06);border-left:3px solid var(--gold);padding-left:17px;}
+    .tides-row-icon{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:800;flex-shrink:0;}
+    .tides-row-icon.tide-high{background:rgba(30,132,73,0.11);color:#1e8449;}
+    .tides-row-icon.tide-low{background:rgba(41,128,212,0.11);color:var(--blue-light);}
+    .tides-row-main{flex:1;display:flex;align-items:center;gap:8px;min-width:0;}
+    .tides-row-label{font-size:0.875rem;font-weight:600;}
+    .tides-row-label.tide-high{color:#1e8449;}
+    .tides-row-label.tide-low{color:var(--blue-light);}
+    .tides-next-badge{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;background:var(--gold);color:var(--white);padding:2px 8px;border-radius:20px;flex-shrink:0;}
+    .tides-row-time{font-size:1.05rem;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums;letter-spacing:-0.01em;}
+    .tides-row-height{font-size:0.875rem;font-weight:600;color:var(--text-mid);text-align:right;min-width:48px;}
+    .tides-height-unit{font-size:0.72rem;font-weight:400;color:var(--text-light);margin-left:2px;}
+    .tides-empty{text-align:center;padding:32px;color:var(--text-light);font-size:0.9rem;}
+
+    /* Vibe */
+    .vibe-section{margin-top:32px;}
+    .vibe-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:14px;}
+    .vibe-tags{display:flex;flex-wrap:wrap;gap:10px;}
+    .vibe-tag{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;font-size:0.82rem;font-weight:600;letter-spacing:0.03em;}
+    .vibe-surf{background:rgba(10,61,107,0.10);color:var(--blue);}
+    .vibe-water{background:rgba(39,174,96,0.12);color:#1e8449;}
+    .vibe-safe{background:rgba(41,128,212,0.12);color:#1a6fa3;}
+    .vibe-amenity{background:rgba(201,168,76,0.15);color:#8a6b10;}
+    .vibe-access{background:rgba(230,126,34,0.12);color:#b05e0d;}
+    .vibe-region,.vibe-family,.vibe-wild,.vibe-nature,.vibe-default{background:var(--off-white);color:var(--text-mid);border:1px solid var(--border);}
+
+    /* Surf */
+    .surf-section{margin-top:32px;}
+    .surf-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:4px;}
+    .surf-subtitle{font-size:0.8rem;color:var(--text-light);margin-bottom:16px;letter-spacing:0.02em;}
+    .surf-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+    .surf-hero{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--border);}
+    .surf-hero-left{display:flex;flex-direction:column;gap:4px;}
+    .surf-hero-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);}
+    .surf-hero-value{font-size:2rem;font-weight:800;letter-spacing:-0.03em;line-height:1.1;}
+    .surf-hero-badge{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:4px 12px;border-radius:20px;align-self:flex-start;}
+    .surf-badge-calm{background:rgba(30,132,73,0.11);color:#1e8449;}
+    .surf-badge-small{background:rgba(41,128,212,0.11);color:var(--blue-light);}
+    .surf-badge-medium{background:rgba(176,94,13,0.11);color:#b05e0d;}
+    .surf-badge-large{background:rgba(192,57,43,0.11);color:#c0392b;}
+    .surf-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));border-bottom:1px solid var(--border);}
+    .surf-meta-item{padding:14px 18px;border-right:1px solid var(--border);}
+    .surf-meta-item:last-child{border-right:none;}
+    .surf-meta-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);margin-bottom:5px;}
+    .surf-meta-value{font-size:0.9rem;font-weight:700;color:var(--blue);}
+    .surf-strip{display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--border);}
+    .surf-strip-item{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 16px;border-right:1px solid var(--border);flex-shrink:0;}
+    .surf-strip-item:last-child{border-right:none;}
+    .surf-strip-time{font-size:0.68rem;font-weight:600;letter-spacing:0.04em;color:var(--text-light);}
+    .surf-strip-h{font-size:0.85rem;font-weight:800;}
+    .surf-footer{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+    .surf-note{font-size:0.78rem;color:var(--text-light);line-height:1.5;margin:0;flex:1;min-width:0;}
+    .surf-footer-left{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0;}
+    .surf-condition{font-size:0.82rem;font-weight:600;color:var(--text);}
+    .surf-source{font-size:0.7rem;color:var(--text-light);}
+    .surf-now{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-light);padding:3px 9px;border:1px solid var(--border);border-radius:20px;white-space:nowrap;align-self:center;}
+    .wave-calm{color:#1e8449;}.wave-small{color:var(--blue);}.wave-medium{color:#b05e0d;}.wave-large{color:#c0392b;}
+    .surf-strip-label{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-light);padding:6px 18px 4px;background:var(--off-white);border-bottom:1px solid var(--border);}
+    .surf-forecast{margin-top:20px;}
+    .surf-forecast-title{font-family:'Bodoni Moda',serif;font-size:1.1rem;color:var(--blue);font-weight:700;margin-bottom:10px;}
+    .surf-forecast-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+    .surf-forecast-row{display:flex;align-items:center;gap:10px;padding:11px 18px;border-bottom:1px solid var(--border);}
+    .surf-forecast-row:last-child{border-bottom:none;}
+    .surf-forecast-day{font-size:0.8rem;font-weight:700;color:var(--text);min-width:76px;flex-shrink:0;}
+    .surf-forecast-metrics{display:flex;gap:14px;flex:1;min-width:0;}
+    .surf-forecast-metric{font-size:0.82rem;color:var(--text-mid);white-space:nowrap;}
+    .surf-score-badge{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:3px 10px;border-radius:20px;flex-shrink:0;white-space:nowrap;}
+    .surf-score-great{background:rgba(30,132,73,0.11);color:#1e8449;}
+    .surf-score-good{background:rgba(41,128,212,0.11);color:var(--blue-light);}
+    .surf-score-mod{background:rgba(176,94,13,0.11);color:#b05e0d;}
+    .surf-score-poor{background:rgba(192,57,43,0.11);color:#c0392b;}
+    .surf-forecast-note{font-size:0.68rem;color:var(--text-light);padding:10px 18px;border-top:1px solid var(--border);text-align:center;}
+    @media(max-width:480px){.surf-forecast-row{flex-wrap:wrap;gap:6px;}.surf-forecast-day{min-width:100%;margin-bottom:2px;}}
+    .surf-paywall-wrap{position:relative;overflow:hidden;border-radius:0 0 var(--radius) var(--radius);}
+    .surf-paywall-ghost{filter:blur(4px);opacity:0.3;pointer-events:none;user-select:none;}
+    .surf-paywall-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(246,244,239,0.82);backdrop-filter:blur(3px);padding:20px;text-align:center;}
+    .surf-paywall-icon{font-size:1.5rem;line-height:1;}
+    .surf-paywall-text{font-size:0.85rem;font-weight:600;color:var(--blue);line-height:1.4;max-width:220px;}
+    .surf-paywall-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-size:0.82rem;font-weight:700;margin-top:4px;transition:transform 0.18s,box-shadow 0.18s;}
+    .surf-paywall-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,0.4);}
+    /* ── Beach Alerts ── */
+    .beach-alerts-wrap{margin-top:14px;}
+    .alert-create-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:1.5px solid var(--blue);border-radius:8px;background:transparent;color:var(--blue);font-size:0.82rem;font-weight:600;cursor:pointer;transition:background var(--transition),color var(--transition);}
+    .alert-create-btn:hover{background:var(--blue);color:var(--white);}
+    .alert-create-btn-disabled{opacity:0.45;cursor:not-allowed;position:relative;}
+    .alert-create-btn-disabled:hover{background:transparent!important;color:var(--blue)!important;}
+    .alert-tooltip{display:none;position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:var(--text);color:var(--white);font-size:0.72rem;font-weight:500;padding:5px 10px;border-radius:6px;white-space:nowrap;pointer-events:none;z-index:10;}
+    .alert-create-btn-disabled:hover .alert-tooltip{display:block;}
+    .alerts-list{margin-top:10px;display:flex;flex-direction:column;gap:6px;}
+    .alert-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:0.82rem;color:var(--text-mid);}
+    .alert-item-del{background:none;border:none;color:var(--text-light);font-size:1rem;line-height:1;cursor:pointer;padding:2px 6px;border-radius:4px;transition:color var(--transition);}
+    .alert-item-del:hover{color:#c0392b;}
+    /* Alert Modal */
+    .alert-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.50);z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity 0.22s ease;}
+    .alert-overlay.open{opacity:1;pointer-events:all;}
+    .alert-modal{background:var(--white);border-radius:12px;max-width:420px;width:100%;padding:28px 24px;box-shadow:var(--shadow-lg);transform:scale(0.94);transition:transform 0.22s cubic-bezier(0.4,0,0.2,1);}
+    .alert-overlay.open .alert-modal{transform:scale(1);}
+    .alert-modal-title{font-family:'Bodoni Moda',serif;font-size:1.05rem;color:var(--blue);font-weight:700;margin-bottom:18px;line-height:1.3;}
+    .alert-field{margin-bottom:14px;}
+    .alert-field label{display:block;font-size:0.75rem;font-weight:600;color:var(--text-mid);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.05em;}
+    .alert-field select,.alert-field input[type=number]{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:0.88rem;color:var(--text);background:var(--white);outline:none;transition:border-color var(--transition);box-sizing:border-box;}
+    .alert-field select:focus,.alert-field input[type=number]:focus{border-color:var(--blue);}
+    .alert-value-row{display:flex;align-items:center;gap:8px;}
+    .alert-value-row input{flex:1;}
+    .alert-unit{font-size:0.85rem;color:var(--text-mid);font-weight:600;min-width:36px;}
+    .alert-actions{display:flex;gap:10px;margin-top:20px;}
+    .alert-save-btn{flex:1;padding:14px 10px;min-height:44px;background:linear-gradient(135deg,var(--blue),var(--blue-mid));color:var(--white);border:none;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;transition:opacity var(--transition);} /* MOBILE-07: touch target */
+    .alert-save-btn:hover{opacity:0.88;}
+    .alert-cancel-btn{padding:14px 18px;min-height:44px;background:transparent;border:1.5px solid var(--border);border-radius:8px;color:var(--text-mid);font-size:0.88rem;cursor:pointer;transition:border-color var(--transition);} /* MOBILE-07: touch target */
+    .alert-cancel-btn:hover{border-color:var(--text-mid);}
+    #alert-condition{height:44px;min-height:44px;padding-top:11px;padding-bottom:11px;font-size:0.88rem;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;} /* MOBILE-07: touch target — appearance:none + explicit height for native select */
+    @media(max-width:480px){.alert-modal{padding:22px 16px;}}
+
+    /* Como Chegar / Transport */
+    .transport-modes{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
+    .transport-item{display:flex;align-items:flex-start;gap:12px;background:var(--white);border-radius:12px;padding:14px 16px;border:1px solid var(--border);font-size:0.875rem;color:var(--text-mid);line-height:1.5;}
+    .transport-item svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:1.8;flex-shrink:0;margin-top:1px;}
+
+    /* Map */
+    .map-section{margin-top:40px;}
+    .map-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:16px;}
+    .map-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;border:1px solid var(--border);}
+    .map-card-row{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+    .map-card-icon{width:48px;height:48px;background:rgba(10,61,107,0.07);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .map-card-icon svg{width:24px;height:24px;stroke:var(--blue);fill:none;stroke-width:1.5;}
+    .map-card-label{font-size:0.72rem;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px;}
+    .map-coords{font-family:'Inter',monospace;font-size:1rem;font-weight:600;color:var(--blue);}
+    .map-btn-primary{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px 20px;background:var(--blue);color:#fff;border-radius:10px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:background var(--transition);}
+    .map-btn-primary:hover{background:var(--blue-mid);}
+    .map-btn-primary svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.8;flex-shrink:0;}
+    .map-card-hint{font-size:0.77rem;color:var(--text-light);margin-top:12px;line-height:1.5;text-align:center;}
+    .map-fallback{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 24px;text-align:center;border:1px solid var(--border);}
+    .map-fallback p{font-size:0.88rem;color:var(--text-mid);margin-bottom:14px;}
+    .map-fallback-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue-mid);font-size:0.875rem;font-weight:500;}
+    .map-fallback-link:hover{color:var(--blue);}
+    .map-fallback-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+    /* Planeia a Visita */
+    .plan-band{margin-top:40px;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-mid) 100%);border-radius:var(--radius);padding:24px 24px 20px;color:var(--white);}
+    .plan-band-header{display:flex;align-items:center;gap:8px;font-family:'Bodoni Moda',serif;font-size:1.1rem;font-weight:700;margin-bottom:16px;}
+    .plan-band-header svg{width:20px;height:20px;stroke:var(--gold);fill:none;flex-shrink:0;}
+    .plan-band-btns{display:flex;gap:12px;flex-wrap:wrap;}
+    .plan-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:50px;font-size:0.875rem;font-weight:600;transition:opacity 0.2s,transform 0.2s;min-height:44px;}
+    .plan-btn:hover{opacity:0.88;transform:translateY(-1px);}
+    .plan-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;flex-shrink:0;}
+    .plan-btn--booking{background:var(--gold);color:var(--blue);}
+    .plan-btn--weather{background:rgba(255,255,255,0.15);color:var(--white);border:1px solid rgba(255,255,255,0.30);}
+    .plan-btn--weather:hover{background:rgba(255,255,255,0.22);}
+    @media(max-width:480px){
+      .plan-band-btns{flex-direction:column;}
+      .plan-btn{justify-content:center;width:100%;}
+      .surf-grid{grid-template-columns:1fr 1fr;}
+      .vibe-tags{gap:8px;}
+      .vibe-tag{font-size:0.78rem;padding:6px 12px;}
+      .acc-title{font-size:0.85rem;}
+      .local-recs-section h2,.surf-section h2,.vibe-section h2,.map-section h2,.tides-section h2,.beach-desc-section h2{font-size:1.2rem;}
+    }
+    @media(max-width:360px){
+      .surf-grid{grid-template-columns:1fr;}
+      .plan-band{padding:18px 16px 14px;}
+    }
+
+    /* Recomendações Locais */
+    .local-recs-section{margin-top:40px;}
+    .local-recs-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:6px;}
+    .local-recs-note{font-size:0.8rem;color:var(--text-light);margin-bottom:16px;}
+    .accordion{display:flex;flex-direction:column;gap:8px;}
+    .acc-item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white);}
+    .acc-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;cursor:pointer;background:var(--white);transition:background var(--transition);min-height:52px;}
+    .acc-header:hover{background:rgba(10,61,107,0.03);}
+    .acc-header-left{display:flex;align-items:center;gap:10px;}
+    .acc-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .acc-icon svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;}
+    .acc-icon--food{background:rgba(201,168,76,0.15);color:var(--gold);}
+    .acc-icon--explore{background:rgba(10,61,107,0.10);color:var(--blue);}
+    .acc-icon--tips{background:rgba(41,128,212,0.10);color:var(--blue-light);}
+    .acc-title{font-size:0.9rem;font-weight:600;color:var(--text);}
+    .acc-chevron{width:18px;height:18px;stroke:var(--text-light);fill:none;stroke-width:2;transition:transform 0.25s ease;flex-shrink:0;}
+    .acc-item.open .acc-chevron{transform:rotate(180deg);}
+    .acc-body{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+    .acc-item.open .acc-body{max-height:400px;}
+    .acc-list{list-style:none;padding:0 18px 16px;display:flex;flex-direction:column;gap:8px;}
+    .acc-list li{font-size:0.875rem;color:var(--text-mid);padding:6px 0;border-bottom:1px solid rgba(10,61,107,0.05);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+    .acc-list li:last-child{border-bottom:none;}
+    .acc-list li::before{content:'·';color:var(--gold);font-weight:700;flex-shrink:0;}
+
+    /* CTA */
+    .beach-cta{margin-top:48px;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+    .beach-cta p{font-size:0.875rem;color:var(--text-light);}
+
+    /* Loading/error */
+    .page-loader{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:16px;color:var(--text-light);}
+    .page-loader svg{width:40px;height:40px;stroke:var(--text-light);fill:none;animation:spin 1s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .page-error{max-width:520px;margin:80px auto;text-align:center;padding:0 5vw;}
+    .page-error h2{font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--blue);margin-bottom:12px;}
+    .page-error p{color:var(--text-mid);margin-bottom:24px;}
+
+    /* Footer */
+    .footer{background:var(--blue);color:rgba(255,255,255,0.75);padding:40px 5vw;}
+    .footer-bottom{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:0.8rem;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:8px;}
+    .footer-bottom a{color:rgba(255,255,255,0.55);transition:color var(--transition);}
+    .footer-bottom a:hover{color:var(--gold);}
+
+    /* ── Hero region label ── */
+    .beach-hero-region{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.70);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+    .beach-hero-region svg{width:12px;height:12px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0;}
+
+    /* ── Highlights ── */
+    .highlights-section{margin-top:32px;}
+    .highlights-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:16px;}
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+    .highlight-card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:16px 14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 8px rgba(10,61,107,0.05);}
+    .highlight-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .highlight-icon svg{width:18px;height:18px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .highlight-label{font-size:0.65rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--text-light);}
+    .highlight-value{font-size:0.875rem;font-weight:600;color:var(--text);line-height:1.3;}
+
+    /* ── Error state premium icon ── */
+    .page-error-icon{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(201,168,76,0.06));display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+    .page-error-icon svg{width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;}
+    .page-error-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:4px;}
+
+    /* ── Save beach button ── */
+    .plan-btn--save{background:rgba(255,255,255,0.10);color:var(--white);border:1px solid rgba(255,255,255,0.25);}
+    .plan-btn--save:hover{background:rgba(255,255,255,0.18);}
+
+    @media(max-width:600px){
+      .beach-hero{height:45vh;min-height:240px;}
+      .beach-hero-title h1{font-size:1.8rem;}
+      .beach-hero-title{bottom:20px;}
+      .breadcrumb{padding-top:72px;}
+      .beach-content{padding-top:28px;padding-bottom:48px;}
+      .beach-cta{flex-direction:column;}
+      .highlights-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:360px){.highlights-grid{grid-template-columns:1fr;}}
+
+    /* ── Mobile Bottom Nav ── */
+    .mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(10,61,107,0.97);backdrop-filter:blur(20px) saturate(1.5);border-top:1px solid var(--glass-border);}
+    .mobile-bottom-nav-inner{display:flex;height:60px;align-items:stretch;padding-bottom:env(safe-area-inset-bottom,0px);}
+    .mobile-nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:rgba(255,255,255,0.6);font-size:0.58rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;padding:4px 2px;text-decoration:none;cursor:pointer;border:none;background:none;font-family:inherit;transition:color var(--transition);min-height:44px;}
+    .mobile-nav-item svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .mobile-nav-item.active,.mobile-nav-item:hover{color:var(--gold);}
+
+    @media(max-width:768px){
+      .mobile-bottom-nav{display:block;}
+      body{padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));}
+      #tides-content{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+      .tides-table{min-width:360px;}
+      .facility-tag{min-height:44px;padding:8px 14px;}
+      .map-link{min-height:44px;display:inline-flex;align-items:center;}
+      .beach-content{padding-left:4vw;padding-right:4vw;}
+    }
+
+    /* ── Partners / Nearby Services Block ── */
+    .partners-section{margin-top:40px;}
+    .partners-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
+    .partners-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;}
+    .partners-section-title{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;line-height:1.2;}
+    .partners-see-all{font-size:0.78rem;font-weight:600;color:var(--blue-mid);white-space:nowrap;display:inline-flex;align-items:center;gap:5px;margin-top:6px;flex-shrink:0;transition:color 0.2s;min-height:44px;align-self:flex-start;}
+    .partners-see-all:hover{color:var(--blue);}
+    .partners-see-all svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    .partners-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+    @media(max-width:560px){.partners-grid{grid-template-columns:1fr;}}
+    .partner-card{background:var(--white);border-radius:var(--radius);border:1.5px solid var(--border);padding:20px;display:flex;flex-direction:column;gap:10px;transition:transform 0.22s cubic-bezier(0.4,0,0.2,1),box-shadow 0.22s,border-color 0.22s;}
+    .partner-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(10,61,107,0.10);border-color:rgba(10,61,107,0.15);}
+    .partner-card-head,.partner-card-header{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+    .partner-card-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .partner-card-icon svg{width:20px;height:20px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .partner-badge{font-size:0.62rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;padding:3px 9px;border-radius:50px;white-space:nowrap;}
+    .partner-badge--destaque{background:rgba(201,168,76,0.14);color:#8a6b10;}
+    .partner-badge--verificado{background:rgba(10,61,107,0.10);color:var(--blue);}
+    .partner-badge--novo{background:rgba(39,174,96,0.12);color:#1e8449;}
+    .partner-card-body{display:flex;flex-direction:column;gap:5px;flex:1;}
+    .partner-card-cat{font-size:0.67rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:var(--text-light);}
+    .partner-card-name{font-family:'Bodoni Moda',serif;font-size:1rem;font-weight:700;color:var(--blue);line-height:1.2;}
+    .partner-card-zone{font-size:0.73rem;color:var(--text-light);display:flex;align-items:center;gap:4px;margin-top:1px;}
+    .partner-card-zone svg{width:10px;height:10px;stroke:var(--gold);fill:none;stroke-width:2.5;flex-shrink:0;}
+    .partner-card-prop{font-size:0.82rem;color:var(--text-mid);line-height:1.55;margin-top:4px;}
+    .partner-card-footer{padding-top:12px;border-top:1px solid var(--border);margin-top:4px;}
+    .partner-card-cta{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;font-weight:600;color:var(--blue-mid);transition:color 0.18s;min-height:44px;cursor:pointer;}
+    .partner-card-cta:hover{color:var(--blue);}
+    .partner-card-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:transform 0.18s;}
+    .partner-card-cta:hover svg{transform:translateX(3px);}
+    .partners-foot{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px 16px;background:rgba(10,61,107,0.03);border-radius:12px;border:1px dashed rgba(10,61,107,0.12);}
+    .partners-foot-text{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:var(--text-light);line-height:1.4;flex:1;}
+    .partners-foot-text svg{width:16px;height:16px;stroke:var(--blue-mid);fill:none;stroke-width:1.8;flex-shrink:0;}
+    .partners-foot-cta{font-size:0.78rem;font-weight:600;color:var(--blue-mid);display:inline-flex;align-items:center;gap:5px;transition:color 0.2s;min-height:44px;white-space:nowrap;flex-shrink:0;}
+    .partners-foot-cta:hover{color:var(--blue);}
+    .partners-foot-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;}
+    @media(max-width:480px){.partners-section-title{font-size:1.2rem;}.partners-foot{flex-direction:column;align-items:flex-start;gap:8px;}}
+
+    /* ── "Ideal para" section ── */
+    .ideal-para-section{margin-top:32px;}
+    .ideal-para-section h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:16px;}
+    .ideal-para-grid{display:flex;flex-wrap:wrap;gap:10px;}
+    .ideal-para-card{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--white);border-radius:12px;border:1.5px solid var(--border);box-shadow:0 1px 6px rgba(10,61,107,0.05);transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;cursor:default;}
+    .ideal-para-card:hover{border-color:rgba(10,61,107,0.18);transform:translateY(-1px);box-shadow:0 4px 14px rgba(10,61,107,0.09);}
+    .ideal-para-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .ideal-para-icon svg{width:18px;height:18px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .ideal-para-label{font-size:0.85rem;font-weight:600;color:var(--text);line-height:1.3;}
+    .ideal-para-sub{font-size:0.72rem;color:var(--text-light);margin-top:1px;}
+    @media(max-width:600px){.ideal-para-section h2{font-size:1.2rem;}.ideal-para-card{flex:1;min-width:calc(50% - 5px);}}
+    @media(max-width:360px){.ideal-para-card{min-width:100%;}}
+
+    /* ── "Explorar nesta zona" section ── */
+    .explore-zona-section{margin-top:40px;}
+    .explore-zona-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
+    .explore-zona-section>h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;}
+    .explore-zona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;}
+    .explore-zona-card{background:var(--white);border-radius:var(--radius);border:1.5px solid var(--border);padding:18px 16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 8px rgba(10,61,107,0.06);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;text-decoration:none;color:inherit;}
+    .explore-zona-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(10,61,107,0.10);border-color:rgba(10,61,107,0.18);}
+    .explore-zona-card-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .explore-zona-card-icon svg{width:20px;height:20px;fill:none;stroke:var(--white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .explore-zona-card-label{font-size:0.67rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--text-light);}
+    .explore-zona-card-title{font-family:'Bodoni Moda',serif;font-size:1rem;font-weight:700;color:var(--blue);line-height:1.2;}
+    .explore-zona-card-desc{font-size:0.80rem;color:var(--text-mid);line-height:1.55;flex:1;}
+    .explore-zona-card-cta{font-size:0.78rem;font-weight:600;color:var(--blue-mid);display:flex;align-items:center;gap:5px;margin-top:4px;transition:color 0.18s;}
+    .explore-zona-card:hover .explore-zona-card-cta{color:var(--blue);}
+    .explore-zona-card-cta svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;transition:transform 0.18s;flex-shrink:0;}
+    .explore-zona-card:hover .explore-zona-card-cta svg{transform:translateX(3px);}
+    @media(max-width:768px){.explore-zona-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){.explore-zona-grid{grid-template-columns:1fr;}.explore-zona-section>h2{font-size:1.2rem;}}
+
+    /* ── Planear Final Band ── */
+    .planear-final-band{margin-top:48px;border-radius:var(--radius);overflow:hidden;position:relative;}
+    .planear-final-band-inner{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-mid) 100%);padding:32px 28px;position:relative;}
+    .planear-final-band-inner::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(201,168,76,0.08);pointer-events:none;}
+    .planear-final-band-inner::after{content:'';position:absolute;bottom:-30px;left:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.04);pointer-events:none;}
+    .planear-final-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;position:relative;}
+    .planear-final-title{font-family:'Bodoni Moda',serif;font-size:1.5rem;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:8px;position:relative;}
+    .planear-final-desc{font-size:0.875rem;color:rgba(255,255,255,0.72);line-height:1.65;margin-bottom:24px;max-width:480px;position:relative;}
+    .planear-final-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;position:relative;}
+    .planear-final-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-weight:700;font-size:0.9rem;min-height:48px;transition:transform 0.2s,box-shadow 0.2s;white-space:nowrap;}
+    .planear-final-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.45);}
+    .planear-final-primary:active{transform:scale(0.97) !important;box-shadow:none !important;}
+    .planear-final-secondary:active{transform:scale(0.97) !important;}
+    .planear-final-primary svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;}
+    .planear-final-secondary{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:50px;background:rgba(255,255,255,0.10);color:var(--white);font-size:0.875rem;font-weight:500;min-height:48px;border:1px solid rgba(255,255,255,0.22);transition:background 0.2s;white-space:nowrap;}
+    .planear-final-secondary:hover{background:rgba(255,255,255,0.18);}
+    .planear-final-secondary svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0;}
+    .planear-final-trust{font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:14px;letter-spacing:0.03em;position:relative;}
+    @media(max-width:600px){.planear-final-band-inner{padding:24px 20px;}.planear-final-title{font-size:1.25rem;}.planear-final-actions{flex-direction:column;}.planear-final-primary,.planear-final-secondary{width:100%;justify-content:center;}}
+
+    /* ── Related Beaches ── */
+    .related-section{margin-top:40px;}
+    .related-section-eyebrow{display:block;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+    .related-section>h2{font-family:'Bodoni Moda',serif;font-size:1.4rem;color:var(--blue);font-weight:700;margin-bottom:16px;}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    .related-card{background:var(--white);border-radius:var(--radius);border:1.5px solid var(--border);padding:16px 14px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:border-color 0.22s,box-shadow 0.22s,transform 0.22s;}
+    .related-card:hover{border-color:rgba(201,168,76,0.35);box-shadow:0 6px 20px rgba(10,61,107,0.09);transform:translateY(-2px);}
+    .related-card-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--text-light);}
+    .related-card-name{font-family:'Bodoni Moda',serif;font-size:0.95rem;font-weight:700;color:var(--blue);line-height:1.2;}
+    .related-card-meta{font-size:0.78rem;color:var(--text-mid);}
+    .related-card-cta{font-size:0.75rem;font-weight:600;color:var(--blue-mid);margin-top:auto;display:flex;align-items:center;gap:4px;}
+    .related-card-cta svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;}
+    @media(max-width:768px){.related-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:460px){.related-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.related-section>h2{font-size:1.2rem;}}
