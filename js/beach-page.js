@@ -243,6 +243,29 @@ document.addEventListener('DOMContentLoaded', function() {
       'Oeste':            'onde-ficar-oeste-praia.html',
     };
 
+    const GYG_URLS = lang === 'en' ? {
+      'Algarve':          'https://www.getyourguide.com/s/?q=Algarve&partner_id=0WTBHZE&cmp=pthcard-algarve',
+      'Norte':            'https://www.getyourguide.com/s/?q=Porto&partner_id=0WTBHZE&cmp=pthcard-norte',
+      'Centro':           'https://www.getyourguide.com/s/?q=Coimbra+Portugal&partner_id=0WTBHZE&cmp=pthcard-centro',
+      'Lisboa e Setúbal': 'https://www.getyourguide.com/s/?q=Lisbon&partner_id=0WTBHZE&cmp=pthcard-lisboa',
+      'Alentejo':         'https://www.getyourguide.com/s/?q=Alentejo&partner_id=0WTBHZE&cmp=pthcard-alentejo',
+      'Madeira':          'https://www.getyourguide.com/s/?q=Madeira&partner_id=0WTBHZE&cmp=pthcard-madeira',
+      'Oeste':            'https://www.getyourguide.com/s/?q=Nazare+Portugal&partner_id=0WTBHZE&cmp=pthcard-oeste',
+      'Açores':           'https://www.getyourguide.com/s/?q=Azores&partner_id=0WTBHZE&cmp=pthcard-acores',
+    } : {
+      'Algarve':          'https://www.getyourguide.com/s/?q=Algarve&partner_id=0WTBHZE&cmp=pthcard-algarve',
+      'Norte':            'https://www.getyourguide.com/s/?q=Porto&partner_id=0WTBHZE&cmp=pthcard-norte',
+      'Centro':           'https://www.getyourguide.com/s/?q=Coimbra+Portugal&partner_id=0WTBHZE&cmp=pthcard-centro',
+      'Lisboa e Setúbal': 'https://www.getyourguide.com/s/?q=Lisbon&partner_id=0WTBHZE&cmp=pthcard-lisboa',
+      'Alentejo':         'https://www.getyourguide.com/s/?q=Alentejo&partner_id=0WTBHZE&cmp=pthcard-alentejo',
+      'Madeira':          'https://www.getyourguide.com/s/?q=Madeira&partner_id=0WTBHZE&cmp=pthcard-madeira',
+      'Oeste':            'https://www.getyourguide.com/s/?q=Nazare+Portugal&partner_id=0WTBHZE&cmp=pthcard-oeste',
+      'Açores':           'https://www.getyourguide.com/s/?q=Azores&partner_id=0WTBHZE&cmp=pthcard-acores',
+    };
+    const gygDefault  = 'https://www.getyourguide.com/s/?q=Portugal&partner_id=0WTBHZE&cmp=pthcard-default';
+    const gygHref     = GYG_URLS[beach.region] || gygDefault;
+    const gygLabel    = lang === 'en' ? 'View experiences' : 'Ver experiências';
+
     const Tpf = T.planearFinal;
     const planearHref = `${pfx}planear.html?source=beach&beach=${bp}&region=${rp}&intent=planear`;
     const bookingDefault = lang === 'en' ? 'https://www.booking.com/country/pt.en-gb.html' : 'https://www.booking.com/country/pt.pt-pt.html';
@@ -282,6 +305,10 @@ document.addEventListener('DOMContentLoaded', function() {
           <a href="${stayHref}"${stayTarget} class="planear-final-secondary">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             ${stayLabel}
+          </a>
+          <a href="${gygHref}" target="_blank" rel="sponsored noopener" class="planear-final-secondary" onclick="track('beach_detail_cta_click',{page:'beach',source:'gyg_band',beach:'${beach.name.replace(/'/g,'\\x27')}',region:'${(beach.region||'').replace(/'/g,'\\x27')}'})">
+            <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.8"><path d="M2 9a2 2 0 0 1 0-4h20a2 2 0 0 1 0 4M2 9v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9M12 9v13"/></svg>
+            ${gygLabel}
           </a>
           <a href="${beachesHref}" class="planear-final-secondary">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
