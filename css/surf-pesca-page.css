@@ -290,20 +290,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .reveal-sec.visible{opacity:1;transform:translateY(0);}
 @media(prefers-reduced-motion:reduce){.reveal-sec{opacity:1;transform:none;transition:none;}}
 
-/* ── GYG experiences affiliate block ── */
-.surf-gyg{background:var(--white);padding:56px 5vw;border-top:1px solid var(--border);}
-.surf-gyg-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
-.surf-gyg-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.surf-gyg-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:8px;}
-.surf-gyg-sub{font-size:0.875rem;color:var(--text-mid);line-height:1.65;max-width:420px;}
-.surf-gyg-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:700;border-radius:50px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 16px rgba(201,168,76,0.32);transition:transform 0.2s,box-shadow 0.2s;flex-shrink:0;min-height:44px;}
-.surf-gyg-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.50);}
-.surf-gyg-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;}
-.surf-gyg-cta-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-shrink:0;}
-.surf-gyg-note{font-size:0.72rem;color:var(--text-light);display:flex;align-items:center;gap:4px;}
-.surf-gyg-note svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;}
-@media(max-width:640px){.surf-gyg-inner{flex-direction:column;align-items:flex-start;}.surf-gyg-cta-wrap{align-items:stretch;}.surf-gyg-cta{justify-content:center;}}
-
 /* ── Surf alerts email capture ── */
 .surf-alerts{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
 .surf-alerts-inner{max-width:520px;margin:0 auto;text-align:center;}

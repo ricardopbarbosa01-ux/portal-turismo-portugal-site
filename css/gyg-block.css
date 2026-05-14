@@ -1,0 +1,7 @@
+.gyg-block{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
+.gyg-block-inner{max-width:860px;margin:0 auto;}
+.gyg-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.gyg-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:16px;}
+.gyg-trust{font-size:0.95rem;color:var(--text-mid);line-height:1.65;max-width:680px;margin-bottom:28px;}
+.gyg-block [data-gyg-widget]{display:block;min-height:320px;}
+@media(max-width:768px){.gyg-block{padding:40px 5vw;}.gyg-block [data-gyg-widget]{min-height:280px;}}
