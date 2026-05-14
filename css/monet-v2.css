@@ -1,0 +1,42 @@
+/* TODO: substituir imagens Unsplash por fotos próprias quando disponíveis */
+.monet-v2 { background: #f6f4ef; padding: 5rem 0; margin: 0; }
+.monet-v2__container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+.monet-v2__header { text-align: center; margin-bottom: 3rem; }
+.monet-v2__eyebrow { font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 11px; color: #c9a84c; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 18px; font-weight: 500; }
+.monet-v2__title { font-family: 'Bodoni Moda', serif; font-size: clamp(1.8rem, 4.5vw, 2.6rem); line-height: 1.05; color: #0a3d6b; margin: 0 0 20px; font-weight: 500; letter-spacing: -0.015em; }
+.monet-v2__title em { font-style: italic; color: #c9a84c; font-weight: 500; }
+.monet-v2__lead { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.65; color: #4a5560; margin: 0 auto; max-width: 580px; }
+.monet-v2__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.monet-v2__card { text-decoration: none; color: inherit; display: block; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
+.monet-v2__card:hover { transform: translateY(-6px); }
+.monet-v2__card--center { margin-top: -16px; }
+.monet-v2__image { position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: 4px; margin-bottom: 16px; background-size: cover; background-position: center; }
+.monet-v2__badge { position: absolute; top: 16px; padding: 4px 10px; border-radius: 2px; font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+.monet-v2__badge--label { left: 16px; background: rgba(255,255,255,0.95); color: #0a3d6b; }
+.monet-v2__badge--accent { background: rgba(201,168,76,0.95); color: #fff; }
+.monet-v2__badge--verified { right: 16px; background: rgba(255,255,255,0.95); color: #0a3d6b; font-size: 9px; }
+.monet-v2__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; }
+.monet-v2__card-title { font-family: 'Bodoni Moda', serif; font-size: clamp(1.3rem, 2.5vw, 1.625rem); color: #fff; margin: 0 0 6px; font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
+.monet-v2__card-title em { font-style: italic; color: #f0d77a; font-weight: 500; }
+.monet-v2__card-via { font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 10px; color: rgba(255,255,255,0.75); letter-spacing: 0.15em; text-transform: uppercase; }
+.monet-v2__card-desc { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.55; color: #4a5560; margin: 0 0 14px; }
+.monet-v2__cta { display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 11px; color: #0a3d6b; letter-spacing: 0.12em; font-weight: 500; transition: color 0.2s ease; }
+.monet-v2__card:hover .monet-v2__cta { color: #c9a84c; }
+.monet-v2__footer { display: flex; align-items: center; justify-content: center; gap: 32px; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(10,61,107,0.1); font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 10px; color: #888780; letter-spacing: 0.15em; text-transform: uppercase; flex-wrap: wrap; }
+.monet-v2__sep { color: rgba(10,61,107,0.15); }
+@media (max-width: 960px) {
+  .monet-v2__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .monet-v2__card--center { margin-top: 0; grid-column: span 2; }
+  .monet-v2__card--center .monet-v2__image { aspect-ratio: 21/9; }
+}
+@media (max-width: 600px) {
+  .monet-v2 { padding: 3rem 0; }
+  .monet-v2__container { padding: 0 1.25rem; }
+  .monet-v2__header { margin-bottom: 2rem; }
+  .monet-v2__title { font-size: 1.7rem; }
+  .monet-v2__grid { grid-template-columns: 1fr; gap: 16px; }
+  .monet-v2__card--center { margin-top: 0; grid-column: span 1; }
+  .monet-v2__card--center .monet-v2__image { aspect-ratio: 4/5; }
+  .monet-v2__footer { flex-direction: column; gap: 8px; padding-top: 1.5rem; margin-top: 2rem; }
+  .monet-v2__sep { display: none; }
+}
