@@ -84,7 +84,6 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css?v=20260514-amzn">
-  <link rel="stylesheet" href="/css/monet-v2.css?v=20260513-monetv2">
 
   <style>
     /* ── Focus states (ui-ux-pro-max: accessibility priority 1) ── */
@@ -492,11 +491,100 @@
     }
 
     /* ══════════════════════════════════════════════════════════
+       SECÇÃO 7 — MONETIZAÇÃO
+       ══════════════════════════════════════════════════════════ */
+    .monetizacao-bg { background: var(--off-white); }
+
+    .monetizacao-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .monet-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 40px 28px 36px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid transparent;
+      transition: transform 200ms cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 200ms cubic-bezier(0.4,0,0.2,1),
+                  border-color 200ms ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .monet-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(201,168,76,0.22);
+    }
+    .monet-card__icon {
+      width: 60px; height: 60px;
+      background: var(--off-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: background 200ms ease;
+    }
+    .monet-card:hover .monet-card__icon {
+      background: rgba(10,61,107,0.07);
+    }
+    .monet-card__icon svg {
+      width: 26px; height: 26px;
+      stroke: var(--blue); fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .monet-card h3 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 6px;
+      line-height: 1.4;
+    }
+    .monet-card__via {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin: 0 0 8px;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .monet-card__desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin: 0 0 18px;
+      line-height: 1.5;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .monet-card .btn { margin-top: auto; width: 100%; }
+
+    @media (max-width: 767px) {
+      .monetizacao-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 499px) {
+      .monetizacao-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════
        REDUCED MOTION (ui-ux-pro-max: priority 1 accessibility)
        ══════════════════════════════════════════════════════════ */
     @media (prefers-reduced-motion: reduce) {
       .condition-card,
       .sp-card,
+      .monet-card,
       .webcam-placeholder,
       .hp-card--link {
         transition: none;
@@ -520,6 +608,7 @@
       .page-section--dark { padding: 72px 0; }
       .section-header    { margin-bottom: 36px; }
       .sp-card           { padding: 40px 24px 36px; }
+      .monet-card        { padding: 32px 20px 28px; }
       .section-inner     { padding: 0 16px; }
     }
 
@@ -1338,69 +1427,68 @@
   </div>
 </section>
 
-<!-- ── 7. MONETIZAÇÃO ─ V2 EDITORIAL ────────────────────────────── -->
-<section class="monet-v2 reveal" aria-label="Parceiros de confiança">
-  <div class="monet-v2__container">
-    <header class="monet-v2__header">
-      <div class="monet-v2__eyebrow">№ 06 · PARCEIROS DE CONFIANÇA</div>
-      <h2 class="monet-v2__title">Tudo para a viagem,<br><em>verificado por nós.</em></h2>
-      <p class="monet-v2__lead">Plataformas que usamos pessoalmente para reservar e equipar viagens à costa portuguesa. Cobramos pela verificação que fazemos — nunca por posição. Pode haver uma comissão de afiliado quando reservas.</p>
-    </header>
-
-    <div class="monet-v2__grid">
-
-      <a href="https://www.booking.com/country/pt.pt-pt.html" target="_blank" rel="noopener noreferrer sponsored" class="monet-v2__card monet-v2__card--left" aria-label="Hotéis costeiros via Booking.com">
-        <div class="monet-v2__image" style="background-image: linear-gradient(180deg, transparent 40%, rgba(10,30,55,0.85) 100%), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80');">
-          <div class="monet-v2__badge monet-v2__badge--label">01 · ALOJAMENTO</div>
-          <div class="monet-v2__overlay">
-            <h3 class="monet-v2__card-title">Hotéis <em>costeiros</em></h3>
-            <div class="monet-v2__card-via">via Booking.com</div>
-          </div>
-        </div>
-        <p class="monet-v2__card-desc">Alojamento à beira-mar em todas as regiões de Portugal.</p>
-        <span class="monet-v2__cta">EXPLORAR <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </a>
-
-      <a href="https://gyg.me/eYnBuLEu" target="_blank" rel="noopener noreferrer sponsored" class="monet-v2__card monet-v2__card--center" aria-label="Experiências costeiras via GetYourGuide">
-        <div class="monet-v2__image" style="background-image: linear-gradient(180deg, transparent 40%, rgba(10,30,55,0.85) 100%), url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=900&q=80');">
-          <div class="monet-v2__badge monet-v2__badge--label monet-v2__badge--accent">02 · EXPERIÊNCIAS</div>
-          <div class="monet-v2__badge monet-v2__badge--verified">★ Verified</div>
-          <div class="monet-v2__overlay">
-            <h3 class="monet-v2__card-title">Surf, mergulho<br><em>e mais.</em></h3>
-            <div class="monet-v2__card-via">via GetYourGuide</div>
-          </div>
-        </div>
-        <p class="monet-v2__card-desc">Aulas, tours e experiências costeiras com escolas certificadas e reserva instantânea.</p>
-        <span class="monet-v2__cta">RESERVAR <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </a>
-
-      <a href="https://www.amazon.es/s?k=equipamento+surf+praia&tag=pthportugal-21&linkCode=ll2&linkId=pth-homepage-pt&language=pt_PT&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer sponsored" class="monet-v2__card monet-v2__card--right" aria-label="Equipamento de praia via Amazon">
-        <div class="monet-v2__image" style="background-image: linear-gradient(180deg, transparent 40%, rgba(10,30,55,0.85) 100%), url('https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=900&q=80');">
-          <div class="monet-v2__badge monet-v2__badge--label">03 · EQUIPAMENTO</div>
-          <div class="monet-v2__overlay">
-            <h3 class="monet-v2__card-title">Tudo para <em>a água.</em></h3>
-            <div class="monet-v2__card-via">via Amazon</div>
-          </div>
-        </div>
-        <p class="monet-v2__card-desc">Pranchas, fatos de neoprene, sun gear e acessórios entregues em casa.</p>
-        <span class="monet-v2__cta">COMPRAR <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </a>
-
-    </div>
-
-    <div class="monet-v2__footer">
-      <span>Plataformas certificadas</span>
-      <span class="monet-v2__sep">·</span>
-      <span>Disclosure transparente</span>
-      <span class="monet-v2__sep">·</span>
-      <span>Reserva instantânea</span>
-    </div>
-  </div>
-</section>
-
-<!-- ── B2B PARTNER STRIP (preserved from old monetizacao section) ── -->
-<section class="page-section monetizacao-bg" aria-label="Parceiros B2B">
+<!-- ── 7. MONETIZAÇÃO ────────────────────────────────────────────── -->
+<section class="monetizacao-bg page-section" aria-labelledby="monet-title">
   <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">COMPLETE A SUA VIAGEM</div>
+      <h2 class="section-title" id="monet-title">Hotéis, atividades e equipamento</h2>
+    </div>
+
+    <div class="monetizacao-grid">
+
+      <a href="https://www.booking.com/country/pt.pt-pt.html"
+         target="_blank" rel="noopener noreferrer"
+         class="monet-card hp-card hp-card--link reveal"
+         aria-label="Encontrar hotéis costeiros no Booking.com">
+        <div class="monet-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Hotéis costeiros</h3>
+        <p class="monet-card__via">via Booking.com</p>
+        <p style="font-size:11px;color:#999;font-style:italic;margin:0 0 4px;">Link de afiliado</p>
+        <p class="monet-card__desc">Alojamento à beira-mar em todas as regiões de Portugal.</p>
+        <span class="btn btn-blue" aria-hidden="true">
+          Ver Hotéis
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+
+      <a href="https://www.getyourguide.pt/portugal-l33/"
+         target="_blank" rel="noopener noreferrer"
+         class="monet-card hp-card hp-card--link reveal"
+         aria-label="Encontrar atividades e tours em Portugal no GetYourGuide">
+        <div class="monet-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h3>Experiências costeiras</h3>
+        <p class="monet-card__via">via GetYourGuide</p>
+        <p style="font-size:11px;color:#999;font-style:italic;margin:0 0 4px;">Link de afiliado</p>
+        <p class="monet-card__desc">Aulas de surf, mergulho, kayak e tours guiados ao longo da costa.</p>
+        <span class="btn btn-blue" aria-hidden="true">
+          Ver Experiências
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+
+      <a href="https://www.amazon.es/s?k=equipamento+surf+praia&tag=pthportugal-21&linkCode=ll2&linkId=pth-homepage-pt&language=pt_PT&ref_=as_li_ss_tl"
+         target="_blank" rel="noopener noreferrer"
+         class="monet-card hp-card hp-card--link reveal"
+         aria-label="Encontrar equipamento de surf e praia na Amazon">
+        <div class="monet-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <h3>Equipamento de praia e surf</h3>
+        <p class="monet-card__via">via Amazon</p>
+        <p style="font-size:11px;color:#999;font-style:italic;margin:0 0 4px;">Link de afiliado</p>
+        <p class="monet-card__desc">Pranchas, fatos de neoprene e acessórios entregues em casa.</p>
+        <span class="btn btn-blue" aria-hidden="true">
+          Ver Equipamento
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+
+    </div>
     <div class="b2b-strip reveal">
       <div class="b2b-strip__text">
         <span class="b2b-strip__label">Tem um negócio de turismo em Portugal?</span>
