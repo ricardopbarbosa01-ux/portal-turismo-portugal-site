@@ -32,7 +32,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="../js/nav.js?v=20260422c" defer></script>
   <script src="/js/config.js?v=20260508-isactive" defer></script>
-  <link rel="stylesheet" href="/css/style.css?v=20260511-a11y">
+  <link rel="stylesheet" href="/css/style.css?v=20260513-i18n12">
 
   <style>
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);cursor:pointer;min-height:44px;}
@@ -300,6 +300,13 @@
         <span>Portugal Travel Hub</span>
       </div>
       <p class="footer-tagline">Portugal's reference beach portal — real-time conditions, webcams and forecasts.</p>
+      <form class="footer-search-form" role="search" aria-label="Search beach" action="/en/beaches.html" method="get">
+        <div class="footer-search-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" name="q" id="footer-search-input" placeholder="Search beach..." aria-label="Search beach">
+          <button type="submit" class="footer-search-btn" aria-label="Search">Search</button>
+        </div>
+      </form>
     </div>
     <nav class="footer-col" aria-label="Destinations">
       <h3 class="footer-heading">Destinations</h3>
@@ -331,7 +338,7 @@
   </div>
   <div class="footer-bottom">
     <span>© <span id="footer-year">2026</span> Portugal Travel Hub. All rights reserved.</span>
-    <span><a href="/en/about.html">About</a> · <a href="/en/contact.html">Contact</a> · <a href="/en/privacy.html">Privacy</a> · <a href="/en/terms.html">Terms</a> · <a href="/en/cookies.html">Cookies</a></span>
+    <span><a href="/en/about.html">About</a> · <a href="/en/methodology.html">Methodology</a> · <a href="/en/transparency.html">Transparency</a> · <a href="/en/contact.html">Contact</a> · <a href="/en/privacy.html">Privacy</a> · <a href="/en/terms.html">Terms</a> · <a href="/en/cookies.html">Cookies</a></span>
   </div>
 </footer>
 
