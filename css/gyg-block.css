@@ -1,7 +1,35 @@
-.gyg-block{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
-.gyg-block-inner{max-width:860px;margin:0 auto;}
-.gyg-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.gyg-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:16px;}
-.gyg-trust{font-size:0.95rem;color:var(--text-mid);line-height:1.65;max-width:680px;margin-bottom:28px;}
-.gyg-block [data-gyg-widget]{display:block;min-height:320px;}
-@media(max-width:768px){.gyg-block{padding:40px 5vw;}.gyg-block [data-gyg-widget]{min-height:280px;}}
+/* gyg-block.css — v20260513-gyg2 — editorial premium frame redesign */
+.gyg-block { margin: 4rem 0 0; }
+.gyg-block-bg { background: #f6f4ef; padding: 3rem 0 4rem; }
+.gyg-block-inner { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+.gyg-block-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2.5rem; border-top: 1px solid rgba(10,61,107,0.15); padding-top: 2rem; }
+.gyg-block-number { font-family: 'Bodoni Moda', serif; font-size: 13px; color: #c9a84c; letter-spacing: 0.2em; font-weight: 500; padding-top: 4px; min-width: 36px; flex-shrink: 0; }
+.gyg-block-headtext { flex: 1; }
+.gyg-block-eyebrow { font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 11px; color: #c9a84c; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 14px; font-weight: 500; }
+.gyg-block-title { font-family: 'Bodoni Moda', serif; font-size: clamp(1.6rem, 3.5vw, 2rem); line-height: 1.1; color: #0a3d6b; margin: 0 0 18px; font-weight: 500; letter-spacing: -0.01em; }
+.gyg-block-title em { font-style: italic; color: #c9a84c; font-weight: 500; }
+.gyg-block-trust { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #4a5560; margin: 0; max-width: 540px; }
+.gyg-block-trust-emphasis { color: #0a3d6b; font-weight: 500; }
+.gyg-block-frame { background: #fff; border-radius: 2px; padding: 1.75rem 1.5rem 1.5rem; border: 1px solid rgba(10,61,107,0.08); }
+.gyg-block-frame-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(10,61,107,0.08); flex-wrap: wrap; gap: 12px; }
+.gyg-block-frame-head-left { display: flex; align-items: center; gap: 10px; }
+.gyg-block-icon { width: 22px; height: 22px; stroke: #c9a84c; stroke-width: 1.5; fill: none; flex-shrink: 0; }
+.gyg-block-frame-title { font-family: 'Bodoni Moda', serif; font-size: 16px; color: #0a3d6b; font-weight: 500; line-height: 1.2; }
+.gyg-block-frame-sub { font-family: 'Inter', sans-serif; font-size: 12px; color: #888780; margin-top: 2px; }
+.gyg-block-frame-badge { font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 10px; color: #888780; letter-spacing: 0.15em; text-transform: uppercase; }
+.gyg-block-frame [data-gyg-widget] { display: block; min-height: 380px; margin: 0 -0.5rem; }
+.gyg-block-frame-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid rgba(10,61,107,0.08); margin-top: 1rem; }
+.gyg-block-frame-foot-text { font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 10px; color: #888780; letter-spacing: 0.12em; }
+.gyg-block-frame-foot-cta { font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace; font-size: 11px; color: #0a3d6b; text-decoration: none; border-bottom: 1px solid #c9a84c; padding-bottom: 2px; letter-spacing: 0.08em; font-weight: 500; transition: color 0.2s; }
+.gyg-block-frame-foot-cta:hover { color: #c9a84c; }
+@media (max-width: 768px) {
+  .gyg-block-bg { padding: 2.5rem 0 3rem; }
+  .gyg-block-inner { padding: 0 1.25rem; }
+  .gyg-block-header { gap: 1rem; padding-top: 1.5rem; margin-bottom: 2rem; }
+  .gyg-block-number { font-size: 12px; min-width: 30px; }
+  .gyg-block-title { font-size: 1.5rem; }
+  .gyg-block-frame { padding: 1.25rem 1rem; }
+  .gyg-block-frame-head { flex-direction: column; align-items: flex-start; }
+  .gyg-block-frame-badge { align-self: flex-end; margin-top: -28px; }
+  .gyg-block-frame-foot { flex-direction: column; gap: 10px; align-items: flex-start; }
+}
