@@ -33,3 +33,81 @@
   .gyg-block-frame-badge { align-self: flex-end; margin-top: -28px; }
   .gyg-block-frame-foot { flex-direction: column; gap: 10px; align-items: flex-start; }
 }
+
+/* ═══ Variant: .gyg-block--with-video (apenas em /surf) ═══ */
+.gyg-block--with-video .gyg-block-header--with-video {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: center;
+  border-top: 1px solid rgba(10,61,107,0.15);
+  padding-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.gyg-block-video-side {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0B1B2B;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(11, 27, 43, 0.18);
+}
+
+.gyg-block-video-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gyg-block-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(11,27,43,0) 0%, rgba(11,27,43,0) 50%, rgba(11,27,43,0.85) 100%);
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.gyg-block-video-eyebrow {
+  font-family: 'IBM Plex Mono', 'Courier Prime', ui-monospace, monospace;
+  font-size: 10px;
+  color: #c9a84c;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+  font-weight: 500;
+}
+
+.gyg-block-video-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.gyg-block--with-video .gyg-block-text-side {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .gyg-block--with-video .gyg-block-header--with-video {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .gyg-block-video-overlay { padding: 1rem; }
+  .gyg-block-video-title { font-size: 1.05rem; }
+}
