@@ -212,7 +212,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .mobile-nav-item.active,.mobile-nav-item:hover{color:var(--gold);}
 
 /* ── Shared eyebrow + section title ── */
-.surf-eyebrow,.pesca-eyebrow{display:block;font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.surf-eyebrow,.pesca-eyebrow{display:block;font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px;}
 .surf-sec-title,.pesca-sec-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:700;line-height:1.12;color:var(--text);margin-bottom:12px;}
 .surf-sec-title em,.pesca-sec-title em{font-style:italic;}
 .surf-sec-sub,.pesca-sec-sub{font-size:0.97rem;color:var(--text-mid);line-height:1.72;}
@@ -293,7 +293,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 /* ── Surf alerts email capture ── */
 .surf-alerts{background:var(--off-white);padding:56px 5vw;border-top:1px solid var(--border);}
 .surf-alerts-inner{max-width:520px;margin:0 auto;text-align:center;}
-.surf-alerts-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.surf-alerts-eyebrow{display:block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px;}
 .surf-alerts-title{font-family:'Bodoni Moda',serif;font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:8px;}
 .surf-alerts-sub{font-size:0.875rem;color:var(--text-mid);line-height:1.65;margin-bottom:24px;}
 .surf-alerts-form{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto 12px;align-items:stretch;}
@@ -313,7 +313,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 /* ── SEO guide cards band ── */
 .seo-guides-band{background:var(--off-white);padding:64px 5vw;border-top:1px solid var(--border);}
 .seo-guides-inner{max-width:1100px;margin:0 auto;}
-.seo-guides-inner .section-eyebrow{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px;}
+.seo-guides-inner .section-eyebrow{display:block;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;font-weight:500;color:var(--gold-text);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px;}
 .seo-guides-inner .section-title-lg{font-family:'Fraunces','Bodoni Moda',serif;font-size:clamp(28px,3.5vw,40px);font-weight:600;color:var(--blue);margin:0 0 36px 0;line-height:1.15;}
 .seo-guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
 .seo-guide-card{display:block;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 22px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}

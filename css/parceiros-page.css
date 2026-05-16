@@ -49,7 +49,7 @@
     .sec-off{background:var(--off-white);}
     .sec-blue{background:linear-gradient(135deg,var(--blue) 0%,#1a5fa3 100%);color:var(--white);}
     .sec-inner{max-width:1100px;margin:0 auto;}
-    .eyebrow{display:block;font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .eyebrow{display:block;font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px;}
     .eyebrow-light{color:rgba(201,168,76,0.85);}
     .sec-title{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(1.75rem,3.2vw,2.6rem);font-weight:700;line-height:1.12;color:var(--text);margin-bottom:16px;}
     .sec-title-light{color:var(--white);}
@@ -149,7 +149,7 @@
     .b2b-form-card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);border:1px solid rgba(10,61,107,0.07);overflow:hidden;}
     .b2b-form-header{padding:28px 32px 24px;border-bottom:1px solid rgba(10,61,107,0.07);background:linear-gradient(135deg,rgba(10,61,107,0.04) 0%,rgba(201,168,76,0.04) 100%);}
     @media(max-width:480px){.b2b-form-header{padding:20px;}}
-    .b2b-form-header .eyebrow{color:var(--gold);margin-bottom:6px;}
+    .b2b-form-header .eyebrow{color:var(--gold-text);margin-bottom:6px;}
     .b2b-form-header h2{font-family:'Bodoni Moda',Georgia,serif;font-size:1.5rem;font-weight:700;color:var(--blue);line-height:1.2;margin-bottom:6px;}
     .b2b-form-header p{font-size:0.875rem;color:var(--text-mid);line-height:1.55;}
     .b2b-form-body{padding:28px 32px 32px;}
