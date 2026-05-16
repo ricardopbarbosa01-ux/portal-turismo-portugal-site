@@ -110,7 +110,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20260513-gyg">
+  <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20260516-video">
   <link rel="stylesheet" href="/css/gyg-block.css?v=20260513-gyg2">
 
 <link rel="stylesheet" href="/css/style.css?v=20260513-gyg">
@@ -246,6 +246,27 @@
       <button class="chip" data-region="Açores">Açores</button>
     </div>
   </div>
+
+<!-- Editorial Video — Local Verification (entrada antes GYG widgets) -->
+<section class="video-verification-section" aria-label="Verificação Local Especializada">
+  <div class="video-verification-inner">
+    <div class="video-verification-wrapper" id="video-verification">
+      <video
+        class="video-verification-media"
+        src="https://cdn.portalturismoportugal.com/surf-verification.mp4"
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="Surfista local em ondas portuguesas">
+      </video>
+      <div class="video-verification-overlay">
+        <p class="video-verification-eyebrow">EDITORIAL</p>
+        <h2 class="video-verification-title">Verificação Local Especializada</h2>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- GetYourGuide experiences affiliate block -->
   <section class="gyg-block" aria-label="Reservar aulas de surf em Portugal">
@@ -803,6 +824,41 @@
       if (!rafId) animate();
     });
   })();
+</script>
+<script>
+(function() {
+  const wrapper = document.getElementById('video-verification');
+  if (!wrapper) return;
+  const video = wrapper.querySelector('.video-verification-media');
+  if (!video) return;
+
+  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
+  if (!isTouchDevice) {
+    // Desktop: hover-to-play
+    wrapper.addEventListener('mouseenter', () => {
+      video.play().catch(() => {});
+    });
+    wrapper.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  } else {
+    // Mobile/touch: autoplay quando entra no viewport
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+      observer.observe(wrapper);
+    }
+  }
+})();
 </script>
 </body>
 </html>
