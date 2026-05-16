@@ -3,7 +3,7 @@
 
   <!-- ── Core / Homepage ── -->
   <url>
-    <loc>https://portalturismoportugal.com/</loc>
+    <loc>https://www.portalturismoportugal.com/</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,31 +11,31 @@
 
   <!-- ── Content pages — high traffic intent ── -->
   <url>
-    <loc>https://portalturismoportugal.com/beaches</loc>
+    <loc>https://www.portalturismoportugal.com/beaches</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/surf</loc>
+    <loc>https://www.portalturismoportugal.com/surf</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/surf-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/surf-portugal</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/pesca</loc>
+    <loc>https://www.portalturismoportugal.com/pesca</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/webcams</loc>
+    <loc>https://www.portalturismoportugal.com/webcams</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -43,7 +43,7 @@
 
   <!-- ── Tools / Features ── -->
   <url>
-    <loc>https://portalturismoportugal.com/planear</loc>
+    <loc>https://www.portalturismoportugal.com/planear</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -51,19 +51,19 @@
 
   <!-- ── Commercial / B2B ── -->
   <url>
-    <loc>https://portalturismoportugal.com/parceiros</loc>
+    <loc>https://www.portalturismoportugal.com/parceiros</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/precos</loc>
+    <loc>https://www.portalturismoportugal.com/precos</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/media-kit</loc>
+    <loc>https://www.portalturismoportugal.com/media-kit</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -71,56 +71,56 @@
 
   <!-- ── SEO content pages ── -->
   <url>
-    <loc>https://portalturismoportugal.com/en/best-beaches-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/en/best-beaches-portugal</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/surfing-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/en/surfing-portugal</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/beginner-surf-beaches-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/en/beginner-surf-beaches-algarve</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- ── Guias ── -->
   <url>
-    <loc>https://portalturismoportugal.com/guias</loc>
+    <loc>https://www.portalturismoportugal.com/guias</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/guias/melhores-praias-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/guias/melhores-praias-algarve</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/guias/pesca-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/guias/pesca-portugal</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/guias/praias-perto-lisboa</loc>
+    <loc>https://www.portalturismoportugal.com/guias/praias-perto-lisboa</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/guias/quando-visitar-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/guias/quando-visitar-portugal</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/guias/surf-portugal-iniciantes</loc>
+    <loc>https://www.portalturismoportugal.com/guias/surf-portugal-iniciantes</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -128,37 +128,37 @@
 
   <!-- ── Institutional ── -->
   <url>
-    <loc>https://portalturismoportugal.com/metodologia-editorial</loc>
+    <loc>https://www.portalturismoportugal.com/metodologia-editorial</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/transparencia-comercial</loc>
+    <loc>https://www.portalturismoportugal.com/transparencia-comercial</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/about</loc>
+    <loc>https://www.portalturismoportugal.com/about</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/contact</loc>
+    <loc>https://www.portalturismoportugal.com/contact</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/privacy</loc>
+    <loc>https://www.portalturismoportugal.com/privacy</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/terms</loc>
+    <loc>https://www.portalturismoportugal.com/terms</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -166,31 +166,31 @@
 
   <!-- ── SEO Phase 2 — PT pages ── -->
   <url>
-    <loc>https://portalturismoportugal.com/praias-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/praias-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-familias-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/praias-familias-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/surf-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/surf-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-perto-lisboa</loc>
+    <loc>https://www.portalturismoportugal.com/praias-perto-lisboa</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/melhores-praias-por-do-sol</loc>
+    <loc>https://www.portalturismoportugal.com/melhores-praias-por-do-sol</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -198,92 +198,92 @@
 
   <!-- ── EN language versions ── -->
   <url>
-    <loc>https://portalturismoportugal.com/en/</loc>
+    <loc>https://www.portalturismoportugal.com/en/</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/planear</loc>
+    <loc>https://www.portalturismoportugal.com/en/planear</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/precos</loc>
+    <loc>https://www.portalturismoportugal.com/en/precos</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/parceiros</loc>
+    <loc>https://www.portalturismoportugal.com/en/parceiros</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/media-kit</loc>
+    <loc>https://www.portalturismoportugal.com/en/media-kit</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/contact</loc>
+    <loc>https://www.portalturismoportugal.com/en/contact</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/beaches</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/surf</loc>
+    <loc>https://www.portalturismoportugal.com/en/surf</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/pesca</loc>
+    <loc>https://www.portalturismoportugal.com/en/pesca</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/webcams</loc>
+    <loc>https://www.portalturismoportugal.com/en/webcams</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- ── SEO Phase 2 — EN pages ── -->
   <url>
-    <loc>https://portalturismoportugal.com/en/algarve-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/algarve-beaches</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/family-beaches-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/en/family-beaches-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/surf-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/en/surf-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/beaches-near-lisbon</loc>
+    <loc>https://www.portalturismoportugal.com/en/beaches-near-lisbon</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/best-sunset-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/best-sunset-beaches</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -291,73 +291,73 @@
 
   <!-- ── SEO Phase 3 — PT pages ── -->
   <url>
-    <loc>https://portalturismoportugal.com/praias-secretas-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/praias-secretas-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-calmas-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/praias-calmas-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-para-criancas-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/praias-para-criancas-portugal</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/onde-ficar-algarve-praia</loc>
+    <loc>https://www.portalturismoportugal.com/onde-ficar-algarve-praia</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/onde-ficar-lisboa-setubal-praia</loc>
+    <loc>https://www.portalturismoportugal.com/onde-ficar-lisboa-setubal-praia</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/onde-ficar-norte-portugal-praia</loc>
+    <loc>https://www.portalturismoportugal.com/onde-ficar-norte-portugal-praia</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/onde-ficar-costa-alentejo-praia</loc>
+    <loc>https://www.portalturismoportugal.com/onde-ficar-costa-alentejo-praia</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/onde-ficar-madeira-perto-da-praia</loc>
+    <loc>https://www.portalturismoportugal.com/onde-ficar-madeira-perto-da-praia</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/onde-ficar-centro-portugal-praia</loc>
+    <loc>https://www.portalturismoportugal.com/onde-ficar-centro-portugal-praia</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/onde-ficar-oeste-praia</loc>
+    <loc>https://www.portalturismoportugal.com/onde-ficar-oeste-praia</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-para-surfistas-iniciantes-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/praias-para-surfistas-iniciantes-portugal</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-surf-iniciantes-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/praias-surf-iniciantes-algarve</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -365,129 +365,129 @@
 
   <!-- ── SEO Phase 3 — EN pages ── -->
   <url>
-    <loc>https://portalturismoportugal.com/en/hidden-beaches-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/en/hidden-beaches-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/calm-beaches-algarve</loc>
+    <loc>https://www.portalturismoportugal.com/en/calm-beaches-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/beaches-for-kids-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/en/beaches-for-kids-portugal</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/where-to-stay-lisbon-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/where-to-stay-lisbon-beaches</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/where-to-stay-northern-portugal-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/where-to-stay-northern-portugal-beaches</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/where-to-stay-alentejo-coast</loc>
+    <loc>https://www.portalturismoportugal.com/en/where-to-stay-alentejo-coast</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/where-to-stay-madeira-near-the-beach</loc>
+    <loc>https://www.portalturismoportugal.com/en/where-to-stay-madeira-near-the-beach</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/where-to-stay-central-portugal-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/where-to-stay-central-portugal-beaches</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/where-to-stay-west-coast-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/en/where-to-stay-west-coast-portugal</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/where-to-stay-algarve-beach</loc>
+    <loc>https://www.portalturismoportugal.com/en/where-to-stay-algarve-beach</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/beginner-surf-beaches-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/en/beginner-surf-beaches-portugal</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://portalturismoportugal.com/en/privacy</loc>
+    <loc>https://www.portalturismoportugal.com/en/privacy</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/terms</loc>
+    <loc>https://www.portalturismoportugal.com/en/terms</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://portalturismoportugal.com/praias-norte-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/praias-norte-portugal</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-centro-portugal</loc>
+    <loc>https://www.portalturismoportugal.com/praias-centro-portugal</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-madeira</loc>
+    <loc>https://www.portalturismoportugal.com/praias-madeira</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/praias-alentejo-costa</loc>
+    <loc>https://www.portalturismoportugal.com/praias-alentejo-costa</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/northern-portugal-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/northern-portugal-beaches</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/central-portugal-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/central-portugal-beaches</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/madeira-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/madeira-beaches</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://portalturismoportugal.com/en/alentejo-coast-beaches</loc>
+    <loc>https://www.portalturismoportugal.com/en/alentejo-coast-beaches</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
