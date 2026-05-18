@@ -4,10 +4,13 @@
 // Resizes with sharp (MozJPEG, progressive, no upscale) and upserts into a bucket.
 //
 // Usage (run from repo root C:\Users\Powerpc or from inside _scripts/):
-//   node Portal-turismo-site/_scripts/replace-storage-image.js \
+//   node --use-system-ca Portal-turismo-site/_scripts/replace-storage-image.js \
 //     --source "/path/to/photo.jpg" \
 //     --bucket card-images \
 //     --path "beaches/513d687d-b8f9-4d87-b5a7-c6de1d7d695c.jpg"
+//
+// Note: --use-system-ca is required on Node.js v25+ / Windows to trust the
+//       Supabase TLS certificate via the OS root CA store.
 //
 // Optional flags:
 //   --width  <px>     Max output width in pixels (default: 1600, no upscale)
