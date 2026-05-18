@@ -4,13 +4,17 @@
  * Node CLI — Pre-renders top 30 beaches as static HTML for Google indexing.
  *
  * Usage:
- *   node prerender-top-beaches.js             # generate 30 files in /praias/
- *   node prerender-top-beaches.js --dry-run   # preview only, no files written
+ *   node prerender-top-beaches.js               # generate 30 PT files in /praias/
+ *   node prerender-top-beaches.js --lang pt      # same as above
+ *   node prerender-top-beaches.js --lang en      # generate 30 EN files in /en/praias/
+ *   node prerender-top-beaches.js --dry-run      # preview only, no files written
+ *   node prerender-top-beaches.js --lang en --dry-run
  *
  * Depends on:
  *   - data/beaches-master.json (read-only)
- *   - _scripts/templates/beach-static.html (read-only)
- *   - writes to: praias/<slug>.html (30 files)
+ *   - _scripts/templates/beach-static.html (read-only, PT)
+ *   - _scripts/templates/beach-static-en.html (read-only, EN)
+ *   - writes to: praias/<slug>.html (PT) or en/praias/<slug>.html (EN)
  *
  * Selection algorithm (deterministic):
  *   1. Filter status === 'live'
@@ -25,8 +29,20 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const DATA = JSON.parse(readFileSync(join(ROOT, 'data/beaches-master.json'), 'utf8'));
-const TEMPLATE = readFileSync(join(__dirname, 'templates/beach-static.html'), 'utf8');
-const OUT_DIR = join(ROOT, 'praias');
+
+// ── Parse CLI flags ────────────────────────────────────────────────────────
+const args = process.argv.slice(2);
+const lang = args.includes('--lang') ? args[args.indexOf('--lang') + 1] : 'pt';
+if (!['pt', 'en'].includes(lang)) {
+  console.error('[prerender] ERROR: --lang must be pt or en');
+  process.exit(1);
+}
+
+const TEMPLATE = readFileSync(
+  join(__dirname, lang === 'en' ? 'templates/beach-static-en.html' : 'templates/beach-static.html'),
+  'utf8'
+);
+const OUT_DIR = join(ROOT, lang === 'en' ? 'en/praias' : 'praias');
 
 // ── Region priority order (Algarve first for SEO) ─────────────────────────
 const REGION_ORDER = [
@@ -75,6 +91,18 @@ const BEACH_TYPE_PT = {
   'volcanic':        'Vulcânica'
 };
 
+// ── Beach type EN labels ──────────────────────────────────────────────────
+const BEACH_TYPE_EN = {
+  'sandy':           'Sandy',
+  'cove':            'Cove',
+  'urban':           'Urban',
+  'wild':            'Wild',
+  'surf':            'Surf',
+  'river-mouth':     'River Mouth',
+  'natural-reserve': 'Nature Reserve',
+  'volcanic':        'Volcanic'
+};
+
 // ── Helpers ───────────────────────────────────────────────────────────────
 /**
  * Escape HTML special characters to prevent XSS in static output.
@@ -103,6 +131,14 @@ function escapeJson(s) {
 }
 
 /**
+ * Return EN or PT beach type label.
+ */
+function beachTypeLabel(type, l) {
+  if (l === 'en') return BEACH_TYPE_EN[type] || type;
+  return BEACH_TYPE_PT[type] || type;
+}
+
+/**
  * Select top 30 beaches: filter live, sort by REGION_ORDER then name_pt.
  */
 function selectTop30(beaches) {
@@ -120,19 +156,19 @@ function selectTop30(beaches) {
  * Build amenityFeature array JSON (without outer brackets).
  * Returns a comma-separated list of LocationFeatureSpecification objects.
  */
-function buildAmenities(beach) {
+function buildAmenities(beach, l) {
   const amenities = [];
   if (beach.lifeguard) {
     amenities.push({
       '@type': 'LocationFeatureSpecification',
-      name: 'Nadador-salvador',
+      name: l === 'en' ? 'Lifeguard' : 'Nadador-salvador',
       value: true
     });
   }
   if (beach.family_friendly) {
     amenities.push({
       '@type': 'LocationFeatureSpecification',
-      name: 'Família',
+      name: l === 'en' ? 'Family friendly' : 'Família',
       value: true
     });
   }
@@ -146,7 +182,7 @@ function buildAmenities(beach) {
   if (beach.disabled_access) {
     amenities.push({
       '@type': 'LocationFeatureSpecification',
-      name: 'Acesso mobilidade reduzida',
+      name: l === 'en' ? 'Disabled access' : 'Acesso mobilidade reduzida',
       value: true
     });
   }
@@ -156,38 +192,69 @@ function buildAmenities(beach) {
 }
 
 /**
- * Render a beach object into the HTML template.
+ * Render a beach object into the HTML template for the given language.
  * All replacements are exact string matches (global replace via split/join).
  */
-function render(beach, today) {
+function render(beach, today, l) {
   const subregion = beach.subregion ? ` · ${escapeHtml(beach.subregion)}` : '';
   const gygUrl = GYG_URLS[beach.region] || GYG_URLS['Algarve'];
 
-  // Build JSON-safe description for Schema.org (not HTML-escaped — goes inside JSON string)
-  const descJson = escapeJson(beach.description_pt);
-  const nameJson = escapeJson(beach.name_pt);
-  const regionJson = escapeJson(beach.region);
+  let replacements;
 
-  const replacements = {
-    '{{slug}}':           beach.slug,
-    '{{supabase_id}}':    beach.supabase_id,
-    '{{name_pt}}':        escapeHtml(beach.name_pt),
-    '{{name_en}}':        escapeHtml(beach.name_en || ''),
-    '{{region}}':         escapeHtml(beach.region),
-    '{{subregion_display}}': subregion,
-    '{{beach_type_pt}}':  escapeHtml(BEACH_TYPE_PT[beach.beach_type] || beach.beach_type),
-    '{{water_quality}}':  escapeHtml(beach.water_quality),
-    '{{description_pt}}': escapeHtml(beach.description_pt),
-    '{{latitude}}':       String(beach.latitude),
-    '{{longitude}}':      String(beach.longitude),
-    '{{family_friendly}}': beach.family_friendly ? 'Sim' : 'Não',
-    '{{lifeguard}}':      beach.lifeguard ? 'Sim' : 'Não',
-    '{{webcam_available}}': beach.webcam_available ? 'Sim' : 'Não',
-    '{{amenities_json}}': buildAmenities(beach),
-    '{{gyg_url}}':        gygUrl,
-    '{{amazon_block}}':   AMAZON_BLOCK,
-    '{{lastmod}}':        today
-  };
+  if (l === 'en') {
+    // EN: use name_en, description_en, EN labels
+    const nameEn = beach.name_en || beach.name_pt;
+    const descEn = beach.description_en || beach.description_pt;
+
+    replacements = {
+      '{{slug}}':             beach.slug,
+      '{{supabase_id}}':      beach.supabase_id,
+      '{{name_en}}':          escapeHtml(nameEn),
+      '{{name_en_json}}':     escapeJson(nameEn),
+      '{{region}}':           escapeHtml(beach.region),
+      '{{region_json}}':      escapeJson(beach.region),
+      '{{subregion_display}}': subregion,
+      '{{beach_type_en}}':    escapeHtml(beachTypeLabel(beach.beach_type, 'en')),
+      '{{water_quality}}':    escapeHtml(beach.water_quality),
+      '{{description_en}}':   escapeHtml(descEn),
+      '{{description_en_json}}': escapeJson(descEn),
+      '{{latitude}}':         String(beach.latitude),
+      '{{longitude}}':        String(beach.longitude),
+      '{{family_friendly_en}}': beach.family_friendly ? 'Yes' : 'No',
+      '{{lifeguard_en}}':     beach.lifeguard ? 'Yes' : 'No',
+      '{{webcam_available_en}}': beach.webcam_available ? 'Yes' : 'No',
+      '{{amenities_json}}':   buildAmenities(beach, 'en'),
+      '{{gyg_url}}':          gygUrl,
+      '{{amazon_block}}':     AMAZON_BLOCK,
+      '{{lastmod}}':          today
+    };
+  } else {
+    // PT: original behavior
+    const descJson = escapeJson(beach.description_pt);
+    const nameJson = escapeJson(beach.name_pt);
+    const regionJson = escapeJson(beach.region);
+
+    replacements = {
+      '{{slug}}':           beach.slug,
+      '{{supabase_id}}':    beach.supabase_id,
+      '{{name_pt}}':        escapeHtml(beach.name_pt),
+      '{{name_en}}':        escapeHtml(beach.name_en || ''),
+      '{{region}}':         escapeHtml(beach.region),
+      '{{subregion_display}}': subregion,
+      '{{beach_type_pt}}':  escapeHtml(beachTypeLabel(beach.beach_type, 'pt')),
+      '{{water_quality}}':  escapeHtml(beach.water_quality),
+      '{{description_pt}}': escapeHtml(beach.description_pt),
+      '{{latitude}}':       String(beach.latitude),
+      '{{longitude}}':      String(beach.longitude),
+      '{{family_friendly}}': beach.family_friendly ? 'Sim' : 'Não',
+      '{{lifeguard}}':      beach.lifeguard ? 'Sim' : 'Não',
+      '{{webcam_available}}': beach.webcam_available ? 'Sim' : 'Não',
+      '{{amenities_json}}': buildAmenities(beach, 'pt'),
+      '{{gyg_url}}':        gygUrl,
+      '{{amazon_block}}':   AMAZON_BLOCK,
+      '{{lastmod}}':        today
+    };
+  }
 
   let html = TEMPLATE;
   for (const [key, value] of Object.entries(replacements)) {
@@ -198,8 +265,9 @@ function render(beach, today) {
 }
 
 // ── Main CLI ──────────────────────────────────────────────────────────────
-const isDryRun = process.argv.includes('--dry-run');
+const isDryRun = args.includes('--dry-run');
 const today = new Date().toISOString().slice(0, 10);
+const outDirLabel = lang === 'en' ? 'en/praias/' : 'praias/';
 
 if (!DATA.beaches || !Array.isArray(DATA.beaches)) {
   console.error('[prerender] ERROR: data/beaches-master.json has no .beaches array');
@@ -209,20 +277,21 @@ if (!DATA.beaches || !Array.isArray(DATA.beaches)) {
 const top30 = selectTop30(DATA.beaches);
 const regions = [...new Set(top30.map(b => b.region))];
 
-console.log(`[prerender] Selected ${top30.length} beaches`);
+console.log(`[prerender] Selected ${top30.length} beaches (lang: ${lang})`);
 console.log(`[prerender] Regions (${regions.length}): ${regions.join(', ')}`);
 console.log(`[prerender] Date: ${today}`);
+console.log(`[prerender] Output: ${outDirLabel}`);
 if (isDryRun) console.log('[prerender] DRY-RUN mode — no files written');
 console.log('');
 
 if (!isDryRun && !existsSync(OUT_DIR)) {
   mkdirSync(OUT_DIR, { recursive: true });
-  console.log(`[prerender] Created directory: praias/`);
+  console.log(`[prerender] Created directory: ${outDirLabel}`);
 }
 
 let generated = 0;
 for (const beach of top30) {
-  const html = render(beach, today);
+  const html = render(beach, today, lang);
   const outPath = join(OUT_DIR, `${beach.slug}.html`);
 
   // Sanity: confirm no unresolved placeholders remain
@@ -233,25 +302,35 @@ for (const beach of top30) {
   }
 
   if (isDryRun) {
-    console.log(`[dry-run] Would write: praias/${beach.slug}.html (${html.length} bytes) — ${beach.region}`);
+    console.log(`[dry-run] Would write: ${outDirLabel}${beach.slug}.html (${html.length} bytes) — ${beach.region}`);
   } else {
     writeFileSync(outPath, html, 'utf8');
-    console.log(`[write] praias/${beach.slug}.html (${html.length} bytes) — ${beach.region}`);
+    console.log(`[write] ${outDirLabel}${beach.slug}.html (${html.length} bytes) — ${beach.region}`);
   }
   generated++;
 }
 
 console.log('');
-console.log(`[done] ${isDryRun ? 'Dry-run preview' : 'Generated'} ${generated} static beach pages`);
+console.log(`[done] ${isDryRun ? 'Dry-run preview' : 'Generated'} ${generated} ${lang.toUpperCase()} static beach pages in ${outDirLabel}`);
 
 // ── Print sitemap snippet for copy-paste ─────────────────────────────────
-console.log('\n--- Sitemap snippet (add before </urlset> in sitemap.xml) ---');
-for (const beach of top30) {
-  process.stdout.write(
-    `  <url>\n    <loc>https://www.portalturismoportugal.com/praias/${beach.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`
-  );
+if (lang === 'en') {
+  console.log('\n--- EN Sitemap snippet (add before </urlset> in sitemap.xml) ---');
+  for (const beach of top30) {
+    process.stdout.write(
+      `  <url>\n    <loc>https://www.portalturismoportugal.com/en/praias/${beach.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`
+    );
+  }
+  console.log('--- End sitemap snippet ---');
+} else {
+  console.log('\n--- PT Sitemap snippet (add before </urlset> in sitemap.xml) ---');
+  for (const beach of top30) {
+    process.stdout.write(
+      `  <url>\n    <loc>https://www.portalturismoportugal.com/praias/${beach.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`
+    );
+  }
+  console.log('--- End sitemap snippet ---');
 }
-console.log('--- End sitemap snippet ---');
 
 // ── Print slug list for review ───────────────────────────────────────────
 console.log('\n--- Slug list ---');

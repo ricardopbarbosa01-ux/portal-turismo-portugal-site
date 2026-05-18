@@ -8,7 +8,9 @@
     "populate-images": "node populate-images.js",
     "populate-images:apply": "node populate-images.js --apply",
     "prerender-beaches": "node prerender-top-beaches.js --dry-run",
-    "prerender-beaches:apply": "node prerender-top-beaches.js"
+    "prerender-beaches:apply": "node prerender-top-beaches.js",
+    "prerender-beaches:en": "node prerender-top-beaches.js --lang en",
+    "prerender-beaches:en:dry": "node prerender-top-beaches.js --lang en --dry-run"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",

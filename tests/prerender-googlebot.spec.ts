@@ -167,3 +167,43 @@ test.describe('Pre-rendered beach pages — Googlebot simulation (no JS)', () =>
   });
 
 });
+
+// ── EN pre-rendered pages — Googlebot simulation (no JS) ──────────────────
+test.describe('EN pre-rendered beach pages — Googlebot simulation (no JS)', () => {
+  // Disable JavaScript for entire describe block — simulates Googlebot first-pass
+  test.use({ javaScriptEnabled: false });
+
+  const EN_SAMPLES = ['praia-da-rocha', 'praia-de-benagil', 'ilha-de-tavira'];
+
+  for (const slug of EN_SAMPLES) {
+    test(`Googlebot sees /en/praias/${slug} as full HTML (JS disabled)`, async ({ browser }) => {
+      const context = await browser.newContext({ javaScriptEnabled: false });
+      const page = await context.newPage();
+      const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000';
+      await page.goto(`${baseURL}/en/praias/${slug}.html`);
+
+      // Title must contain Portugal Travel Hub and not be blank
+      const title = await page.title();
+      expect(title).toMatch(/Portugal Travel Hub/);
+      expect(title.trim()).not.toBe('');
+
+      // h1 must be present and visible
+      const h1 = page.locator('h1').first();
+      await expect(h1).toBeVisible();
+      const h1Text = await h1.textContent();
+      expect(h1Text?.trim()).toBeTruthy();
+
+      // Canonical must point to /en/praias/<slug> without .html
+      const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
+      expect(canonical).toContain(`/en/praias/${slug}`);
+      expect(canonical).not.toMatch(/\.html$/);
+
+      // Schema.org Beach type must be present in inline JSON-LD
+      const schemaScript = await page.locator('script[type="application/ld+json"]').first().textContent();
+      expect(schemaScript).toMatch(/"@type"\s*:\s*"Beach"/);
+
+      await context.close();
+    });
+  }
+
+});
