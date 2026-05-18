@@ -1,0 +1,261 @@
+#!/usr/bin/env node
+/**
+ * _scripts/prerender-top-beaches.js
+ * Node CLI — Pre-renders top 30 beaches as static HTML for Google indexing.
+ *
+ * Usage:
+ *   node prerender-top-beaches.js             # generate 30 files in /praias/
+ *   node prerender-top-beaches.js --dry-run   # preview only, no files written
+ *
+ * Depends on:
+ *   - data/beaches-master.json (read-only)
+ *   - _scripts/templates/beach-static.html (read-only)
+ *   - writes to: praias/<slug>.html (30 files)
+ *
+ * Selection algorithm (deterministic):
+ *   1. Filter status === 'live'
+ *   2. Sort by REGION_ORDER, then name_pt alphabetically
+ *   3. Take first 30
+ */
+
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, '..');
+const DATA = JSON.parse(readFileSync(join(ROOT, 'data/beaches-master.json'), 'utf8'));
+const TEMPLATE = readFileSync(join(__dirname, 'templates/beach-static.html'), 'utf8');
+const OUT_DIR = join(ROOT, 'praias');
+
+// ── Region priority order (Algarve first for SEO) ─────────────────────────
+const REGION_ORDER = [
+  'Algarve',
+  'Oeste',
+  'Lisboa e Setúbal',
+  'Norte',
+  'Centro',
+  'Madeira',
+  'Açores',
+  'Alentejo'
+];
+
+// ── GYG affiliate URLs by region (from js/beach-page.js) ─────────────────
+const GYG_URLS = {
+  'Algarve':          'https://www.getyourguide.com/s/?q=Algarve&partner_id=0WTBHZE&cmp=pthcard-algarve',
+  'Norte':            'https://www.getyourguide.com/s/?q=Porto&partner_id=0WTBHZE&cmp=pthcard-norte',
+  'Centro':           'https://www.getyourguide.com/s/?q=Coimbra+Portugal&partner_id=0WTBHZE&cmp=pthcard-centro',
+  'Lisboa e Setúbal': 'https://www.getyourguide.com/s/?q=Lisbon&partner_id=0WTBHZE&cmp=pthcard-lisboa',
+  'Alentejo':         'https://www.getyourguide.com/s/?q=Alentejo&partner_id=0WTBHZE&cmp=pthcard-alentejo',
+  'Madeira':          'https://www.getyourguide.com/s/?q=Madeira&partner_id=0WTBHZE&cmp=pthcard-madeira',
+  'Oeste':            'https://www.getyourguide.com/s/?q=Nazare+Portugal&partner_id=0WTBHZE&cmp=pthcard-oeste',
+  'Açores':      'https://www.getyourguide.com/s/?q=Azores&partner_id=0WTBHZE&cmp=pthcard-acores'
+};
+
+// ── Amazon OneLink block (pthportugal-21) ─────────────────────────────────
+const AMAZON_BLOCK = `<!-- Amazon OneLink — geo-redirect para storefront local com pthportugal-21 -->
+<script>
+  amzn_assoc_tracking_id = "pthportugal-21";
+  amzn_assoc_ad_mode = "auto";
+  amzn_assoc_ad_type = "smart";
+  amzn_assoc_marketplace = "amazon";
+  amzn_assoc_region = "ES";
+<\/script>
+<script src="//z-eu.associates-amazon.com/s/getads.js?Marketplace=ES"><\/script>`;
+
+// ── Beach type PT labels ──────────────────────────────────────────────────
+const BEACH_TYPE_PT = {
+  'sandy':           'Arenosa',
+  'cove':            'Enseada',
+  'urban':           'Urbana',
+  'wild':            'Selvagem',
+  'surf':            'Surf',
+  'river-mouth':     'Foz de Rio',
+  'natural-reserve': 'Reserva Natural',
+  'volcanic':        'Vulcânica'
+};
+
+// ── Helpers ───────────────────────────────────────────────────────────────
+/**
+ * Escape HTML special characters to prevent XSS in static output.
+ * Input: data from beaches-master.json (editorial, not user input).
+ * Still escaped for correctness and HTML validity.
+ */
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/**
+ * Escape a string for safe embedding inside a JSON string value.
+ * Used for Schema.org JSON-LD inline blocks.
+ */
+function escapeJson(s) {
+  return String(s)
+    .replace(/\\/g, '\\\\')
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, '\\n')
+    .replace(/\r/g, '\\r')
+    .replace(/\t/g, '\\t');
+}
+
+/**
+ * Select top 30 beaches: filter live, sort by REGION_ORDER then name_pt.
+ */
+function selectTop30(beaches) {
+  const live = beaches.filter(b => b.status === 'live');
+  live.sort((a, b) => {
+    const ra = REGION_ORDER.indexOf(a.region);
+    const rb = REGION_ORDER.indexOf(b.region);
+    if (ra !== rb) return (ra === -1 ? 999 : ra) - (rb === -1 ? 999 : rb);
+    return a.name_pt.localeCompare(b.name_pt, 'pt');
+  });
+  return live.slice(0, 30);
+}
+
+/**
+ * Build amenityFeature array JSON (without outer brackets).
+ * Returns a comma-separated list of LocationFeatureSpecification objects.
+ */
+function buildAmenities(beach) {
+  const amenities = [];
+  if (beach.lifeguard) {
+    amenities.push({
+      '@type': 'LocationFeatureSpecification',
+      name: 'Nadador-salvador',
+      value: true
+    });
+  }
+  if (beach.family_friendly) {
+    amenities.push({
+      '@type': 'LocationFeatureSpecification',
+      name: 'Família',
+      value: true
+    });
+  }
+  if (beach.webcam_available) {
+    amenities.push({
+      '@type': 'LocationFeatureSpecification',
+      name: 'Webcam',
+      value: true
+    });
+  }
+  if (beach.disabled_access) {
+    amenities.push({
+      '@type': 'LocationFeatureSpecification',
+      name: 'Acesso mobilidade reduzida',
+      value: true
+    });
+  }
+  // Remove outer [ and ] — template wraps in [{{amenities_json}}]
+  const json = JSON.stringify(amenities);
+  return json.slice(1, -1);
+}
+
+/**
+ * Render a beach object into the HTML template.
+ * All replacements are exact string matches (global replace via split/join).
+ */
+function render(beach, today) {
+  const subregion = beach.subregion ? ` · ${escapeHtml(beach.subregion)}` : '';
+  const gygUrl = GYG_URLS[beach.region] || GYG_URLS['Algarve'];
+
+  // Build JSON-safe description for Schema.org (not HTML-escaped — goes inside JSON string)
+  const descJson = escapeJson(beach.description_pt);
+  const nameJson = escapeJson(beach.name_pt);
+  const regionJson = escapeJson(beach.region);
+
+  const replacements = {
+    '{{slug}}':           beach.slug,
+    '{{supabase_id}}':    beach.supabase_id,
+    '{{name_pt}}':        escapeHtml(beach.name_pt),
+    '{{name_en}}':        escapeHtml(beach.name_en || ''),
+    '{{region}}':         escapeHtml(beach.region),
+    '{{subregion_display}}': subregion,
+    '{{beach_type_pt}}':  escapeHtml(BEACH_TYPE_PT[beach.beach_type] || beach.beach_type),
+    '{{water_quality}}':  escapeHtml(beach.water_quality),
+    '{{description_pt}}': escapeHtml(beach.description_pt),
+    '{{latitude}}':       String(beach.latitude),
+    '{{longitude}}':      String(beach.longitude),
+    '{{family_friendly}}': beach.family_friendly ? 'Sim' : 'Não',
+    '{{lifeguard}}':      beach.lifeguard ? 'Sim' : 'Não',
+    '{{webcam_available}}': beach.webcam_available ? 'Sim' : 'Não',
+    '{{amenities_json}}': buildAmenities(beach),
+    '{{gyg_url}}':        gygUrl,
+    '{{amazon_block}}':   AMAZON_BLOCK,
+    '{{lastmod}}':        today
+  };
+
+  let html = TEMPLATE;
+  for (const [key, value] of Object.entries(replacements)) {
+    // global replace via split/join (avoids regex escaping issues with special chars in values)
+    html = html.split(key).join(value);
+  }
+  return html;
+}
+
+// ── Main CLI ──────────────────────────────────────────────────────────────
+const isDryRun = process.argv.includes('--dry-run');
+const today = new Date().toISOString().slice(0, 10);
+
+if (!DATA.beaches || !Array.isArray(DATA.beaches)) {
+  console.error('[prerender] ERROR: data/beaches-master.json has no .beaches array');
+  process.exit(1);
+}
+
+const top30 = selectTop30(DATA.beaches);
+const regions = [...new Set(top30.map(b => b.region))];
+
+console.log(`[prerender] Selected ${top30.length} beaches`);
+console.log(`[prerender] Regions (${regions.length}): ${regions.join(', ')}`);
+console.log(`[prerender] Date: ${today}`);
+if (isDryRun) console.log('[prerender] DRY-RUN mode — no files written');
+console.log('');
+
+if (!isDryRun && !existsSync(OUT_DIR)) {
+  mkdirSync(OUT_DIR, { recursive: true });
+  console.log(`[prerender] Created directory: praias/`);
+}
+
+let generated = 0;
+for (const beach of top30) {
+  const html = render(beach, today);
+  const outPath = join(OUT_DIR, `${beach.slug}.html`);
+
+  // Sanity: confirm no unresolved placeholders remain
+  const remaining = html.match(/\{\{[^}]+\}\}/g);
+  if (remaining) {
+    console.error(`[prerender] ERROR: unresolved placeholders in ${beach.slug}: ${remaining.join(', ')}`);
+    process.exit(1);
+  }
+
+  if (isDryRun) {
+    console.log(`[dry-run] Would write: praias/${beach.slug}.html (${html.length} bytes) — ${beach.region}`);
+  } else {
+    writeFileSync(outPath, html, 'utf8');
+    console.log(`[write] praias/${beach.slug}.html (${html.length} bytes) — ${beach.region}`);
+  }
+  generated++;
+}
+
+console.log('');
+console.log(`[done] ${isDryRun ? 'Dry-run preview' : 'Generated'} ${generated} static beach pages`);
+
+// ── Print sitemap snippet for copy-paste ─────────────────────────────────
+console.log('\n--- Sitemap snippet (add before </urlset> in sitemap.xml) ---');
+for (const beach of top30) {
+  process.stdout.write(
+    `  <url>\n    <loc>https://www.portalturismoportugal.com/praias/${beach.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`
+  );
+}
+console.log('--- End sitemap snippet ---');
+
+// ── Print slug list for review ───────────────────────────────────────────
+console.log('\n--- Slug list ---');
+top30.forEach((b, i) => {
+  console.log(`  ${String(i + 1).padStart(2, '0')}. ${b.slug.padEnd(40)} [${b.region}]`);
+});
+console.log('--- End slug list ---');

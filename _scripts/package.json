@@ -6,7 +6,9 @@
   "description": "Local-only utility scripts for PTH maintenance",
   "scripts": {
     "populate-images": "node populate-images.js",
-    "populate-images:apply": "node populate-images.js --apply"
+    "populate-images:apply": "node populate-images.js --apply",
+    "prerender-beaches": "node prerender-top-beaches.js --dry-run",
+    "prerender-beaches:apply": "node prerender-top-beaches.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
