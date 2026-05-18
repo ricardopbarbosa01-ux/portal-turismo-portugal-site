@@ -650,6 +650,11 @@
       .b2b-plan-card { padding: 32px 22px; }
       .b2b-plans-section { padding: 64px 16px; }
     }
+
+    /* ── Pro CTA disabled (2026-05-18 — LS KYC rejected, Paddle migration pending) ── */
+    .cta-pro-disabled { padding:1.5rem; background:var(--off-white,#f5f5f0); border-radius:8px; text-align:center; }
+    .cta-pro-disabled-msg { font-size:0.95rem; color:#555; margin:0; }
+    .cta-pro-disabled-msg a { color:var(--blue,#0a3d6b); }
 </style>
 
 </head>
@@ -811,10 +816,13 @@
           Suporte prioritário por email
         </li>
       </ul>
-      <a href="login.html?redirect=https%3A%2F%2Fportalturismoportugal.lemonsqueezy.com%2Fcheckout%2Fbuy%2F2d56d759-3e65-46cb-9210-ea7c0fce2cb3%3Fenabled%3D1475549%26checkout%5Bsuccess_url%5D%3Dhttps%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html#register" id="cta-pro" class="plan-cta gold" onclick="track('pricing_activate_pro_click',{page:'precos',plan:document.getElementById('billing-toggle').getAttribute('aria-checked')==='true'?'annual':'monthly'});if(typeof gtag==='function'){try{gtag('event','pro_checkout_iniciado',{plano:'pro',preco:'4.99',moeda:'EUR'});}catch(e){console.warn('GA event failed:',e);}}">Ativar Pro</a>
-      <p style="text-align:center;margin-top:10px;font-size:0.75rem;color:rgba(255,255,255,0.55);line-height:1.4;">
-        🔒 Checkout seguro via LemonSqueezy · Cancele quando quiser
-      </p>
+      <div class="cta-pro-disabled" id="cta-pro-disabled">
+        <p class="cta-pro-disabled-msg">
+          Estamos a actualizar o nosso sistema de pagamentos.
+          Pro voltar&aacute; em breve &mdash;
+          fica a par em <a href="/contact">/contact</a>.
+        </p>
+      </div>
     </div>
 
   </div><!-- /plans-grid -->
@@ -1253,6 +1261,9 @@ navClose?.addEventListener('click', closeMenu);
 navBackdrop?.addEventListener('click', closeMenu);
 
 
+/* DISABLED 2026-05-18 — LS KYC rejected, Paddle migration pending
+   Restore this block when Paddle endpoint replaces LS_CHECKOUT URLs.
+
 // ── LemonSqueezy checkout URLs ───────────────────────────────────────────────
 // Onde colar: LemonSqueezy Dashboard → Store → Products → [Produto] → Variants
 //             → copiar o "Checkout link" de cada variante
@@ -1260,6 +1271,7 @@ const LS_CHECKOUT = {
   pro_monthly: 'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/2d56d759-3e65-46cb-9210-ea7c0fce2cb3?enabled=1475549&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html',
   pro_annual:  'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/5cc5346d-1dfa-4cdf-9632-45effbf8d943?checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html',
 };
+*/
 
 // ── Billing toggle ──
 const toggle = document.getElementById('billing-toggle');
@@ -1288,15 +1300,19 @@ function updatePricing() {
   labelMonthly.classList.toggle('active', !isAnnual);
   labelAnnual.classList.toggle('active', isAnnual);
   toggle.setAttribute('aria-checked', isAnnual ? 'true' : 'false');
-  // Sync Pro CTA — route through login so user is authenticated before checkout
+  /* DISABLED 2026-05-18 — LS KYC rejected, Paddle migration pending
+     Restore when Paddle URLs replace LS_CHECKOUT.
+     TO RESTORE: uncomment below, swap LS_CHECKOUT.* with Paddle URLs,
+     restore CTA anchor in HTML, set textContent to original button label.
   const ctaPro = document.getElementById('cta-pro');
   if (ctaPro) {
     const lsUrl = isAnnual ? LS_CHECKOUT.pro_annual : LS_CHECKOUT.pro_monthly;
     if (lsUrl && !lsUrl.startsWith('COLE_')) {
       ctaPro.href = 'login.html?redirect=' + encodeURIComponent(lsUrl) + '#register';
-      ctaPro.textContent = 'Ativar Pro';
+      ctaPro.textContent = /* restore original CTA label here */ '';
     }
   }
+  */
 }
 updatePricing(); // initialise on load
 
@@ -1343,7 +1359,9 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   <script src="js/lang-switcher.js" defer></script>
   <script>
-  // Pre-fill checkout email for authenticated users (improves conversion)
+  /* DISABLED 2026-05-18 — LS KYC rejected, Paddle migration pending
+     Pre-fill checkout email for authenticated users (improves conversion).
+     Restore when Paddle checkout URLs are live.
   (async () => {
     if (typeof getCurrentUser !== 'function') return;
     const user = await getCurrentUser();
@@ -1356,6 +1374,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       } catch (_) {}
     });
   })();
+  */
   </script>
   <script src="/js/cookie-consent.js" defer></script>
 </body>
