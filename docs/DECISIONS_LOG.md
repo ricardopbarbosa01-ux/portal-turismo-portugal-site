@@ -5,6 +5,29 @@ Cada entrada: contexto → decisão → trade-offs → critério de reavaliaçã
 
 ---
 
+## AD-20260519-02 — Páginas editoriais Shapers de Portugal
+
+**Data:** 19/05/2026 · **Status:** Activa · **Commit:** 90ebe37
+
+**Contexto:** Em 18/05, análise estratégica identificou shapers portugueses
+(Semente, Polen, Fatum, Mica) como targets prioritários para outreach B2B.
+Conteúdo editorial verificado produzido em sessão Claude.ai 19/05 usando
+cross-check com semente.pt, polensurfboards.com, fatumsurfboards.com,
+micasurfboards.com, A Magazine, ONFIRE Surf Mag, Board Exchange.
+
+**Decisão:** Criar páginas editoriais ANTES do outreach, não depois. Razão:
+prospects que recebem outreach e encontram conteúdo dedicado convertem
+melhor do que prospects que recebem outreach e encontram nada.
+
+**Trade-offs:** Constrói autoridade editorial mas adia o primeiro contacto
+directo. Risco aceitável dado que o conteúdo está verificado e pronto.
+
+**Reavaliar:** 19/06/2026 — medir tráfego orgânico em /shapers-portugal/
+e /en/shapers-of-portugal/. Se < 100 visitas em 30 dias, priorizar outreach
+activo sobre espera por SEO.
+
+---
+
 ## AD-20260519-01 — Migração análise estratégica para Project Knowledge
 
 **Data:** 19/05/2026 · **Status:** Activa · **Commit:** 6396907
