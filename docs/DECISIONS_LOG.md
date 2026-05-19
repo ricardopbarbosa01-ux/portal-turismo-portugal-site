@@ -5,6 +5,37 @@ Cada entrada: contexto → decisão → trade-offs → critério de reavaliaçã
 
 ---
 
+## AD-20260519-05 — Lang switcher slug-específico nas 60 páginas pré-renderizadas
+
+**Data:** 19/05/2026 · **Status:** Activa · **Commit:** (ver fix/lang-switcher-praias)
+
+**Contexto:** Sessão Claude.ai 19/05/2026 auditou as 30 praias pré-renderizadas (PT + EN = 60 páginas)
+e identificou 3 issues residuais. Esta entrada documenta o fix de Issue 3 (lang switcher) e as
+decisões sobre Issues 1 e 2.
+
+**Decisão — Issue 3 (FEITO):** Lang switcher actualizado em 60 ficheiros:
+- PT pages: `href="/en/"` → `href="/en/praias/<slug>/"` (genérico → slug-específico)
+- EN pages: `href="/praias/<slug>"` → `href="/praias/<slug>/"` (adicionado trailing slash)
+
+**Decisão — Issue 1 (ADIADO):** Redirect `beach.html?id=<UUID>` → `/praias/<slug>/` não pode ser
+implementado via `_redirects` porque Cloudflare Pages não suporta query string matching. Alternativas
+(Pages Function `_middleware.js`, ou lógica client-side em `beach.html`) aguardam decisão separada.
+
+**Decisão — Issue 2 (SKIPPED):** `/praias/index.html` não existe; breadcrumb `/beaches.html` mantido
+para evitar 404. Issue 2 só faz sentido após criar `/praias/index.html`.
+
+**Trade-offs:** Issue 3 aplicado isoladamente (não interdepende de Issues 1 e 2). UX melhora
+imediatamente — utilizador que troca de idioma mantém contexto da praia. Issues 1 e 2 permanecem
+pendentes sem impacto no comportamento actual do site.
+
+**Guardrails aplicados:** Backup branch `backup/pre-praias-fix-20260519` criado e pushed.
+30 UUIDs mapeados mas não usados (Issue 1 adiado). Praias só-SPA (77) não tocadas.
+
+**Reavaliar:** Issue 1 — decidir entre Pages Function vs client-side redirect em sessão dedicada.
+Issue 2 — criar `/praias/index.html` (redirect 301 para `/beaches.html` ou listing page real).
+
+---
+
 ## AD-20260519-04 — Founder Partner 2026 substitui Commercial Partnership
 
 **Data:** 19/05/2026 · **Status:** Activa · **Commit:** 0a17e5c
