@@ -3481,3 +3481,12 @@ input[type="number"], input[type="date"], input[type="search"] {
 /* ─── Nav signout link (dual-role: admin+Pro, partner+Pro) ─────────────────── */
 .nav-signout-link { font-size: 0.8rem; color: #888; text-decoration: none; margin-left: 12px; }
 .nav-signout-link:hover { text-decoration: underline; color: #555; }
+
+/* Shapers editorial pages — added 2026-05-19 (quick task 260519-fj8) */
+.shaper-meta { font-size: 0.85rem; color: var(--text-muted, #666); margin-top: 0.5rem; }
+.shaper-meta a { color: inherit; text-decoration: underline; }
+.shapers-quick-list { list-style: none; padding: 0; margin: 0.75rem 0; }
+.shapers-quick-list li { padding: 0.25rem 0; border-bottom: 1px solid var(--border-light, #eee); }
+.shapers-quick-list li:last-child { border-bottom: none; }
+.surf-shapers-cta { font-weight: 600; color: var(--color-primary, #0a3d6b); text-decoration: none; }
+.surf-shapers-cta:hover { text-decoration: underline; }
