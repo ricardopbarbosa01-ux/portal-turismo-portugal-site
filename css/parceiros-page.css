@@ -202,6 +202,14 @@
     .price-highlight .ph-price{font-family:'Bodoni Moda',Georgia,serif;font-size:2rem;font-weight:700;color:var(--blue);line-height:1;}
     .price-highlight .ph-period{font-size:0.78rem;color:var(--text-light);}
     .price-highlight .ph-link{display:inline-block;margin-top:12px;font-size:0.8rem;font-weight:600;color:var(--blue);text-decoration:underline;}
+    .ph-tier{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-top:1px solid rgba(10,61,107,0.08);}
+    .ph-tier:first-of-type{border-top:none;}
+    .ph-name{font-size:0.875rem;color:var(--blue);font-weight:500;}
+    .ph-price-small{font-family:'Bodoni Moda',Georgia,serif;font-size:1.25rem;font-weight:700;color:var(--blue);}
+    .ph-price-small small{font-size:0.65rem;font-weight:400;color:rgba(10,61,107,0.6);}
+    .ph-tier-founder .ph-name::after{content:" · 10 lugares";font-size:0.7rem;color:var(--gold-text,#8c6b14);font-weight:400;font-style:italic;}
+    .ph-tier-founder .ph-price-small{color:var(--gold-text,#8c6b14);}
+    html[lang="en"] .ph-tier-founder .ph-name::after{content:" · 10 spots";}
 
     /* ══ FIELD HINTS + AFTER-STEPS + GOLD SUBMIT ══ */
     .field-hint{font-size:0.7rem;color:var(--text-light);line-height:1.45;margin-top:2px;}

@@ -310,9 +310,9 @@ async function auditPage(context, pageConfig, viewport, viewportLabel) {
       const ratecardRows = await page.$$('.ratecard-row');
       log(pid, ratecardRows.length >= 4 ? 'PASS' : 'HIGH', 'Monetization', `Rate card rows: ${ratecardRows.length}`, ratecardRows.length < 4 ? 'Expected 4 pricing rows' : '');
 
-      // Prices visible (€149, €199, €249, €349)?
-      const prices = ['149', '199', '249', '349'].filter(p => bodyText.includes('€' + p));
-      log(pid, prices.length === 4 ? 'PASS' : 'HIGH', 'Monetization', `Rate card prices visible: ${prices.map(p => '€' + p).join(', ')}`, prices.length < 4 ? 'Some prices missing' : '');
+      // Prices visible (€49, €149)?
+      const prices = ['49', '149'].filter(p => bodyText.includes('€' + p));
+      log(pid, prices.length === 2 ? 'PASS' : 'HIGH', 'Monetization', `Rate card prices visible: ${prices.map(p => '€' + p).join(', ')}`, prices.length < 2 ? 'Some prices missing' : '');
 
       // Rate card CTA present?
       const ratecardCta = await page.$('.ratecard-cta a');

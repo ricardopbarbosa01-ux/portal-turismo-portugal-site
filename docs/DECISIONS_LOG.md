@@ -5,6 +5,62 @@ Cada entrada: contexto → decisão → trade-offs → critério de reavaliaçã
 
 ---
 
+## AD-20260519-04 — Founder Partner 2026 substitui Commercial Partnership
+
+**Data:** 19/05/2026 · **Status:** Activa · **Commit:** 0a17e5c
+
+**Contexto:** O card "Commercial Partnership" em /precos.html (PT+EN) apresentava
+apenas "Proposta personalizada" sem preço concreto. Sessão Claude.ai 19/05/2026,
+com Mesa de 5 agentes, convergiu 5/5 para um tier intermédio com preço público:
+Founder Partner €149/mês, limitado a 10 lugares no 1.º ano.
+
+**Decisão:** Introduzir Founder Partner 2026 (€149/mês) como segundo tier B2B,
+substituindo o card "Commercial Partnership". Inclui: destaque visual no topo de
+/parceiros, página própria /parceiros/&lt;nome&gt;/, até 4 fotos adicionais,
+inclusão prioritária em guias e listicles, badge "Founder Partner 2026" durante
+12 meses, revisão semestral. Escassez explícita: 10 lugares no 1.º ano. Custom
+enterprise mantido como link discreto abaixo dos cards (não como tier visual).
+
+**Trade-offs:** Preço público reduz fricção de descoberta e introduz escassez,
+mas compromete a margem de negociação caso-a-caso que o tier "proposta
+personalizada" preservava. Mitigação: link enterprise mantém porta aberta para
+deals fora-de-grelha. As páginas /parceiros/&lt;slug&gt;/ ainda não existem
+(criação adiada — ver TODO).
+
+**Reavaliar:** 19/08/2026 (90 dias) — medir candidaturas a Founder vs Essential
+e taxa de conversão do link enterprise. Se Founder &lt; 3 candidaturas em 90
+dias, reavaliar preço ou copy. Se enterprise link &gt; 5 cliques sem fecho,
+reformular CTA.
+
+---
+
+## AD-20260519-03 — Alinhamento pricing B2B two-tier em PT+EN
+
+**Data:** 19/05/2026 · **Status:** Activa · **Commit:** 0a17e5c
+
+**Contexto:** Referências obsoletas de pricing dispersas pelo site: en/why-pth.html
+linha 219 ("€149 to €349 depending on the size of the operation") e
+_audit/cro-audit.js linhas 313-314 (array `['149','199','249','349']`) reflectiam
+um modelo de pricing que nunca foi público em /precos.html. Sidebar
+.price-highlight em /parceiros.html (PT+EN) mostrava apenas Essential €49.
+
+**Decisão:** Alinhar TODAS as superfícies públicas e de auditoria ao novo modelo
+two-tier (Essential €49 + Founder €149). Sidebar /parceiros expande para mostrar
+ambos os tiers com classe .ph-tier-founder + scarcity "10 lugares" / "10 spots".
+cro-audit.js passa a validar apenas os 2 preços live com threshold PASS===2.
+en/why-pth.html linha 219 reescrita com wording two-tier explícito.
+
+**Trade-offs:** Múltiplos pontos de manutenção (8 ficheiros) num único commit
+introduz risco de regressão se algum falhar. Mitigação: pre-commit ritual
+(`git diff --stat` vs scope contract) + pre-deploy ritual (screenshots
+before/after em 375px e 1280px nas 4 páginas HTML afetadas).
+
+**Reavaliar:** Imediatamente se Bug-IMG-AUTOFIX ou outro audit reportar
+desalinhamento de preços. Caso contrário, sem revisão programada — pricing é
+fonte única em /precos.html após este commit.
+
+---
+
 ## AD-20260519-02 — Páginas editoriais Shapers de Portugal
 
 **Data:** 19/05/2026 · **Status:** Activa · **Commit:** 90ebe37

@@ -650,6 +650,47 @@
       .b2b-plan-card { padding: 32px 22px; }
       .b2b-plans-section { padding: 64px 16px; }
     }
+
+    /* ── Founder Partner additions ── */
+    .b2b-founder { position: relative; }
+    .b2b-founder-badge {
+      position: absolute;
+      top: -12px;
+      right: 18px;
+      background: var(--gold, #c9a84c);
+      color: var(--blue, #0a3d6b);
+      padding: 4px 12px;
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .b2b-scarcity {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: rgba(201,168,76,0.85);
+      font-style: italic;
+      text-align: center;
+    }
+    .b2b-enterprise-link {
+      margin: 40px auto 0;
+      max-width: 720px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .b2b-enterprise-link a {
+      color: rgba(201,168,76,0.85);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(201,168,76,0.4);
+    }
+    .b2b-enterprise-link a:hover {
+      color: var(--gold, #c9a84c);
+      border-bottom-color: var(--gold, #c9a84c);
+    }
 </style>
 
 </head>
@@ -875,44 +916,36 @@
         <p class="b2b-cta-sub">No lock-in · reply within 5 business days</p>
       </div>
 
-      <!-- Commercial Partnership -->
-      <div class="b2b-plan-card b2b-highlight">
-        <p class="b2b-plan-name">Commercial Partnership</p>
-        <p class="b2b-plan-title">Premium visibility<br>and lead generation.</p>
-        <p class="b2b-price-custom">Custom<br>proposal</p>
-        <p class="b2b-price-note">Volume, exclusivity and tailored formats</p>
-        <p class="b2b-plan-desc">For hotels, operators and brands that want editorial presence, seasonal campaigns and qualified leads — with dedicated account management.</p>
-        <ul class="b2b-features" aria-label="Included features">
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Everything in Essential Partner
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Full conditions API (wind, waves, tides, temperature)
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Editorial spotlight on chosen beach pages
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Seasonal campaigns &amp; newsletter feature
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Advanced analytics + lead generation
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Dedicated account manager
-          </li>
+      <!-- Founder Partner 2026 -->
+      <div class="b2b-plan-card b2b-highlight b2b-founder">
+        <span class="b2b-founder-badge">Founder Partner 2026</span>
+        <p class="b2b-plan-name">Founder Partner</p>
+        <p class="b2b-plan-title">Featured presence<br>with editorial priority.</p>
+        <div class="b2b-price-row">
+          <span class="b2b-price-currency">€</span>
+          <span class="b2b-price">149</span>
+          <span class="b2b-price-unit">&nbsp;/ month</span>
+        </div>
+        <p class="b2b-price-note">Monthly billing · cancel anytime (access kept until end of paid month)</p>
+        <p class="b2b-plan-desc">Everything in Essential, plus featured placement, dedicated page and editorial priority. Limited to 10 spots in the first year.</p>
+        <ul class="b2b-features" aria-label="Features included">
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Everything in Essential</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Featured at the top of /partners</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Dedicated page /partners/&lt;name&gt;/ with extended description</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Up to 4 additional photos</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Priority inclusion in relevant guides and listicles</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>"Founder Partner 2026" badge visible for 12 months</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Semi-annual content review</li>
         </ul>
-        <a href="/en/media-kit.html" class="b2b-cta-btn b2b-gold" onclick="track('pricing_b2b_comercial_click',{page:'precos'})">View Media Kit &amp; Formats</a>
-        <p class="b2b-cta-sub">Also available: <a href="/en/parceiros.html#candidatura" style="color:rgba(255,255,255,0.55);text-decoration:underline">quick application →</a></p>
+        <a href="/en/parceiros.html#candidatura" class="b2b-cta-btn b2b-gold" onclick="track('pricing_b2b_founder_click',{page:'precos_en'})">Apply for Founder</a>
+        <p class="b2b-scarcity">Only 10 spots in year 1 · limited availability</p>
       </div>
 
     </div>
+      <p class="b2b-enterprise-link">
+        For large operations or special cases &middot;
+        <a href="/en/parceiros.html#candidatura?type=enterprise">contact for a custom proposal &rarr;</a>
+      </p>
   </div>
 </section>
 
@@ -1175,7 +1208,17 @@
         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="faq-answer" id="faq-7" role="region">
-        <p>The <strong>Essential Partner</strong> (€49/month) includes a verified profile, spotlight on up to 3 beaches and a conditions widget for your site — ideal for businesses wanting base presence at a predictable cost. The <a href="/en/media-kit.html" style="color:var(--blue);font-weight:500;">Commercial Partnership</a> goes further: full API, editorial spotlight on chosen beach pages, seasonal campaigns, lead generation and a dedicated account manager. Pricing is a custom proposal based on volume and formats chosen.</p>
+        <p>The <strong>Essential Partner</strong> (€49/month) includes a verified profile, spotlight on up to 3 beaches and a conditions widget for your site — ideal for businesses wanting base presence at a predictable cost. The <strong>Founder Partner</strong> (€149/month) goes further: featured placement at the top of /partners, a dedicated page with extended description and up to 4 photos, priority inclusion in guides and listicles, "Founder Partner 2026" badge for 12 months, and semi-annual content reviews. Limited to 10 spots in year one.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+        What sets Founder Partner apart from Essential?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer" id="faq-8" role="region">
+        <p>Founder Partner (€149/month) includes everything in Essential (€49/month) and adds featured placement at the top of /partners, a dedicated page with extended description and up to 4 photos, priority inclusion in guides and listicles, "Founder Partner 2026" badge for 12 months, and semi-annual content reviews. Limited to 10 spots in year one to preserve editorial quality.</p>
       </div>
     </div>
 

@@ -650,6 +650,47 @@
       .b2b-plan-card { padding: 32px 22px; }
       .b2b-plans-section { padding: 64px 16px; }
     }
+
+    /* ── Founder Partner additions ── */
+    .b2b-founder { position: relative; }
+    .b2b-founder-badge {
+      position: absolute;
+      top: -12px;
+      right: 18px;
+      background: var(--gold, #c9a84c);
+      color: var(--blue, #0a3d6b);
+      padding: 4px 12px;
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .b2b-scarcity {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: rgba(201,168,76,0.85);
+      font-style: italic;
+      text-align: center;
+    }
+    .b2b-enterprise-link {
+      margin: 40px auto 0;
+      max-width: 720px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .b2b-enterprise-link a {
+      color: rgba(201,168,76,0.85);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(201,168,76,0.4);
+    }
+    .b2b-enterprise-link a:hover {
+      color: var(--gold, #c9a84c);
+      border-bottom-color: var(--gold, #c9a84c);
+    }
 </style>
 
 </head>
@@ -874,40 +915,36 @@
         <p class="b2b-cta-sub">Sem compromisso · resposta em 5 dias úteis</p>
       </div>
 
-      <!-- Commercial Partnership -->
-      <div class="b2b-plan-card b2b-highlight">
-        <p class="b2b-plan-name">Commercial Partnership</p>
-        <p class="b2b-plan-title">Visibilidade premium<br>e geração de leads.</p>
-        <p class="b2b-price-custom">Proposta<br>personalizada</p>
-        <p class="b2b-price-note">Volume, exclusividade e formatos à medida</p>
-        <p class="b2b-plan-desc">Para operadores e marcas que querem presença editorial e leads à escala.</p>
+      <!-- Founder Partner 2026 -->
+      <div class="b2b-plan-card b2b-highlight b2b-founder">
+        <span class="b2b-founder-badge">Founder Partner 2026</span>
+        <p class="b2b-plan-name">Founder Partner</p>
+        <p class="b2b-plan-title">Presença destacada<br>com prioridade editorial.</p>
+        <div class="b2b-price-row">
+          <span class="b2b-price-currency">€</span>
+          <span class="b2b-price">149</span>
+          <span class="b2b-price-unit">&nbsp;/ mês</span>
+        </div>
+        <p class="b2b-price-note">Faturação mensal · cancelar a qualquer momento (mantém acesso até fim do mês pago)</p>
+        <p class="b2b-plan-desc">Tudo do Essential, com lugar destacado no portal, página própria e prioridade editorial. Limitado a 10 lugares no 1.º ano.</p>
         <ul class="b2b-features" aria-label="Funcionalidades incluídas">
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Tudo do Essential Partner
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Destaque editorial nas páginas de praia escolhidas
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Campanhas sazonais e destaque em newsletter
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Volume de leads e exclusividade por zona negociados
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Gestor de conta dedicado
-          </li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Tudo o que está no Essential</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Destaque visual no topo de /parceiros</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Página própria /parceiros/&lt;nome&gt;/ com descrição longa</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Até 4 fotos adicionais</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Inclusão prioritária em guias e listicles relevantes</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Badge "Founder Partner 2026" visível durante 12 meses</li>
+          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Revisão semestral de conteúdo</li>
         </ul>
-        <a href="media-kit.html" class="b2b-cta-btn b2b-gold" onclick="track('pricing_b2b_comercial_click',{page:'precos'})">Ver Media Kit e Formatos</a>
-        <p class="b2b-cta-sub">Também disponível: <a href="parceiros.html#candidatura" style="color:rgba(255,255,255,0.55);text-decoration:underline">candidatura rápida →</a></p>
+        <a href="parceiros.html#candidatura" class="b2b-cta-btn b2b-gold" onclick="track('pricing_b2b_founder_click',{page:'precos'})">Candidatar-me a Founder</a>
+        <p class="b2b-scarcity">Apenas 10 lugares no 1.º ano · vagas limitadas</p>
       </div>
 
     </div>
+      <p class="b2b-enterprise-link">
+        Para grandes operações ou cases especiais &middot;
+        <a href="parceiros.html#candidatura?type=enterprise">contactar com proposta personalizada &rarr;</a>
+      </p>
   </div>
 </section>
 
@@ -1150,7 +1187,17 @@
         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="faq-answer" id="faq-7" role="region">
-        <p>O <strong>Essential Partner</strong> (€49/mês) inclui perfil verificado, dashboard com leads da sua zona, leads encaminhados automaticamente e perfil visível nas páginas de praia — a custo fixo, sem comissões. A <a href="media-kit.html" style="color:var(--blue);font-weight:500;">Commercial Partnership</a> vai mais longe: destaque editorial nas páginas de praia escolhidas, campanhas sazonais em newsletter, volume de leads e exclusividade por zona negociados, e gestor de conta dedicado. O preço é uma proposta personalizada com base no volume e formatos escolhidos.</p>
+        <p>O <strong>Essential Partner</strong> (€49/mês) inclui perfil verificado, dashboard com leads da sua zona, leads encaminhados automaticamente e perfil visível nas páginas de praia — a custo fixo, sem comissões. O <strong>Founder Partner</strong> (€149/mês) vai mais longe: destaque visual no topo de /parceiros, página própria com descrição longa e até 4 fotos, inclusão prioritária em guias e listicles, badge "Founder Partner 2026" durante 12 meses, e revisão semestral. Limitado a 10 lugares no 1.º ano. Para casos fora de grelha, existe ainda um link de contacto para proposta personalizada abaixo dos cards.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+        O que distingue o Founder Partner do Essential?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer" id="faq-8" role="region">
+        <p>O Founder Partner (€149/mês) inclui tudo o que está no Essential (€49/mês) e adiciona destaque visual no topo de /parceiros, página própria com descrição longa e até 4 fotos, inclusão prioritária em guias e listicles, badge "Founder Partner 2026" durante 12 meses, e revisão semestral. Limitado a 10 lugares no 1.º ano para garantir qualidade editorial.</p>
       </div>
     </div>
 
