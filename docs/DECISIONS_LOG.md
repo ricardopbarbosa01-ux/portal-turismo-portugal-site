@@ -5,6 +5,44 @@ Cada entrada: contexto → decisão → trade-offs → critério de reavaliaçã
 
 ---
 
+## AD-20260519-07 — Pre-render 2.º lote 15 praias bilingues (Lote 2)
+
+**Data:** 2026-05-19 · **Status:** Activa · **Commit:** (TBD)
+
+**Contexto:** Lote 1 (AD-20260519-06) entregou 15 praias fora do Algarve. Sessão Claude.ai 19/05 tarde aprovou 2.º lote de 15 praias com foco em regiões não cobertas: Madeira, Açores, Aveiro, Porto/Norte, Centro/Leiria, Lisboa/Cascais, Arrábida/Setúbal, Alentejo (lagoa), Algarve (Quinta do Lago). Critério: singularidade verificável com ≥2 sources não-agregadores.
+
+**Decisão:** 15 praias × 2 línguas = 30 ficheiros HTML estáticos. Schema.org (Beach + LocalBusiness + BreadcrumbList), hreflang trinity, HTML entities PT, ASCII puro EN. Sem CTA live-data. Generator script: `_diag/gen-beaches-lote2.js`.
+
+**Lista das 15 praias (Lote 2):**
+
+| Slug | Nome | Região | Singularidade verificada |
+|---|---|---|---|
+| praia-de-carcavelos | Praia de Carcavelos | Oeiras/Lisboa | NATO STRIKFORNATO HQ; acesso comboio 30min Lisboa |
+| praia-de-costa-nova | Praia de Costa Nova | Ílhavo/Aveiro | Palheiros às riscas século XIX; Ria de Aveiro laguna |
+| praia-do-porto-santo | Praia do Porto Santo | Porto Santo/Madeira | 9km contínuos; areia terapêutica liquefeita; Colombo residente |
+| praia-de-mosteiros | Praia de Mosteiros | São Miguel/Açores | Piscinas vulcânicas naturais; UNESCO; pôr-do-sol panorâmico |
+| praia-dos-galapinhos | Praia dos Galapinhos | Arrábida/Setúbal | CNN + Condé Nast #1 praias não-turísticas; ICNF cap diário; só trilho pedestre |
+| praia-da-calheta | Praia da Calheta | Calheta/Madeira | Praia artificial areia Sahara + Canárias; Casa das Mudas museu design |
+| praia-da-barra | Praia da Barra | Ílhavo/Aveiro | Farol 62m — o mais alto da Península Ibérica |
+| praia-de-espinho | Praia de Espinho | Espinho/Norte | Casino 1904; Campeonatos Nacionais Surf; cidade implantada na areia |
+| lagoa-de-albufeira | Lagoa de Albufeira | Sesimbra/Setúbal | Maior lagoa costeira Área Metropolitana Lisboa; flamingos; ZPE Aves |
+| praia-de-mira | Praia de Mira | Mira/Coimbra | Palheiros em palafitas; ferry motorizado sobre lagoa; praias-lagoa dupla |
+| praia-de-sao-pedro-de-moel | Praia de S. Pedro de Moel | Marinha Grande/Leiria | Pinhal de Leiria plantado ~1200 d.C. (Rei Dinis); duna-floresta única |
+| praia-de-esposende | Praia de Esposende | Esposende/Braga | Estuário Cávado; Natura 2000; Cividade de Terroso castrum pré-romano |
+| praia-de-moledo | Praia de Moledo | Caminha/Viana do Castelo | Praia mais a norte Portugal continental; Castelo de Moledo séc. XIV; Minho/Atlântico |
+| praia-da-quinta-do-lago | Praia da Quinta do Lago | Loulé/Algarve | Ria Formosa NP; flamingos; boardwalk madeira 1,4 km; acesso privado vedado |
+| praia-de-vieira-de-leiria | Praia de Vieira de Leiria | Marinha Grande/Leiria | Pesca à xávega praticada ativamente; traineiras na praia; tradição viva |
+
+**Sources principais:** Wikipedia PT/EN, cm-oeiras.pt, visitaveiro.pt, visit-madeira.com, visitazores.com, ICNF/Parque Natural Arrábida, CNN Travel, Condé Nast Traveller, cm-espinho.pt, cm-mira.pt, marinhagrandedistrital.pt, cm-esposende.pt, cm-caminha.pt, ria-formosa.net, cm-marinha-grande.pt.
+
+**Trade-offs:** +30 páginas estáticas indexáveis em regiões de alto volume (Madeira, Açores) sem risco thin content. Areia Porto Santo e piscinas Mosteiros competem com Visit Madeira e Azores Tourism — mitigação: ângulo editorial único (história, dados mensuráveis, fontes institucionais).
+
+**Risco:** Madeira e Açores têm forte presença turística oficial. Mitigação: facts verificáveis (9km, 62m, 1200 d.C.) diferem de copy genérico.
+
+**Reavaliar:** 19/06/2026 — medir indexação GSC + cliques nas 30 URLs Lote 2. Se < 50% indexada em 30 dias, verificar hreflang e sitemap submission.
+
+---
+
 ## AD-20260519-06 — Pre-render 15 praias bilingues (expansão SEO)
 
 **Data:** 2026-05-19 · **Status:** Activa · **Commit:** (TBD)
