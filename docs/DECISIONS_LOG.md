@@ -5,6 +5,48 @@ Cada entrada: contexto → decisão → trade-offs → critério de reavaliaçã
 
 ---
 
+## AD-20260519-06 — Pre-render 15 praias bilingues (expansão SEO)
+
+**Data:** 2026-05-19 · **Status:** Activa · **Commit:** (TBD)
+
+**Contexto:** Auditoria Claude.ai 19/05 revelou 30 praias pré-renderizadas (todas Algarve) + ~77 só-SPA não indexáveis. Decisão de Ricardo: pré-renderizar 15 praias adicionais bilingues, mix de regiões fora do Algarve, com critério qualidade editorial > quantidade.
+
+**Decisão:** 15 praias × 2 línguas = 30 ficheiros HTML estáticos novos. Cada um com sources verificáveis, schema.org (Beach + LocalBusiness + BreadcrumbList), hreflang trinity (pt, en, x-default), conteúdo editorial diferenciado (não Visit Portugal copy). Sem CTA live-data (nenhuma das 15 tem UUID Supabase).
+
+**Trade-offs:**
+- Vs IA-generated thin content: maior tempo execução mas evita risco penalização Google (Helpful Content Update 2022 + Spam Updates 2024-25)
+- Vs adiar: ganha-se cobertura SEO de regiões além-Algarve com alto search volume (Nazaré, Guincho, Supertubos, Caparica)
+
+**Lista das 15 praias seleccionadas:**
+
+| Slug | Nome | Região | Singularidade verificada |
+|---|---|---|---|
+| praia-do-guincho | Praia do Guincho | Lisboa/Cascais | James Bond OHMSS (1969); windsurf/kitesurf europeu |
+| praia-grande-sintra | Praia Grande | Sintra | 66 pegadas dinossauros >100M anos; maior piscina sal Europa |
+| costa-de-caparica | Costa da Caparica | Almada | >25 km contínuos; 29 zonas; protocolo APA sedimentos |
+| praia-de-sesimbra | Praia de Sesimbra | Arrábida/Setúbal | AMP Arrábida; aldeia piscatória activa; Castelo século XII |
+| praia-do-meco | Praia do Meco | Sesimbra | 1.ª praia naturismo oficial Portugal (1995); Arriba Fóssil |
+| praia-de-odeceixe | Praia de Odeceixe | Costa Vicentina | Fronteira Algarve/Alentejo; Bandeira Azul desde 2012 |
+| praia-da-arrifana | Praia da Arrifana | Costa Vicentina | Fortaleza 1635 + Ribat islâmico séc. XI; surf point break |
+| praia-do-amado | Praia do Amado | Costa Vicentina | PNSACV sem construção; surf consistente todo o ano |
+| praia-de-porto-covo | Praia de Porto Covo | Alentejo Litoral | Porta norte PNSACV; aldeia séc. XVIII classificada |
+| praia-da-comporta | Praia da Comporta | Alentejo Litoral | Reserva Natural Estuário do Sado; flamingos; 45 km sem cimento |
+| praia-do-norte-nazare | Praia do Norte (Nazaré) | Centro | Guinness 26,21 m (Steudtner 2020); Canhão Nazaré 230 km |
+| supertubos-peniche | Supertubos (Peniche) | Centro | WSL CT stop único Europa continental; "Pipeline Português" |
+| praia-de-matosinhos | Praia de Matosinhos | Norte/Porto | Acesso Metro Porto; seafood; surf urbano consistente |
+| praia-da-figueira-da-foz | Praia da Figueira da Foz | Centro | "Rainha das Praias"; foz Rio Mondego; casino histórico |
+| praia-da-amoreira-aljezur | Praia da Amoreira | Costa Vicentina | Lagoa estuário + atlântico; Rota Vicentina; Bandeira Azul |
+
+**Sources principais por praia:** Wikipedia PT/EN, sites oficiais câmaras municipais (cm-aljezur.pt, cm-grandola.pt, cm-cascais.pt, cm-peniche.pt, cm-sesimbra.pt, sines.pt), ICNF/PNSACV, Guinness World Records, WSL, walkalgarve.com, thesurfatlas.com, nazarewaves.com.
+
+**Risco identificado:** páginas competem com Visit Portugal, TripAdvisor, Booking. Mitigação: ângulo editorial único, transparência de sources, sem copy desses sites.
+
+**Desvios da spec:** Nenhum. BOM=False nos novos ficheiros (BOM=True nos existentes é artefacto de editor, não requisito). Validator flag `</meta>` é pre-existente e afecta igualmente todas as páginas existentes.
+
+**Reavaliar:** 19/06/2026 — medir cliques GSC nas 30 novas URLs e indexação. Se < 50% indexada, refinar abordagem.
+
+---
+
 ## AD-20260519-05 — Lang switcher slug-específico nas 60 páginas pré-renderizadas
 
 **Data:** 19/05/2026 · **Status:** Activa · **Commit:** (ver fix/lang-switcher-praias)
