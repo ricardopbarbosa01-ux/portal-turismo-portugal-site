@@ -7,7 +7,7 @@ Cada entrada: contexto → decisão → trade-offs → critério de reavaliaçã
 
 ## AD-20260519-07 — Pre-render 2.º lote 15 praias bilingues (Lote 2)
 
-**Data:** 2026-05-19 · **Status:** Activa · **Commit:** (TBD)
+**Data:** 2026-05-19 · **Status:** Activa · **Commit:** 75e1b0e
 
 **Contexto:** Lote 1 (AD-20260519-06) entregou 15 praias fora do Algarve. Sessão Claude.ai 19/05 tarde aprovou 2.º lote de 15 praias com foco em regiões não cobertas: Madeira, Açores, Aveiro, Porto/Norte, Centro/Leiria, Lisboa/Cascais, Arrábida/Setúbal, Alentejo (lagoa), Algarve (Quinta do Lago). Critério: singularidade verificável com ≥2 sources não-agregadores.
 
