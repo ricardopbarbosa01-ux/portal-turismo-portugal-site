@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Disallow: /admin.html
 Disallow: /dashboard.html
 Disallow: /login.html
@@ -9,4 +9,4 @@ Disallow: /proposal-template.html
 Disallow: /case-study-template.html
 Disallow: /partner-demo.html
 
-Sitemap: https://portalturismoportugal.com/sitemap.xml
+Sitemap: https://www.portalturismoportugal.com/sitemap.xml
