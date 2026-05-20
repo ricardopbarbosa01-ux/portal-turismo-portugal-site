@@ -65,3 +65,6 @@ _scripts/audit/package-lock.json
 !media-kit-en.pdf
 _scripts/auto-tag-report.html
 _scripts/auto-tag-corrections.json
+
+# Local diagnostic backups — never commit (large HTML snapshots)
+_diag/backups/
