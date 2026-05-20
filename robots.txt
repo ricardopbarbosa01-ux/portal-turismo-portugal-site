@@ -10,3 +10,46 @@ Disallow: /case-study-template.html
 Disallow: /partner-demo.html
 
 Sitemap: https://www.portalturismoportugal.com/sitemap.xml
+
+# ============================================================
+# AI crawlers - explicit allow (decision: 2026-05-20)
+# Policy: permit both training and search citation use.
+# Rationale: PTH editorial content benefits from maximum
+# distribution at current traffic stage. Reassess at 10k+
+# GSC clicks/month per retrospectiva mensal cycle.
+# ============================================================
+
+# AI training crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# AI search citation crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
