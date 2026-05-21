@@ -1,0 +1,92 @@
+{
+  "$schema_version": 1,
+  "meta": {
+    "last_updated": "2026-05-21",
+    "generated_by": "manual + Claude Code build"
+  },
+  "injection_targets": [
+    {
+      "file": "praias-surf-iniciantes-algarve.html",
+      "context": "surf-iniciantes-algarve-pt",
+      "filter": { "region_slug": "algarve", "especialidade_includes": "iniciantes" },
+      "marker_start": "<!-- partners:start data-context=\"surf-iniciantes-algarve-pt\" -->",
+      "marker_end": "<!-- partners:end -->",
+      "insert_before_if_missing": "<section class=\"profiles-section\"",
+      "lang": "pt",
+      "max_cards": 3,
+      "section_title_pt": "Escolas verificadas para iniciantes no Algarve",
+      "section_title_en": null
+    },
+    {
+      "file": "en/beginner-surf-beaches-algarve.html",
+      "context": "surf-iniciantes-algarve-en",
+      "filter": { "region_slug": "algarve", "especialidade_includes": "iniciantes" },
+      "marker_start": "<!-- partners:start data-context=\"surf-iniciantes-algarve-en\" -->",
+      "marker_end": "<!-- partners:end -->",
+      "insert_before_if_missing": "<section class=\"profiles-section\"",
+      "lang": "en",
+      "max_cards": 3,
+      "section_title_pt": null,
+      "section_title_en": "Verified surf schools for beginners in the Algarve"
+    },
+    {
+      "file": "guias/melhores-praias-algarve.html",
+      "context": "guia-algarve-pt",
+      "filter": { "region_slug": "algarve" },
+      "marker_start": "<!-- partners:start data-context=\"guia-algarve-pt\" -->",
+      "marker_end": "<!-- partners:end -->",
+      "insert_before_if_missing": "<div class=\"mag-cta\"",
+      "lang": "pt",
+      "max_cards": 4,
+      "section_title_pt": "Parceiros editoriais verificados &mdash; Costa Vicentina",
+      "section_title_en": null
+    }
+  ],
+  "praia_names": {
+    "praia-da-arrifana": "Praia da Arrifana",
+    "praia-da-amoreira-aljezur": "Praia da Amoreira (Aljezur)",
+    "praia-do-castelejo": "Praia do Castelejo",
+    "praia-da-cordoama": "Praia da Cordoama",
+    "praia-de-beliche": "Praia de Beliche",
+    "praia-do-amado": "Praia do Amado",
+    "praia-da-bordeira": "Praia da Bordeira",
+    "praia-de-odeceixe": "Praia de Odeceixe"
+  },
+  "partners": [
+    {
+      "id": "good-feeling-surf-school",
+      "name": "Good Feeling Surf School",
+      "tagline_pt": "Escola criada por dois ex-competidores. A divers&atilde;o levada t&atilde;o a s&eacute;rio como o ensino do surf.",
+      "tagline_en": "School founded by two former competitors. Fun taken as seriously as the teaching of surfing.",
+      "region": "Algarve",
+      "region_slug": "algarve",
+      "town": "Raposeira, Vila do Bispo",
+      "praias_associadas": [
+        "praia-da-arrifana",
+        "praia-da-amoreira-aljezur",
+        "praia-do-castelejo",
+        "praia-da-cordoama",
+        "praia-de-beliche",
+        "praia-do-amado"
+      ],
+      "especialidade": ["iniciantes", "intermedios", "camps", "kids"],
+      "all_levels": true,
+      "all_year": true,
+      "languages": ["PT", "EN", "DE"],
+      "preferred_contact_language": "EN",
+      "verified_since": "2026-05",
+      "tier": "verified",
+      "contact_person": "Miguel Ferreira",
+      "website": "https://www.goodfeelingsurfschool.com",
+      "email_public": null,
+      "phone": null,
+      "instagram": null,
+      "google_rating": null,
+      "google_reviews": null,
+      "schema_type": "SportsActivityLocation",
+      "photo_url": null,
+      "photo_credit": null,
+      "notes_internal": "Email recebido 20/05. Contacto: Miguel Ferreira. Preferem EN. Base em Raposeira. Transporte Lagos-Sagres incluido. Aulas 3h (2x1h30). Costa Vicentina Natural Park."
+    }
+  ]
+}

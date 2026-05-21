@@ -3,6 +3,7 @@ node_modules/
 supabase/.temp/
 .zip.zip
 _data/
+!_data/partners.json
 test-results/
 smoke-results.json
 smoke-test.png

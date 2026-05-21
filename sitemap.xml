@@ -931,4 +931,18 @@
   <url><loc>https://www.portalturismoportugal.com/en/praias/praia-da-quinta-do-lago/</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.portalturismoportugal.com/praias/praia-de-vieira-de-leiria/</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.portalturismoportugal.com/en/praias/praia-de-vieira-de-leiria/</loc><lastmod>2026-05-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url>
+    <loc>https://www.portalturismoportugal.com/escolas-de-surf</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.portalturismoportugal.com/en/surf-schools</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
