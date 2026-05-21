@@ -134,17 +134,102 @@ function generateSVGPlaceholder(partner) {
     </div>`;
 }
 
+// ── Credentials Badges ────────────────────────────────────────────────────
+function generateCredentialsBadges(partner, lang) {
+  const isEN = lang === 'en';
+  const badges = [];
+  if (partner.founded && partner.years_in_operation) {
+    const label = isEN
+      ? `Est. ${partner.founded} &middot; ${partner.years_in_operation} yrs`
+      : `Desde ${partner.founded} &middot; ${partner.years_in_operation} anos`;
+    badges.push(`<span class="partner-card__badge">${label}</span>`);
+  }
+  if (partner.tripadvisor_ranking_text) {
+    const rankText = isEN && partner.tripadvisor_ranking_text_en
+      ? partner.tripadvisor_ranking_text_en
+      : partner.tripadvisor_ranking_text;
+    badges.push(`<span class="partner-card__badge partner-card__badge--gold">${rankText}</span>`);
+  }
+  if (partner.fps_certified) {
+    badges.push(`<span class="partner-card__badge">${isEN ? 'FPS Certified' : 'Certificada FPS'}</span>`);
+  }
+  if (!badges.length) return '';
+  return `    <div class="partner-card__credentials">
+      ${badges.join('\n      ')}
+    </div>`;
+}
+
+// ── Rating Block ──────────────────────────────────────────────────────────
+function generateRatingBlock(partner, lang) {
+  const isEN = lang === 'en';
+  const blocks = [];
+  if (partner.tripadvisor_rating && partner.tripadvisor_url) {
+    const reviewsLabel = isEN
+      ? `(${partner.tripadvisor_reviews} reviews)`
+      : `(${partner.tripadvisor_reviews} avalia&ccedil;&otilde;es)`;
+    const on = isEN ? 'on Tripadvisor' : 'no Tripadvisor';
+    blocks.push(`<div class="partner-card__rating">
+      <a href="${partner.tripadvisor_url}" target="_blank" rel="noopener noreferrer">
+        <strong>${partner.tripadvisor_rating}</strong> &#9733; ${on} <span>${reviewsLabel}</span>
+      </a>
+    </div>`);
+  }
+  if (partner.google_rating != null && partner.google_rating >= 4.0 && partner.google_maps_url) {
+    const reviewsLabel = isEN
+      ? `(${partner.google_reviews} reviews)`
+      : `(${partner.google_reviews} avalia&ccedil;&otilde;es)`;
+    const on = isEN ? 'on Google' : 'no Google';
+    blocks.push(`<div class="partner-card__rating">
+      <a href="${partner.google_maps_url}" target="_blank" rel="noopener noreferrer">
+        <strong>${partner.google_rating}</strong> &#9733; ${on} <span>${reviewsLabel}</span>
+      </a>
+    </div>`);
+  }
+  return blocks.join('\n    ');
+}
+
+// ── Social Block ──────────────────────────────────────────────────────────
+const SVG_PHONE = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 9.8 19.79 19.79 0 0 1 .07 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+const SVG_IG    = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>`;
+const SVG_FB    = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>`;
+
+function generateSocialBlock(partner) {
+  const links = [];
+  if (partner.phone) {
+    const tel = partner.phone.replace(/\s/g, '');
+    links.push(`<a href="tel:${tel}" class="partner-card__social-link">${SVG_PHONE} ${partner.phone}</a>`);
+  }
+  if (partner.instagram_url && partner.instagram) {
+    links.push(`<a href="${partner.instagram_url}" target="_blank" rel="noopener noreferrer" class="partner-card__social-link">${SVG_IG} ${partner.instagram}</a>`);
+  }
+  if (partner.facebook_url) {
+    links.push(`<a href="${partner.facebook_url}" target="_blank" rel="noopener noreferrer" class="partner-card__social-link">${SVG_FB} Facebook</a>`);
+  }
+  if (!links.length) return '';
+  return `    <div class="partner-card__social">
+      ${links.join('\n      ')}
+    </div>`;
+}
+
 // ── Card Large ─────────────────────────────────────────────────────────────
 function generateCardLarge(partner, lang, availablePraias, praiaNames) {
   const isEN = lang === 'en';
   const tagline = isEN ? partner.tagline_en : partner.tagline_pt;
   const regionUpper = partner.region.toUpperCase();
 
-  const photoHTML = partner.photo_url
-    ? `<div class="partner-card__photo">
+  let mediaClass = 'partner-card__media';
+  let mediaInner;
+  if (partner.photo_url && partner.photo_treatment === 'logo-on-navy') {
+    mediaClass += ' partner-card__media--logo';
+    const titleAttr = partner.photo_credit ? ` title="${partner.photo_credit}"` : '';
+    mediaInner = `<img src="${partner.photo_url}" alt="Logo ${partner.name}" class="partner-card__logo" loading="lazy" width="518" height="518"${titleAttr}>`;
+  } else if (partner.photo_url) {
+    mediaInner = `<div class="partner-card__photo">
       <img class="partner-card__photo-img" src="${partner.photo_url}" alt="${partner.name}" loading="lazy"${partner.photo_credit ? ` title="Foto: ${partner.photo_credit}"` : ''}>
-    </div>`
-    : generateSVGPlaceholder(partner);
+    </div>`;
+  } else {
+    mediaInner = generateSVGPlaceholder(partner);
+  }
 
   const verifiedLabel = isEN ? 'VERIFIED' : 'VERIFICADO';
   const verifiedSince = isEN
@@ -159,9 +244,13 @@ function generateCardLarge(partner, lang, availablePraias, praiaNames) {
       : `<li>${name}</li>`;
   }).join('\n          ');
 
+  const credentialsBlock = generateCredentialsBadges(partner, lang);
+  const ratingBlock      = generateRatingBlock(partner, lang);
+  const socialBlock      = generateSocialBlock(partner);
+
   return `<article class="partner-card partner-card--large" id="${partner.id}" itemscope itemtype="https://schema.org/SportsActivityLocation">
-  <div class="partner-card__media">
-    ${photoHTML}
+  <div class="${mediaClass}">
+    ${mediaInner}
   </div>
   <div class="partner-card__body">
     <p class="partner-card__eyebrow">${verifiedLabel} &middot; ${regionUpper}</p>
@@ -174,6 +263,9 @@ function generateCardLarge(partner, lang, availablePraias, praiaNames) {
     <ul class="partner-card__praias">
       ${praiaLinks}
     </ul>
+    ${credentialsBlock}
+    ${ratingBlock}
+    ${socialBlock}
     <div class="partner-card__actions">
       <a href="${partner.website}" class="partner-card__cta" target="_blank" rel="noopener noreferrer" itemprop="url">${websiteLabel}</a>
     </div>
@@ -194,10 +286,16 @@ function generateCardMedium(partner, lang, praiaNames) {
     : `Aulas em ${firstTwo} e mais ${rest} praia${rest !== 1 ? 's' : ''}`;
   const shortDesc = isEN ? partner.tagline_en : partner.tagline_pt;
 
+  const compactParts = [];
+  if (partner.founded) compactParts.push(`Desde ${partner.founded}`);
+  if (partner.tripadvisor_rating) compactParts.push(`${partner.tripadvisor_rating} &#9733; Tripadvisor`);
+  const compactMeta = compactParts.length
+    ? `\n    <p><small>${compactParts.join(' &middot; ')}</small></p>` : '';
+
   return `<aside class="partner-card partner-card--medium">
     <p class="partner-card__eyebrow">${partnerLabel}</p>
     <h3><a href="${vitrinePath}#${partner.id}">${partner.name}</a></h3>
-    <p>${shortDesc}</p>
+    <p>${shortDesc}</p>${compactMeta}
     <p><small>${praiaNote}</small></p>
   </aside>`;
 }
@@ -215,21 +313,43 @@ function generateJsonLd(partners, lang) {
     ? 'Operators editorially assessed by Portugal Travel Hub.'
     : 'Operadores avaliados pela equipa editorial do Portugal Travel Hub.';
 
-  const hasPart = partners.map(p => ({
-    '@type': 'SportsActivityLocation',
-    '@id': `https://www.portalturismoportugal.com/escolas-de-surf#${p.id}`,
-    'name': p.name,
-    'description': isEN ? p.tagline_en : `${p.name} — ${p.town}, ${p.region}`,
-    'address': {
-      '@type': 'PostalAddress',
-      'addressLocality': p.town,
-      'addressRegion': p.region,
-      'addressCountry': 'PT'
-    },
-    'url': p.website,
-    'sport': 'Surfing',
-    'availableLanguage': p.languages.map(l => l.toLowerCase())
-  }));
+  const hasPart = partners.map(p => {
+    const item = {
+      '@type': 'SportsActivityLocation',
+      '@id': `https://www.portalturismoportugal.com/escolas-de-surf#${p.id}`,
+      'name': p.name,
+      'description': isEN ? p.tagline_en : `${p.name} — ${p.town}, ${p.region}`,
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': p.town,
+        'addressRegion': p.region,
+        'addressCountry': 'PT'
+      },
+      'url': p.website,
+      'sport': 'Surfing',
+      'availableLanguage': p.languages.map(l => l.toLowerCase())
+    };
+    if (p.founded) item.foundingDate = String(p.founded);
+    if (p.phone) item.telephone = p.phone;
+    const sameAs = [p.instagram_url, p.facebook_url, p.tripadvisor_url].filter(Boolean);
+    if (sameAs.length) item.sameAs = sameAs;
+    if (p.tripadvisor_rating && p.tripadvisor_reviews) {
+      item.aggregateRating = {
+        '@type': 'AggregateRating',
+        'ratingValue': String(p.tripadvisor_rating),
+        'reviewCount': String(p.tripadvisor_reviews),
+        'bestRating': '5',
+        'worstRating': '1'
+      };
+    }
+    if (p.fps_certified) {
+      item.hasCredential = {
+        '@type': 'EducationalOccupationalCredential',
+        'name': 'Federação Portuguesa de Surf'
+      };
+    }
+    return item;
+  });
 
   const schema = {
     '@context': 'https://schema.org',
@@ -330,6 +450,35 @@ ${jsonLd}
   <link rel="stylesheet" href="/css/style.css?v=20260520-qw5">
   <link rel="stylesheet" href="/css/partners-page.css?v=20260521-v1">
   <script src="/js/image-autofix.js"></script>
+  <style>
+    /* ── Mobile Bottom Nav ── */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: rgba(10,61,107,0.97);
+      backdrop-filter: blur(20px) saturate(1.5);
+      border-top: 1px solid var(--glass-border);
+    }
+    .mobile-bottom-nav-inner {
+      display: flex; height: 60px; align-items: stretch;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .mobile-nav-item {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 3px; color: rgba(255,255,255,0.6); font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 2px;
+      text-decoration: none; cursor: pointer; border: none; background: none;
+      font-family: inherit; transition: color var(--transition); min-height: 44px;
+    }
+    .mobile-nav-item svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .mobile-bottom-nav { display: block; }
+      body { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+      .toast { bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important; right: 16px !important; left: 16px !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -545,6 +694,35 @@ ${jsonLd}
   <link rel="stylesheet" href="/css/style.css?v=20260520-qw5">
   <link rel="stylesheet" href="/css/partners-page.css?v=20260521-v1">
   <script src="/js/image-autofix.js"></script>
+  <style>
+    /* ── Mobile Bottom Nav ── */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: rgba(10,61,107,0.97);
+      backdrop-filter: blur(20px) saturate(1.5);
+      border-top: 1px solid var(--glass-border);
+    }
+    .mobile-bottom-nav-inner {
+      display: flex; height: 60px; align-items: stretch;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .mobile-nav-item {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 3px; color: rgba(255,255,255,0.6); font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 2px;
+      text-decoration: none; cursor: pointer; border: none; background: none;
+      font-family: inherit; transition: color var(--transition); min-height: 44px;
+    }
+    .mobile-nav-item svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .mobile-bottom-nav { display: block; }
+      body { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+      .toast { bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important; right: 16px !important; left: 16px !important; }
+    }
+  </style>
 </head>
 <body>
 

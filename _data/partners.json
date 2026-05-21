@@ -79,14 +79,26 @@
       "contact_person": "Miguel Ferreira",
       "website": "https://www.goodfeelingsurfschool.com",
       "email_public": null,
-      "phone": null,
-      "instagram": null,
+      "phone": "+351 968 485 186",
+      "instagram": "@goodfeelingsurfschool",
+      "instagram_url": "https://www.instagram.com/goodfeelingsurfschool/",
+      "facebook_url": "https://www.facebook.com/goodfeelingsurfschool/",
+      "tripadvisor_rating": 4.8,
+      "tripadvisor_reviews": 64,
+      "tripadvisor_url": "https://www.tripadvisor.com/Attraction_Review-g1172110-d4009845-Reviews-Good_Feeling_Surf_School-Vila_do_Bispo_Faro_District_Algarve.html",
+      "tripadvisor_ranking_text": "#1 em Vila do Bispo (Tripadvisor)",
+      "tripadvisor_ranking_text_en": "#1 in Vila do Bispo (Tripadvisor)",
+      "founded": 1997,
+      "years_in_operation": 29,
+      "fps_certified": true,
       "google_rating": null,
       "google_reviews": null,
+      "google_maps_url": null,
       "schema_type": "SportsActivityLocation",
-      "photo_url": null,
-      "photo_credit": null,
-      "notes_internal": "Email recebido 20/05. Contacto: Miguel Ferreira. Preferem EN. Base em Raposeira. Transporte Lagos-Sagres incluido. Aulas 3h (2x1h30). Costa Vicentina Natural Park."
+      "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/good-feeling-surf-school.png",
+      "photo_credit": "Logo: Good Feeling Surf School (reproduzido com autoriza&ccedil;&atilde;o)",
+      "photo_treatment": "logo-on-navy",
+      "notes_internal": "Email recebido 20/05. Contacto: Miguel Ferreira. Preferem EN. Base em Raposeira. Transporte Lagos-Sagres incluido. Aulas 3h (2x1h30). Costa Vicentina Natural Park. Dados de pesquisa pública 21/05: Tripadvisor 4.8/64 #1 Vila do Bispo, fundada 1997, FPS certificada. Google rating pendente validação manual."
     }
   ]
 }
