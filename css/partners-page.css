@@ -388,12 +388,22 @@
 
 /* ── Partner logo image ── */
 .partner-card__logo {
+  display: block;
   width: 100%;
-  height: 100%;
+  max-width: 400px;
+  height: auto;
+  max-height: 400px;
+  margin: auto;
   object-fit: contain;
-  object-position: center;
+  background: transparent;
+  padding: 32px;
+}
+.partner-card__media:has(.partner-card__logo) {
   background: #0a3d6b;
-  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
 }
 .partner-card__media--fallback .partner-card__photo {
   display: flex;
