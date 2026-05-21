@@ -99,6 +99,35 @@
   <link rel="stylesheet" href="/css/style.css?v=20260520-qw5">
   <link rel="stylesheet" href="/css/partners-page.css?v=20260521-v1">
   <script src="/js/image-autofix.js"></script>
+  <style>
+    /* ── Mobile Bottom Nav ── */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: rgba(10,61,107,0.97);
+      backdrop-filter: blur(20px) saturate(1.5);
+      border-top: 1px solid var(--glass-border);
+    }
+    .mobile-bottom-nav-inner {
+      display: flex; height: 60px; align-items: stretch;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .mobile-nav-item {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 3px; color: rgba(255,255,255,0.6); font-size: 0.58rem; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 2px;
+      text-decoration: none; cursor: pointer; border: none; background: none;
+      font-family: inherit; transition: color var(--transition); min-height: 44px;
+    }
+    .mobile-nav-item svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .mobile-nav-item.active, .mobile-nav-item:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .mobile-bottom-nav { display: block; }
+      body { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+      .toast { bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important; right: 16px !important; left: 16px !important; }
+    }
+  </style>
 </head>
 <body>
 
