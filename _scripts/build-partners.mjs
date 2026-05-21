@@ -219,7 +219,19 @@ function generateCardLarge(partner, lang, availablePraias, praiaNames) {
 
   let mediaClass = 'partner-card__media';
   let mediaInner;
-  if (partner.photo_url && partner.photo_treatment === 'logo-on-navy') {
+  if (partner.photo_url && partner.photo_treatment === 'logo-on-navy' && partner.hero_photo_url) {
+    // Option 3: split vertical (logo navy 50% + beach photo 50%)
+    mediaClass += ' partner-card__media--split';
+    const titleAttr = partner.photo_credit ? ` title="${partner.photo_credit}"` : '';
+    const caption = partner.hero_photo_caption || '';
+    const captionHTML = caption ? `\n    <span class="partner-card__photo-caption">${caption}</span>` : '';
+    mediaInner = `<div class="partner-card__logo-area">
+    <img src="${partner.photo_url}" alt="Logo ${partner.name}" class="partner-card__logo" loading="lazy" width="518" height="518"${titleAttr} onerror="this.onerror=null;this.style.opacity='0.3'">
+  </div>
+  <div class="partner-card__photo-area">
+    <img class="partner-card__photo-img" src="${partner.hero_photo_url}" alt="${caption || partner.name}" loading="lazy" onerror="this.onerror=null;this.parentNode.style.background='#0a3d6b'">${captionHTML}
+  </div>`;
+  } else if (partner.photo_url && partner.photo_treatment === 'logo-on-navy') {
     mediaClass += ' partner-card__media--logo';
     const titleAttr = partner.photo_credit ? ` title="${partner.photo_credit}"` : '';
     mediaInner = `<img src="${partner.photo_url}" alt="Logo ${partner.name}" class="partner-card__logo" loading="lazy" width="518" height="518"${titleAttr}>`;

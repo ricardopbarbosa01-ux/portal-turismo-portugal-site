@@ -98,7 +98,12 @@
       "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/good-feeling-surf-school.png",
       "photo_credit": "Logo: Good Feeling Surf School (reproduzido com autoriza&ccedil;&atilde;o)",
       "photo_treatment": "logo-on-navy",
-      "notes_internal": "Email recebido 20/05. Contacto: Miguel Ferreira. Preferem EN. Base em Raposeira. Transporte Lagos-Sagres incluido. Aulas 3h (2x1h30). Costa Vicentina Natural Park. Dados de pesquisa pública 21/05: Tripadvisor 4.8/64 #1 Vila do Bispo, fundada 1997, FPS certificada. Google rating pendente validação manual."
+      "notes_internal": "Email recebido 20/05. Contacto: Miguel Ferreira. Preferem EN. Base em Raposeira. Transporte Lagos-Sagres incluido. Aulas 3h (2x1h30). Costa Vicentina Natural Park. Dados de pesquisa pública 21/05: Tripadvisor 4.8/64 #1 Vila do Bispo, fundada 1997, FPS certificada. Google rating pendente validação manual.",
+      "hero_photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-photos/good-feeling-surf-school.webp",
+      "hero_photo_caption": "Praia do Beliche, Sagres",
+      "hero_photo_source": "site oficial Good Feeling Surf School",
+      "hero_photo_authorization": "confirmada pelo parceiro",
+      "authorization_date": "2026-05-21"
     }
   ]
 }
