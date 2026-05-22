@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Inject nav dropdown into 116 HTML files (PT+EN+guias).
+// Inject nav dropdown into HTML files (PT+EN+guias).
 // Idempotent (inject mode): skips files that already have data-nav-dropdown.
-// Update mode (--update): replaces old dropdown with Variante C Magazine structure.
+// Update mode (--update): replaces old dropdown variants with new .pth-dd__* structure.
 // Usage: node _scripts/inject-nav-dropdown.mjs [--dry-run] [--update]
 
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
@@ -12,54 +12,56 @@ const DRY_RUN = process.argv.includes('--dry-run');
 const UPDATE  = process.argv.includes('--update');
 const ROOT = fileURLToPath(new URL('..', import.meta.url)).replace(/[\\/]$/, '');
 
-// ── Dropdown HTML templates — Variante C Magazine ─────────────────────────────
+// ── Dropdown HTML templates — PTH-DD (validated 2026-05-22) ──────────────────
 
-const PT_DROPDOWN = `    <div class="nav-dropdown" data-nav-dropdown>
-      <button type="button" class="nav-link nav-dropdown__trigger"
-              aria-haspopup="menu" aria-expanded="false" aria-controls="nav-verificados-menu">
-        Parceiros Verificados <span class="nav-dropdown__chevron" aria-hidden="true">&#9662;</span>
+const PT_DROPDOWN = `    <div class="pth-dd" data-pth-dd data-nav-dropdown>
+      <button type="button" class="pth-dd__trigger"
+              aria-haspopup="menu" aria-expanded="false"
+              aria-controls="pth-dd-menu">
+        Parceiros Verificados <span class="pth-dd__chevron" aria-hidden="true">&#9662;</span>
       </button>
-      <div id="nav-verificados-menu" class="nav-dropdown__menu" role="menu">
-        <a href="/escolas-de-surf.html" class="nav-dropdown__featured" role="menuitem">
-          <div class="nav-dropdown__featured-eyebrow">Verificado</div>
-          <div class="nav-dropdown__featured-title">Escolas de Surf</div>
-          <span class="nav-dropdown__featured-link">Ver todas &rarr;</span>
+      <div id="pth-dd-menu" class="pth-dd__menu" role="menu">
+        <a href="/escolas-de-surf.html" class="pth-dd__featured" role="menuitem">
+          <div class="pth-dd__featured-eyebrow">Verificado</div>
+          <div class="pth-dd__featured-title">Escolas de Surf</div>
+          <span class="pth-dd__featured-link">Ver todas &rarr;</span>
         </a>
-        <div class="nav-dropdown__coming">
-          <div class="nav-dropdown__coming-eyebrow">Em desenvolvimento</div>
-          <ul class="nav-dropdown__coming-list">
-            <li class="nav-dropdown__coming-item" title="Em breve">Pesca (Charters)</li>
-            <li class="nav-dropdown__coming-item" title="Em breve">Restaurantes</li>
-            <li class="nav-dropdown__coming-item" title="Em breve">Alojamento Local</li>
-            <li class="nav-dropdown__coming-item" title="Em breve">Hot&eacute;is &amp; Pousadas</li>
-            <li class="nav-dropdown__coming-item" title="Em breve">Turismo Rural</li>
-            <li class="nav-dropdown__coming-item" title="Em breve">Experi&ecirc;ncias</li>
+        <div class="pth-dd__coming">
+          <div class="pth-dd__coming-eyebrow">Em desenvolvimento</div>
+          <ul class="pth-dd__coming-list">
+            <li class="pth-dd__coming-item" title="Em breve">Pesca (Charters)</li>
+            <li class="pth-dd__coming-item" title="Em breve">Restaurantes</li>
+            <li class="pth-dd__coming-item" title="Em breve">Alojamento Local</li>
+            <li class="pth-dd__coming-item" title="Em breve">Hot&eacute;is &amp; Pousadas</li>
+            <li class="pth-dd__coming-item" title="Em breve">Turismo Rural</li>
+            <li class="pth-dd__coming-item" title="Em breve">Experi&ecirc;ncias</li>
           </ul>
         </div>
       </div>
     </div>
 `;
 
-const EN_DROPDOWN = `    <div class="nav-dropdown" data-nav-dropdown>
-      <button type="button" class="nav-link nav-dropdown__trigger"
-              aria-haspopup="menu" aria-expanded="false" aria-controls="nav-verificados-menu">
-        Verified Partners <span class="nav-dropdown__chevron" aria-hidden="true">&#9662;</span>
+const EN_DROPDOWN = `    <div class="pth-dd" data-pth-dd data-nav-dropdown>
+      <button type="button" class="pth-dd__trigger"
+              aria-haspopup="menu" aria-expanded="false"
+              aria-controls="pth-dd-menu">
+        Verified Partners <span class="pth-dd__chevron" aria-hidden="true">&#9662;</span>
       </button>
-      <div id="nav-verificados-menu" class="nav-dropdown__menu" role="menu">
-        <a href="/en/surf-schools.html" class="nav-dropdown__featured" role="menuitem">
-          <div class="nav-dropdown__featured-eyebrow">Verified</div>
-          <div class="nav-dropdown__featured-title">Surf Schools</div>
-          <span class="nav-dropdown__featured-link">View all &rarr;</span>
+      <div id="pth-dd-menu" class="pth-dd__menu" role="menu">
+        <a href="/en/surf-schools.html" class="pth-dd__featured" role="menuitem">
+          <div class="pth-dd__featured-eyebrow">Verified</div>
+          <div class="pth-dd__featured-title">Surf Schools</div>
+          <span class="pth-dd__featured-link">View all &rarr;</span>
         </a>
-        <div class="nav-dropdown__coming">
-          <div class="nav-dropdown__coming-eyebrow">Coming next</div>
-          <ul class="nav-dropdown__coming-list">
-            <li class="nav-dropdown__coming-item" title="Coming soon">Fishing (Charters)</li>
-            <li class="nav-dropdown__coming-item" title="Coming soon">Restaurants</li>
-            <li class="nav-dropdown__coming-item" title="Coming soon">Local Accommodation</li>
-            <li class="nav-dropdown__coming-item" title="Coming soon">Hotels &amp; Pousadas</li>
-            <li class="nav-dropdown__coming-item" title="Coming soon">Rural Tourism</li>
-            <li class="nav-dropdown__coming-item" title="Coming soon">Experiences</li>
+        <div class="pth-dd__coming">
+          <div class="pth-dd__coming-eyebrow">Coming next</div>
+          <ul class="pth-dd__coming-list">
+            <li class="pth-dd__coming-item" title="Coming soon">Fishing (Charters)</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Restaurants</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Local Accommodation</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Hotels &amp; Pousadas</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Rural Tourism</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Experiences</li>
           </ul>
         </div>
       </div>
@@ -74,10 +76,13 @@ const EN_ANCHOR     = '    <a href="/en/parceiros.html" role="listitem">Partners
 
 const SCRIPT_TAG = '    <script src="/js/nav-dropdown.js" defer></script>';
 
-// Old dropdown pattern (v1/v2) — uses <ul> + nav-dropdown__item--disabled
-// The outer div has no nested </div> before its closing tag, so the non-greedy
-// match safely stops at the first 4-space-indented </div>.
-const OLD_DROPDOWN_RE = /    <div class="nav-dropdown" data-nav-dropdown>[\s\S]*?    <\/div>\n/;
+// Old dropdown pattern (matches BOTH old variants for idempotent replace):
+//   - nav-dropdown (Variante C magazine, .nav-dropdown__featured present)
+//   - nav-dropdown (v1, .nav-dropdown__item--disabled)
+//   - pth-dd (current validated variant — for idempotent re-runs)
+// Two successive replacements handle both old class prefixes cleanly.
+const OLD_DROPDOWN_RE_NAV = /    <div class="nav-dropdown[^"]*" data-nav-dropdown[^>]*>[\s\S]*?    <\/div>\n/;
+const OLD_DROPDOWN_RE_PTH = /    <div class="pth-dd[^"]*" data-(?:pth-dd|nav-dropdown)[^>]*>[\s\S]*?    <\/div>\n/;
 
 // ── File collection ────────────────────────────────────────────────────────────
 
@@ -107,29 +112,34 @@ function processFile(relPath, lang) {
 
   // ── UPDATE MODE ───────────────────────────────────────────────────────────
   if (UPDATE) {
-    // Already Variante C — skip
-    if (original.includes('nav-dropdown__featured')) {
-      return { status: 'skip', reason: 'already Variante C' };
+    // Already on new pth-dd__featured variant — skip (idempotent)
+    if (original.includes('pth-dd__featured')) {
+      return { status: 'skip', reason: 'already pth-dd__featured' };
     }
-    // Has old structure
-    if (original.includes('nav-dropdown__item--disabled')) {
-      if (!OLD_DROPDOWN_RE.test(original)) {
-        return { status: 'warn', reason: 'old dropdown pattern did not match' };
+    // Has old Variante C magazine OR old v1 nav-dropdown structure
+    if (original.includes('nav-dropdown__featured') || original.includes('nav-dropdown__item--disabled')) {
+      if (!OLD_DROPDOWN_RE_NAV.test(original)) {
+        return { status: 'warn', reason: 'old nav-dropdown pattern did not match regex' };
       }
-      const updated = original.replace(OLD_DROPDOWN_RE, newTemplate);
+      const updated = original.replace(OLD_DROPDOWN_RE_NAV, newTemplate);
       if (!DRY_RUN) writeFileSync(absPath, updated, 'utf8');
-      return { status: 'updated' };
+      return { status: 'updated', variant: 'nav-dropdown' };
     }
-    // Has data-nav-dropdown but no --disabled (unexpected state)
-    if (original.includes('data-nav-dropdown')) {
-      return { status: 'warn', reason: 'has data-nav-dropdown but no old/new structure detected' };
+    // Has generic nav-dropdown (no __featured / no __item--disabled)
+    if (original.includes('data-nav-dropdown') || original.includes('nav-dropdown')) {
+      if (OLD_DROPDOWN_RE_NAV.test(original)) {
+        const updated = original.replace(OLD_DROPDOWN_RE_NAV, newTemplate);
+        if (!DRY_RUN) writeFileSync(absPath, updated, 'utf8');
+        return { status: 'updated', variant: 'nav-dropdown-generic' };
+      }
+      return { status: 'warn', reason: 'has nav-dropdown but no regex match' };
     }
     return { status: 'skip', reason: 'no dropdown to update' };
   }
 
   // ── INJECT MODE (original behaviour) ─────────────────────────────────────
-  if (original.includes('data-nav-dropdown')) {
-    return { status: 'skip', reason: 'already has data-nav-dropdown' };
+  if (original.includes('data-nav-dropdown') || original.includes('data-pth-dd')) {
+    return { status: 'skip', reason: 'already has dropdown marker' };
   }
 
   let content = original;
@@ -183,7 +193,7 @@ for (const { path: f, lang } of allFiles) {
   const r = processFile(f, lang);
   const bucket = r.status === 'updated' ? 'updated' : r.status;
   (results[bucket] = results[bucket] || []).push({ file: f, ...r });
-  const icon = r.status === 'skip' ? '⏭' : r.status === 'warn' ? '⚠️' : '✓';
+  const icon = r.status === 'skip' ? '-' : r.status === 'warn' ? '!' : '+';
   if (r.status !== 'injected' && r.status !== 'updated' || DRY_RUN) {
     console.log(`  ${icon}  ${f}  [${r.status}]${r.reason ? ': ' + r.reason : ''}`);
   } else {
@@ -196,16 +206,16 @@ console.log(`Total files:      ${allFiles.length}`);
 console.log(`  PT root:        ${pt.length}`);
 console.log(`  EN direct:      ${en.length}`);
 console.log(`  guias/:         ${guias.length}`);
-console.log(`Skipped:          ${(results.skip || []).length}`);
+console.log(`Skipped (already pth-dd):  ${(results.skip || []).length}`);
 if (UPDATE) {
-  console.log(`Updated (V-C):    ${(results.updated || []).length}`);
+  console.log(`Updated (was nav-dropdown): ${(results.updated || []).length}`);
 } else {
-  console.log(`Injected:         ${(results.injected || []).length}`);
+  console.log(`Injected (was missing):    ${(results.injected || []).length}`);
 }
-console.log(`Warnings:         ${(results.warn || []).length}`);
+console.log(`Warnings:                  ${(results.warn || []).length}`);
 
 if ((results.warn || []).length > 0) {
-  console.log('\n⚠️  Files with warnings:');
+  console.log('\n! Files with warnings:');
   results.warn.forEach(r => console.log(`    ${r.file}: ${r.reason}`));
 }
 
