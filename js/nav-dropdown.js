@@ -1,13 +1,17 @@
 (function() {
   const dropdowns = document.querySelectorAll('[data-nav-dropdown]');
   dropdowns.forEach(dd => {
-    const trigger = dd.querySelector('.nav-dropdown__trigger');
+    // 2026-05-22: accepts both selectors during migration; remove .nav-dropdown__trigger after inject --update propagates.
+    const trigger = dd.querySelector('.pth-dd__trigger, .nav-dropdown__trigger');
+    if (!trigger) return;
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       const isOpen = dd.getAttribute('data-open') === 'true';
       document.querySelectorAll('[data-nav-dropdown][data-open="true"]').forEach(d => {
         d.setAttribute('data-open', 'false');
-        d.querySelector('.nav-dropdown__trigger').setAttribute('aria-expanded', 'false');
+        // 2026-05-22: accepts both selectors during migration; remove .nav-dropdown__trigger after inject --update propagates.
+        const t = d.querySelector('.pth-dd__trigger, .nav-dropdown__trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
       });
       if (!isOpen) {
         dd.setAttribute('data-open', 'true');
@@ -19,7 +23,9 @@
     if (!e.target.closest('[data-nav-dropdown]')) {
       document.querySelectorAll('[data-nav-dropdown][data-open="true"]').forEach(d => {
         d.setAttribute('data-open', 'false');
-        d.querySelector('.nav-dropdown__trigger').setAttribute('aria-expanded', 'false');
+        // 2026-05-22: accepts both selectors during migration; remove .nav-dropdown__trigger after inject --update propagates.
+        const t = d.querySelector('.pth-dd__trigger, .nav-dropdown__trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
       });
     }
   });
@@ -27,7 +33,9 @@
     if (e.key === 'Escape') {
       document.querySelectorAll('[data-nav-dropdown][data-open="true"]').forEach(d => {
         d.setAttribute('data-open', 'false');
-        d.querySelector('.nav-dropdown__trigger').setAttribute('aria-expanded', 'false');
+        // 2026-05-22: accepts both selectors during migration; remove .nav-dropdown__trigger after inject --update propagates.
+        const t = d.querySelector('.pth-dd__trigger, .nav-dropdown__trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
       });
     }
   });
