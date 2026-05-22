@@ -175,7 +175,26 @@
     <a href="planear.html" role="listitem">Planear</a>
     <a href="/guias.html" role="listitem">Guias</a>
     <a href="precos.html" role="listitem">Preços</a>
-    <a href="parceiros.html" role="listitem">Parceiros</a>
+    <div class="nav-dropdown" data-nav-dropdown>
+      <button
+        type="button"
+        class="nav-link nav-dropdown__trigger"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-controls="nav-verificados-menu">
+        Parceiros Verificados <span class="nav-dropdown__chevron" aria-hidden="true">&#9662;</span>
+      </button>
+      <ul id="nav-verificados-menu" class="nav-dropdown__menu" role="menu">
+        <li role="none"><a role="menuitem" href="/escolas-de-surf.html">Escolas de Surf</a></li>
+        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Pesca (Charters &amp; Guias) <small>Em breve</small></span></li>
+        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Restaurantes <small>Em breve</small></span></li>
+        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Alojamento Local <small>Em breve</small></span></li>
+        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Hot&eacute;is &amp; Pousadas <small>Em breve</small></span></li>
+        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Turismo Rural (Quintas) <small>Em breve</small></span></li>
+        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Experi&ecirc;ncias (Tours &amp; Atividades) <small>Em breve</small></span></li>
+      </ul>
+    </div>
+    <a href="parceiros.html" role="listitem">Para o seu Negócio</a>
   </div>
 
   <div class="nav-actions">
@@ -475,7 +494,7 @@
         <li><a href="sobre.html">Sobre Nós</a></li>
         <li><a href="precos.html">Preços</a></li>
         <li><a href="planear.html">Planear</a></li>
-        <li><a href="parceiros.html">Parceiros</a></li>
+        <li><a href="parceiros.html">Para o seu Negócio</a></li>
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
@@ -522,5 +541,6 @@ const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isInt
 reveals.forEach(el => io.observe(el));
 </script>
   <script src="/js/cookie-consent.js" defer></script>
+    <script src="/js/nav-dropdown.js" defer></script>
 </body>
 </html>
