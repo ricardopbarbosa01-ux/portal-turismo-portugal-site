@@ -114,7 +114,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="/css/style.css?v=20260522-navdd-premium">
+  <link rel="stylesheet" href="/css/style.css?v=20260522-navdd-c">
   <link rel="stylesheet" href="/css/partners-page.css?v=20260521-v1">
   <script src="/js/image-autofix.js"></script>
   <style>
@@ -170,23 +170,28 @@
     <a href="/guias.html" role="listitem">Guias</a>
     <a href="/precos.html" role="listitem">Pre&ccedil;os</a>
     <div class="nav-dropdown" data-nav-dropdown>
-      <button
-        type="button"
-        class="nav-link nav-dropdown__trigger"
-        aria-haspopup="menu"
-        aria-expanded="false"
-        aria-controls="nav-verificados-menu">
+      <button type="button" class="nav-link nav-dropdown__trigger"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="nav-verificados-menu">
         Parceiros Verificados <span class="nav-dropdown__chevron" aria-hidden="true">&#9662;</span>
       </button>
-      <ul id="nav-verificados-menu" class="nav-dropdown__menu" role="menu">
-        <li role="none"><a role="menuitem" href="/escolas-de-surf.html">Escolas de Surf</a></li>
-        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Pesca (Charters &amp; Guias) <small>Em breve</small></span></li>
-        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Restaurantes <small>Em breve</small></span></li>
-        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Alojamento Local <small>Em breve</small></span></li>
-        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Hot&eacute;is &amp; Pousadas <small>Em breve</small></span></li>
-        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Turismo Rural (Quintas) <small>Em breve</small></span></li>
-        <li role="none"><span class="nav-dropdown__item--disabled" role="menuitem" aria-disabled="true" title="Em breve">Experi&ecirc;ncias (Tours &amp; Atividades) <small>Em breve</small></span></li>
-      </ul>
+      <div id="nav-verificados-menu" class="nav-dropdown__menu" role="menu">
+        <a href="/escolas-de-surf.html" class="nav-dropdown__featured" role="menuitem">
+          <div class="nav-dropdown__featured-eyebrow">Verificado</div>
+          <div class="nav-dropdown__featured-title">Escolas de Surf</div>
+          <span class="nav-dropdown__featured-link">Ver todas &rarr;</span>
+        </a>
+        <div class="nav-dropdown__coming">
+          <div class="nav-dropdown__coming-eyebrow">Em desenvolvimento</div>
+          <ul class="nav-dropdown__coming-list">
+            <li class="nav-dropdown__coming-item" title="Em breve">Pesca (Charters)</li>
+            <li class="nav-dropdown__coming-item" title="Em breve">Restaurantes</li>
+            <li class="nav-dropdown__coming-item" title="Em breve">Alojamento Local</li>
+            <li class="nav-dropdown__coming-item" title="Em breve">Hot&eacute;is &amp; Pousadas</li>
+            <li class="nav-dropdown__coming-item" title="Em breve">Turismo Rural</li>
+            <li class="nav-dropdown__coming-item" title="Em breve">Experi&ecirc;ncias</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <a href="/parceiros.html" role="listitem">Para o seu Negócio</a>
   </div>

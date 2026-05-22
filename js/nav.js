@@ -52,17 +52,29 @@
     menu.setAttribute('role', 'dialog');
     menu.setAttribute('aria-label', t.menuLabel);
 
-    // Copy main nav links from .nav-links
+    // Copy main nav links from .nav-links (direct children only to avoid
+    // capturing links inside .nav-dropdown__menu)
     var navLinksEl = document.querySelector('.nav-links');
     if (navLinksEl) {
-      var links = navLinksEl.querySelectorAll('a[href]');
-      links.forEach(function (link) {
-        var a = document.createElement('a');
-        a.href = link.getAttribute('href');
-        a.textContent = link.textContent.trim();
-        if (link.classList.contains('active')) a.classList.add('active');
-        if (link.hasAttribute('aria-current')) a.setAttribute('aria-current', link.getAttribute('aria-current'));
-        menu.appendChild(a);
+      Array.from(navLinksEl.children).forEach(function(child) {
+        if (child.tagName === 'A' && child.getAttribute('href')) {
+          var a = document.createElement('a');
+          a.href = child.getAttribute('href');
+          a.textContent = child.textContent.trim();
+          if (child.classList.contains('active')) a.classList.add('active');
+          if (child.hasAttribute('aria-current')) a.setAttribute('aria-current', child.getAttribute('aria-current'));
+          menu.appendChild(a);
+        } else if (child.classList.contains('nav-dropdown')) {
+          // Dropdown: surface the featured (active) item as a direct mobile link
+          var featured = child.querySelector('.nav-dropdown__featured');
+          if (featured) {
+            var a = document.createElement('a');
+            a.href = featured.getAttribute('href');
+            var titleEl = featured.querySelector('.nav-dropdown__featured-title');
+            a.textContent = titleEl ? titleEl.textContent.trim() : featured.textContent.trim();
+            menu.appendChild(a);
+          }
+        }
       });
     }
 
