@@ -177,27 +177,34 @@
 <nav class="navbar" role="navigation" aria-label="Main navigation" id="navbar">
   <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
     <div class="nav-logo-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
     </div>
-    <span>Portugal Travel Hub</span>
+    Portugal Travel Hub
   </a>
+
   <div class="nav-backdrop" id="nav-backdrop"></div>
   <div class="nav-links" role="list">
     <button class="nav-close" id="nav-close" aria-label="Close menu">
       <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="3" x2="21" y2="21"/><line x1="21" y1="3" x2="3" y2="21"/></svg>
     </button>
-    <a href="beaches.html" role="listitem">Beaches</a>
-    <a href="surf.html" role="listitem">Surf</a>
-    <a href="pesca.html" role="listitem">Fishing</a>
-    <a href="webcams.html" role="listitem">Webcams</a>
-    <a href="planear.html" role="listitem">Plan</a>
+    <a href="/en/beaches.html" role="listitem">Beaches</a>
+    <a href="/en/surf.html" role="listitem">Surf</a>
+    <a href="/en/pesca.html" role="listitem">Fishing</a>
+    <a href="/en/webcams.html" role="listitem">Webcams</a>
+    <a href="/en/planear.html" role="listitem">Plan</a>
     <a href="/en/guides.html" role="listitem">Guides</a>
-    <a href="precos.html" role="listitem">Pricing</a>
-    <a href="parceiros.html" role="listitem">Partners</a>
+    <a href="/en/precos.html" role="listitem">Pricing</a>
+    <a href="/en/parceiros.html" role="listitem">Partners</a>
   </div>
+
   <div class="nav-actions">
-    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Sign in</a>
-    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Get Started</a>
+    <div class="lang-switcher" aria-label="Language selection">
+      <a href="/" class="lang-btn" data-lang="pt" onclick="try{localStorage.setItem('pth_lang','pt')}catch(_){}" hreflang="pt">PT</a>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="en">EN</span>
+    </div>
+    <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
+    <a href="/en/login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
       <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
