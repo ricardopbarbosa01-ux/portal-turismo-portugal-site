@@ -1,7 +1,7 @@
 {
   "$schema_version": 1,
   "meta": {
-    "last_updated": "2026-05-21",
+    "last_updated": "2026-05-25",
     "generated_by": "manual + Claude Code build"
   },
   "injection_targets": [
@@ -50,7 +50,8 @@
     "praia-de-beliche": "Praia de Beliche",
     "praia-do-amado": "Praia do Amado",
     "praia-da-bordeira": "Praia da Bordeira",
-    "praia-de-odeceixe": "Praia de Odeceixe"
+    "praia-de-odeceixe": "Praia de Odeceixe",
+    "praia-da-rocha": "Praia da Rocha"
   },
   "partners": [
     {
@@ -104,6 +105,56 @@
       "hero_photo_source": "site oficial Good Feeling Surf School",
       "hero_photo_authorization": "confirmada pelo parceiro",
       "authorization_date": "2026-05-21"
+    },
+    {
+      "id": "future-eco-surf-school",
+      "name": "Future Eco Surf School",
+      "tagline_pt": "Escola de surf com certifica&ccedil;&atilde;o B Corp em Portim&atilde;o, em opera&ccedil;&atilde;o desde 1998. Aulas em Praia da Rocha (Nov-Abr) e Costa Vicentina (Bordeira, Vale Figueiras, Mai-Out). Federada FPS, IPDJ, Turismo de Portugal e Marinha. Membro 1% for the Planet.",
+      "tagline_en": "B Corp-certified surf school in Portim&atilde;o, operating since 1998. Lessons at Praia da Rocha (Nov-Apr) and the West Coast (Bordeira, Vale Figueiras, May-Oct). Federated by FPS, IPDJ, Turismo de Portugal and the Portuguese Navy. 1% for the Planet member.",
+      "region": "Algarve",
+      "region_slug": "algarve",
+      "town": "Portim&atilde;o &middot; Costa Vicentina",
+      "praias_associadas": [
+        "praia-da-rocha",
+        "praia-da-bordeira"
+      ],
+      "especialidade": ["iniciantes", "intermedios", "avancados", "camps"],
+      "all_levels": true,
+      "all_year": true,
+      "languages": ["PT", "EN", "DE"],
+      "preferred_contact_language": "EN",
+      "verified_since": "2026-05",
+      "tier": "essential",
+      "contact_person": "Mitch Ramos",
+      "website": "https://www.future-ecosurf.com",
+      "email_public": null,
+      "phone": "+351 918 755 823",
+      "instagram": "@future.ecosurf",
+      "instagram_url": "https://www.instagram.com/future.ecosurf/",
+      "facebook_url": "https://www.facebook.com/future.ecosurf/",
+      "tripadvisor_rating": 4.9,
+      "tripadvisor_reviews": 199,
+      "tripadvisor_url": "https://www.tripadvisor.com/Attraction_Review-g189120-d2180227-Reviews-Future_Eco_Surf_School-Portimao_Faro_District_Algarve.html",
+      "tripadvisor_ranking_text": "#13 of 128 Boat Tours &amp; Water Sports in Portimao",
+      "tripadvisor_ranking_text_en": "#13 of 128 Boat Tours &amp; Water Sports in Portimao",
+      "founded": 1998,
+      "years_in_operation": 28,
+      "fps_certified": true,
+      "certifications": ["FPS", "IPDJ", "Turismo de Portugal", "Marinha Portuguesa", "AESCV", "AESDP", "B Corp Certified", "1% for the Planet"],
+      "google_rating": 4.9,
+      "google_reviews": 392,
+      "google_maps_url": null,
+      "schema_type": "SportsActivityLocation",
+      "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/future-eco-surf-school.png",
+      "photo_credit": "Logo: Future Eco Surf School (reproduzido com autoriza&ccedil;&atilde;o)",
+      "photo_treatment": "logo-on-navy",
+      "notes_internal": "Email recebido 19/05/2026. Contacto: Mitch Ramos (info@future-ecosurf.com). Autorizacao verbal adicional 25/05/2026 (Ricardo PTH). Opera desde 1998 em Portimao (Nov-Abr Praia da Rocha) e Costa Vicentina (Mai-Out Bordeira + Vale Figueiras). B Corp certified, 1% for the Planet, AESCV, AESDP. 8 certifications. Tripadvisor 4.9/199 #13/128 Portimao. Google 4.9/392 (maps_url pendente). praia-do-vale-figueiras excluida — slug nao existe em beaches-master.json.",
+      "hero_photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-photos/future-eco-surf-school.webp",
+      "hero_photo_caption": "Costa Vicentina, Algarve",
+      "hero_photo_caption_en": "Vicentine Coast, Algarve",
+      "hero_photo_source": "fotografia a&eacute;rea drone Costa Vicentina",
+      "hero_photo_authorization": "confirmada pelo parceiro (email 19/05/2026 + verbal 25/05/2026)",
+      "authorization_date": "2026-05-25"
     }
   ]
 }
