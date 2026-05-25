@@ -49,7 +49,7 @@
       if (e.key !== 'Escape') return;
       const expanded = list.querySelectorAll('.pd-expand--open');
       expanded.forEach(function (exp) {
-        const row = exp.previousElementSibling;
+        const row = exp.closest('.pd-row');
         if (row) {
           const toggle = row.querySelector('.pd-row__toggle');
           closeRow(row, toggle, exp);
@@ -59,8 +59,8 @@
   }
 
   function toggleRow(row, toggle) {
-    const expand = row.nextElementSibling;
-    if (!expand || !expand.classList.contains('pd-expand')) return;
+    const expand = row.querySelector('.pd-expand');
+    if (!expand) return;
 
     const isOpen = expand.classList.contains('pd-expand--open');
     if (isOpen) {
@@ -170,20 +170,9 @@
 
     rows.forEach(function (row) {
       const show = rowMatchesFilters(row);
-      // Hide both the row and its sibling expand
-      const expand = row.nextElementSibling;
-      if (show) {
-        row.style.display = '';
-        if (expand && expand.classList.contains('pd-expand')) {
-          expand.style.display = '';
-        }
-        visible++;
-      } else {
-        row.style.display = 'none';
-        if (expand && expand.classList.contains('pd-expand')) {
-          expand.style.display = 'none';
-        }
-      }
+      // .pd-expand is inside .pd-row — hiding the row also hides expand
+      row.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
 
     updateResultCount(visible);
@@ -221,9 +210,15 @@
   }
 
   function updateResultCount(count) {
+    // .pd-result-count contains the full "N escolas" / "N schools" text
     const el = document.querySelector('.pd-result-count');
     if (!el) return;
-    const label = count === 1 ? 'escola' : 'escolas';
+    // Detect language from html[lang] attribute to set correct label
+    const lang = document.documentElement.lang || 'pt';
+    const isEN = lang.startsWith('en');
+    const label = isEN
+      ? (count === 1 ? 'school' : 'schools')
+      : (count === 1 ? 'escola' : 'escolas');
     el.textContent = count + ' ' + label;
   }
 
@@ -322,10 +317,8 @@
         const row = document.querySelector('.pd-row[data-pd-id="' + id + '"]');
         if (row) {
           const toggle = row.querySelector('.pd-row__toggle');
-          const expand = row.nextElementSibling;
-          if (expand && expand.classList.contains('pd-expand')) {
-            openRow(row, toggle, expand);
-          }
+          const expand = row.querySelector('.pd-expand');
+          if (expand) openRow(row, toggle, expand);
         }
       });
     }

@@ -387,6 +387,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
+  grid-column: 1 / -1; /* span all columns inside .pd-row grid */
 }
 
 .pd-expand--open {

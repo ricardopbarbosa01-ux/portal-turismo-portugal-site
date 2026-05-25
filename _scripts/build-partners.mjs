@@ -312,6 +312,182 @@ function generateCardMedium(partner, lang, praiaNames) {
   </aside>`;
 }
 
+// ── Directory List ────────────────────────────────────────────────────────
+function generateDirectoryList(partners, lang, praiasSlugs, praiaNames) {
+  const isEN = lang === 'en';
+
+  // Sort: founder first, then alphabetical by name
+  const sorted = [...partners].sort((a, b) => {
+    if (a.tier === 'founder' && b.tier !== 'founder') return -1;
+    if (b.tier === 'founder' && a.tier !== 'founder') return 1;
+    return a.name.localeCompare(b.name, isEN ? 'en' : 'pt');
+  });
+
+  // Derive unique regions with counts
+  const regionCounts = {};
+  partners.forEach(p => {
+    const r = p.region_slug || p.region.toLowerCase().replace(/\s+/g, '-');
+    regionCounts[r] = (regionCounts[r] || 0) + 1;
+  });
+
+  // Derive unique languages with counts
+  const langCounts = {};
+  partners.forEach(p => {
+    (p.languages || []).forEach(l => {
+      langCounts[l] = (langCounts[l] || 0) + 1;
+    });
+  });
+
+  const hasFounder = partners.some(p => p.tier === 'founder');
+  const founderCount = partners.filter(p => p.tier === 'founder').length;
+  const fpsCount = partners.filter(p => p.fps_certified).length;
+  const total = partners.length;
+
+  const L = {
+    filters:  isEN ? 'Filters'       : 'Filtros',
+    clear:    isEN ? 'Clear filters' : 'Limpar filtros',
+    close:    isEN ? 'Close'         : 'Fechar',
+    open:     isEN ? 'Open'          : 'Abrir',
+    region:   isEN ? 'REGION'        : 'REGI&Atilde;O',
+    language: isEN ? 'LANGUAGE'      : 'IDIOMA',
+    quality:  isEN ? 'QUALITY'       : 'QUALIDADE',
+    fps:      isEN ? 'FPS Certified' : 'FPS Certificada',
+    founder:  '★ Founder Partner',
+    all:      isEN ? 'All'           : 'Todas',
+    schools:  (n) => isEN ? `${n} school${n !== 1 ? 's' : ''}` : `${n} escola${n !== 1 ? 's' : ''}`,
+    beaches:  (n) => isEN ? `${n} beach${n !== 1 ? 'es' : ''}` : `${n} praia${n !== 1 ? 's' : ''}`,
+    since:    isEN ? 'Since' : 'Desde',
+  };
+
+  // Filter group HTML — shared between sidebar and drawer
+  const regionFiltersHTML = Object.entries(regionCounts).map(([slug, count]) => {
+    const display = slug.charAt(0).toUpperCase() + slug.slice(1);
+    return `<label class="pd-sidebar__filter">
+          <input type="checkbox" data-pd-filter="region" value="${slug}">
+          ${display} <span class="pd-sidebar__count">(${count})</span>
+        </label>`;
+  }).join('\n        ');
+
+  const langFiltersHTML = Object.entries(langCounts).map(([l, count]) =>
+    `<label class="pd-sidebar__filter">
+          <input type="checkbox" data-pd-filter="language" value="${l}">
+          ${l} <span class="pd-sidebar__count">(${count})</span>
+        </label>`
+  ).join('\n        ');
+
+  const founderCheckboxHTML = hasFounder ? `
+        <label class="pd-sidebar__filter">
+          <input type="checkbox" data-pd-filter="founder" value="founder">
+          ${L.founder} <span class="pd-sidebar__count">(${founderCount})</span>
+        </label>` : '';
+
+  const filterGroupsHTML = `<div class="pd-sidebar__group">
+        <span class="pd-sidebar__label">${L.region}</span>
+        ${regionFiltersHTML}
+      </div>
+      <div class="pd-sidebar__group">
+        <span class="pd-sidebar__label">${L.language}</span>
+        ${langFiltersHTML}
+      </div>
+      <div class="pd-sidebar__group">
+        <span class="pd-sidebar__label">${L.quality}</span>
+        <label class="pd-sidebar__filter">
+          <input type="checkbox" data-pd-filter="fps" value="fps">
+          ${L.fps} <span class="pd-sidebar__count">(${fpsCount})</span>
+        </label>${founderCheckboxHTML}
+      </div>
+      <button class="pd-sidebar__clear" type="button">${L.clear}</button>`;
+
+  // Build compact rows — each row article contains its .pd-expand as last grid child
+  const rowsHTML = sorted.map(p => {
+    const slug = p.id;
+    const isFounder = p.tier === 'founder';
+    const rowClass = isFounder ? 'pd-row pd-row--founder' : 'pd-row';
+    const langStr = (p.languages || []).join(',');
+    const fpsDa = p.fps_certified ? '1' : '0';
+
+    const praiaCount = (p.praias_associadas || []).length;
+    const langDisplay = (p.languages || []).join(' · ');
+    const metaText = `${p.town} · ${L.beaches(praiaCount)} · ${langDisplay}`;
+
+    const ratingChip = p.tripadvisor_rating
+      ? `&#9733; ${p.tripadvisor_rating} (${p.tripadvisor_reviews})`
+      : '';
+    const sinceChip = p.founded ? `${L.since} ${p.founded}` : '';
+    const fpsChip   = p.fps_certified ? ' · FPS' : '';
+    const chips = [ratingChip, sinceChip].filter(Boolean).join(' · ') + fpsChip;
+
+    const rankingText = isEN
+      ? (p.tripadvisor_ranking_text_en || p.tripadvisor_ranking_text || '')
+      : (p.tripadvisor_ranking_text || '');
+    const rankHTML = rankingText ? `<span class="pd-row__badge">${rankingText}</span>` : '';
+
+    const expandContent = generateCardLarge(p, lang, praiasSlugs, praiaNames);
+
+    return `<article class="${rowClass}"
+               data-pd-region="${p.region_slug || ''}"
+               data-pd-lang="${langStr}"
+               data-pd-fps="${fpsDa}"
+               data-pd-tier="${p.tier || 'essential'}"
+               data-pd-id="${slug}"
+               id="pd-${slug}">
+
+        <div class="pd-row__logo">
+          <img src="${p.photo_url || ''}" alt="${p.name}" loading="lazy" width="60" height="60">
+        </div>
+
+        <div class="pd-row__main">
+          <h3 class="pd-row__name">${p.name}</h3>
+          <p class="pd-row__meta">${metaText}</p>
+          <p class="pd-row__chips">${chips}</p>
+        </div>
+
+        <div class="pd-row__aside">
+          ${rankHTML}
+          <button class="pd-row__toggle" aria-expanded="false" aria-controls="pd-expand-${slug}">
+            ${L.open} <span class="pd-row__toggle-icon" aria-hidden="true">&#9662;</span>
+          </button>
+        </div>
+
+        <div class="pd-expand" id="pd-expand-${slug}" aria-hidden="true">
+          <div class="pd-expand__inner">
+            ${expandContent}
+          </div>
+        </div>
+
+      </article>`;
+  }).join('\n\n');
+
+  return `<button class="pd-mobile-filters-btn" aria-controls="pd-drawer" aria-expanded="false">
+    <i aria-hidden="true">&#9881;</i> ${L.filters} (<span class="pd-mobile-count">${total}</span>)
+  </button>
+
+  <div class="pd-drawer" id="pd-drawer" role="dialog" aria-modal="true" aria-label="${L.filters}" aria-hidden="true">
+    <div class="pd-drawer__backdrop"></div>
+    <button class="pd-drawer__close" aria-label="${L.close}">&#10005;</button>
+    <p class="pd-drawer__title">${L.filters}</p>
+    ${filterGroupsHTML}
+  </div>
+
+  <div class="pd-layout">
+
+    <aside class="pd-sidebar" aria-label="${L.filters}">
+      ${filterGroupsHTML}
+    </aside>
+
+    <div class="pd-list" aria-label="${isEN ? 'Schools list' : 'Lista de escolas'}">
+      <div class="pd-list__header">
+        <p class="pd-result-count">${L.schools(total)}</p>
+        <span class="pd-active-filters">${L.all}</span>
+      </div>
+
+${rowsHTML}
+
+    </div>
+
+  </div>`;
+}
+
 // ── JSON-LD ────────────────────────────────────────────────────────────────
 function generateJsonLd(partners, lang) {
   const isEN = lang === 'en';
@@ -414,7 +590,6 @@ const NAV_COMMON_SCRIPTS = `<script src="https://cdn.jsdelivr.net/npm/@supabase/
 
 // ── Vitrine PT ─────────────────────────────────────────────────────────────
 function generateVitrinePT(partners, availablePraias, praiaNames) {
-  const cardsHTML = partners.map(p => generateCardLarge(p, 'pt', availablePraias, praiaNames)).join('\n\n');
   const jsonLd = generateJsonLd(partners, 'pt');
 
   return `<!DOCTYPE html>
@@ -461,6 +636,8 @@ ${jsonLd}
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="/css/style.css?v=20260520-qw5">
   <link rel="stylesheet" href="/css/partners-page.css?v=20260521-v1">
+  <link rel="stylesheet" href="/css/partners-directory.css?v=20260525-v1">
+  <noscript><style>.pd-expand{max-height:none;}.pd-sidebar{display:block !important;}</style></noscript>
   <script src="/js/image-autofix.js"></script>
   <style>
     /* ── Mobile Bottom Nav ── */
@@ -544,12 +721,8 @@ ${jsonLd}
     </div>
   </section>
 
-  <section class="partners-grid" aria-label="Escolas de surf verificadas">
-    <div class="partners-grid__inner">
-
-${cardsHTML}
-
-    </div>
+  <section class="partners-directory">
+    ${generateDirectoryList(partners, 'pt', availablePraias, praiaNames)}
   </section>
 
   <section class="partners-methodology">
@@ -652,13 +825,13 @@ ${cardsHTML}
 </nav>
 
 ${NAV_COMMON_SCRIPTS}
+<script src="/js/partners-directory.js?v=20260525-v1" defer></script>
 </body>
 </html>`;
 }
 
 // ── Vitrine EN ─────────────────────────────────────────────────────────────
 function generateVitrineEN(partners, availablePraias, praiaNames) {
-  const cardsHTML = partners.map(p => generateCardLarge(p, 'en', availablePraias, praiaNames)).join('\n\n');
   const jsonLd = generateJsonLd(partners, 'en');
 
   return `<!DOCTYPE html>
@@ -705,6 +878,8 @@ ${jsonLd}
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="/css/style.css?v=20260520-qw5">
   <link rel="stylesheet" href="/css/partners-page.css?v=20260521-v1">
+  <link rel="stylesheet" href="/css/partners-directory.css?v=20260525-v1">
+  <noscript><style>.pd-expand{max-height:none;}.pd-sidebar{display:block !important;}</style></noscript>
   <script src="/js/image-autofix.js"></script>
   <style>
     /* ── Mobile Bottom Nav ── */
@@ -788,12 +963,8 @@ ${jsonLd}
     </div>
   </section>
 
-  <section class="partners-grid" aria-label="Verified surf schools">
-    <div class="partners-grid__inner">
-
-${cardsHTML}
-
-    </div>
+  <section class="partners-directory">
+    ${generateDirectoryList(partners, 'en', availablePraias, praiaNames)}
   </section>
 
   <section class="partners-methodology">
@@ -896,6 +1067,7 @@ ${cardsHTML}
 </nav>
 
 ${NAV_COMMON_SCRIPTS}
+<script src="/js/partners-directory.js?v=20260525-v1" defer></script>
 </body>
 </html>`;
 }
