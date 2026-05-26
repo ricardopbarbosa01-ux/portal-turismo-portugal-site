@@ -64,13 +64,13 @@
           if (child.classList.contains('active')) a.classList.add('active');
           if (child.hasAttribute('aria-current')) a.setAttribute('aria-current', child.getAttribute('aria-current'));
           menu.appendChild(a);
-        } else if (child.classList.contains('nav-dropdown')) {
+        } else if (child.classList.contains('nav-dropdown') || child.classList.contains('pth-dd')) {
           // Dropdown: surface the featured (active) item as a direct mobile link
-          var featured = child.querySelector('.nav-dropdown__featured');
+          var featured = child.querySelector('.nav-dropdown__featured, .pth-dd__featured');
           if (featured) {
             var a = document.createElement('a');
             a.href = featured.getAttribute('href');
-            var titleEl = featured.querySelector('.nav-dropdown__featured-title');
+            var titleEl = featured.querySelector('.nav-dropdown__featured-title, .pth-dd__featured-title');
             a.textContent = titleEl ? titleEl.textContent.trim() : featured.textContent.trim();
             menu.appendChild(a);
           }
