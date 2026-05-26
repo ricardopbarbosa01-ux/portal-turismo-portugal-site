@@ -346,11 +346,34 @@
     history.replaceState(null, '', newURL);
   }
 
+  // ─── Hash auto-open ─────────────────────────────────────────────────────────
+
+  // Captured before init() so writeURLState() cannot strip it.
+  const _startHash = window.location.hash;
+
+  function openCardByHash(hash) {
+    const h = (hash !== undefined) ? hash : window.location.hash;
+    if (!h || h.length < 2) return;
+    const id = h.slice(1);
+    const anchor = document.getElementById(id);
+    if (!anchor) return;
+    const row = anchor.closest('.pd-row');
+    if (!row) return;
+    const expand = row.querySelector('.pd-expand');
+    if (!expand || expand.classList.contains('pd-expand--open')) return;
+    const toggle = row.querySelector('.pd-row__toggle');
+    openRow(row, toggle, expand);
+    setTimeout(function () { anchor.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+  }
+
+  window.addEventListener('hashchange', function () { openCardByHash(); });
+
   // ─── Boot ───────────────────────────────────────────────────────────────────
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', function () { init(); openCardByHash(_startHash); });
   } else {
     init();
+    openCardByHash(_startHash);
   }
 })();
