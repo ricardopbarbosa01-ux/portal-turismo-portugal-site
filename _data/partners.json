@@ -1,14 +1,17 @@
 {
   "$schema_version": 1,
   "meta": {
-    "last_updated": "2026-05-25",
+    "last_updated": "2026-05-26",
     "generated_by": "manual + Claude Code build"
   },
   "injection_targets": [
     {
       "file": "praias-surf-iniciantes-algarve.html",
       "context": "surf-iniciantes-algarve-pt",
-      "filter": { "region_slug": "algarve", "especialidade_includes": "iniciantes" },
+      "filter": {
+        "region_slug": "algarve",
+        "especialidade_includes": "iniciantes"
+      },
       "marker_start": "<!-- partners:start data-context=\"surf-iniciantes-algarve-pt\" -->",
       "marker_end": "<!-- partners:end -->",
       "insert_before_if_missing": "<section class=\"profiles-section\"",
@@ -20,7 +23,10 @@
     {
       "file": "en/beginner-surf-beaches-algarve.html",
       "context": "surf-iniciantes-algarve-en",
-      "filter": { "region_slug": "algarve", "especialidade_includes": "iniciantes" },
+      "filter": {
+        "region_slug": "algarve",
+        "especialidade_includes": "iniciantes"
+      },
       "marker_start": "<!-- partners:start data-context=\"surf-iniciantes-algarve-en\" -->",
       "marker_end": "<!-- partners:end -->",
       "insert_before_if_missing": "<section class=\"profiles-section\"",
@@ -32,7 +38,9 @@
     {
       "file": "guias/melhores-praias-algarve.html",
       "context": "guia-algarve-pt",
-      "filter": { "region_slug": "algarve" },
+      "filter": {
+        "region_slug": "algarve"
+      },
       "marker_start": "<!-- partners:start data-context=\"guia-algarve-pt\" -->",
       "marker_end": "<!-- partners:end -->",
       "insert_before_if_missing": "<div class=\"mag-cta\"",
@@ -51,7 +59,9 @@
     "praia-do-amado": "Praia do Amado",
     "praia-da-bordeira": "Praia da Bordeira",
     "praia-de-odeceixe": "Praia de Odeceixe",
-    "praia-da-rocha": "Praia da Rocha"
+    "praia-da-rocha": "Praia da Rocha",
+    "praia-da-gale": "Praia da Galé",
+    "praia-de-sao-rafael": "Praia de São Rafael"
   },
   "partners": [
     {
@@ -70,10 +80,19 @@
         "praia-de-beliche",
         "praia-do-amado"
       ],
-      "especialidade": ["iniciantes", "intermedios", "camps", "kids"],
+      "especialidade": [
+        "iniciantes",
+        "intermedios",
+        "camps",
+        "kids"
+      ],
       "all_levels": true,
       "all_year": true,
-      "languages": ["PT", "EN", "DE"],
+      "languages": [
+        "PT",
+        "EN",
+        "DE"
+      ],
       "preferred_contact_language": "EN",
       "verified_since": "2026-05",
       "tier": "essential",
@@ -118,10 +137,19 @@
         "praia-da-rocha",
         "praia-da-bordeira"
       ],
-      "especialidade": ["iniciantes", "intermedios", "avancados", "camps"],
+      "especialidade": [
+        "iniciantes",
+        "intermedios",
+        "avancados",
+        "camps"
+      ],
       "all_levels": true,
       "all_year": true,
-      "languages": ["PT", "EN", "DE"],
+      "languages": [
+        "PT",
+        "EN",
+        "DE"
+      ],
       "preferred_contact_language": "EN",
       "verified_since": "2026-05",
       "tier": "essential",
@@ -140,7 +168,16 @@
       "founded": 1998,
       "years_in_operation": 28,
       "fps_certified": true,
-      "certifications": ["FPS", "IPDJ", "Turismo de Portugal", "Marinha Portuguesa", "AESCV", "AESDP", "B Corp Certified", "1% for the Planet"],
+      "certifications": [
+        "FPS",
+        "IPDJ",
+        "Turismo de Portugal",
+        "Marinha Portuguesa",
+        "AESCV",
+        "AESDP",
+        "B Corp Certified",
+        "1% for the Planet"
+      ],
       "google_rating": 4.9,
       "google_reviews": 392,
       "google_maps_url": null,
@@ -155,6 +192,69 @@
       "hero_photo_source": "fotografia a&eacute;rea drone Costa Vicentina",
       "hero_photo_authorization": "confirmada pelo parceiro (email 19/05/2026 + verbal 25/05/2026)",
       "authorization_date": "2026-05-25"
+    },
+    {
+      "id": "albufeira-surf-sup",
+      "name": "Albufeira Surf & SUP",
+      "tagline_pt": "Escola de surf e desportos aquáticos em actividade desde 2014, operando entre a Praia da Galé e a Praia de São Rafael. Aulas de surf, SUP, kayak e coasteering com equipa multilingue (PT, EN, FR, DE). Certificada RNAAT.",
+      "tagline_en": "Surf and water-sports school operating since 2014, between Galé Beach and São Rafael Beach. Surf lessons, SUP, kayak and coasteering with a multilingual team (PT, EN, FR, DE). RNAAT certified.",
+      "region": "Algarve",
+      "region_slug": "algarve",
+      "town": "Albufeira",
+      "praias_associadas": [
+        "praia-da-gale",
+        "praia-de-sao-rafael"
+      ],
+      "especialidade": [
+        "iniciantes",
+        "intermedios",
+        "avancados",
+        "sup",
+        "kayak"
+      ],
+      "all_levels": true,
+      "all_year": true,
+      "languages": [
+        "PT",
+        "EN",
+        "FR",
+        "DE"
+      ],
+      "preferred_contact_language": "EN",
+      "verified_since": "2026-05",
+      "tier": "essential",
+      "contact_person": null,
+      "website": "https://albufeirasurfsup.com/",
+      "email_public": "info@albufeirasurfsup.com",
+      "phone": "+351 926 823 579",
+      "instagram": "@albufeirasurfsup",
+      "instagram_url": "https://www.instagram.com/albufeirasurfsup/",
+      "facebook_url": "https://www.facebook.com/albufeira.surfsup/",
+      "tripadvisor_rating": 4.8,
+      "tripadvisor_reviews": 1251,
+      "tripadvisor_url": "https://www.tripadvisor.com/Attraction_Review-g189112-d8093371-Reviews-Albufeira_Surf_SUP-Albufeira_Faro_District_Algarve.html",
+      "tripadvisor_ranking_text": "#11 of 58 Boat Tours &amp; Water Sports in Albufeira",
+      "tripadvisor_ranking_text_en": "#11 of 58 Boat Tours &amp; Water Sports in Albufeira",
+      "founded": 2014,
+      "years_in_operation": 12,
+      "fps_certified": false,
+      "certifications": [
+        "RNAAT"
+      ],
+      "google_rating": null,
+      "google_reviews": null,
+      "google_maps_url": null,
+      "schema_type": "SportsActivityLocation",
+      "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/albufeira-surf-sup.png",
+      "photo_credit": "Logo: Albufeira Surf & SUP (reproduzido com autorização)",
+      "photo_treatment": "logo-on-navy",
+      "notes_internal": "Autorização editorial 20/05/2026. Fotos autorizadas Ricardo PTH. AD-20260521-03 PASS 6/6. Tripadvisor 4.8/1251 top 1% #11/58 Albufeira. IG 13K. RNAAT 117/2015. WhatsApp +351 963 139 713 diferente canónico. Google Maps pendente. Sinal Founder registado.",
+      "hero_photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-photos/albufeira-surf-sup.jpg",
+      "hero_photo_caption": "Praia da Galé, Albufeira",
+      "hero_photo_caption_en": "Galé Beach, Albufeira",
+      "hero_photo_source": "site oficial Albufeira Surf & SUP",
+      "hero_photo_authorization": "confirmada pelo Ricardo PTH (20/05/2026)",
+      "authorization_date": "2026-05-20"
     }
   ]
 }
