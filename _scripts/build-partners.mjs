@@ -459,7 +459,7 @@ function generateDirectoryList(partners, lang, praiasSlugs, praiaNames) {
   }).join('\n\n');
 
   return `<button class="pd-mobile-filters-btn" aria-controls="pd-drawer" aria-expanded="false">
-    <i aria-hidden="true">&#9881;</i> ${L.filters} (<span class="pd-mobile-count">${total}</span>)
+    <i aria-hidden="true">&#9881;</i><span class="pd-filter-label">${L.filters} (<span class="pd-mobile-count">${total}</span>)</span>
   </button>
 
   <div class="pd-drawer" id="pd-drawer" role="dialog" aria-modal="true" aria-label="${L.filters}" aria-hidden="true">
