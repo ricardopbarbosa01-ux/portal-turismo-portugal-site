@@ -148,12 +148,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=optional" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="/css/style.css?v=20260520-qw5">
   <link rel="stylesheet" href="/css/partners-page.css?v=20260521-v1">
-  <link rel="stylesheet" href="/css/partners-directory.css?v=20260526-v2">
+  <link rel="stylesheet" href="/css/partners-directory.css?v=20260526-v3">
   <noscript><style>.pd-expand{max-height:none;}.pd-sidebar{display:block !important;}</style></noscript>
   <script src="/js/image-autofix.js"></script>
   <style>
@@ -239,12 +239,9 @@
   </section>
 
   <section class="partners-directory">
-    <button class="pd-mobile-filters-btn" aria-controls="pd-drawer" aria-expanded="false">
-    <i aria-hidden="true">&#9881;</i><span class="pd-filter-label">Filters (<span class="pd-mobile-count">2</span>)</span>
-  </button>
+    <div class="pd-drawer__backdrop"></div>
 
   <div class="pd-drawer" id="pd-drawer" role="dialog" aria-modal="true" aria-label="Filters" aria-hidden="true">
-    <div class="pd-drawer__backdrop"></div>
     <button class="pd-drawer__close" aria-label="Close">&#10005;</button>
     <p class="pd-drawer__title">Filters</p>
     <div class="pd-sidebar__group">
@@ -315,7 +312,10 @@
     </aside>
 
     <div class="pd-list" aria-label="Schools list">
-      <div class="pd-list__header">
+      <div class="pd-toolbar">
+        <button class="pd-mobile-filters-btn" aria-controls="pd-drawer" aria-expanded="false">
+          <i aria-hidden="true">&#9881;</i><span class="pd-filter-label">Filters (<span class="pd-mobile-count">2</span>)</span>
+        </button>
         <p class="pd-result-count">2 schools</p>
         <span class="pd-active-filters">All</span>
       </div>
