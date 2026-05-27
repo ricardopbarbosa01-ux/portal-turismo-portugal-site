@@ -436,6 +436,63 @@
       "hero_photo_source": "site oficial Salty Wave Surf School",
       "hero_photo_authorization": "confirmada por Rodrigo Lacerda (email 19/05/2026)",
       "authorization_date": "2026-05-19"
+    },
+    {
+      "id": "supa-albufeira",
+      "name": "SUPA Surf School",
+      "tagline_pt": "Escola de surf na Praia da Galé, Albufeira. Ensino personalizado em grupos pequenos com foco em segurança no oceano e paixão genuína pelo mar. Registada RNAAT 133/2015. Linha surf: +351 965 894 335.",
+      "tagline_en": "Surf school at Praia da Galé, Albufeira. Personalized teaching in small groups with focus on ocean safety and genuine passion for the sea. Registered RNAAT 133/2015. Direct surf line: +351 965 894 335.",
+      "region": "Algarve",
+      "region_slug": "algarve",
+      "town": "Albufeira",
+      "praias_associadas": [
+        "praia-da-gale"
+      ],
+      "especialidade": [
+        "iniciantes",
+        "intermedios"
+      ],
+      "all_levels": false,
+      "all_year": true,
+      "languages": [
+        "PT",
+        "EN"
+      ],
+      "preferred_contact_language": "EN",
+      "verified_since": "2026-05",
+      "tier": "essential",
+      "contact_person": "Tiago Dinis",
+      "website": "https://www.supalbufeira.com",
+      "email_public": "info@supalbufeira.com",
+      "phone": "+351 967 920 630",
+      "instagram": null,
+      "instagram_url": null,
+      "facebook_url": null,
+      "tripadvisor_rating": null,
+      "tripadvisor_reviews": null,
+      "tripadvisor_url": null,
+      "tripadvisor_ranking_text": null,
+      "tripadvisor_ranking_text_en": null,
+      "founded": 2015,
+      "years_in_operation": 11,
+      "fps_certified": false,
+      "certifications": [
+        "RNAAT 133/2015"
+      ],
+      "google_rating": 4.9,
+      "google_reviews": 112,
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJu5rldsvNGg0Rb2aIM30sy5o",
+      "schema_type": "SportsActivityLocation",
+      "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/supa-albufeira.png",
+      "photo_credit": "Logo: SUPA Surf School (reproduzido com autorização de Tiago Dinis, email 27/05/2026)",
+      "photo_treatment": "logo-on-navy",
+      "notes_internal": "Email recebido 27/05/2026 de Tiago Dinis. SUPA = Stand UP Paddle de Albufeira, Lda. NIPC 513382550, RNAAT 133/2015. Praia da Galé, Albufeira. Google 4.9/112. Linha surf directa: +351 965 894 335. Logo v3 lightened (azul escuro clareado para visibilidade sobre navy) — override AD-20260526-01b, revisitar retrospectiva 04/06/2026.",
+      "hero_photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-photos/supa-albufeira.webp",
+      "hero_photo_caption": "Praia da Galé, Albufeira",
+      "hero_photo_caption_en": "Praia da Galé, Albufeira",
+      "hero_photo_source": "site oficial SUPA Surf School",
+      "hero_photo_authorization": "confirmada por Tiago Dinis (email 27/05/2026)",
+      "authorization_date": "2026-05-27"
     }
   ]
 }
