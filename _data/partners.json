@@ -1,7 +1,7 @@
 {
   "$schema_version": 1,
   "meta": {
-    "last_updated": "2026-05-26",
+    "last_updated": "2026-05-27",
     "generated_by": "manual + Claude Code build"
   },
   "injection_targets": [
@@ -316,6 +316,126 @@
       "hero_photo_source": "site oficial TSE The Surf Experience",
       "hero_photo_authorization": "confirmada por Micky/Kimi (email 27/05/2026)",
       "authorization_date": "2026-05-27"
+    },
+    {
+      "id": "salty-wave-algarve",
+      "name": "Salty Wave Surf School - Algarve",
+      "tagline_pt": "Escola fundada em 2004 com 22 anos de ensino de surf em Lagos. Especializada em grupos pequenos, first-timers, iniciantes e famílias, com escolha do melhor spot consoante condições do mar. Aulas intermédias em formato privado. Equipa certificada FPS, ASI, Marinha e Turismo de Portugal.",
+      "tagline_en": "Surf school founded in 2004 with 22 years of experience teaching in Lagos. Specialized in small groups, first-timers, beginners and families, choosing the best spot based on sea conditions. Intermediate lessons offered privately. Team certified by FPS, ASI, Marinha and Turismo de Portugal.",
+      "region": "Algarve",
+      "region_slug": "algarve",
+      "town": "Lagos",
+      "praias_associadas": [
+        "meia-praia",
+        "praia-da-luz",
+        "praia-do-amado"
+      ],
+      "especialidade": [
+        "iniciantes",
+        "intermedios",
+        "kids"
+      ],
+      "all_levels": false,
+      "all_year": true,
+      "languages": [
+        "PT",
+        "EN"
+      ],
+      "preferred_contact_language": "PT",
+      "verified_since": "2026-05",
+      "tier": "essential",
+      "contact_person": "Rodrigo Lacerda",
+      "website": "https://www.saltywavesurf.com",
+      "email_public": "info@saltywavesurf.com",
+      "phone": "+351 931 692 605",
+      "instagram": "@saltywavealgarve",
+      "instagram_url": "https://www.instagram.com/saltywavealgarve",
+      "facebook_url": "https://www.facebook.com/Saltywavealgarve",
+      "tripadvisor_rating": 4.9,
+      "tripadvisor_reviews": 430,
+      "tripadvisor_url": "https://www.tripadvisor.com/Attraction_Review-g189117-d8178595-Reviews-Salty_Wave_Surf_School_Lagos-Lagos_Faro_District_Algarve.html",
+      "tripadvisor_ranking_text": "#3 of 30 Classes & Workshops in Lagos",
+      "tripadvisor_ranking_text_en": "#3 of 30 Classes & Workshops in Lagos",
+      "founded": 2004,
+      "years_in_operation": 22,
+      "fps_certified": true,
+      "certifications": [
+        "FPS",
+        "ASI",
+        "Marinha",
+        "Turismo de Portugal"
+      ],
+      "google_rating": 4.7,
+      "google_reviews": 222,
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ4TxvhBwxGw0RT8wOoRvzQeI",
+      "schema_type": "SportsActivityLocation",
+      "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/salty-wave-algarve.png",
+      "photo_credit": "Logo: Salty Wave Surf School (reproduzido com autorização de Rodrigo Lacerda)",
+      "photo_treatment": "logo-on-navy",
+      "notes_internal": "Email recebido 19/05/2026 de Rodrigo Lacerda (info@saltywavesurf.com). Escola fundada 2004. Algarve: Lagos & Praia da Luz. TripAdvisor 4.9/430 #3/30 Classes & Workshops Lagos. Google 4.7/222. BeyondSurfing Best Surf School 2022-2025. matosinhos (Porto) não tem slug em beaches-master.json.",
+      "hero_photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-photos/salty-wave-algarve.webp",
+      "hero_photo_caption": "Lagos, Algarve",
+      "hero_photo_caption_en": "Lagos, Algarve",
+      "hero_photo_source": "site oficial Salty Wave Surf School",
+      "hero_photo_authorization": "confirmada por Rodrigo Lacerda (email 19/05/2026)",
+      "authorization_date": "2026-05-19"
+    },
+    {
+      "id": "salty-wave-porto",
+      "name": "Salty Wave Surf School - Porto",
+      "tagline_pt": "Escola de surf na praia de Matosinhos, ideal para viajantes urbanos. Aulas diárias em grupo e privadas para iniciantes e famílias. Acessível de metro a partir do centro do Porto. Mesma equipa e qualidade certificada (FPS, ASI, Turismo de Portugal) da escola-mãe no Algarve.",
+      "tagline_en": "Surf school at Matosinhos beach, ideal for city travelers. Daily group and private lessons for beginners and families. Easily accessible by metro from Porto city center. Same team and certifications (FPS, ASI, Turismo de Portugal) as the parent school in Algarve.",
+      "region": "Norte",
+      "region_slug": "norte",
+      "town": "Matosinhos",
+      "praias_associadas": [],
+      "especialidade": [
+        "iniciantes",
+        "kids"
+      ],
+      "all_levels": false,
+      "all_year": true,
+      "languages": [
+        "PT",
+        "EN"
+      ],
+      "preferred_contact_language": "PT",
+      "verified_since": "2026-05",
+      "tier": "essential",
+      "contact_person": "Rodrigo Lacerda",
+      "website": "https://www.saltywavesurf.com",
+      "email_public": "info@saltywavesurf.com",
+      "phone": "+351 912 715 474",
+      "instagram": "@saltywavealgarve",
+      "instagram_url": "https://www.instagram.com/saltywavealgarve",
+      "facebook_url": "https://www.facebook.com/Saltywavealgarve",
+      "tripadvisor_rating": null,
+      "tripadvisor_reviews": 113,
+      "tripadvisor_url": "https://www.tripadvisor.com/Attraction_Review-g652092-d3952285-Reviews-Salty_Wave_Surf_School-Matosinhos_Porto_District_Northern_Portugal.html",
+      "tripadvisor_ranking_text": null,
+      "tripadvisor_ranking_text_en": null,
+      "founded": 2004,
+      "years_in_operation": 22,
+      "fps_certified": true,
+      "certifications": [
+        "FPS",
+        "ASI",
+        "Turismo de Portugal"
+      ],
+      "google_rating": 4.8,
+      "google_reviews": 46,
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJBeVqJyVvJA0RyCuzBzLxCYs",
+      "schema_type": "SportsActivityLocation",
+      "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/salty-wave-porto.png",
+      "photo_credit": "Logo: Salty Wave Surf School (reproduzido com autorização de Rodrigo Lacerda)",
+      "photo_treatment": "logo-on-navy",
+      "notes_internal": "Email recebido 19/05/2026 de Rodrigo Lacerda. Porto: Matosinhos (Av. Gen. Norton de Matos). Google 4.8/46. TripAdvisor 113 reviews mas rating ambíguo — null. Marinha não listada para Porto (apenas FPS, ASI, Turismo de Portugal). matosinhos slug inválido em beaches-master.json — praias_associadas deixado vazio.",
+      "hero_photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-photos/salty-wave-porto.webp",
+      "hero_photo_caption": "Matosinhos, Porto",
+      "hero_photo_caption_en": "Matosinhos, Porto",
+      "hero_photo_source": "site oficial Salty Wave Surf School",
+      "hero_photo_authorization": "confirmada por Rodrigo Lacerda (email 19/05/2026)",
+      "authorization_date": "2026-05-19"
     }
   ]
 }
