@@ -61,7 +61,9 @@
     "praia-de-odeceixe": "Praia de Odeceixe",
     "praia-da-rocha": "Praia da Rocha",
     "praia-da-gale": "Praia da Galé",
-    "praia-de-sao-rafael": "Praia de São Rafael"
+    "praia-de-sao-rafael": "Praia de São Rafael",
+    "meia-praia": "Meia Praia",
+    "praia-da-luz": "Praia da Luz"
   },
   "partners": [
     {
@@ -255,6 +257,65 @@
       "hero_photo_source": "site oficial Albufeira Surf & SUP",
       "hero_photo_authorization": "confirmada pelo Ricardo PTH (20/05/2026)",
       "authorization_date": "2026-05-20"
+    },
+    {
+      "id": "tse-the-surf-experience",
+      "name": "TSE The Surf Experience",
+      "tagline_pt": "Camp de surf pioneiro fundado em 1995 por Conny e Dago Lipke. Aulas de surf para todos os n&iacute;veis, kids surf school e instala&ccedil;&otilde;es pr&oacute;prias incluindo piscina no Surf Mansion, Lagos.",
+      "tagline_en": "Pioneer surf camp founded in 1995 by Conny and Dago Lipke. Lessons for all levels, kids surf school, and proprietary facilities including pool at Surf Mansion, Lagos.",
+      "region": "Algarve",
+      "region_slug": "algarve",
+      "town": "Lagos",
+      "praias_associadas": [
+        "meia-praia",
+        "praia-da-luz",
+        "praia-do-amado"
+      ],
+      "especialidade": [
+        "iniciantes",
+        "intermedios",
+        "avancados",
+        "kids"
+      ],
+      "all_levels": true,
+      "all_year": true,
+      "languages": [
+        "EN",
+        "DE"
+      ],
+      "preferred_contact_language": "EN",
+      "verified_since": "2026-05",
+      "tier": "essential",
+      "contact_person": "Micky / Kimi",
+      "website": "https://thesurfexperience.eu/",
+      "email_public": "contact@thesurfexperience.eu",
+      "phone": "+351 914 980 997",
+      "instagram": "@thesurfexperience",
+      "instagram_url": "https://www.instagram.com/thesurfexperience/",
+      "facebook_url": "https://www.facebook.com/The.Surf.Experience/",
+      "tripadvisor_rating": 4.8,
+      "tripadvisor_reviews": 100,
+      "tripadvisor_url": "https://www.tripadvisor.com.au/Hotel_Review-g189117-d3845726-Reviews-TSE_The_Surf_Experience-Lagos_Faro_District_Algarve.html",
+      "tripadvisor_ranking_text": "#3 of 60 guest houses in Lagos",
+      "tripadvisor_ranking_text_en": "#3 of 60 guest houses in Lagos",
+      "founded": 1995,
+      "years_in_operation": 31,
+      "fps_certified": false,
+      "certifications": null,
+      "google_rating": 4.8,
+      "google_reviews": 234,
+      "google_maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJjwshl7gxGw0RgfmNXnIh_fU",
+      "schema_type": "SportsActivityLocation",
+      "photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-logos/tse-the-surf-experience.png",
+      "photo_credit": "Logo: TSE The Surf Experience (reproduzido com autoriza&ccedil;&atilde;o de Micky/Kimi)",
+      "photo_treatment": "logo-on-navy",
+      "notes_internal": "Email recebido 27/05/2026 de Micky/Kimi (contact@thesurfexperience.eu). NIF: 508510287. Camp fundado 1995 por Conny e Dago Lipke. Surf Mansion Lagos. Tripadvisor 4.8/100 #3/60 guest houses Lagos. Google 4.8/234 Place ID ChIJjwshl7gxGw0RgfmNXnIh_fU. porto-de-mos exclu&iacute;do &mdash; slug n&atilde;o existe em beaches-master.json.",
+      "hero_photo_url": "https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/partner-photos/tse-the-surf-experience.webp",
+      "hero_photo_caption": "Costa Vicentina, Algarve",
+      "hero_photo_caption_en": "Costa Vicentina, Algarve",
+      "hero_photo_source": "site oficial TSE The Surf Experience",
+      "hero_photo_authorization": "confirmada por Micky/Kimi (email 27/05/2026)",
+      "authorization_date": "2026-05-27"
     }
   ]
 }
