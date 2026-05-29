@@ -1120,7 +1120,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ── Pro upgrade banner (free users only) ───────────────────────
   // Read from DB, not JWT — JWT plan claim can be stale after downgrade/upgrade
   const { data: _planRow } = await db.from('profiles').select('plan').eq('id', user.id).maybeSingle();
-  const isPro = _planRow?.plan === 'pro';
+  const isPro    = _planRow?.plan === 'pro';
+  // Admin role is granted via app_metadata (server-set, not user-editable) — safe to use for banner suppression.
+  // Admin accounts may not have a profiles.plan row, but should never see a Pro upsell on their own dashboard.
+  const isAdminRole = user.app_metadata?.role === 'admin';
 
   // ── Mostrar CRM por default, favoritos ocultos ───────────────
   showView('crm');
@@ -1130,7 +1133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('sidebar-favorites').style.display = 'flex';
   }
 
-  if (!isPro) {
+  if (!isPro && !isAdminRole) {
     const emailEnc = encodeURIComponent(user.email || '');
     const lsBase   = 'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/2d56d759-3e65-46cb-9210-ea7c0fce2cb3';
     const lsUrl    = `${lsBase}?checkout[email]=${emailEnc}&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fconta.html%3Factivated%3D1`;
@@ -2702,7 +2705,7 @@ async function confirmHardDelete(lead) {
     } catch {}
   } else {
     const { error } = await db.from(table).delete().eq('id', lead.raw.id);
-    if (error) { console.error('[hard delete]', error); toast('Erro ao apagar do servidor.', ''); return; }
+    if (error) { console.error('[hard delete] table=' + table + ' id=' + lead.raw.id, error); toast('Erro ao apagar: ' + (error.message || error.code || 'ver consola'), ''); return; }
     // Remove from localStorage
     try {
       const arr = JSON.parse(localStorage.getItem(lsKeyMap[lead.type]) || '[]');
