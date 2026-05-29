@@ -2717,7 +2717,8 @@ async function confirmHardDelete(lead) {
   const store = loadMetaStore();
   delete store[lead.id];
   localStorage.setItem(META_KEY, JSON.stringify(store));
-  db.from('lead_meta').delete().eq('lead_id', lead.id).catch(() => {});
+  const { error: metaErr } = await db.from('lead_meta').delete().eq('lead_id', lead.id);
+  if (metaErr) console.error('[lead_meta delete]', metaErr);
 
   // Remove from allLeads + re-render
   allLeads = allLeads.filter(l => l.id !== lead.id);
