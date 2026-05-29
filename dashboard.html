@@ -675,13 +675,13 @@
       <!-- KPI row: operational metrics -->
       <div class="kpi-row" role="list" aria-label="Métricas operacionais de leads">
 
-        <div class="kpi-card" role="listitem" data-filter="todos" tabindex="0" aria-label="Total de leads — clicar para ver todos">
+        <div class="kpi-card" role="listitem" data-filter="reais" tabindex="0" aria-label="Total de leads reais — clicar para ver todos">
           <div class="kpi-icon blue" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div class="kpi-label">Total de Leads</div>
           <div class="kpi-value" id="kpi-total">—</div>
-          <div class="kpi-sub">todas as fontes</div>
+          <div class="kpi-sub">excl. testes</div>
         </div>
 
         <div class="kpi-card" role="listitem" data-filter="alto-potencial" tabindex="0" aria-label="Alto potencial — clicar para filtrar">
@@ -693,7 +693,7 @@
           <div class="kpi-sub">score ≥ 55 pts</div>
         </div>
 
-        <div class="kpi-card" role="listitem" data-filter="contactado" tabindex="0" aria-label="Leads em pipeline — clicar para filtrar">
+        <div class="kpi-card" role="listitem" data-filter="pipeline" tabindex="0" aria-label="Leads em pipeline — clicar para filtrar">
           <div class="kpi-icon green" aria-hidden="true">
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
@@ -904,7 +904,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   await initCRM(user);
 
   // ── Pro upgrade banner (free users only) ───────────────────────
-  const isPro = user?.app_metadata?.plan === 'pro';
+  // Read from DB, not JWT — JWT plan claim can be stale after downgrade/upgrade
+  const { data: _planRow } = await db.from('profiles').select('plan').eq('id', user.id).maybeSingle();
+  const isPro = _planRow?.plan === 'pro';
 
   // ── Mostrar CRM por default, favoritos ocultos ───────────────
   showView('crm');
@@ -1005,6 +1007,7 @@ const STATUS_LABELS = {
 };
 const PRIORITY_LABELS = { alta: 'Alta', media: 'Média', baixa: 'Baixa' };
 const STATUS_VALS = Object.keys(STATUS_LABELS);
+const PIPELINE_STATES = new Set(['contactado', 'proposta_enviada', 'qualificado']);
 
 /* ── HTML escape ────────────────────────────────────────────────── */
 function esc(v) {
@@ -1815,6 +1818,7 @@ function visibleLeads() {
   else if (f === 'alto-potencial')  leads = allLeads.filter(l => scoreLead(l).tier === 'alto');
   else if (f === 'medio-potencial') leads = allLeads.filter(l => scoreLead(l).tier === 'medio');
   else if (f === 'baixo-potencial') leads = allLeads.filter(l => scoreLead(l).tier === 'baixo');
+  else if (f === 'pipeline')        leads = allLeads.filter(l => !isTestLead(l) && PIPELINE_STATES.has(getMeta(l.id).status));
   else if (STATUS_VALS.includes(f)) leads = allLeads.filter(l => getMeta(l.id).status === f);
   else                              leads = allLeads.filter(l => l.type === f);
 
@@ -2197,7 +2201,6 @@ function updateKPIs() {
   const real     = deduplicateLeads(allLeads.filter(l => !isTestLead(l)));
   const total    = real.length;
   const altoPot  = real.filter(l => scoreLead(l).tier === 'alto').length;
-  const PIPELINE_STATES = new Set(['contactado', 'proposta_enviada', 'qualificado']);
   const emPipeline = real.filter(l => PIPELINE_STATES.has(getMeta(l.id).status)).length;
   const ganhos   = real.filter(l => getMeta(l.id).status === 'ganho').length;
   const parceiros = real.filter(l => l.type === 'parceiro').length;
