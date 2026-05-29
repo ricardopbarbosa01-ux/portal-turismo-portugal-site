@@ -583,6 +583,153 @@
     @media (prefers-reduced-motion: reduce) {
       .kpi-card, .lead-detail-row, .crm-toast, .dash-sidebar { transition: none !important; }
     }
+
+    /* ── Confirm / delete modal ── */
+    .confirm-modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 900;
+      display: flex; align-items: center; justify-content: center; padding: 16px;
+    }
+    .confirm-modal {
+      background: var(--white); border-radius: 12px; padding: 24px 28px;
+      max-width: 400px; width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+    .confirm-modal h3 { font-family: var(--font-heading); font-size: 1.05rem; color: #c53030; margin: 0 0 6px; }
+    .confirm-modal p  { font-size: 0.875rem; color: var(--text-mid); margin: 0 0 12px; line-height: 1.5; }
+    .confirm-modal-rgpd {
+      background: rgba(229,62,62,0.06); border: 1px solid rgba(229,62,62,0.18);
+      border-radius: 8px; padding: 10px 14px; margin-bottom: 16px;
+      font-size: 0.74rem; color: #8b1a24; line-height: 1.5;
+    }
+    .confirm-modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+    .confirm-btn-cancel {
+      padding: 8px 18px; border-radius: 7px; border: 1.5px solid rgba(10,61,107,0.15);
+      background: var(--white); color: var(--text-mid); cursor: pointer;
+      font-family: var(--font-body); font-size: 0.875rem;
+    }
+    .confirm-btn-cancel:hover { background: var(--off-white); }
+    .confirm-btn-danger {
+      padding: 8px 18px; border-radius: 7px; border: none;
+      background: #c53030; color: var(--white); cursor: pointer;
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 600;
+    }
+    .confirm-btn-danger:hover { background: #9b2c2c; }
+    .confirm-btn-danger:focus-visible { outline: 2px solid #fc8181; outline-offset: 2px; }
+
+    /* ── Add lead modal ── */
+    .add-modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 900;
+      display: flex; align-items: center; justify-content: center; padding: 16px;
+    }
+    .add-modal {
+      background: var(--white); border-radius: 12px; padding: 24px 28px;
+      max-width: 460px; width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+    }
+    .add-modal h3 { font-family: var(--font-heading); font-size: 1.05rem; color: var(--blue); margin: 0 0 16px; }
+    .add-modal-fields { display: flex; flex-direction: column; gap: 11px; margin-bottom: 16px; }
+    .add-modal-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-light); display: block; margin-bottom: 4px; }
+    .add-modal-input, .add-modal-select, .add-modal-textarea {
+      width: 100%; padding: 8px 12px; border-radius: 7px; box-sizing: border-box;
+      border: 1.5px solid rgba(10,61,107,0.15);
+      font-family: var(--font-body); font-size: 0.875rem; color: var(--text); background: var(--white);
+    }
+    .add-modal-textarea { resize: vertical; min-height: 68px; line-height: 1.5; }
+    .add-modal-input:focus, .add-modal-select:focus, .add-modal-textarea:focus {
+      outline: none; border-color: var(--gold);
+    }
+    .add-modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+    .add-btn-cancel {
+      padding: 8px 18px; border-radius: 7px; border: 1.5px solid rgba(10,61,107,0.15);
+      background: var(--white); color: var(--text-mid); cursor: pointer;
+      font-family: var(--font-body); font-size: 0.875rem;
+    }
+    .add-btn-cancel:hover { background: var(--off-white); }
+    .add-btn-submit {
+      padding: 8px 18px; border-radius: 7px; border: none;
+      background: var(--blue); color: var(--white); cursor: pointer;
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 600;
+    }
+    .add-btn-submit:hover { opacity: 0.87; }
+    .add-btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── Notes log ── */
+    .notes-log-section { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(10,61,107,0.08); }
+    .notes-log-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .notes-log-title { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-light); }
+    .notes-log-count { font-size: 0.68rem; color: var(--text-light); }
+    .notes-log-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 9px; max-height: 200px; overflow-y: auto; }
+    .notes-entry { background: rgba(10,61,107,0.03); border-radius: 7px; padding: 7px 10px; border-left: 2px solid rgba(10,61,107,0.13); }
+    .notes-entry-ts { font-size: 0.64rem; color: var(--text-light); display: block; margin-bottom: 3px; }
+    .notes-entry-text { font-size: 0.79rem; color: var(--text); margin: 0; line-height: 1.5; }
+    .notes-entry-empty { font-size: 0.78rem; color: var(--text-light); font-style: italic; margin: 0; }
+    .notes-add-row { display: flex; gap: 7px; align-items: flex-start; }
+    .notes-add-input {
+      flex: 1; padding: 7px 10px; border-radius: 7px;
+      border: 1.5px solid rgba(10,61,107,0.15);
+      font-family: var(--font-body); font-size: 0.8rem; resize: none; line-height: 1.5;
+    }
+    .notes-add-input:focus { outline: none; border-color: var(--gold); }
+    .notes-add-btn {
+      padding: 7px 13px; border-radius: 7px; border: none;
+      background: var(--blue); color: var(--white); cursor: pointer;
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+      white-space: nowrap; align-self: stretch; touch-action: manipulation;
+    }
+    .notes-add-btn:hover { opacity: 0.87; }
+
+    /* ── View toggle bar ── */
+    .view-toggle-bar {
+      display: flex; align-items: center; gap: 3px;
+      background: rgba(10,61,107,0.05); border-radius: 8px; padding: 3px;
+      width: fit-content; margin-bottom: 16px;
+    }
+    .view-toggle-btn {
+      padding: 6px 18px; border-radius: 6px; border: none; cursor: pointer;
+      font-family: var(--font-body); font-size: 0.78rem; font-weight: 500;
+      color: var(--text-mid); background: transparent; transition: background 0.12s, color 0.12s;
+      touch-action: manipulation;
+    }
+    .view-toggle-btn.active { background: var(--white); color: var(--blue); font-weight: 600; box-shadow: 0 1px 4px rgba(10,61,107,0.10); }
+
+    /* ── Kanban board ── */
+    .kanban-board { display: flex; gap: 11px; overflow-x: auto; padding-bottom: 16px; align-items: flex-start; }
+    .kanban-col {
+      min-width: 196px; flex: 1; max-width: 250px;
+      background: rgba(10,61,107,0.03); border-radius: 10px; border: 1px solid rgba(10,61,107,0.07);
+    }
+    .kanban-col-head {
+      padding: 11px 13px 9px; border-bottom: 1px solid rgba(10,61,107,0.06);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .kanban-col-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-light); }
+    .kanban-col-count {
+      font-size: 0.64rem; font-weight: 700;
+      background: rgba(10,61,107,0.08); color: var(--text-mid);
+      padding: 1px 7px; border-radius: 20px;
+    }
+    .kanban-cards { padding: 7px; display: flex; flex-direction: column; gap: 6px; min-height: 70px; }
+    .kanban-card {
+      background: var(--white); border-radius: 8px; padding: 11px 12px;
+      box-shadow: 0 1px 4px rgba(10,61,107,0.07); cursor: pointer;
+      border: 1.5px solid transparent; transition: box-shadow 0.12s, border-color 0.12s;
+    }
+    .kanban-card:hover { box-shadow: 0 3px 10px rgba(10,61,107,0.12); border-color: rgba(10,61,107,0.10); }
+    .kanban-card-name { font-size: 0.81rem; font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 2px; }
+    .kanban-card-email { font-size: 0.7rem; color: var(--text-light); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 6px; }
+    .kanban-card-meta { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 7px; }
+    .kanban-card-advance {
+      width: 100%; padding: 5px 10px; border-radius: 6px;
+      background: rgba(10,61,107,0.06); color: var(--blue);
+      border: 1px solid rgba(10,61,107,0.12); cursor: pointer;
+      font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; gap: 4px;
+      transition: background 0.12s; touch-action: manipulation;
+    }
+    .kanban-card-advance:hover { background: rgba(10,61,107,0.12); }
+    .kanban-card-advance.win { background: rgba(56,161,105,0.09); color: #276749; border-color: rgba(56,161,105,0.25); }
+    .kanban-card-advance.win:hover { background: rgba(56,161,105,0.17); }
+    .kanban-empty { font-size: 0.74rem; color: var(--text-light); text-align: center; padding: 16px 8px; font-style: italic; }
   </style>
   <meta name="description" content="O teu painel Portugal Travel Hub — gere leads, acompanha pedidos e acede a ferramentas exclusivas.">
   <link rel="canonical" href="https://www.portalturismoportugal.com/dashboard">
@@ -665,6 +812,10 @@
           <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
           <span>Limpar dados</span>
         </button>
+        <button class="topbar-btn" id="btn-add-lead" aria-label="Adicionar lead manualmente">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span>Novo Lead</span>
+        </button>
       </div>
     </header>
 
@@ -740,8 +891,14 @@
 
       </div><!-- /kpi-row -->
 
-      <!-- CRM panel -->
-      <div class="crm-panel" role="region" aria-label="Lista de leads">
+      <!-- View toggle -->
+      <div class="view-toggle-bar" role="group" aria-label="Vista">
+        <button class="view-toggle-btn active" id="btn-list-view" aria-pressed="true">Lista</button>
+        <button class="view-toggle-btn" id="btn-kanban-view" aria-pressed="false">Kanban</button>
+      </div>
+
+      <!-- CRM panel (list view) -->
+      <div class="crm-panel" id="list-panel" role="region" aria-label="Lista de leads">
 
         <div class="crm-panel-head">
           <div class="crm-filters-wrap">
@@ -842,7 +999,12 @@
           </div>
         </div>
 
-      </div><!-- /crm-panel -->
+      </div><!-- /list-panel -->
+
+      <!-- Kanban view (hidden by default) -->
+      <div id="kanban-view" style="display:none" aria-label="Vista Kanban">
+        <div class="kanban-board" id="kanban-board"></div>
+      </div>
 
       </div><!-- /crm-view -->
 
@@ -866,6 +1028,58 @@
 
     </div><!-- /dash-content -->
   </main>
+</div>
+
+<!-- Delete confirmation modal -->
+<div class="confirm-modal-overlay" id="del-modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-labelledby="del-modal-title">
+  <div class="confirm-modal">
+    <h3 id="del-modal-title">Apagar registo permanentemente</h3>
+    <p>Vai apagar <strong id="del-modal-name"></strong> (<span id="del-modal-type"></span>). Esta ação é irreversível.</p>
+    <div class="confirm-modal-rgpd">
+      <strong>Nota RGPD:</strong> A eliminação permanente remove os dados do utilizador da nossa base de dados.
+      Mantenha registo da data e motivo da eliminação para cumprimento dos prazos legais de conservação.
+      Se pretende apenas ocultar o registo, use <strong>Arquivar</strong> em vez de Apagar.
+    </div>
+    <div class="confirm-modal-actions">
+      <button class="confirm-btn-cancel" id="del-modal-cancel">Cancelar</button>
+      <button class="confirm-btn-danger" id="del-modal-confirm">Apagar permanentemente</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add lead modal -->
+<div class="add-modal-overlay" id="add-modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-labelledby="add-modal-title">
+  <div class="add-modal">
+    <h3 id="add-modal-title">Novo Lead Manual</h3>
+    <form id="add-modal-form" novalidate>
+      <div class="add-modal-fields">
+        <div>
+          <label class="add-modal-label" for="add-modal-nome">Nome *</label>
+          <input class="add-modal-input" id="add-modal-nome" type="text" placeholder="Nome ou empresa" required autocomplete="off">
+        </div>
+        <div>
+          <label class="add-modal-label" for="add-modal-email">Email</label>
+          <input class="add-modal-input" id="add-modal-email" type="email" placeholder="email@exemplo.com" autocomplete="off">
+        </div>
+        <div>
+          <label class="add-modal-label" for="add-modal-regiao">Região</label>
+          <input class="add-modal-input" id="add-modal-regiao" type="text" placeholder="Ex: Algarve, Lisboa, Porto…" autocomplete="off">
+        </div>
+        <div>
+          <label class="add-modal-label" for="add-modal-tipo">Tipo / Intenção</label>
+          <input class="add-modal-input" id="add-modal-tipo" type="text" placeholder="Ex: surf, pesca, família, parceria…" autocomplete="off">
+        </div>
+        <div>
+          <label class="add-modal-label" for="add-modal-notas">Notas</label>
+          <textarea class="add-modal-textarea" id="add-modal-notas" placeholder="Contexto adicional sobre este lead…"></textarea>
+        </div>
+      </div>
+      <div class="add-modal-actions">
+        <button type="button" class="add-btn-cancel" id="add-modal-cancel">Cancelar</button>
+        <button type="submit" class="add-btn-submit" id="add-modal-submit">Guardar Lead</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <div class="crm-toast" id="crm-toast" role="status" aria-live="polite"></div>
@@ -1044,6 +1258,7 @@ function getMeta(id) {
     updated_at:   m.updated_at   || null,
     last_action:  m.last_action  || null,
     contacted_at: m.contacted_at || null,
+    notes_log:    Array.isArray(m.notes_log) ? m.notes_log : [],
   };
 }
 function saveMeta(id, updates) {
@@ -1640,6 +1855,10 @@ function actionBar(lead, idx) {
       <button class="det-qa-btn" data-qa="archive-test" data-lead-id="${lead.id}" style="opacity:0.7">
         <svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>Arquivar teste
       </button>` : ''}
+      ${!isTestLead(lead) ? `
+      <button class="det-qa-btn det-qa-btn--danger" data-qa="open-delete-modal" data-lead-id="${lead.id}" title="Apagar permanentemente (RGPD)">
+        <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>Apagar
+      </button>` : ''}
     </div>
     ${!isTestLead(lead) ? pipelineBtns(lead) : ''}
     ${lastLabel || meta.contacted_at ? `
@@ -1756,7 +1975,29 @@ function mgmtSection(lead, idx) {
         </a>` : ''}
       </div>
     </div>
+    ${notesLogSection(lead, idx)}
     <div class="det-divider"></div>`;
+}
+
+/* ── Notes log section ──────────────────────────────────────────── */
+function notesLogSection(lead, idx) {
+  const meta = getMeta(lead.id);
+  const log  = meta.notes_log.slice().reverse(); // newest first
+  const entries = log.length
+    ? log.map(e => `<div class="notes-entry"><span class="notes-entry-ts">${fullDate(e.ts)}</span><p class="notes-entry-text">${esc(e.text)}</p></div>`).join('')
+    : '<p class="notes-entry-empty">Sem notas.</p>';
+  return `
+    <div class="notes-log-section">
+      <div class="notes-log-head">
+        <span class="notes-log-title">Log de notas</span>
+        <span class="notes-log-count" id="notes-cnt-${idx}">${log.length} nota${log.length !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="notes-log-list" id="notes-log-${idx}">${entries}</div>
+      <div class="notes-add-row">
+        <textarea class="notes-add-input" id="notes-add-${idx}" rows="2" placeholder="Adicionar nota…"></textarea>
+        <button class="notes-add-btn" data-add-note="${idx}" data-lead-id="${lead.id}">+ Nota</button>
+      </div>
+    </div>`;
 }
 
 /* ── State ─────────────────────────────────────────────────────── */
@@ -1767,7 +2008,9 @@ let searchQuery   = '';
 let filterStatus  = 'todos';
 let filterType    = 'todos';
 let filterPriority = 'todas';
-let _selectedLeadId = null;
+let _selectedLeadId  = null;
+let _pendingDeleteLead = null;
+let viewMode = 'list'; // 'list' | 'kanban'
 
 /* ── UI State persistence ───────────────────────────────────────── */
 const UI_STATE_KEY = 'pth_crm_ui_state';
@@ -1958,6 +2201,8 @@ function render() {
     const ta = document.getElementById(`det-note-${i}`);
     if (ta) ta.value = getMeta(lead.id).note || '';
   });
+  // Keep kanban in sync when in kanban mode
+  if (viewMode === 'kanban') renderKanban();
 }
 
 /* ── Inline priority cycle ──────────────────────────────────────── */
@@ -2030,6 +2275,7 @@ function handleSave(btn) {
   // Refresh KPIs (metadata changed)
   allLeads = normaliseLeads();
   updateKPIs();
+  if (viewMode === 'kanban') renderKanban();
   toast('Guardado.', 'ok');
 }
 
@@ -2086,17 +2332,38 @@ function fallbackCopy(text) {
 /* ── Event delegation on leads-list (set up once) ───────────────── */
 const leadsList = document.getElementById('leads-list');
 leadsList.addEventListener('click', e => {
-  const prioBtn  = e.target.closest('.prio-cycle');
-  const saveBtn  = e.target.closest('.det-save-btn');
-  const copyBtn  = e.target.closest('.det-copy-btn');
-  const closeBtn = e.target.closest('.detail-close-btn');
-  const qaBtn    = e.target.closest('[data-qa]');
-  const row      = e.target.closest('.lead-row');
+  const prioBtn    = e.target.closest('.prio-cycle');
+  const saveBtn    = e.target.closest('.det-save-btn');
+  const copyBtn    = e.target.closest('.det-copy-btn');
+  const closeBtn   = e.target.closest('.detail-close-btn');
+  const qaBtn      = e.target.closest('[data-qa]');
+  const noteAddBtn = e.target.closest('[data-add-note]');
+  const row        = e.target.closest('.lead-row');
 
   if (prioBtn)  { e.stopPropagation(); handlePrioCycle(prioBtn); return; }
   if (saveBtn)  { e.stopPropagation(); handleSave(saveBtn); return; }
   if (copyBtn)  { e.stopPropagation(); handleCopy(copyBtn); return; }
   if (closeBtn) { e.stopPropagation(); closeDetail(closeBtn.dataset.close); return; }
+
+  if (noteAddBtn) {
+    e.stopPropagation();
+    const idx      = noteAddBtn.dataset.addNote;
+    const textarea = document.getElementById(`notes-add-${idx}`);
+    const text     = textarea?.value?.trim();
+    if (!text) { toast('Nota vazia.', ''); return; }
+    addNoteEntry(noteAddBtn.dataset.leadId, text);
+    textarea.value = '';
+    const lead = allLeads.find(l => l.id === noteAddBtn.dataset.leadId);
+    if (lead) {
+      const log      = getMeta(lead.id).notes_log.slice().reverse();
+      const listEl   = document.getElementById(`notes-log-${idx}`);
+      const countEl  = document.getElementById(`notes-cnt-${idx}`);
+      if (listEl) listEl.innerHTML = log.map(e2 => `<div class="notes-entry"><span class="notes-entry-ts">${fullDate(e2.ts)}</span><p class="notes-entry-text">${esc(e2.text)}</p></div>`).join('') || '<p class="notes-entry-empty">Sem notas.</p>';
+      if (countEl) countEl.textContent = `${log.length} nota${log.length !== 1 ? 's' : ''}`;
+    }
+    toast('Nota adicionada.', 'ok');
+    return;
+  }
   if (qaBtn) {
     e.stopPropagation();
     const qa = qaBtn.dataset.qa;
@@ -2142,6 +2409,9 @@ leadsList.addEventListener('click', e => {
       updateKPIs();
       render();
       toast('Lead de teste arquivado.', 'ok');
+    } else if (qa === 'open-delete-modal') {
+      const lead = allLeads.find(l => l.id === qaBtn.dataset.leadId);
+      if (lead) showDeleteModal(lead);
     }
     return;
   }
@@ -2409,6 +2679,232 @@ async function removeFavorite(beachId, beachName, beachRegion) {
   await toggleFavorite(beachId, beachName, beachRegion);
   loadFavoritesSection();
 }
+
+/* ── B1: Hard delete ────────────────────────────────────────────── */
+function showDeleteModal(lead) {
+  _pendingDeleteLead = lead;
+  document.getElementById('del-modal-name').textContent = lead.name;
+  document.getElementById('del-modal-type').textContent = lead.type;
+  document.getElementById('del-modal-overlay').style.display = 'flex';
+}
+
+async function confirmHardDelete(lead) {
+  const tableMap  = { planeamento: 'plan_requests', contacto: 'contact_messages', parceiro: 'partner_leads' };
+  const lsKeyMap  = { planeamento: 'pth_plan_requests', contacto: 'pth_contact_messages', parceiro: 'pth_partner_leads' };
+  const table     = tableMap[lead.type];
+
+  if (!table || !lead.raw?.id) {
+    toast('Sem ID Supabase — registo apenas local.', '');
+    // Remove from localStorage + allLeads only
+    try {
+      const arr = JSON.parse(localStorage.getItem(lsKeyMap[lead.type]) || '[]');
+      localStorage.setItem(lsKeyMap[lead.type], JSON.stringify(arr.filter(r => r.id !== lead.raw?.id)));
+    } catch {}
+  } else {
+    const { error } = await db.from(table).delete().eq('id', lead.raw.id);
+    if (error) { console.error('[hard delete]', error); toast('Erro ao apagar do servidor.', ''); return; }
+    // Remove from localStorage
+    try {
+      const arr = JSON.parse(localStorage.getItem(lsKeyMap[lead.type]) || '[]');
+      localStorage.setItem(lsKeyMap[lead.type], JSON.stringify(arr.filter(r => r.id !== lead.raw.id)));
+    } catch {}
+  }
+
+  // Remove from lead_meta (localStorage + Supabase fire-and-forget)
+  const store = loadMetaStore();
+  delete store[lead.id];
+  localStorage.setItem(META_KEY, JSON.stringify(store));
+  db.from('lead_meta').delete().eq('lead_id', lead.id).catch(() => {});
+
+  // Remove from allLeads + re-render
+  allLeads = allLeads.filter(l => l.id !== lead.id);
+  updateKPIs();
+  render();
+  toast('Registo apagado permanentemente.', 'ok');
+}
+
+document.getElementById('del-modal-cancel').addEventListener('click', () => {
+  document.getElementById('del-modal-overlay').style.display = 'none';
+  _pendingDeleteLead = null;
+});
+document.getElementById('del-modal-confirm').addEventListener('click', async () => {
+  const lead = _pendingDeleteLead;
+  document.getElementById('del-modal-overlay').style.display = 'none';
+  _pendingDeleteLead = null;
+  if (lead) await confirmHardDelete(lead);
+});
+// Close on overlay click
+document.getElementById('del-modal-overlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) {
+    document.getElementById('del-modal-overlay').style.display = 'none';
+    _pendingDeleteLead = null;
+  }
+});
+
+/* ── B2: Manual lead entry ──────────────────────────────────────── */
+function showAddLeadModal() {
+  ['add-modal-nome','add-modal-email','add-modal-regiao','add-modal-tipo','add-modal-notas']
+    .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  document.getElementById('add-modal-submit').disabled = false;
+  document.getElementById('add-modal-submit').textContent = 'Guardar Lead';
+  document.getElementById('add-modal-overlay').style.display = 'flex';
+  setTimeout(() => document.getElementById('add-modal-nome')?.focus(), 50);
+}
+
+document.getElementById('btn-add-lead').addEventListener('click', showAddLeadModal);
+document.getElementById('add-modal-cancel').addEventListener('click', () => {
+  document.getElementById('add-modal-overlay').style.display = 'none';
+});
+document.getElementById('add-modal-overlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) document.getElementById('add-modal-overlay').style.display = 'none';
+});
+document.getElementById('add-modal-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const nome  = document.getElementById('add-modal-nome').value.trim();
+  const email = document.getElementById('add-modal-email').value.trim();
+  const regiao = document.getElementById('add-modal-regiao').value.trim();
+  const tipo  = document.getElementById('add-modal-tipo').value.trim();
+  const notas = document.getElementById('add-modal-notas').value.trim();
+
+  if (!nome) { toast('Nome é obrigatório.', ''); document.getElementById('add-modal-nome').focus(); return; }
+
+  const submitBtn = document.getElementById('add-modal-submit');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'A guardar…';
+
+  const row = { nome, regiao: regiao || null, tipo: tipo || null, notas: notas || null, source_page: 'dashboard-manual' };
+  if (email) row.email = email;
+
+  const { error } = await db.from('plan_requests').insert(row);
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Guardar Lead';
+
+  if (error) { console.error('[add lead]', error); toast('Erro ao guardar. Tenta de novo.', ''); return; }
+
+  document.getElementById('add-modal-overlay').style.display = 'none';
+  toast('Lead adicionado com sucesso.', 'ok');
+  await reloadLeads();
+});
+
+async function reloadLeads() {
+  const [plansRes, contactsRes, partnersRes] = await Promise.allSettled([
+    db.from('plan_requests').select('*').order('created_at', { ascending: false }),
+    db.from('contact_messages').select('*').order('timestamp', { ascending: false }),
+    db.from('partner_leads').select('*').order('created_at', { ascending: false }),
+  ]);
+  function extract(res, lsKey) {
+    if (res.status === 'fulfilled' && res.value.data) {
+      try { localStorage.setItem(lsKey, JSON.stringify(res.value.data)); } catch {}
+      return res.value.data;
+    }
+    try { return JSON.parse(localStorage.getItem(lsKey) || '[]'); } catch { return []; }
+  }
+  const plans    = extract(plansRes,    'pth_plan_requests');
+  const contacts = extract(contactsRes, 'pth_contact_messages');
+  const partners = extract(partnersRes, 'pth_partner_leads');
+  allLeads = normaliseLeads(plans, contacts, partners);
+  updateKPIs();
+  render();
+}
+
+/* ── B3: Note log helpers ───────────────────────────────────────── */
+function addNoteEntry(leadId, text) {
+  if (!text.trim()) return;
+  const meta = getMeta(leadId);
+  const log  = [...meta.notes_log, { text: text.trim(), ts: new Date().toISOString() }];
+  saveMeta(leadId, { notes_log: log });
+}
+
+/* ── C: Kanban ─────────────────────────────────────────────────── */
+const KANBAN_COLS = [
+  { status: 'novo',             label: 'Novo',       next: 'contactado' },
+  { status: 'contactado',       label: 'Contactado', next: 'qualificado' },
+  { status: 'qualificado',      label: 'Qualificado', next: 'proposta_enviada' },
+  { status: 'proposta_enviada', label: 'Proposta',   next: 'ganho' },
+  { status: 'ganho',            label: 'Ganho',      next: null },
+  { status: 'perdido',          label: 'Perdido',    next: null },
+];
+
+function renderKanban() {
+  const board = document.getElementById('kanban-board');
+  if (!board) return;
+  const real = deduplicateLeads(allLeads.filter(l => !isTestLead(l) && getMeta(l.id).status !== 'arquivado'));
+
+  board.innerHTML = KANBAN_COLS.map(col => {
+    const leads = real.filter(l => (getMeta(l.id).status || 'novo') === col.status);
+    const cards = leads.map(lead => {
+      const scoring = scoreLead(lead);
+      const advBtn  = col.next
+        ? `<button class="kanban-card-advance${col.next==='ganho'?' win':''}" data-ka-advance data-ka-status="${col.next}" data-lead-id="${lead.id}">→ ${STATUS_LABELS[col.next]||col.next}</button>`
+        : '';
+      return `<div class="kanban-card" data-lead-id="${lead.id}">
+        <div class="kanban-card-name" title="${esc(lead.name)}">${esc(lead.name)}</div>
+        <div class="kanban-card-email" title="${esc(lead.email)}">${esc(lead.email)}</div>
+        <div class="kanban-card-meta">${typeBadge(lead.type)}${tierBadge(scoring.tier, scoring.tierLabel)}${getUrgencyClass(lead)?`<span class="urgency-badge urgency-badge--${getUrgencyClass(lead)}">${getUrgencyLabel(lead)}</span>`:''}</div>
+        ${advBtn}
+      </div>`;
+    }).join('');
+    return `<div class="kanban-col">
+      <div class="kanban-col-head"><span class="kanban-col-title">${col.label}</span><span class="kanban-col-count">${leads.length}</span></div>
+      <div class="kanban-cards">${cards || '<div class="kanban-empty">Vazio</div>'}</div>
+    </div>`;
+  }).join('');
+}
+
+// Kanban event delegation
+document.getElementById('kanban-board').addEventListener('click', e => {
+  const advBtn = e.target.closest('[data-ka-advance]');
+  const card   = e.target.closest('.kanban-card');
+
+  if (advBtn) {
+    e.stopPropagation();
+    const targetStatus = advBtn.dataset.kaStatus;
+    const leadId       = advBtn.dataset.leadId;
+    const now          = new Date().toISOString();
+    const update       = { status: targetStatus, last_action: targetStatus };
+    if (targetStatus === 'contactado') update.contacted_at = now;
+    else if (targetStatus === 'proposta_enviada' || targetStatus === 'qualificado')
+      update.contacted_at = getMeta(leadId).contacted_at || now;
+    saveMeta(leadId, update);
+    updateKPIs();
+    renderKanban();
+    const LABELS = { contactado:'Marcado contactado.', proposta_enviada:'Proposta enviada.', qualificado:'Lead qualificado.', ganho:'Ganho!', perdido:'Marcado como Perdido.', arquivado:'Arquivado.' };
+    toast(LABELS[targetStatus] || 'Estado actualizado.', 'ok');
+    return;
+  }
+  if (card) {
+    // Switch to list + open detail
+    const leadId = card.dataset.leadId;
+    showListView();
+    setTimeout(() => {
+      const visible = visibleLeads();
+      const idx     = visible.findIndex(l => l.id === leadId);
+      if (idx !== -1) { const row = document.querySelector(`.lead-row[data-idx="${idx}"]`); if (row) toggleDetail(row); }
+    }, 30);
+  }
+});
+
+function showListView() {
+  viewMode = 'list';
+  document.getElementById('list-panel').style.display = '';
+  document.getElementById('kanban-view').style.display = 'none';
+  document.getElementById('btn-list-view').classList.add('active');
+  document.getElementById('btn-list-view').setAttribute('aria-pressed','true');
+  document.getElementById('btn-kanban-view').classList.remove('active');
+  document.getElementById('btn-kanban-view').setAttribute('aria-pressed','false');
+}
+function showKanbanView() {
+  viewMode = 'kanban';
+  document.getElementById('list-panel').style.display = 'none';
+  document.getElementById('kanban-view').style.display = '';
+  document.getElementById('btn-kanban-view').classList.add('active');
+  document.getElementById('btn-kanban-view').setAttribute('aria-pressed','true');
+  document.getElementById('btn-list-view').classList.remove('active');
+  document.getElementById('btn-list-view').setAttribute('aria-pressed','false');
+  renderKanban();
+}
+document.getElementById('btn-list-view').addEventListener('click', showListView);
+document.getElementById('btn-kanban-view').addEventListener('click', showKanbanView);
 
 function showView(view) {
   // Esconder todas as vistas
