@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════════════
    Portugal Travel Hub — Design System
-   Fonts:  Bodoni Moda (headings) · Inter (body)
+   Fonts:  Montserrat (headings) · Inter (body)
    Colors: Ocean Blue #0a3d6b · Gold #c9a84c
    ══════════════════════════════════════════════════════════════ */
 
@@ -28,7 +28,7 @@
   --shadow:       0 4px 16px rgba(10,61,107,0.10), 0 12px 40px rgba(10,61,107,0.12);
   --shadow-lg:    0 8px 32px rgba(10,61,107,0.16), 0 24px 64px rgba(10,61,107,0.14);
   --shadow-gold:  0 8px 32px rgba(201,168,76,0.35);
-  --font-heading: 'Bodoni Moda', Georgia, serif;
+  --font-heading: 'Montserrat', sans-serif;
   --font-body:    'Inter', system-ui, sans-serif;
   --radius-sm:    8px;
   --radius:       16px;
@@ -537,7 +537,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero__kicker {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -550,11 +550,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* mix-blend-mode: difference — white text appears near-black over areia bg,
    and inverts dynamically where it crosses the dark video pixels. */
 .hero__headline {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(48px, 8.5vw, 112px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 3.75vw, 50px);
   line-height: 1.0;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
   margin: 0 0 32px;
   mix-blend-mode: difference;
   color: #ffffff;
@@ -744,7 +744,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   bottom: 12px;
   right: 16px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   color: var(--areia, #F2E8D5);
   opacity: 0.6;
@@ -761,7 +761,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .page-hero__kicker {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -772,7 +772,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .page-hero__headline {
-  font-family: 'Fraunces', 'Bodoni Moda', Georgia, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: clamp(40px, 6.5vw, 88px);
   line-height: 1.05;
@@ -2315,7 +2315,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 
 /* Kicker — mono eyebrow */
 .hero-secondary__kicker {
-  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.22em;
@@ -2336,7 +2336,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 
 /* Giant drop-cap number — gradient text + subtle breathe */
 .hero-secondary__number {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: clamp(108px, 16vw, 210px);
   line-height: 0.85;
@@ -2372,7 +2372,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 
 /* Headline — stacks beside the giant number */
 .hero-secondary__headline {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: clamp(26px, 3.4vw, 46px);
   line-height: 1.15;
@@ -2479,7 +2479,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 .hero-secondary__attribution {
   display: block;
   margin-top: 10px;
-  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   color: #F2E8D5;
   opacity: 0.45;
@@ -2596,7 +2596,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 
 .wyf-card__title {
-  font-family: 'Fraunces', 'Bodoni Moda', Georgia, serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 22px;
   color: var(--blue);
@@ -2614,7 +2614,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 
 .wyf-card__cta {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2646,7 +2646,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 
 .planear-cta__guides-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -2696,7 +2696,7 @@ input[type="number"], input[type="date"], input[type="search"] {
   color: var(--areia, #F2E8D5);
   border: none;
   border-radius: 4px 16px 4px 16px;
-  font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+  font-family: 'Montserrat', 'Inter', sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -2801,7 +2801,7 @@ input[type="number"], input[type="date"], input[type="search"] {
   background: #fff;
   border: 1px solid rgba(11, 27, 43, 0.12);
   border-radius: 4px 24px 4px 24px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   color: var(--navy, #0B1B2B);
   transition: border-color 0.15s, box-shadow 0.15s;
@@ -2838,7 +2838,7 @@ input[type="number"], input[type="date"], input[type="search"] {
   background: #fff;
   border: 1px solid rgba(11, 27, 43, 0.12);
   border-radius: 4px 24px 4px 24px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: var(--navy, #0B1B2B);
   cursor: pointer;
@@ -2853,7 +2853,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 
 .sort-label-prefix {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -2907,7 +2907,7 @@ input[type="number"], input[type="date"], input[type="search"] {
   background: var(--dourado, #C9A24B);
   color: var(--navy, #0B1B2B);
   border-radius: 4px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -2915,7 +2915,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 
 .results-count {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   color: var(--navy, #0B1B2B);
   opacity: 0.65;
@@ -2946,7 +2946,7 @@ input[type="number"], input[type="date"], input[type="search"] {
   display: block;
   margin-bottom: 8px;
   padding-left: 2px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -3030,7 +3030,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 .pro-upsell-icon { font-size: 36px; margin-bottom: 10px; }
 
 .pro-upsell-content h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 24px;
   line-height: 1.2;
@@ -3169,7 +3169,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 
 .mediakit-cta-heading {
-  font-family: 'Fraunces', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: clamp(24px, 4vw, 32px);
   color: var(--navy, #0B1B2B);
@@ -3178,7 +3178,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 
 .mediakit-cta-text {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   line-height: 1.6;
   color: var(--navy, #0B1B2B);
@@ -3647,7 +3647,7 @@ input[type="number"], input[type="date"], input[type="search"] {
   font-family: 'Inter', sans-serif;
 }
 .surf-shapers-summary h2 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 700;
   color: #ffffff;
@@ -3724,7 +3724,7 @@ input[type="number"], input[type="date"], input[type="search"] {
 }
 .pp-b2b-text strong {
   display: block;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: #0a3d6b;
