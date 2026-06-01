@@ -89,18 +89,18 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Hero video poster preload (matches actual poster src) -->
-  <link rel="preload" as="image" type="image/webp" href="https://cdn.portalturismoportugal.com/homepage-hero-poster.webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/jpeg" href="https://cdn.portalturismoportugal.com/homepage-hero-poster.jpg" fetchpriority="high">
 
   <!-- CDN preconnects -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260522-navdd-c">
+  <link rel="stylesheet" href="/css/style.css?v=20260601-montserrat">
   <link rel="stylesheet" href="/css/monet-v2.css?v=20260514-monetv2-fix">
 
   <style>
@@ -396,7 +396,7 @@
       stroke-linejoin: round;
     }
     .sp-card h3 {
-      font-family: 'Bodoni Moda', Georgia, serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.625rem;
       font-weight: 700;
       color: var(--white);
@@ -820,7 +820,7 @@
     .journey-step:last-child { border-right: none; }
     .journey-step:hover { background: var(--white); }
     .journey-step__eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-family: var(--font-body); }
-    .journey-step__label { font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 700; color: var(--blue); line-height: 1.3; margin: 0 0 8px; }
+    .journey-step__label { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--blue); line-height: 1.3; margin: 0 0 8px; }
     .journey-step__sub { font-size: 0.8125rem; color: var(--text-mid); line-height: 1.55; flex: 1; margin: 0 0 14px; font-family: var(--font-body); }
     .journey-step__cta { font-size: 0.8125rem; font-weight: 600; color: var(--gold); font-family: var(--font-body); }
     @media (max-width: 767px) {
@@ -940,9 +940,8 @@
   <!-- Video layer (absolute, right ~65%, paints before content via DOM order) -->
   <div class="hero__media">
     <video class="hero__video"
-      data-src="https://cdn.portalturismoportugal.com/homepage-hero.mp4"
-      playsinline muted loop preload="none"
-      poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.webp"
+      autoplay muted loop playsinline preload="metadata"
+      poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.jpg"
       aria-label="Vídeo de praias portuguesas"
     ></video>
     <div class="hero__media-overlay" aria-hidden="true"></div>
@@ -1559,6 +1558,18 @@
 <script src="/js/lazy-video.js?v=20260424" defer></script>
 <script src="js/animations.js?v=20260402" defer></script>
 <script>
+  // ── Hero video — viewport-adaptive source ────────────────────────
+  (function() {
+    var v = document.querySelector('.hero__video');
+    if (!v) return;
+    var url = window.innerWidth <= 768
+      ? 'https://cdn.portalturismoportugal.com/homepage-hero-merged.mp4'
+      : 'https://cdn.portalturismoportugal.com/homepage-hero-1080p-60fps-crf28.mp4';
+    v.src = url;
+    v.load();
+    v.play().catch(function() {});
+  })();
+
   // ── Preloader ────────────────────────────────────────────────
   (function() {
     var preloader = document.getElementById('preloader');

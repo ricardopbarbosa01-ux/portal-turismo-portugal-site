@@ -76,7 +76,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Hero video poster preload (matches actual poster src) -->
-  <link rel="preload" as="image" type="image/webp" href="https://cdn.portalturismoportugal.com/homepage-hero-poster.webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/jpeg" href="https://cdn.portalturismoportugal.com/homepage-hero-poster.jpg" fetchpriority="high">
 
   <!-- CDN preconnects -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -928,9 +928,8 @@
   <!-- Video layer (absolute, right ~65%, paints before content via DOM order) -->
   <div class="hero__media">
     <video class="hero__video"
-      data-src="https://cdn.portalturismoportugal.com/homepage-hero.mp4"
-      playsinline muted loop preload="none"
-      poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.webp"
+      autoplay muted loop playsinline preload="metadata"
+      poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.jpg"
       aria-label="Video of Portuguese beaches"
     ></video>
     <div class="hero__media-overlay" aria-hidden="true"></div>
@@ -1567,6 +1566,18 @@
 
 
 <script>
+  // ── Hero video — viewport-adaptive source ────────────────────────
+  (function() {
+    var v = document.querySelector('.hero__video');
+    if (!v) return;
+    var url = window.innerWidth <= 768
+      ? 'https://cdn.portalturismoportugal.com/homepage-hero-merged.mp4'
+      : 'https://cdn.portalturismoportugal.com/homepage-hero-1080p-60fps-crf28.mp4';
+    v.src = url;
+    v.load();
+    v.play().catch(function() {});
+  })();
+
   // ── Service Worker registration ───────────────────────────────
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
