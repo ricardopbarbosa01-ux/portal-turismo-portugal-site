@@ -388,7 +388,7 @@
       "region": "Norte",
       "region_slug": "norte",
       "town": "Matosinhos",
-      "praias_associadas": [],
+      "praias_associadas": ["praia-de-matosinhos"],
       "especialidade": [
         "iniciantes",
         "kids"
