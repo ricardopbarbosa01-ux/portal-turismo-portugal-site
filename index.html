@@ -56,16 +56,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Portugal Travel Hub",
-    "url": "https://www.portalturismoportugal.com",
-    "description": "Portugal's beach portal. Real-time conditions, webcams, surf and fishing.",
-    "inLanguage": "pt",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.portalturismoportugal.com/beaches?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.portalturismoportugal.com/#organization",
+        "name": "Portugal Travel Hub",
+        "url": "https://www.portalturismoportugal.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.portalturismoportugal.com/images/brand/logo-full.svg"
+        },
+        "description": "O Portugal que não aparece nos sites de reservas. Praias, surf, pesca e parceiros costeiros, verificado por quem cá vive."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.portalturismoportugal.com/#website",
+        "name": "Portugal Travel Hub",
+        "url": "https://www.portalturismoportugal.com",
+        "description": "Portal de praias de Portugal. Condições do mar em tempo real, webcams, surf e pesca.",
+        "inLanguage": "pt-PT",
+        "publisher": { "@id": "https://www.portalturismoportugal.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.portalturismoportugal.com/beaches?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
   }
   </script>
 
