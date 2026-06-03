@@ -376,6 +376,18 @@
       navigator.serviceWorker.register('/sw.js').catch(() => {});
     });
   }
+  (function() {
+    var id = new URLSearchParams(window.location.search).get('id');
+    if (!id) return;
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        document.querySelectorAll('a.lang-btn[data-lang]').forEach(function(a) {
+          if (a.dataset.lang === 'en')
+            a.setAttribute('href', '/en/beach.html?id=' + encodeURIComponent(id));
+        });
+      }, 0);
+    });
+  })();
 </script>
 <script src="/js/lang-switcher.js" defer></script>
 <script src="/js/favorites.js?v=20260507-hf1" defer></script>
