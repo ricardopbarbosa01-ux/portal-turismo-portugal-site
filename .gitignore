@@ -69,3 +69,35 @@ _scripts/auto-tag-corrections.json
 
 # Local diagnostic backups — never commit (large HTML snapshots)
 _diag/backups/
+
+# === Phase 0 cleanup - tool/agent state directories ===
+.agents/
+.claude-flow/
+.codegraph/
+.swarm/
+
+# === Phase 0 cleanup - dev/exploratory artifacts ===
+_diag/
+_mockups/
+_planning/
+
+# === Phase 0 cleanup - temp server files ===
+_tmp_server.*
+
+# === Phase 0 cleanup - root-level diagnostic images ===
+/homepage-*.jpeg
+/homepage-*.png
+/review-*.jpeg
+/review-*.png
+/southportugal-*.jpeg
+/southportugal-*.png
+
+# === Phase 0 cleanup - auto-generated lockfile ===
+/skills-lock.json
+
+# === Phase 0 cleanup - generated outputs and audit reports ===
+_scripts/reports/
+_scripts/audit/*.md
+
+# === Phase 0 cleanup - screenshot variants ===
+/tools/screenshots-navbar*/
