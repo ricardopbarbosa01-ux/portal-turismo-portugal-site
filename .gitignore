@@ -24,6 +24,7 @@ smoke-test.png
 .env
 .env.local
 .env*.local
+pth-credentials.txt
 # Environment secrets (NEVER COMMIT)
 
 # Test data — contains UUIDs and seed rows, never commit to production
