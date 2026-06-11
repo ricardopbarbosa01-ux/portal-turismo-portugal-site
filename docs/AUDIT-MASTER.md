@@ -40,7 +40,7 @@
 | SEC-03 | High | RESOLVED | ls-webhook: verifySignature() is fail-open when WEBHOOK_SECRET is empty. **Evidence**: lines 12-15 of supabase/functions/ls-webhook/index.ts — `if (!WEBHOOK_SECRET) { console.error(...); return false }` — fail-closed since 2026-04-29. Audit was outdated. | audit-security-2026-04-29.md:150-193 |
 | SEC-04 | High | RESOLVED | conta.html: free user can access Pro UI via ?activated=1. **Evidence**: `justPaid` hardcoded to `false` while payments paused (commit Batch 2 2026-06-11) — bypass impossible until payment provider restored. | audit-security-2026-04-29.md:199-227 |
 | SEC-05 | Medium | RESOLVED | HSTS header absent from _headers. **Evidence**: `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload` added to `_headers` `/*` block (commit Batch 2 2026-06-11). | audit-security-2026-04-29.md:234-255 |
-| SEC-06 | Medium | OPEN | Ingest/check functions (ingest-tides, ingest-waves, check-alerts) accept unauthenticated invocation | audit-security-2026-04-29.md:261-295 |
+| SEC-06 | Medium | RESOLVED | Ingest/check functions accept unauthenticated invocation. **Evidence**: CRON_SECRET bearer auth added to all 3 handlers (ingest-tides, ingest-waves, check-alerts). check-alerts serve handler updated from `async ()` to `async (req)`. Fail-open if CRON_SECRET env var not set (logs warning), fail-closed if set. Set CRON_SECRET in Supabase → Settings → Edge Functions → Secrets. Commit Batch 3 2026-06-11. | audit-security-2026-04-29.md:261-295 |
 | SEC-07 | Medium | OPEN | CSP has unsafe-inline and unsafe-eval — XSS mitigation weakened | audit-security-2026-04-29.md:299-317 |
 | SEC-08 | Low | OPEN | SRI hash absent on jsDelivr Supabase SDK CDN load — supply chain risk | audit-security-2026-04-29.md:322-344 |
 | SEC-09 | Low | OPEN | admin HTML emails in send-plan-confirm and send-partner-alert interpolate user fields without HTML escaping | audit-security-2026-04-29.md:350-380 |
@@ -138,8 +138,8 @@
 |----|----------|--------|-------|--------|
 | GDPR-01 | High | RESOLVED | en/cookies.html missing nav.js, lang-switcher.js, cookie-consent.js — users trapped without navigation | AUDITORIA_EN_FINAL.md:25-36; AUDITORIA_EN_FINAL_v2.md:43 |
 | GDPR-02 | High | RESOLVED | en/guides.html missing cookie-consent.js — consent banner absent, GA4 permanently blocked | AUDITORIA_EN_FINAL.md:61-72; AUDITORIA_EN_FINAL_v2.md:44 |
-| GDPR-03 | Medium | OPEN | alerts table: no RLS — user_id/beach_id/threshold exposed; INSERT with arbitrary user_id possible — GDPR violation | audit-rls-2026-04.md:196-203; audit-security-2026-04-29.md:264-268 |
-| GDPR-04 | Medium | OPEN | favorites table: no RLS — behavior/preference data of all Pro users exposed | audit-rls-2026-04.md:168-174; audit-security-2026-04-29.md:275-279 |
+| GDPR-03 | Medium | RESOLVED | alerts table: no RLS. **Evidence**: migration 20260512000000_alerts_table_and_snooze.sql line 28 — `ALTER TABLE public.alerts ENABLE ROW LEVEL SECURITY` + 4 policies (alerts_select_own, alerts_insert_own, alerts_update_own, alerts_delete_own) all scoped to `auth.uid() = user_id`. | audit-rls-2026-04.md:196-203; audit-security-2026-04-29.md:264-268 |
+| GDPR-04 | Medium | UNKNOWN | favorites table: no RLS in any migration file. RLS-02 says RESOLVED (policy applied via Dashboard 04/05/2026) but no migration as evidence. Verify: Supabase Dashboard → Table Editor → favorites → RLS tab. If missing: add policy `user_own_favorites` FOR ALL USING (auth.uid() = user_id). | audit-rls-2026-04.md:168-174; audit-security-2026-04-29.md:275-279 |
 
 ### LemonSqueezy (LS)
 

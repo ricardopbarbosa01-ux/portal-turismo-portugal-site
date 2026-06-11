@@ -14,8 +14,9 @@
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
-const SERVICE_KEY  = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const SUPABASE_URL  = Deno.env.get('SUPABASE_URL')!;
+const SERVICE_KEY   = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const CRON_SECRET   = Deno.env.get('CRON_SECRET') ?? ''
 
 const db = createClient(SUPABASE_URL, SERVICE_KEY);
 
@@ -77,6 +78,17 @@ async function fetchWavesForBeach(beach: Beach): Promise<WaveRow[]> {
 Deno.serve(async (req: Request) => {
   if (req.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 });
+  }
+
+  // SEC-06: require CRON_SECRET bearer token
+  const authHeader = req.headers.get('Authorization') ?? ''
+  if (CRON_SECRET) {
+    if (authHeader !== `Bearer ${CRON_SECRET}`) {
+      console.error('ingest-waves: unauthorized request — missing or wrong CRON_SECRET')
+      return new Response('Unauthorized', { status: 401 })
+    }
+  } else {
+    console.warn('ingest-waves: CRON_SECRET not configured — running unauthenticated (set env var)')
   }
 
   try {

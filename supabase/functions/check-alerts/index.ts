@@ -1,9 +1,10 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
-const RESEND_API_KEY          = Deno.env.get('RESEND_API_KEY') ?? ''
-const SUPABASE_URL            = Deno.env.get('SUPABASE_URL') ?? ''
+const RESEND_API_KEY            = Deno.env.get('RESEND_API_KEY') ?? ''
+const SUPABASE_URL              = Deno.env.get('SUPABASE_URL') ?? ''
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+const CRON_SECRET               = Deno.env.get('CRON_SECRET') ?? ''
 const FROM = 'Portugal Travel Hub <alertas@portalturismoportugal.com>'
 
 const CONDITION_LABELS: Record<string, string> = {
@@ -54,7 +55,18 @@ function conditionMet(operator: string, current: number, threshold: number): boo
   return operator === 'above' ? current > threshold : current < threshold
 }
 
-serve(async () => {
+serve(async (req) => {
+  // SEC-06: require CRON_SECRET bearer token
+  const authHeader = req.headers.get('Authorization') ?? ''
+  if (CRON_SECRET) {
+    if (authHeader !== `Bearer ${CRON_SECRET}`) {
+      console.error('check-alerts: unauthorized request — missing or wrong CRON_SECRET')
+      return new Response('Unauthorized', { status: 401 })
+    }
+  } else {
+    console.warn('check-alerts: CRON_SECRET not configured — running unauthenticated (set env var)')
+  }
+
   const db = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 
   const sixHoursAgo = new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString()
