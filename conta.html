@@ -215,7 +215,8 @@
   const { data: { user } } = await db.auth.getUser();
   if (!user) { window.location.href = '/login.html'; return; }
 
-  const justPaid = new URLSearchParams(window.location.search).get('activated') === '1';
+  // SEC-04: payments paused — ?activated=1 bypass disabled until payment provider is configured
+  const justPaid = false;
   
   // Read plan from profiles (DB source of truth, RLS-protected) — SEC-02/SEC-04 fix
   async function fetchPlan(userId) {
