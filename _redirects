@@ -1,3 +1,46 @@
+# ============================================================
+# BLOQUEIO DE FICHEIROS INTERNOS - incidente SEC 2026-06-12
+# .env (service_role key), .mcp.json (API key), docs internos,
+# planeamento estrategico e codigo backend estavam publicos.
+# Regras avaliadas antes do serving de assets; primeira vence.
+# ============================================================
+/.env / 301
+/.env.local / 301
+/.env.example / 301
+/.mcp.json / 301
+/.gitignore / 301
+/.gitignore.bak / 301
+/.zip.zip / 301
+/CLAUDE.md / 301
+/LS-SETUP.md / 301
+/RLS_DEPLOYMENT.md / 301
+/beach-images-checklist.md / 301
+/beach-images-checklist-remaining.md / 301
+/smoke-results.json / 301
+/skills-lock.json / 301
+/package.json / 301
+/package-lock.json / 301
+/docs/* / 301
+/_planning/* / 301
+/_audit/* / 301
+/_diag/* / 301
+/_scripts/* / 301
+/_data/* / 301
+/supabase/* / 301
+/tests/* / 301
+/tools/* / 301
+/.planning/* / 301
+/.claude/* / 301
+/.agents/* / 301
+/.claude-flow/* / 301
+/.codegraph/* / 301
+/.swarm/* / 301
+/.wrangler/* / 301
+/node_modules/* / 301
+
+# ============================================================
+# Redirects legados (pre-existentes)
+# ============================================================
 /best-beaches-portugal.html /en/best-beaches-portugal.html 301
 /surfing-portugal.html /en/surfing-portugal.html 301
 /beginner-surf-beaches-algarve.html /en/beginner-surf-beaches-algarve.html 301

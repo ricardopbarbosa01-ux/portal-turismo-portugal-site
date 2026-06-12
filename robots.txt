@@ -8,6 +8,17 @@ Disallow: /sw.js
 Disallow: /proposal-template.html
 Disallow: /case-study-template.html
 Disallow: /partner-demo.html
+# Internos - bloqueados tambem em _redirects (incidente 2026-06-12)
+Disallow: /docs/
+Disallow: /_planning/
+Disallow: /_audit/
+Disallow: /_diag/
+Disallow: /_scripts/
+Disallow: /_data/
+Disallow: /supabase/
+Disallow: /tests/
+Disallow: /tools/
+Disallow: /CLAUDE.md
 
 Sitemap: https://www.portalturismoportugal.com/sitemap.xml
 
