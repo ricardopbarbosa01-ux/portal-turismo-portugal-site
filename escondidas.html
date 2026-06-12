@@ -2,31 +2,351 @@
 <html lang="pt-PT">
 <head>
 <meta charset="UTF-8">
-  <!-- META VERIFICATIONS — site ownership proofs for third-party services -->
-  <meta name="verification" content="d0777839626596440c5ac94e27e8b9e8" /> <!-- Awin -->
-  <!-- /META VERIFICATIONS -->
-<title>As 10 praias que ninguém no Booking encontra | PTH</title>
-<meta name="description" content="Praias escondidas de Portugal verificadas por residentes. Em construção.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- META VERIFICATIONS — site ownership proofs for third-party services -->
+<meta name="verification" content="d0777839626596440c5ac94e27e8b9e8" /> <!-- Awin -->
+<!-- /META VERIFICATIONS -->
+<!-- Google tag (gtag.js) – Consent Mode v2 -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',wait_for_update:500});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
+<script>gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
+<title>As 10 Praias Escondidas de Portugal · Portugal Travel Hub</title>
+<meta name="description" content="Seleção editorial de praias menos conhecidas em Portugal — piscinas naturais, acessos honestos e fotografia licenciada. Verificadas por fontes oficiais.">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="css/style.css?v=20260522-navdd-c">
 <link rel="canonical" href="https://www.portalturismoportugal.com/escondidas">
+<link rel="alternate" hreflang="pt" href="https://www.portalturismoportugal.com/escondidas">
+<link rel="alternate" hreflang="en" href="https://www.portalturismoportugal.com/en/hidden-beaches">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20260522-navdd-c">
+<style>
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);min-height:44px;cursor:pointer;}
+.btn-outline{border:1.5px solid var(--glass-border);color:var(--white);backdrop-filter:blur(12px);background:var(--glass);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-weight:600;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.40);}
+.hub-hero{background:linear-gradient(150deg,#040c18 0%,#0a3d6b 55%,#0f2c5e 100%);padding:130px 5vw 90px;text-align:center;position:relative;overflow:hidden;}
+@media(max-width:640px){.hub-hero{padding:100px 5vw 64px;}}
+.hub-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(201,168,76,0.12) 0%,transparent 65%);pointer-events:none;}
+.hub-eyebrow{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative;}
+.hub-hero h1{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(2.2rem,6vw,4rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:20px;position:relative;}
+.hub-hero h1 em{font-style:italic;color:var(--gold-light);}
+.hub-lead{font-size:clamp(0.95rem,1.8vw,1.1rem);color:rgba(255,255,255,0.75);max-width:600px;margin:0 auto 36px;line-height:1.75;position:relative;}
+.cta-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:700;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(201,168,76,0.40);transition:transform 0.25s,box-shadow 0.25s;min-height:48px;}
+.cta-gold:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,168,76,0.55);}
+.hub-body{background:var(--white);}
+.hub-content{max-width:900px;margin:0 auto;padding:72px 5vw 56px;}
+@media(max-width:640px){.hub-content{padding:48px 5vw 40px;}}
+.hub-content p{font-size:0.93rem;color:var(--text-mid);line-height:1.8;margin-bottom:14px;}
+.hub-content a{color:var(--blue);font-weight:500;text-decoration:underline;text-underline-offset:3px;}
+.hub-content a:hover{color:var(--gold);}
+.editorial-banner{background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.20);border-left:4px solid var(--gold);border-radius:8px;padding:20px 24px;margin-bottom:52px;}
+.editorial-banner p{font-size:0.85rem;color:var(--text-mid);line-height:1.7;margin:0;}
+.editorial-banner strong{color:var(--text);}
+.beaches-section{margin-bottom:56px;}
+.beaches-section-title{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:var(--blue);margin-bottom:10px;line-height:1.15;}
+.beaches-section-sub{font-size:0.88rem;color:var(--text-light);margin-bottom:28px;}
+.beach-card-live{display:flex;align-items:flex-start;gap:16px;background:var(--white);border:1.5px solid rgba(10,61,107,0.10);border-radius:12px;padding:20px 22px;text-decoration:none;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s;}
+.beach-card-live:hover{border-color:rgba(201,168,76,0.35);box-shadow:0 6px 24px rgba(10,61,107,0.08);transform:translateY(-2px);}
+.beach-card-live-badge{flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);font-family:'IBM Plex Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;padding:4px 10px;border-radius:20px;margin-top:2px;white-space:nowrap;}
+.beach-card-live-body{flex:1 1 auto;}
+.beach-card-live-region{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light);margin-bottom:4px;}
+.beach-card-live-name{font-family:'Bodoni Moda',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--blue);margin-bottom:5px;line-height:1.2;}
+.beach-card-live-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.6;margin-bottom:8px;}
+.beach-card-live-cta{font-size:0.78rem;font-weight:600;color:var(--gold);letter-spacing:0.04em;}
+.beaches-coming{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:20px;}
+.beach-pill{background:var(--off-white);border:1px solid rgba(10,61,107,0.07);border-radius:8px;padding:12px 14px;}
+.beach-pill-num{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;color:var(--gold);margin-bottom:4px;}
+.beach-pill-name{font-size:0.84rem;font-weight:600;color:var(--text-mid);}
+.beach-pill-region{font-size:0.72rem;color:var(--text-light);}
+.waitlist-section{background:rgba(10,61,107,0.03);border:1px solid rgba(10,61,107,0.08);border-radius:12px;padding:36px 32px;margin-top:52px;}
+@media(max-width:560px){.waitlist-section{padding:28px 20px;}}
+.waitlist-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.waitlist-title{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--blue);margin-bottom:8px;line-height:1.2;}
+.waitlist-sub{font-size:0.88rem;color:var(--text-mid);line-height:1.6;margin-bottom:24px;}
+.waitlist-form{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;}
+.waitlist-input{flex:1 1 220px;padding:13px 16px;border:1.5px solid rgba(10,61,107,0.18);border-radius:8px;font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--text);background:var(--white);transition:border-color 0.2s;min-height:48px;}
+.waitlist-input:focus{outline:none;border-color:var(--gold);}
+.waitlist-btn{padding:13px 28px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--blue);border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;min-height:48px;transition:transform 0.2s,box-shadow 0.2s;white-space:nowrap;}
+.waitlist-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,0.40);}
+.waitlist-btn:disabled{opacity:0.6;cursor:not-allowed;}
+.waitlist-error{font-size:0.8rem;color:#c0392b;margin-top:6px;display:none;}
+.waitlist-success{display:none;background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.25);border-radius:8px;padding:16px 20px;margin-top:4px;}
+.waitlist-success p{font-size:0.88rem;color:var(--text);margin:0;line-height:1.6;}
+.waitlist-success strong{color:#219150;}
+</style>
 </head>
 <body>
-<main style="min-height: 70vh; display:flex; align-items:center; justify-content:center; padding: 60px 24px; text-align: center;">
-  <div style="max-width: 600px;">
-    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dourado, #C9A24B); margin: 0 0 16px;">Em curadoria</p>
-    <h1 style="font-family: 'Fraunces', serif; font-weight: 700; font-size: 36px; line-height: 1.15; margin: 0 0 16px;">Estamos a verificar cada uma.</h1>
-    <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: 17px; line-height: 1.6; margin: 0 0 32px; color: var(--navy-deep);">
-      Estas 10 praias são tudo o que o Booking não te mostra.<br>
-      Cada uma vai ser visitada, fotografada e documentada por residentes locais — antes de a publicarmos.
-    </p>
-    <p style="font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; color: var(--navy);">
-      Quer ser avisado quando estiverem prontas?
-    </p>
-    <a href="/precos.html" style="display: inline-block; margin-top: 16px; padding: 14px 32px; background: var(--dourado, #C9A24B); color: var(--navy-deep, #050D17); font-family: 'IBM Plex Sans', sans-serif; font-weight: 600; font-size: 16px; text-decoration: none; border-radius: 4px;">
-      Conhecer Pro
-    </a>
+
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
+
+<nav class="navbar" role="navigation" aria-label="Navegação principal" id="navbar">
+  <a href="/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    </div>
+    Portugal Travel Hub
+  </a>
+  <div class="nav-links" role="list">
+    <a href="/beaches.html" role="listitem">Praias</a>
+    <a href="/surf.html" role="listitem">Surf</a>
+    <a href="/pesca.html" role="listitem">Pesca</a>
+    <a href="/webcams.html" role="listitem">Webcams</a>
+    <a href="/planear.html" role="listitem">Planear</a>
+    <a href="/guias.html" role="listitem">Guias</a>
+    <a href="/precos.html" role="listitem">Preços</a>
+    <div class="pth-dd" data-pth-dd data-nav-dropdown>
+      <button type="button" class="pth-dd__trigger" aria-haspopup="menu" aria-expanded="false" aria-controls="pth-dd-menu">
+        Parceiros Verificados <span class="pth-dd__chevron" aria-hidden="true">&#9662;</span>
+      </button>
+      <div id="pth-dd-menu" class="pth-dd__menu" role="menu">
+        <a href="/escolas-de-surf.html" class="pth-dd__featured" role="menuitem">
+          <div class="pth-dd__featured-eyebrow">Verificado</div>
+          <div class="pth-dd__featured-title">Escolas de Surf</div>
+          <span class="pth-dd__featured-link">Ver todas &rarr;</span>
+        </a>
+        <div class="pth-dd__coming">
+          <div class="pth-dd__coming-eyebrow">Em desenvolvimento</div>
+          <ul class="pth-dd__coming-list">
+            <li class="pth-dd__coming-item" title="Em breve">Pesca (Charters)</li>
+            <li class="pth-dd__coming-item" title="Em breve">Restaurantes</li>
+            <li class="pth-dd__coming-item" title="Em breve">Alojamento Local</li>
+            <li class="pth-dd__coming-item" title="Em breve">Hot&eacute;is &amp; Pousadas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="/parceiros.html" role="listitem">Para o seu Negócio</a>
   </div>
+  <div class="nav-actions">
+    <div class="lang-switcher" aria-label="Seleção de idioma">
+      <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <a href="/en/hidden-beaches" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+    </div>
+    <a href="/login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="/login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hub-hero" aria-labelledby="page-h1">
+  <span class="hub-eyebrow">Curadoria editorial</span>
+  <h1 id="page-h1">As 10 praias que <em>ninguém no Booking encontra</em></h1>
+  <p class="hub-lead">Praias menos conhecidas selecionadas com critério — não por serem secretas, mas por ficarem fora dos circuitos habituais. Informação verificável, acessos honestos, fotografia licenciada.</p>
+  <a href="#samoqueira" class="cta-gold">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+    Ver a Praia Piloto
+  </a>
+</header>
+
+<div class="hub-body">
+  <div class="hub-content">
+
+    <div class="editorial-banner" role="note" aria-label="Nota editorial">
+      <p><strong>Como selecionamos:</strong> Escolhemos praias menos conhecidas a partir de fontes verificáveis — qualidade da água (APA), cartografia oficial e fotografia licenciada — com expectativas honestas sobre acesso e condições. Fotos de terceiros estão sempre identificadas com autor e licença. Não afirmamos visitas que não aconteceram.</p>
+    </div>
+
+    <section class="beaches-section" id="samoqueira" aria-labelledby="live-title">
+      <h2 class="beaches-section-title" id="live-title">Praia disponível agora</h2>
+      <p class="beaches-section-sub">A primeira das 10 — com guia completo, foto licenciada e informação verificada.</p>
+
+      <a href="/escondidas/praia-da-samoqueira" class="beach-card-live" aria-label="Ler guia da Praia da Samoqueira">
+        <span class="beach-card-live-badge">Nº 01 · Disponível</span>
+        <div class="beach-card-live-body">
+          <div class="beach-card-live-region">Alentejo · Sines · Costa Vicentina</div>
+          <div class="beach-card-live-name">Praia da Samoqueira</div>
+          <div class="beach-card-live-desc">Enseada rochosa com piscinas naturais espetaculares em maré baixa, grutas acessíveis e snorkeling entre formações de pedra. A 2,5 km de Porto Covo, dentro do Parque Natural Vicentina. Apoios mínimos — verificado.</div>
+          <span class="beach-card-live-cta">Ler guia completo →</span>
+        </div>
+      </a>
+    </section>
+
+    <section class="beaches-section" aria-labelledby="coming-title">
+      <h2 class="beaches-section-title" id="coming-title">As restantes 9 — em investigação</h2>
+      <p class="beaches-section-sub">Cada praia só é publicada quando temos fontes verificáveis, foto licenciada e informação de acesso honesta.</p>
+
+      <div class="beaches-coming">
+        <div class="beach-pill">
+          <div class="beach-pill-num">Nº 02</div>
+          <div class="beach-pill-name">Praia do Carvalho</div>
+          <div class="beach-pill-region">Algarve · junto a Benagil</div>
+        </div>
+        <div class="beach-pill">
+          <div class="beach-pill-num">Nº 03</div>
+          <div class="beach-pill-name">Praia do Telheiro</div>
+          <div class="beach-pill-region">Vila do Bispo · Algarve</div>
+        </div>
+        <div class="beach-pill">
+          <div class="beach-pill-num">Nº 04</div>
+          <div class="beach-pill-name">Praia da Amoreira</div>
+          <div class="beach-pill-region">Aljezur · Costa Vicentina</div>
+        </div>
+        <div class="beach-pill">
+          <div class="beach-pill-num">Nº 05</div>
+          <div class="beach-pill-name">Praia dos Alteirinhos</div>
+          <div class="beach-pill-region">Zambujeira do Mar</div>
+        </div>
+        <div class="beach-pill">
+          <div class="beach-pill-num">Nº 06</div>
+          <div class="beach-pill-name">Praia da Adraga</div>
+          <div class="beach-pill-region">Sintra · Costa de Lisboa</div>
+        </div>
+        <div class="beach-pill">
+          <div class="beach-pill-num">Nº 07</div>
+          <div class="beach-pill-name">Praia de Odeceixe</div>
+          <div class="beach-pill-region">Aljezur · Rio + Mar</div>
+        </div>
+        <div class="beach-pill">
+          <div class="beach-pill-num">Nº 08 – 10</div>
+          <div class="beach-pill-name">Em investigação</div>
+          <div class="beach-pill-region">A confirmar</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="waitlist-section" aria-labelledby="wl-title">
+      <div class="waitlist-eyebrow">Lista de espera</div>
+      <h2 class="waitlist-title" id="wl-title">Quer ser avisado quando publicarmos?</h2>
+      <p class="waitlist-sub">Deixe o seu email — enviamos uma notificação quando cada nova praia for publicada. Sem spam, sem partilha de dados.</p>
+
+      <form id="wl-form" novalidate>
+        <div class="waitlist-form">
+          <label for="wl-email" class="sr-only">Endereço de email</label>
+          <input type="email" id="wl-email" name="email" class="waitlist-input" placeholder="o-seu-email@exemplo.com" required autocomplete="email">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADFrwvqNt1FGaqkB" data-theme="light" aria-hidden="true"></div>
+          <button type="submit" id="wl-btn" class="waitlist-btn">Quero ser avisado</button>
+        </div>
+        <p class="waitlist-error" id="wl-error" role="alert" aria-live="polite"></p>
+      </form>
+      <div class="waitlist-success" id="wl-success" role="status" aria-live="polite">
+        <p><strong>✓ Adicionado.</strong> Vamos avisá-lo quando a próxima praia for publicada.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
 </main>
+
+<footer class="footer" aria-label="Rodapé">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        </div>
+        <span>Portugal Travel Hub</span>
+      </div>
+      <p class="footer-tagline">Portal premium de praias em Portugal — condições em tempo real, webcams e previsões.</p>
+    </div>
+    <nav class="footer-col" aria-label="Destinos">
+      <h3 class="footer-heading">Destinos</h3>
+      <ul>
+        <li><a href="/beaches.html">Praias</a></li>
+        <li><a href="/surf.html">Surf</a></li>
+        <li><a href="/pesca.html">Pesca</a></li>
+        <li><a href="/webcams.html">Webcams</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Empresa">
+      <h3 class="footer-heading">Empresa</h3>
+      <ul>
+        <li><a href="/sobre.html">Sobre Nós</a></li>
+        <li><a href="/precos.html">Preços</a></li>
+        <li><a href="/planear.html">Planear</a></li>
+        <li><a href="/parceiros.html">Para o seu Negócio</a></li>
+        <li><a href="/contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h3 class="footer-heading">Legal</h3>
+      <ul>
+        <li><a href="/privacidade.html">Privacidade</a></li>
+        <li><a href="/termos.html">Termos</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="footer-year">2026</span> Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span><a href="/sobre.html">Sobre</a> &middot; <a href="/contact.html">Contacto</a> &middot; <a href="/privacidade.html">Privacidade</a> &middot; <a href="/termos.html">Termos</a> &middot; <a href="/cookies.html">Cookies</a></span>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="/js/nav.js?v=20260422c" defer></script>
+<script src="/js/config.js?v=20260508-isactive" defer></script>
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 30); }, { passive: true });
+const navToggle = document.getElementById('nav-toggle');
+const navBackdrop = document.getElementById('nav-backdrop');
+const navClose = document.getElementById('nav-close');
+const navLinks = document.querySelector('.nav-links');
+function openMenu() { document.body.classList.add('nav-mobile-open'); navToggle.setAttribute('aria-expanded','true'); }
+function closeMenu() { document.body.classList.remove('nav-mobile-open'); navToggle.setAttribute('aria-expanded','false'); }
+navToggle?.addEventListener('click', openMenu);
+navClose?.addEventListener('click', closeMenu);
+navBackdrop?.addEventListener('click', closeMenu);
+navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('wl-form');
+  var btn = document.getElementById('wl-btn');
+  var errorEl = document.getElementById('wl-error');
+  var successEl = document.getElementById('wl-success');
+  if (!form || !btn) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var email = document.getElementById('wl-email').value.trim();
+    var token = form.querySelector('[name="cf-turnstile-response"]') ? form.querySelector('[name="cf-turnstile-response"]').value : '';
+
+    errorEl.style.display = 'none';
+    errorEl.textContent = '';
+
+    if (!email) {
+      errorEl.textContent = 'Introduza um endereço de email válido.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    if (!token) {
+      errorEl.textContent = 'Verificação anti-robôs em falta. Aguarde um momento e tente novamente.';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'A enviar...';
+
+    try {
+      if (typeof SUPABASE_URL !== 'undefined' && typeof SUPABASE_ANON_KEY !== 'undefined') {
+        await fetch(SUPABASE_URL + '/functions/v1/submit-plan-request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+          body: JSON.stringify({ turnstileToken: token, email: email, nome: 'Subscritor', regiao: 'Escondidas Waitlist', interesses: ['escondidas'], pessoas: '1', data_inicio: null, data_fim: null })
+        });
+      }
+    } catch (err) {
+      console.warn('[PTH] waitlist submit:', err);
+    }
+
+    form.style.display = 'none';
+    successEl.style.display = 'block';
+    successEl.focus();
+  });
+});
+</script>
+<script src="/js/cookie-consent.js" defer></script>
+<script src="/js/nav-dropdown.js" defer></script>
 </body>
 </html>
