@@ -1,0 +1,492 @@
+02-ARCHITECTURE — Decisões Técnicas
+Portugal Travel Hub (PTH)
+Versão: 1.3 · Data: 26/05/2026 (mobile checklist + smoke test interacção + 3º parceiro + asset visual review)
+
+1. Stack
+Frontend: HTML/CSS/JS Vanilla
+Hosting:  Cloudflare Pages (CDN global)
+CDN:      cdn.portalturismoportugal.com (hero video, assets pesados)
+BD/Auth:  Supabase (Postgres + Auth + Edge Functions)
+Pagamentos: ⚠️ Sem processador MoR — LS morto 27/04, Paddle rejeitado 25/05 (ver AD-20260525-01)
+Email:    Resend
+Analytics: GA4 + GTM (30+ páginas)
+Afiliados: GetYourGuide, Amazon Associates
+Decisões fundadoras (Março 2026)
+DecisãoRazãoTrade-off aceiteHTML estático vs frameworkPerformance, SEO, controlo, sem buildSem hot reload, sem componentes reutilizáveis nativosSupabase vs Firebase/AWSOpen source, Postgres real, RLS, custoLock-in moderado em extensionsCloudflare Pages vs VercelCDN gratuita, Workers integrationBuild menos eleganteLemonSqueezy vs Stripe directoMoR (sem NIF próprio), MoSS handlingComissão maior, depende aprovação fiscal
+
+2. Estrutura de Pastas
+Portal-turismo-site/
+├── index.html                    # homepage PT
+├── en/                           # mirror EN completo
+├── beach.html                    # SPA — página praia individual
+├── beaches.html                  # listagem com filtros
+├── surf.html, pesca.html         # verticais
+├── webcams.html, planear.html
+├── guias.html + guias/*          # artigos editoriais
+├── parceiros.html, precos.html
+├── login.html, register.html, reset-password.html
+├── conta.html, dashboard.html    # autenticada
+├── partner-dashboard.html        # B2B autenticada
+├── admin.html                    # admin único
+├── css/
+│   ├── style.css                 # global
+│   ├── monet-v2.css              # cards monetização editorial
+│   ├── gyg-block.css             # bloco GetYourGuide
+│   ├── webcams-guias-page.css
+│   ├── surf-pesca-page.css
+│   ├── partners-page.css         # card v2 (large/medium/inline) — 21/05
+│   └── partners-directory.css    # directory list (lista + filtros + accordion) — 25/05
+├── js/
+│   ├── config.js                 # Supabase URL + anon key
+│   ├── nav.js
+│   ├── beach-page.js
+│   ├── beach-renderer.js
+│   └── partners-directory.js     # filtros + accordion + drawer mobile — 25/05
+├── _data/
+│   └── partners.json             # fonte única de verdade dos parceiros — 21/05
+├── _scripts/
+│   ├── build-partners.mjs        # gera vitrines + injecções — 21/05
+│   └── preflight.sh              # check pre-sessão Claude Code — 21/05```
+
+---
+
+## 3. Frontend
+
+### Tipografia e cores em produção
+
+```css
+--blue: #0a3d6b;       /* navy primário */
+--gold: #c9a84c;       /* dourado */
+--off-white: #f6f4ef;  /* areia */
+
+--font-display: 'Bodoni Moda', serif;
+--font-body: 'Inter', sans-serif;
+```
+
+### Brand v2 definido mas não migrado
+
+```css
+--navy: #0B1B2B;
+--areia: #F2E8D5;
+--dourado: #C9A24B;
+--ambar: #E07A26;
+--azeitona: #6B7A3F;
+
+--font-display: 'Fraunces', serif;
+--font-body: 'IBM Plex Sans', sans-serif;
+--font-mono: 'IBM Plex Mono', monospace;
+```
+
+**Razão para não migrar agora:** mudança visual em 100+ ficheiros, alto risco, baixo ROI imediato. Release dedicada futura.
+
+### Responsive
+
+- `< 600px` mobile
+- `600-960px` tablet
+- `> 960px` desktop
+
+### Acessibilidade
+
+WCAG AA: 0 violações (auditoria axe-core/Playwright Abr 2026).
+### Sistema de parceiros (build estático JSON → HTML)
+
+Desde 21/05/2026 o sistema de parceiros usa pipeline build estático:
+_data/partners.json
+↓
+_scripts/build-partners.mjs  (Node.js ESM)
+↓
+├── escolas-de-surf.html              ← directory list PT (vitrine)
+├── en/surf-schools.html              ← directory list EN
+├── praias-surf-iniciantes-algarve    ← injecta medium cards
+├── en/beginner-surf-beaches-algarve  ← injecta medium cards
+└── guias/melhores-praias-algarve     ← injecta medium cards
+
+**Funções do build (não tocar durante onboarding):**
+- `generateCardLarge(partner, lang, ...)` — card v2 (vive dentro do accordion `.pd-expand`)
+- `generateCardMedium(...)` — medium card para páginas de injecção
+- `generateDirectoryList(...)` — lista compacta + sidebar (25/05, AD-20260525-02)
+- `generateJsonLd(...)` — CollectionPage + SportsActivityLocation + BreadcrumbList
+
+**Marcadores HTML para injecção:**
+```html
+<!-- partners:start -->
+<!-- conteúdo gerado pelo build -->
+<!-- partners:end -->
+```
+
+⚠️ O build `--inject` **NÃO modifica o `<head>`** das páginas anfitriãs. Páginas novas com `<!-- partners:start -->` precisam de ter `partners-page.css` linkado manualmente no `<head>` (AD-20260525-03).
+
+**Vitrines `/escolas-de-surf` + `/en/surf-schools`:** usam directory list (lista compacta + sidebar filtros + accordion). Card v2 (`partner-card--large`) é reutilizado como conteúdo do `.pd-expand`. **Não modificar `generateCardLarge`** — quebra accordion E injecção.
+
+**Assets dos parceiros em Supabase Storage:**
+- Bucket: `partner-images`
+- Path logos: `partner-logos/<slug>.png` (518×518, transparente, <50KB)
+- Path fotos: `partner-photos/<slug>.webp` (1200×900, q85, <150KB)
+- CSP `_headers` tem subdomain específico `glupdjvdvunogkqgxoui.supabase.co` em `img-src` (AD-20260521-04)
+
+---
+
+## 4. Backend (Supabase)
+
+- **Project ref:** `glupdjvdvunogkqgxoui`
+- **URL:** `https://glupdjvdvunogkqgxoui.supabase.co`
+- **Anon key:** exposta no client (esperado, protegida por RLS)
+- **Service role:** APENAS em `.env` local + Edge Functions secrets
+
+### Tabelas
+
+| Tabela | Função | RLS |
+|---|---|---|
+| `auth.users` | Supabase Auth | Nativo |
+| `profiles` | Utilizador (`plan: 'free'\|'pro'` — text) | ✅ |
+| `beaches` | Catálogo de praias | Read público + write admin |
+| `favorites` | Pro user favorites | ✅ por user_id |
+| Tabelas B2B (4) | Partner profiles, listings | ✅ |
+| Partner Storage | `partner-images` bucket (logos + fotos) | Read público |
+
+⚠️ **Nota crítica:** coluna `profiles.plan` é **TEXT** (`'free'` ou `'pro'`), NÃO boolean `is_pro`.
+
+### Edge Functions
+
+| Função | Trigger | Notas |
+|---|---|---|
+| `ls-webhook` | LemonSqueezy webhook | **Requer `--no-verify-jwt`** — ficou 30 dias inactiva por estar com JWT |
+| outras CORS-fixed (3) | Várias | — |
+
+### Migração Maio 2026
+
+A partir de **30/05/2026** novos projectos Supabase requerem `GRANT` explícito para Data API.
+
+- Tabelas existentes: NÃO afectadas
+- Projecto actual: aplica-se a tabelas criadas após **30/10/2026**
+- TODO técnico: anotar para Outubro 2026
+
+---
+
+## 5. Integrações
+
+### Processador de Pagamentos
+
+- **LemonSqueezy:** Store #333117 — 🔴 Morto (KYC rejeitada 27/04, sem resposta após 30+ dias)
+- **Paddle:** 🔴 Rejeitado definitivamente 25/05 (recurso negado — "modelo de negócio em categoria com perfil de risco que parceiros bancários não suportam")
+- **Estado actual:** Sem processador MoR aprovado — decisão pendente (ver AD-20260525-01)
+- **Edge Function `ls-webhook`:** mantida em standby (NÃO eliminar — pode ser referência se voltarmos a um MoR estilo LS) — deployada com `--no-verify-jwt`
+- **CSP `_headers`:** `*.lemonsqueezy.com` em `form-action` e `frame-src` — manter por agora, limpar quando decisão final tomada
+- **Opções remanescentes:** Stripe+NIF próprio / Polar.sh / Dodo Payments / Gumroad / descontinuar Pro consumer e focar 100% B2B com SEPA
+### GetYourGuide
+
+- Partner ID: `0WTBHZE`
+- Tracking domain: `gyg.me`
+- 6 widgets activos:
+  - `pthsurf` (EN), `pthsurfpt` (PT)
+  - `pthpesca` (EN), `pthpescapt` (PT)
+  - `pthalgarveen` (EN), `pthalgarvept` (PT)
+- Cards regionais: `pthcard-<region>`
+- CSP: `widget.getyourguide.com`, `*.getyourguide.com` whitelisted
+
+### Amazon Associates
+
+- Store ID: `pthportugal-21` (mesmo nos 5 países UE via Earn Globally)
+- Países: ES, UK, DE, IT, FR
+- Pagamento: depósito directo, min €25
+- OneLink scripts: **REMOVIDOS** (URLs genéricas decorativas, não funcionavam)
+- Tracking via tag na URL (funciona sem scripts)
+- ⚠️ Deadline: 3 vendas qualificadas até ~11/11/2026
+
+### Resend
+
+- Domínio: `portalturismoportugal.com`
+- Sender: `ola@portalturismoportugal.com` → forwarding `ricardopbarbosa01@gmail.com`
+### Supabase Storage (assets de parceiros)
+
+- **Bucket:** `partner-images` (público)
+- **URL pattern:** `https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/partner-images/<path>`
+- **Logos:** `partner-logos/<slug>.png` — 518×518, PNG transparente, <50KB
+- **Fotos hero:** `partner-photos/<slug>.webp` — 1200×900, WebP q85, <150KB
+- **CSP requirement:** `img-src` tem que listar subdomain específico `glupdjvdvunogkqgxoui.supabase.co` ANTES do wildcard `*.supabase.co` (lição AD-20260521-04 — wildcard genérico pode não cobrir subdomain específico)
+
+### Cloudflare Pages
+
+- Project: `portal-turismo-portugal-site`
+- Deploy: `npx wrangler pages deploy . --project-name portal-turismo-portugal-site`
+- Auto-deploy: GitHub push para `main`
+
+### CSP em `_headers` (allowlists)
+
+- `script-src`: GTM, GA, Supabase, Cloudflare Challenges, GYG widget, Amazon adsystem
+- `frame-src`: GTM, LemonSqueezy, Cloudflare Challenges, GYG, Amazon adsystem
+- `img-src`: Unsplash, Pexels, Wikimedia, CDN próprio, Supabase, GA, Amazon images
+- `form-action`: self + `*.lemonsqueezy.com`
+
+---
+
+## 6. Segurança (auditoria 15/05/2026)
+
+✅ **Estado: Clean**
+
+| Verificação | Resultado |
+|---|---|
+| `.env` no Git | NUNCA commitado |
+| `.gitignore` protege | `.env`, `.env.local`, `.env*.local`, `/playwright/.auth/` |
+| Service role no código | ZERO (só `process.env.*`) |
+| Admin UUID hardcoded | ZERO em código de produção |
+| Emails pessoais expostos | Só em worktrees Claude (não git) |
+| LemonSqueezy secrets em código | Ausentes |
+| API keys genéricas | Nenhuma |
+
+### Histórico de incidentes
+
+- **Service role Supabase exposta** (incidente antigo) → regeneração + git history limpo
+- **Webhook LemonSqueezy inactivo 30 dias** → fix `--no-verify-jwt`
+
+---
+
+## 7. Decisões Arquiteturais Importantes (ver DECISIONS_LOG para detalhe)
+
+### Páginas individuais de praia: SPA
+
+- **Decisão original (Mar 2026):** `beach.html?id=UUID` com render dinâmico via JS + Supabase
+- **Razão:** velocidade desenvolvimento (80+ praias)
+- **Trade-off oculto descoberto 15/05:** Google rastreia mas não vê conteúdo → "Rastreada, não indexada"
+- **Status:** decisão pendente — pre-render top 30 praias (caminho A ou C)
+
+### URLs sem `.html` (15/05/2026)
+
+- **Decisão:** sitemap.xml e canonicals apontam para URLs sem extensão
+- **Razão:** Cloudflare faz 301 automático `.html` → sem extensão; sitemap antigo criava 135 "Página com redireccionamento"
+- **Implementação parcial:** sitemap fixo (`41c478b`); canonicals em 101 ficheiros adiados pela mesa
+
+### Redesign monetização v2 com entidades HTML (14/05/2026)
+
+- **Bug histórico:** commit `1e269a2` partiu produção HTTP 500 por double-encoding UTF-8
+- **Reverted:** `47594c3`
+- **Re-implementação:** entidades HTML (`&eacute;`, `&middot;`, `&mdash;`, `&#8470;`) em `65d73cc`
+- **Lição permanente:** SEMPRE entidades HTML para acentos PT em automatização
+### Sistema editorial de parceiros (21/05/2026)
+
+- **Decisão:** vitrine pública `/escolas-de-surf` separada de `/parceiros.html` (landing B2B)
+- **Razão:** URL semântica para SEO, preserva landing indexada, escalável para `/operadores-pesca/`, `/hoteis-verificados/` etc.
+- **Implementação:** `_data/partners.json` → `_scripts/build-partners.mjs` → HTML estático bilingue
+- **Detalhe:** ver AD-20260521-01
+### Checklist mobile pre-deploy obrigatório (26/05/2026)
+
+- **Decisão:** smoke test mobile real é obrigatório antes de qualquer deploy que toque HTML/CSS partilhado (nav, footer, header, body classes, JS de navegação)
+- **Razão:** smoke test só `curl HTTP 200` não detectava bugs visuais em mobile; 3 bugs nav + drawer + toolbar chegaram a produção por este gap
+- **Critérios:** desktop 1280px PT+EN + mobile 412×915 Android UA PT+EN + lang switcher + menu hambúrguer + G10 browser-level. Não passa = sem deploy
+- **Gap operacional:** `Playwright.click()` programático bypassa hit-test visual → usar `Page.tap()` com `hasTouch:true` + `isMobile:true` para testar overlays reais
+- **Detalhe:** ver AD-20260526-01
+
+### Smoke test visual obrigatório de assets — extensão a AD-20260526-01 (26/05/2026)
+
+- **Decisão:** antes de upload Supabase de logo/foto de parceiro, comparação visual lado-a-lado com asset existente do mesmo tipo (Good Feeling/Future Eco)
+- **Razão:** sanity checks numéricas (yellow_count, black_count, transparent_corners) podem estar verdes com asset visualmente errado — logo Albufeira foi para produção a ~15% canvas vs ~85% dos outros e passou todos os checks numéricos
+- **Critérios:** ±15% de ocupação linear do canvas vs referência. Sem comparação visual lado-a-lado = sem upload
+- **Aplicação:** pedir logo SVG/vectorial directamente ao parceiro no email inicial de outreach (evita round-trip de processamento raster)
+- **Detalhe:** ver AD-20260526-01b
+
+### Hash auto-open accordion em vitrines parceiros (26/05/2026)
+
+- **Decisão:** `js/partners-directory.js` ganha `openCardByHash()` registado em DOMContentLoaded + hashchange events
+- **Razão:** URLs partilháveis tipo `/escolas-de-surf#good-feeling-surf-school` (usados em outreach) chegavam ao card mas accordion não auto-expandia — UX confusa
+- **Race condition corrigida:** `applyFilters() → writeURLState() → history.replaceState` strippava hash. Fix: capturar `_startHash` antes de `init()`
+- **Detalhe:** ver AD-20260526-05
+
+### Redesign vitrines com directory list (25/05/2026)
+
+- **Decisão:** vitrines `/escolas-de-surf` + `/en/surf-schools` usam lista compacta + sidebar filtros + accordion expand (mockup B)
+- **Razão:** card v2 ocupa ~50% viewport — insustentável para 100 parceiros (scroll fatigue)
+- **Estratégia:** EXTENDER, não substituir — card v2 vive como conteúdo do `.pd-expand`
+- **Novos ficheiros:** `css/partners-directory.css` + `js/partners-directory.js` + `generateDirectoryList()` no build
+- **Founder differentiation:** `.pd-row--founder` CSS preparado (activa automaticamente quando `tier: "founder"`)
+- **Detalhe:** ver AD-20260525-02
+
+### Paddle rejeitado, sem processador MoR (25/05/2026)
+
+- **Decisão:** PTH sem processador MoR aprovado por tempo indeterminado
+- **Razão:** LemonSqueezy KYC rejeitada (27/04), Paddle recurso negado (25/05). Modelo de negócio em categoria de risco para parceiros bancários
+- **Impacto:** Tier Pro consumer (€4,99/mês) sem checkout funcional
+- **Opções:** Stripe+NIF / Polar.sh / Dodo / Gumroad / descontinuar Pro
+- **Decisão final:** pendente até retrospectiva 04/06
+- **Detalhe:** ver AD-20260525-01
+
+### Mass-edit HTML com acentos requer Python/Node (25/05/2026)
+
+- **Decisão:** Para mass-edits programáticos de HTML com caracteres não-ASCII, usar SEMPRE Python ou Node.js
+- **Razão:** PS5 com `Get-Content -Raw` em UTF-8 sem BOM corrompe acentos por round-trip (mojibake duplo `NegÃƒÂ³cio` observado em fix do nav PT)
+- **Aplicação:** script `_diag/fix-nav-para-negocio-v2.py` corrigiu 54 ficheiros, 0 quebras encoding
+- **Detalhe:** ver AD-20260525-04
+
+---
+
+## 8. Processo de Deploy
+
+```bash
+# 1. Pre-flight (AD-20260521-02)
+bash _scripts/preflight.sh
+# Exit code ≠ 0 → STOP
+
+# 2. Validar local
+git status
+git diff --stat
+
+# 3. Para HTML em massa (> 5 ficheiros)
+python _diag/validate-html.py [ficheiro]
+
+# 4. Smoke test mobile pre-commit OBRIGATÓRIO se mexer em nav/header/footer/CSS partilhado/JS nav (AD-20260526-01)
+# Playwright 412×915 Android Chrome UA + hasTouch:true + isMobile:true
+# Verificar: lang switcher, menu hambúrguer (todas opções desktop), overlays não interceptam cliques
+# Não passa = sem deploy
+
+# 5. Para assets visuais (logos/fotos) — AD-20260526-01b
+# Comparação visual lado-a-lado com asset existente do mesmo tipo
+# ±15% de ocupação linear do canvas vs referência
+# Sanity checks numéricas NÃO substituem inspecção visual
+
+# 6. Commit + push
+git add [ficheiros]
+git commit -m "type(scope): description"
+git push origin main
+
+# 7. Deploy manual (Cloudflare auto-deploy via GitHub está PARTIDO desde 18/05)
+npx wrangler pages deploy . --project-name portal-turismo-portugal-site --commit-dirty=true
+# Se VPN/proxy bloquear: curl --ssl-no-revoke -sI https://api.cloudflare.com/client/v4/ para confirmar conectividade
+# Note: deploy pode chegar antes do CLI reportar sucesso — sempre verificar produção
+
+# 8. Verificar deploy chegou (curl em endpoint específico do commit)
+sleep 90
+curl --ssl-no-revoke -s https://www.portalturismoportugal.com/<ficheiro-tocado> | grep -c "<marker-do-commit>"
+
+# 9. Smoke test mobile post-deploy (mesmos critérios do passo 4) em produção
+```
+### Convenção de commits
+
+- `feat(scope):` — nova funcionalidade
+- `fix(scope):` — correcção
+- `refactor(scope):` — reorganização sem mudança funcional
+- `docs(scope):` — apenas documentação
+- `chore(scope):` — manutenção
+
+### Branches
+
+- `main` — produção
+- `feature/*`, `fix/*`, `feat/*`, `refactor/*`, `polish/*` — trabalho em curso
+- `backup/pre-*` — snapshots antes operações arriscadas
+
+### Cache busting
+
+```html
+<link rel="stylesheet" href="/css/style.css?v=YYYYMMDD-tag">
+```
+
+---
+
+## 9. Comandos Operacionais Frequentes
+
+```bash
+# Deploy principal
+npx wrangler pages deploy . --project-name portal-turismo-portugal-site
+
+# Deploy secundário Praias-de-Portugal (projecto separado)
+npx wrangler pages deploy . --project-name praias-de-portugal --branch praias-de-portugal
+
+# Validar HTML local
+python _diag/validate-html.py index.html
+
+# Verificar produção (PowerShell)
+$r = Invoke-WebRequest -Uri "https://www.portalturismoportugal.com/" -UseBasicParsing
+$r.StatusCode
+
+# Logs Edge Functions
+supabase functions logs ls-webhook --project-ref glupdjvdvunogkqgxoui
+
+# Re-submeter sitemap GSC
+# (UI manual em search.google.com/search-console — sem API CLI directa)
+```
+
+---
+
+## 10. Limitações Conhecidas
+
+### Técnicas
+
+- Páginas individuais de praia não indexáveis (problema arquitectural)
+- Curl local do founder retorna `HTTP 000` em alguns testes (rede/AV local, não site) — alternativa: `Invoke-WebRequest`
+- 3 cross-canonicals legítimos em `about.html`, `best-beaches-algarve.html`, `case-study-template.html` requerem tratamento individual
+
+### Operacionais
+
+- Founder solo
+- Orçamento marketing baixo (€50-100/mês)
+- Sem rede B2B activa
+- Sem CRM (outreach inicial via planilha)
+
+---
+
+## 11. Roadmap Técnico Sugerido (prioridade)
+
+1. **Esta sessão / próxima** — markdown updates pós-26/05 (DECISIONS_LOG ✅ + 00-CONTEXT ✅ + 02-ARCHITECTURE em curso); decisão pagamentos pós-Paddle; resposta SURF4FUN aguarda materiais
+2. **Próximas 2 semanas** — outreach B2B respostas (14 emails restantes); 4º parceiro Essential ou Founder se sinal qualificar; auditoria GSC Quinta 28/05
+3. **Próximo mês** — decisão MoR final (retrospectiva 04/06); decisão pre-render top 30 praias; possível formalização autorização editorial de fotos (Albufeira pendente)
+4. **Próximos 3 meses** — backlinks (15-20 DA 20+); primeiros 3-5 B2B Essential live com upgrade Founder se relação madura; possível 1º Founder pagante (activa `.pd-row--founder` já preparado); possível migração brand v2
+
+
+# 🧠 Contexto Compactado — PTH · Automação Instagram Reels
+> Gerado em: 06/06/2026 | Pipeline Make.com gera+publica Reels no IG 2×/dia (automático)
+
+## 📌 Estado Atual
+Pipeline Make.com "Integration HTTP" **COMPLETO e validado end-to-end**: busca vídeo no Pixabay → renderiza com texto (JSON2Video) → busca o MP4 → publica Reel no IG `portugal_travel_hub`, tudo automático. Já publicou Reels reais de teste (apagados/a apagar). **Falta apenas: variar o vídeo, tirar watermark, e agendar.** NÃO está agendado ainda (corre só por "Run once").
+
+## 🏗️ Stack
+- **Make.com** (orquestração, free tier) — cenário "Integration HTTP"
+- **JSON2Video** (render vídeo, free 600 credits, TTS incl.) — header `x-api-key`
+- **Pixabay** (stock vídeo, free API) — param `key`
+- **Meta Graph API v22.0** (publish IG, Standard/Dev access — sem App Review)
+
+## 🔧 Configurações & Variáveis
+- IG Business Account ID: `17841401280880718`
+- Page ID: `1129335710269782` · App ID: `1543813540783878`
+- Graph API: `v22.0`
+- Page Access Token (permanente, guardado local): `EAAV8...` (mesmo dos testes)
+- JSON2Video key + Pixabay key: guardadas nos respetivos módulos
+
+## 🔁 Estrutura do cenário (fluxo + config essencial)
+1. **Pixabay GET** `https://pixabay.com/api/videos/` · params `key`, `q`, `per_page=10`
+2. ~~Set variable~~ (Tools — **NÃO usado, pode apagar**)
+3. **JSON2Video POST** `https://api.json2video.com/v2/movies` · header `x-api-key` · Body JSON: resolution custom 1080×1920, `draft:true`(→mudar false), 1 scene 10s, elements=[video `src`=`{{1.hits[].videos.medium.url}}` resize cover + 2 text Oswald]
+4. **Sleep** 120s
+5. **GET status** `https://api.json2video.com/v2/movies` · param `project`=`{{2.project}}` · header `x-api-key` → MP4 em **`movie.url`**
+6. **POST media** `https://graph.facebook.com/v22.0/17841401280880718/media` · POST · params `media_type=REELS`, `video_url`=`{{6.movie.url}}`, `caption`, `access_token`
+7. **Sleep** 120s
+8. **POST media_publish** `.../media_publish` · **POST** · params `creation_id`=`{{7.data.id}}`, `access_token`
+
+## ⚠️ Problemas & Soluções (NÃO repetir)
+- **Mapping array Pixabay:** o que FUNCIONOU = `{{1.hits[].videos.medium.url}}` direto no `src` (coleção → Make usa o 1º num campo de texto). FALHARAM: `first(1.hits).videos...` (property após função vira texto), índice `[1]` (UI baralha), Set variable com first().
+- **GET status:** sem header `x-api-key` → erro "API Key not provided".
+- **media_publish:** tem de ser **POST**, não GET → senão erro `#100 nonexisting field`.
+- **creation_id:** está em `7.data.id`, só existe depois do módulo 6 (media) correr.
+- **Testar:** sempre **Run once completo** (nunca "Run this module only" — não passa mappings entre módulos). Cada run ~4min (2 Sleeps).
+
+## ✅ Decisões Tomadas
+- Stack Make+JSON2Video+Pixabay+Graph (Creatomate rejeitado, $$).
+- **Ramp-up: 1×/dia por 14 dias → avaliar métricas → 2×/dia** (não ligar 2×/dia já).
+- Honestidade: textos NÃO afirmam localização falsa; só afirmar local se o vídeo for verificadamente do sítio.
+- Qualidade: usar `videos.large.url` (não medium) + `safesearch=true`.
+- Stock genérico vs posicionamento "local insider" = risco assumido por override do Ricardo (confronto feito).
+
+## 🎯 Próximos Passos (ordenados)
+1. **Variar o vídeo** (CRÍTICO — senão publica sempre o mesmo). DECIDIR entre:
+   (a) Simples: query ampla `algarve coast portugal` + param `page`=`{{formatDate(now; "D")}}` (vídeo diferente/dia);
+   (b) Robusto: **rotação de queries de lugares PT** (Benagil→Lagos→Sagres→Nazaré…) p/ variedade de locais.
+2. Qualidade: trocar `src` de `videos.medium.url` → `videos.large.url`; add params `video_type=film`, `order=popular`, `safesearch=true` no Pixabay.
+3. **`draft:true` → `false`** no módulo JSON2Video (remove watermark).
+4. **Apagar Reels de teste** (watermark) do IG.
+5. **Agendar:** scheduling 1×/dia (sug. 11h ou 19h Lisboa); verificar timezone da org Make = Europe/Lisbon; ligar toggle ON.
+6. (Opcional) Captions/hashtags variados por Reel + geotag.
+7. Confirmar regras subsídio IEFP não conflitam com ferramentas/contas sociais de negócio.
+
+## ⚠️ Limitações estruturais conhecidas
+- Pixabay não filtra orientação vertical → crop horizontal→9:16 (resize cover).
+- Reels dependem de áudio trending p/ alcance; automação NÃO adiciona (sem API). Teto de alcance.
+
+## 📎 Prompt de Retomada
+"Retomar a automação de Instagram Reels do PTH no Make.com (cenário 'Integration HTTP'). O pipeline já funciona end-to-end (Pixabay→JSON2Video→Graph API publish). Próximo: resolver a variedade de vídeo (page por dia OU rotação de queries PT), tirar watermark (draft:false), apagar testes, e agendar 1×/dia (ramp-up 14 dias). Ver secção Problemas&Soluções para não repetir os erros de mapping/método."
