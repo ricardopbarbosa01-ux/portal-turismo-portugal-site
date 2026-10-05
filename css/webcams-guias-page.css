@@ -123,6 +123,10 @@ section.wcam-section#webcams{display:block;}
 .wcam-sec-link{display:inline-flex;align-items:center;gap:4px;font-size:0.7rem;font-weight:500;color:var(--text-light);padding:4px 10px;border-radius:50px;border:1px solid var(--border);transition:all 0.2s;white-space:nowrap;text-decoration:none;min-height:28px;}
 .wcam-sec-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.05);}
 .wcam-sec-link svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2;}
+/* Afiliados 2026-10-05: link 'Hoteis perto' (Booking via Stay22) + destaque apos abrir a camara */
+.wcam-sec-link--stay{color:var(--blue);border-color:var(--gold);font-weight:600;}
+.wcam-sec-link--stay svg{width:12px;height:12px;}
+.wcam-card--went-live .wcam-sec-link--stay{background:var(--gold);color:#fff;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.25);}
 
 /* ── Value section ─────────────────────────────────────────────────────────── */
 .wcam-value{background:var(--white);padding:64px 5vw;}

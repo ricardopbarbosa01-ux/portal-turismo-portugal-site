@@ -2,7 +2,7 @@
 
 > Mapa de 1 pagina para o Claude Code se orientar SEM ler o repo inteiro. Le isto + CLAUDE.md ao inicio; depois explora SO o ficheiro que precisas.
 > Stack: HTML/CSS/JS estatico · Cloudflare Pages · Supabase (auth/DB/Edge Functions) · GA4.
-> Deploy: `npx wrangler pages deploy . --project-name portal-turismo-portugal-site --commit-dirty=true`
+> Deploy: `powershell -ExecutionPolicy Bypass -File .\deploy.ps1`
 
 ## Paginas comerciais (nucleo de receita)
 - `index.html` / `en/index.html` — homepage (hero video + card "10 praias escondidas" + bandas)

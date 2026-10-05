@@ -126,7 +126,7 @@ Update `"last_updated"` to today's date.
 ### Step 7 — Deploy
 
 ```bash
-npx wrangler pages deploy . --project-name portal-turismo-portugal-site --commit-dirty=true
+powershell -ExecutionPolicy Bypass -File .\deploy.ps1
 ```
 
 ---

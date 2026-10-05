@@ -22,7 +22,7 @@ Se algum teste falhar, parar tudo. Abrir terminal e correr:
 git log --oneline -5
 git revert HEAD
 git push origin main
-npx wrangler pages deploy . --project-name portal-turismo-portugal-site --commit-dirty=true
+powershell -ExecutionPolicy Bypass -File .\deploy.ps1   # (desde 2026-10-05; o deploy direto da pasta falha >20k ficheiros)
 ```
 
 Documentar o incidente em /docs/AUDIT-MASTER.md como nova entrada com BUG-XXX-NN ID.

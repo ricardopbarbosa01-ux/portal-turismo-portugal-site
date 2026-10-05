@@ -135,6 +135,8 @@
         : (lang === 'en' ? '/en/beaches.html?region=' + encodeURIComponent(w.region) : '/beaches.html?region=' + encodeURIComponent(w.region));
       var planearHref = (lang === 'en' ? '/en/planear.html' : '/planear.html') +
         '?source=webcams&webcam_spot=' + encodeURIComponent(w.name) + '&region=' + encodeURIComponent(w.region) + '&tipo=' + encodeURIComponent(w.tipo || '');
+      var stayLabel = lang === 'en' ? 'Hotels nearby' : 'Hotéis perto';
+      var stayHref  = 'https://www.booking.com/searchresults.' + (lang === 'en' ? 'en-gb' : 'pt-pt') + '.html?ss=' + encodeURIComponent(w.location + ', Portugal');
       var actionEl = isLive
         ? '<a href="' + esc(w.url) + '" class="' + btnClass + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(T.webcams.actionLive + ' ' + w.name) + '">' +
           '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>' +
@@ -169,6 +171,9 @@
         '<div class="wcam-conditions" data-cond-spot="' + esc(w.name) + '" aria-label="' + esc(lang === 'en' ? 'Weather conditions' : 'Condições meteorológicas') + '">' + conditionsHtml(w.name, T) + '</div>' +
         '<div class="wcam-footer">' + actionEl + '</div>' +
         '<div class="wcam-footer-secondary">' +
+          '<a href="' + esc(stayHref) + '" class="wcam-sec-link wcam-sec-link--stay" target="_blank" rel="noopener noreferrer sponsored" aria-label="' + esc(stayLabel + ' — ' + w.location) + '">' +
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20V8"/><path d="M2 16h20v4"/><path d="M22 16v-4a3 3 0 0 0-3-3H10v7"/><circle cx="6" cy="12" r="2"/></svg>' + esc(stayLabel) +
+          '</a>' +
           '<a href="' + esc(explorerHref) + '" class="wcam-sec-link" aria-label="' + esc(explorerT) + '">' +
             esc(explorerT) + '<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
           '</a>' +
@@ -181,6 +186,15 @@
 
     _setHTML(grid, html);
   }
+
+  // Afiliados (2026-10-05): ao abrir a camara ao vivo (site externo, novo separador), destaca o link
+  // 'Hoteis perto' no cartao para quando o visitante voltar a este separador. Sem preventDefault.
+  document.addEventListener('click', function (e) {
+    var btn = e.target && e.target.closest ? e.target.closest('.wcam-btn--live') : null;
+    if (!btn) return;
+    var card = btn.closest('.wcam-card');
+    if (card) card.classList.add('wcam-card--went-live');
+  });
 
   // ── Filter state ──────────────────────────────────────────────────────────────
   var _lang   = 'pt';

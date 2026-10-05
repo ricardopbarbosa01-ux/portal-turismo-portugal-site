@@ -3,8 +3,11 @@
 ## Project identity
 - Project: portal-turismo-site
 - Local path: C:\Users\Powerpc\Portal-turismo-site
-- Deploy command:
-  npx wrangler pages deploy . --project-name portal-turismo-portugal-site --commit-dirty=true
+- Deploy command (desde 2026-10-05 — NUNCA usar `npx wrangler pages deploy .` diretamente: o repo tem >20 000 ficheiros e o Cloudflare Pages recusa):
+  powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -DryRun   # ensaio: mostra contagem (~385 ficheiros), nao publica
+  powershell -ExecutionPolicy Bypass -File .\deploy.ps1           # copia so ficheiros publicos para C:\Users\Powerpc\pth-dist e publica (pede confirmacao s/n)
+  O deploy.ps1 exclui node_modules, .git, .agents, .claude, docs, _scripts, _diag, _audit, _data, _planning, supabase, tests, *.md, .env, *.py, *.ps1 etc.
+  Se criares uma pasta publica nova cujo nome coincida com uma exclusao, ajusta o deploy.ps1. Os checks do script abortam se faltar index.html/_headers/_redirects/js/affiliate.js/css/style.css ou se aparecer .env/docs/node_modules.
 
 ## Product priorities
 Prioritize in this order unless the user says otherwise:
@@ -261,6 +264,34 @@ Before running `git commit`, the agent MUST:
 5. Only proceed with commit after the diff matches expectation.
 
 This ritual exists because automated tests do not catch "wrong file modified" — they only catch "code is broken". A commit that silently deletes a working script will pass all unit tests because there are no unit tests covering that script.
+
+## Afiliados e monetizacao (sessao 2026-10-05) — LER antes de mexer em links de parceiros
+
+Fonte de verdade detalhada: documento de projeto `claude/afiliados-2026-10.md` (claude.ai Project) + 2 linhas em `docs/REGRESSION-WATCHLIST.md`.
+
+**Em producao** (commit 2b8b3bb, deploy e6f0b2fa; deploy.ps1 em f9e26ba):
+- `js/affiliate.js` (carregado com `<script src="/js/affiliate.js?v=20261005" defer>` logo apos config.js) em 20 paginas: onde-ficar-*.html (7), en/where-to-stay-*.html (7), beaches PT/EN, planear PT/EN, beach PT/EN.
+  - Envia evento GA4 `affiliate_click` {partner, link_destination, page_path} por delegacao (mousedown/touchstart/click/auxclick, capture). Cobre links dinamicos.
+  - Parceiros reconhecidos: booking, stay22, discovercars, viator, simpson_travel, getyourguide, amazon, awin, cj.
+  - Reescrita Booking via CJ esta DESLIGADA (`var BOOKING = { pid:'', adId:'', aid:'' }`). Nunca chamar preventDefault/stopPropagation neste ficheiro.
+- **Stay22 LetMeAllez** (lmaID `6ac371f3b7bfdedf2d37801a`, AID `kaptarstudio`, conta ola@portalturismoportugal.com, 30% commission share) inline logo apos a tag do affiliate.js em 18 paginas (as mesmas EXCETO beach.html/en/beach.html).
+  - Troca links booking.com no mousedown para `www.stay22.com/allez/booking?aid=kaptarstudio&campaign=<pagina>` → redireciona para booking.com.
+  - beach PT/EN excluidos de proposito: `js/beach-page.js` tem 17 links de texto GYG (partner_id=0WTBHZE) e o LinkSwap do Stay22 tem GetYourGuide ativo. So adicionar Stay22 a paginas com links GYG diretos depois de o suporte Stay22 desativar GYG no LinkSwap.
+- **CSP em `_headers`** (obrigatorio para o Stay22): script-src + `https://scripts.stay22.com`; connect-src + `https://www.stay22.com https://scripts.stay22.com`; `worker-src 'self' blob:`. Sem worker-src o script carrega mas NAO troca links (falha silenciosa). Ao adicionar qualquer script de terceiros, atualizar o CSP e testar com o CSP real (Playwright sem bypassCSP).
+
+**Estado das redes:**
+- CJ (conta "Ricardo DEV", espaco promocional "Portal Turismo Portugal" ID 101718235): candidaturas pendentes Booking.com Spain & Portugal (4347393) e Booking.com United Kingdom (4297311), 4%. A Booking ja nao aceita afiliados pela Awin (Booking Brazil rejeitado 13/05/2026 → redireciona para CJ).
+- Awin (publisher 2886261): Simpson Travel (54551) JOINED — 3%, cookie 30d, pagamento medio 190d, so Algarve; sem links no site por agora. VROOEM, GoWithGuide e World Businesses for Sale: convites ignorados (nao rejeitados). VROOEM testado: ~€1,59/reserva em Faro → nao compensa.
+- GetYourGuide direto: partner_id 0WTBHZE (nao mudar campaign labels — ver watchlist).
+
+**Regras:**
+- Regra do Ricardo: nenhum link de parceiro que nao fature. Links Booking sem aid nao rendem — hoje rendem via Stay22.
+- Quando a CJ aprovar a Booking: NAO ativar `BOOKING` no affiliate.js nas paginas onde o Stay22 esta ativo (dupla reescrita). Comparar receita Stay22 vs CJ e escolher um. Se CJ: `BOOKING = { pid:'101718235', adId:'<AID do link Booking na CJ>' }`, bump `?v=` em todas as paginas que carregam affiliate.js, testar 1 clique real.
+- Pendentes: pedir ao Stay22 para desligar GYG no LinkSwap e se o AID "kaptarstudio" pode ser renomeado (portal esta a venda); rever Spark/Nova (ativos por defeito no Stay22) apos 1–2 semanas; confirmar evento `affiliate_click` no GA4.
+
+**Notas de ambiente:**
+- Sessoes Cowork (VM Linux) veem o working tree com CRLF vs HEAD LF → `git diff` mostra dezenas de ficheiros "modificados" so por fim de linha. Usar `git --no-optional-locks diff --ignore-cr-at-eol --stat`. Comandos git que escrevem o index a partir da VM deixam `.git/index.lock` que a VM nao consegue apagar e que bloqueia o git no Windows — commits e deploys fazem-se no PowerShell do Windows.
+- Validacao usada nesta sessao (reutilizar): Playwright na pagina de producao com o HTML local servido via route + header CSP lido do `_headers` local; comparar screenshots 375/1280 pixel a pixel; smoke test dos 5 URLs de docs/smoke-test.md apos deploy.
 
 ## Important note
 This repository is optimized by doing the smallest commercially meaningful next step, not by broad exploration.

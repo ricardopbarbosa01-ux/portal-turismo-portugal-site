@@ -62,8 +62,10 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 <link rel="stylesheet" href="/css/style.css?v=20260522-navdd-c">
-<link rel="stylesheet" href="/css/webcams-guias-page.css?v=20260512-i18n5">
+<link rel="stylesheet" href="/css/webcams-guias-page.css?v=20261005-aff">
   <script src="/js/image-autofix.js"></script>
+<link rel="stylesheet" href="/css/gyg-block.css?v=20260513-gyg2">
+<script async src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="0WTBHZE"></script>
 </head>
 <body>
 
@@ -151,6 +153,9 @@
     <div class="page-hero__media">
       <img class="page-hero__image"
            src="https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/card-images/beaches/ec40e481-5ec8-4f82-b728-535987fc0eb6.jpg"
+           srcset="/images/heroes/webcams-1200.webp 1200w, /images/heroes/webcams-2400.webp 2400w"
+           sizes="(max-width: 768px) 90vw, 60vw"
+           fetchpriority="high"
            alt="Portugal beach webcams — aerial view of the coast"
            loading="eager">
       <div class="page-hero__media-overlay" aria-hidden="true"></div>
@@ -236,6 +241,39 @@
   <section class="wcam-section" id="webcams" aria-label="Portugal beach webcams">
     <div class="wcam-grid" id="wcam-grid" role="list"></div>
   </section>
+
+  <!-- GYG affiliate (2026-10-05): activities for webcam viewers -->
+  <section class="gyg-block" aria-label="Book surf lessons and coastal trips near these webcams">
+    <div class="gyg-block-bg">
+      <div class="gyg-block-inner">
+        <div class="gyg-block-header">
+          <div class="gyg-block-number">&#8470; 02</div>
+          <div class="gyg-block-headtext">
+            <div class="gyg-block-eyebrow">CHECKED THE CONDITIONS? &middot; BOOK THE EXPERIENCE</div>
+            <h2 class="gyg-block-title">Surf lessons and coastal trips,<br><em>verified by us.</em></h2>
+            <p class="gyg-block-trust">Hand-picked schools and operators, verified reviews, instant booking. <span class="gyg-block-trust-emphasis">We charge for our verification &mdash; never for placement.</span></p>
+          </div>
+        </div>
+        <div class="gyg-block-frame">
+          <div class="gyg-block-frame-head">
+            <div class="gyg-block-frame-head-left">
+              <svg class="gyg-block-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20c2-2 4-3 6-3 2.5 0 4 1.5 6 1.5 2 0 3.5-1 4-1.5"/><path d="M9 9c0 2.5 1 4.5 3 6"/><path d="M15 3c-2 3-2.5 5.5-1 8"/></svg>
+              <div>
+                <div class="gyg-block-frame-title">Surf &amp; sea in Portugal</div>
+                <div class="gyg-block-frame-sub">Instant booking via GetYourGuide</div>
+              </div>
+            </div>
+            <div class="gyg-block-frame-badge">Curated</div>
+          </div>
+          <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="3" data-gyg-cmp="pthwebcamsen" data-gyg-partner-id="0WTBHZE" data-gyg-q="surf lessons Portugal"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/">GetYourGuide</a></span></div>
+          <div class="gyg-block-frame-foot">
+            <div class="gyg-block-frame-foot-text">POWERED BY GETYOURGUIDE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- When to use webcams -->
   <section class="wcam-when" aria-labelledby="when-title">
@@ -476,9 +514,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/js/config.js?v=20260508-isactive" defer></script>
+<script src="/js/affiliate.js?v=20261005" defer></script>
+<!-- Stay22 LetMeAllez (afiliados alojamento) -->
+<script>(function (s, t, a, y, twenty, two) {s.Stay22 = s.Stay22 || {};s.Stay22.params = { lmaID: '6ac371f3b7bfdedf2d37801a' };twenty = t.createElement(a);two = t.getElementsByTagName(a)[0];twenty.async = 1;twenty.src = y;two.parentNode.insertBefore(twenty, two);})(window, document, 'script', 'https://scripts.stay22.com/letmeallez.js');</script>
 <script src="/js/beach-renderer.js?v=20260512-i18n5" defer></script>
 <script src="/js/webcams-guias-data.js?v=20260512-i18n5" defer></script>
-<script src="/js/webcams-guias-page.js?v=20260512-i18n5" defer></script>
+<script src="/js/webcams-guias-page.js?v=20261005-aff" defer></script>
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
   document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });

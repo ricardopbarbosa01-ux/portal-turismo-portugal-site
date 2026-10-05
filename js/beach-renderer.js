@@ -917,8 +917,8 @@
       seasonLabel:   'Best season',
       especiesLabel: 'Species',
       saveCta:       'Save',
-      metaTitle:       'Fishing in Portugal — Spots, Species & Guide · Portugal Travel Hub',
-      metaDescription: 'The best fishing spots in Portugal — from Sagres and Sesimbra to the Azores. Fishing type, target species, best season and practical guide.',
+      metaTitle:       'Best Places to Fish in Portugal — Spots, Species & Seasons',
+      metaDescription: 'Where to fish in Portugal: the best shore, boat and rock fishing spots from Sagres to the Azores, with target species, best season and licence rules.',
       faqs: [
         {
           q: 'Do I need a licence to fish in Portugal?',
