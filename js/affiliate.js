@@ -20,6 +20,8 @@
     ['simpson_travel', /(^|\.)simpsontravel\.com$/i],
     ['getyourguide',   /(^|\.)getyourguide\.[a-z.]+$/i],
     ['amazon',         /(^|\.)(amazon\.[a-z.]+|amzn\.to)$/i],
+    ['booksurfcamps',  /(^|\.)(booksurfcamps|bookyogaretreats|tripaneer|bookallsafaris|bookhorseridingholidays|bookyogateachertraining|bookcyclingholidays)\.com$/i],
+    ['fishingbooker',  /(^|\.)fishingbooker\.com$/i],
     ['awin',           /(^|\.)awin1\.com$/i],
     ['cj',             /(^|\.)(anrdoezrs|dpbolvw|jdoqocy|kqzyfj|tkqlhce)\.net$|(^|\.)(anrdoezrs|dpbolvw|jdoqocy|kqzyfj|tkqlhce)\.com$/i]
   ];
