@@ -313,10 +313,20 @@
     if (!grid) return;
 
     var cards = (window.WebcamsGuiasData.GUIA_CARDS[lang] || window.WebcamsGuiasData.GUIA_CARDS.pt);
+    // Badge NOVO automatico: so no guia publicado mais recentemente e so durante 30 dias.
+    var NEW_BADGE_DAYS = 30;
+    var newest = null;
+    cards.forEach(function (c) {
+      if (c.published && (!newest || c.published > newest.published)) newest = c;
+    });
+    if (newest) {
+      var ageDays = (Date.now() - Date.parse(newest.published + 'T00:00:00Z')) / 86400000;
+      if (!(ageDays >= 0 && ageDays <= NEW_BADGE_DAYS)) newest = null;
+    }
     var html = cards.map(function (c, idx) {
       var isFeatured = !!c.featured;
       var isFullWidth = !!c.fullWidth;
-      var badgeNew = c.isNew
+      var badgeNew = (c === newest)
         ? '<span class="badge-novo">' + esc(T.guias.badgeNew) + '</span>'
         : '';
       var cardClass = 'guide-card' + (isFeatured ? ' guide-card--featured' : '');

@@ -169,6 +169,8 @@
 
   // ── Guide hub cards ───────────────────────────────────────────────────────────
   // PT and EN use different article sets — separate arrays, not bilingual fields.
+  // published: data de publicacao (AAAA-MM-DD). O badge NOVO e automatico (webcams-guias-page.js):
+  // aparece so no guia mais recente de cada lingua e desaparece 30 dias depois da publicacao.
   var GUIA_CARDS = {
     pt: [
       {
@@ -179,7 +181,7 @@
         title: 'As Praias do Algarve Que Valem a Viagem',
         desc: 'Sotavento, Barlavento e Costa Vicentina — zona a zona, praia a praia.',
         readTime: 15,
-        isNew: false,
+        published: '2026-04-01',
         featured: true,
       },
       {
@@ -190,7 +192,7 @@
         title: 'Alugar Carro no Algarve sem Surpresas',
         desc: 'Portagens, caução, seguro, regras e estacionamento: o guia honesto de quem vive cá.',
         readTime: 12,
-        isNew: true,
+        published: '2026-10-05',
         featured: false,
       },
       {
@@ -201,7 +203,7 @@
         title: 'Surf em Portugal para Quem Começa do Zero',
         desc: 'Spots, escolas, preços reais e o que ninguém te conta antes da primeira aula.',
         readTime: 12,
-        isNew: false,
+        published: '2026-04-17',
         featured: false,
       },
       {
@@ -212,7 +214,7 @@
         title: 'Pesca na Costa Portuguesa',
         desc: 'Spots, licenças, marés, espécies e preços — do surfcasting ao big game nos Açores.',
         readTime: 14,
-        isNew: false,
+        published: '2026-04-01',
         featured: false,
       },
       {
@@ -223,7 +225,7 @@
         title: 'Praias Perto de Lisboa — Escapadas de Um Dia',
         desc: 'De comboio, ferry ou carro — as praias que os lisboetas guardam para si.',
         readTime: 13,
-        isNew: false,
+        published: '2026-04-17',
         featured: false,
       },
       {
@@ -234,7 +236,7 @@
         title: 'Quando Visitar Portugal — Mês a Mês',
         desc: 'Clima, preços, multidões e o que cada época oferece.',
         readTime: 11,
-        isNew: false,
+        published: '2026-04-01',
         featured: false,
         fullWidth: true,
       },
@@ -248,7 +250,7 @@
         title: 'Best Beaches in Portugal Worth the Trip',
         desc: 'Algarve, Alentejo, Lisbon coast and beyond — region by region, beach by beach.',
         readTime: 15,
-        isNew: false,
+        published: '2026-04-16',
         featured: true,
       },
       {
@@ -259,7 +261,7 @@
         title: 'Car Hire in the Algarve without Surprises',
         desc: 'Tolls, deposits, insurance, road rules and parking: an honest guide from someone who lives here.',
         readTime: 12,
-        isNew: true,
+        published: '2026-10-05',
         featured: false,
       },
       {
@@ -270,7 +272,7 @@
         title: 'Algarve Beaches Guide',
         desc: 'The best beaches in the Algarve — from Sagres to Tavira, with practical tips for every type of traveller.',
         readTime: 12,
-        isNew: false,
+        published: '2026-04-16',
         featured: false,
       },
       {
@@ -281,7 +283,7 @@
         title: 'Surfing in Portugal for Beginners',
         desc: 'Spots, schools, real prices and what nobody tells you before your first lesson.',
         readTime: 12,
-        isNew: false,
+        published: '2026-04-16',
         featured: false,
       },
       {
@@ -292,7 +294,7 @@
         title: 'Beaches Near Lisbon — Day Trips',
         desc: 'By train, ferry or car — the beaches that locals keep to themselves.',
         readTime: 13,
-        isNew: false,
+        published: '2026-04-16',
         featured: false,
       },
       {
@@ -303,7 +305,7 @@
         title: 'Family Beaches in the Algarve',
         desc: 'Safe, calm and fun — the best Algarve beaches for families with children.',
         readTime: 10,
-        isNew: false,
+        published: '2026-04-16',
         featured: false,
       },
       {
@@ -314,7 +316,7 @@
         title: 'Hidden Beaches in the Algarve',
         desc: 'Secret coves and lesser-known gems that most tourists never find.',
         readTime: 11,
-        isNew: false,
+        published: '2026-04-16',
         featured: false,
       },
     ],
