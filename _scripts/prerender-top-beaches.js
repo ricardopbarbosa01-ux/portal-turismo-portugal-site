@@ -68,16 +68,8 @@ const GYG_URLS = {
   'Açores':      'https://www.getyourguide.com/s/?q=Azores&partner_id=0WTBHZE&cmp=pthcard-acores'
 };
 
-// ── Amazon OneLink block (pthportugal-21) ─────────────────────────────────
-const AMAZON_BLOCK = `<!-- Amazon OneLink — geo-redirect para storefront local com pthportugal-21 -->
-<script>
-  amzn_assoc_tracking_id = "pthportugal-21";
-  amzn_assoc_ad_mode = "auto";
-  amzn_assoc_ad_type = "smart";
-  amzn_assoc_marketplace = "amazon";
-  amzn_assoc_region = "ES";
-<\/script>
-<script src="//z-eu.associates-amazon.com/s/getads.js?Marketplace=ES"><\/script>`;
+// Amazon removido a 06/10/2026: o servidor dos "Native Shopping Ads" (z-eu.associates-amazon.com) ja nao existe.
+// No lugar da caixa Amazon: cartao "Alojamento e roteiro" -> planeador com ?beach=<nome PT> (ver templates).
 
 // ── Beach type PT labels ──────────────────────────────────────────────────
 const BEACH_TYPE_PT = {
@@ -225,7 +217,7 @@ function render(beach, today, l) {
       '{{webcam_available_en}}': beach.webcam_available ? 'Yes' : 'No',
       '{{amenities_json}}':   buildAmenities(beach, 'en'),
       '{{gyg_url}}':          gygUrl,
-      '{{amazon_block}}':     AMAZON_BLOCK,
+      '{{name_pt_url}}':      encodeURIComponent(beach.name_pt),
       '{{lastmod}}':          today
     };
   } else {
@@ -251,7 +243,7 @@ function render(beach, today, l) {
       '{{webcam_available}}': beach.webcam_available ? 'Sim' : 'Não',
       '{{amenities_json}}': buildAmenities(beach, 'pt'),
       '{{gyg_url}}':        gygUrl,
-      '{{amazon_block}}':   AMAZON_BLOCK,
+      '{{name_pt_url}}':    encodeURIComponent(beach.name_pt),
       '{{lastmod}}':        today
     };
   }

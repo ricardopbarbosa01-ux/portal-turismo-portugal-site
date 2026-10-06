@@ -1,0 +1,107 @@
+/* Cartao editorial "Planear a visita" — paginas estaticas de praia (praias/<slug>/, en/praias/<slug>/)
+ * Portal Turismo Portugal — 2026-10-06. Substitui a antiga caixa Amazon (servidor da Amazon ja nao existe).
+ * Carregado DEPOIS do <style> inline da pagina, por isso estas regras ganham sem !important.
+ * So classes .bpc* + o reajuste da grelha .beach-affiliates (o cartao passa a largura total e o GYG a faixa).
+ */
+.beach-affiliates{grid-template-columns:1fr;gap:18px;}
+
+/* ── Cartao ─────────────────────────────────────────────────────────────── */
+.bpc{
+  --bpc-gold:#c9a84c; --bpc-gold-l:#e8c97a; --bpc-ink:#07152A;
+  position:relative; order:-1; isolation:isolate; overflow:hidden;
+  display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr); align-items:center;
+  gap:clamp(24px,4vw,48px); padding:clamp(22px,3.4vw,40px);
+  border-radius:24px; color:#fff;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(201,168,76,.20) 0%, rgba(201,168,76,0) 46%),
+    radial-gradient(90% 120% at 0% 100%, rgba(41,128,212,.16) 0%, rgba(41,128,212,0) 55%),
+    linear-gradient(140deg,#07152A 0%,#0B1B2B 52%,#10304F 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07), 0 28px 60px -28px rgba(7,21,42,.65);
+}
+/* linhas de onda subtis (assinatura do site) */
+.bpc::after{
+  content:''; position:absolute; z-index:-1; left:-5%; right:-5%; bottom:-6px; height:120px; pointer-events:none; opacity:.09;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23e8c97a' stroke-width='1.4'%3E%3Cpath d='M0 70 C150 30 300 110 450 70 S750 30 900 70 1050 110 1200 70'/%3E%3Cpath d='M0 92 C150 52 300 132 450 92 S750 52 900 92 1050 132 1200 92'/%3E%3Cpath d='M0 48 C150 8 300 88 450 48 S750 8 900 48 1050 88 1200 48'/%3E%3C/g%3E%3C/svg%3E") center bottom/100% 100% no-repeat;
+}
+
+/* ── Foto (cantos assimetricos + moldura dourada desfasada, como os heroes) ── */
+.bpc__frame{position:relative; order:2; margin:0 12px 12px 0;}
+.bpc__frame::before{
+  content:''; position:absolute; inset:0; transform:translate(12px,12px);
+  border:1px solid rgba(232,201,122,.55); border-radius:4px 48px 4px 48px; pointer-events:none;
+}
+.bpc__media{
+  position:relative; aspect-ratio:4/5; border-radius:4px 48px 4px 48px; overflow:hidden; background:#0F2235;
+  box-shadow:0 30px 60px -22px rgba(0,0,0,.7);
+}
+.bpc__media img{width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.001); transition:transform 1.4s cubic-bezier(.22,1,.36,1);}
+.bpc:hover .bpc__media img{transform:scale(1.045);}
+.bpc__media::after{content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(7,21,42,.35) 0%, rgba(7,21,42,0) 22%); pointer-events:none;}
+/* Credito da foto: obrigatorio pela licenca CC BY-SA, mas discreto (quase transparente; ganha leitura ao passar o rato/tocar) */
+.bpc__credit{
+  position:absolute; z-index:2; right:12px; bottom:9px; left:auto; margin:0; max-width:calc(100% - 24px);
+  font-size:9px; line-height:1.2; letter-spacing:.03em; color:#fff; opacity:.32;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; transition:opacity .3s ease;
+}
+.bpc__credit a{color:inherit; text-decoration:none;}
+.bpc__frame:hover .bpc__credit, .bpc__credit:focus-within{opacity:.85;}
+.bpc__credit a:hover{text-decoration:underline;}
+
+/* ── Texto ──────────────────────────────────────────────────────────────── */
+.bpc__body{position:relative; min-width:0;}
+.bpc__kicker{
+  display:flex; align-items:center; gap:12px; margin:0 0 16px;
+  font-family:'Inter',system-ui,sans-serif; font-size:.7rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--bpc-gold-l);
+}
+.bpc__kicker::before{content:''; flex:0 0 30px; height:1px; background:linear-gradient(90deg,var(--bpc-gold-l),rgba(232,201,122,0));}
+.bpc__title{
+  margin:0 0 14px; font-family:'Bodoni Moda',Georgia,serif; font-weight:600;
+  font-size:clamp(1.85rem,3.6vw,2.6rem); line-height:1.06; letter-spacing:-.012em; color:#fff;
+}
+.bpc__title em{font-style:italic; font-weight:400; color:var(--bpc-gold-l);}
+.bpc__lead{margin:0 0 20px; max-width:46ch; font-size:.96rem; line-height:1.68; color:rgba(255,255,255,.74);}
+.bpc__list{list-style:none; margin:0 0 26px; padding:0; display:grid; gap:11px;}
+.bpc__list li{display:flex; align-items:center; gap:12px; font-size:.92rem; line-height:1.35; color:rgba(255,255,255,.92);}
+.bpc__list svg{flex:0 0 24px; width:24px; height:24px; padding:5px; border-radius:50%; background:rgba(232,201,122,.14); box-shadow:inset 0 0 0 1px rgba(232,201,122,.28); stroke:var(--bpc-gold-l); fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round;}
+.bpc__cta{
+  display:inline-flex; align-items:center; gap:12px; padding:15px 28px; border-radius:999px;
+  background:linear-gradient(135deg,var(--bpc-gold) 0%,var(--bpc-gold-l) 100%); color:var(--bpc-ink);
+  font-weight:700; font-size:.96rem; letter-spacing:.01em; text-decoration:none;
+  box-shadow:0 12px 32px -12px rgba(201,168,76,.85), inset 0 1px 0 rgba(255,255,255,.45);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.bpc__cta svg{width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; transition:transform .25s ease;}
+.bpc__cta:hover{transform:translateY(-2px); box-shadow:0 18px 40px -12px rgba(201,168,76,.95), inset 0 1px 0 rgba(255,255,255,.5);}
+.bpc__cta:hover svg{transform:translateX(4px);}
+.bpc__cta:focus-visible{outline:2px solid var(--bpc-gold-l); outline-offset:4px;}
+.bpc__note{margin:14px 0 0; font-size:.74rem; letter-spacing:.01em; color:rgba(255,255,255,.5);}
+
+/* ── Variante sem foto ─────────────────────────────────────────────────── */
+.bpc--noimg{grid-template-columns:1fr; padding:clamp(26px,4vw,48px);}
+.bpc--noimg .bpc__body{max-width:620px;}
+.bpc--noimg::before{
+  content:''; position:absolute; z-index:-1; right:-80px; top:-80px; width:320px; height:320px; border-radius:50%;
+  border:1px solid rgba(232,201,122,.22); box-shadow:0 0 0 28px rgba(232,201,122,.04), 0 0 0 56px rgba(232,201,122,.025);
+}
+
+/* ── GetYourGuide: passa a faixa discreta por baixo do cartao ──────────── */
+.beach-affiliates > .beach-affiliate-block{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px 24px;
+  padding:18px 22px; border-radius:16px; background:#f5f8fc; border:1px solid #e3eaf3;
+}
+.beach-affiliates > .beach-affiliate-block h3{margin:0;}
+
+/* ── Telemovel ─────────────────────────────────────────────────────────── */
+@media (max-width:720px){
+  .bpc{grid-template-columns:1fr; gap:22px; padding:18px 18px 24px; border-radius:20px;}
+  .bpc__frame{order:0; margin:0 8px 8px 0;}
+  .bpc__frame::before{transform:translate(8px,8px); border-radius:4px 32px 4px 32px;}
+  .bpc__media{aspect-ratio:16/10; border-radius:4px 32px 4px 32px;}
+  .bpc__title{font-size:1.9rem;}
+  .bpc__cta{width:100%; justify-content:center;}
+  .beach-affiliates > .beach-affiliate-block{padding:16px 18px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .bpc__media img, .bpc__cta, .bpc__cta svg{transition:none;}
+  .bpc:hover .bpc__media img, .bpc__cta:hover, .bpc__cta:hover svg{transform:none;}
+}
