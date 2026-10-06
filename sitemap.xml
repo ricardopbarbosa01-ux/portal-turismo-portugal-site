@@ -40,6 +40,12 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.portalturismoportugal.com/webcam-praia-da-luz</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- ── Tools / Features ── -->
   <url>
@@ -266,6 +272,12 @@
   <url>
     <loc>https://www.portalturismoportugal.com/en/webcams</loc>
     <lastmod>2026-04-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.portalturismoportugal.com/en/praia-da-luz-webcam</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>

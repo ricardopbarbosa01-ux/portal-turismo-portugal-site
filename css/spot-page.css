@@ -1,0 +1,83 @@
+/* Paginas de spot de webcam — Portal Turismo Portugal — 2026-10-06
+ * So classes .spot-* (nao toca em nada existente). Usa os tokens de style.css e as classes
+ * .value-tag / .value-title / .zone-card / .when-icon de webcams-guias-page.css.
+ */
+.spot-section{padding:56px 5vw;}
+.spot-section--alt{background:var(--off-white);border-top:1px solid var(--border,#e6e1d6);}
+.spot-wrap{max-width:1100px;margin:0 auto;}
+.spot-lead{font-size:0.98rem;color:var(--text-mid);line-height:1.7;max-width:720px;margin:0 0 8px;}
+
+/* Condicoes agora */
+.spot-verdict{display:inline-flex;align-items:center;gap:10px;margin:6px 0 24px;padding:10px 18px;border-radius:var(--radius-pill);background:var(--white);border:1.5px solid var(--border,#e6e1d6);font-size:0.92rem;font-weight:600;color:var(--blue);}
+.spot-verdict::before{content:'';width:10px;height:10px;border-radius:50%;background:#cbd5e1;flex-shrink:0;}
+[data-spot-level="calm"] .spot-verdict::before{background:#16a34a;}
+[data-spot-level="moderate"] .spot-verdict::before{background:#d97706;}
+[data-spot-level="rough"] .spot-verdict::before{background:#dc2626;}
+.spot-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.spot-tile{background:var(--white);border:1.5px solid var(--border,#e6e1d6);border-radius:var(--radius);padding:18px 18px 16px;display:flex;flex-direction:column;gap:4px;min-height:112px;}
+.spot-tile-label{font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);}
+.spot-tile-value{font-family:'Bodoni Moda',serif;font-size:clamp(1.6rem,3.2vw,2.1rem);font-weight:700;color:var(--blue);line-height:1.1;font-variant-numeric:tabular-nums;}
+.spot-tile-sub{font-size:0.78rem;color:var(--text-mid);}
+.spot-tile--water{background:linear-gradient(145deg,#0a3d6b 0%,#1a5fa3 100%);border-color:transparent;}
+.spot-tile--water .spot-tile-label{color:var(--gold-light);}
+.spot-tile--water .spot-tile-value{color:var(--white);}
+.spot-tile--water .spot-tile-sub{color:rgba(255,255,255,0.75);}
+.spot-hours{margin-top:22px;background:var(--white);border:1.5px solid var(--border,#e6e1d6);border-radius:var(--radius);padding:16px 18px;}
+.spot-hours-title{font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin:0 0 10px;}
+.spot-hours ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+.spot-hours li{display:flex;flex-direction:column;gap:2px;text-align:center;padding:6px 4px;border-radius:10px;background:#f3f7fb;font-variant-numeric:tabular-nums;}
+.spot-hours li span:first-child{font-size:0.72rem;font-weight:700;color:var(--blue);}
+.spot-hours li span:nth-child(2){font-size:0.9rem;font-weight:600;color:var(--text);}
+.spot-hours li span:nth-child(3){font-size:0.72rem;color:var(--text-mid);}
+.spot-note{font-size:0.76rem;color:var(--text-light);margin:14px 0 0;line-height:1.6;}
+.spot-section.is-unavailable .spot-hours{display:none;}
+
+/* Camara oficial (link externo MEO) */
+.spot-cam{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:linear-gradient(135deg,#07152A 0%,#0F2235 100%);color:var(--white);border-radius:var(--radius-lg);padding:26px 28px;margin-top:28px;}
+.spot-cam-text{flex:1 1 320px;}
+.spot-cam-label{font-size:0.66rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:0 0 6px;}
+.spot-cam-title{font-family:'Bodoni Moda',serif;font-size:1.35rem;font-weight:700;margin:0 0 6px;color:var(--white);}
+.spot-cam-sub{font-size:0.84rem;color:rgba(255,255,255,0.72);line-height:1.6;margin:0;}
+.spot-cam-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:var(--radius-pill);background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);color:var(--blue);font-weight:700;font-size:0.92rem;text-decoration:none;white-space:nowrap;transition:transform 0.2s,box-shadow 0.2s;}
+.spot-cam-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold);}
+.spot-cam-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* Proximos passos (reusa .zone-card) */
+.spot-next{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+.spot-next .zone-card{min-height:170px;}
+
+/* Sobre a praia */
+.spot-about{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start;}
+.spot-about p{font-size:0.95rem;color:var(--text-mid);line-height:1.75;margin:0 0 14px;}
+.spot-facts{list-style:none;margin:0;padding:18px 20px;background:var(--white);border:1.5px solid var(--border,#e6e1d6);border-radius:var(--radius);}
+.spot-facts li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid #eef1f5;font-size:0.85rem;}
+.spot-facts li:last-child{border-bottom:0;}
+.spot-facts li span:first-child{color:var(--text-light);}
+.spot-facts li span:last-child{color:var(--blue);font-weight:600;text-align:right;}
+.spot-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:6px;}
+.spot-links a{font-size:0.86rem;font-weight:600;color:var(--blue-mid);text-decoration:none;}
+.spot-links a:hover{color:var(--blue);text-decoration:underline;}
+
+/* FAQ */
+.spot-faq{max-width:820px;}
+.spot-faq details{background:var(--white);border:1.5px solid var(--border,#e6e1d6);border-radius:14px;margin-bottom:10px;padding:0 18px;}
+.spot-faq summary{cursor:pointer;list-style:none;padding:16px 28px 16px 0;position:relative;font-weight:600;color:var(--blue);font-size:0.95rem;}
+.spot-faq summary::-webkit-details-marker{display:none;}
+.spot-faq summary::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.3rem;color:var(--gold);font-weight:400;}
+.spot-faq details[open] summary::after{content:'−';}
+.spot-faq details p{font-size:0.9rem;color:var(--text-mid);line-height:1.7;margin:0 0 16px;}
+.spot-faq a{color:var(--blue-mid);}
+
+@media(max-width:900px){
+  .spot-tiles{grid-template-columns:repeat(2,1fr);}
+  .spot-next{grid-template-columns:1fr;}
+  .spot-about{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .spot-section{padding:40px 5vw;}
+  .spot-tiles{gap:10px;}
+  .spot-tile{padding:14px;min-height:96px;}
+  .spot-hours ol{grid-template-columns:repeat(3,1fr);}
+  .spot-cam{padding:22px 20px;}
+  .spot-cam-btn{width:100%;justify-content:center;}
+}
