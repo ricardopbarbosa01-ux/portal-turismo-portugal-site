@@ -179,7 +179,7 @@
         title: 'As Praias do Algarve Que Valem a Viagem',
         desc: 'Sotavento, Barlavento e Costa Vicentina — zona a zona, praia a praia.',
         readTime: 15,
-        isNew: true,
+        isNew: false,
         featured: true,
       },
       {
@@ -201,7 +201,7 @@
         title: 'Surf em Portugal para Quem Começa do Zero',
         desc: 'Spots, escolas, preços reais e o que ninguém te conta antes da primeira aula.',
         readTime: 12,
-        isNew: true,
+        isNew: false,
         featured: false,
       },
       {
@@ -212,7 +212,7 @@
         title: 'Pesca na Costa Portuguesa',
         desc: 'Spots, licenças, marés, espécies e preços — do surfcasting ao big game nos Açores.',
         readTime: 14,
-        isNew: true,
+        isNew: false,
         featured: false,
       },
       {
@@ -223,7 +223,7 @@
         title: 'Praias Perto de Lisboa — Escapadas de Um Dia',
         desc: 'De comboio, ferry ou carro — as praias que os lisboetas guardam para si.',
         readTime: 13,
-        isNew: true,
+        isNew: false,
         featured: false,
       },
       {
@@ -234,7 +234,7 @@
         title: 'Quando Visitar Portugal — Mês a Mês',
         desc: 'Clima, preços, multidões e o que cada época oferece.',
         readTime: 11,
-        isNew: true,
+        isNew: false,
         featured: false,
         fullWidth: true,
       },
@@ -248,7 +248,7 @@
         title: 'Best Beaches in Portugal Worth the Trip',
         desc: 'Algarve, Alentejo, Lisbon coast and beyond — region by region, beach by beach.',
         readTime: 15,
-        isNew: true,
+        isNew: false,
         featured: true,
       },
       {
@@ -281,7 +281,7 @@
         title: 'Surfing in Portugal for Beginners',
         desc: 'Spots, schools, real prices and what nobody tells you before your first lesson.',
         readTime: 12,
-        isNew: true,
+        isNew: false,
         featured: false,
       },
       {
