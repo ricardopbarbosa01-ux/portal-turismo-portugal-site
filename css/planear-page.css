@@ -748,3 +748,63 @@
       .success-actions { flex-direction: column; align-items: stretch; }
       .success-btn-primary, .success-btn-outline { justify-content: center; }
     }
+
+    /* ── Planeador automatico (Fase A, 06/10/2026) — lista de links de parceiros ── */
+    .success-actions.plan-links { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; margin-top: 2px; }
+    .success-actions .plan-link { justify-content: flex-start; gap: 12px; padding: 12px 18px; border-radius: 16px; text-align: left; }
+    .plan-link-ico { flex-shrink: 0; }
+    .plan-link-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+    .plan-link-title { font-weight: 600; font-size: 0.9rem; line-height: 1.3; }
+    .plan-link-meta { font-size: 0.75rem; font-weight: 400; opacity: 0.78; line-height: 1.35; }
+    .plan-link-go { flex-shrink: 0; font-size: 1rem; transition: transform 0.2s; }
+    .plan-link:hover .plan-link-go { transform: translateX(3px); }
+    .form-success p.plan-disclosure { font-size: 0.7rem; color: var(--text-light); text-align: center; max-width: none; margin: 2px 0 0; line-height: 1.45; }
+
+    /* ── Planeador: formulario em 3 passos (06/10/2026). Sem JS (sem .wz-on) tudo visivel ── */
+    .wz-progress, .wz-nav { display: none; }
+    #plan-form.wz-on .wz-progress { display: block; margin: 0 0 22px; }
+    #plan-form.wz-on .wz-nav { display: flex; gap: 10px; justify-content: space-between; align-items: center; margin-top: 6px; }
+    #plan-form.wz-on .wz-step:not(.is-active) { position: absolute !important; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    #plan-form.wz-on .wz-step.is-active { animation: wzIn 0.28s ease both; }
+    @keyframes wzIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .wz-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .wz-seg { height: 4px; border-radius: 4px; background: rgba(10,61,107,0.10); transition: background 0.25s; }
+    .wz-seg.is-on { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+    .wz-label { margin: 10px 0 0; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
+    .wz-label strong { color: var(--blue); }
+    .wz-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-left: auto; padding: 13px 28px; border: 0; border-radius: 50px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font: 600 0.9rem 'Inter', sans-serif; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+    .wz-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,168,76,0.40); }
+    .wz-btn-back { background: none; border: 0; padding: 12px 4px; color: var(--text-mid); font: 500 0.875rem 'Inter', sans-serif; cursor: pointer; }
+    .wz-btn-back:hover { color: var(--blue); }
+    .wz-btn:focus-visible, .wz-btn-back:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    @media (max-width: 480px) { .wz-btn { flex: 1; } }
+
+    /* ── Planeador: resultado em "trip board" (06/10/2026) ── */
+    .form-success .success-actions.plan-links { gap: 14px; }
+    .plan-check { background: var(--off-white); border-radius: 14px; padding: 14px 16px; text-align: left; }
+    .plan-check-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 0.85rem; color: var(--blue); }
+    .plan-check-count { font-size: 0.75rem; font-weight: 600; color: var(--gold-text); white-space: nowrap; }
+    .plan-check-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .plan-check-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 50px; background: var(--white); border: 1px solid rgba(10,61,107,0.12); font-size: 0.75rem; font-weight: 500; color: var(--text-mid); transition: background 0.2s, border-color 0.2s, color 0.2s; }
+    .plan-check-dot { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid rgba(10,61,107,0.30); }
+    .plan-check-chip.is-done { border-color: rgba(34,197,94,0.35); background: rgba(34,197,94,0.08); color: #15803d; }
+    .plan-check-chip.is-done .plan-check-dot { background: #22c55e; border-color: #22c55e; }
+    .form-success p.plan-check-next { margin: 10px 0 0; font-size: 0.78rem; color: var(--text-mid); max-width: none; line-height: 1.45; }
+    .plan-sec { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+    .plan-sec-title { margin: 8px 0 0; font: 700 0.7rem 'Inter', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-text); }
+    .plan-map { border-radius: 16px; overflow: hidden; border: 1px solid rgba(10,61,107,0.12); background: var(--off-white); height: 380px; }
+    .plan-map iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .form-success p.plan-map-note { margin: -2px 0 0; font-size: 0.72rem; color: var(--text-light); max-width: none; line-height: 1.4; }
+    .plan-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 6px; }
+    .plan-share, .plan-edit { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 50px; font: 500 0.82rem 'Inter', sans-serif; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+    .plan-share { background: var(--blue); color: var(--white); border: 0; }
+    .plan-share:hover { background: var(--blue-mid); }
+    .plan-share .plan-link-ico { width: 16px; height: 16px; }
+    .plan-edit { background: none; border: 1.5px solid rgba(10,61,107,0.18); color: var(--blue); }
+    .plan-edit:hover { border-color: var(--blue); }
+    .plan-share-msg { display: block; text-align: center; font-size: 0.75rem; color: #15803d; min-height: 1em; word-break: break-all; }
+    @media (max-width: 480px) {
+      .form-success { padding: 36px 18px; }
+      .plan-map { height: 360px; }
+    }
+    @media (prefers-reduced-motion: reduce) { #plan-form.wz-on .wz-step.is-active { animation: none; } }

@@ -1,0 +1,44 @@
+{
+  "id": "/planear",
+  "name": "Planeador · Portal Turismo Portugal",
+  "short_name": "Planeador",
+  "description": "Plano de viagem em Portugal em 60 segundos, com preços reais de alojamento, experiências e carro.",
+  "start_url": "/planear?ref=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06121F",
+  "theme_color": "#06121F",
+  "lang": "pt-PT",
+  "dir": "ltr",
+  "categories": [
+    "travel",
+    "navigation"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

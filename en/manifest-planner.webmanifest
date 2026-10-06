@@ -1,0 +1,44 @@
+{
+  "id": "/en/planear",
+  "name": "Trip Planner · Portal Turismo Portugal",
+  "short_name": "Trip Planner",
+  "description": "A Portugal trip plan in 60 seconds, with live prices for places to stay, experiences and car hire.",
+  "start_url": "/en/planear?ref=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06121F",
+  "theme_color": "#06121F",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "travel",
+    "navigation"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

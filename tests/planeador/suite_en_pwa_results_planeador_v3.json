@@ -1,0 +1,275 @@
+{
+ "results": [
+  {
+   "test": "E1 EN arranca em inglês (1280)",
+   "ok": true,
+   "detail": "[\"en\", \"Step 1 of 5\", [\"Beach\", \"Surf\", \"Fishing\", \"City & food\"]]"
+  },
+  {
+   "test": "E2 página EN inicial sem português visível",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "E1 EN arranca em inglês (375)",
+   "ok": true,
+   "detail": "[\"en\", \"Step 1 of 5\", [\"Beach\", \"Surf\", \"Fishing\", \"City & food\"]]"
+  },
+  {
+   "test": "E3 PT continua em português, link EN -> /en/planear-v3, manifesto próprio",
+   "ok": true,
+   "detail": "[\"/en/planear-v3\", \"/manifest-planeador.webmanifest\", \"Passo 1 de 5\"]"
+  },
+  {
+   "test": "E3 PT sem erros de consola",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "E2 axe WCAG 2.1 AA na página EN inicial",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "E2 EN: hreflang PT/EN, canonical /en/planear, noindex, botão PT",
+   "ok": true,
+   "detail": "[[\"pt-PT https://www.portalturismoportugal.com/planear-v3\", \"en https://www.portalturismoportugal.com/en/planear-v3\"], \"/planear-v3\", \"https://www.portalturismoportugal.com/en/planear\", \"noindex, follow\"]"
+  },
+  {
+   "test": "E1 regiões em inglês, \"Surprise me\" no fim (375)",
+   "ok": true,
+   "detail": "[\"Algarve\", \"Alentejo Coast\", \"Arrábida\", \"Cascais & Lisbon\", \"West Coast\", \"Silver Coast\", \"Minho\", \"Madeira\", \"Azores\", \"Surprise me\"]"
+  },
+  {
+   "test": "E1 regiões em inglês, \"Surprise me\" no fim (1280)",
+   "ok": true,
+   "detail": "[\"Algarve\", \"Alentejo Coast\", \"Arrábida\", \"Cascais & Lisbon\", \"West Coast\", \"Silver Coast\", \"Minho\", \"Madeira\", \"Azores\", \"Surprise me\"]"
+  },
+  {
+   "test": "E1 passo datas em inglês (375)",
+   "ok": true,
+   "detail": "CHECK-IN\nCHECK-OUT\n\nNext weekend\nIn 2 weeks · 7 nights\nEarly November · 4 nights\nNot sure yet"
+  },
+  {
+   "test": "E1 passo datas em inglês (1280)",
+   "ok": true,
+   "detail": "CHECK-IN\nCHECK-OUT\n\nNext weekend\nIn 2 weeks · 7 nights\nEarly November · 4 nights\nNot sure yet"
+  },
+  {
+   "test": "E1 erro de datas em inglês (1280)",
+   "ok": true,
+   "detail": "Check-out must be after check-in."
+  },
+  {
+   "test": "E1 erro de datas em inglês (375)",
+   "ok": true,
+   "detail": "Check-out must be after check-in."
+  },
+  {
+   "test": "E1 botão final \"Create my plan\" (1280)",
+   "ok": true,
+   "detail": "Create my plan"
+  },
+  {
+   "test": "E1 botão final \"Create my plan\" (375)",
+   "ok": true,
+   "detail": "Create my plan"
+  },
+  {
+   "test": "E1 plano sem texto em português (1280)",
+   "ok": true,
+   "detail": "YOUR PLAN IS READY\n\nAlbufeira\nAlgarve\nDec 4–8 · 4 nights\n2 adults\nComfortable\nBeach\nShare\nEdit\n\nPraia de São Rafael · Photo: Wikipedia contributors · CC BY-SA 3.0\n\nNOW IN ALBUFEIRA\nWater\n22 °C\nWaves\n0"
+  },
+  {
+   "test": "E1 links EN: GYG/DiscoverCars/BSC/Stay22 com IDs, praias e privacidade em /en/ (1280)",
+   "ok": true,
+   "detail": "[\"https://www.getyourguide.com/s/?q=Benagil%20caves%20boat%20tour&partner_id=0WTBHZE&cmp=pthplanearen&date_from=2026-12-04&date_to=2026-12-08\"]"
+  },
+  {
+   "test": "E1 mapa Stay22 em inglês com datas (1280)",
+   "ok": true,
+   "detail": "https://www.stay22.com/embed/gm?aid=kaptarstudio&campaign=portalturismoportugal-en-planear-mapa&address=Albufeira%2C%20Portugal&adults=2&rooms=1&currency=EUR&lang=en&maincolor=0A3D6B&zoom=13&checkin=2"
+  },
+  {
+   "test": "E1 eventos GA levam lang=en (1280)",
+   "ok": true,
+   "detail": "[\"en\", \"en\", \"en\", \"en\", \"en\", \"en\"]"
+  },
+  {
+   "test": "E1 sem scroll horizontal (1280)",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "test": "E1 plano sem texto em português (375)",
+   "ok": true,
+   "detail": "YOUR PLAN IS READY\n\nAlbufeira\nAlgarve\nDec 4–8 · 4 nights\n2 adults\nComfortable\nBeach\nShare\nEdit\n\nPraia de São Rafael · Photo: Wikipedia contributors · CC BY-SA 3.0\n\nNOW IN ALBUFEIRA\n1\nWhere to stay in "
+  },
+  {
+   "test": "E1 links EN: GYG/DiscoverCars/BSC/Stay22 com IDs, praias e privacidade em /en/ (375)",
+   "ok": true,
+   "detail": "[\"https://www.getyourguide.com/s/?q=Benagil%20caves%20boat%20tour&partner_id=0WTBHZE&cmp=pthplanearen&date_from=2026-12-04&date_to=2026-12-08\"]"
+  },
+  {
+   "test": "E1 mapa Stay22 em inglês com datas (375)",
+   "ok": true,
+   "detail": "https://www.stay22.com/embed/gm?aid=kaptarstudio&campaign=portalturismoportugal-en-planear-mapa&address=Albufeira%2C%20Portugal&adults=2&rooms=1&currency=EUR&lang=en&maincolor=0A3D6B&zoom=13&checkin=2"
+  },
+  {
+   "test": "E1 eventos GA levam lang=en (375)",
+   "ok": true,
+   "detail": "[\"en\", \"en\", \"en\", \"en\", \"en\", \"en\"]"
+  },
+  {
+   "test": "E1 axe WCAG 2.1 AA no plano EN (1280)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "E1 sem erros de consola/CSP (1280)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "E1 sem scroll horizontal (375)",
+   "ok": true,
+   "detail": "0"
+  },
+  {
+   "test": "E1 axe WCAG 2.1 AA no plano EN (375)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "E1 sem erros de consola/CSP (375)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "P1 manifesto carregado sem erros (Planeador)",
+   "ok": true,
+   "detail": "{\"url\": \"https://www.portalturismoportugal.com/manifest-planeador.webmanifest\", \"errors\": [], \"short\": \"Planeador\"}"
+  },
+  {
+   "test": "P3 iPhone: botão de instalar visível no topo (pt)",
+   "ok": true,
+   "detail": "true"
+  },
+  {
+   "test": "P3 barra de topo cabe em 390 px sem partir (pt)",
+   "ok": true,
+   "detail": "[0, 63.828125]"
+  },
+  {
+   "test": "P3 iPhone: botão de instalar visível no topo (en)",
+   "ok": true,
+   "detail": "true"
+  },
+  {
+   "test": "P3 barra de topo cabe em 390 px sem partir (en)",
+   "ok": true,
+   "detail": "[0, 63.828125]"
+  },
+  {
+   "test": "P4 em modo app: classe standalone, sem botão instalar, origem=app",
+   "ok": true,
+   "detail": "[true, true, [\"app\"]]"
+  },
+  {
+   "test": "P2 botão \"Install app\" só aparece quando o Chrome permite instalar",
+   "ok": true,
+   "detail": "[true, true]"
+  },
+  {
+   "test": "P3 abre instruções com foco no botão (pt)",
+   "ok": true,
+   "detail": "[true, true]"
+  },
+  {
+   "test": "P3 abre instruções com foco no botão (en)",
+   "ok": true,
+   "detail": "[true, true]"
+  },
+  {
+   "test": "P3 fecha com Esc, toque fora e botão; scroll desbloqueado (pt)",
+   "ok": true,
+   "detail": "[true, true, true, false]"
+  },
+  {
+   "test": "P3 sem erros de consola (pt)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "P1 Chrome considera a página instalável (Planeador)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "P1 service worker registado (Planeador)",
+   "ok": true,
+   "detail": "true"
+  },
+  {
+   "test": "P3 fecha com Esc, toque fora e botão; scroll desbloqueado (en)",
+   "ok": true,
+   "detail": "[true, true, true, false]"
+  },
+  {
+   "test": "P3 sem erros de consola (en)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "P1 manifesto carregado sem erros (Trip Planner)",
+   "ok": true,
+   "detail": "{\"url\": \"https://www.portalturismoportugal.com/en/manifest-planner.webmanifest\", \"errors\": [], \"short\": \"Trip Planner\"}"
+  },
+  {
+   "test": "P2 cartão \"Take your plan with you\" no plano",
+   "ok": true,
+   "detail": "true"
+  },
+  {
+   "test": "P2 clicar abre o diálogo nativo, regista GA e esconde os botões",
+   "ok": true,
+   "detail": "[1, [\"planear_passo\", \"plan_generated\", \"pwa_install_click\", \"pwa_install_choice\"], true]"
+  },
+  {
+   "test": "P2 depois de instalada: botões desaparecem + evento pwa_installed",
+   "ok": true,
+   "detail": "[true]"
+  },
+  {
+   "test": "P2 sem erros de consola",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "P5 ao voltar: \"Continue my plan for Lagos\"",
+   "ok": true,
+   "detail": "[true, true, \"Continue my plan for Albufeira\"]"
+  },
+  {
+   "test": "P1 Chrome considera a página instalável (Trip Planner)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "P1 service worker registado (Trip Planner)",
+   "ok": true,
+   "detail": "true"
+  },
+  {
+   "test": "P5 retoma o plano como \"Your plan is ready\" (não como partilhado)",
+   "ok": true,
+   "detail": "YOUR PLAN IS READY"
+  },
+  {
+   "test": "P5 página PT não mostra o plano guardado em EN",
+   "ok": true,
+   "detail": "true"
+  }
+ ],
+ "secs": 51
+}

@@ -1,97 +1,84 @@
-Portugal Travel Hub
+# Portal Turismo Portugal
 
-Independent editorial portal covering Portuguese coastal tourism.
-We charge for the verification we do, never for placement.
-Coverage: beaches, surf, fishing, webcams and verified experiences
-across the Portuguese coast - Algarve, Lisbon, Setubal, Costa
-Vicentina, Madeira, Azores.
+> Independent editorial portal about the Portuguese coast: beaches, surf, fishing, live webcam links and a free trip planner, in Portuguese and English. Website: https://www.portalturismoportugal.com/ (formerly also called Portugal Travel Hub; same site.)
 
-About the editorial team
+We charge for the verification we do, never for placement. Coverage: beaches, surf, fishing, webcams and verified experiences across the Portuguese coast - Algarve, Lisbon, Setubal, Costa Vicentina, Silver Coast, North, Madeira, Azores.
 
-About Ricardo Barbosa, Founder & Editor: Italian citizen, twenty years in premium hospitality between Dublin (Jurys Inns, O'Callaghan, Four Seasons, InterContinental) and Portugal (Pine Cliffs, Biorganico, Bricia Du Mar).
-English version
+## Trip planner
+- [Planeador de viagens (PT)](https://www.portalturismoportugal.com/planear): free, no sign-up. Five questions (interest, region, dates, travellers, style) return a trip plan with live accommodation prices for the chosen dates (Booking.com and Vrbo via Stay22), bookable experiences (GetYourGuide), surf camps (BookSurfCamps) and car hire (DiscoverCars). Plans can be shared by link.
+- [Trip planner (EN)](https://www.portalturismoportugal.com/en/planear): the same planner in English.
 
-Editorial methodology
+## About and editorial standards
+- [About Ricardo Barbosa (PT)](https://www.portalturismoportugal.com/sobre): founder and editor. Italian citizen, twenty years in premium hospitality between Dublin (Jurys Inns, O'Callaghan, Four Seasons, InterContinental) and Portugal (Pine Cliffs, Biorganico, Bricia Du Mar).
+- [About Ricardo Barbosa (EN)](https://www.portalturismoportugal.com/en/about)
+- [Editorial methodology (PT)](https://www.portalturismoportugal.com/metodologia-editorial): verification process and funding disclosure.
+- [Editorial methodology (EN)](https://www.portalturismoportugal.com/en/methodology)
+- [Commercial transparency (PT)](https://www.portalturismoportugal.com/transparencia-comercial)
+- [Commercial transparency (EN)](https://www.portalturismoportugal.com/en/transparency)
 
-Editorial methodology (PT): verification process and funding disclosure.
-Editorial methodology (EN)
-Commercial transparency (PT)
-Commercial transparency (EN)
+## Main sections (Portuguese)
+- [Praias](https://www.portalturismoportugal.com/beaches): map and catalogue of Portuguese beaches with filters and daily sea conditions.
+- [Surf](https://www.portalturismoportugal.com/surf): spots, schools, conditions.
+- [Pesca](https://www.portalturismoportugal.com/pesca): fishing spots, species, regulations.
+- [Webcams ao vivo](https://www.portalturismoportugal.com/webcams): links to official live beach cameras (operated by MEO) and places to stay nearby.
+- [Guias](https://www.portalturismoportugal.com/guias): regional and practical guides.
 
-Main editorial sections
-Portuguese
+## Main sections (English)
+- [Home](https://www.portalturismoportugal.com/en/)
+- [Beaches](https://www.portalturismoportugal.com/en/beaches)
+- [Surf in Portugal](https://www.portalturismoportugal.com/en/surf)
+- [Fishing in Portugal](https://www.portalturismoportugal.com/en/pesca)
+- [Live webcams](https://www.portalturismoportugal.com/en/webcams)
+- [Guides](https://www.portalturismoportugal.com/en/guides)
 
-Praias / Beaches catalogue: catalogue of Portuguese beaches with filters.
-Surf in Portugal: spots, schools, verified conditions.
-Pesca / Fishing in Portugal: spots, species, regulations.
-Webcams ao vivo: live conditions across the Portuguese coast.
-Guias regionais / Regional guides: editorial coverage by region.
-Planear viagem / Trip planning
+## Guides (Portuguese)
+- [Melhores praias do Algarve](https://www.portalturismoportugal.com/guias/melhores-praias-algarve): Sotavento, Barlavento and Costa Vicentina.
+- [Praias perto de Lisboa](https://www.portalturismoportugal.com/guias/praias-perto-lisboa)
+- [Surf para iniciantes em Portugal](https://www.portalturismoportugal.com/guias/surf-portugal-iniciantes)
+- [Pesca em Portugal](https://www.portalturismoportugal.com/guias/pesca-portugal)
+- [Quando visitar Portugal](https://www.portalturismoportugal.com/guias/quando-visitar-portugal): seasonal planning.
+- [Alugar carro no Algarve](https://www.portalturismoportugal.com/guias/alugar-carro-algarve)
+- [Praias para crianças em Portugal](https://www.portalturismoportugal.com/praias-para-criancas-portugal)
+- [Melhores praias para o pôr do sol](https://www.portalturismoportugal.com/melhores-praias-por-do-sol)
 
-English
+## Guides (English)
+- [Best beaches in Portugal](https://www.portalturismoportugal.com/en/best-beaches-portugal)
+- [Algarve beaches](https://www.portalturismoportugal.com/en/algarve-beaches)
+- [Hidden beaches in the Algarve](https://www.portalturismoportugal.com/en/hidden-beaches-algarve)
+- [Calm beaches in the Algarve](https://www.portalturismoportugal.com/en/calm-beaches-algarve)
+- [Family beaches in the Algarve](https://www.portalturismoportugal.com/en/family-beaches-algarve)
+- [Best sunset beaches in Portugal](https://www.portalturismoportugal.com/en/best-sunset-beaches)
+- [Beaches for kids in Portugal](https://www.portalturismoportugal.com/en/beaches-for-kids-portugal)
+- [Beaches near Lisbon](https://www.portalturismoportugal.com/en/beaches-near-lisbon)
+- [Surfing in Portugal](https://www.portalturismoportugal.com/en/surfing-portugal)
+- [Surf in the Algarve](https://www.portalturismoportugal.com/en/surf-algarve)
+- [Beginner surf beaches in Portugal](https://www.portalturismoportugal.com/en/beginner-surf-beaches-portugal)
+- [Car hire in the Algarve](https://www.portalturismoportugal.com/en/car-hire-algarve)
+- [Madeira beaches](https://www.portalturismoportugal.com/en/madeira-beaches)
+- [Alentejo coast beaches](https://www.portalturismoportugal.com/en/alentejo-coast-beaches)
+- [Central Portugal beaches](https://www.portalturismoportugal.com/en/central-portugal-beaches)
+- [Northern Portugal beaches](https://www.portalturismoportugal.com/en/northern-portugal-beaches)
 
-English homepage
-Beaches catalogue
-Surf in Portugal
-Fishing in Portugal
-Live webcams
-Guides hub
-Trip planning
+## Featured editorial
+- [Shapers of Portugal](https://www.portalturismoportugal.com/shapers-portugal/): Portuguese surfboard shapers (Semente, Polen, Fatum, Mica).
 
-Featured editorial guides
-Portuguese guides
+## Business and pricing
+- [Parceiros (PT)](https://www.portalturismoportugal.com/parceiros): B2B partner tiers for verified operators.
+- [Partners (EN)](https://www.portalturismoportugal.com/en/parceiros)
+- [Preços (PT)](https://www.portalturismoportugal.com/precos): Pro consumer subscription and B2B partner tiers.
+- [Pricing (EN)](https://www.portalturismoportugal.com/en/precos)
 
-Melhores praias do Algarve: editorial coverage of Algarve coast (Sotavento, Barlavento, Costa Vicentina).
-Praias perto de Lisboa: beaches within easy reach of Lisbon.
-Surf para iniciantes em Portugal: beginner surf guide.
-Pesca em Portugal: fishing across Portuguese coast.
-Quando visitar Portugal: seasonal planning guide.
-
-English guides
-
-Best beaches in Portugal
-Algarve beaches
-Hidden beaches Algarve
-Best sunset beaches in Portugal
-Family beaches Algarve
-Calm beaches Algarve
-Surf in Portugal (overview)
-Beginner surf beaches Portugal
-Beaches near Lisbon
-Beaches for kids in Portugal
-Madeira beaches
-Alentejo coast beaches
-Central Portugal beaches
-Northern Portugal beaches
-
-Featured editorial content
-
-Shapers of Portugal: editorial on Portuguese surfboard shapers (Semente, Polen, Fatum, Mica).
-Shapers of Portugal (EN)
-
-Business and pricing
-
-Partners page (PT): B2B partner tiers for verified operators.
-Partners page (EN)
-Pricing (PT): Pro consumer subscription and B2B partner tiers.
-Pricing (EN)
-
-Contact
-
-Email: ola@portalturismoportugal.com
-LinkedIn: https://www.linkedin.com/in/ricardobarbosa-pth/
-
-Licensing
-Editorial content (c) Portugal Travel Hub 2026. AI training and search
-citation permitted with attribution. Commercial republication requires
-written permission: ola@portalturismoportugal.com
+## Funding
 The portal is supported by:
-
-Pro consumer subscriptions
-Affiliate links (GetYourGuide, Amazon Associates) disclosed in
-every editorial context.
-B2B partner tiers (Essential 49 EUR/month, Founder Partner 2026
-149 EUR/month, limited to 10 first-year slots) where operators
-pay for editorial verification, never for placement.
+- Pro consumer subscriptions.
+- Affiliate links, disclosed in every editorial context. Partners include Stay22 (Booking.com, Vrbo), GetYourGuide, DiscoverCars and BookSurfCamps. Visitors pay the same price as booking directly.
+- B2B partner tiers (Essential 49 EUR/month, Founder Partner 2026 149 EUR/month, limited to 10 first-year slots) where operators pay for editorial verification, never for placement.
 
 Full transparency: https://www.portalturismoportugal.com/transparencia-comercial
+
+## Contact
+- Email: ola@portalturismoportugal.com
+- LinkedIn: https://www.linkedin.com/in/ricardobarbosa-pth/
+
+## Licensing
+Editorial content (c) Portal Turismo Portugal 2026. AI training and search citation permitted with attribution. Commercial republication requires written permission: ola@portalturismoportugal.com

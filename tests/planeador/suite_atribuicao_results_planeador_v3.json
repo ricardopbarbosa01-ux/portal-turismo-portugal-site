@@ -1,0 +1,130 @@
+{
+ "results": [
+  {
+   "test": "L4 b= de outra região ignorado (Algarve praia -> Albufeira)",
+   "ok": true,
+   "detail": "Albufeira, Portugal"
+  },
+  {
+   "test": "L1 link antigo \"webcams Nazaré\" abre pré-preenchido",
+   "ok": true,
+   "detail": "{\"count\": \"Passo 1 de 5\", \"rows\": [\"INTERESSE —\", \"DESTINO Costa de Prata\", \"DATAS —\", \"VIAJANTES —\", \"ESTILO —\"], \"sel\": []}"
+  },
+  {
+   "test": "L3 PT ref=webcams -> Stay22 campaign …-planear-webcams, mapa …-webcams-mapa, GYG cmp pthplanear-webcams",
+   "ok": true,
+   "detail": "{\"stay\": \"portalturismoportugal-planear-webcams\", \"map\": \"portalturismoportugal-planear-webcams-mapa\", \"gyg\": [\"pthplanear-webcams\", \"pthplanear-webcams\"]}"
+  },
+  {
+   "test": "L3 URL do próprio plano não leva ref (não contamina partilhas)",
+   "ok": true,
+   "detail": "/planear-v3?plano=1&i=praia&r=algarve&n=2&o=moderado&de=2026-12-04&ate=2026-12-08"
+  },
+  {
+   "test": "L1 link antigo \"pesca costeira\" abre pré-preenchido",
+   "ok": true,
+   "detail": "{\"count\": \"Passo 2 de 5\", \"rows\": [\"INTERESSE Pesca\", \"DESTINO —\", \"DATAS —\", \"VIAJANTES —\", \"ESTILO —\"], \"sel\": []}"
+  },
+  {
+   "test": "L1 link antigo \"escola de surf\" abre pré-preenchido",
+   "ok": true,
+   "detail": "{\"count\": \"Passo 2 de 5\", \"rows\": [\"INTERESSE Surf\", \"DESTINO —\", \"DATAS —\", \"VIAJANTES —\", \"ESTILO —\"], \"sel\": []}"
+  },
+  {
+   "test": "L2 praia \"Praia da Rocha\" -> Portimão (algarve), começa nas datas",
+   "ok": true,
+   "detail": "{\"addr\": \"Portimão, Portugal\", \"share\": {\"r\": [\"algarve\"], \"b\": [\"Portimão\"]}, \"passo\": \"Passo 3 de 5\"}"
+  },
+  {
+   "test": "L3 recarregar mantém a origem da sessão (webcams)",
+   "ok": true,
+   "detail": "portalturismoportugal-planear-webcams"
+  },
+  {
+   "test": "L3 link partilhado leva ref=partilha",
+   "ok": true,
+   "detail": "/planear-v3?plano=1&i=praia&r=algarve&n=2&o=moderado&de=2026-12-04&ate=2026-12-08&ref=partilha"
+  },
+  {
+   "test": "L1 link antigo \"pesca Açores\" abre pré-preenchido",
+   "ok": true,
+   "detail": "{\"count\": \"Passo 3 de 5\", \"rows\": [\"INTERESSE Pesca\", \"DESTINO Açores\", \"DATAS —\", \"VIAJANTES —\", \"ESTILO —\"], \"sel\": []}"
+  },
+  {
+   "test": "L1 link antigo \"praias Alentejo\" abre pré-preenchido",
+   "ok": true,
+   "detail": "{\"count\": \"Passo 1 de 5\", \"rows\": [\"INTERESSE —\", \"DESTINO Costa Alentejana\", \"DATAS —\", \"VIAJANTES —\", \"ESTILO —\"], \"sel\": []}"
+  },
+  {
+   "test": "L3 quem abre a partilha: campanha …-planear-partilha e \"Plano partilhado consigo\"",
+   "ok": true,
+   "detail": "[\"portalturismoportugal-planear-partilha\", \"Plano partilhado consigo\"]"
+  },
+  {
+   "test": "L1 link antigo \"Lisboa e Setúbal\" abre pré-preenchido",
+   "ok": true,
+   "detail": "{\"count\": \"Passo 1 de 5\", \"rows\": [\"INTERESSE —\", \"DESTINO Cascais e Lisboa\", \"DATAS —\", \"VIAJANTES —\", \"ESTILO —\"], \"sel\": []}"
+  },
+  {
+   "test": "L2 praia \"Ilha de Tavira\" -> Vilamoura (algarve), começa nas datas",
+   "ok": true,
+   "detail": "{\"addr\": \"Vilamoura, Portugal\", \"share\": {\"r\": [\"algarve\"], \"b\": [\"Vilamoura\"]}, \"passo\": \"Passo 3 de 5\"}"
+  },
+  {
+   "test": "L1 link antigo \"região inválida\" abre pré-preenchido",
+   "ok": true,
+   "detail": "{\"count\": \"Passo 1 de 5\", \"rows\": [\"INTERESSE —\", \"DESTINO —\", \"DATAS —\", \"VIAJANTES —\", \"ESTILO —\"], \"sel\": []}"
+  },
+  {
+   "test": "L1 sem erros de consola",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "L3 EN source=beaches-suggest -> …-en-planear-beaches-suggest e pthplanearen-beaches-suggest",
+   "ok": true,
+   "detail": "{\"stay\": \"portalturismoportugal-en-planear-beaches-suggest\", \"gyg\": [\"pthplanearen-beaches-suggest\"]}"
+  },
+  {
+   "test": "L2 praia \"Praia do Guincho\" -> Cascais (cascais), começa nas datas",
+   "ok": true,
+   "detail": "{\"addr\": \"Cascais, Portugal\", \"share\": {\"r\": [\"cascais\"], \"b\": [\"Cascais\"]}, \"passo\": \"Passo 3 de 5\"}"
+  },
+  {
+   "test": "L3 entrada direta mantém o nome de campanha atual (sem sufixo)",
+   "ok": true,
+   "detail": "portalturismoportugal-planear"
+  },
+  {
+   "test": "L2 praia \"Praia de Sesimbra\" -> Sesimbra (setubal), começa nas datas",
+   "ok": true,
+   "detail": "{\"addr\": \"Sesimbra, Portugal\", \"share\": {\"r\": [\"setubal\"], \"b\": [\"Sesimbra\"]}, \"passo\": \"Passo 3 de 5\"}"
+  },
+  {
+   "test": "L3 ref malicioso é limpo ([a-z0-9-], máx. 24)",
+   "ok": true,
+   "detail": "portalturismoportugal-planear-imgsrcxwebcamsxxxxxxxxxx"
+  },
+  {
+   "test": "L3 sem erros de consola",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "L2 praia \"Praia de Moledo\" -> Viana do Castelo (minho), começa nas datas",
+   "ok": true,
+   "detail": "{\"addr\": \"Viana do Castelo, Portugal\", \"share\": {\"r\": [\"minho\"], \"b\": [\"Viana do Castelo\"]}, \"passo\": \"Passo 3 de 5\"}"
+  },
+  {
+   "test": "L2 praia \"Praia da Figueira da Foz\" -> só região (costa-prata), começa nas datas",
+   "ok": true,
+   "detail": "{\"addr\": \"Nazaré, Portugal\", \"share\": {\"r\": [\"costa-prata\"]}, \"passo\": \"Passo 3 de 5\"}"
+  },
+  {
+   "test": "L2 sem erros de consola nossos (terceiros listados à parte)",
+   "ok": true,
+   "detail": "{\"errs\": [], \"http>=400\": []}"
+  }
+ ],
+ "secs": 48
+}

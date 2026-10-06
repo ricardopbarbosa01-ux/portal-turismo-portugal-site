@@ -1,0 +1,777 @@
+{
+ "results": [
+  {
+   "test": "T1 matriz algarve · praia · 375px",
+   "ok": true,
+   "detail": "AlbufeiraAlgarve"
+  },
+  {
+   "test": "T1 matriz algarve · pesca · 375px",
+   "ok": true,
+   "detail": "PortimãoAlgarve"
+  },
+  {
+   "test": "T1 matriz algarve · surf · 375px",
+   "ok": true,
+   "detail": "LagosAlgarve"
+  },
+  {
+   "test": "T1 matriz algarve · roteiro · 375px",
+   "ok": true,
+   "detail": "AlbufeiraAlgarve"
+  },
+  {
+   "test": "T1 matriz algarve · praia+surf · 375px",
+   "ok": true,
+   "detail": "LagosAlgarve"
+  },
+  {
+   "test": "T1 matriz algarve · surf+pesca · 375px",
+   "ok": true,
+   "detail": "LagosAlgarve"
+  },
+  {
+   "test": "T1 matriz alentejo · surf · 375px",
+   "ok": true,
+   "detail": "Zambujeira do MarCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz algarve · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "AlbufeiraAlgarve"
+  },
+  {
+   "test": "T1 matriz alentejo · praia · 375px",
+   "ok": true,
+   "detail": "Vila Nova de MilfontesCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz alentejo · pesca · 375px",
+   "ok": true,
+   "detail": "Vila Nova de MilfontesCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz setubal · praia · 375px",
+   "ok": true,
+   "detail": "SetúbalArrábida"
+  },
+  {
+   "test": "T1 matriz alentejo · praia+surf · 375px",
+   "ok": true,
+   "detail": "Zambujeira do MarCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz alentejo · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "Vila Nova de MilfontesCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz alentejo · surf+pesca · 375px",
+   "ok": true,
+   "detail": "Zambujeira do MarCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz alentejo · roteiro · 375px",
+   "ok": true,
+   "detail": "Vila Nova de MilfontesCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz setubal · surf · 375px",
+   "ok": true,
+   "detail": "Costa da CaparicaArrábida"
+  },
+  {
+   "test": "T1 matriz setubal · pesca · 375px",
+   "ok": true,
+   "detail": "SesimbraArrábida"
+  },
+  {
+   "test": "T1 matriz setubal · praia+surf · 375px",
+   "ok": true,
+   "detail": "Costa da CaparicaArrábida"
+  },
+  {
+   "test": "T1 matriz setubal · roteiro · 375px",
+   "ok": true,
+   "detail": "SetúbalArrábida"
+  },
+  {
+   "test": "T1 matriz setubal · surf+pesca · 375px",
+   "ok": true,
+   "detail": "Costa da CaparicaArrábida"
+  },
+  {
+   "test": "T1 matriz cascais · praia · 375px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz cascais · pesca · 375px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz cascais · surf · 375px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz setubal · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "SetúbalArrábida"
+  },
+  {
+   "test": "T1 matriz cascais · roteiro · 375px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz cascais · praia+surf · 375px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz cascais · surf+pesca · 375px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz oeste · praia · 375px",
+   "ok": true,
+   "detail": "EriceiraOeste"
+  },
+  {
+   "test": "T1 matriz cascais · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz oeste · surf · 375px",
+   "ok": true,
+   "detail": "PenicheOeste"
+  },
+  {
+   "test": "T1 matriz oeste · pesca · 375px",
+   "ok": true,
+   "detail": "PenicheOeste"
+  },
+  {
+   "test": "T1 matriz oeste · roteiro · 375px",
+   "ok": true,
+   "detail": "EriceiraOeste"
+  },
+  {
+   "test": "T1 matriz oeste · praia+surf · 375px",
+   "ok": true,
+   "detail": "PenicheOeste"
+  },
+  {
+   "test": "T1 matriz oeste · surf+pesca · 375px",
+   "ok": true,
+   "detail": "PenicheOeste"
+  },
+  {
+   "test": "T1 matriz oeste · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "EriceiraOeste"
+  },
+  {
+   "test": "T1 matriz costa-prata · surf · 375px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz costa-prata · praia · 375px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz costa-prata · pesca · 375px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz costa-prata · roteiro · 375px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz costa-prata · praia+surf · 375px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz costa-prata · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz minho · praia · 375px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz costa-prata · surf+pesca · 375px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz minho · surf · 375px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz minho · roteiro · 375px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz minho · pesca · 375px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz minho · praia+surf · 375px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz minho · surf+pesca · 375px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz minho · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz madeira · praia · 375px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz madeira · surf · 375px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz madeira · praia+surf · 375px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz madeira · roteiro · 375px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz madeira · pesca · 375px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz acores · praia · 375px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz madeira · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz madeira · surf+pesca · 375px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz acores · surf · 375px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz acores · pesca · 375px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz acores · surf+pesca · 375px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz acores · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz acores · praia+surf · 375px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz acores · roteiro · 375px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz qualquer · praia · 375px",
+   "ok": true,
+   "detail": "AlbufeiraAlgarve"
+  },
+  {
+   "test": "T1 matriz qualquer · pesca · 375px",
+   "ok": true,
+   "detail": "SesimbraSetúbal"
+  },
+  {
+   "test": "T1 matriz qualquer · roteiro · 375px",
+   "ok": true,
+   "detail": "LisboaPortugal"
+  },
+  {
+   "test": "T1 matriz qualquer · praia+surf · 375px",
+   "ok": true,
+   "detail": "EriceiraOeste"
+  },
+  {
+   "test": "T1 matriz qualquer · surf+pesca · 375px",
+   "ok": true,
+   "detail": "EriceiraOeste"
+  },
+  {
+   "test": "T1 matriz qualquer · surf · 375px",
+   "ok": true,
+   "detail": "EriceiraOeste"
+  },
+  {
+   "test": "T1 matriz setubal · praia · 1280px",
+   "ok": true,
+   "detail": "SetúbalArrábida"
+  },
+  {
+   "test": "T1 matriz alentejo · praia · 1280px",
+   "ok": true,
+   "detail": "Vila Nova de MilfontesCosta Alentejana"
+  },
+  {
+   "test": "T1 matriz cascais · praia · 1280px",
+   "ok": true,
+   "detail": "CascaisCascais e Lisboa"
+  },
+  {
+   "test": "T1 matriz qualquer · praia+roteiro · 375px",
+   "ok": true,
+   "detail": "LisboaPortugal"
+  },
+  {
+   "test": "T1 matriz algarve · praia · 1280px",
+   "ok": true,
+   "detail": "AlbufeiraAlgarve"
+  },
+  {
+   "test": "T1 matriz costa-prata · praia · 1280px",
+   "ok": true,
+   "detail": "NazaréCosta de Prata"
+  },
+  {
+   "test": "T1 matriz madeira · praia · 1280px",
+   "ok": true,
+   "detail": "FunchalMadeira"
+  },
+  {
+   "test": "T1 matriz oeste · praia · 1280px",
+   "ok": true,
+   "detail": "EriceiraOeste"
+  },
+  {
+   "test": "T1 matriz minho · praia · 1280px",
+   "ok": true,
+   "detail": "Viana do CasteloMinho"
+  },
+  {
+   "test": "T1 matriz acores · praia · 1280px",
+   "ok": true,
+   "detail": "Ponta DelgadaAçores"
+  },
+  {
+   "test": "T1 matriz qualquer · praia · 1280px",
+   "ok": true,
+   "detail": "AlbufeiraAlgarve"
+  },
+  {
+   "test": "T2 passo 1 bloqueado sem escolha (375)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "T2 passo 1 bloqueado sem escolha (1280)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "T4 link partilhado: datas passadas",
+   "ok": true,
+   "detail": "Albufeira"
+  },
+  {
+   "test": "T2 regiao avanca sozinha (375)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "T3 so data de chegada -> partida +3 (375)",
+   "ok": true,
+   "detail": "2026-12-07"
+  },
+  {
+   "test": "T3 partida antes da chegada mostra erro e bloqueia (375)",
+   "ok": true,
+   "detail": "A partida tem de ser depois da chegada."
+  },
+  {
+   "test": "T2 regiao avanca sozinha (1280)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "test": "T3 so data de chegada -> partida +3 (1280)",
+   "ok": true,
+   "detail": "2026-12-07"
+  },
+  {
+   "test": "T3 partida antes da chegada mostra erro e bloqueia (1280)",
+   "ok": true,
+   "detail": "A partida tem de ser depois da chegada."
+  },
+  {
+   "test": "T2 resumo chega a 5/5 (375)",
+   "ok": true,
+   "detail": "5/5"
+  },
+  {
+   "test": "T2 resumo chega a 5/5 (1280)",
+   "ok": true,
+   "detail": "5/5"
+  },
+  {
+   "test": "T6 pre-preenchimento ?i=surf&r=oeste&ref=webcams começa no passo 3",
+   "ok": true,
+   "detail": "[\"Passo 3 de 5\", \"2/5\"]"
+  },
+  {
+   "test": "T6 GA4 plan_generated com origem=webcams e versao=v3",
+   "ok": true,
+   "detail": "{\"regiao\": \"oeste\", \"interesses\": \"surf\", \"orcamento\": \"moderado\", \"pessoas\": \"2\", \"noites\": 2, \"base\": \"Peniche\", \"n_links\": 5, \"via\": \"form\", \"versao\": \"v3\", \"origem\": \"webcams\", \"lang\": \"pt\"}"
+  },
+  {
+   "test": "T9 lead: email inválido rejeitado",
+   "ok": true,
+   "detail": "Indique um email válido."
+  },
+  {
+   "test": "T9 lead: sem token pede verificação e carrega Turnstile",
+   "ok": true,
+   "detail": "[\"A verificar que não é um robô… tente de novo dentro de 2 segundos.\", 1]"
+  },
+  {
+   "test": "T9 lead: payload correto e sucesso (botão bloqueia)",
+   "ok": true,
+   "detail": "{\"body\": {\"email\": \"teste+v3@example.com\", \"nome\": \"Sem nome\", \"interesses\": [\"surf\"], \"regiao\": \"oeste\", \"pessoas\": \"2\", \"data_inicio\": \"2026-11-02\", \"orcamento\": \"moderado\"}, \"msg\": \"✓ Plano guardado. Obrigado — a nossa equipa pode enviar-lhe sugestões.\"}"
+  },
+  {
+   "test": "T9 lead: aviso RGPD com link para a política de privacidade",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "test": "T9 teclado: Tab+Enter seleciona e avança; foco vai para a pergunta",
+   "ok": true,
+   "detail": "[[\"Surf\"], \"pv3-q\", \"Passo 3 de 5\"]"
+  },
+  {
+   "test": "T3 \"Ainda não sei\" avança e plano sai sem datas",
+   "ok": true,
+   "detail": "[\"Passo 4 de 5\", \"https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Lagos%2C%20Portugal\"]"
+  },
+  {
+   "test": "T3 sem datas: chip \"Datas flexíveis\" e nota do mapa",
+   "ok": true,
+   "detail": "Datas flexíveis1 adultoEconómicoSurf"
+  },
+  {
+   "test": "T2 plano gerado com links validos (375)",
+   "ok": true,
+   "detail": "/planear-v3?plano=1&i=pesca%2Cpraia&r=algarve&n=3-4&o=premium&de=2026-12-04&ate=2026-12-08"
+  },
+  {
+   "test": "T2 família -> 4 adultos/1 quarto; praia+pesca no Algarve -> base Portimão (375)",
+   "ok": true,
+   "detail": "{\"aid\": [\"kaptarstudio\"], \"campaign\": [\"portalturismoportugal-planear\"], \"address\": [\"Portimão, Portugal\"], \"adults\": [\"4\"], \"rooms\": [\"1\"], \"checkin\": [\"2026-12-04\"], \"checkout\": [\"2026-12-08\"]}"
+  },
+  {
+   "test": "A11y foco vai para o titulo do plano (375)",
+   "ok": true,
+   "detail": "r-title"
+  },
+  {
+   "test": "T7 duplo clique nao duplica o plano (375)",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "test": "T2 plano gerado com links validos (1280)",
+   "ok": true,
+   "detail": "/planear-v3?plano=1&i=pesca%2Cpraia&r=algarve&n=3-4&o=premium&de=2026-12-04&ate=2026-12-08"
+  },
+  {
+   "test": "T2 família -> 4 adultos/1 quarto; praia+pesca no Algarve -> base Portimão (1280)",
+   "ok": true,
+   "detail": "{\"aid\": [\"kaptarstudio\"], \"campaign\": [\"portalturismoportugal-planear\"], \"address\": [\"Portimão, Portugal\"], \"adults\": [\"4\"], \"rooms\": [\"1\"], \"checkin\": [\"2026-12-04\"], \"checkout\": [\"2026-12-08\"]}"
+  },
+  {
+   "test": "A11y foco vai para o titulo do plano (1280)",
+   "ok": true,
+   "detail": "r-title"
+  },
+  {
+   "test": "T7 duplo clique nao duplica o plano (1280)",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "test": "T4 link partilhado: >30 noites",
+   "ok": true,
+   "detail": "Albufeira"
+  },
+  {
+   "test": "T4 link partilhado: XSS em i",
+   "ok": true,
+   "detail": "planeador mostrado"
+  },
+  {
+   "test": "T8 checklist + barra \"proximo passo\" (375)",
+   "ok": true,
+   "detail": "[\"Próximo: alojamento em Portimão\", \"1/3\", \"Próximo: experiências\", \"Viagem completa — boa viagem!\", \"3/3\"]"
+  },
+  {
+   "test": "T8 checklist + barra \"proximo passo\" (1280)",
+   "ok": true,
+   "detail": "[\"Próximo: alojamento em Portimão\", \"1/3\", \"Próximo: experiências\", \"Viagem completa — boa viagem!\", \"3/3\"]"
+  },
+  {
+   "test": "T9 lead: erro 500 mostra mensagem e permite repetir",
+   "ok": true,
+   "detail": "[\"Não foi possível guardar agora. O plano continua disponível acima.\", false]"
+  },
+  {
+   "test": "T5 recarregar mostra \"o seu plano\" e mantem progresso (375)",
+   "ok": true,
+   "detail": "[\"O seu plano está pronto\", \"3/3\"]"
+  },
+  {
+   "test": "T4 link partilhado: regiao invalida",
+   "ok": true,
+   "detail": "Ericeira"
+  },
+  {
+   "test": "T5 recarregar mostra \"o seu plano\" e mantem progresso (1280)",
+   "ok": true,
+   "detail": "[\"O seu plano está pronto\", \"3/3\"]"
+  },
+  {
+   "test": "T4 link partilhado: sem i",
+   "ok": true,
+   "detail": "planeador mostrado"
+  },
+  {
+   "test": "T7 alterar pedido e regenerar (Madeira) (375)",
+   "ok": true,
+   "detail": "[true, \"Funchal\", [\"https://www.discovercars.com/pt/portugal/madeira?a_aid=portalturismoportugal\", \"https://www.discovercars.com/pt/portugal/madeira?a_aid=portalturismoportugal\"]]"
+  },
+  {
+   "test": "T17 sem erros de consola/CSP no fluxo (375)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "T7 alterar pedido e regenerar (Madeira) (1280)",
+   "ok": true,
+   "detail": "[true, \"Funchal\", [\"https://www.discovercars.com/pt/portugal/madeira?a_aid=portalturismoportugal\", \"https://www.discovercars.com/pt/portugal/madeira?a_aid=portalturismoportugal\"]]"
+  },
+  {
+   "test": "T17 sem erros de consola/CSP no fluxo (1280)",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "T4 link partilhado: pessoas/orcamento invalidos",
+   "ok": true,
+   "detail": "Viana do Castelo"
+  },
+  {
+   "test": "T4 link partilhado: Açores sem fotos",
+   "ok": true,
+   "detail": "Ponta Delgada"
+  },
+  {
+   "test": "T10 BD de praias em erro 500: planeador e plano funcionam (sem fotos)",
+   "ok": true,
+   "detail": "[\"Failed to load resource: the server responded with a status of 500 (Internal Server Error)\"]"
+  },
+  {
+   "test": "T10 BD sem resposta: link partilhado abre na mesma (timeout 6 s)",
+   "ok": true,
+   "detail": "2.2s"
+  },
+  {
+   "test": "T10 meteorologia em falha: sem pílulas, plano intacto",
+   "ok": true,
+   "detail": "[0, \"Albufeira\"]"
+  },
+  {
+   "test": "T10 motor de links em falta: mensagem clara em vez de botão morto",
+   "ok": true,
+   "detail": "Não foi possível carregar o planeador. Recarregue a página — se persistir, veja os nossos guias de onde ficar."
+  },
+  {
+   "test": "T11 localStorage/sessionStorage bloqueados (modo privado): tudo funciona",
+   "ok": true,
+   "detail": "[\"1/3\", []]"
+  },
+  {
+   "test": "T12 viewport 320px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T12 viewport 360px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T12 viewport 390px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T12 viewport 414px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T12 viewport 768px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T12 viewport 1024px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T12 viewport 1366px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T12 viewport 1920px sem scroll horizontal (início, passo 2, plano)",
+   "ok": true,
+   "detail": "[false, false, false, []]"
+  },
+  {
+   "test": "T14 acessibilidade axe WCAG 2.1 AA (início) — sem falhas sérias/críticas",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "T14 acessibilidade axe WCAG 2.1 AA (plano) — sem falhas sérias/críticas",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "test": "T15 performance 4G lenta + CPU 4x: LCP < 2,5 s, CLS < 0,1",
+   "ok": true,
+   "detail": "LCP 0.23s · CLS 0.035 · carga inicial 591 KB em 14 pedidos · passo 2 (+fotos) 150 KB"
+  },
+  {
+   "test": "T18 (site atual em produção) GA4 sem bloqueios do CSP",
+   "ok": true,
+   "detail": "[]"
+  }
+ ],
+ "urls": [
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/acores?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/alentejo?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/algarve?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/costa-da-caparica?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/ericeira?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/madeira?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/nazare?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/oeste?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/regiao-de-lisboa?aid=11861",
+  "https://www.booksurfcamps.com/pt/all/d/europa/portugal/viana-do-castelo?aid=11861",
+  "https://www.discovercars.com/pt/portugal/faro?a_aid=portalturismoportugal",
+  "https://www.discovercars.com/pt/portugal/lisbon?a_aid=portalturismoportugal",
+  "https://www.discovercars.com/pt/portugal/madeira?a_aid=portalturismoportugal",
+  "https://www.discovercars.com/pt/portugal/porto?a_aid=portalturismoportugal",
+  "https://www.discovercars.com/pt/portugal?a_aid=portalturismoportugal",
+  "https://www.getyourguide.com/s/?q=Arrabida%20dolphin%20watching&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Benagil%20caves%20boat%20tour&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Berlengas%20Peniche&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Comporta&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Madeira%20levada%20walk&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Nazare&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Sao%20Miguel%20whale%20watching&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Sintra%20Cascais&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=Viana%20do%20Castelo&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Cascais&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Ericeira&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Funchal&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Nazare&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Peniche&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Ponta%20Delgada&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Portimao&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Sesimbra&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Sines&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=fishing%20trip%20Viana%20do%20Castelo&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Albufeira&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Cascais&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Ericeira&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Funchal&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Lisbon&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Nazare&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Ponta%20Delgada&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Setubal&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Viana%20do%20Castelo&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=food%20tour%20Vila%20Nova%20de%20Milfontes&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Cascais&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Costa%20da%20Caparica&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Ericeira&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Funchal&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Lagos&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Nazare&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Peniche&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Ponta%20Delgada&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Viana%20do%20Castelo&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.getyourguide.com/s/?q=surf%20lessons%20Zambujeira%20do%20Mar&partner_id=0WTBHZE&cmp=pthplanear&date_from=2026-11-02&date_to=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Albufeira%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Cascais%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Costa%20da%20Caparica%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Ericeira%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Funchal%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Lagos%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Lisboa%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Nazar%C3%A9%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Peniche%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Ponta%20Delgada%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Portim%C3%A3o%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Sesimbra%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Set%C3%BAbal%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Viana%20do%20Castelo%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Vila%20Nova%20de%20Milfontes%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06",
+  "https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-planear&address=Zambujeira%20do%20Mar%2C%20Portugal&adults=2&rooms=1&checkin=2026-11-02&checkout=2026-11-06"
+ ],
+ "secs": 298
+}
