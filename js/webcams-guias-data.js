@@ -1,5 +1,5 @@
 /** js/webcams-guias-data.js — Shared data for webcams.html + guias.html (+ EN variants).
- * Exposes window.WebcamsGuiasData = { WEBCAMS:[13], GUIA_CARDS:{pt:[5], en:[6]} }
+ * Exposes window.WebcamsGuiasData = { WEBCAMS:[13], GUIA_CARDS:{pt:[6], en:[7]} }
  * WEBCAMS: name/location are geographic proper nouns (language-neutral).
  *          desc and tags have {pt, en} for user-visible text.
  * GUIA_CARDS: pt and en are separate arrays — they link to different article sets.
@@ -183,6 +183,17 @@
         featured: true,
       },
       {
+        href: '/guias/alugar-carro-algarve',
+        img: 'https://images.unsplash.com/photo-1569492489590-8d807c2f0e73?fm=jpg&q=80&w=800&auto=format&fit=crop',
+        alt: 'Estrada costeira vazia junto ao mar no Algarve',
+        fallbackKeyword: 'algarve coastal road portugal',
+        title: 'Alugar Carro no Algarve sem Surpresas',
+        desc: 'Portagens, caução, seguro, regras e estacionamento: o guia honesto de quem vive cá.',
+        readTime: 12,
+        isNew: true,
+        featured: false,
+      },
+      {
         href: '/guias/surf-portugal-iniciantes.html',
         img: 'https://images.unsplash.com/photo-1502680390548-bdbac40e4ce3?fm=jpg&q=80&w=800&auto=format&fit=crop',
         alt: 'Surfista na onda, costa portuguesa',
@@ -239,6 +250,17 @@
         readTime: 15,
         isNew: true,
         featured: true,
+      },
+      {
+        href: '/en/car-hire-algarve',
+        img: 'https://images.unsplash.com/photo-1569492489590-8d807c2f0e73?fm=jpg&q=80&w=800&auto=format&fit=crop',
+        alt: 'Empty coastal road by the sea in the Algarve',
+        fallbackKeyword: 'algarve coastal road portugal',
+        title: 'Car Hire in the Algarve without Surprises',
+        desc: 'Tolls, deposits, insurance, road rules and parking: an honest guide from someone who lives here.',
+        readTime: 12,
+        isNew: true,
+        featured: false,
       },
       {
         href: '/en/algarve-beaches.html',
