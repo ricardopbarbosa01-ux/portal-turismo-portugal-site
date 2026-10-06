@@ -34,6 +34,9 @@ foreach ($bad in @('.env','.mcp.json','CLAUDE.md','docs','node_modules')) {
   if (Test-Path (Join-Path $dist $bad)) { Write-Host "ERRO: $bad nao devia estar no deploy" -ForegroundColor Red; exit 1 }
 }
 if ($count -ge 20000) { Write-Host "Ainda acima do limite. Nao faco deploy." -ForegroundColor Red; exit 1 }
+# Cloudflare Pages ignora (sem aviso) qualquer linha do _headers com mais de 2000 caracteres - ex.: a CSP deixou de chegar ao browser entre 05/10 e 06/10/2026
+$longHdr = Get-Content (Join-Path $dist '_headers') | Where-Object { $_.Length -gt 2000 }
+if ($longHdr) { Write-Host "ERRO: _headers tem uma linha com mais de 2000 caracteres (a Cloudflare ignora-a). Encurtar antes do deploy." -ForegroundColor Red; exit 1 }
 if ($DryRun) { Write-Host "DryRun: nada foi publicado." -ForegroundColor Yellow; exit 0 }
 
 $ok = Read-Host "Publicar agora? (s/n)"
