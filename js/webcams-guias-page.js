@@ -100,6 +100,17 @@
   }
 
   // ── Render grid ───────────────────────────────────────────────────────────────
+  // Camara -> regiao do planeador v3 (/planear?r=). Regioes v3: algarve, alentejo, setubal, cascais, oeste, costa-prata, minho, madeira, acores
+  var PLAN_REGION = {
+    'Matosinhos': 'minho', 'Póvoa de Varzim': 'minho',
+    'Nazaré': 'costa-prata', 'Figueira da Foz': 'costa-prata',
+    'Peniche — Supertubos': 'oeste', 'Ericeira': 'oeste',
+    'Cascais — Guincho': 'cascais', 'Costa da Caparica': 'setubal',
+    'Costa Vicentina': 'alentejo',
+    'Lagos — Praia da Luz': 'algarve', 'Portimão — Praia da Rocha': 'algarve',
+    'Açores — São Miguel': 'acores', 'Funchal — Baía': 'madeira'
+  };
+
   function renderWebcams(list, lang, T) {
     var grid  = document.getElementById('wcam-grid');
     var count = document.getElementById('wcam-count');
@@ -133,8 +144,11 @@
         : w.tipo === 'pesca'
         ? (lang === 'en' ? '/en/pesca.html' : '/pesca.html')
         : (lang === 'en' ? '/en/beaches.html?region=' + encodeURIComponent(w.region) : '/beaches.html?region=' + encodeURIComponent(w.region));
-      var planearHref = (lang === 'en' ? '/en/planear.html' : '/planear.html') +
-        '?source=webcams&webcam_spot=' + encodeURIComponent(w.name) + '&region=' + encodeURIComponent(w.region) + '&tipo=' + encodeURIComponent(w.tipo || '');
+      // Planeador v3 (2026-10-06): regiao v3 por camara (o mapeamento antigo mandava Peniche para a Nazare e Ericeira/Caparica para Cascais)
+      var planR = PLAN_REGION[w.name] || '';
+      var planI = (w.tipo === 'surf' || w.tipo === 'pesca' || w.tipo === 'praia') ? w.tipo : '';
+      var planearHref = (lang === 'en' ? '/en/planear' : '/planear') + '?' + (planR ? 'r=' + planR + '&' : '') + (planI ? 'i=' + planI + '&' : '') + 'ref=webcams';
+      var planLabel = lang === 'en' ? 'Plan a trip here' : 'Planear viagem aqui';
       var stayLabel = lang === 'en' ? 'Hotels nearby' : 'Hotéis perto';
       var stayHref  = 'https://www.booking.com/searchresults.' + (lang === 'en' ? 'en-gb' : 'pt-pt') + '.html?ss=' + encodeURIComponent(w.location + ', Portugal');
       var actionEl = isLive
@@ -177,8 +191,8 @@
           '<a href="' + esc(explorerHref) + '" class="wcam-sec-link" aria-label="' + esc(explorerT) + '">' +
             esc(explorerT) + '<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>' +
           '</a>' +
-          '<a href="' + esc(planearHref) + '" class="wcam-sec-link" aria-label="' + esc(T.webcams.actionPlan) + '">' +
-            esc(T.webcams.actionPlan) + '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
+          '<a href="' + esc(planearHref) + '" class="wcam-sec-link wcam-sec-link--plan" aria-label="' + esc(planLabel + ' — ' + w.location) + '">' +
+            esc(planLabel) + '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
           '</a>' +
         '</div>' +
       '</article>';
