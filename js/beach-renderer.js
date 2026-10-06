@@ -391,7 +391,7 @@
         seasonLabel: 'Melhor época',
         exploreRegion:     'Explorar região',
         exploreRegionAria: function (r) { return 'Praias de ' + r; },
-        metaTitle:       'Surf em Portugal — Spots, Ondas e Guia · Portugal Travel Hub',
+        metaTitle:       'Surf em Portugal — Spots, Ondas e Guia · Portal Turismo Portugal',
         metaDescription: 'Os melhores spots de surf em Portugal — de Peniche e Nazaré ao Algarve e Açores. Perfil de onda, nível recomendado e guia prático.',
         faqs: [
           {
@@ -436,7 +436,7 @@
         seasonLabel:   'Melhor época',
         especiesLabel: 'Espécies',
         saveCta:       'Guardar',
-        metaTitle:       'Pesca em Portugal — Spots, Espécies e Guia · Portugal Travel Hub',
+        metaTitle:       'Pesca em Portugal — Spots, Espécies e Guia · Portal Turismo Portugal',
         metaDescription: 'Os melhores spots de pesca em Portugal — de Sagres e Sesimbra aos Açores. Tipo de pesca, espécies-alvo, melhor época e guia prático.',
         faqs: [
           {
@@ -872,7 +872,7 @@
       seasonLabel: 'Best season',
       exploreRegion:     'Explore region',
       exploreRegionAria: function (r) { return 'Beaches in ' + r; },
-      metaTitle:       'Surfing in Portugal — Spots, Waves & Guide · Portugal Travel Hub',
+      metaTitle:       'Surfing in Portugal — Spots, Waves & Guide · Portal Turismo Portugal',
       metaDescription: 'The best surf spots in Portugal — Peniche, Nazaré, Algarve and Azores. Wave profile, recommended level and practical guide.',
       faqs: [
         {

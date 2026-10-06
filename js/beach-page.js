@@ -941,7 +941,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const rendered = window.BeachRenderer.renderBeach(beach);
 
       // Update title and canonical/og/tw tags
-      const title = `${beach.name} — ${beach.region || 'Portugal'} · Portugal Travel Hub`;
+      const title = `${beach.name} — ${beach.region || 'Portugal'} · Portal Turismo Portugal`;
       document.getElementById('page-title').textContent = title;
       document.title = title;
       document.getElementById('page-og-title').content  = title;

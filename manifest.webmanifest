@@ -1,6 +1,6 @@
 {
-  "name": "Portugal Travel Hub",
-  "short_name": "PTH",
+  "name": "Portal Turismo Portugal",
+  "short_name": "Portal Turismo",
   "description": "The Portugal that doesn't show up on the booking sites. Verified by locals. Never auctioned.",
   "start_url": "/",
   "scope": "/",
