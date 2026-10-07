@@ -111,7 +111,11 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20261007-fotos">
-  <link rel="stylesheet" href="/css/surf-card-v2.css?v=20261007">
+  <link rel="stylesheet" href="/css/surf-card-v2.css?v=20261007b">
+  <link rel="stylesheet" href="/css/beaches-hero-v4.css?v=20261007p">
+  <link rel="stylesheet" href="/css/surf-hero.css?v=20261007">
+  <link rel="stylesheet" href="/css/surf-sections.css?v=20261007b">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="/images/map/portugal-relevo-560.avif?v=2 560w, /images/map/portugal-relevo-760.avif?v=2 760w, /images/map/portugal-relevo-1000.avif?v=2 1000w" imagesizes="(max-width: 1180px) 300px, 361px" fetchpriority="high">
   <link rel="stylesheet" href="/css/gyg-block.css?v=20260516-video2">
 
 <link rel="stylesheet" href="/css/style.css?v=20260522-navdd-c">
@@ -195,45 +199,44 @@
   </defs>
 </svg>
 
-<main id="main">
-  <!-- Hero -->
-  <section class="page-hero" aria-label="Surf em Portugal">
-    <div class="page-hero__media">
-      <img class="page-hero__image"
-           src="https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/card-images/beaches/7f6e2b93-211c-4e22-87ff-f1565a019ca6.jpg"
-           srcset="/images/heroes/surf-1200.webp 1200w, /images/heroes/surf-2000.webp 2000w"
-           sizes="(max-width: 768px) 90vw, 60vw"
-           fetchpriority="high"
-           alt="Surf em Portugal — Praia do Norte, Nazaré"
-           loading="eager">
-      <div class="page-hero__media-overlay" aria-hidden="true"></div>
-      <p class="page-hero__attribution" data-source-url="https://commons.wikimedia.org/wiki/File:Nazaré_-_Surfing_the_Biggest_Wave.jpg">Foto: Wikimedia · Sergey Mysovskiy</p>
-    </div>
-    <div class="page-hero__content">
-      <p class="page-hero__kicker">SURF EM PORTUGAL · NAZARÉ E COSTA</p>
-      <h1 class="page-hero__headline">
-        <span class="page-hero__line">
-          <span class="page-hero__word" style="--i:0">Onde</span>
-          <span class="page-hero__word" style="--i:1">Nazaré</span>
-        </span>
-        <span class="page-hero__line">
-          <span class="page-hero__word" style="--i:2">mostra</span>
-          <span class="page-hero__word" style="--i:3">o</span>
-          <span class="page-hero__word" style="--i:4">Atlântico</span>
-          <span class="page-hero__word" style="--i:5">real.</span>
-        </span>
-      </h1>
-      <p class="page-hero__sub">De Supertubos e Nazaré às praias desertas da Costa Vicentina — spots de world-class para todos os níveis, com guia editorial e escolas certificadas.</p>
-      <div class="page-hero__actions">
-        <a href="#spot-filters" class="page-hero__cta page-hero__cta--primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-          Explorar Spots
-        </a>
-        <a href="planear.html?source=surf&tipo=surf&intent=planear" class="page-hero__cta page-hero__cta--secondary">Planear Escapada de Surf</a>
+  <!-- Hero "Surf hoje" (2026-10-07): css/beaches-hero-v4.css + css/surf-hero.css, js/surf-live.js + js/surf-hero.js -->
+  <header class="bh4 sh" aria-labelledby="sh-title">
+    <svg class="bh4__grid" aria-hidden="true"><defs><pattern id="sh-grid" width="106" height="137" patternUnits="userSpaceOnUse"><path d="M106 0V137M0 137H106" fill="none" stroke="#8fc2f2" stroke-opacity=".09"/></pattern></defs><rect width="100%" height="100%" fill="url(#sh-grid)"/></svg>
+    <div class="bh4__inner">
+      <div class="bh4__copy">
+        <p class="bh4__kicker"><span class="bh4__live" aria-hidden="true"></span><span data-sh="time">Ao vivo · 23 spots de surf</span></p>
+        <h1 class="bh4__title" id="sh-title">Surf em Portugal,<br><em>hoje</em></h1>
+        <p class="bh4__sub">Ondas, período e vento <strong>agora</strong> nos 23 spots que verificámos — e onde vale a pena entrar na água para o teu nível.</p>
+        <div class="sh__now">
+          <div class="sh__head"><span class="sh__k">O meu nível</span></div>
+          <div class="sh__lv" role="group" aria-label="O meu nível"><button type="button" data-lv="iniciante" aria-pressed="false">Iniciante</button><button type="button" data-lv="intermedio" aria-pressed="false">Intermédio</button><button type="button" data-lv="avancado" aria-pressed="false">Avançado</button></div>
+          <span class="sh__k">Melhores agora</span>
+          <ol class="sh__picks" data-sh="picks" aria-live="polite"><li class="sh__skel"></li><li class="sh__skel"></li><li class="sh__skel"></li></ol>
+          <div class="sh__foot"><ul class="sh__legend" aria-label="Melhores agora"><li data-k="good"><i></i><b data-sh="n-good">—</b> bons</li><li data-k="fair"><i></i><b data-sh="n-fair">—</b> razoáveis</li><li data-k="poor"><i></i><b data-sh="n-poor">—</b> fracos</li></ul></div>
+          <p class="sh__note">Estimativa automática com dados Open-Meteo: tamanho da onda para o nível, período, vento e swell. Confirma sempre as condições no local.</p>
+        </div>
+        <div class="bh4__ctas">
+          <a href="#spot-filters" class="bh4__cta bh4__cta--gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>Ver os 23 spots</a>
+          <a href="/planear?i=surf&ref=surf-hero" class="bh4__cta bh4__cta--ghost"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Planear surf trip</a>
+        </div>
+      </div>
+      <div class="bh4__stage">
+        <figure class="bh4__map" aria-label="Mapa de Portugal em relevo com os spots de surf coloridos pela avaliação de agora: verde bom, âmbar razoável, vermelho fraco">
+          <picture><source type="image/avif" srcset="/images/map/portugal-relevo-560.avif?v=2 560w, /images/map/portugal-relevo-760.avif?v=2 760w, /images/map/portugal-relevo-1000.avif?v=2 1000w" sizes="(max-width: 1180px) 300px, 361px"><img class="bh4__relief" src="/images/map/portugal-relevo-720.webp" srcset="/images/map/portugal-relevo-420.webp 420w, /images/map/portugal-relevo-720.webp 720w, /images/map/portugal-relevo-1000.webp 1000w" sizes="(max-width: 1180px) 300px, 361px" width="1250" height="2560" alt="Mapa de Portugal continental em relevo" fetchpriority="high" decoding="async"></picture>
+          <div class="bh4__sweep" aria-hidden="true"><span></span></div>
+          <svg class="bh4__svg" viewBox="0 0 1250 2560"><g data-sh="dots"></g><g class="bh4__labels" aria-hidden="true"><text x="400" y="537">Porto</text><text class="bh4__minor" x="386" y="778">Aveiro</text><text x="205" y="1689">Lisboa</text><text class="bh4__minor" x="305" y="2054">Sines</text><text class="bh4__minor" x="374" y="2422">Lagos</text><text x="581" y="2540">Faro</text></g></svg>
+          <div class="bh4__tip" role="status"></div>
+        </figure>
+        <img class="bh4__compass" src="/images/map/rosa-dos-ventos.svg" width="120" height="120" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div class="bh4__card bh4__card--islands" data-card="islands" hidden><p class="bh4__eye">Também no mapa</p><p class="bh4__cname">Açores</p><p class="bh4__cmeta" data-sh="islands"></p></div>
+        <a class="bh4__card bh4__card--waves" data-card="waves" hidden><p class="bh4__eye">Maiores ondas</p><p class="bh4__cname bh4__serif" data-sh="waves-name"></p><p class="bh4__cmeta" data-sh="waves-meta"></p></a>
+        <a class="bh4__card bh4__card--calm" data-card="calm" hidden><p class="bh4__eye">Melhor agora</p><p class="bh4__cname bh4__serif" data-sh="calm-name"></p><p class="bh4__cmeta" data-sh="calm-meta"></p></a>
       </div>
     </div>
-  </section>
+    <svg class="bh4__wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f6f4ef"/></svg>
+  </header>
 
+<main id="main">
   <!-- Breadcrumb -->
   <nav class="breadcrumb" aria-label="Localização na página">
     <a href="/">Início</a>
@@ -271,283 +274,93 @@
     <div class="spots-grid spots-grid--surf" id="spots-grid" role="list"></div>
   </section>
 
-  <!-- GetYourGuide experiences affiliate block -->
-  <section class="gyg-block gyg-block--with-video" aria-label="Reservar aulas de surf em Portugal">
-    <div class="gyg-block-bg">
-      <div class="gyg-block-inner">
-        <div class="gyg-block-header gyg-block-header--with-video">
-          <div class="gyg-block-video-side" id="video-verification">
-            <video
-              class="gyg-block-video-media"
-              src="https://cdn.portalturismoportugal.com/surf-verification.mp4"
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              aria-label="Surfista local a apanhar uma onda em Portugal">
-            </video>
-            <div class="gyg-block-video-overlay">
-              <p class="gyg-block-video-eyebrow">EDITORIAL</p>
-              <h3 class="gyg-block-video-title">Verificação Local Especializada</h3>
-            </div>
-          </div>
-          <div class="gyg-block-text-side">
-            <div class="gyg-block-number">№ 03</div>
-            <div class="gyg-block-headtext">
-              <div class="gyg-block-eyebrow">RESERVAR · EXPERIÊNCIA VERIFICADA</div>
-              <h2 class="gyg-block-title">Aulas e experiências de surf,<br><em>verificadas por nós.</em></h2>
-              <p class="gyg-block-trust">Selecionamos pessoalmente as escolas e operadores que listamos. Reviews verificadas, reserva instantânea, instrutores certificados. <span class="gyg-block-trust-emphasis">Cobramos pela verificação que fazemos — nunca por posição.</span></p>
-            </div>
-          </div>
+  <!-- Aulas + niveis + guia (v2, 2026-10-07): css/surf-sections.css -->
+  <div class="sx-swell sx-swell--in" aria-hidden="true" style="--sx-top:#f6f4ef;--sx-bot:#061428"><svg class="sx-swell__a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 58 C180 44 180 44 360 58 S540 72 720 58 C900 44 900 44 1080 58 S1260 72 1440 58 C1620 44 1620 44 1800 58 S1980 72 2160 58 C2340 44 2340 44 2520 58 S2700 72 2880 58 L2880 120 L0 120 Z"/></svg><svg class="sx-swell__b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 74 C180 64 180 64 360 74 S540 84 720 74 C900 64 900 64 1080 74 S1260 84 1440 74 C1620 64 1620 64 1800 74 S1980 84 2160 74 C2340 64 2340 64 2520 74 S2700 84 2880 74 L2880 120 L0 120 Z"/></svg></div>
+  <div class="sx-ocean">
+    <section class="sx-learn" id="aulas" aria-labelledby="sx-learn-h">
+      <div class="sx-learn__photo" aria-hidden="true"><img src="/images/heroes/surf-1200.webp" srcset="/images/heroes/surf-1200.webp 1200w, /images/heroes/surf-2000.webp 2000w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy" decoding="async"></div>
+      <div class="sx-wrap sx-learn__grid">
+        <div class="sx-learn__copy">
+          <h2 class="sx-h sx-h--light" id="sx-learn-h">Aprende com quem conhece estas ondas</h2>
+          <p class="sx-p sx-p--light">Aulas de grupo e particulares em escolas de surf de Portugal. Vês o preço, a duração e as avaliações de outros viajantes antes de reservar.</p>
+          <ul class="sx-ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Para iniciantes e para quem quer evoluir</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Prancha e fato normalmente incluídos — confirma em cada aula</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Reserva online, sem telefonemas</span></li></ul>
+          <p class="sx-quiet sx-quiet--light">Preferes falar diretamente com uma escola? <a href="/escolas-de-surf.html">Ver escolas de surf</a></p>
         </div>
-        <div class="gyg-block-frame">
-          <div class="gyg-block-frame-head">
-            <div class="gyg-block-frame-head-left">
-              <svg class="gyg-block-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20c2-2 4-3 6-3 2.5 0 4 1.5 6 1.5 2 0 3.5-1 4-1.5"/><path d="M9 9c0 2.5 1 4.5 3 6"/><path d="M15 3c-2 3-2.5 5.5-1 8"/></svg>
-              <div>
-                <div class="gyg-block-frame-title">3 experiências disponíveis</div>
-                <div class="gyg-block-frame-sub">Reserva instantânea via GetYourGuide</div>
-              </div>
-            </div>
-            <div class="gyg-block-frame-badge">Curated</div>
+        <div class="sx-learn__box">
+          <div class="sx-learn__head"><span class="sx-learn__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span><div><p class="sx-learn__t">Aulas e experiências de surf</p><p class="sx-learn__s">Reserva via GetYourGuide</p></div></div>
+          <div class="sx-learn__widget">
+            <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="pt-PT" data-gyg-widget="activities" data-gyg-number-of-items="3" data-gyg-cmp="pthsurfpt" data-gyg-partner-id="0WTBHZE" data-gyg-q="surf lesson Portugal"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/">GetYourGuide</a></span></div>
           </div>
-          <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="pt-PT" data-gyg-widget="activities" data-gyg-number-of-items="3" data-gyg-cmp="pthsurfpt" data-gyg-partner-id="0WTBHZE" data-gyg-q="surf lesson Portugal"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/">GetYourGuide</a></span></div>
-          <div class="gyg-block-frame-foot">
-            <div class="gyg-block-frame-foot-text">POWERED BY GETYOURGUIDE</div>
-          </div>
+          <a class="sx-learn__all" href="https://www.getyourguide.com/s/?q=surf%20lesson%20portugal&amp;partner_id=0WTBHZE&amp;cmp=pthsurfpt&amp;locale_autoredirect_optout=true" target="_blank" rel="noopener noreferrer sponsored">Ver todas as aulas de surf<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
         </div>
       </div>
-    </div>
-  </section>
+      <p class="sx-credit">Foto: Sergey Mysovskiy · Wikimedia Commons</p>
+    </section>
 
-  <section class="surf-shapers-summary content-block">
-    <h2>Os Shapers que constroem o surf portugu&ecirc;s</h2>
-    <p>O surf em Portugal n&atilde;o come&ccedil;ou nas escolas nem nos hot&eacute;is.
-    Come&ccedil;ou nas m&atilde;os de quatro shapers que, desde 1982, v&ecirc;m
-    a moldar a forma como o pa&iacute;s surfa.</p>
-    <ul class="shapers-quick-list">
-      <li><strong>Semente</strong> &middot; Ericeira &middot; desde 1982
-      &middot; a mais antiga</li>
-      <li><strong>Polen</strong> &middot; Cascais &middot; desde 1988 &middot;
-      maior f&aacute;brica, casa europeia de Pyzel/Stretch</li>
-      <li><strong>Fatum</strong> &middot; Peniche &middot; desde 1998 &middot;
-      14.000+ pranchas artesanais</li>
-      <li><strong>Mica</strong> &middot; Ericeira &middot; custom pura</li>
-    </ul>
-    <p><a href="/shapers-portugal" class="surf-shapers-cta">Ler o guia completo
-    dos shapers de Portugal &rarr;</a></p>
-  </section>
-
-  <!-- Guide -->
-  <section class="surf-guide" aria-label="Guia de surf em Portugal">
-    <div class="guide-inner">
-      <div class="guide-header">
-        <span class="guide-tag">Guia Editorial Independente</span>
-        <h2 class="guide-title">Portugal, um destino <em>mundial</em></h2>
-        <p class="guide-subtitle">Com 1800 km de costa exposta ao Atlântico Norte, Portugal é um dos destinos de surf mais consistentes e acessíveis do mundo — ondas de world-class de Nazaré a Supertubos, e praias ideais para aprender na Costa Vicentina e no Algarve. Este guia combina perfis de spot verificados, contexto de condições real e recomendações editoriais sem influência comercial.</p>
-      </div>
-      <div class="guide-cards">
-        <div class="guide-card">
-          <div class="guide-card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <h3 class="guide-card-title">Melhor Época</h3>
-          <p class="guide-card-body">Outubro a Abril é a época de ouro — o Atlântico Norte gera swells regulares e potentes. Verão (Junho–Setembro) é ideal para iniciantes: ondas mais pequenas, água mais quente (19–22°C) e melhores condições para aulas.</p>
-        </div>
-        <div class="guide-card">
-          <div class="guide-card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>
-          </div>
-          <h3 class="guide-card-title">Tipos de Onda</h3>
-          <p class="guide-card-body"><strong>Beach break</strong> — praia de areia, mais perdoável, ideal para aprender. <strong>Reef break</strong> — recife, potente e consistente. <strong>Point break</strong> — ondas longas e previsíveis, perfeito para evoluir a técnica.</p>
-        </div>
-        <div class="guide-card">
-          <div class="guide-card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-          </div>
-          <h3 class="guide-card-title">Para Quem?</h3>
-          <p class="guide-card-body"><strong>Iniciante</strong> → Caparica ou Amado com escola. <strong>Intermédio</strong> → Arrifana ou Guincho. <strong>Avançado/Pro</strong> → Supertubos ou Nazaré. Estime o seu nível antes de escolher o spot para maior segurança.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Para quem é -->
-  <section class="surf-quem reveal-sec" aria-labelledby="surf-quem-heading">
-    <div class="surf-quem-inner">
-      <div class="surf-quem-header">
-        <span class="surf-eyebrow">Escolher a experiência certa</span>
-        <h2 class="surf-sec-title" id="surf-quem-heading">Surf para <em>todos os perfis</em></h2>
-        <p class="surf-sec-sub">Portugal tem spots e escolas para todos — do primeiro contacto com a prancha ao big wave de alto rendimento.</p>
-      </div>
-      <div class="surf-quem-grid">
-        <div class="surf-quem-card" data-profile="iniciante">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#27ae60,#2ecc71);">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <h3 class="surf-quem-title">Iniciante</h3>
-          <p class="surf-quem-desc">Nunca surfou ou está nos primeiros meses? Costa da Caparica e Praia do Amado têm escolas certificadas com turmas pequenas e material incluído. Verão é a melhor época.</p>
-          <a href="planear.html?source=surf&tipo=surf&nivel=iniciante&intent=planear" class="surf-quem-link">
-            Planear aulas de surf
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
-        <div class="surf-quem-card" data-profile="intermedio">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#1a5fa3,#2980d4);">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <h3 class="surf-quem-title">Intermédio</h3>
-          <p class="surf-quem-desc">Já apanha ondas mas quer evoluir? Arrifana (point break consistente) e Guincho (exigente, vento forte) são os spots certos para subir de nível com um surf coach.</p>
-          <a href="planear.html?source=surf&tipo=surf&nivel=intermedio&intent=planear" class="surf-quem-link">
-            Encontrar surf coach
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
-        <div class="surf-quem-card" data-profile="avancado">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#7c600e,#c9a84c);">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <h3 class="surf-quem-title">Avançado / Pro</h3>
-          <p class="surf-quem-desc">Supertubos é palco do CT WSL. Nazaré é a maior onda do mundo. Para este nível, o único limite é a ambição — e as condições da swell do Atlântico Norte.</p>
-          <a href="#spots" class="surf-quem-link">
-            Ver spots avançados
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
-        <div class="surf-quem-card" data-profile="familia">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#6b2d8a,#9b59b6);">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="surf-quem-title">Família</h3>
-          <p class="surf-quem-desc">Caparica tem 30 km de praia com zonas balneares e diversas escolas. Ideal para dias de praia em que alguns surfam e outros relaxam. Acesso fácil de Lisboa.</p>
-          <a href="planear.html?source=surf&tipo=surf&intent=planear" class="surf-quem-link">
-            Planear escapada familiar
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
-        <div class="surf-quem-card" data-profile="experiencia">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#166534,#22c55e);">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          </div>
-          <h3 class="surf-quem-title">Experiência Única</h3>
-          <p class="surf-quem-desc">Santa Bárbara nos Açores combina surf com natureza vulcânica e paisagens únicas. Uma semana de surf em S. Miguel é muito mais que uma viagem de ondas.</p>
-          <a href="planear.html?source=surf&tipo=surf&region=A%C3%A7ores&intent=planear" class="surf-quem-link">
-            Surf nos Açores
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
-        <div class="surf-quem-card" data-profile="surftrip">
-          <div class="surf-quem-icon" style="background:linear-gradient(135deg,#0a3d6b,#1a5fa3);">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <h3 class="surf-quem-title">Surf Trip</h3>
-          <p class="surf-quem-desc">Planear uma semana de surf com amigos? A Costa Vicentina (Alentejo + Algarve Norte) é o circuito mais completo — múltiplos spots, alojamento de surf e ambiente descontraído.</p>
-          <a href="https://www.booksurfcamps.com/pt/all/d/europa/portugal?aid=11861" class="surf-quem-link" target="_blank" rel="noopener noreferrer sponsored">
-            Ver surf camps com alojamento
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Partner block -->
-  <section class="surf-partners reveal-sec" aria-labelledby="surf-partners-heading">
-    <div class="surf-partners-inner">
-      <div class="surf-partners-header">
-        <div>
-          <span class="surf-eyebrow">Operadores Recomendados</span>
-          <h2 class="surf-sec-title" id="surf-partners-heading">Escolas &amp; <em>experiências selecionadas</em></h2>
-        </div>
-        <span class="surf-partners-editorial">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Seleção editorial — sem comissões por venda
-        </span>
-      </div>
-      <div class="surf-partners-grid">
-
-        <!-- Card 1: demo partner -->
-        <article class="sp-card" data-partner-id="escola-surf-atlantico" data-partner-type="surf">
-          <div class="sp-card-top">
-            <div class="sp-card-eyebrow">
-              <span class="sp-card-cat">Escola de Surf &amp; Bodyboard</span>
-              <span class="sp-card-badge sp-badge--destaque">Destaque</span>
-            </div>
-            <div class="sp-card-icon" style="background:linear-gradient(135deg,#0a3d6b,#1a5fa3);">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-            </div>
-            <h3 class="sp-card-name">Escola de Surf Atlântico</h3>
-            <p class="sp-card-zone">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Nazaré, Costa de Prata
-            </p>
-            <p class="sp-card-prop">Turmas máx. 6 alunos, instrutores FPS certificados, material completo incluído. Todos os níveis.</p>
-          </div>
-          <div class="sp-card-footer">
-            <a href="partner-demo.html?source=surf&tipo=surf&parceiro=Escola%20de%20Surf%20Atl%C3%A2ntico" class="sp-card-cta" data-cta-type="partner-demo">
-              Ver Perfil Completo
-              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+    <section class="sx-levels" aria-labelledby="sx-levels-h">
+      <div class="sx-wrap">
+        <div class="sx-levels__head"><h2 class="sx-h sx-h--light" id="sx-levels-h">Qual é o teu mar?</h2><p class="sx-p sx-p--light">Do primeiro dia na prancha às ondas mais famosas do mundo. Escolhe o teu nível e mostramos os spots que lhe correspondem.</p></div>
+        <div class="sx-levels__grid">
+        <article class="sx-lv sx-lv--iniciante">
+          <img class="sx-lv__img" src="/images/spots/surf-costa-da-caparica-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 28 30 28 30 34 S45 36.1 60 34 C75 28 90 28 90 34 S105 36.1 120 34 C135 28 150 28 150 34 S165 36.1 180 34 C195 28 210 28 210 34 S225 36.1 240 34"/></svg>
+            <p class="sx-lv__rng">Ondas de 0,4 a 1,2 m</p>
+            <h3 class="sx-lv__t">Primeiras ondas</h3>
+            <p class="sx-lv__d">Fundo de areia, ondas pequenas e escolas na praia.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-costa-da-caparica" data-spot-jump="costa-da-caparica">Costa da Caparica</a><a class="sx-lv__chip" href="#spot-praia-do-amado" data-spot-jump="praia-do-amado">Praia do Amado</a><a class="sx-lv__chip" href="#spot-praia-de-matosinhos" data-spot-jump="praia-de-matosinhos">Matosinhos</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-surf-level="iniciante">Spots para iniciantes<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </article>
-
-        <!-- Card 2 -->
-        <article class="sp-card" data-partner-id="matosinhos-surf-academy" data-partner-type="surf">
-          <div class="sp-card-top">
-            <div class="sp-card-eyebrow">
-              <span class="sp-card-cat">Escola de Surf</span>
-              <span class="sp-card-badge sp-badge--verificado">Verificado</span>
-            </div>
-            <div class="sp-card-icon" style="background:linear-gradient(135deg,#071929,#0f3560);">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-            </div>
-            <h3 class="sp-card-name">Matosinhos Surf Academy</h3>
-            <p class="sp-card-zone">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Matosinhos, Porto
-            </p>
-            <p class="sp-card-prop">A escola de referência do Grande Porto. Acesso de metro, aulas todo o ano, grupos para adultos e jovens.</p>
-          </div>
-          <div class="sp-card-footer">
-            <a href="planear.html?source=surf&tipo=surf&region=Porto&parceiro=Matosinhos%20Surf%20Academy&intent=planear" class="sp-card-cta" data-cta-type="planear">
-              Saber Mais &amp; Planear
-              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+        <article class="sx-lv sx-lv--intermedio">
+          <img class="sx-lv__img" src="/images/spots/surf-praia-da-arrifana-algarve-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 21 30 21 30 34 S45 38.55 60 34 C75 21 90 21 90 34 S105 38.55 120 34 C135 21 150 21 150 34 S165 38.55 180 34 C195 21 210 21 210 34 S225 38.55 240 34"/></svg>
+            <p class="sx-lv__rng">Ondas de 0,7 a 2 m</p>
+            <h3 class="sx-lv__t">Evoluir</h3>
+            <p class="sx-lv__d">Picos consistentes e vento terral de manhã.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-praia-da-arrifana-algarve" data-spot-jump="praia-da-arrifana-algarve">Arrifana</a><a class="sx-lv__chip" href="#spot-praia-do-guincho" data-spot-jump="praia-do-guincho">Guincho</a><a class="sx-lv__chip" href="#spot-praia-de-ofir" data-spot-jump="praia-de-ofir">Ofir</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-surf-level="intermedio">Spots para intermédios<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </article>
-
-        <!-- Card 3 -->
-        <article class="sp-card" data-partner-id="vicentina-surf-experience" data-partner-type="surf">
-          <div class="sp-card-top">
-            <div class="sp-card-eyebrow">
-              <span class="sp-card-cat">Escola &amp; Surf Camp</span>
-              <span class="sp-card-badge sp-badge--novo">Novo</span>
-            </div>
-            <div class="sp-card-icon" style="background:linear-gradient(135deg,#0a1a10,#163020);">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-            </div>
-            <h3 class="sp-card-name">Vicentina Surf Experience</h3>
-            <p class="sp-card-zone">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Costa Vicentina, Alentejo
-            </p>
-            <p class="sp-card-prop">Surf camp na Costa Vicentina com alojamento integrado. Ambiente natural único, grupos max. 8, instrutores nativos.</p>
-          </div>
-          <div class="sp-card-footer">
-            <a href="planear.html?source=surf&tipo=surf&region=Alentejo&parceiro=Vicentina%20Surf%20Experience&intent=planear" class="sp-card-cta" data-cta-type="planear">
-              Saber Mais &amp; Planear
-              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+        <article class="sx-lv sx-lv--avancado">
+          <img class="sx-lv__img" src="/images/spots/surf-praia-da-nazare-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 12 30 12 30 34 S45 41.7 60 34 C75 12 90 12 90 34 S105 41.7 120 34 C135 12 150 12 150 34 S165 41.7 180 34 C195 12 210 12 210 34 S225 41.7 240 34"/></svg>
+            <p class="sx-lv__rng">Ondas de 1,2 m até ao big wave</p>
+            <h3 class="sx-lv__t">Ondas a sério</h3>
+            <p class="sx-lv__d">Tubos rápidos e mar grande, só com experiência.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-supertubos" data-spot-jump="supertubos">Supertubos</a><a class="sx-lv__chip" href="#spot-praia-da-nazare" data-spot-jump="praia-da-nazare">Praia do Norte</a><a class="sx-lv__chip" href="#spot-ribeira-grande-reef" data-spot-jump="ribeira-grande-reef">Ribeira Grande</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-surf-level="avancado">Spots avançados<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </article>
-
+        <article class="sx-lv sx-lv--trip">
+          <img class="sx-lv__img" src="/images/spots/surf-praia-de-odeceixe-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 25 30 25 30 34 S45 37.15 60 34 C75 25 90 25 90 34 S105 37.15 120 34 C135 25 150 25 150 34 S165 37.15 180 34 C195 25 210 25 210 34 S225 37.15 240 34"/></svg>
+            <p class="sx-lv__rng">Costa Vicentina</p>
+            <h3 class="sx-lv__t">Surf trip</h3>
+            <p class="sx-lv__d">Uma semana a seguir o swell, com alojamento de surf.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-praia-de-odeceixe" data-spot-jump="praia-de-odeceixe">Odeceixe</a><a class="sx-lv__chip" href="#spot-praia-do-amado" data-spot-jump="praia-do-amado">Amado</a><a class="sx-lv__chip" href="#spot-praia-do-castelejo" data-spot-jump="praia-do-castelejo">Castelejo</a></div>
+            <a class="sx-lv__cta" href="https://www.booksurfcamps.com/pt/all/d/europa/portugal?aid=11861" target="_blank" rel="noopener noreferrer sponsored">Ver surf camps<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </article>
+        </div>
       </div>
+    </section>
+  </div>
+  <div class="sx-swell sx-swell--out" aria-hidden="true" style="--sx-top:#061428;--sx-bot:#ffffff"><svg class="sx-swell__a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 58 C180 44 180 44 360 58 S540 72 720 58 C900 44 900 44 1080 58 S1260 72 1440 58 C1620 44 1620 44 1800 58 S1980 72 2160 58 C2340 44 2340 44 2520 58 S2700 72 2880 58 L2880 120 L0 120 Z"/></svg><svg class="sx-swell__b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 74 C180 64 180 64 360 74 S540 84 720 74 C900 64 900 64 1080 74 S1260 84 1440 74 C1620 64 1620 64 1800 74 S1980 84 2160 74 C2340 64 2340 64 2520 74 S2700 84 2880 74 L2880 120 L0 120 Z"/></svg></div>
 
-      <!-- B2B strip -->
-      <div class="sp-b2b-strip">
-        <p class="sp-b2b-text"><strong>Tem uma escola ou serviço de surf?</strong> Apareça junto de milhares de viajantes que pesquisam surf em Portugal todos os meses.</p>
-        <a href="contact.html?assunto=parceria&source=surf&tipo=surf&intent=b2b-inbound" class="sp-b2b-link">Candidatar como parceiro →</a>
+  <section class="sx-guide" aria-labelledby="sx-guide-h">
+    <div class="sx-wrap">
+      <h2 class="sx-h" id="sx-guide-h">Antes de ir</h2>
+      <div class="sx-guide__top">
+        <div class="sx-panel sx-panel--season"><h3 class="sx-h3">Quando ir</h3><p class="sx-small">O Atlântico Norte manda swell regular de outubro a abril. No verão o mar acalma e a água aquece: é a melhor altura para aprender.</p><ol class="sx-season" aria-label="Tamanho típico do mar ao longo do ano"><li class="sx-month is-swell" style="--h:100%" title="janeiro"><span class="sx-month__bar"></span><span class="sx-month__m">J</span></li><li class="sx-month is-swell" style="--h:100%" title="fevereiro"><span class="sx-month__bar"></span><span class="sx-month__m">F</span></li><li class="sx-month is-swell" style="--h:86%" title="março"><span class="sx-month__bar"></span><span class="sx-month__m">M</span></li><li class="sx-month is-swell" style="--h:73%" title="abril"><span class="sx-month__bar"></span><span class="sx-month__m">A</span></li><li class="sx-month" style="--h:53%" title="maio"><span class="sx-month__bar"></span><span class="sx-month__m">M</span></li><li class="sx-month is-learn" style="--h:43%" title="junho"><span class="sx-month__bar"></span><span class="sx-month__m">J</span></li><li class="sx-month is-learn" style="--h:36%" title="julho"><span class="sx-month__bar"></span><span class="sx-month__m">J</span></li><li class="sx-month is-learn" style="--h:36%" title="agosto"><span class="sx-month__bar"></span><span class="sx-month__m">A</span></li><li class="sx-month is-learn" style="--h:53%" title="setembro"><span class="sx-month__bar"></span><span class="sx-month__m">S</span></li><li class="sx-month is-swell" style="--h:80%" title="outubro"><span class="sx-month__bar"></span><span class="sx-month__m">O</span></li><li class="sx-month is-swell" style="--h:100%" title="novembro"><span class="sx-month__bar"></span><span class="sx-month__m">N</span></li><li class="sx-month is-swell" style="--h:100%" title="dezembro"><span class="sx-month__bar"></span><span class="sx-month__m">D</span></li></ol><ul class="sx-season__key"><li class="is-swell"><i></i>Mar maior e mais regular (out–abr)</li><li class="is-learn"><i></i>Melhor para aprender (jun–set)</li></ul></div>
+        <div class="sx-panel sx-panel--boards"><h3 class="sx-h3">Pranchas feitas cá</h3><p class="sx-small">Semente (Ericeira, desde 1982), Polen (Cascais), Fatum (Peniche) e Mica (Ericeira) fazem pranchas à mão para surfistas de todo o mundo.</p><a class="sx-link" href="/shapers-portugal">Conhecer os shapers<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
       </div>
+      <div class="sx-panel sx-panel--types"><h3 class="sx-h3">Três tipos de onda</h3><ul class="sx-types"><li class="sx-type"><svg class="sx-diag" viewBox="0 0 200 110" aria-hidden="true"><path class="sx-diag__sea" d="M0 46 C30 46 44 30 62 30 C80 30 84 46 110 46 L200 46"/><path class="sx-diag__lip" d="M62 30 C70 30 74 36 72 44"/><path class="sx-diag__bottom" d="M0 96 C50 92 90 84 140 74 C165 69 185 64 200 60"/><g class="sx-diag__sand"><circle cx="30" cy="100" r="1.6"/><circle cx="60" cy="96" r="1.6"/><circle cx="92" cy="92" r="1.6"/><circle cx="124" cy="84" r="1.6"/><circle cx="156" cy="76" r="1.6"/><circle cx="182" cy="70" r="1.6"/></g></svg><h4>Beach break</h4><p>Fundo de areia. Mais tolerante e o melhor sítio para aprender.</p></li><li class="sx-type"><svg class="sx-diag" viewBox="0 0 200 110" aria-hidden="true"><path class="sx-diag__sea" d="M0 46 C34 46 46 18 70 18 C92 18 94 46 120 46 L200 46"/><path class="sx-diag__lip" d="M70 18 C82 18 88 28 82 42"/><path class="sx-diag__bottom" d="M0 100 L30 98 L44 86 L56 90 L68 74 L80 80 L92 70 L106 78 L120 94 L160 98 L200 100"/></svg><h4>Reef</h4><p>Fundo de rocha ou lava. Onda potente e rápida, para quem já tem experiência.</p></li><li class="sx-type"><svg class="sx-diag" viewBox="0 0 200 110" aria-hidden="true"><path class="sx-diag__land" d="M200 0 L200 110 L150 110 C140 80 128 62 104 50 C120 34 150 20 200 0 Z"/><path class="sx-diag__sea" d="M96 52 C80 66 70 84 66 108"/><path class="sx-diag__sea" d="M74 40 C54 58 44 80 40 108"/><path class="sx-diag__sea" d="M54 28 C30 48 20 74 16 108"/><circle class="sx-diag__dot" cx="96" cy="54" r="4"/></svg><h4>Point break</h4><p>A onda contorna uma ponta de terra e corre longa e regular — ótima para evoluir.</p></li></ul></div>
+      <div class="sx-guides"><h3 class="sx-h3">Guias para ler a seguir</h3><ul><li><a href="/surf-portugal.html"><span>Surf em Portugal: o guia completo</span><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li><li><a href="/praias-surf-iniciantes-algarve.html"><span>Praias de surf para iniciantes no Algarve</span><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li><li><a href="/surf-algarve.html"><span>Surf no Algarve: spots e zonas</span><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li><li><a href="/praias-para-surfistas-iniciantes-portugal.html"><span>Praias para surfistas iniciantes em Portugal</span><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li></ul></div>
+      <p class="sx-quiet sx-b2b">Tens uma escola de surf? <a href="/contact.html?assunto=parceria&source=surf&tipo=surf&intent=b2b-inbound">Aparece nesta página</a></p>
     </div>
   </section>
 
@@ -572,55 +385,12 @@
     </div>
   </section>
 
-  <!-- SEO surf guides -->
-  <section class="seo-guides-band" aria-labelledby="surf-guides-title">
-    <div class="seo-guides-inner">
-      <span class="section-eyebrow">Guias de Surf</span>
-      <h2 class="section-title-lg" id="surf-guides-title">Guias aprofundados de surf em Portugal</h2>
-      <div class="seo-guides-grid">
-        <a href="/surf-portugal.html" class="seo-guide-card">
-          <p class="seo-guide-card-title">Surf em Portugal — O Guia Completo</p>
-          <p class="seo-guide-card-desc">Regiões, épocas, tipos de ondas e tudo o que precisas para planear uma viagem de surf em Portugal.</p>
-          <span class="seo-guide-cta">Ler guia →</span>
-        </a>
-        <a href="/praias-surf-iniciantes-algarve.html" class="seo-guide-card">
-          <p class="seo-guide-card-title">Praias de Surf para Iniciantes no Algarve</p>
-          <p class="seo-guide-card-desc">Ondas suaves, fundos de areia e escolas de surf. As melhores praias do Algarve para aprender a surfar.</p>
-          <span class="seo-guide-cta">Ler guia →</span>
-        </a>
-        <a href="surf-algarve.html" class="seo-guide-card">
-          <p class="seo-guide-card-title">Surf no Algarve — Spots e Zonas</p>
-          <p class="seo-guide-card-desc">Costa Vicentina, Sagres e Praia do Amado — guia por nível e zona com as melhores épocas e condições típicas.</p>
-          <span class="seo-guide-cta">Ler guia →</span>
-        </a>
-        <a href="praias-para-surfistas-iniciantes-portugal.html" class="seo-guide-card">
-          <p class="seo-guide-card-title">Praias para Surfistas Iniciantes em Portugal</p>
-          <p class="seo-guide-card-desc">Ondas pequenas, fundo de areia e escolas certificadas — guia por zona e época para quem está a aprender a surfar em Portugal.</p>
-          <span class="seo-guide-cta">Ler guia →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Plan CTA band -->
-  <section class="surf-plan-band reveal-sec" aria-labelledby="surf-plan-heading">
-    <div class="surf-plan-band-inner">
-      <h2 id="surf-plan-heading">Pronto para apanhar<br><em>a próxima onda?</em></h2>
-      <p>Diga-nos o seu nível, a região e as datas. Combinamos spot, escola e alojamento — uma escapada de surf feita à medida, sem stress de planeamento.</p>
-      <div class="surf-plan-band-row">
-        <a href="planear.html?source=surf&tipo=surf&intent=planear" class="spb-btn-gold">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-          Planear Escapada de Surf
-        </a>
-        <a href="beaches.html" class="spb-btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-          Explorar todas as Praias
-        </a>
-        <a href="webcams.html" class="spb-btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 11l6-4v10l-6-4"/></svg>
-          Ver Webcams ao Vivo
-        </a>
-      </div>
+  <!-- Banda final: planear (v2) -->
+  <section class="sx-plan" aria-labelledby="sx-plan-h">
+    <div class="sx-swell sx-swell--plan" aria-hidden="true" style="--sx-top:transparent;--sx-bot:transparent"><svg class="sx-swell__a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 58 C180 44 180 44 360 58 S540 72 720 58 C900 44 900 44 1080 58 S1260 72 1440 58 C1620 44 1620 44 1800 58 S1980 72 2160 58 C2340 44 2340 44 2520 58 S2700 72 2880 58 L2880 120 L0 120 Z"/></svg><svg class="sx-swell__b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 74 C180 64 180 64 360 74 S540 84 720 74 C900 64 900 64 1080 74 S1260 84 1440 74 C1620 64 1620 64 1800 74 S1980 84 2160 74 C2340 64 2340 64 2520 74 S2700 84 2880 74 L2880 120 L0 120 Z"/></svg></div>
+    <div class="sx-wrap sx-plan__in">
+      <div><h2 class="sx-plan__h" id="sx-plan-h">Pronto para a próxima onda?</h2><p class="sx-plan__p">Diz-nos a região, o nível e as datas. O planeador junta spots, alojamento e aulas num plano pronto a usar.</p></div>
+      <div class="sx-plan__row"><a class="sx-btn sx-btn--gold" href="/planear?i=surf&ref=surf-band"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Planear surf trip</a><a class="sx-btn sx-btn--ghost" href="/beaches"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>Ver todas as praias</a><a class="sx-btn sx-btn--ghost" href="/webcams"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 11l6-4v10l-6-4"/></svg>Webcams ao vivo</a></div>
     </div>
   </section>
 
@@ -680,8 +450,10 @@
 <script src="/js/config.js?v=20260508-isactive" defer></script>
 <script src="/js/affiliate.js?v=20261005b" defer></script>
 <script src="/js/beach-renderer.js?v=20260513-i18n4" defer></script>
-<script src="/js/surf-pesca-data.js?v=20261007-surf" defer></script>
-<script src="/js/surf-pesca-page.js?v=20261007-surf" defer></script>
+<script src="/js/surf-pesca-data.js?v=20261007-hero" defer></script>
+<script src="/js/surf-pesca-page.js?v=20261007-hero" defer></script>
+<script src="/js/surf-live.js?v=20261007" defer></script>
+<script src="/js/surf-hero.js?v=20261007" defer></script>
 <script>
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
   document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });

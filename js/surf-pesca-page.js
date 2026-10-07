@@ -156,7 +156,7 @@
         : '';
     var plan = '<a class="sc2__btn' + (primary ? '' : ' sc2__btn--primary') + '" href="' + planHref + '" aria-label="' + esc(L.ariaPlan(name)) + '">' + SC2_ICON.cal + esc(L.plan) + '</a>';
     return (
-      '<article class="spot-card sc2' + (primary ? '' : ' sc2--one') + '" role="listitem" data-spot-id="' + esc(s.id) + '">' +
+      '<article class="spot-card sc2' + (primary ? '' : ' sc2--one') + '" role="listitem" id="spot-' + esc(s.id) + '" data-spot-id="' + esc(s.id) + '">' +
         '<figure class="sc2__media">' + surfPhotoHtml(s, lang, L) +
           '<span class="sc2__chip sc2__chip--region">' + esc(lang === 'en' ? (SURF_REGION_EN[s.region] || s.region) : s.region) + '</span>' +
           (s.quality >= 5 ? '<span class="sc2__chip sc2__chip--wc">' + esc(L.worldClass) + '</span>' : '') +
@@ -165,6 +165,7 @@
         '<div class="sc2__body">' +
           '<div class="sc2__head"><h2 class="sc2__name">' + esc(name) + '</h2>' +
           '<p class="sc2__loc">' + SC2_ICON.pin + esc(pickLang(s.location, lang)) + '</p></div>' +
+          '<p class="sc2__now" hidden></p>' +
           '<div class="sc2__level"><span class="sc2__k">' + esc(L.level) + '</span>' +
             '<ul class="sc2__meter" aria-label="' + esc(L.ariaLevel(levelLabel)) + '">' + meter + '</ul></div>' +
           '<p class="sc2__hook">' + esc(pickLang(s.desc, lang)) + '</p>' +
@@ -284,6 +285,7 @@
       return;
     }
     _setHTML(grid, spots.map(function (s) { return surfCardHtml(s, T, lang); }).join(''));
+    try { document.dispatchEvent(new CustomEvent('pth:surf-render')); } catch (_) {} // js/surf-hero.js preenche o estado 'agora'
   }
 
   // ── Fishing spot renderer ─────────────────────────────────────────────────────

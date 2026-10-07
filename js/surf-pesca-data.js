@@ -940,6 +940,19 @@
     },
   ];
 
-  window.SurfPescaData = { SURF_SPOTS: SURF_SPOTS, FISH_SPOTS: FISH_SPOTS };
+  // Coordenadas dos spots de surf (lat, lng) — condicoes ao vivo (js/surf-live.js) e mapa do hero.
+  // Fonte: BD de praias (beaches.latitude/longitude) ou OpenStreetMap/Nominatim (Afife, Salema, Zavial, Acores), 2026-10-07.
+  var SURF_GEO = {
+    'supertubos': [39.3542, -9.3978], 'praia-da-nazare': [39.6000, -9.0736], 'praia-do-amado': [37.2112, -8.8712],
+    'costa-da-caparica': [38.6333, -9.2333], 'praia-do-guincho': [38.7234, -9.4712], 'praia-de-matosinhos': [41.1833, -8.6833],
+    'praia-de-santa-barbara-acores-1': [37.8167, -25.5488], 'praia-de-moledo': [41.8453, -8.8734], 'praia-de-afife': [41.7850, -8.8715],
+    'praia-de-cabedelo': [41.6845, -8.8395], 'praia-de-ancora': [41.8089, -8.8712], 'praia-de-esposende-surf': [41.5312, -8.7823],
+    'praia-de-ofir': [41.5333, -8.7833], 'praia-do-furadouro': [40.8912, -8.6678], 'praia-de-mira': [40.4334, -8.7934],
+    'praia-da-tocha': [40.3212, -8.8023], 'praia-de-buarcos': [40.1664, -8.8633], 'praia-da-arrifana-algarve': [37.2934, -8.8634],
+    'praia-do-castelejo': [37.1001, -8.9455], 'praia-da-zavial': [37.0463, -8.8715], 'praia-da-salema': [37.0650, -8.8246],
+    'praia-de-odeceixe': [37.4333, -8.7833], 'ribeira-grande-reef': [37.8187, -25.5429]
+  };
+
+  window.SurfPescaData = { SURF_SPOTS: SURF_SPOTS, FISH_SPOTS: FISH_SPOTS, SURF_GEO: SURF_GEO };
 
 })(window);

@@ -1,0 +1,66 @@
+/* Hero de /surf "Surf hoje" — complemento de css/beaches-hero-v4.css (mesmo componente .bh4) — 2026-10-07
+ * + linha "agora" nos cartoes de surf (.sc2__now) e realce ao saltar para um cartao (.is-flash).
+ */
+.sh .bh4__inner{grid-template-columns:520px minmax(0,1fr); padding-top:56px; padding-bottom:84px;}
+.sh .bh4__copy{gap:20px;}
+.sh .bh4__title{font-size:clamp(2.8rem,4.3vw,3.7rem); line-height:1.02;}
+.sh .bh4__sub{font-size:1.05rem;}
+
+/* Caixa "o meu nivel" + 3 melhores agora */
+.sh__now{width:100%; padding:16px; border-radius:20px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); display:flex; flex-direction:column; gap:12px;}
+.sh__head{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+.sh__k{font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#c7d6e8;}
+.sh__lv{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; padding:4px; border-radius:999px; background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.1);}
+.sh__lv button{min-height:40px; padding:0 10px; border:0; border-radius:999px; background:transparent; color:#dbe6f3; font:600 .86rem/1 'Inter',system-ui,sans-serif; cursor:pointer; transition:background .2s ease, color .2s ease;}
+.sh__lv button:hover{color:#fff; background:rgba(255,255,255,.08);}
+.sh__lv button[aria-pressed="true"]{background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 100%); color:var(--ink);}
+.sh__lv button:focus-visible{outline:2px solid var(--g2); outline-offset:2px;}
+.sh__picks{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px;}
+.sh__pick{display:grid; grid-template-columns:28px minmax(0,1fr) auto; align-items:center; gap:10px; padding:10px 12px; border-radius:14px;
+  background:rgba(6,20,42,.55); border:1px solid rgba(255,255,255,.1); color:#fff; text-decoration:none; transition:border-color .2s ease, transform .2s ease;}
+.sh__pick:hover{border-color:rgba(255,255,255,.35); transform:translateX(2px);}
+.sh__rank{width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:.85rem; background:rgba(255,255,255,.1); color:#fff;}
+.sh__pt{min-width:0; display:flex; flex-direction:column; gap:2px;}
+.sh__pt b{font-family:'Bodoni Moda',Georgia,serif; font-size:1.05rem; font-weight:700; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.sh__pt small{font-size:.76rem; color:#c9d6e6; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.sh__badge{padding:5px 10px; border-radius:999px; font-size:.72rem; font-weight:700; white-space:nowrap; background:rgba(255,255,255,.12); color:#fff;}
+.sh__pick[data-k="good"] .sh__badge{background:var(--calm); color:#05241a;}
+.sh__pick[data-k="fair"] .sh__badge{background:var(--mod); color:#2b1d00;}
+.sh__pick[data-k="poor"] .sh__badge, .sh__pick[data-k="big"] .sh__badge{background:var(--rough); color:#2a0606;}
+.sh__pick[data-k="good"] .sh__rank{background:rgba(52,224,176,.22);}
+.sh__skel{height:52px; border-radius:14px; background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.11),rgba(255,255,255,.05)); background-size:200% 100%; animation:sh-sk 1.4s linear infinite;}
+@keyframes sh-sk{from{background-position:200% 0;} to{background-position:-200% 0;}}
+.sh__empty{padding:10px 12px; border-radius:14px; background:rgba(6,20,42,.55); font-size:.85rem; color:#dbe6f3;}
+.sh__foot{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; font-size:.74rem; color:#b9c8da;}
+.sh__legend{display:flex; gap:12px; margin:0; padding:0; list-style:none;}
+.sh__legend li{display:inline-flex; align-items:center; gap:5px; white-space:nowrap;}
+.sh__legend b{font-weight:700; color:#fff; font-variant-numeric:tabular-nums;}
+.sh__legend i{width:8px; height:8px; border-radius:50%;}
+.sh__legend [data-k="good"] i{background:var(--calm);} .sh__legend [data-k="fair"] i{background:var(--mod);} .sh__legend [data-k="poor"] i{background:var(--rough);}
+.sh__note{margin:0; font-size:.72rem; line-height:1.45; color:#a9bad0;}
+.sh .bh4__card--calm .bh4__eye{color:#6ff0c9;}
+.sh .bh4__dot[data-level="na"] .bh4__core{fill:#8fa3bb;}
+.sh .bh4__dot[data-level="na"] .bh4__glow{opacity:.2;}
+
+@media (max-width:1180px){ .sh .bh4__inner{grid-template-columns:minmax(0,1fr);} }
+@media (max-width:640px){
+  .sh__now{padding:12px; gap:10px;}
+  .sh__lv button{font-size:.8rem; padding:0 6px;}
+  .sh__pick{padding:9px 10px; gap:9px;}
+  .sh__pt b{font-size:1rem;}
+  .sh__pt small{white-space:normal; line-height:1.35;}
+  .sh .bh4__title{font-size:2.7rem;}
+}
+@media (prefers-reduced-motion:reduce){ .sh__skel{animation:none;} .sh__pick{transition:none;} }
+
+/* ── Cartao de surf: estado agora ─────────────────────────────────────── */
+.sc2__now{margin:0; display:flex; align-items:center; flex-wrap:wrap; gap:0 4px; padding:7px 10px; border-radius:10px; background:#f2f6fa; font-size:.78rem; line-height:1.35; color:#475569;}
+.sc2__now[hidden]{display:none;}
+.sc2__now i{width:8px; height:8px; border-radius:50%; margin-right:4px; background:#94a3b8; flex:0 0 8px;}
+.sc2__now b{color:var(--sc2-ink); font-weight:700;}
+.sc2__now[data-k="good"]{background:#e8faf3;} .sc2__now[data-k="good"] i{background:#16a34a;}
+.sc2__now[data-k="fair"]{background:#fff6e5;} .sc2__now[data-k="fair"] i{background:#d97706;}
+.sc2__now[data-k="poor"], .sc2__now[data-k="big"]{background:#fdeeee;} .sc2__now[data-k="poor"] i, .sc2__now[data-k="big"] i{background:#dc2626;}
+@keyframes sc2-flash{0%{box-shadow:0 0 0 0 rgba(201,168,76,.9);} 100%{box-shadow:0 0 0 14px rgba(201,168,76,0);}}
+.spot-card.sc2.is-flash{animation:sc2-flash 1.2s ease-out 2; border-color:#c9a84c;}
+.spot-card.sc2{scroll-margin-top:90px;}
