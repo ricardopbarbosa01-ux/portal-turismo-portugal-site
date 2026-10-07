@@ -34,7 +34,7 @@
 
 .lh__title{margin:0; font-family:'Montserrat','Inter',system-ui,sans-serif; font-weight:800; letter-spacing:-.025em; line-height:1.02;
   font-size:clamp(2.2rem, 4.7vw, 4.25rem); color:#fff; text-shadow:0 2px 30px rgba(0,0,0,.35);}
-.lh__line{display:block; animation:lh-up .9s cubic-bezier(.22,1,.36,1) both; animation-delay:calc(.12s + var(--d) * .12s);}
+.lh__line{display:block; animation:lh-up-t .9s cubic-bezier(.22,1,.36,1) both; animation-delay:calc(.12s + var(--d) * .12s);}
 .lh__title em{font-family:'Bodoni Moda',Georgia,serif; font-style:italic; font-weight:600; letter-spacing:-.01em; padding-right:.08em;
   background:linear-gradient(100deg,#f3d98f 0%,#c9a84c 45%,#f6e3a6 70%,#c9a84c 100%); background-size:220% 100%;
   -webkit-background-clip:text; background-clip:text; color:transparent; animation:lh-sheen 6s ease-in-out 1.2s infinite;}
@@ -42,6 +42,7 @@
 .lh__sub{margin:22px 0 0; max-width:50ch; font-size:clamp(1rem,1.35vw,1.16rem); line-height:1.6; color:rgba(255,255,255,.84);
   animation:lh-up .9s cubic-bezier(.22,1,.36,1) .42s both;}
 .lh__sub strong{color:#fff; font-weight:600;}
+@keyframes lh-up-t{from{transform:translate3d(0,22px,0);} to{transform:none;}}
 @keyframes lh-up{from{opacity:0; transform:translate3d(0,22px,0);} to{opacity:1; transform:none;}}
 
 /* Pesquisa */
