@@ -65,7 +65,7 @@
       {
         "@type": "Question",
         "name": "Do I need a licence to fish in Portugal?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Recreational fishing in Portugal requires a licence issued by the ICNF (Institute for Nature Conservation and Forests). The annual licence is affordable and can be obtained online via the ICNF portal or at fishing tackle shops. Protected areas may have additional restrictions — always check before fishing."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. At sea, the recreational fishing licence is issued by DGRM and requested online at the Balcão Eletrónico do Mar (bmar.pt): shore, boat, spearfishing or all, monthly or annual. Rivers and reservoirs need a separate inland-waters licence issued by ICNF. Protected areas may have additional restrictions — always check before fishing."}
       },
       {
         "@type": "Question",
@@ -107,6 +107,12 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20261007-fotos">
+  <link rel="stylesheet" href="/css/surf-card-v2.css?v=20261007c">
+  <link rel="stylesheet" href="/css/beaches-hero-v4.css?v=20261007p">
+  <link rel="stylesheet" href="/css/surf-hero.css?v=20261007b">
+  <link rel="stylesheet" href="/css/surf-sections.css?v=20261007c">
+  <link rel="stylesheet" href="/css/pesca-page-v2.css?v=20261007">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="/images/map/portugal-relevo-560.avif?v=2 560w, /images/map/portugal-relevo-760.avif?v=2 760w, /images/map/portugal-relevo-1000.avif?v=2 1000w" imagesizes="(max-width: 1180px) 300px, 361px" fetchpriority="high">
   <link rel="stylesheet" href="/css/gyg-block.css?v=20260513-gyg2">
 
 <link rel="stylesheet" href="/css/style.css?v=20260522-navdd-c">
@@ -192,47 +198,44 @@
   <button class="i18n-notice-close" onclick="this.parentElement.remove();try{localStorage.setItem('i18n-notice-ok','1')}catch(e){}" aria-label="Dismiss">✕</button>
 </div>
 <script>try{if(localStorage.getItem('i18n-notice-ok'))document.getElementById('i18n-notice').style.display='none'}catch(e){}</script>
-<main id="main">
-
-  <!-- Hero -->
-  <section class="page-hero" aria-label="Fishing in Portugal">
-    <div class="page-hero__media">
-      <img class="page-hero__image"
-           src="https://glupdjvdvunogkqgxoui.supabase.co/storage/v1/object/public/card-images/beaches/bda7327b-9ffb-4d86-b241-6dba88ed8dfd.jpg"
-           srcset="/images/heroes/pesca-1200.webp 1200w, /images/heroes/pesca-2000.webp 2000w"
-           sizes="(max-width: 768px) 90vw, 60vw"
-           fetchpriority="high"
-           alt="Fishing in Portugal — Atlantic coast"
-           loading="eager">
-      <div class="page-hero__media-overlay" aria-hidden="true"></div>
-      <p class="page-hero__attribution" data-source-url="https://www.pexels.com/photo/33226356/">Photo: Pexels</p>
-    </div>
-    <div class="page-hero__content">
-      <p class="page-hero__kicker">FISHING IN PORTUGAL · ATLANTIC COAST</p>
-      <h1 class="page-hero__headline">
-        <span class="page-hero__line">
-          <span class="page-hero__word" style="--i:0">The</span>
-          <span class="page-hero__word" style="--i:1">fishing</span>
-          <span class="page-hero__word" style="--i:2">that</span>
-          <span class="page-hero__word" style="--i:3">still</span>
-          <span class="page-hero__word" style="--i:4">exists</span>
-        </span>
-        <span class="page-hero__line">
-          <span class="page-hero__word" style="--i:5">in</span>
-          <span class="page-hero__word" style="--i:6">Portuguese</span>
-          <span class="page-hero__word" style="--i:7">waters.</span>
-        </span>
-      </h1>
-      <p class="page-hero__sub">From Sagres and Sesimbra to the Azores — 1,800 km of Atlantic coastline with big game charters, sheltered rias and virgin rock.</p>
-      <div class="page-hero__actions">
-        <a href="#spots" class="page-hero__cta page-hero__cta--primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-          Explore Spots
-        </a>
-        <a href="/en/planear.html?source=pesca&tipo=pesca&intent=planear" class="page-hero__cta page-hero__cta--secondary">Plan a Fishing Trip</a>
+  <!-- Hero "Pesca hoje" (2026-10-07): css/beaches-hero-v4.css + css/surf-hero.css, js/pesca-live.js + js/pesca-hero.js -->
+  <header class="bh4 sh ph" aria-labelledby="ph-title">
+    <svg class="bh4__grid" aria-hidden="true"><defs><pattern id="ph-grid" width="106" height="137" patternUnits="userSpaceOnUse"><path d="M106 0V137M0 137H106" fill="none" stroke="#8fc2f2" stroke-opacity=".09"/></pattern></defs><rect width="100%" height="100%" fill="url(#ph-grid)"/></svg>
+    <div class="bh4__inner">
+      <div class="bh4__copy">
+        <p class="bh4__kicker"><span class="bh4__live" aria-hidden="true"></span><span data-ph="time">Live · 25 fishing spots</span></p>
+        <h1 class="bh4__title" id="ph-title">Fishing in Portugal,<br><em>today</em></h1>
+        <p class="bh4__sub">Sea, wind, tide and water temperature <strong>right now</strong> at 25 spots — from rocks to boats, lagoons to rivers.</p>
+        <div class="sh__now">
+          <div class="sh__head"><span class="sh__k">What kind of fishing?</span></div>
+          <div class="sh__lv" role="group" aria-label="What kind of fishing?"><button type="button" data-mode="costa" aria-pressed="false">Shore & rocks</button><button type="button" data-mode="barco" aria-pressed="false">Boat</button><button type="button" data-mode="ria" aria-pressed="false">Lagoon & river</button></div>
+          <span class="sh__k">Best right now</span>
+          <ol class="sh__picks" data-ph="picks" aria-live="polite"><li class="sh__skel"></li><li class="sh__skel"></li><li class="sh__skel"></li></ol>
+          <div class="sh__foot"><ul class="sh__legend" aria-label="Best right now"><li data-k="good"><i></i><b data-ph="n-good">—</b> good</li><li data-k="fair"><i></i><b data-ph="n-fair">—</b> fair</li><li data-k="poor"><i></i><b data-ph="n-poor">—</b> tough</li></ul></div>
+          <p class="sh__note">Automatic estimate from Open-Meteo data: sea height, wind and tide. Never fish from rocks in a heavy sea — always check conditions on the spot.</p>
+        </div>
+        <div class="bh4__ctas">
+          <a href="#spot-filters" class="bh4__cta bh4__cta--gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>See all 25 spots</a>
+          <a href="/en/planear?i=pesca&ref=pesca-hero" class="bh4__cta bh4__cta--ghost"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Plan a fishing trip</a>
+        </div>
+      </div>
+      <div class="bh4__stage">
+        <figure class="bh4__map" aria-label="Relief map of Portugal with fishing spots coloured by the current rating: green good, amber fair, red tough">
+          <picture><source type="image/avif" srcset="/images/map/portugal-relevo-560.avif?v=2 560w, /images/map/portugal-relevo-760.avif?v=2 760w, /images/map/portugal-relevo-1000.avif?v=2 1000w" sizes="(max-width: 1180px) 300px, 361px"><img class="bh4__relief" src="/images/map/portugal-relevo-720.webp" srcset="/images/map/portugal-relevo-420.webp 420w, /images/map/portugal-relevo-720.webp 720w, /images/map/portugal-relevo-1000.webp 1000w" sizes="(max-width: 1180px) 300px, 361px" width="1250" height="2560" alt="Relief map of mainland Portugal" fetchpriority="high" decoding="async"></picture>
+          <div class="bh4__sweep" aria-hidden="true"><span></span></div>
+          <svg class="bh4__svg" viewBox="0 0 1250 2560"><g data-ph="dots"></g><g class="bh4__labels" aria-hidden="true"><text x="400" y="537">Porto</text><text class="bh4__minor" x="386" y="778">Aveiro</text><text x="205" y="1689">Lisbon</text><text class="bh4__minor" x="305" y="2054">Sines</text><text class="bh4__minor" x="374" y="2422">Lagos</text><text x="581" y="2540">Faro</text></g></svg>
+          <div class="bh4__tip" role="status"></div>
+        </figure>
+        <img class="bh4__compass" src="/images/map/rosa-dos-ventos.svg" width="120" height="120" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div class="bh4__card bh4__card--islands" data-card="islands" hidden><p class="bh4__eye">Also on the map</p><p class="bh4__cname">Azores & Madeira</p><p class="bh4__cmeta" data-ph="islands"></p></div>
+        <div class="bh4__card bh4__card--waves ph__mooncard" data-card="moon" hidden><span class="ph__moon" aria-hidden="true"></span><p class="bh4__eye">Moon today</p><p class="bh4__cname bh4__serif" data-ph="moon-name"></p><p class="bh4__cmeta" data-ph="moon-meta"></p></div>
+        <a class="bh4__card bh4__card--calm" data-card="calm" hidden><p class="bh4__eye">Best right now</p><p class="bh4__cname bh4__serif" data-ph="calm-name"></p><p class="bh4__cmeta" data-ph="calm-meta"></p></a>
       </div>
     </div>
-  </section>
+    <svg class="bh4__wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#f6f4ef"/></svg>
+  </header>
+
+<main id="main">
 
   <!-- Breadcrumb -->
   <nav class="breadcrumb" aria-label="Page location">
@@ -241,50 +244,8 @@
     <span aria-current="page">Fishing</span>
   </nav>
 
-  <!-- Choose your style -->
-  <section class="estilo-section" aria-label="Types of fishing in Portugal">
-    <div class="estilo-section-inner">
-      <div class="estilo-header">
-        <span class="estilo-tag">How do you want to fish?</span>
-        <h2 class="estilo-title">Choose your <em>fishing style</em></h2>
-      </div>
-      <div class="estilo-grid">
-        <a href="/en/planear.html?source=pesca&tipo=pesca&subtipo=costeira&intent=planear" class="estilo-card" data-pesca-estilo="costeira">
-          <div class="estilo-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M22 20H2"/></svg></div>
-          <div><div class="estilo-who">All Levels</div><div class="estilo-name">Shore</div></div>
-          <p class="estilo-desc">Surfcasting on sandy beaches — accessible, no boat required, with a wide variety of species along the entire coast.</p>
-          <span class="estilo-link">Plan a shore trip <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </a>
-        <a href="/en/planear.html?source=pesca&tipo=pesca&subtipo=embarcacao&intent=planear" class="estilo-card" data-pesca-estilo="embarcacao">
-          <div class="estilo-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/></svg></div>
-          <div><div class="estilo-who">Intermediate · Experienced</div><div class="estilo-name">Boat</div></div>
-          <p class="estilo-desc">Big game, jigging and trolling offshore. Tuna, marlin and pelagic species in the Azores, Setúbal and Algarve.</p>
-          <span class="estilo-link">Plan a boat trip <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </a>
-        <a href="/en/planear.html?source=pesca&tipo=pesca&subtipo=rocha&intent=planear" class="estilo-card" data-pesca-estilo="rocha">
-          <div class="estilo-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l4-8 4 4 3-6 5 10H3z"/></svg></div>
-          <div><div class="estilo-who">Intermediate · Experienced</div><div class="estilo-name">Rock</div></div>
-          <p class="estilo-desc">Bottom rigs on rocky headlands. Quality snapper, grouper and sea bream in technically demanding access zones.</p>
-          <span class="estilo-link">Plan a rock fishing trip <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </a>
-        <a href="/en/planear.html?source=pesca&tipo=pesca&subtipo=ria&intent=planear" class="estilo-card" data-pesca-estilo="ria">
-          <div class="estilo-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c4-2 8 2 12 0s8-2 8 0"/><path d="M2 18c4-2 8 2 12 0s8-2 8 0"/></svg></div>
-          <div><div class="estilo-who">Beginner · Family</div><div class="estilo-name">Ria &amp; Estuary</div></div>
-          <p class="estilo-desc">Calm fishing in protected waters. Gilt-head bream, sea bass and sole in Ria Formosa, Ria de Aveiro and the Sado.</p>
-          <span class="estilo-link">Plan a ria fishing trip <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </a>
-        <a href="/en/planear.html?source=pesca&tipo=pesca&subtipo=fluvial&intent=planear" class="estilo-card" data-pesca-estilo="fluvial">
-          <div class="estilo-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c4-2 8 2 12 0s8-2 8 0"/><path d="M2 12c4-2 8 2 12 0s8-2 8 0"/><path d="M2 18c4-2 8 2 12 0s8-2 8 0"/></svg></div>
-          <div><div class="estilo-who">Intermediate</div><div class="estilo-name">River</div></div>
-          <p class="estilo-desc">Shad, lamprey and trout in northern rivers and estuaries. Short seasonal window with unique migratory species.</p>
-          <span class="estilo-link">Plan a river fishing trip <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Filters -->
-  <div class="pesca-filters" role="search" aria-label="Filter fishing spots">
+  <div class="pesca-filters" id="spot-filters" role="search" aria-label="Filter fishing spots">
     <div class="filter-top">
       <span class="filter-label">Type:</span>
       <div class="tipo-tabs" role="group" aria-label="Filter by fishing type" id="tipo-tabs">
@@ -300,7 +261,6 @@
     <div class="region-chips-bar" role="group" aria-label="Region filter" id="region-chips">
       <button class="chip active" data-region="">All Regions</button>
       <button class="chip" data-region="Norte">North</button>
-      <button class="chip" data-region="Porto">Porto</button>
       <button class="chip" data-region="Centro">Centro</button>
       <button class="chip" data-region="Lisboa">Lisbon</button>
       <button class="chip" data-region="Alentejo">Alentejo</button>
@@ -310,199 +270,111 @@
     </div>
   </div>
 
-  <!-- GetYourGuide experiences affiliate block -->
-  <section class="gyg-block" aria-label="Book fishing experiences in Portugal">
-    <div class="gyg-block-bg">
-      <div class="gyg-block-inner">
-        <div class="gyg-block-header">
-          <div class="gyg-block-number">№ 03</div>
-          <div class="gyg-block-headtext">
-            <div class="gyg-block-eyebrow">BOOK · VERIFIED EXPERIENCE</div>
-            <h2 class="gyg-block-title">Fishing experiences in Portugal,<br><em>verified by us.</em></h2>
-            <p class="gyg-block-trust">We personally select the schools and operators we list. Verified reviews, instant booking, certified instructors. <span class="gyg-block-trust-emphasis">We charge for our verification — never for placement.</span></p>
-          </div>
-        </div>
-        <div class="gyg-block-frame">
-          <div class="gyg-block-frame-head">
-            <div class="gyg-block-frame-head-left">
-              <svg class="gyg-block-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18l9-15 9 15H3z"/><path d="M12 3v15"/></svg>
-              <div>
-                <div class="gyg-block-frame-title">3 trips available</div>
-                <div class="gyg-block-frame-sub">Instant booking via GetYourGuide</div>
-              </div>
-            </div>
-            <div class="gyg-block-frame-badge">Curated</div>
-          </div>
-          <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="3" data-gyg-cmp="pthpesca" data-gyg-partner-id="0WTBHZE" data-gyg-q="fishing Portugal"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/">GetYourGuide</a></span></div>
-          <div class="gyg-block-frame-foot">
-            <div class="gyg-block-frame-foot-text">POWERED BY GETYOURGUIDE</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Spots -->
   <section class="spots-section" id="spots" aria-label="Fishing spots in Portugal">
-    <div class="spots-grid" id="spots-grid" role="list"></div>
+    <div class="spots-grid spots-grid--v2" id="spots-grid" role="list"></div>
   </section>
 
-  <!-- Guide -->
-  <section class="pesca-guide" aria-label="Fishing guide for Portugal">
-    <div class="guide-inner">
-      <div class="guide-header">
-        <span class="guide-tag">Editorial Guide</span>
-        <h2 class="guide-title">Portugal, a truly <em>world-class</em> coast</h2>
-        <p class="guide-subtitle">1,800 km of Atlantic coastline, rich estuaries and remote archipelagos make Portugal one of Europe's most diverse fishing destinations.</p>
-      </div>
-      <div class="guide-cards">
-        <div class="guide-card">
-          <div class="guide-card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <h3 class="guide-card-title">Licences &amp; Regulations</h3>
-          <p class="guide-card-body">Recreational fishing in Portugal requires a licence from the <strong>ICNF</strong>. The annual licence is affordable and can be obtained online via the ICNF portal or at fishing tackle shops. Protected zones and closed seasons vary — always check local regulations before fishing.</p>
+  <!-- Saidas + tipos de pesca + guia (v2, 2026-10-07): css/surf-sections.css + css/pesca-page-v2.css -->
+  <div class="sx-swell sx-swell--in" aria-hidden="true" style="--sx-top:#f6f4ef;--sx-bot:#061428"><svg class="sx-swell__a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 58 C180 44 180 44 360 58 S540 72 720 58 C900 44 900 44 1080 58 S1260 72 1440 58 C1620 44 1620 44 1800 58 S1980 72 2160 58 C2340 44 2340 44 2520 58 S2700 72 2880 58 L2880 120 L0 120 Z"/></svg><svg class="sx-swell__b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 74 C180 64 180 64 360 74 S540 84 720 74 C900 64 900 64 1080 74 S1260 84 1440 74 C1620 64 1620 64 1800 74 S1980 84 2160 74 C2340 64 2340 64 2520 74 S2700 84 2880 74 L2880 120 L0 120 Z"/></svg></div>
+  <div class="sx-ocean">
+    <section class="sx-learn" id="saidas" aria-labelledby="sx-learn-h">
+      <div class="sx-learn__photo" aria-hidden="true"><img src="/images/spots/pesca-portimao-barco-800.webp" alt="" loading="lazy" decoding="async"></div>
+      <div class="sx-wrap sx-learn__grid">
+        <div class="sx-learn__copy">
+          <h2 class="sx-h sx-h--light" id="sx-learn-h">Head out with people who know these waters</h2>
+          <p class="sx-p sx-p--light">Boat fishing trips, from coastal jigging to big game. See price, duration and reviews from other travellers before you book.</p>
+          <ul class="sx-ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>For beginners and experienced anglers</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Gear usually included — check each trip</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Book online, no phone calls</span></li></ul>
         </div>
-        <div class="guide-card">
-          <div class="guide-card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 6c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
+        <div class="sx-learn__box">
+          <div class="sx-learn__head"><span class="sx-learn__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M6.5 12L3 9v6z"/></svg></span><div><p class="sx-learn__t">Fishing trips & experiences</p><p class="sx-learn__s">Booked via GetYourGuide</p></div></div>
+          <div class="sx-learn__widget">
+            <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="3" data-gyg-cmp="pthpesca" data-gyg-partner-id="0WTBHZE" data-gyg-q="fishing Portugal"><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/">GetYourGuide</a></span></div>
           </div>
-          <h3 class="guide-card-title">Fishing Types</h3>
-          <p class="guide-card-body"><strong>Shore / Beach</strong> — surfcasting on sandy beaches. <strong>Rock</strong> — bottom rigs on rocky headlands. <strong>Boat</strong> — big game and jigging offshore. <strong>Ria &amp; Estuary</strong> — calm waters and diverse species. <strong>River</strong> — seasonal migratory species.</p>
-        </div>
-        <div class="guide-card">
-          <div class="guide-card-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-          </div>
-          <h3 class="guide-card-title">Who Is It For?</h3>
-          <p class="guide-card-body"><strong>Beginners</strong> → Ria Formosa or Ria de Aveiro, calm waters and accessible species. <strong>Intermediate</strong> → Sines coast (surfcasting) or Portimão by boat. <strong>Experienced</strong> → Sagres (rock) or Azores (offshore big game).</p>
+          <a class="sx-learn__all" href="https://www.getyourguide.com/s/?q=fishing%20portugal&amp;partner_id=0WTBHZE&amp;cmp=pthpesca&amp;locale_autoredirect_optout=true" target="_blank" rel="noopener noreferrer sponsored">See all fishing trips<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
         </div>
       </div>
-    </div>
-  </section>
+      <p class="sx-credit">Photo: Vitor Oliveira · Wikimedia Commons</p>
+    </section>
 
-  <!-- Licences & Rules -->
-  <section class="licencas-section" aria-label="Fishing licences and rules in Portugal">
-    <div class="licencas-inner">
-      <div class="guide-header">
-        <span class="guide-tag">Regulations</span>
-        <h2 class="guide-title">Licences &amp; <em>Rules</em></h2>
-        <p class="guide-subtitle">Know the legal requirements before heading out — in Portugal, recreational fishing requires a valid licence for any method.</p>
-      </div>
-      <div class="licencas-grid">
-        <div class="licenca-block">
-          <div class="licenca-block-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 11 12 14 22 4"/></svg>
+    <section class="sx-levels" aria-labelledby="sx-levels-h">
+      <div class="sx-wrap">
+        <div class="sx-levels__head"><h2 class="sx-h sx-h--light" id="sx-levels-h">What kind of fishing is yours?</h2><p class="sx-p sx-p--light">Five ways to fish in Portugal, each with its own spots. Pick one and we show you where.</p></div>
+        <div class="sx-levels__grid sx-levels__grid--5">
+        <article class="sx-lv sx-lv--fish sx-lv--costeira">
+          <img class="sx-lv__img" src="/images/spots/pesca-costa-vicentina-odeceixe-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 26 30 26 30 34 S45 36.8 60 34 C75 26 90 26 90 34 S105 36.8 120 34 C135 26 150 26 150 34 S165 36.8 180 34 C195 26 210 26 210 34 S225 36.8 240 34"/></svg>
+            <p class="sx-lv__rng">All levels</p>
+            <h3 class="sx-lv__t">Shore</h3>
+            <p class="sx-lv__d">Surfcasting from sandy beaches, no boat needed.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-costa-de-sines" data-spot-jump="costa-de-sines">Sines</a><a class="sx-lv__chip" href="#spot-costa-vicentina-odeceixe" data-spot-jump="costa-vicentina-odeceixe">Odeceixe</a><a class="sx-lv__chip" href="#spot-praia-esposende-costa" data-spot-jump="praia-esposende-costa">Esposende</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-fish-tipo="costeira">Shore spots<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
-          <h3 class="licenca-block-title">Recreational Fishing Licence</h3>
-          <div class="licenca-list">
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Issuing authority:</strong> ICNF — Institute for Nature Conservation and Forests. Obtained online via the ICNF portal or at fishing tackle shops.</div></div>
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Types:</strong> General annual licence, freshwater fishing licence and boat fishing licence — each with specific requirements.</div></div>
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Affordable cost:</strong> The annual licence for maritime recreational fishing is low-cost. Under-16s and over-65s are exempt in some categories.</div></div>
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Validity:</strong> Annual, 1 January to 31 December. Renewal available online before each new season.</div></div>
+        </article>
+        <article class="sx-lv sx-lv--fish sx-lv--embarcacao">
+          <img class="sx-lv__img" src="/images/spots/pesca-portimao-barco-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 18 30 18 30 34 S45 39.6 60 34 C75 18 90 18 90 34 S105 39.6 120 34 C135 18 150 18 150 34 S165 39.6 180 34 C195 18 210 18 210 34 S225 39.6 240 34"/></svg>
+            <p class="sx-lv__rng">Intermediate to experienced</p>
+            <h3 class="sx-lv__t">Boat</h3>
+            <p class="sx-lv__d">Jigging, trolling and big game offshore.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-sesimbra-mar-alto" data-spot-jump="sesimbra-mar-alto">Sesimbra</a><a class="sx-lv__chip" href="#spot-portimao-barco" data-spot-jump="portimao-barco">Portimão</a><a class="sx-lv__chip" href="#spot-acores-sao-miguel" data-spot-jump="acores-sao-miguel">Azores</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-fish-tipo="embarcacao">Boat spots<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
+        </article>
+        <article class="sx-lv sx-lv--fish sx-lv--rocha">
+          <img class="sx-lv__img" src="/images/spots/pesca-sagres-ponta-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 14 30 14 30 34 S45 41.0 60 34 C75 14 90 14 90 34 S105 41.0 120 34 C135 14 150 14 150 34 S165 41.0 180 34 C195 14 210 14 210 34 S225 41.0 240 34"/></svg>
+            <p class="sx-lv__rng">Intermediate to experienced</p>
+            <h3 class="sx-lv__t">Rocks</h3>
+            <p class="sx-lv__d">Bottom fishing from rocky points — calm seas only.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-sagres-ponta" data-spot-jump="sagres-ponta">Sagres</a><a class="sx-lv__chip" href="#spot-costa-sines-rocha" data-spot-jump="costa-sines-rocha">Sines</a><a class="sx-lv__chip" href="#spot-praia-da-rocha-portimao" data-spot-jump="praia-da-rocha-portimao">Praia da Rocha</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-fish-tipo="rocha">Rocks spots<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </article>
+        <article class="sx-lv sx-lv--fish sx-lv--ria">
+          <img class="sx-lv__img" src="/images/spots/pesca-ria-formosa-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 30 30 30 30 34 S45 35.4 60 34 C75 30 90 30 90 34 S105 35.4 120 34 C135 30 150 30 150 34 S165 35.4 180 34 C195 30 210 30 210 34 S225 35.4 240 34"/></svg>
+            <p class="sx-lv__rng">Beginners & families</p>
+            <h3 class="sx-lv__t">Lagoon & estuary</h3>
+            <p class="sx-lv__d">Sheltered water and varied species all year.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-ria-formosa" data-spot-jump="ria-formosa">Ria Formosa</a><a class="sx-lv__chip" href="#spot-ria-de-aveiro" data-spot-jump="ria-de-aveiro">Ria de Aveiro</a><a class="sx-lv__chip" href="#spot-ria-de-alvor" data-spot-jump="ria-de-alvor">Alvor</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-fish-tipo="ria">Lagoon & estuary spots<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </article>
+        <article class="sx-lv sx-lv--fish sx-lv--fluvial">
+          <img class="sx-lv__img" src="/images/spots/pesca-rio-lima-ponte-de-lima-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async">
+          <div class="sx-lv__body">
+            <svg class="sx-lv__glyph" viewBox="0 0 240 60" aria-hidden="true"><path d="M0 34 C15 28 30 28 30 34 S45 36.1 60 34 C75 28 90 28 90 34 S105 36.1 120 34 C135 28 150 28 150 34 S165 36.1 180 34 C195 28 210 28 210 34 S225 36.1 240 34"/></svg>
+            <p class="sx-lv__rng">Intermediate</p>
+            <h3 class="sx-lv__t">Freshwater</h3>
+            <p class="sx-lv__d">Rivers and reservoirs: trout, shad, black bass and pike.</p>
+            <div class="sx-lv__chips"><a class="sx-lv__chip" href="#spot-rio-lima-ponte-de-lima" data-spot-jump="rio-lima-ponte-de-lima">Rio Lima</a><a class="sx-lv__chip" href="#spot-albufeira-castelo-de-bode" data-spot-jump="albufeira-castelo-de-bode">Castelo de Bode</a><a class="sx-lv__chip" href="#spot-albufeira-canicada" data-spot-jump="albufeira-canicada">Caniçada</a></div>
+            <a class="sx-lv__cta" href="#spot-filters" data-fish-tipo="fluvial">Freshwater spots<svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </article>
         </div>
-        <div class="licenca-block">
-          <div class="licenca-block-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="licenca-block-title">Essential Rules</h3>
-          <div class="licenca-list">
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Closed seasons:</strong> Some species have seasonal protection periods — shad, lamprey and lobster have clearly defined catch restrictions by law.</div></div>
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Minimum sizes:</strong> Each species has a legal minimum catch size. Fish below the minimum must be returned to the sea in good condition.</div></div>
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Protected zones:</strong> Natural parks such as Ria Formosa, Arrábida and the southwest coast have specific regulations — check before fishing.</div></div>
-            <div class="licenca-item"><div class="licenca-dot"></div><div><strong>Hook limits:</strong> Shore recreational fishing allows up to 3 hooks per line. Boat fishing has its own rules depending on the zone.</div></div>
-          </div>
-        </div>
       </div>
-      <div class="licenca-note">
-        <strong>Editorial note:</strong> This information is provided as guidance only. Fishing regulations in Portugal are updated periodically. Always check the official <strong>ICNF</strong> portal and <strong>DGRM</strong> (Directorate-General for Natural Resources, Safety and Maritime Services) for current regulations before each trip.
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
+  <div class="sx-swell sx-swell--out" aria-hidden="true" style="--sx-top:#061428;--sx-bot:#ffffff"><svg class="sx-swell__a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 58 C180 44 180 44 360 58 S540 72 720 58 C900 44 900 44 1080 58 S1260 72 1440 58 C1620 44 1620 44 1800 58 S1980 72 2160 58 C2340 44 2340 44 2520 58 S2700 72 2880 58 L2880 120 L0 120 Z"/></svg><svg class="sx-swell__b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 74 C180 64 180 64 360 74 S540 84 720 74 C900 64 900 64 1080 74 S1260 84 1440 74 C1620 64 1620 64 1800 74 S1980 84 2160 74 C2340 64 2340 64 2520 74 S2700 84 2880 74 L2880 120 L0 120 Z"/></svg></div>
 
-  <!-- Reference Destinations -->
-  <section class="destinos-section" aria-label="Top fishing destinations in Portugal">
-    <div class="destinos-inner">
-      <div class="destinos-header">
-        <span class="guide-tag">Premium Destinations</span>
-        <h2 class="guide-title">Top <em>Destinations</em></h2>
-        <p class="guide-subtitle">Portugal's most sought-after fishing destinations — from the continental coast to the Atlantic archipelagos.</p>
+  <section class="sx-guide" aria-labelledby="sx-guide-h">
+    <div class="sx-wrap">
+      <h2 class="sx-h" id="sx-guide-h">Before you go</h2>
+      <div class="sx-guide__top px-lic">
+        <div class="sx-panel"><h3 class="sx-h3">Fishing licence</h3>
+          <div class="px-lic__row"><span class="px-lic__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></span><div><h4>At sea</h4><p class="sx-small">Issued by DGRM and requested online at the Balcão Eletrónico do Mar. Types: shore, boat, spearfishing or all; monthly or annual.</p><a class="sx-link" href="https://www.bmar.pt" target="_blank" rel="noopener noreferrer">bmar.pt<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+          <div class="px-lic__row"><span class="px-lic__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M6.5 12L3 9v6z"/></svg></span><div><h4>Rivers and reservoirs</h4><p class="sx-small">Inland-water fishing needs its own licence, issued by ICNF.</p><a class="sx-link" href="https://www.icnf.pt" target="_blank" rel="noopener noreferrer">icnf.pt<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div>
+        </div>
+        <div class="sx-panel sx-panel--boards"><h3 class="sx-h3">Rules that matter</h3><ul class="px-rules"><li><b>Closed seasons</b> — some species, such as shad and lamprey, cannot be caught at certain times of year.</li><li><b>Minimum sizes</b> — fish under the legal size go back in the water.</li><li><b>Protected areas</b> — Ria Formosa, Arrábida and the south-west coast have their own rules.</li><li><b>Daily limits</b> — there are catch limits per angler and gear limits per line.</li></ul><p class="px-note">Guidance only. Rules change — always check DGRM (sea) and ICNF (inland waters) before each trip.</p></div>
       </div>
-      <div class="destinos-grid">
-        <div class="destino-card">
-          <div class="destino-bg destino-bg--algarve"></div>
-          <div class="destino-overlay"></div>
-          <div class="destino-content">
-            <div class="destino-tag">Algarve · South Coast</div>
-            <div class="destino-name">Sagres &amp; Barlavento</div>
-            <p class="destino-desc">Europe's southwestern tip with imposing cliffs, Atlantic currents and some of the most prized species on the Portuguese coast.</p>
-            <div class="destino-chips">
-              <span class="destino-chip">Red Snapper</span>
-              <span class="destino-chip">Grouper</span>
-              <span class="destino-chip">Rock</span>
-              <span class="destino-chip">Experienced</span>
-            </div>
-          </div>
-        </div>
-        <div class="destino-card">
-          <div class="destino-bg destino-bg--setubal"></div>
-          <div class="destino-overlay"></div>
-          <div class="destino-content">
-            <div class="destino-tag">Setúbal · Atlantic Coast</div>
-            <div class="destino-name">Sesimbra &amp; Arrábida</div>
-            <p class="destino-desc">Privileged access to the Sesimbra submarine canyon. Bluefin tuna and marlin just miles from shore in Summer.</p>
-            <div class="destino-chips">
-              <span class="destino-chip">Bluefin Tuna</span>
-              <span class="destino-chip">Marlin</span>
-              <span class="destino-chip">Big Game</span>
-            </div>
-          </div>
-        </div>
-        <div class="destino-card">
-          <div class="destino-bg destino-bg--acores"></div>
-          <div class="destino-overlay"></div>
-          <div class="destino-content">
-            <div class="destino-tag">Azores · Atlantic</div>
-            <div class="destino-name">Azores — Offshore</div>
-            <p class="destino-desc">Abyssal depths and unique species in one of Europe's finest big game fishing destinations. Bluefin tuna and wahoo in pristine waters.</p>
-            <div class="destino-chips">
-              <span class="destino-chip">Bluefin Tuna</span>
-              <span class="destino-chip">Wahoo</span>
-              <span class="destino-chip">Swordfish</span>
-            </div>
-          </div>
-        </div>
-        <div class="destino-card">
-          <div class="destino-bg destino-bg--madeira"></div>
-          <div class="destino-overlay"></div>
-          <div class="destino-content">
-            <div class="destino-tag">Madeira · Archipelago</div>
-            <div class="destino-name">Madeira &amp; Porto Santo</div>
-            <p class="destino-desc">Warm waters and Atlantic tropical species. Yellowfin tuna, black scabbardfish and deep-water species on organised boat trips.</p>
-            <div class="destino-chips">
-              <span class="destino-chip">Black Scabbardfish</span>
-              <span class="destino-chip">Yellowfin Tuna</span>
-              <span class="destino-chip">Deep Water</span>
-            </div>
-          </div>
-        </div>
-        <div class="destino-card">
-          <div class="destino-bg destino-bg--ria"></div>
-          <div class="destino-overlay"></div>
-          <div class="destino-content">
-            <div class="destino-tag">Aveiro &amp; Algarve · Rias</div>
-            <div class="destino-name">Rias &amp; Estuaries</div>
-            <p class="destino-desc">Ria Formosa, Ria de Aveiro and the Sado estuary — calm waters, gilt-head bream, sea bass and sole. Ideal for families and beginners all year round.</p>
-            <div class="destino-chips">
-              <span class="destino-chip">Gilt-head Bream</span>
-              <span class="destino-chip">Sea Bass</span>
-              <span class="destino-chip">Family</span>
-              <span class="destino-chip">Year Round</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="px-dests"><h3 class="sx-h3">Top destinations</h3><div class="px-dests__row"><a class="px-dest" href="#spot-sagres-ponta" data-spot-jump="sagres-ponta"><img src="/images/spots/pesca-sagres-ponta-480.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="px-dest__t">Sagres & Barlavento</span><span class="px-dest__m">Rocks · bream and grouper</span></a><a class="px-dest" href="#spot-sesimbra-mar-alto" data-spot-jump="sesimbra-mar-alto"><img src="/images/spots/pesca-sesimbra-mar-alto-480.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="px-dest__t">Sesimbra & Arrábida</span><span class="px-dest__m">Boat · tuna and marlin</span></a><a class="px-dest" href="#spot-acores-sao-miguel" data-spot-jump="acores-sao-miguel"><img src="/images/spots/pesca-acores-sao-miguel-480.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="px-dest__t">Azores</span><span class="px-dest__m">Big game · tuna and wahoo</span></a><a class="px-dest" href="#spot-madeira-canical" data-spot-jump="madeira-canical"><img src="/images/spots/pesca-madeira-canical-480.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="px-dest__t">Madeira</span><span class="px-dest__m">Big game · marlin and tuna</span></a><a class="px-dest" href="#spot-ria-formosa" data-spot-jump="ria-formosa"><img src="/images/spots/pesca-ria-formosa-480.webp" alt="" width="480" height="320" loading="lazy" decoding="async"><span class="px-dest__t">Lagoons & estuaries</span><span class="px-dest__m">Family · sea bream and bass</span></a></div></div>
+      <div class="sx-guides"><ul><li><a href="/en/guides.html"><span>More travel guides</span><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li></ul></div>
+      <p class="sx-quiet sx-b2b">Run a fishing charter or guide service? <a href="/en/contact.html?subject=Fishing%20Partnership&source=pesca&tipo=pesca&intent=b2b-inbound">Get listed on this page</a></p>
     </div>
   </section>
 
@@ -524,126 +396,12 @@
     </div>
   </div>
 
-  <!-- Partner block -->
-  <section class="pesca-partners reveal-sec" aria-labelledby="pesca-partners-heading">
-    <div class="pesca-partners-inner">
-      <div class="pesca-partners-header">
-        <div>
-          <span class="pesca-eyebrow">Recommended Operators</span>
-          <h2 class="pesca-sec-title" id="pesca-partners-heading">Charters &amp; <em>selected guides</em></h2>
-        </div>
-        <span class="pesca-partners-editorial">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Editorial selection — no sales commissions
-        </span>
-      </div>
-      <div class="pesca-partners-grid">
-
-        <article class="pp-card" data-partner-id="mar-anzol-charters" data-partner-type="pesca">
-          <div class="pp-card-top">
-            <div class="pp-card-eyebrow">
-              <span class="pp-card-cat">Fishing Charter · Big Game</span>
-              <span class="pp-card-badge pp-badge--destaque">Featured</span>
-            </div>
-            <div class="pp-card-icon" style="background:linear-gradient(135deg,#082040,#103870);">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/></svg>
-            </div>
-            <h3 class="pp-card-name">Mar &amp; Anzol Charters</h3>
-            <p class="pp-card-zone">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Portimão, Algarve
-            </p>
-            <p class="pp-card-prop">Big game, jigging and bottom fishing trips. Own boat for 4–8 anglers. Equipment provided for beginners.</p>
-          </div>
-          <div class="pp-card-footer">
-            <a href="/partner-demo.html?source=pesca&tipo=pesca&parceiro=Mar%20%26%20Anzol%20Charters&region=Algarve" class="pp-card-cta" data-cta-type="partner-demo">
-              View Full Profile
-              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="pp-card" data-partner-id="acores-big-game" data-partner-type="pesca">
-          <div class="pp-card-top">
-            <div class="pp-card-eyebrow">
-              <span class="pp-card-cat">Charter · Ocean Fishing</span>
-              <span class="pp-card-badge pp-badge--verificado">Verified</span>
-            </div>
-            <div class="pp-card-icon" style="background:linear-gradient(135deg,#041810,#0a2c1e);">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h20"/><path d="M5 20V10l7-7 7 7v10"/></svg>
-            </div>
-            <h3 class="pp-card-name">Azores Big Game Fishing</h3>
-            <p class="pp-card-zone">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Ribeira Grande, São Miguel
-            </p>
-            <p class="pp-card-prop">Bluefin tuna, wahoo and swordfish in abyssal waters. Big game safaris with bilingual guide and high-performance sportfishing boat.</p>
-          </div>
-          <div class="pp-card-footer">
-            <a href="/en/planear.html?source=pesca&tipo=pesca&region=A%C3%A7ores&parceiro=A%C3%A7ores%20Big%20Game%20Fishing&subtipo=embarcacao&intent=planear" class="pp-card-cta" data-cta-type="planear">
-              Learn More &amp; Plan
-              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="pp-card" data-partner-id="rio-mar-aventura" data-partner-type="pesca">
-          <div class="pp-card-top">
-            <div class="pp-card-eyebrow">
-              <span class="pp-card-cat">Fishing Guide · Ria &amp; Nature</span>
-              <span class="pp-card-badge pp-badge--novo">New</span>
-            </div>
-            <div class="pp-card-icon" style="background:linear-gradient(135deg,#0a1a10,#163020);">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c4-2 8 2 12 0s8-2 8 0"/><path d="M2 18c4-2 8 2 12 0s8-2 8 0"/></svg>
-            </div>
-            <h3 class="pp-card-name">Rio e Mar Aventura</h3>
-            <p class="pp-card-zone">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Comporta, Alentejo
-            </p>
-            <p class="pp-card-prop">Fishing on the Sado estuary and nature activities. Ideal for families and beginners. Experienced local guide, all equipment included.</p>
-          </div>
-          <div class="pp-card-footer">
-            <a href="/en/planear.html?source=pesca&tipo=pesca&region=Alentejo&parceiro=Rio%20e%20Mar%20Aventura&subtipo=ria&intent=planear" class="pp-card-cta" data-cta-type="planear">
-              Learn More &amp; Plan
-              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- B2B strip -->
-      <div class="pp-b2b-strip">
-        <p class="pp-b2b-text"><strong>Do you run a charter, boat or fishing guide service?</strong> Get in front of thousands of anglers planning trips in Portugal.</p>
-        <a href="/en/contact.html?subject=Fishing%20Partnership&source=pesca&tipo=pesca&intent=b2b-inbound" class="pp-b2b-link">Apply as a partner →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Plan CTA band -->
-  <section class="pesca-plan-band reveal-sec" aria-labelledby="pesca-plan-heading">
-    <div class="pesca-plan-band-inner">
-      <h2 id="pesca-plan-heading">Ready to plan<br><em>your next trip?</em></h2>
-      <p>Tell us the type of fishing, the region and your level — we'll help you organise the perfect trip with the best available operators and spots.</p>
-      <div class="pesca-plan-band-row">
-        <a href="/en/planear.html?source=pesca&tipo=pesca&intent=planear" class="ppb-btn-gold">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-          Plan a Fishing Trip
-        </a>
-        <a href="/en/beaches.html" class="ppb-btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
-          Explore Beaches
-        </a>
-        <a href="/en/webcams.html" class="ppb-btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 11l6-4v10l-6-4"/></svg>
-          Live Webcams
-        </a>
-        <a href="https://gyg.me/AfKGQg7d" class="ppb-btn-ghost" target="_blank" rel="noopener noreferrer">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Experiences on GetYourGuide
-        </a>
-      </div>
+  <!-- Banda final: planear (v2) -->
+  <section class="sx-plan" aria-labelledby="sx-plan-h">
+    <div class="sx-swell sx-swell--plan" aria-hidden="true" style="--sx-top:transparent;--sx-bot:transparent"><svg class="sx-swell__a" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 58 C180 44 180 44 360 58 S540 72 720 58 C900 44 900 44 1080 58 S1260 72 1440 58 C1620 44 1620 44 1800 58 S1980 72 2160 58 C2340 44 2340 44 2520 58 S2700 72 2880 58 L2880 120 L0 120 Z"/></svg><svg class="sx-swell__b" viewBox="0 0 2880 120" preserveAspectRatio="none"><path d="M0 74 C180 64 180 64 360 74 S540 84 720 74 C900 64 900 64 1080 74 S1260 84 1440 74 C1620 64 1620 64 1800 74 S1980 84 2160 74 C2340 64 2340 64 2520 74 S2700 84 2880 74 L2880 120 L0 120 Z"/></svg></div>
+    <div class="sx-wrap sx-plan__in">
+      <div><h2 class="sx-plan__h" id="sx-plan-h">Ready for your next trip?</h2><p class="sx-plan__p">Tell us the region, the kind of fishing and dates. The planner puts spots, places to stay and trips into one ready-to-use plan.</p></div>
+      <div class="sx-plan__row"><a class="sx-btn sx-btn--gold" href="/en/planear?i=pesca&ref=pesca-band"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Plan a fishing trip</a><a class="sx-btn sx-btn--ghost" href="/en/beaches"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>See all beaches</a><a class="sx-btn sx-btn--ghost" href="/en/webcams"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 11l6-4v10l-6-4"/></svg>Live webcams</a></div>
     </div>
   </section>
 
@@ -681,9 +439,11 @@
 
 <script src="/js/nav.js?v=20260422c" defer></script>
 <script src="/js/chips-fade.js" defer></script>
-<script src="/js/beach-renderer.js?v=20261005-meta" defer></script>
-<script src="/js/surf-pesca-data.js?v=20260513-i18n4" defer></script>
-<script src="/js/surf-pesca-page.js?v=20261007-fotos" defer></script>
+<script src="/js/beach-renderer.js?v=20261007-lic" defer></script>
+<script src="/js/surf-pesca-data.js?v=20261007-pesca" defer></script>
+<script src="/js/surf-pesca-page.js?v=20261007-pesca" defer></script>
+<script src="/js/pesca-live.js?v=20261007" defer></script>
+<script src="/js/pesca-hero.js?v=20261007" defer></script>
 <script>
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
   document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });

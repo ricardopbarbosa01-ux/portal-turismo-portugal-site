@@ -1,9 +1,9 @@
 /* Cartao de surf v2 — /surf e /en/surf — Portal Turismo Portugal — 2026-10-07
  * Mesma linguagem do cartao de praia v2 (css/beach-card-v2.css): foto verificada, nome, nivel em escala, epoca/swell/vento, 2 acoes.
  * HTML gerado por surfCardHtml() em js/surf-pesca-page.js. Mantem .spot-card (paginacao em js/beaches-paginate.js).
- * Carregado depois de surf-pesca-page.css. Nao afeta a pesca (as regras usam .sc2 ou #spots-grid.spots-grid--surf).
+ * Carregado depois de surf-pesca-page.css. Nao afeta a pesca (as regras usam .sc2 ou #spots-grid.spots-grid--v2).
  */
-#spots-grid.spots-grid--surf{grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; max-width:1240px;}
+#spots-grid.spots-grid--v2{grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; max-width:1240px;}
 
 .spot-card.sc2{
   --sc2-navy:#0a3d6b; --sc2-ink:#07152A; --sc2-gold:#c9a84c; --sc2-gold-l:#e8c97a; --sc2-line:#e6ecf3;
@@ -79,15 +79,15 @@
 /* style.css (global, !important) forca 1 coluna e +16px de padding em todos os "-grid" ate 768px:
    aqui so para esta grelha — 2 colunas no tablet, sem gutter triplo no telemovel. */
 @media (max-width:768px){
-  #spots-grid.spots-grid--surf{padding-left:0 !important; padding-right:0 !important;}
+  #spots-grid.spots-grid--v2{padding-left:0 !important; padding-right:0 !important;}
 }
 @media (min-width:600px) and (max-width:768px){
-  #spots-grid.spots-grid--surf{grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:18px;}
+  #spots-grid.spots-grid--v2{grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:18px;}
 }
 @media (max-width:640px){
   /* main ja tem 16px de margem: sem isto os cartoes ficavam 32px para dentro (311px a 375px) e desalinhados dos filtros */
   #spots.spots-section{padding-left:0 !important; padding-right:0 !important;}
-  #spots-grid.spots-grid--surf{grid-template-columns:1fr; gap:16px;}
+  #spots-grid.spots-grid--v2{grid-template-columns:1fr; gap:16px;}
   .sc2__k, .sc2__specs dt{letter-spacing:.05em;}
   .sc2__specs > div{padding:8px 9px;}
   .sc2__media{aspect-ratio:16/10;}
@@ -104,3 +104,13 @@
   .spot-card.sc2, .sc2__media img, .sc2__btn, .sc2__arr{transition:none;}
   .spot-card.sc2:hover, .spot-card.sc2:hover .sc2__media img{transform:none;}
 }
+
+/* ── Cartao de pesca (2026-10-07): mesmas regras + especies e 3 niveis ── */
+.sc2__meter--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+.sc2__species{display:flex; flex-direction:column; gap:6px;}
+.sc2__species ul{display:flex; flex-wrap:wrap; gap:5px; margin:0; padding:0; list-style:none;}
+.sc2__species li{padding:4px 10px; border-radius:999px; background:#eef5fb; color:#0a3d6b; font-size:.76rem; font-weight:600;}
+.sc2__specs--2{grid-template-columns:1fr 1fr;}
+.sc2__btn--lead svg{order:0;}
+.sc2--fish .sc2__actions{grid-template-columns:1.4fr 1fr;}
+@media (max-width:360px){ .sc2__specs--2{grid-template-columns:1fr 1fr;} .sc2__specs--2 > div:first-child{grid-column:auto; border-bottom:0;} .sc2__specs--2 > div:nth-child(2){border-left:1px solid var(--sc2-line);} }

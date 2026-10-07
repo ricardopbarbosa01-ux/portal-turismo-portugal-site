@@ -1,0 +1,78 @@
+/* /pesca e /en/pesca v2 — hero "Pesca hoje" (complemento de css/surf-hero.css) e secoes — Portal Turismo Portugal — 2026-10-07 */
+#spot-filters{scroll-margin-top:72px;}
+.ph .bh4__inner{padding-top:88px;}
+@media (max-width:1180px){ .ph .bh4__inner{padding-top:40px;} }
+
+/* Cartao da lua (no lugar do cartao "maiores ondas") */
+.ph .ph__mooncard{display:grid; grid-template-columns:40px minmax(0,1fr); column-gap:12px; align-items:center; width:200px; border-color:rgba(242,215,143,.45);}
+.ph .ph__mooncard[hidden]{display:none;}
+.ph .ph__mooncard > p{grid-column:2;}
+.ph .ph__mooncard .bh4__eye{color:#f2d78f;}
+.ph__moon{grid-row:1 / span 3; width:34px; height:34px; border-radius:50%; background:#f4ecd2;
+  box-shadow:inset var(--x,0px) 0 0 0 #0d223d, 0 0 18px rgba(244,236,210,.35);}
+/* Rias, rios e albufeiras: ponto com anel (agua doce/abrigada) */
+.ph__dot--fresh .bh4__core{stroke:#bfe3ff; stroke-width:5;}
+@media (max-width:1180px){ .ph .ph__mooncard{width:100%; order:1;} }
+
+/* ── Secoes v2 (reutilizam css/surf-sections.css: .sx-*) ───────────────── */
+.sx-levels__grid--5{grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px;}
+.sx-levels__grid--5 .sx-lv{min-height:440px;}
+.sx-levels__grid--5 .sx-lv__t{font-size:1.45rem;}
+.sx-lv--costeira .sx-lv__glyph path{stroke:#34e0b0;} .sx-lv--embarcacao .sx-lv__glyph path{stroke:#7cb6ff;}
+.sx-lv--rocha .sx-lv__glyph path{stroke:#ff8a5c;} .sx-lv--ria .sx-lv__glyph path{stroke:#6ff0c9;} .sx-lv--fluvial .sx-lv__glyph path{stroke:#bfe3ff;}
+
+/* Licenca e regras */
+.px-lic .sx-panel{display:flex; flex-direction:column; gap:16px;}
+.px-lic__row{display:grid; grid-template-columns:44px minmax(0,1fr); gap:14px; align-items:start; padding-top:14px; border-top:1px solid var(--sx-line);}
+.px-lic__row:first-of-type{border-top:0; padding-top:0;}
+.px-lic__row h4{margin:0 0 4px; font-size:1rem; font-weight:700; color:var(--sx-ink);}
+.px-lic__row .sx-link{margin-top:8px;}
+.px-lic__ico{width:44px; height:44px; border-radius:13px; display:grid; place-items:center; background:var(--sx-ink);}
+.px-lic__ico svg{width:21px; height:21px; fill:none; stroke:var(--sx-g2); stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+.px-rules{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;}
+.px-rules li{position:relative; padding-left:18px; font-size:.92rem; line-height:1.55; color:#475569;}
+.px-rules li::before{content:''; position:absolute; left:0; top:.6em; width:8px; height:8px; border-radius:50%; background:var(--sx-g1);}
+.px-rules b{color:var(--sx-ink);}
+.px-note{margin:4px 0 0; padding:12px 14px; border-radius:12px; background:rgba(201,168,76,.12); font-size:.84rem; line-height:1.5; color:#5b4a1d;}
+
+/* Destinos de referencia: faixa de fotos */
+.px-dests{margin-top:36px;}
+.px-dests__row{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; margin-top:12px;}
+.px-dest{position:relative; isolation:isolate; display:flex; flex-direction:column; justify-content:flex-end; min-height:220px; padding:16px; border-radius:20px; overflow:hidden; text-decoration:none; color:#fff;
+  box-shadow:0 18px 40px -26px rgba(10,61,107,.7); transition:transform .3s ease;}
+.px-dest img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; transition:transform 1s cubic-bezier(.22,1,.36,1);}
+.px-dest::after{content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, rgba(6,20,40,0) 30%, rgba(6,20,40,.85) 100%);}
+.px-dest:hover{transform:translateY(-4px);} .px-dest:hover img{transform:scale(1.08);}
+.px-dest__t{font-family:'Bodoni Moda',Georgia,serif; font-size:1.2rem; font-weight:700; line-height:1.1;}
+.px-dest__m{margin-top:4px; font-size:.8rem; color:var(--sx-foam);}
+
+/* Pro (alertas) — so visual */
+.pesca-pro-upsell{background:#f6f4ef !important; border:0 !important; padding:28px 20px !important;}
+.pesca-pro-upsell-inner{max-width:1200px !important; padding:18px 22px; border-radius:20px; background:#fff; border:1px solid var(--sx-line);}
+
+/* Perguntas frequentes (igual ao surf) */
+@media (min-width:960px){
+  .pesca-faq{max-width:1240px !important; padding:88px 20px !important; display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:56px; align-items:start;}
+  .pesca-faq-header{position:sticky; top:96px;}
+}
+.pesca-faq-title{font-size:clamp(2rem,3.4vw,2.8rem) !important; color:var(--sx-ink) !important; line-height:1.05;}
+.pesca-faq .faq-item{border-radius:18px; border-color:var(--sx-line); transition:box-shadow .3s ease, border-color .3s ease;}
+.pesca-faq .faq-item.open{border-color:#c9dbee; box-shadow:0 18px 40px -28px rgba(10,61,107,.5);}
+.pesca-faq .faq-header{padding:20px 22px;}
+.pesca-faq .faq-question{font-size:1rem;}
+.pesca-faq .faq-chevron{width:30px; height:30px; padding:6px; border-radius:50%; background:#f2f6fa; stroke:#0a3d6b;}
+.pesca-faq .faq-item.open .faq-chevron{background:var(--sx-ink); stroke:#fff;}
+.pesca-faq .faq-answer{border-top:0; padding:0 22px 22px; font-size:.95rem;}
+
+@media (max-width:1100px){
+  .sx-levels__grid--5{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .px-dests__row{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media (max-width:640px){
+  .sx-levels__grid--5{display:flex;}
+  .px-dests__row{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; margin:12px -16px 0; padding:4px 16px 12px; scrollbar-width:none;}
+  .px-dests__row::-webkit-scrollbar{display:none;}
+  .px-dest{flex:0 0 62%; min-height:200px; scroll-snap-align:start;}
+}
+@media (max-width:768px){ .pesca-pro-upsell{margin-left:-16px !important; margin-right:-16px !important; width:calc(100% + 32px) !important; max-width:none !important;} }
+@media (prefers-reduced-motion:reduce){ .px-dest, .px-dest img{transition:none;} .px-dest:hover, .px-dest:hover img{transform:none;} }

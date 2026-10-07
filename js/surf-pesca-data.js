@@ -561,7 +561,7 @@
     {
       id: 'viana-rio-lima',
       name: 'Viana do Castelo — Rio Lima',
-      region: 'Porto',
+      region: 'Norte',
       location: { pt: 'Viana do Castelo', en: 'Viana do Castelo' },
       bgClass: 'spot-bg--porto',
       tipoKey: 'fluvial',
@@ -675,7 +675,7 @@
     {
       id: 'praia-esposende-costa',
       name: 'Praia de Esposende — Costa',
-      region: 'Porto',
+      region: 'Norte',
       location: { pt: 'Esposende, Braga', en: 'Esposende, Braga' },
       bgClass: 'spot-bg--porto',
       tipoKey: 'costeira',
@@ -953,6 +953,19 @@
     'praia-de-odeceixe': [37.4333, -8.7833], 'ribeira-grande-reef': [37.8187, -25.5429]
   };
 
-  window.SurfPescaData = { SURF_SPOTS: SURF_SPOTS, FISH_SPOTS: FISH_SPOTS, SURF_GEO: SURF_GEO };
+  // Coordenadas dos spots de pesca (lat, lng): OpenStreetMap/Nominatim 2026-10-07 (areas -> ponto central/porto). js/pesca-live.js + mapa do hero.
+  var FISH_GEO = {
+    'sagres-ponta': [36.9944, -8.9486], 'ria-formosa': [37.0150, -7.8350], 'costa-de-sines': [37.9528, -8.8648],
+    'sesimbra-mar-alto': [38.4411, -9.1136], 'ria-de-aveiro': [40.6616, -8.7153], 'viana-rio-lima': [41.6850, -8.8400],
+    'portimao-barco': [37.1188, -8.5267], 'acores-sao-miguel': [37.7390, -25.6690], 'rio-lima-ponte-de-lima': [41.7468, -8.5735],
+    'albufeira-canicada': [41.6762, -8.1772], 'rio-douro-peso-regua': [41.1637, -7.7876], 'praia-esposende-costa': [41.5300, -8.7900],
+    'foz-mondego': [40.1450, -8.8650], 'albufeira-castelo-de-bode': [39.6935, -8.2311], 'albufeira-maranhao': [39.0913, -7.8917],
+    'costa-sines-rocha': [37.9199, -8.8049], 'porto-covo': [37.8517, -8.7918], 'costa-vicentina-odeceixe': [37.4421, -8.7974],
+    'ria-de-alvor': [37.1403, -8.6113], 'praia-da-rocha-portimao': [37.1155, -8.5321], 'lagoa-dos-salgados': [37.0941, -8.3319],
+    'ilha-da-culatra': [36.9860, -7.8474], 'baia-de-setubal': [38.4800, -8.9300], 'ribeira-grande-acores-mar': [37.8137, -25.4644],
+    'madeira-canical': [32.7391, -16.7393]
+  };
+
+  window.SurfPescaData = { SURF_SPOTS: SURF_SPOTS, FISH_SPOTS: FISH_SPOTS, SURF_GEO: SURF_GEO, FISH_GEO: FISH_GEO };
 
 })(window);

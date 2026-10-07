@@ -2,7 +2,7 @@
  * Requires: window.BeachRenderer (beach-renderer.js), window.SurfPescaData (surf-pesca-data.js).
  * Exposes: window.SurfPescaPage
  * TrustedHTML: uses trustedTypes.createPolicy('pth-html') — regression watchlist commit 6163e21
- * 2026-10-07: cartao de surf v2 (.sc2, css/surf-card-v2.css) com fotos verificadas; cartao de pesca inalterado.
+ * 2026-10-07: cartoes de surf e pesca v2 (.sc2, css/surf-card-v2.css) com fotos verificadas.
  */
 (function (window, document) {
   'use strict';
@@ -217,45 +217,69 @@
       '<span class="spot-photo-credit">' + esc((lang === 'en' ? 'Photo: ' : 'Foto: ') + c) + '</span>';
   }
 
+  // ── Cartao de pesca v2 (2026-10-07) — mesma linguagem do cartao de surf (.sc2, css/surf-card-v2.css) ──
+  var FISH_PLAN_R = { Norte: 'minho', Porto: 'minho', Centro: 'costa-prata', Lisboa: 'setubal', Alentejo: 'alentejo', Algarve: 'algarve', 'Açores': 'acores', Madeira: 'madeira' };
+  var FISH_INLAND = { 'albufeira-canicada': 1, 'rio-douro-peso-regua': 1, 'albufeira-castelo-de-bode': 1, 'albufeira-maranhao': 1, 'rio-lima-ponte-de-lima': 1 };
+  var FISH_LEVELS = ['iniciante', 'intermedio', 'experiente'];
+  var FC2 = {
+    pt: { photo: 'Foto', level: 'Nível', species: 'Espécies', tech: 'Técnica', season: 'Melhor época', plan: 'Planear saída', save: 'Guardar',
+          ref: 'Destino de referência', short: { iniciante: 'Iniciante', intermedio: 'Intermédio', experiente: 'Experiente' },
+          ariaLevel: function (t) { return 'Nível recomendado: ' + t; }, ariaPlan: function (n) { return 'Planear uma saída de pesca em ' + n; } },
+    en: { photo: 'Photo', level: 'Level', species: 'Species', tech: 'Technique', season: 'Best season', plan: 'Plan a trip', save: 'Save',
+          ref: 'Top destination', short: { iniciante: 'Beginner', intermedio: 'Intermediate', experiente: 'Experienced' },
+          ariaLevel: function (t) { return 'Recommended level: ' + t; }, ariaPlan: function (n) { return 'Plan a fishing trip to ' + n; } }
+  };
+  var FC2_ICON = {
+    pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+    fish: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M6.5 12L3 9v6z"/><circle cx="15" cy="11" r=".6"/></svg>',
+    cal: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>'
+  };
+  var FISH_REGION_EN = { Norte: 'North', Centro: 'Centre', Lisboa: 'Lisbon', 'Açores': 'Azores' };
+
   function fishingCardHtml(s, T, lang) {
+    var L = FC2[lang] || FC2.pt;
+    var name = s.name || s.id;
     var levelLabel = fishingLevelLabel(s, T);
-    var tipoLabel  = fishingTipoLabel(s, T);
-    var desc       = pickLang(s.desc, lang);
-    var season     = pickLang(s.season, lang);
-    var especies   = pickLang(s.especies, lang);
-    var tecnica    = pickLang(s.tecnica, lang);
-    var location   = pickLang(s.location, lang);
-    var tagsArr    = (s.tags && s.tags[lang]) ? s.tags[lang] : (s.tags && s.tags.pt) ? s.tags.pt : [];
-    var loginHref  = (lang === 'en' ? '/en/' : '/') + 'login.html#register';
+    var meter = FISH_LEVELS.map(function (k) {
+      var on = k === s.levelKey;
+      return '<li class="sc2__lv sc2__lv--' + (k === 'experiente' ? 'avancado' : k) + (on ? ' is-on' : '') + '"' + (on ? '' : ' aria-hidden="true"') + '>' + esc(L.short[k]) + '</li>';
+    }).join('');
+    var tipos = (s.tipos || [s.tipoKey]).map(function (k) { return (T.fishing.tipoLabel && T.fishing.tipoLabel[k]) || k; });
+    var species = pickLang(s.especies, lang).split(/\s*,\s*/).filter(Boolean);
+    var pre = lang === 'en' ? '/en/' : '/';
+    var r = FISH_INLAND[s.id] ? '' : (FISH_PLAN_R[s.region] || '');
+    var planHref = pre + 'planear?' + (r ? 'r=' + r + '&' : '') + 'i=pesca&ref=pesca';
+    var loginHref = pre + 'login.html#register';
+    var photo = FISH_PHOTO[s.id];
+    var base = '/images/spots/pesca-' + encodeURIComponent(s.id);
+    var media = photo
+      ? '<img src="' + base + '-480.webp" srcset="' + base + '-480.webp 480w, ' + base + '-800.webp 800w" sizes="(max-width: 640px) 94vw, (max-width: 1100px) 46vw, 380px" width="480" height="320" alt="' + esc(name) + '" loading="lazy" decoding="async" onerror="this.remove()">' +
+        '<figcaption class="sc2__credit">' + esc(L.photo + ': ' + photo) + '</figcaption>'
+      : '<div class="sc2__fallback ' + esc(s.bgClass) + '">' + FC2_ICON.fish + '</div>';
     return (
-      '<article class="spot-card' + (FISH_PHOTO[s.id] ? ' spot-card--photo' : '') + '" role="listitem">' +
-        '<div class="spot-visual">' +
-          '<div class="spot-visual-bg ' + esc(s.bgClass) + '">' + fishPhotoHtml(s, lang) +
-            '<svg class="spot-visual-wave" viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">' +
-              '<path d="M0,80 C80,40 160,100 240,70 C320,40 370,90 400,70 L400,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/>' +
-              '<path d="M0,96 C60,68 140,106 240,86 C320,66 365,102 400,86 L400,120 L0,120 Z" fill="rgba(255,255,255,0.04)"/>' +
-            '</svg>' +
+      '<article class="spot-card sc2 sc2--fish" role="listitem" id="spot-' + esc(s.id) + '" data-spot-id="' + esc(s.id) + '">' +
+        '<figure class="sc2__media">' + media +
+          '<span class="sc2__chip sc2__chip--region">' + esc(lang === 'en' ? (FISH_REGION_EN[s.region] || s.region) : s.region) + '</span>' +
+          (s.quality >= 5 ? '<span class="sc2__chip sc2__chip--wc">' + esc(L.ref) + '</span>' : '') +
+          '<span class="sc2__type">' + FC2_ICON.fish + esc(tipos.join(' · ')) + '</span>' +
+        '</figure>' +
+        '<div class="sc2__body">' +
+          '<div class="sc2__head"><h2 class="sc2__name">' + esc(name) + '</h2>' +
+          '<p class="sc2__loc">' + FC2_ICON.pin + esc(pickLang(s.location, lang)) + '</p></div>' +
+          '<p class="sc2__now" hidden></p>' +
+          '<div class="sc2__level"><span class="sc2__k">' + esc(L.level) + '</span>' +
+            '<ul class="sc2__meter sc2__meter--3" aria-label="' + esc(L.ariaLevel(levelLabel)) + '">' + meter + '</ul></div>' +
+          '<p class="sc2__hook">' + esc(pickLang(s.desc, lang)) + '</p>' +
+          '<div class="sc2__species"><span class="sc2__k">' + esc(L.species) + '</span><ul>' + species.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>' +
+          '<dl class="sc2__specs sc2__specs--2">' +
+            '<div><dt>' + esc(L.tech) + '</dt><dd>' + esc(pickLang(s.tecnica, lang)) + '</dd></div>' +
+            '<div><dt>' + esc(L.season) + '</dt><dd>' + esc(pickLang(s.season, lang)) + '</dd></div>' +
+          '</dl>' +
+          '<div class="sc2__actions">' +
+            '<a class="sc2__btn sc2__btn--primary sc2__btn--lead" href="' + planHref + '" aria-label="' + esc(L.ariaPlan(name)) + '">' + FC2_ICON.cal + esc(L.plan) + '</a>' +
+            '<a class="sc2__btn" href="' + loginHref + '">' + FC2_ICON.heart + esc(L.save) + '</a>' +
           '</div>' +
-          '<div class="spot-visual-content">' +
-            '<span class="spot-region-badge">' + esc(s.region) + '</span>' +
-            '<div class="spot-quality" aria-label="' + s.quality + ' / 5">' + dots(s.quality) + '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="spot-body">' +
-          '<h2 class="spot-name">' + esc(s.name || s.id) + '</h2>' +
-          '<div class="spot-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>' + esc(location) + '</div>' +
-          '<div class="spot-meta">' +
-            '<span class="spot-meta-tag spot-level--' + esc(s.levelKey) + '">' + esc(levelLabel) + '</span>' +
-            '<span class="spot-meta-tag spot-tipo-label">' + esc(tipoLabel) + '</span>' +
-          '</div>' +
-          '<div class="spot-detail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>' + esc(tecnica) + '</div>' +
-          '<div class="spot-season">' + esc(T.fishing.seasonLabel) + ': <strong>' + esc(season) + '</strong></div>' +
-          '<p class="spot-desc">' + esc(desc) + '</p>' +
-          '<div class="spot-tags">' + tagsArr.map(function (t) { return '<span class="spot-tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
-        '</div>' +
-        '<div class="spot-footer">' +
-          '<div class="spot-especies">' + esc(T.fishing.especiesLabel) + ': <strong>' + esc(especies) + '</strong></div>' +
-          '<a href="' + loginHref + '" class="spot-link">' + esc(T.fishing.saveCta) + '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>' +
         '</div>' +
       '</article>'
     );
@@ -312,6 +336,7 @@
       return;
     }
     _setHTML(grid, spots.map(function (s) { return fishingCardHtml(s, T, lang); }).join(''));
+    try { document.dispatchEvent(new CustomEvent('pth:fish-render')); } catch (_) {}
   }
 
   // ── FAQ renderer ─────────────────────────────────────────────────────────────

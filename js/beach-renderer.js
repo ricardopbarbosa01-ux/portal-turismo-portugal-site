@@ -441,7 +441,7 @@
         faqs: [
           {
             q: 'Preciso de licença para pescar em Portugal?',
-            a: 'Sim. A pesca lúdica em Portugal requer licença emitida pelo ICNF (Instituto da Conservação da Natureza e das Florestas). A licença anual tem custo acessível e pode ser obtida online no portal do ICNF ou em lojas de pesca. Em zonas protegidas podem existir restrições adicionais — consulte sempre antes de pescar.'
+            a: 'Sim. No mar, a licença de pesca lúdica é emitida pela DGRM e pede-se online no Balcão Eletrónico do Mar (bmar.pt): apeada (de terra), embarcada, submarina ou todas, mensal ou anual. Em rios e albufeiras é precisa uma licença de pesca em águas interiores, emitida pelo ICNF. Em zonas protegidas podem existir restrições adicionais — consulte sempre antes de pescar.'
           },
           {
             q: 'Qual é a melhor época para pesca em Portugal?',
@@ -922,7 +922,7 @@
       faqs: [
         {
           q: 'Do I need a licence to fish in Portugal?',
-          a: 'Yes. Recreational fishing in Portugal requires a licence issued by ICNF (Institute for Nature Conservation and Forests). The annual licence is affordable and can be obtained online on the ICNF portal or in tackle shops. Additional restrictions may apply in protected areas — always check before fishing.'
+          a: 'Yes. At sea, the recreational fishing licence is issued by DGRM and requested online at the Balcão Eletrónico do Mar (bmar.pt): shore, boat, spearfishing or all, monthly or annual. Rivers and reservoirs need a separate inland-waters licence issued by ICNF. Protected areas may have additional restrictions — always check before fishing.'
         },
         {
           q: 'What is the best season for fishing in Portugal?',

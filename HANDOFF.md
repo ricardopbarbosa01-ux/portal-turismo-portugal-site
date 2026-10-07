@@ -16,7 +16,9 @@ Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia n
 | Velocidade dos heroes (`511ee73`) | sim | **sim** (produção serve `?v=20261007p` + AVIF, confirmado 07/10) | local; **PageSpeed em produção por medir** |
 | A. Surf — cartão v2 + fotos (`d6d1e77`) | sim | **sim, 07/10** | local + produção |
 | **A2. Surf — hero 'Surf hoje' ao vivo + secções refeitas + fix moldura AVIF do mapa** (`docs/commit-2026-10-07-surf-hero.txt`, backups `docs/_backup-surf-hero-20261007/`, `docs/_backup-avif-20261007/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo |
-| A3. Surf — 23 → ~60 spots por lotes | — | — | por fazer |
+| A2. Surf hero + secções (`898f6bb`) + fix GYG | sim | **sim, 07/10** | produção (Chrome: GYG 495 px) |
+| A3. Surf — 23 → ~60 spots por lotes | lote 1 pesquisado (`claude/surf-spots-lote1-2026-10.md`) | — | por escrever no site |
+| **P. Pesca v2** — cartões, hero 'Pesca hoje', secções, licença corrigida (`docs/commit-2026-10-07-pesca.txt`, backup `docs/_backup-pesca-20261007/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo |
 | HANDOFF.md + `preview.ps1` + `serve-local.ps1` | sim (checkpoint 2) | não se publica (excluído do deploy) | — |
 
 **Redesign publicado em `2c888ed`:**
