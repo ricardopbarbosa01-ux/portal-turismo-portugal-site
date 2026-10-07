@@ -1,0 +1,1676 @@
+[
+{
+"slug": "praia-de-carcavelos",
+"name": "Carcavelos",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.680088,
+"lng": -9.335203,
+"clicks": 2584640
+},
+{
+"slug": "costa-da-caparica",
+"name": "Costa de Caparica | CDS NORTE",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.646801,
+"lng": -9.242691,
+"clicks": 2134405
+},
+{
+"slug": "praia-de-matosinhos",
+"name": "Matosinhos",
+"muni": "PORTO",
+"region": "norte",
+"lat": 41.175365,
+"lng": -8.69026,
+"clicks": 2075381
+},
+{
+"slug": "praia-da-barra",
+"name": "Praia da Barra",
+"muni": "AVEIRO",
+"region": "centro",
+"lat": 40.633841,
+"lng": -8.747866,
+"clicks": 2035636
+},
+{
+"slug": "praia-de-espinho",
+"name": "Espinho | Panorâmica",
+"muni": "ESPINHO",
+"region": "norte",
+"lat": 41.009377,
+"lng": -8.645534,
+"clicks": 1733059
+},
+{
+"slug": "santa-cruz",
+"name": "Santa Cruz | Navio",
+"muni": "TORRES VEDRAS",
+"region": "costa-oeste",
+"lat": 39.145601,
+"lng": -9.374087,
+"clicks": 1620780
+},
+{
+"slug": "praia-grande",
+"name": "Praia Grande | Norte",
+"muni": "SINTRA",
+"region": "sintra",
+"lat": 38.814387,
+"lng": -9.476748,
+"clicks": 1613088
+},
+{
+"slug": "praia-da-nazare",
+"name": "Nazaré | Praia da Vila",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.603184,
+"lng": -9.074411,
+"clicks": 1590191
+},
+{
+"slug": "praia-do-guincho",
+"name": "Praia do Guincho | Sul",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.729702,
+"lng": -9.474801,
+"clicks": 1573105
+},
+{
+"slug": "furadouro",
+"name": "Furadouro ",
+"muni": "OVAR",
+"region": "centro",
+"lat": 40.873808,
+"lng": -8.676849,
+"clicks": 1536027
+},
+{
+"slug": "peniche-molhe-leste",
+"name": "Peniche | Molhe Leste",
+"muni": "PENICHE",
+"region": "peniche",
+"lat": 39.345904,
+"lng": -9.363183,
+"clicks": 1458590
+},
+{
+"slug": "praia-do-norte",
+"name": "Nazaré | Praia do Norte Panorâmica",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.604673202715006,
+"lng": -9.084876617739758,
+"clicks": 1432711
+},
+{
+"slug": "arrifana",
+"name": "Arrifana",
+"muni": "ALJEZUR",
+"region": "costa-vicentina",
+"lat": 37.295817,
+"lng": -8.866059,
+"clicks": 1352720
+},
+{
+"slug": "lagide",
+"name": "Peniche | Lagide ",
+"muni": "PENICHE",
+"region": "peniche",
+"lat": 39.372226,
+"lng": -9.337493,
+"clicks": 1287465
+},
+{
+"slug": "ribeira-dilhas",
+"name": "Ribeira D´Ilhas",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.987859,
+"lng": -9.41812,
+"clicks": 1180289
+},
+{
+"slug": "peniche-baleal-panoramica",
+"name": "Peniche | Baleal | Panorâmica",
+"muni": "PENICHE",
+"region": "peniche",
+"lat": 39.36830435694788,
+"lng": -9.340089339515906,
+"clicks": 1173347
+},
+{
+"slug": "carvoeiro",
+"name": "Carvoeiro",
+"muni": "LAGOA (ALGARVE)",
+"region": "algarve",
+"lat": 37.096413,
+"lng": -8.471276,
+"clicks": 1171689
+},
+{
+"slug": "praia-do-pedrogao",
+"name": "Praia do Pedrógão",
+"muni": "LEIRIA",
+"region": "centro",
+"lat": 39.92248,
+"lng": -8.952425,
+"clicks": 1152862
+},
+{
+"slug": "foz-do-arelho",
+"name": "Foz do Arelho ",
+"muni": "CALDAS DA RAINHA",
+"region": "costa-oeste",
+"lat": 39.43279118481286,
+"lng": -9.230141957402639,
+"clicks": 1107404
+},
+{
+"slug": "leca-da-palmeira",
+"name": "Leça da Palmeira",
+"muni": "MATOSINHOS",
+"region": "norte",
+"lat": 41.188957,
+"lng": -8.705077,
+"clicks": 1099360
+},
+{
+"slug": "esmoriz",
+"name": "Esmoriz",
+"muni": "OVAR",
+"region": "norte",
+"lat": 40.958492,
+"lng": -8.653978,
+"clicks": 1068411
+},
+{
+"slug": "paredes-da-vitoria",
+"name": "Paredes da Vitória",
+"muni": "ALCOBAÇA",
+"region": "costa-oeste",
+"lat": 39.70075933923633,
+"lng": -9.04939898108565,
+"clicks": 1019997
+},
+{
+"slug": "costa-da-caparica-praia-nova",
+"name": "Costa de Caparica | Praia Nova",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.636631,
+"lng": -9.233888,
+"clicks": 994955
+},
+{
+"slug": "sao-pedro-de-moel",
+"name": "São Pedro de Moel ",
+"muni": "MARINHA GRANDE",
+"region": "costa-oeste",
+"lat": 39.75539274606013,
+"lng": -9.03231195842556,
+"clicks": 982238
+},
+{
+"slug": "praia-da-rocha",
+"name": "Praia da Rocha Panorâmica",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.119197,
+"lng": -8.536797,
+"clicks": 975543
+},
+{
+"slug": "praia-canide-norte-sul",
+"name": "Praia Canide NORTE | SUL",
+"muni": "VILA NOVA DE GAIA",
+"region": "norte",
+"lat": 41.11262,
+"lng": -8.66351,
+"clicks": 904254
+},
+{
+"slug": "praia-de-mira",
+"name": "Praia de Mira",
+"muni": "MIRA",
+"region": "centro",
+"lat": 40.454975,
+"lng": -8.803279,
+"clicks": 886264
+},
+{
+"slug": "ofir",
+"name": "Ofir ",
+"muni": "ESPOSENDE",
+"region": "norte",
+"lat": 41.517102,
+"lng": -8.787754,
+"clicks": 883570
+},
+{
+"slug": "fonte-da-telha",
+"name": "Fonte da Telha | Norte",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.57518,
+"lng": -9.197515,
+"clicks": 881703
+},
+{
+"slug": "praia-do-amado",
+"name": "Praia do Amado",
+"muni": "ALJEZUR",
+"region": "costa-vicentina",
+"lat": 37.295817,
+"lng": -8.866059,
+"clicks": 875497
+},
+{
+"slug": "praia-da-torreira",
+"name": "Praia da Torreira",
+"muni": "MURTOSA",
+"region": "centro",
+"lat": 40.762571,
+"lng": -8.71227,
+"clicks": 864263
+},
+{
+"slug": "costa-de-caparica-sao-joao-cova-do-vapor",
+"name": "Costa de Caparica | São João | Cova do Vapor ",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.656224,
+"lng": -9.249357,
+"clicks": 809098
+},
+{
+"slug": "ericeira-praia-do-sul",
+"name": "Ericeira | Praia do Sul",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.956446,
+"lng": -9.415553,
+"clicks": 793931
+},
+{
+"slug": "praia-da-falesia",
+"name": "Praia da Falésia ",
+"muni": "LOULÉ",
+"region": "algarve",
+"lat": 37.074253,
+"lng": -8.121095,
+"clicks": 787667
+},
+{
+"slug": "costa-da-caparica-riviera",
+"name": "Costa de Caparica | Riviera",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.619311,
+"lng": -9.219895,
+"clicks": 772186
+},
+{
+"slug": "sao-martinho-do-porto",
+"name": "São Martinho do Porto ",
+"muni": "ALCOBAÇA",
+"region": "costa-oeste",
+"lat": 39.50406784086068,
+"lng": -9.137642776351035,
+"clicks": 765330
+},
+{
+"slug": "praia-da-luz",
+"name": "Praia da Luz",
+"muni": "LAGOS",
+"region": "algarve",
+"lat": 37.087476,
+"lng": -8.727162,
+"clicks": 762342
+},
+{
+"slug": "figueira-da-foz-cabedelo",
+"name": "Figueira da Foz | Cabedelo",
+"muni": "FIGUEIRA DA FOZ",
+"region": "centro",
+"lat": 40.139997,
+"lng": -8.863034,
+"clicks": 754352
+},
+{
+"slug": "sao-pedro-do-estoril",
+"name": "São Pedro do Estoril",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.693546,
+"lng": -9.368644,
+"clicks": 751038
+},
+{
+"slug": "areia-branca",
+"name": "Areia Branca ",
+"muni": "LOURINHÃ",
+"region": "costa-oeste",
+"lat": 39.266173751847916,
+"lng": -9.336013263085958,
+"clicks": 683213
+},
+{
+"slug": "apulia",
+"name": "Apúlia ",
+"muni": "ESPOSENDE",
+"region": "norte",
+"lat": 41.48347517513001,
+"lng": -8.77799218916014,
+"clicks": 665157
+},
+{
+"slug": "meia-praia",
+"name": "Meia Praia ",
+"muni": "LAGOS",
+"region": "algarve",
+"lat": 37.111224,
+"lng": -8.660683,
+"clicks": 615449
+},
+{
+"slug": "praia-dos-pescadores",
+"name": "Praia dos Pescadores",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.964423,
+"lng": -9.418602,
+"clicks": 615413
+},
+{
+"slug": "praia-sesimbra",
+"name": "Praia Sesimbra",
+"muni": "SESIMBRA",
+"region": "sesimbra",
+"lat": 38.442867,
+"lng": -9.105705,
+"clicks": 608650
+},
+{
+"slug": "armacao-de-pera",
+"name": "Armação de Pêra",
+"muni": "SILVES",
+"region": "algarve",
+"lat": 37.10079564889162,
+"lng": -8.357136194420553,
+"clicks": 592651
+},
+{
+"slug": "praia-de-santa-rita",
+"name": "Praia de Santa Rita",
+"muni": "TORRES VEDRAS",
+"region": "costa-oeste",
+"lat": 39.174051,
+"lng": -9.356267,
+"clicks": 588192
+},
+{
+"slug": "alvor",
+"name": "Alvor ",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.12348,
+"lng": -8.597978,
+"clicks": 585350
+},
+{
+"slug": "praia-grande-sul",
+"name": "Praia Grande | Sul",
+"muni": "SINTRA",
+"region": "sintra",
+"lat": 38.811212,
+"lng": -9.47909,
+"clicks": 580425
+},
+{
+"slug": "viana-do-castelo-cabedelo",
+"name": "Viana do Castelo | Cabedelo ",
+"muni": "VIANA DO CASTELO",
+"region": "norte",
+"lat": 41.67880826311497,
+"lng": -8.832010044816927,
+"clicks": 568091
+},
+{
+"slug": "praia-da-tocha",
+"name": "Praia da Tocha ",
+"muni": "CANTANHEDE",
+"region": "centro",
+"lat": 40.33032,
+"lng": -8.843663,
+"clicks": 563998
+},
+{
+"slug": "carcavelos-calhau",
+"name": "Carcavelos | Calhau",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.678291,
+"lng": -9.330825,
+"clicks": 554017
+},
+{
+"slug": "santa-cruz-praia-azul",
+"name": " Santa Cruz | Praia Azul",
+"muni": "TORRES VEDRAS",
+"region": "costa-oeste",
+"lat": 39.112567,
+"lng": -9.393881,
+"clicks": 547757
+},
+{
+"slug": "monte-clerigo",
+"name": "Monte Clérigo",
+"muni": "ALJEZUR",
+"region": "costa-vicentina",
+"lat": 37.351113,
+"lng": -8.8448,
+"clicks": 534491
+},
+{
+"slug": "praia-verde",
+"name": "Praia Verde | Castro Marim ",
+"muni": "CASTRO MARIM",
+"region": "algarve",
+"lat": 37.173728,
+"lng": -7.480874,
+"clicks": 532726
+},
+{
+"slug": "praia-do-norte-canhao-nazare",
+"name": "Nazaré | Praia do Norte ",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.604673202715006,
+"lng": -9.084876617739758,
+"clicks": 532605
+},
+{
+"slug": "praia-de-sao-torpes",
+"name": "São Torpes",
+"muni": "SINES",
+"region": "alentejo",
+"lat": 37.925362,
+"lng": -8.806546,
+"clicks": 509901
+},
+{
+"slug": "costa-da-caparica-tarquinio",
+"name": "Costa de Caparica | Tarquínio",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.64294486156163,
+"lng": -9.239144501019402,
+"clicks": 503671
+},
+{
+"slug": "praia-da-torre",
+"name": "Praia da Torre",
+"muni": "OEIRAS",
+"region": "oeiras",
+"lat": 38.675701,
+"lng": -9.322835,
+"clicks": 503144
+},
+{
+"slug": "foz-do-lizandro",
+"name": "Foz do Lizandro",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.942264,
+"lng": -9.415402,
+"clicks": 497720
+},
+{
+"slug": "figueira-da-foz-cabedelo-buarcos",
+"name": "Figueira da Foz  | Panorâmica ",
+"muni": "FIGUEIRA DA FOZ",
+"region": "centro",
+"lat": 40.150655,
+"lng": -8.866424,
+"clicks": 483473
+},
+{
+"slug": "faro",
+"name": "Faro | Praia de Faro Este ",
+"muni": "FARO",
+"region": "algarve",
+"lat": 37.004321883933855,
+"lng": -7.989531032510936,
+"clicks": 466017
+},
+{
+"slug": "costa-nova",
+"name": "Costa Nova ",
+"muni": "ÍLHAVO",
+"region": "centro",
+"lat": 40.61959,
+"lng": -8.752463,
+"clicks": 454478
+},
+{
+"slug": "figueira-da-foz-tamargueira",
+"name": "Figueira da Foz | Buarcos",
+"muni": "FIGUEIRA DA FOZ",
+"region": "centro",
+"lat": 40.163566,
+"lng": -8.878817,
+"clicks": 452123
+},
+{
+"slug": "praia-da-vieira",
+"name": "Praia da Vieira",
+"muni": "MARINHA GRANDE",
+"region": "centro",
+"lat": 39.87565246143744,
+"lng": -8.972273957486854,
+"clicks": 450482
+},
+{
+"slug": "praia-do-guincho-norte",
+"name": "Praia do Guincho | Norte",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.735528,
+"lng": -9.471635,
+"clicks": 449750
+},
+{
+"slug": "vila-praia-de-ancora",
+"name": "Vila Praia de Âncora ",
+"muni": "CAMINHA",
+"region": "norte",
+"lat": 41.811625,
+"lng": -8.864792,
+"clicks": 446623
+},
+{
+"slug": "porto-santo",
+"name": "Porto Santo",
+"muni": "PORTO SANTO",
+"region": "madeira",
+"lat": 33.055902,
+"lng": -16.337417,
+"clicks": 446158
+},
+{
+"slug": "praia-da-gale",
+"name": "Praia da Galé",
+"muni": "ALBUFEIRA",
+"region": "algarve",
+"lat": 37.08068,
+"lng": -8.316005,
+"clicks": 439447
+},
+{
+"slug": "esposende",
+"name": "Esposende",
+"muni": "ESPOSENDE",
+"region": "norte",
+"lat": 41.54564952392703,
+"lng": -8.792716844035613,
+"clicks": 426706
+},
+{
+"slug": "parede",
+"name": "Parede ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.68578,
+"lng": -9.353703,
+"clicks": 410253
+},
+{
+"slug": "praia-das-macas",
+"name": "Praia das Maçãs",
+"muni": "SINTRA",
+"region": "sintra",
+"lat": 38.825566,
+"lng": -9.469337,
+"clicks": 409001
+},
+{
+"slug": "praia-do-peixe-baia-de-cascais",
+"name": "Baía de Cascais ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.697201,
+"lng": -9.419718,
+"clicks": 408847
+},
+{
+"slug": "ericeira",
+"name": "Ericeira | Reef | Pedra Branca",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.979299,
+"lng": -9.421727,
+"clicks": 408672
+},
+{
+"slug": "santo-amaro",
+"name": "Santo Amaro ",
+"muni": "OEIRAS",
+"region": "oeiras",
+"lat": 38.684956,
+"lng": -9.311402,
+"clicks": 390668
+},
+{
+"slug": "praia-da-amoreira",
+"name": "Praia da Amoreira ",
+"muni": "ALJEZUR",
+"region": "costa-vicentina",
+"lat": 37.351113,
+"lng": -8.8448,
+"clicks": 386713
+},
+{
+"slug": "comporta",
+"name": "Comporta",
+"muni": "GRÂNDOLA",
+"region": "alentejo",
+"lat": 38.382137,
+"lng": -8.801577,
+"clicks": 384567
+},
+{
+"slug": "praia-do-peneco",
+"name": "Praia do Peneco",
+"muni": "ALBUFEIRA",
+"region": "algarve",
+"lat": 37.086494,
+"lng": -8.253864,
+"clicks": 380941
+},
+{
+"slug": "lagoa-de-albufeira",
+"name": "Lagoa de Albufeira ",
+"muni": "SESIMBRA",
+"region": "sesimbra",
+"lat": 38.506884,
+"lng": -9.180031,
+"clicks": 375611
+},
+{
+"slug": "odeceixe",
+"name": "Odeceixe",
+"muni": "ALJEZUR",
+"region": "costa-vicentina",
+"lat": 37.198988,
+"lng": -8.904848,
+"clicks": 360019
+},
+{
+"slug": "praia-do-meco",
+"name": "Praia do Meco ",
+"muni": "SESIMBRA",
+"region": "sesimbra",
+"lat": 38.489278,
+"lng": -9.182096,
+"clicks": 357267
+},
+{
+"slug": "sao-juliao",
+"name": "São Julião ",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.932163453498475,
+"lng": -9.42009175212114,
+"clicks": 353029
+},
+{
+"slug": "praia-do-vau",
+"name": "Praia do Vau",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.119838023797044,
+"lng": -8.557757632419904,
+"clicks": 347663
+},
+{
+"slug": "costa-da-caparica-cds",
+"name": "Costa de Caparica | CDS SUL",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.645943,
+"lng": -9.242064,
+"clicks": 325223
+},
+{
+"slug": "cresmina",
+"name": "Praia da Cresmina",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.725124,
+"lng": -9.475464,
+"clicks": 323532
+},
+{
+"slug": "praia-da-alagoa",
+"name": "Alagoa | Altura ",
+"muni": "CASTRO MARIM",
+"region": "algarve",
+"lat": 37.169909,
+"lng": -7.496506,
+"clicks": 322378
+},
+{
+"slug": "tamariz",
+"name": "Praia do Tamariz ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.702777,
+"lng": -9.399036,
+"clicks": 302769
+},
+{
+"slug": "praia-da-consolacao",
+"name": "Peniche | Consolação",
+"muni": "PENICHE",
+"region": "peniche",
+"lat": 39.345904,
+"lng": -9.363183,
+"clicks": 302561
+},
+{
+"slug": "fonte-da-telha-sul",
+"name": "Fonte da Telha | SUL",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.56534420161445,
+"lng": -9.192163688257558,
+"clicks": 301566
+},
+{
+"slug": "paco-de-arcos",
+"name": "Paço de Arcos",
+"muni": "OEIRAS",
+"region": "oeiras",
+"lat": 38.690525,
+"lng": -9.297018,
+"clicks": 301275
+},
+{
+"slug": "espinho-silvalde",
+"name": "Espinho | Silvalde ",
+"muni": "ESPINHO",
+"region": "norte",
+"lat": 40.99806714090027,
+"lng": -8.647296248547374,
+"clicks": 299496
+},
+{
+"slug": "senhora-da-rocha-praia-nova",
+"name": "Senhora da Rocha e Praia Nova",
+"muni": "LAGOA (ALGARVE)",
+"region": "algarve",
+"lat": 37.096406,
+"lng": -8.386563,
+"clicks": 297948
+},
+{
+"slug": "praia-das-bicas",
+"name": "Praia das Bicas ",
+"muni": "SESIMBRA",
+"region": "sesimbra",
+"lat": 38.463298,
+"lng": -9.19168,
+"clicks": 289118
+},
+{
+"slug": "praia-do-carvalhal",
+"name": "Praia do Carvalhal",
+"muni": "GRÂNDOLA",
+"region": "alentejo",
+"lat": 38.305327,
+"lng": -8.779836,
+"clicks": 282670
+},
+{
+"slug": "troia",
+"name": "Troia",
+"muni": "GRÂNDOLA",
+"region": "setubal",
+"lat": 38.48920706183639,
+"lng": -8.909373914298278,
+"clicks": 279213
+},
+{
+"slug": "cordoama",
+"name": "Cordoama",
+"muni": "VILA DO BISPO",
+"region": "costa-vicentina",
+"lat": 36.99481751920713,
+"lng": -8.949097670626054,
+"clicks": 278782
+},
+{
+"slug": "praia-da-rocha-marina",
+"name": "Praia da Rocha | Marina",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.115871942529736,
+"lng": -8.533615577824365,
+"clicks": 268445
+},
+{
+"slug": "leca-da-palmeira-panoraminca-aterro",
+"name": "Leça da Palmeira | Panorâmica | Aterro",
+"muni": "ESPOSENDE",
+"region": "norte",
+"lat": 41.20174787920973,
+"lng": -8.713362360308265,
+"clicks": 265729
+},
+{
+"slug": "ilha-do-farol-culatra",
+"name": "Faro | Ilha da Culatra",
+"muni": "FARO",
+"region": "algarve",
+"lat": 36.97458746700401,
+"lng": -7.86457987912956,
+"clicks": 256144
+},
+{
+"slug": "matadouro",
+"name": "Matadouro",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.97569,
+"lng": -9.420169,
+"clicks": 244758
+},
+{
+"slug": "praia-da-conceicao-e-duquesa",
+"name": "Praia da Conceição e Duquesa ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.700644,
+"lng": -9.415732,
+"clicks": 240023
+},
+{
+"slug": "murtinheira",
+"name": "Murtinheira ",
+"muni": "FIGUEIRA DA FOZ",
+"region": "centro",
+"lat": 40.20844424252885,
+"lng": -8.89708400741345,
+"clicks": 239580
+},
+{
+"slug": "portinho-da-arrabida",
+"name": "Portinho da Arrábida",
+"muni": "SETÚBAL",
+"region": "setubal",
+"lat": 38.476593003174564,
+"lng": -8.984366329774156,
+"clicks": 236995
+},
+{
+"slug": "ferragudo",
+"name": "Ferragudo | Praia Grande",
+"muni": "LAGOA (ALGARVE)",
+"region": "algarve",
+"lat": 37.117786,
+"lng": -8.521093,
+"clicks": 236291
+},
+{
+"slug": "zambujeira-do-mar",
+"name": "Zambujeira do Mar",
+"muni": "ODEMIRA",
+"region": "alentejo",
+"lat": 37.524256,
+"lng": -8.786278,
+"clicks": 233830
+},
+{
+"slug": "almograve",
+"name": "Almograve ",
+"muni": "ODEMIRA",
+"region": "alentejo",
+"lat": 37.925362,
+"lng": -8.806546,
+"clicks": 225727
+},
+{
+"slug": "viana-do-castelo-afife-arda",
+"name": "Viana do Castelo | Arda | Afife ",
+"muni": "VIANA DO CASTELO",
+"region": "norte",
+"lat": 41.780939802566536,
+"lng": -8.871223445156872,
+"clicks": 223371
+},
+{
+"slug": "faja-da-areia",
+"name": "Madeira | Fajã da Areia",
+"muni": "SÃO VICENTE",
+"region": "madeira",
+"lat": 32.811236679995034,
+"lng": -17.038668632218577,
+"clicks": 221988
+},
+{
+"slug": "praia-das-avencas",
+"name": "Praia das Avencas  ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.688471,
+"lng": -9.36045,
+"clicks": 221211
+},
+{
+"slug": "nazare-forte-sao-miguel-arcanjo",
+"name": "Nazaré | Forte S. Miguel Arcanjo ",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.604673202715006,
+"lng": -9.084876617739758,
+"clicks": 210012
+},
+{
+"slug": "costa-de-caparica-praia-do-norte",
+"name": "Costa de Caparica | Praia do Norte ",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.65085270363752,
+"lng": -9.245797444916905,
+"clicks": 209755
+},
+{
+"slug": "vagueira",
+"name": "Vagueira | Labrego",
+"muni": "VAGOS",
+"region": "centro",
+"lat": 40.549322,
+"lng": -8.773478,
+"clicks": 209623
+},
+{
+"slug": "praia-osso-da-baleia",
+"name": "Praia Osso da Baleia",
+"muni": "POMBAL",
+"region": "centro",
+"lat": 40.04258,
+"lng": -8.895174,
+"clicks": 203601
+},
+{
+"slug": "praia-das-rocas",
+"name": "Praia das Rocas ",
+"muni": "CASTANHEIRA DE PÊRA",
+"region": "fluviaispiscinas",
+"lat": 40.004561,
+"lng": -8.207936,
+"clicks": 203242
+},
+{
+"slug": "praia-do-magoito",
+"name": "Praia do Magoito",
+"muni": "SINTRA",
+"region": "sintra",
+"lat": 38.86465755593225,
+"lng": -9.449441660488828,
+"clicks": 199996
+},
+{
+"slug": "porto-carneiro",
+"name": "Porto | Carneiro ",
+"muni": "PORTO",
+"region": "norte",
+"lat": 41.14836390439139,
+"lng": -8.675760752041615,
+"clicks": 199574
+},
+{
+"slug": "lagoa-de-santo-andre",
+"name": "Lagoa de Santo André ",
+"muni": "SANTIAGO DO CACÉM",
+"region": "alentejo",
+"lat": 38.111817945479885,
+"lng": -8.799849194414085,
+"clicks": 196674
+},
+{
+"slug": "seixal",
+"name": "Madeira | Seixal ",
+"muni": "PORTO MONIZ",
+"region": "madeira",
+"lat": 32.82217196806101,
+"lng": -17.103100860069002,
+"clicks": 196342
+},
+{
+"slug": "faro-oeste",
+"name": "Faro | Praia de Faro Oeste",
+"muni": "FARO",
+"region": "algarve",
+"lat": 37.009383524488854,
+"lng": -7.997530726333854,
+"clicks": 184269
+},
+{
+"slug": "pedra-do-ouro",
+"name": "Pedra do Ouro ",
+"muni": "ALCOBAÇA",
+"region": "costa-oeste",
+"lat": 39.72610832405013,
+"lng": -9.046540076009885,
+"clicks": 181437
+},
+{
+"slug": "vagueiracasablanca",
+"name": "Vagueira | Casablanca",
+"muni": "VAGOS",
+"region": "centro",
+"lat": 40.559365,
+"lng": -8.77105,
+"clicks": 170589
+},
+{
+"slug": "praia-pequena",
+"name": "Praia Pequena ",
+"muni": "SINTRA",
+"region": "sintra",
+"lat": 38.820187490043715,
+"lng": -9.474039205989435,
+"clicks": 169526
+},
+{
+"slug": "porto-homem-do-leme",
+"name": "Porto | Homem do Leme ",
+"muni": "PORTO",
+"region": "norte",
+"lat": 41.160763372075,
+"lng": -8.685514002164362,
+"clicks": 165413
+},
+{
+"slug": "albarquel",
+"name": "Albarquel",
+"muni": "SETÚBAL",
+"region": "setubal",
+"lat": 38.510891,
+"lng": -8.915333,
+"clicks": 165118
+},
+{
+"slug": "vilamoura",
+"name": "Vilamoura",
+"muni": "LOULÉ",
+"region": "algarve",
+"lat": 37.074253,
+"lng": -8.121095,
+"clicks": 153838
+},
+{
+"slug": "vila-nova-de-milfontes-furnas-mar",
+"name": "V.N.Milfontes | Furnas Mar",
+"muni": "ODEMIRA",
+"region": "alentejo",
+"lat": 37.714827794944576,
+"lng": -8.786294007526163,
+"clicks": 144825
+},
+{
+"slug": "peniche-supertubos",
+"name": "Peniche | Supertubos",
+"muni": "PENICHE",
+"region": "peniche",
+"lat": 39.345702134647226,
+"lng": -9.364156997229573,
+"clicks": 144207
+},
+{
+"slug": "caxinas-macaco-17",
+"name": "Vila do Conde | Caxinas ",
+"muni": "VILA DO CONDE",
+"region": "norte",
+"lat": 41.361131046226554,
+"lng": -8.758007730063435,
+"clicks": 143714
+},
+{
+"slug": "praia-da-rocha-miradouro",
+"name": "Praia da Rocha | Miradouro",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.115871942529736,
+"lng": -8.533615577824365,
+"clicks": 137015
+},
+{
+"slug": "vagueira-areao",
+"name": "Vagueira | Areão ",
+"muni": "VAGOS",
+"region": "centro",
+"lat": 40.52109024938583,
+"lng": -8.78228195188481,
+"clicks": 135745
+},
+{
+"slug": "praia-de-sao-jacinto-barra",
+"name": "Praia de São Jacinto | Barra ",
+"muni": "AVEIRO",
+"region": "centro",
+"lat": 40.642973412826805,
+"lng": -8.74787408167091,
+"clicks": 131528
+},
+{
+"slug": "ericeira-praia-da-calada",
+"name": "Praia da Calada",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 39.032509,
+"lng": -9.417942,
+"clicks": 129867
+},
+{
+"slug": "esposende-foz-do-cavado",
+"name": "Esposende | Foz Do Rio Cávado",
+"muni": "ESPOSENDE",
+"region": "norte",
+"lat": 41.54127399662888,
+"lng": -8.791433004557378,
+"clicks": 129809
+},
+{
+"slug": "madeira-paul-do-mar",
+"name": "Madeira | Paul do Mar",
+"muni": "CALHETA (MADEIRA)",
+"region": "madeira",
+"lat": 32.738595,
+"lng": -17.212211,
+"clicks": 125442
+},
+{
+"slug": "ponta-pequena",
+"name": "Madeira | Ponta Pequena ",
+"muni": "CALHETA (MADEIRA)",
+"region": "madeira",
+"lat": 32.738595,
+"lng": -17.212211,
+"clicks": 123770
+},
+{
+"slug": "madeira-jardim-do-mar",
+"name": "Madeira | Jardim do Mar",
+"muni": "CALHETA (MADEIRA)",
+"region": "madeira",
+"lat": 32.738595,
+"lng": -17.212211,
+"clicks": 122420
+},
+{
+"slug": "sagres",
+"name": "Sagres",
+"muni": "VILA DO BISPO",
+"region": "costa-vicentina",
+"lat": 36.99481751920713,
+"lng": -8.949097670626054,
+"clicks": 122229
+},
+{
+"slug": "portimao-praia-do-amado",
+"name": "Portimão | Praia do Amado",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.118828768467026,
+"lng": -8.55181002142344,
+"clicks": 115249
+},
+{
+"slug": "alvor-nascente",
+"name": "Alvor Nascente",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.12348,
+"lng": -8.597978,
+"clicks": 109076
+},
+{
+"slug": "bafureira",
+"name": "Bafureira | Estática ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.693546,
+"lng": -9.368644,
+"clicks": 104134
+},
+{
+"slug": "vila-nova-de-milfontes-farol",
+"name": "V.N.Milfontes | Farol ",
+"muni": "ODEMIRA",
+"region": "alentejo",
+"lat": 37.71884498736173,
+"lng": -8.790566068566706,
+"clicks": 99619
+},
+{
+"slug": "vila-nova-de-milfontes-franquia",
+"name": "V.N.Milfontes | Franquia ",
+"muni": "ODEMIRA",
+"region": "alentejo",
+"lat": 37.925362,
+"lng": -8.806546,
+"clicks": 96853
+},
+{
+"slug": "praia-das-moitas",
+"name": "Praia das Moitas",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.702777,
+"lng": -9.399036,
+"clicks": 93432
+},
+{
+"slug": "nazare-porto-de-abrigo",
+"name": "Nazaré | Porto de Abrigo ",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.580914,
+"lng": -9.073564,
+"clicks": 90174
+},
+{
+"slug": "carvalhal",
+"name": "Carvalhal",
+"muni": "ODEMIRA",
+"region": "alentejo",
+"lat": 37.50020046663476,
+"lng": -8.791720218798872,
+"clicks": 80785
+},
+{
+"slug": "ferreira-do-zezere-lago-azul",
+"name": "Praia Fluvial Lago Azul ",
+"muni": "FERREIRA DO ZÊZERE",
+"region": "fluviaispiscinas",
+"lat": 39.40335,
+"lng": -8.135042,
+"clicks": 77723
+},
+{
+"slug": "espinhopicodocasino",
+"name": "Espinho | Pico do casino | Estática ",
+"muni": "ESPINHO",
+"region": "norte",
+"lat": 41.009377,
+"lng": -8.645534,
+"clicks": 72797
+},
+{
+"slug": "nazare-forte-sao-miguel-arcanjo-baia",
+"name": "Nazaré | Forte S. Miguel Arcanjo | Baía",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.604673202715006,
+"lng": -9.084876617739758,
+"clicks": 69244
+},
+{
+"slug": "costa-de-caparica-praia-da-sereia-morena",
+"name": "Costa de Caparica | Praia da Sereia | Morena",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.60140828372269,
+"lng": -9.210110453479814,
+"clicks": 68780
+},
+{
+"slug": "ribeira-dilhas-estatica",
+"name": "Ribeira D´Ilhas | Estática ",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.987498415198964,
+"lng": -9.419170702442663,
+"clicks": 63210
+},
+{
+"slug": "costa-de-caparica-sao-joao-estatica",
+"name": "Costa de Caparica | São João | Estática",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.654252695499174,
+"lng": -9.248508809039103,
+"clicks": 59197
+},
+{
+"slug": "ferreira-do-zezere-dornes",
+"name": "Ferreira do Zêzere | Dornes",
+"muni": "FERREIRA DO ZÊZERE",
+"region": "lagos-e-rios",
+"lat": 39.461561,
+"lng": -8.161138,
+"clicks": 59026
+},
+{
+"slug": "praia-quarteira-este",
+"name": "Praia Quarteira | Este",
+"muni": "LOULÉ",
+"region": "algarve",
+"lat": 37.074253,
+"lng": -8.121095,
+"clicks": 58616
+},
+{
+"slug": "lisboa-belem",
+"name": "Lisboa | Belém",
+"muni": "LISBOA",
+"region": "lagos-e-rios",
+"lat": 38.693925,
+"lng": -9.206913,
+"clicks": 57783
+},
+{
+"slug": "praia-do-alemao",
+"name": "Praia do Alemão",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.11972437796715,
+"lng": -8.56400321352163,
+"clicks": 56874
+},
+{
+"slug": "costa-da-caparica-nova-praia",
+"name": "Costa de Caparica | Nova Praia ",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.63388911412906,
+"lng": -9.231059752066729,
+"clicks": 56346
+},
+{
+"slug": "praia-da-adraga",
+"name": "Praia da Adraga",
+"muni": "SINTRA",
+"region": "sintra",
+"lat": 38.8023384011749,
+"lng": -9.484729300644004,
+"clicks": 55365
+},
+{
+"slug": "nazare-forte-sao-miguel-arcanjo-panoramica",
+"name": "Nazaré | Forte S. Miguel Arcanjo Panorâmica ",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.604673202715006,
+"lng": -9.084876617739758,
+"clicks": 55125
+},
+{
+"slug": "praia-da-rocha-estatica",
+"name": "Praia da Rocha | Estática ",
+"muni": "PORTIMÃO",
+"region": "algarve",
+"lat": 37.115871942529736,
+"lng": -8.533615577824365,
+"clicks": 51273
+},
+{
+"slug": "acores-ribeira-grande-praia-do-monte-verde",
+"name": "Praia do Monte Verde",
+"muni": "RIBEIRA GRANDE",
+"region": "acores",
+"lat": 37.82283518670187,
+"lng": -25.525591721374866,
+"clicks": 50719
+},
+{
+"slug": "praia-do-guincho-estatica",
+"name": "Praia do Guincho | Estática ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.73388758724765,
+"lng": -9.473131759366103,
+"clicks": 50023
+},
+{
+"slug": "sao-pedro-do-estoril-bico-estatica",
+"name": "São Pedro do Estoril | Bico Estática ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.693546,
+"lng": -9.368644,
+"clicks": 48460
+},
+{
+"slug": "madeira-maiata",
+"name": "Madeira | Praia da Maiata",
+"muni": "SANTA CRUZ",
+"region": "madeira",
+"lat": 32.7677076239895,
+"lng": -16.820868595749243,
+"clicks": 47211
+},
+{
+"slug": "praia-fluvial-do-cabril",
+"name": "Praia Fluvial do Cabril ",
+"muni": "PEDRÓGÃO GRANDE",
+"region": "fluviaispiscinas",
+"lat": 39.921471673807,
+"lng": -8.13302223786057,
+"clicks": 46804
+},
+{
+"slug": "paco-de-arcos-estatica",
+"name": "Paço de Arcos | Estática ",
+"muni": "OEIRAS",
+"region": "oeiras",
+"lat": 38.690525,
+"lng": -9.297018,
+"clicks": 45452
+},
+{
+"slug": "figueiradafozbuarcosestatica",
+"name": "Figueira da Foz | Buarcos | Estática ",
+"muni": "FIGUEIRA DA FOZ",
+"region": "centro",
+"lat": 40.163566,
+"lng": -8.878817,
+"clicks": 44414
+},
+{
+"slug": "espinhosilvaldeestatica",
+"name": "Espinho | Silvalde | Estática | ",
+"muni": "ESPINHO",
+"region": "norte",
+"lat": 40.99806714090027,
+"lng": -8.647296248547374,
+"clicks": 43820
+},
+{
+"slug": "santo-amaro-estatica",
+"name": "Santo Amaro | Estática ",
+"muni": "OEIRAS",
+"region": "oeiras",
+"lat": 38.684956,
+"lng": -9.311402,
+"clicks": 42831
+},
+{
+"slug": "carcavelos-norte-estatica",
+"name": "Carcavelos | Norte | Estática",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.678291,
+"lng": -9.330825,
+"clicks": 41080
+},
+{
+"slug": "costa-da-caparica-praia-nova-estatica",
+"name": "Costa de Caparica | Praia Nova | Estática",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.636631,
+"lng": -9.233888,
+"clicks": 39711
+},
+{
+"slug": "farol-do-bugio-norte",
+"name": "Farol do Bugio Norte",
+"muni": "LISBOA",
+"region": "lagos-e-rios",
+"lat": 38.66024642372443,
+"lng": -9.298844668495201,
+"clicks": 36398
+},
+{
+"slug": "carcavelos-calhau-estatica",
+"name": "Carcavelos | Calhau | Estática ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.678291,
+"lng": -9.330825,
+"clicks": 34640
+},
+{
+"slug": "praia-quarteira-oeste",
+"name": "Praia Quarteira | Oeste",
+"muni": "LOULÉ",
+"region": "algarve",
+"lat": 37.074253,
+"lng": -8.121095,
+"clicks": 34404
+},
+{
+"slug": "boardriders-skatepark",
+"name": "Boardriders | Skatepark ",
+"muni": "MAFRA",
+"region": "mafra",
+"lat": 38.975700661984206,
+"lng": -9.419992380928624,
+"clicks": 32831
+},
+{
+"slug": "praia-de-sao-torpes-estatica",
+"name": "São Torpes | Estática ",
+"muni": "SINES",
+"region": "alentejo",
+"lat": 37.925362,
+"lng": -8.806546,
+"clicks": 30552
+},
+{
+"slug": "farol-do-bugio-sul",
+"name": "Farol do Bugio Sul",
+"muni": "LISBOA",
+"region": "lagos-e-rios",
+"lat": 38.6606276190324,
+"lng": -9.300311505528637,
+"clicks": 28958
+},
+{
+"slug": "parede-estatica",
+"name": "Parede | Estática ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.68578,
+"lng": -9.353703,
+"clicks": 28177
+},
+{
+"slug": "viana-do-castelo-wakepark",
+"name": "Viana do Castelo | Wake Park ",
+"muni": "VIANA DO CASTELO",
+"region": "lagos-e-rios",
+"lat": 41.68315225283949,
+"lng": -8.829248367549393,
+"clicks": 27379
+},
+{
+"slug": "ski-clube-quinta-grande",
+"name": "Ski Clube Quinta Grande",
+"muni": "CORUCHE",
+"region": "lagos-e-rios",
+"lat": 38.939126250946245,
+"lng": -8.523819815231425,
+"clicks": 26141
+},
+{
+"slug": "costa-da-caparica-tarquinio-fixa",
+"name": "Costa de Caparica | Tarquínio | Estática ",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.64308887699188,
+"lng": -9.240257337119214,
+"clicks": 26038
+},
+{
+"slug": "nazare-forte-sao-miguel-arcanjo-panoramica-1",
+"name": "Nazaré | Forte S. Miguel Arcanjo Panorâmica Norte",
+"muni": "NAZARÉ",
+"region": "nazare",
+"lat": 39.604673202715006,
+"lng": -9.084876617739758,
+"clicks": 25887
+},
+{
+"slug": "praia-das-moitas-estatica",
+"name": "Praia das Moitas | Estática ",
+"muni": "CASCAIS",
+"region": "cascais",
+"lat": 38.70177315123268,
+"lng": -9.408989638164986,
+"clicks": 24958
+},
+{
+"slug": "costadecaparicacdssulestatica",
+"name": "Costa de Caparica | CDS SUL | Estática",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.64603988552563,
+"lng": -9.242195224603572,
+"clicks": 22935
+},
+{
+"slug": "costa-da-caparica-cds-norte-estatica",
+"name": "Costa de Caparica | CDS NORTE | Estática ",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.64704454623691,
+"lng": -9.243099639619393,
+"clicks": 22786
+},
+{
+"slug": "ferreira-do-zezere-lago-azul-cable-park",
+"name": "Ferreira do Zêzere | Wake Park",
+"muni": "FERREIRA DO ZÊZERE",
+"region": "lagos-e-rios",
+"lat": 39.401024,
+"lng": -8.14954,
+"clicks": 22267
+},
+{
+"slug": "costadecaparicapraianorteestatica",
+"name": "Costa de Caparica | Praia Norte | Estática",
+"muni": "ALMADA",
+"region": "almada",
+"lat": 38.656224,
+"lng": -9.249357,
+"clicks": 21449
+},
+{
+"slug": "santa-cruz-norte-fisica",
+"name": "Santa Cruz | Norte | Física  ",
+"muni": "TORRES VEDRAS",
+"region": "costa-oeste",
+"lat": 39.13671257165263,
+"lng": -9.380754864496357,
+"clicks": 140
+}
+]

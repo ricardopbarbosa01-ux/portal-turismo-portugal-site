@@ -6,7 +6,7 @@
 :root{--sx-abyss:#061428; --sx-deep:#0b2a4c; --sx-ocean:#12406f; --sx-foam:#e3ecf7; --sx-mist:#a9bdd3; --sx-g1:#d8b55a; --sx-g2:#f2d78f; --sx-ink:#07152A; --sx-line:#e6ecf3;}
 #spot-filters{scroll-margin-top:72px;}
 .sh .bh4__inner{padding-top:88px;}
-@media (max-width:1180px){ .sh .bh4__inner{padding-top:40px;} }
+@media (max-width:1180px){ .sh .bh4__inner{padding-top:84px;} } /* 84 = barra de navegacao (60) + folga: o kicker ficava tapado no telemovel */
 
 .sx-wrap{max-width:1240px; margin:0 auto; padding:0 20px; position:relative;}
 .sx-h{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:clamp(2rem,3.6vw,3rem); line-height:1.04; letter-spacing:-.015em; color:var(--sx-ink);}

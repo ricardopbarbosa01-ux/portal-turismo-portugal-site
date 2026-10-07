@@ -18,7 +18,8 @@ Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia n
 | **A2. Surf — hero 'Surf hoje' ao vivo + secções refeitas + fix moldura AVIF do mapa** (`docs/commit-2026-10-07-surf-hero.txt`, backups `docs/_backup-surf-hero-20261007/`, `docs/_backup-avif-20261007/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo |
 | A2. Surf hero + secções (`898f6bb`) + fix GYG | sim | **sim, 07/10** | produção (Chrome: GYG 495 px) |
 | A3. Surf — 23 → ~60 spots por lotes | lote 1 pesquisado (`claude/surf-spots-lote1-2026-10.md`) | — | por escrever no site |
-| **P. Pesca v2** — cartões, hero 'Pesca hoje', secções, licença corrigida (`docs/commit-2026-10-07-pesca.txt`, backup `docs/_backup-pesca-20261007/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo |
+| P. Pesca v2 (`47d8c86`) | sim | **sim, 07/10** (Ricardo: "Feito") | local; produção por confirmar no Chrome |
+| **W. Webcams v2 — 'Portugal ao vivo'**: 172 câmaras (MEO só link + 13 diretos YouTube incorporáveis), hero 'ecrã em direto' (sem mapa) com canais e pesquisa, painel da câmara com planear (hotéis/atividades/carro/planeador), regresso do separador MEO, pedido de câmara (submit-contact), diretório e FAQ (`docs/commit-2026-10-07-webcams.txt`, backup `docs/_backup-webcams-20261007/`, dados `_scripts/build_webcams_data.py`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo, funcionais |
 | HANDOFF.md + `preview.ps1` + `serve-local.ps1` | sim (checkpoint 2) | não se publica (excluído do deploy) | — |
 
 **Redesign publicado em `2c888ed`:**
@@ -90,7 +91,8 @@ Novos ou por decidir:
   - `css/surf-pesca-page.css`, `images/spots/`.
 - **Webcams:**
   - `webcams.html`, `en/webcams.html`;
-  - `js/webcams-guias-data.js`, `js/webcams-guias-page.js`, `css/webcams-guias-page.css`;
+  - v2 (07/10): `js/webcams-cams.js` (GERADO por `_scripts/build_webcams_data.py` a partir de `_data/meo-livecams-20261007.json` + `_data/beaches-db-20261007.json` + `docs/FOTOS-CREDITOS.md`; o mesmo script reescreve o diretório entre `<!-- WCAM-DIR:START -->` e `END` nas duas páginas), `js/webcams-v2.js`, `css/webcams-v2.css`;
+  - `js/webcams-guias-data.js`, `js/webcams-guias-page.js`, `css/webcams-guias-page.css` continuam a servir só /guias;
   - página de spot `webcam-praia-da-luz.html` (gerador `_scripts/gen_spot.py`).
 - **Planear:** `planear.html`, `en/planear.html`, `css/planner-v3.css`.
 - **Páginas com filtros:** beaches, surf, pesca, webcams, escolas-de-surf (PT e EN), dashboard.

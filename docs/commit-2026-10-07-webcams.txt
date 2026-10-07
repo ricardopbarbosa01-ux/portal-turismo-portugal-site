@@ -1,0 +1,14 @@
+feat(webcams): pagina de webcams v2 'Portugal ao vivo' — 172 camaras, hero com mapa e pesquisa, painel com planear [testado local]
+
+- 13 -> 172 cartoes: lista publica MEO Beachcam (so link) + 13 diretos YouTube com incorporacao permitida (fachada, iframe so ao clicar)
+- Hero 'ecra em direto' (sem mapa): imagem recente do direto em ecra inteiro, 'Ver em video', 13 canais para trocar, fita com o mar de agora; pesquisa com sugestoes, Praia/Surf, mar calmo agora, por do sol
+- Cartoes v2 com foto verificada (credito) ou visual do mar, ondas/agua/vento e veredicto
+- Painel da camara: condicoes, proximas 12 h, mare, melhor hora, outros angulos; Planear (hoteis, atividades, carro, planeador); ao voltar da MEO pergunta 'como esta o mar?'
+- Pedido de camara (submit-contact + Turnstile), diretorio por regiao, FAQ + FAQPage; titulo/descricao novos
+- Removido o slot de patrocinador do topo e as seccoes de texto antigas
+- Dados gerados por _scripts/build_webcams_data.py (_data/meo-livecams-20261007.json, _data/beaches-db-20261007.json)
+- surf-sections.css: kicker do hero de surf/pesca ja nao fica tapado no telemovel
+- _headers: i.ytimg.com (img) e www.youtube-nocookie.com (frame)
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Wb84f4PvM5dzzfL8MYuWRL
