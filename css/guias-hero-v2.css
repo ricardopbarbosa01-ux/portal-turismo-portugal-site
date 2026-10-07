@@ -64,3 +64,7 @@
   .gh-places span{animation:none;}
   .gh-places span:first-child{opacity:1;}
 }
+
+/* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
+.gh-credit{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
+.gh-credit:hover, .gh-credit:focus-within{opacity:.75 !important;}

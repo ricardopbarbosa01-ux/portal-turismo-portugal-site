@@ -392,3 +392,7 @@ body.pv3-standalone .pv3-top { padding-top: calc(14px + env(safe-area-inset-top)
 body.pv3-standalone .pv3-hero { padding-top: calc(96px + env(safe-area-inset-top)); }
 body.pv3-standalone .pv3-install { display: none; }
 .pv3-top-nav { align-items: center; }
+
+/* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
+.pv3-credit, .r-credit, .pv3-credits{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
+.pv3-credit:hover, .r-credit:hover, .pv3-credits:hover, .pv3-credit:focus-within, .r-credit:focus-within, .pv3-credits:focus-within{opacity:.75 !important;}

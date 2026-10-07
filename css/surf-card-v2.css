@@ -114,3 +114,7 @@
 .sc2__btn--lead svg{order:0;}
 .sc2--fish .sc2__actions{grid-template-columns:1.4fr 1fr;}
 @media (max-width:360px){ .sc2__specs--2{grid-template-columns:1fr 1fr;} .sc2__specs--2 > div:first-child{grid-column:auto; border-bottom:0;} .sc2__specs--2 > div:nth-child(2){border-left:1px solid var(--sc2-line);} }
+
+/* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
+.sc2__credit{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
+.sc2__credit:hover, .sc2__credit:focus-within{opacity:.75 !important;}

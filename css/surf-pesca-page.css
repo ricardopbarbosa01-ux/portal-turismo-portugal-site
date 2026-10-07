@@ -499,3 +499,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
 .spot-card--photo .spot-region-badge{background:rgba(7,21,42,.45);}
 .spot-photo-credit{position:absolute;z-index:2;right:5px;top:10px;max-height:calc(100% - 56px);overflow:hidden;text-overflow:ellipsis;writing-mode:vertical-rl;transform:rotate(180deg);font-size:8.5px;line-height:1;color:#fff;opacity:.4;letter-spacing:.03em;white-space:nowrap;pointer-events:none;}
 @media (prefers-reduced-motion:reduce){.spot-photo{transition:none;}.spot-card--photo:hover .spot-photo{transform:none;}}
+
+/* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
+.spot-photo-credit{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
+.spot-photo-credit:hover, .spot-photo-credit:focus-within{opacity:.75 !important;}

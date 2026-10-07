@@ -217,8 +217,10 @@
 
   /* ── Cartao ─────────────────────────────────────────────────────────── */
   function media(c, size, eager) {
-    var box = h('span', { class: 'wm' + (c.ph ? '' : ' wm--sea') + ' wm--' + c.r });
-    if (c.ph) {
+    var box = h('span', { class: 'wm' + (c.ph || c.yt ? '' : ' wm--sea') + ' wm--' + c.r });
+    if (c.yt) { // fotograma recente do proprio direto (YouTube)
+      box.appendChild(h('img', { class: 'wm__yt', src: 'https://i.ytimg.com/vi/' + c.yt[0] + '/hqdefault_live.jpg', alt: '', loading: eager ? 'eager' : 'lazy', decoding: 'async', width: '480', height: '360' }));
+    } else if (c.ph) {
       box.appendChild(h('img', { src: c.ph[0] + '-480.webp', srcset: c.ph[0] + '-480.webp 480w, ' + c.ph[0] + '-800.webp 800w', sizes: size || '(max-width: 640px) 100vw, 400px',
         alt: '', loading: eager ? 'eager' : 'lazy', decoding: 'async', width: '480', height: '300' }));
     } else {
@@ -275,7 +277,8 @@
     else cta.appendChild(h('a', { class: 'wc__go', href: meoUrl(c.meo), target: '_blank', rel: 'noopener', 'data-golive': c.id }, [T.open, ico('ext')]));
     cta.appendChild(h('button', { type: 'button', class: 'wc__more', 'data-open': c.id, 'data-focus': 'plan' }, [ico('cal'), T.plan]));
     body.appendChild(cta);
-    if (c.ph) body.appendChild(h('p', { class: 'wc__cr', text: T.photo + ': ' + c.ph[1] }));
+    if (c.yt) body.appendChild(h('p', { class: 'wc__cr', text: (EN ? 'Live frame: ' : 'Imagem do direto: ') + c.yt[1] }));
+    else if (c.ph) body.appendChild(h('p', { class: 'wc__cr', text: T.photo + ': ' + c.ph[1] }));
     a.appendChild(body);
     fillMediaData(btn.querySelector('.wm__data'), c);
     return a;

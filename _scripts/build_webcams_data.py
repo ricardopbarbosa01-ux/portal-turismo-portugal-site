@@ -48,6 +48,10 @@ EXCLUDE = {'boardriders-skatepark', 'ski-clube-quinta-grande', 'viana-do-castelo
 VARIANT = {'norte', 'sul', 'este', 'oeste', 'panoramica', 'marina', 'miradouro', 'navio', 'cds norte', 'cds sul'}
 PLACE_FIX = {'Costa de Caparica': 'Costa da Caparica', 'Praia Quarteira': 'Quarteira', 'V.N.Milfontes': 'Vila Nova de Milfontes'}  # vista de rio (Tejo), sem dados de mar
 
+# Coordenadas erradas na lista da MEO (repetem as de outra camara) -> corrigidas com o OpenStreetMap (Nominatim) a 07/10/2026
+COORD_FIX = {'almograve': (37.6498, -8.8035), 'vila-nova-de-milfontes-franquia': (37.7218, -8.7880), 'madeira-paul-do-mar': (32.7548, -17.2272), 'madeira-jardim-do-mar': (32.7376, -17.2111)}
+for _c in meo:
+    if _c['slug'] in COORD_FIX: _c['lat'], _c['lng'] = COORD_FIX[_c['slug']]
 MUNI_FIX = {'leca-da-palmeira-panoraminca-aterro': 'MATOSINHOS'}
 
 def title_case(s):
@@ -175,6 +179,13 @@ for c in sorted(meo, key=lambda c: -c['clicks']):
         groups.setdefault(c['slug'], groups.get(c['slug'], []))
 merged = {s for v in groups.values() for s in [x['slug'] for x in v]}
 
+COMMONS_CAND = json.load(open(P('_data', 'commons-candidates-20261007.json'), encoding='utf-8')) if os.path.isfile(P('_data', 'commons-candidates-20261007.json')) else {}
+COMMONS_PICK = {k: v for k, v in (json.load(open(P('_data', 'commons-picks-20261007.json'), encoding='utf-8')) if os.path.isfile(P('_data', 'commons-picks-20261007.json')) else {}).items() if not k.startswith('_')}
+def clean_artist(a):
+    a = re.sub(r'\s+from\s+.*$', '', a or '').strip()
+    a = re.sub(r'\s*\(.*$', '', a).strip()
+    return a[:40] or 'Wikimedia Commons'
+
 def photo_for(c):
     s = c['slug']
     if s in SURF_PH and SURF_PH[s] in cred_surf and os.path.isfile(P('images', 'spots', 'surf-%s-480.webp' % SURF_PH[s])):
@@ -196,6 +207,10 @@ def photo_for(c):
     if best:
         b = best[1]; url, a, l = cred_praia[b['name']]
         return ['/images/beaches/' + b['id'], a + ' · ' + l, url]
+    # fotos do Wikimedia Commons escolhidas a mao para esta camara (_scripts/commons_photos.py + commons_fetch.py)
+    if s in COMMONS_PICK and os.path.isfile(P('images', 'webcams', s + '-480.webp')):
+        c = COMMONS_CAND[s][COMMONS_PICK[s]]
+        return ['/images/webcams/' + s, clean_artist(c['artist']) + ' · ' + c['lic'], c['page']]
     return None
 
 def beach_for(c):

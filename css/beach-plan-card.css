@@ -105,3 +105,7 @@
   .bpc__media img, .bpc__cta, .bpc__cta svg{transition:none;}
   .bpc:hover .bpc__media img, .bpc__cta:hover, .bpc__cta:hover svg{transform:none;}
 }
+
+/* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
+.bpc__credit{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
+.bpc__credit:hover, .bpc__credit:focus-within{opacity:.75 !important;}

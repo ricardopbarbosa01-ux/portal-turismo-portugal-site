@@ -216,3 +216,7 @@
 
 /* main tem 16px de margem ate 768px (style.css): as faixas de cor vao de ponta a ponta */
 @media (max-width:768px){ .sx-swell, .sx-ocean, .sx-guide, .sx-plan, .surf-alerts{margin-left:-16px !important; margin-right:-16px !important; width:calc(100% + 32px) !important; max-width:none !important;} }
+
+/* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
+.sx-credit{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
+.sx-credit:hover, .sx-credit:focus-within{opacity:.75 !important;}

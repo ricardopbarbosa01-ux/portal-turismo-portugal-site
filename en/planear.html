@@ -45,25 +45,73 @@
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.portalturismoportugal.com/en/"},{"@type":"ListItem","position":2,"name":"Trip planner","item":"https://www.portalturismoportugal.com/en/planear"}]}
   ]}
   </script>
-  <link rel="stylesheet" href="/css/planner-v3.css?v=20261006-v4">
+  <link rel="stylesheet" href="/css/planner-v3.css?v=20261007cr">
+  <link rel="stylesheet" href="/css/site-chrome.css?v=20261007">
+  <link rel="stylesheet" href="/css/footer-v2.css?v=20261007">
 </head>
 <body class="pv3">
 
 <a class="pv3-skip" href="#pv3-card">Skip to the planner</a>
 
-<header class="pv3-top">
-  <a class="pv3-logo" href="/en/" aria-label="Portal Turismo Portugal — home">
-    <img src="/images/brand/logo-icon-light.svg" alt="" width="28" height="28">
-    <span>Portal Turismo <em>Portugal</em></span>
+<nav class="navbar" role="navigation" aria-label="Main navigation" id="navbar">
+  <a href="/en/" class="nav-logo" aria-label="Portugal Travel Hub - Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </div>
+    Portugal Travel Hub
   </a>
-  <span class="pv3-badge">Planner</span>
-  <nav class="pv3-top-nav" aria-label="Links">
-    <button type="button" class="pv3-install" id="pv3-install" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span>Install app</span></button>
-    <a href="#como-funciona">How it works</a>
-    <a href="/en/beaches.html">Beaches</a>
-    <a href="/planear" hreflang="pt-PT" lang="pt-PT">PT</a>
-  </nav>
-</header>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+  <div class="nav-links" role="list">
+    <button class="nav-close" id="nav-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="/en/beaches.html" role="listitem">Beaches</a>
+    <a href="/en/surf.html" role="listitem">Surf</a>
+    <a href="/en/pesca.html" role="listitem">Fishing</a>
+    <a href="/en/webcams.html" class="active" role="listitem" aria-current="page">Webcams</a>
+    <a href="/en/planear.html" role="listitem" aria-current="page">Plan</a>
+    <a href="/en/guides.html" role="listitem">Guides</a>
+    <a href="/en/precos.html" role="listitem">Pricing</a>
+    <div class="pth-dd" data-pth-dd data-nav-dropdown>
+      <button type="button" class="pth-dd__trigger"
+              aria-haspopup="menu" aria-expanded="false"
+              aria-controls="pth-dd-menu">
+        Verified Partners <span class="pth-dd__chevron" aria-hidden="true">&#9662;</span>
+      </button>
+      <div id="pth-dd-menu" class="pth-dd__menu" role="menu">
+        <a href="/en/surf-schools.html" class="pth-dd__featured" role="menuitem">
+          <div class="pth-dd__featured-eyebrow">Verified</div>
+          <div class="pth-dd__featured-title">Surf Schools</div>
+          <span class="pth-dd__featured-link">View all &rarr;</span>
+        </a>
+        <div class="pth-dd__coming">
+          <div class="pth-dd__coming-eyebrow">Coming next</div>
+          <ul class="pth-dd__coming-list">
+            <li class="pth-dd__coming-item" title="Coming soon">Fishing (Charters)</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Restaurants</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Local Accommodation</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Hotels &amp; Pousadas</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Rural Tourism</li>
+            <li class="pth-dd__coming-item" title="Coming soon">Experiences</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="/en/parceiros.html" role="listitem">For Business</a>
+  </div>
+  <div class="nav-actions">
+        <div class="lang-switcher" role="navigation" aria-label="Language">
+          <a href="/planear" class="lang-btn" data-lang="pt" aria-label="Português">PT</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <span class="lang-btn lang-btn--active" data-lang="en" aria-current="page" aria-label="English">EN</span>
+        </div>
+    <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
+    <a href="/en/login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
 
 <main>
   <section class="pv3-hero" id="planner" aria-labelledby="pv3-h1">
@@ -175,15 +223,33 @@
   </div>
 </div>
 
-<footer class="pv3-foot">
-  <p class="pv3-credits" id="pv3-credits"></p>
-  <p>© <span id="pv3-y">2026</span> Portal Turismo Portugal · <a href="/en/privacy.html">Privacy</a> · <a href="/en/contact.html">Contact</a></p>
+<div class="pv3-foot"><p class="pv3-credits" id="pv3-credits"></p></div>
+<footer class="footer ft2" role="contentinfo" aria-label="Footer">
+  <div class="ft2__main">
+    <div>
+      <a class="ft2__brand" href="/en/"><span class="ft2__logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#0a3d6b"/></svg></span>Portugal Travel Hub</a>
+      <p class="ft2__tag">Beaches, webcams, surf and fishing in Portugal — with live conditions.</p>
+    </div>
+    <nav class="ft2__nav" aria-label="Footer">
+      <p class="ft2__row"><span class="ft2__h">Explore</span><a href="/en/beaches">Beaches</a><a href="/en/surf">Surf</a><a href="/en/pesca">Fishing</a><a href="/en/webcams">Webcams</a><a href="/en/guides">Guides</a><a href="/en/planear">Plan a trip</a><a href="https://www.discovercars.com/portugal?a_aid=portalturismoportugal" target="_blank" rel="noopener noreferrer sponsored">Car hire</a></p>
+      <p class="ft2__row"><span class="ft2__h">Business</span><a href="/en/parceiros">For your business</a><a href="/en/precos">Pricing</a><a href="/en/media-kit">Media kit</a></p>
+      <p class="ft2__row"><span class="ft2__h">About</span><a href="/en/about">About us</a><a href="/en/methodology">Methodology</a><a href="/en/transparency">Transparency</a><a href="/en/contact">Contact</a></p>
+    </nav>
+  </div>
+  <div class="ft2__bottom">
+    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. All rights reserved.</span>
+    <span class="ft2__legal"><a href="/en/privacy">Privacy</a><a href="/en/terms">Terms</a><a href="/en/cookies">Cookies</a><a href="/en/refund-policy">Refunds</a></span>
+  </div>
 </footer>
 
-<script>document.getElementById('pv3-y').textContent = new Date().getFullYear();</script>
+
+<script>(function(){var y=document.getElementById('footer-year');if(y)y.textContent=new Date().getFullYear();var m=document.getElementById('mob-menu-btn');if(m)m.addEventListener('click',function(e){e.stopPropagation();var t=document.getElementById('nav-toggle');if(t)t.click();});})();</script>
 <script src="/js/affiliate.js?v=20261005b" defer></script>
 <script src="/js/plan-engine.js?v=20261006c" defer></script>
 <script src="/js/planner-v3.js?v=20261006-v5" defer></script>
+<script src="/js/nav.js?v=20260422c" defer></script>
+<script src="/js/nav-dropdown.js" defer></script>
+<script src="/js/lang-switcher.js" defer></script>
 <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>

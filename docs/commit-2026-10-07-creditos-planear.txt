@@ -1,0 +1,10 @@
+feat: fotos em quase todas as webcams, creditos discretos em todo o site, /planear com navegacao e rodape do site
+
+- Webcams: 88 fotos novas do Wikimedia Commons (licencas livres, escolhidas a mao) + fotograma do direto nas 13 do YouTube; 18 ficam sem foto
+- Coordenadas erradas da lista MEO corrigidas (Almograve, Franquia, Paul do Mar, Jardim do Mar)
+- Creditos das fotos quase invisiveis em todos os componentes (texto mantem-se por causa das licencas); ?v=20261007cr
+- /planear e /en/planear: navbar, menu movel e rodape do site (css/site-chrome.css), sem carregar style.css
+- _headers: geolocation=(self) para o 'Perto de mim' das webcams funcionar
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Wb84f4PvM5dzzfL8MYuWRL
