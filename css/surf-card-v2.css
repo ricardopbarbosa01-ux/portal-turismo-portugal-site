@@ -1,0 +1,106 @@
+/* Cartao de surf v2 — /surf e /en/surf — Portal Turismo Portugal — 2026-10-07
+ * Mesma linguagem do cartao de praia v2 (css/beach-card-v2.css): foto verificada, nome, nivel em escala, epoca/swell/vento, 2 acoes.
+ * HTML gerado por surfCardHtml() em js/surf-pesca-page.js. Mantem .spot-card (paginacao em js/beaches-paginate.js).
+ * Carregado depois de surf-pesca-page.css. Nao afeta a pesca (as regras usam .sc2 ou #spots-grid.spots-grid--surf).
+ */
+#spots-grid.spots-grid--surf{grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; max-width:1240px;}
+
+.spot-card.sc2{
+  --sc2-navy:#0a3d6b; --sc2-ink:#07152A; --sc2-gold:#c9a84c; --sc2-gold-l:#e8c97a; --sc2-line:#e6ecf3;
+  position:relative; display:flex; flex-direction:column; overflow:hidden; border-radius:18px;
+  background:#fff; border:1px solid var(--sc2-line);
+  box-shadow:0 1px 2px rgba(10,61,107,.05), 0 10px 28px -16px rgba(10,61,107,.28);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.spot-card.sc2:hover{transform:translateY(-4px); border-color:#d7e1ec; box-shadow:0 2px 4px rgba(10,61,107,.06), 0 22px 44px -18px rgba(10,61,107,.38);}
+
+/* ── Foto ─────────────────────────────────────────────────────────────── */
+.sc2__media{position:relative; aspect-ratio:3/2; margin:0; overflow:hidden; background:linear-gradient(140deg,#07152A 0%,#0B1B2B 55%,#10304F 100%);}
+.sc2__media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:transform .9s cubic-bezier(.22,1,.36,1);}
+.spot-card.sc2:hover .sc2__media img{transform:scale(1.05);}
+.sc2__media::after{content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(to top, rgba(7,21,42,.66) 0%, rgba(7,21,42,0) 44%), linear-gradient(to bottom, rgba(7,21,42,.22) 0%, rgba(7,21,42,0) 30%);}
+.sc2__fallback{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#e8c97a;}
+.sc2__fallback svg{width:44px; height:44px; stroke:currentColor; fill:none; stroke-width:1.4; opacity:.8;}
+
+.sc2__chip{position:absolute; z-index:2; top:12px; display:inline-flex; align-items:center; padding:5px 10px; border-radius:999px;
+  font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; line-height:1.2;
+  background:rgba(255,255,255,.92); color:var(--sc2-navy); box-shadow:0 2px 8px rgba(7,21,42,.18);}
+.sc2__chip--region{left:12px;}
+.sc2__chip--wc{right:12px; background:linear-gradient(135deg,var(--sc2-gold) 0%,var(--sc2-gold-l) 100%); color:var(--sc2-ink); letter-spacing:.04em;}
+.sc2__type{position:absolute; z-index:2; left:12px; bottom:12px; max-width:calc(100% - 40px); display:inline-flex; align-items:center; gap:7px;
+  padding:6px 11px 6px 9px; border-radius:999px; background:rgba(7,21,42,.62); color:#fff; font-size:.76rem; font-weight:500; line-height:1.2;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);}
+.sc2__type svg{width:15px; height:15px; flex:0 0 15px; stroke:#e8c97a; fill:none; stroke-width:2; stroke-linecap:round;}
+/* Credito (licenca CC): fino e vertical na margem direita, como no cartao de praia */
+.sc2__credit{position:absolute; z-index:2; right:5px; bottom:10px; margin:0; max-height:calc(100% - 56px); overflow:hidden; text-overflow:ellipsis;
+  writing-mode:vertical-rl; transform:rotate(180deg); font-size:8.5px; line-height:1; color:#fff; opacity:.42; letter-spacing:.03em; pointer-events:none; white-space:nowrap;}
+
+/* ── Corpo ────────────────────────────────────────────────────────────── */
+.sc2__body{display:flex; flex-direction:column; gap:12px; padding:16px 18px 18px; flex:1;}
+.sc2__head{display:flex; flex-direction:column; gap:3px;}
+.sc2__name{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:1.3rem; line-height:1.18; color:var(--sc2-ink); letter-spacing:-.005em;}
+.sc2__loc{margin:0; display:flex; align-items:center; gap:5px; font-size:.82rem; color:#64748b;}
+.sc2__loc svg{width:13px; height:13px; flex:0 0 13px; stroke:currentColor; fill:none; stroke-width:2;}
+
+.sc2__k, .sc2__specs dt{font-size:.64rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#7a8699;}
+.sc2__level{display:flex; flex-direction:column; gap:6px;}
+.sc2__meter{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; margin:0; padding:0; list-style:none;}
+.sc2__lv{padding:5px 2px; border-radius:7px; text-align:center; font-size:.7rem; font-weight:600; line-height:1.15;
+  background:#f2f5f9; color:#a3adbb; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.sc2__lv.is-on{color:#fff;}
+.sc2__lv--iniciante.is-on{background:#15803d;}
+.sc2__lv--intermedio.is-on{background:#1d4ed8;}
+.sc2__lv--avancado.is-on{background:#c2410c;}
+.sc2__lv--profissional.is-on{background:#7f1d1d;}
+
+.sc2__hook{margin:0; font-size:.86rem; line-height:1.5; color:#526077; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+
+.sc2__specs{display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:0; margin:0; border:1px solid var(--sc2-line); border-radius:12px; overflow:hidden;}
+.sc2__specs > div{padding:8px 10px; min-width:0;}
+.sc2__specs > div + div{border-left:1px solid var(--sc2-line);}
+.sc2__specs dt{display:block; margin-bottom:2px;}
+.sc2__specs dd{margin:0; font-size:.8rem; font-weight:600; color:var(--sc2-ink); line-height:1.25; overflow-wrap:anywhere;}
+
+/* ── Acoes ────────────────────────────────────────────────────────────── */
+.sc2__actions{margin-top:auto; display:grid; grid-template-columns:1.4fr 1fr; gap:8px;}
+.sc2--one .sc2__actions{grid-template-columns:1fr;}
+.sc2__btn{display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:44px; padding:0 12px; border-radius:12px;
+  border:1px solid #d9e2ec; background:#fff; color:var(--sc2-navy); font-size:.86rem; font-weight:600; text-decoration:none; white-space:nowrap;
+  transition:border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;}
+.sc2__btn:hover{border-color:var(--sc2-navy); background:#f6f9fc;}
+.sc2__btn svg{width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+.sc2__btn--primary{border-color:transparent; background:var(--sc2-navy); color:#fff; box-shadow:0 8px 18px -10px rgba(10,61,107,.8);}
+.sc2__btn--primary:hover{background:#0c4a82; border-color:transparent; transform:translateY(-1px);}
+.sc2__arr{order:2; transition:transform .2s ease;}
+.sc2__btn--primary:hover .sc2__arr{transform:translateX(3px);}
+.sc2__btn:focus-visible{outline:3px solid var(--sc2-gold-l); outline-offset:2px;}
+
+/* style.css (global, !important) forca 1 coluna e +16px de padding em todos os "-grid" ate 768px:
+   aqui so para esta grelha — 2 colunas no tablet, sem gutter triplo no telemovel. */
+@media (max-width:768px){
+  #spots-grid.spots-grid--surf{padding-left:0 !important; padding-right:0 !important;}
+}
+@media (min-width:600px) and (max-width:768px){
+  #spots-grid.spots-grid--surf{grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:18px;}
+}
+@media (max-width:640px){
+  /* main ja tem 16px de margem: sem isto os cartoes ficavam 32px para dentro (311px a 375px) e desalinhados dos filtros */
+  #spots.spots-section{padding-left:0 !important; padding-right:0 !important;}
+  #spots-grid.spots-grid--surf{grid-template-columns:1fr; gap:16px;}
+  .sc2__k, .sc2__specs dt{letter-spacing:.05em;}
+  .sc2__specs > div{padding:8px 9px;}
+  .sc2__media{aspect-ratio:16/10;}
+  .sc2__body{padding:14px 16px 16px; gap:11px;}
+  .sc2__name{font-size:1.24rem;}
+}
+@media (max-width:360px){
+  .sc2__lv{font-size:.64rem;}
+  .sc2__specs{grid-template-columns:1fr 1fr;}
+  .sc2__specs > div:first-child{grid-column:1 / -1; border-bottom:1px solid var(--sc2-line);}
+  .sc2__specs > div:nth-child(2){border-left:0;}
+}
+@media (prefers-reduced-motion:reduce){
+  .spot-card.sc2, .sc2__media img, .sc2__btn, .sc2__arr{transition:none;}
+  .spot-card.sc2:hover, .spot-card.sc2:hover .sc2__media img{transform:none;}
+}

@@ -93,3 +93,32 @@
 | hero | hero3 | [Tram 28 (34791358090).jpg](https://commons.wikimedia.org/wiki/File:Tram_28_(34791358090).jpg) | Shadowgate | CC BY 2.0 |
 | hero | hero4 | [The Douro Valley vineyards.jpg](https://commons.wikimedia.org/wiki/File:The_Douro_Valley_vineyards.jpg) | mat's eye | CC BY 2.0 |
 | hero | hero6 | [Rabelo boats and Ribeira seen from Cais de Gaia, 20250605 1623 9879.jpg](https://commons.wikimedia.org/wiki/File:Rabelo_boats_and_Ribeira_seen_from_Cais_de_Gaia,_20250605_1623_9879.jpg) | Jakub Hałun | CC BY 4.0 |
+
+## Surf — spots (/surf e /en/surf), adicionado 2026-10-07
+Ficheiros: `/images/spots/surf-<id>-{480,800}.webp` (recorte 3:2 de miniatura 1600 px do Commons). Crédito no cartão (autor · licença).
+
+| Onde | Local | Ficheiro | Autor | Licença |
+|---|---|---|---|---|
+| surf | Supertubos (`supertubos`) | [Praia dos Supertubos - Portugal 🇵🇹 (53788512515).jpg](https://commons.wikimedia.org/wiki/File:Praia_dos_Supertubos_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(53788512515).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia do Norte (`praia-da-nazare`) | [Praia do Norte,Nazaré -23 (50655732078).jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Norte,Nazar%C3%A9_-23_(50655732078).jpg) | Luis Ascenso | CC BY 2.0 |
+| surf | Praia do Amado (`praia-do-amado`) | [Praia do Amado - Portugal (136829251).jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Amado_-_Portugal_(136829251).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Costa da Caparica (`costa-da-caparica`) | [Caparica December 2011-1a.jpg](https://commons.wikimedia.org/wiki/File:Caparica_December_2011-1a.jpg) | Alvesgaspar | CC BY-SA 3.0 |
+| surf | Praia do Guincho (`praia-do-guincho`) | [Guincho June 2013-3.jpg](https://commons.wikimedia.org/wiki/File:Guincho_June_2013-3.jpg) | Alvesgaspar | CC BY-SA 3.0 |
+| surf | Praia de Matosinhos (`praia-de-matosinhos`) | [Praia de Matosinhos - Portugal (34413636776).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Matosinhos_-_Portugal_(34413636776).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia da Arrifana (`praia-da-arrifana-algarve`) | [Praia da Arrifana (1).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Arrifana_(1).jpg) | Pedro Ponce Asensio | CC BY-SA 4.0 |
+| surf | Praia de Santa Bárbara (`praia-de-santa-barbara-acores-1`) | [Beach Praia do Areal de Santa Bárbara 02.jpg](https://commons.wikimedia.org/wiki/File:Beach_Praia_do_Areal_de_Santa_B%C3%A1rbara_02.jpg) | Kritzolina | CC BY-SA 4.0 |
+| surf | Praia de Moledo (`praia-de-moledo`) | [Praia de Moledo (2).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Moledo_(2).jpg) | Joseolgon | CC BY-SA 4.0 |
+| surf | Praia de Afife (`praia-de-afife`) | [Praia de Afife (3).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Afife_(3).jpg) | Joseolgon | CC BY 4.0 |
+| surf | Praia do Cabedelo (`praia-de-cabedelo`) | [PraiaCabedelo.jpg](https://commons.wikimedia.org/wiki/File:PraiaCabedelo.jpg) | Ycomet | CC BY-SA 3.0 |
+| surf | Vila Praia de Âncora (`praia-de-ancora`) | [Vila Praia de Âncora - Portugal (147794224).jpg](https://commons.wikimedia.org/wiki/File:Vila_Praia_de_%C3%82ncora_-_Portugal_(147794224).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia de Esposende (`praia-de-esposende-surf`) | [Praia de Esposende - Portugal (87810498).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Esposende_-_Portugal_(87810498).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia de Ofir (`praia-de-ofir`) | [Praia de Ofir (36059861384).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Ofir_(36059861384).jpg) | Francisco Restivo | CC BY 2.0 |
+| surf | Praia do Furadouro (`praia-do-furadouro`) | [Praia do Furadouro 2.jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Furadouro_2.jpg) | Pacopac | CC BY-SA 4.0 |
+| surf | Praia de Mira (`praia-de-mira`) | [Praia de Mira - Portugal (53313524298).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Mira_-_Portugal_(53313524298).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia da Tocha (`praia-da-tocha`) | [Praia da Tocha - Portugal (237098280).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Tocha_-_Portugal_(237098280).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia de Buarcos (`praia-de-buarcos`) | [Buarcos - Portugal 🇵🇹 (54365964598).jpg](https://commons.wikimedia.org/wiki/File:Buarcos_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(54365964598).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia do Castelejo (`praia-do-castelejo`) | [Praia do Castelejo (4001726358).jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Castelejo_(4001726358).jpg) | manjerix | CC BY-SA 2.0 |
+| surf | Praia do Zavial (`praia-da-zavial`) | [Praia do Zavial (52859621525).jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Zavial_(52859621525).jpg) | Marty B | CC BY-SA 2.0 |
+| surf | Praia da Salema (`praia-da-salema`) | [Salema Beach.JPG](https://commons.wikimedia.org/wiki/File:Salema_Beach.JPG) | Joseolgon | CC BY-SA 4.0 |
+| surf | Praia de Odeceixe (`praia-de-odeceixe`) | [Praia de Odeceixe Mar 11 November 2013 (2).JPG](https://commons.wikimedia.org/wiki/File:Praia_de_Odeceixe_Mar_11_November_2013_(2).JPG) | Beeston | CC BY 3.0 |
+| surf | Ribeira Grande (`ribeira-grande-reef`) | [Azores-Day3-19 (34568123136).jpg](https://commons.wikimedia.org/wiki/File:Azores-Day3-19_(34568123136).jpg) | Ajay Suresh | CC BY 2.0 |

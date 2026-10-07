@@ -110,7 +110,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20260516-video2">
+  <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20261007-fotos">
+  <link rel="stylesheet" href="/css/surf-card-v2.css?v=20261007">
   <link rel="stylesheet" href="/css/gyg-block.css?v=20260516-video2">
 
 <link rel="stylesheet" href="/css/style.css?v=20260522-navdd-c">
@@ -227,7 +228,7 @@
       </h1>
       <p class="page-hero__sub">From Supertubos and Nazaré to the deserted beaches of the Vicentina Coast — world-class spots for all levels, with editorial guide and certified schools.</p>
       <div class="page-hero__actions">
-        <a href="#spots" class="page-hero__cta page-hero__cta--primary">
+        <a href="#spot-filters" class="page-hero__cta page-hero__cta--primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>
           Explore Spots
         </a>
@@ -244,7 +245,7 @@
   </nav>
 
   <!-- Filters -->
-  <div class="surf-filters" role="search" aria-label="Filter spots">
+  <div class="surf-filters" id="spot-filters" role="search" aria-label="Filter spots">
     <div class="filter-top">
       <span class="filter-label">Level:</span>
       <div class="level-tabs" role="group" aria-label="Level filter" id="level-tabs">
@@ -267,6 +268,11 @@
       <button class="chip" data-region="Açores">Azores</button>
     </div>
   </div>
+
+  <!-- Spots -->
+  <section class="spots-section" id="spots" aria-label="Surf spots in Portugal">
+    <div class="spots-grid spots-grid--surf" id="spots-grid" role="list"></div>
+  </section>
 
   <!-- GetYourGuide experiences affiliate block -->
   <section class="gyg-block gyg-block--with-video" aria-label="Book surf lessons in Portugal">
@@ -332,11 +338,6 @@
     </ul>
     <p><a href="/en/shapers-of-portugal" class="surf-shapers-cta">Read the full
     Shapers of Portugal guide &rarr;</a></p>
-  </section>
-
-  <!-- Spots -->
-  <section class="spots-section" id="spots" aria-label="Surf spots in Portugal">
-    <div class="spots-grid" id="spots-grid" role="list"></div>
   </section>
 
   <!-- Guide -->
@@ -660,8 +661,8 @@
 <script src="/js/nav.js?v=20260422c" defer></script>
 <script src="/js/chips-fade.js" defer></script>
 <script src="/js/beach-renderer.js?v=20260513-i18n4" defer></script>
-<script src="/js/surf-pesca-data.js?v=20260513-i18n4" defer></script>
-<script src="/js/surf-pesca-page.js?v=20260513-i18n10" defer></script>
+<script src="/js/surf-pesca-data.js?v=20261007-surf" defer></script>
+<script src="/js/surf-pesca-page.js?v=20261007-surf" defer></script>
 <script>
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
   document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });

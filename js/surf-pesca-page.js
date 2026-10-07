@@ -2,6 +2,7 @@
  * Requires: window.BeachRenderer (beach-renderer.js), window.SurfPescaData (surf-pesca-data.js).
  * Exposes: window.SurfPescaPage
  * TrustedHTML: uses trustedTypes.createPolicy('pth-html') — regression watchlist commit 6163e21
+ * 2026-10-07: cartao de surf v2 (.sc2, css/surf-card-v2.css) com fotos verificadas; cartao de pesca inalterado.
  */
 (function (window, document) {
   'use strict';
@@ -67,44 +68,112 @@
     return (T.fishing.tipoLabel && T.fishing.tipoLabel[spot.tipoKey]) || spot.tipoKey || '';
   }
 
-  // ── Surf card template ────────────────────────────────────────────────────────
+  // ── Surf card v2 (2026-10-07) ─────────────────────────────────────────────────
+  // Fotos verificadas (Wikimedia Commons): /images/spots/surf-<id>-{480,800}.webp. Lista com links: docs/FOTOS-CREDITOS.md
+  var SURF_PHOTO = {
+    'supertubos': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-da-nazare': "Luis Ascenso · CC BY 2.0",
+    'praia-do-amado': "Vitor Oliveira · CC BY-SA 2.0",
+    'costa-da-caparica': "Alvesgaspar · CC BY-SA 3.0",
+    'praia-do-guincho': "Alvesgaspar · CC BY-SA 3.0",
+    'praia-de-matosinhos': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-da-arrifana-algarve': "Pedro Ponce Asensio · CC BY-SA 4.0",
+    'praia-de-santa-barbara-acores-1': "Kritzolina · CC BY-SA 4.0",
+    'praia-de-moledo': "Joseolgon · CC BY-SA 4.0",
+    'praia-de-afife': "Joseolgon · CC BY 4.0",
+    'praia-de-cabedelo': "Ycomet · CC BY-SA 3.0",
+    'praia-de-ancora': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-de-esposende-surf': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-de-ofir': "Francisco Restivo · CC BY 2.0",
+    'praia-do-furadouro': "Pacopac · CC BY-SA 4.0",
+    'praia-de-mira': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-da-tocha': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-de-buarcos': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-do-castelejo': "manjerix · CC BY-SA 2.0",
+    'praia-da-zavial': "Marty B · CC BY-SA 2.0",
+    'praia-da-salema': "Joseolgon · CC BY-SA 4.0",
+    'praia-de-odeceixe': "Beeston · CC BY 3.0",
+    'ribeira-grande-reef': "Ajay Suresh · CC BY 2.0"
+  };
+  // Pagina estatica da praia (praias/<slug>/ e en/praias/<slug>/), quando existe
+  var SURF_BEACH = {
+    'supertubos': 'supertubos-peniche', 'praia-da-nazare': 'praia-do-norte-nazare', 'praia-do-amado': 'praia-do-amado',
+    'costa-da-caparica': 'costa-de-caparica', 'praia-do-guincho': 'praia-do-guincho', 'praia-de-matosinhos': 'praia-de-matosinhos',
+    'praia-da-arrifana-algarve': 'praia-da-arrifana', 'praia-de-moledo': 'praia-de-moledo', 'praia-de-esposende-surf': 'praia-de-esposende',
+    'praia-de-mira': 'praia-de-mira', 'praia-do-castelejo': 'praia-do-castelejo', 'praia-de-odeceixe': 'praia-de-odeceixe'
+  };
+  // Regiao do planeador (js/planner-v3.js) e regiao da BD de praias (/beaches?region=)
+  var SURF_PLAN_R = { Norte: 'minho', Porto: 'minho', Centro: 'costa-prata', Lisboa: 'cascais', Alentejo: 'alentejo', Algarve: 'algarve', 'Açores': 'acores' };
+  var SURF_PLAN_R_ID = { 'supertubos': 'oeste', 'costa-da-caparica': 'setubal' };
+  var SURF_DB_REGION = { Norte: 'Norte', Porto: 'Norte', Centro: 'Centro', Lisboa: 'Lisboa e Setúbal', Alentejo: 'Alentejo', Algarve: 'Algarve' };
+  var SURF_LEVELS = ['iniciante', 'intermedio', 'avancado', 'profissional'];
+  var SURF_REGION_EN = { Norte: 'North', Centro: 'Centre', Lisboa: 'Lisbon', 'Açores': 'Azores' };
+  var SC2 = {
+    pt: { photo: 'Foto', level: 'Nível', season: 'Melhor época', swell: 'Swell ideal', wind: 'Vento ideal', beach: 'Ver praia',
+          zone: 'Praias da zona', plan: 'Planear', worldClass: 'Classe mundial',
+          short: { iniciante: 'Iniciante', intermedio: 'Intermédio', avancado: 'Avançado', profissional: 'Pro' },
+          ariaLevel: function (t) { return 'Nível recomendado: ' + t; }, ariaBeach: function (n) { return 'Ver a página da praia ' + n; },
+          ariaZone: function (r) { return 'Ver praias da região ' + r; }, ariaPlan: function (n) { return 'Planear uma viagem de surf a ' + n; } },
+    en: { photo: 'Photo', level: 'Level', season: 'Best season', swell: 'Best swell', wind: 'Best wind', beach: 'View beach',
+          zone: 'Beaches nearby', plan: 'Plan trip', worldClass: 'World-class',
+          short: { iniciante: 'Beginner', intermedio: 'Intermediate', avancado: 'Advanced', profissional: 'Pro' },
+          ariaLevel: function (t) { return 'Recommended level: ' + t; }, ariaBeach: function (n) { return 'View the beach page for ' + n; },
+          ariaZone: function (r) { return 'See beaches in ' + r; }, ariaPlan: function (n) { return 'Plan a surf trip to ' + n; } }
+  };
+  var SC2_ICON = {
+    pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+    wave: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>',
+    arrow: '<svg class="sc2__arr" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
+    cal: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
+  };
+
+  function surfPhotoHtml(s, lang, L) {
+    var c = SURF_PHOTO[s.id];
+    if (!c) return '<div class="sc2__fallback ' + esc(s.bgClass) + '">' + SC2_ICON.wave + '</div>';
+    var base = '/images/spots/surf-' + encodeURIComponent(s.id);
+    return '<img src="' + base + '-480.webp" srcset="' + base + '-480.webp 480w, ' + base + '-800.webp 800w" sizes="(max-width: 640px) 94vw, (max-width: 1100px) 46vw, 380px" width="480" height="320" alt="' + esc(s.name || s.id) + '" loading="lazy" decoding="async" onerror="this.remove()">' +
+      '<figcaption class="sc2__credit">' + esc(L.photo + ': ' + c) + '</figcaption>';
+  }
+
   function surfCardHtml(s, T, lang) {
+    var L = SC2[lang] || SC2.pt;
+    var name = s.name || s.id;
     var levelLabel = surfLevelLabel(s, T);
-    var desc       = pickLang(s.desc, lang);
-    var type       = pickLang(s.type, lang);
-    var season     = pickLang(s.season, lang);
-    var swell      = pickLang(s.best_swell, lang);
-    var wind       = pickLang(s.best_wind, lang);
-    var location   = pickLang(s.location, lang);
-    var tagsArr    = (s.tags && s.tags[lang]) ? s.tags[lang] : (s.tags && s.tags.pt) ? s.tags.pt : [];
-    var regionUrl  = encodeURIComponent(s.region);
-    var beachesHref = (lang === 'en' ? '/en/' : '/') + 'beaches.html?region=' + regionUrl;
+    var levels = s.levels || [s.levelKey];
+    var meter = SURF_LEVELS.map(function (k) {
+      var on = levels.indexOf(k) !== -1;
+      return '<li class="sc2__lv sc2__lv--' + k + (on ? ' is-on' : '') + '"' + (on ? '' : ' aria-hidden="true"') + '>' + esc(L.short[k]) + '</li>';
+    }).join('');
+    var pre = lang === 'en' ? '/en/' : '/';
+    var slug = SURF_BEACH[s.id];
+    var planR = SURF_PLAN_R_ID[s.id] || SURF_PLAN_R[s.region] || '';
+    var planHref = pre + 'planear?' + (planR ? 'r=' + planR + '&' : '') + 'i=surf&ref=surf';
+    var dbRegion = SURF_DB_REGION[s.region];
+    var primary = slug
+      ? '<a class="sc2__btn sc2__btn--primary" href="' + pre + 'praias/' + slug + '/" aria-label="' + esc(L.ariaBeach(name)) + '">' + esc(L.beach) + SC2_ICON.arrow + '</a>'
+      : dbRegion
+        ? '<a class="sc2__btn sc2__btn--primary" href="' + pre + 'beaches?region=' + encodeURIComponent(dbRegion) + '" aria-label="' + esc(L.ariaZone(s.region)) + '">' + esc(L.zone) + SC2_ICON.arrow + '</a>'
+        : '';
+    var plan = '<a class="sc2__btn' + (primary ? '' : ' sc2__btn--primary') + '" href="' + planHref + '" aria-label="' + esc(L.ariaPlan(name)) + '">' + SC2_ICON.cal + esc(L.plan) + '</a>';
     return (
-      '<article class="spot-card" role="listitem">' +
-        '<div class="spot-visual">' +
-          '<div class="spot-visual-bg ' + esc(s.bgClass) + '">' +
-            '<svg class="spot-visual-wave" viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">' +
-              '<path d="M0,80 C80,40 160,100 240,70 C320,40 370,90 400,70 L400,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/>' +
-              '<path d="M0,96 C60,68 140,106 240,86 C320,66 365,102 400,86 L400,120 L0,120 Z" fill="rgba(255,255,255,0.04)"/>' +
-            '</svg>' +
-          '</div>' +
-          '<div class="spot-visual-content">' +
-            '<span class="spot-region-badge">' + esc(s.region) + '</span>' +
-            '<div class="spot-quality" aria-label="' + s.quality + ' / 5">' + dots(s.quality) + '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="spot-body">' +
-          '<h2 class="spot-name">' + esc(s.name || s.id) + '</h2>' +
-          '<div class="spot-location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>' + esc(location) + '</div>' +
-          '<div class="spot-meta"><span class="spot-meta-tag spot-level--' + esc(s.levelKey) + '">' + esc(levelLabel) + '</span></div>' +
-          '<div class="spot-type"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/></svg>' + esc(type) + '</div>' +
-          '<div class="spot-season">' + esc(T.surf.seasonLabel) + ': <strong>' + esc(season) + '</strong></div>' +
-          '<p class="spot-desc">' + esc(desc) + '</p>' +
-          '<div class="spot-tags">' + tagsArr.map(function (t) { return '<span class="spot-tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
-        '</div>' +
-        '<div class="spot-footer">' +
-          '<div class="spot-conditions">' + esc(T.surf.swellLabel) + ': <strong>' + esc(swell) + '</strong> &nbsp;&middot;&nbsp; ' + esc(T.surf.windLabel) + ': <strong>' + esc(wind) + '</strong></div>' +
-          '<a href="' + beachesHref + '" class="spot-link" aria-label="' + esc(T.surf.exploreRegionAria(s.region)) + '">' + esc(T.surf.exploreRegion) + '<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>' +
+      '<article class="spot-card sc2' + (primary ? '' : ' sc2--one') + '" role="listitem" data-spot-id="' + esc(s.id) + '">' +
+        '<figure class="sc2__media">' + surfPhotoHtml(s, lang, L) +
+          '<span class="sc2__chip sc2__chip--region">' + esc(lang === 'en' ? (SURF_REGION_EN[s.region] || s.region) : s.region) + '</span>' +
+          (s.quality >= 5 ? '<span class="sc2__chip sc2__chip--wc">' + esc(L.worldClass) + '</span>' : '') +
+          '<span class="sc2__type">' + SC2_ICON.wave + esc(pickLang(s.type, lang)) + '</span>' +
+        '</figure>' +
+        '<div class="sc2__body">' +
+          '<div class="sc2__head"><h2 class="sc2__name">' + esc(name) + '</h2>' +
+          '<p class="sc2__loc">' + SC2_ICON.pin + esc(pickLang(s.location, lang)) + '</p></div>' +
+          '<div class="sc2__level"><span class="sc2__k">' + esc(L.level) + '</span>' +
+            '<ul class="sc2__meter" aria-label="' + esc(L.ariaLevel(levelLabel)) + '">' + meter + '</ul></div>' +
+          '<p class="sc2__hook">' + esc(pickLang(s.desc, lang)) + '</p>' +
+          '<dl class="sc2__specs">' +
+            '<div><dt>' + esc(L.season) + '</dt><dd>' + esc(pickLang(s.season, lang)) + '</dd></div>' +
+            '<div><dt>' + esc(L.swell) + '</dt><dd>' + esc(pickLang(s.best_swell, lang)) + '</dd></div>' +
+            '<div><dt>' + esc(L.wind) + '</dt><dd>' + esc(pickLang(s.best_wind, lang)) + '</dd></div>' +
+          '</dl>' +
+          '<div class="sc2__actions">' + primary + plan + '</div>' +
         '</div>' +
       '</article>'
     );

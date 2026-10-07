@@ -1,5 +1,6 @@
 /** js/surf-pesca-data.js — Shared data for surf.html + pesca.html (+ EN variants).
- * Exposes window.SurfPescaData = { SURF_SPOTS:[25], FISH_SPOTS:[25] }
+ * Exposes window.SurfPescaData = { SURF_SPOTS:[23], FISH_SPOTS:[25] }
+ * 2026-10-07: removidos 2 duplicados do surf (Arrifana tambem listada no Alentejo; Santa Barbara 2x); nomes corrigidos: Praia do Zavial, Vila Praia de Ancora, Praia do Cabedelo, Praia do Norte (Nazare).
  * Each spot has locale-neutral keys and {pt,en} objects for user-visible strings.
  * Canonical keys (levelKey, tipoKey, region, bgClass) are always PT-canonical.
  * For composite level labels in surf, add levelLabelKey: 'iniciante_intermedio' | 'intermedio_avancado'
@@ -8,7 +9,7 @@
 (function (window) {
   'use strict';
 
-  // ── Surf Spots (25) ───────────────────────────────────────────────────────────
+  // ── Surf Spots (23) ───────────────────────────────────────────────────────────
   var SURF_SPOTS = [
     {
       id: 'supertubos',
@@ -31,7 +32,7 @@
     },
     {
       id: 'praia-da-nazare',
-      name: 'Praia da Nazaré',
+      name: 'Praia do Norte',
       region: 'Centro',
       location: { pt: 'Nazaré', en: 'Nazaré' },
       bgClass: 'spot-bg--centro',
@@ -129,25 +130,6 @@
       quality: 3,
     },
     {
-      id: 'praia-da-arrifana-alentejo',
-      name: 'Praia da Arrifana',
-      region: 'Alentejo',
-      location: { pt: 'Aljezur', en: 'Aljezur' },
-      bgClass: 'spot-bg--alentejo',
-      levelKey: 'intermedio',
-      levels: ['intermedio'],
-      type: { pt: 'Point Break / Reef', en: 'Point Break / Reef' },
-      season: { pt: 'Outono–Primavera', en: 'Autumn–Spring' },
-      best_swell: { pt: 'NO', en: 'NW' },
-      best_wind: { pt: 'NE', en: 'NE' },
-      desc: {
-        pt: 'Ponta rochosa com ondas longas e consistentes numa baía protegida. Cenário selvagem e preservado.',
-        en: 'Rocky headland with long, consistent waves in a sheltered bay. Wild and preserved scenery.',
-      },
-      tags: { pt: ['Point Break', 'Consistente', 'Selvagem', 'Vista'], en: ['Point Break', 'Consistent', 'Wild', 'View'] },
-      quality: 4,
-    },
-    {
       id: 'praia-de-santa-barbara-acores-1',
       name: 'Praia de Santa Bárbara',
       region: 'Açores',
@@ -161,8 +143,8 @@
       best_swell: { pt: 'N / NO', en: 'N / NW' },
       best_wind: { pt: 'SE', en: 'SE' },
       desc: {
-        pt: 'O spot mais famoso dos Açores. Ondas potentes do Atlântico Norte numa paisagem vulcânica única.',
-        en: 'The most famous spot in the Azores. Powerful North Atlantic waves on a unique volcanic landscape.',
+        pt: 'O beach break de referência dos Açores. Ondas potentes do Atlântico Norte numa paisagem vulcânica única.',
+        en: 'The benchmark beach break of the Azores. Powerful North Atlantic waves on a unique volcanic landscape.',
       },
       tags: { pt: ['Açores', 'Atlântico', 'Natureza Única', 'Ilha'], en: ['Azores', 'Atlantic', 'Unique Nature', 'Island'] },
       quality: 5,
@@ -208,7 +190,7 @@
     },
     {
       id: 'praia-de-cabedelo',
-      name: 'Praia de Cabedelo',
+      name: 'Praia do Cabedelo',
       region: 'Norte',
       location: { pt: 'Viana do Castelo', en: 'Viana do Castelo' },
       bgClass: 'spot-bg--porto',
@@ -227,7 +209,7 @@
     },
     {
       id: 'praia-de-ancora',
-      name: 'Praia de Ancora',
+      name: 'Vila Praia de Âncora',
       region: 'Norte',
       location: { pt: 'Viana do Castelo', en: 'Viana do Castelo' },
       bgClass: 'spot-bg--porto',
@@ -297,7 +279,7 @@
       best_swell: { pt: 'N / NO', en: 'N / NW' },
       best_wind: { pt: 'E', en: 'E' },
       desc: {
-        pt: 'Spot exposed com ondas potentes de Atlântico Norte. Correntes fortes — não recomendado para iniciantes. Melhor com vento de E.',
+        pt: 'Spot exposto às ondas potentes do Atlântico Norte. Correntes fortes — não recomendado para iniciantes. Melhor com vento de E.',
         en: 'Exposed spot with powerful North Atlantic waves. Strong currents — not recommended for beginners. Best with E wind.',
       },
       tags: { pt: ['Potente', 'Correntes', 'Exposed', 'Inverno'], en: ['Powerful', 'Currents', 'Exposed', 'Winter'] },
@@ -402,7 +384,7 @@
     },
     {
       id: 'praia-da-zavial',
-      name: 'Praia da Zavial',
+      name: 'Praia do Zavial',
       region: 'Algarve',
       location: { pt: 'Vila do Bispo', en: 'Vila do Bispo' },
       bgClass: 'spot-bg--algarve',
@@ -476,26 +458,6 @@
       },
       tags: { pt: ['Reef de Lava', 'Competição', 'Big Wave', 'Açores'], en: ['Lava Reef', 'Competition', 'Big Wave', 'Azores'] },
       quality: 5,
-    },
-    {
-      id: 'praia-de-santa-barbara-acores-2',
-      name: 'Praia de Santa Bárbara',
-      region: 'Açores',
-      location: { pt: 'Ribeira Grande, S. Miguel', en: 'Ribeira Grande, S. Miguel' },
-      bgClass: 'spot-bg--acores',
-      levelKey: 'intermedio',
-      levelLabelKey: 'intermedio_avancado',
-      levels: ['intermedio', 'avancado'],
-      type: { pt: 'Beach Break', en: 'Beach Break' },
-      season: { pt: 'Todo o Ano', en: 'Year-round' },
-      best_swell: { pt: 'N / NO', en: 'N / NW' },
-      best_wind: { pt: 'SE', en: 'SE' },
-      desc: {
-        pt: 'Beach break consistente próximo de Ribeira Grande. Mais acessível que o reef, ideal para surfistas intermédios que visitam os Açores.',
-        en: 'Consistent beach break near Ribeira Grande. More accessible than the reef, ideal for intermediate surfers visiting the Azores.',
-      },
-      tags: { pt: ['Açores', 'Consistente', 'Acessível', 'Ilha'], en: ['Azores', 'Consistent', 'Accessible', 'Island'] },
-      quality: 4,
     },
   ];
 

@@ -3,8 +3,8 @@
 Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia no projeto Claude: `claude/handoff-proximos-4-2026-10.md`.
 
 ## Repositório
-- Branch: `main`. Último commit: `2c888ed` (redesign, publicado).
-- `main` está ~26 commits à frente de `origin/main` (GitHub): falta fazer `git push`.
+- Branch: `main`. Último commit: `a4eb7b6` (HANDOFF + scripts); antes `511ee73` (velocidade) e `2c888ed` (redesign).
+- `main` = `origin/main` (push feito, confirmado 07/10 às 11h).
 - Há ficheiros "modificados" que são só diferença de fim de linha (CRLF na VM vs LF no HEAD). Para ver diferenças reais: `git --no-optional-locks diff --ignore-cr-at-eol --numstat HEAD`.
 - Ver também a secção "Pendentes" (ficheiros soltos na raiz, que não entram em commit).
 
@@ -13,7 +13,8 @@ Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia n
 | Trabalho | Guardado | Publicado | Testado |
 |---|---|---|---|
 | Redesign (lista abaixo), commit `2c888ed` | sim | **sim, 07/10** | local + produção |
-| Velocidade dos heroes (`docs/commit-2026-10-07-perf.txt`) | sim (checkpoint 1) | **não** | só local |
+| Velocidade dos heroes (`511ee73`) | sim | **sim** (produção serve `?v=20261007p` + AVIF, confirmado 07/10) | local; **PageSpeed em produção por medir** |
+| **A. Surf — cartão v2 + fotos** (`docs/commit-2026-10-07-surf.txt`, backup `docs/_backup-surf-20261007/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320 px, PT+EN, pesca sem alterações |
 | HANDOFF.md + `preview.ps1` + `serve-local.ps1` | sim (checkpoint 2) | não se publica (excluído do deploy) | — |
 
 **Redesign publicado em `2c888ed`:**
@@ -65,7 +66,6 @@ Novos ou por decidir:
   **Decisão do Ricardo.** Proposta: exclusões no `deploy.ps1`.
 - Preloader do início (ecrã azul, 1,4–2,2 s em cada visita) atrasa a página. Decisão estética do Ricardo.
 - `supabase.min.js` síncrono em /beaches e /surf (55 KB).
-- `surf.html` ainda pede `surf-pesca-page.css?v=20260516-video2`, mas o CSS mudou (fotos da pesca). Ao mexer no surf, subir o `?v=`.
 - Falta a atribuição do Open-Meteo, que saiu do hero.
 - A BD ainda tem as fotos antigas das praias, por isso beach.html continua a mostrá-las.
 - Praias duplicadas na BD: Buarcos, Alvor, Armação de Pêra.
@@ -106,12 +106,15 @@ Novos ou por decidir:
 - **Escrever na pasta pela VM:** usar ficheiro temporário + `os.replace`. Apagar não é permitido; mover para `docs/_to_delete/`.
 
 ## Próximo passo
-Próxima sessão: **A. reestruturar a página de Surf**. Depois, por esta ordem:
-- B. filtros uniformes, com /beaches como padrão;
+**A. Surf: feito localmente em 07/10** (falta commit + deploy pelo Ricardo). Seguinte, por esta ordem:
+- B. filtros uniformes, com /beaches como padrão (no surf os filtros já ficam colados aos resultados);
 - C. webcams;
 - D. monetização dos cartões;
 - E. Planear com o header, footer e linguagem visual do site.
 
-Antes de A:
-1. Confirmar se o checkpoint de velocidade foi publicado.
-2. Inspecionar os componentes atuais.
+Pendentes do surf (A):
+- Odeceixe está como região Alentejo mas a localização diz Aljezur (a praia fica do lado do Algarve) — decidir.
+- /en/surf não tem paginação (mostra os 23) — já era assim.
+- Bloco GYG do surf desceu para depois dos spots (no telemóvel ~12 000 px): GYG no surf tem ~0 cliques (GA4), mas medir.
+- CSP bloqueia `https://www.google.com/g/collect` (GA4 user_engagement) em todas as páginas — já existia; GA4 não se toca sem razão: decidir.
+- Monetização nos cartões de surf (aulas GYG, alojamento) fica para a etapa D.
