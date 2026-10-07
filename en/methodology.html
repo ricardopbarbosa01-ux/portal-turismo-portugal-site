@@ -110,6 +110,7 @@
     .footer-bottom a:hover { color: var(--gold); }
 </style>
 
+<link rel="stylesheet" href="/css/footer-v2.css?v=20261007">
 </head>
 <body>
 
@@ -281,18 +282,21 @@
   </section>
 </main>
 
-<footer class="footer" role="contentinfo">
-  <div class="footer-bottom">
-    <span>© 2026 Portugal Travel Hub. All rights reserved.</span>
-    <span>
-      <a href="/en/about.html">About</a> ·
-      <a href="/en/methodology.html">Methodology</a> ·
-      <a href="/en/transparency.html">Transparency</a> ·
-      <a href="/en/contact.html">Contact</a> ·
-      <a href="/en/privacy.html">Privacy</a> ·
-      <a href="/en/terms.html">Terms</a> ·
-      <a href="/en/cookies.html">Cookies</a>
-    </span>
+<footer class="footer ft2" role="contentinfo" aria-label="Footer">
+  <div class="ft2__main">
+    <div>
+      <a class="ft2__brand" href="/en/"><span class="ft2__logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#0a3d6b"/></svg></span>Portugal Travel Hub</a>
+      <p class="ft2__tag">Beaches, webcams, surf and fishing in Portugal — with live conditions.</p>
+    </div>
+    <nav class="ft2__nav" aria-label="Footer">
+      <p class="ft2__row"><span class="ft2__h">Explore</span><a href="/en/beaches">Beaches</a><a href="/en/surf">Surf</a><a href="/en/pesca">Fishing</a><a href="/en/webcams">Webcams</a><a href="/en/guides">Guides</a><a href="/en/planear">Plan a trip</a><a href="https://www.discovercars.com/portugal?a_aid=portalturismoportugal" target="_blank" rel="noopener noreferrer sponsored">Car hire</a></p>
+      <p class="ft2__row"><span class="ft2__h">Business</span><a href="/en/parceiros">For your business</a><a href="/en/precos">Pricing</a><a href="/en/media-kit">Media kit</a></p>
+      <p class="ft2__row"><span class="ft2__h">About</span><a href="/en/about">About us</a><a href="/en/methodology">Methodology</a><a href="/en/transparency">Transparency</a><a href="/en/contact">Contact</a></p>
+    </nav>
+  </div>
+  <div class="ft2__bottom">
+    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. All rights reserved.</span>
+    <span class="ft2__legal"><a href="/en/privacy">Privacy</a><a href="/en/terms">Terms</a><a href="/en/cookies">Cookies</a><a href="/en/refund-policy">Refunds</a></span>
   </div>
 </footer>
 

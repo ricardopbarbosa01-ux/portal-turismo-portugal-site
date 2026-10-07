@@ -826,6 +826,8 @@
   </script>
   <script async src="//z-eu.amazon-adsystem.com/widgets/onejs?MarketPlace=ES&adInstanceId=pth"></script>
 
+<link rel="stylesheet" href="/css/footer-v2.css?v=20261007">
+<link rel="stylesheet" href="/css/home-hero-v3.css?v=20261007">
 </head>
 <body>
 
@@ -915,56 +917,48 @@
 <main id="main">
 
 <!-- ── 1. HERO — Editorial Video Intercept (Phase 6C-F Alt 3) ─── -->
-<section class="hero hero--alt3" aria-label="Portugal's beach portal">
-  <!-- SVG clip-path wave definition (used by hero__media via clip-path: url()) -->
-  <svg class="hero__svg-defs" aria-hidden="true">
-    <defs>
-      <clipPath id="hero-wave-clip" clipPathUnits="objectBoundingBox">
-        <path d="M 0.0,0.0 C 0.15,0.05 0.05,0.20 0.18,0.32 C 0.30,0.42 0.10,0.55 0.20,0.68 C 0.32,0.78 0.12,0.90 0.18,1.0 L 1.0,1.0 L 1.0,0.0 Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
-  <!-- Video layer (absolute, right ~65%, paints before content via DOM order) -->
-  <div class="hero__media">
-    <video class="hero__video"
-      autoplay muted loop playsinline preload="metadata"
-      poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.jpg"
-      aria-label="Video of Portuguese beaches"
-    ></video>
-    <div class="hero__media-overlay" aria-hidden="true"></div>
+<section class="lh" aria-label="Portugal's beaches — the coast right now">
+  <div class="lh__media" aria-hidden="true">
+    <video class="hero__video lh__video" autoplay muted loop playsinline preload="metadata"
+      poster="https://cdn.portalturismoportugal.com/homepage-hero-poster.jpg"></video>
+    <div class="lh__shade"></div>
   </div>
 
-  <!-- Content layer (relative, no z-index — headline mix-blend-mode crosses into video) -->
-  <div class="hero__content">
-    <p class="hero__kicker">PORTUGAL · 7 REGIONS · 100+ BEACHES · ATLANTIC</p>
-    <h1 class="hero__headline">
-      <span class="hero__line">
-        <span class="hero__word" style="--i:0">The</span>
-        <span class="hero__word" style="--i:1">Portugal</span>
-        <span class="hero__word" style="--i:2">that</span>
-      </span>
-      <span class="hero__line">
-        <span class="hero__word" style="--i:3">doesn't</span>
-        <span class="hero__word" style="--i:4">show up</span>
-      </span>
-      <span class="hero__line">
-        <span class="hero__word" style="--i:5">on</span>
-        <span class="hero__word" style="--i:6">booking</span>
-        <span class="hero__word" style="--i:7">sites.</span>
-      </span>
-    </h1>
-    <p class="hero__sub">Verified by locals. Never auctioned.</p>
-    <div class="hero__actions">
-      <a href="/en/planear.html" class="hero__cta hero__cta--primary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'planear'})">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Start exploring
-      </a>
-      <a href="/en/our-story.html" class="hero__cta hero__cta--secondary" onclick="track('home_cta_click',{page:'home',source:'hero',destination:'our-story'})">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5s2.5 2 5 2 2.5-2 5-2"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11s2.5 2 5 2 2.5-2 5-2"/></svg>
-        Our story
-      </a>
+  <div class="lh__inner">
+    <div class="lh__copy">
+      <p class="lh__kicker"><span class="lh__live" aria-hidden="true"></span><span data-lh="kicker">111 verified beaches · live sea</span></p>
+      <h1 class="lh__title">
+        <span class="lh__line" style="--d:0">The Portugal you</span>
+        <span class="lh__line" style="--d:1">won't find on</span>
+        <span class="lh__line" style="--d:2"><em>booking sites.</em></span>
+      </h1>
+      <p class="lh__sub">Beaches picked by people who live here, with sea conditions <strong>right now</strong>. Never sold to the highest bidder.</p>
+
+      <form class="lh__search" action="/en/beaches" method="get" role="search" aria-label="Find a beach">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.2" y2="16.2"/></svg>
+        <input type="search" name="q" placeholder="Beach, town or region…" aria-label="Beach, town or region" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <nav class="lh__intents" aria-label="Shortcuts">
+        <a href="/en/beaches?tipo=fam%C3%ADlia" data-intent="familia"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2"/><circle cx="18" cy="9" r="2"/><path d="M16 21v-1a4 4 0 0 1 6-3.5"/></svg>Family beaches</a>
+        <a href="/en/surf" data-intent="surf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>Waves for surfing</a>
+        <a href="/en/hidden-beaches" data-intent="escondidas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Hidden beaches</a>
+        <a href="/en/webcams" data-intent="webcams"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>Live webcams</a>
+        <a href="/en/planear" data-intent="planear"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Plan a trip</a>
+      </nav>
+
+      <ul class="lh__trust">
+        <li>Official water quality (APA)</li><li>Real, verified photos</li><li>13 coastal webcams</li>
+      </ul>
     </div>
+
+    <aside class="lh__card is-loading" aria-label="Today on the coast" aria-live="polite" data-lh="card">
+      <header class="lh__card-h"><span><span class="lh__live" aria-hidden="true"></span>Today on the coast</span><span class="lh__time" data-lh="time"></span></header>
+      <div class="lh__best" data-lh="best"></div>
+      <ul class="lh__rows" data-lh="rows"><li></li><li></li></ul>
+      <p class="lh__src">Wave height and sea surface temperature · Open-Meteo</p>
+    </aside>
   </div>
 </section>
 
@@ -1457,64 +1451,21 @@
 </main>
 
 <!-- ── Footer ──────────────────────────────────────────────────── -->
-<footer class="footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        </div>
-        Portugal Travel Hub
-      </div>
-      <p class="footer-tagline">
-        Portugal's reference portal for beaches — conditions, webcams, surf, fishing and trip planning.
-      </p>
-      <form class="footer-search-form" role="search" aria-label="Search beach" action="/en/beaches.html" method="get">
-        <div class="footer-search-bar">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" name="q" id="footer-search-input" placeholder="Search beach..." aria-label="Search beach">
-          <button type="submit" class="footer-search-btn" aria-label="Search">Search</button>
-        </div>
-      </form>
+<footer class="footer ft2" role="contentinfo" aria-label="Footer">
+  <div class="ft2__main">
+    <div>
+      <a class="ft2__brand" href="/en/"><span class="ft2__logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#0a3d6b"/></svg></span>Portugal Travel Hub</a>
+      <p class="ft2__tag">Beaches, webcams, surf and fishing in Portugal — with live conditions.</p>
     </div>
-
-    <nav class="footer-col" aria-label="Destinations">
-      <h3 class="footer-heading">Destinations</h3>
-      <ul>
-        <li><a href="/en/beaches.html?region=Algarve">Algarve</a></li>
-        <li><a href="/en/beaches.html?region=Lisboa">Lisbon</a></li>
-        <li><a href="/en/beaches.html?region=Porto">Porto</a></li>
-        <li><a href="/en/beaches.html?region=Alentejo">Alentejo</a></li>
-      </ul>
-    </nav>
-
-    <nav class="footer-col" aria-label="Portal">
-      <h3 class="footer-heading">Portal</h3>
-      <ul>
-        <li><a href="/en/beaches.html">Beaches</a></li>
-        <li><a href="/en/webcams.html">Webcams</a></li>
-        <li><a href="/en/surf.html">Surf</a></li>
-        <li><a href="/en/pesca.html">Fishing</a></li>
-        <li><a href="/en/planear.html">Plan a Trip</a></li>
-        <li><a href="https://www.discovercars.com/portugal?a_aid=portalturismoportugal" target="_blank" rel="noopener noreferrer sponsored">Car Hire</a></li>
-      </ul>
-    </nav>
-
-    <nav class="footer-col" aria-label="Partners &amp; Help">
-      <h3 class="footer-heading">Partners &amp; Help</h3>
-      <ul>
-        <li><a href="/en/parceiros.html">For Business</a></li>
-        <li><a href="/en/media-kit.html">Media Kit</a></li>
-        <li><a href="/en/about.html">About Us</a></li>
-        <li><a href="/en/contact.html">Contact</a></li>
-        <li><a href="/en/privacy.html">Privacy</a></li>
-      </ul>
+    <nav class="ft2__nav" aria-label="Footer">
+      <p class="ft2__row"><span class="ft2__h">Explore</span><a href="/en/beaches">Beaches</a><a href="/en/surf">Surf</a><a href="/en/pesca">Fishing</a><a href="/en/webcams">Webcams</a><a href="/en/guides">Guides</a><a href="/en/planear">Plan a trip</a><a href="https://www.discovercars.com/portugal?a_aid=portalturismoportugal" target="_blank" rel="noopener noreferrer sponsored">Car hire</a></p>
+      <p class="ft2__row"><span class="ft2__h">Business</span><a href="/en/parceiros">For your business</a><a href="/en/precos">Pricing</a><a href="/en/media-kit">Media kit</a></p>
+      <p class="ft2__row"><span class="ft2__h">About</span><a href="/en/about">About us</a><a href="/en/methodology">Methodology</a><a href="/en/transparency">Transparency</a><a href="/en/contact">Contact</a></p>
     </nav>
   </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 Portugal Travel Hub. All rights reserved.</span>
-    <span><a href="/en/about.html">About</a> · <a href="/en/methodology.html">Methodology</a> · <a href="/en/transparency.html">Transparency</a> · <a href="/en/contact.html">Contact</a> · <a href="/en/privacy.html">Privacy</a> · <a href="/en/refund-policy.html">Refund Policy</a> · <a href="/en/terms.html">Terms</a> · <a href="/en/cookies.html">Cookies</a></span>
+  <div class="ft2__bottom">
+    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. All rights reserved.</span>
+    <span class="ft2__legal"><a href="/en/privacy">Privacy</a><a href="/en/terms">Terms</a><a href="/en/cookies">Cookies</a><a href="/en/refund-policy">Refunds</a></span>
   </div>
 </footer>
 
@@ -1638,6 +1589,8 @@
   <script src="/js/lang-switcher.js" defer></script>
   <script src="/js/nav.js?v=20260512-lhq" defer></script>
   <script src="/js/lazy-video.js?v=20260424" defer></script>
+  <script src="/js/live-coast.js?v=20261007" defer></script>
+  <script src="/js/home-hero-v3.js?v=20261007" defer></script>
   <script src="/js/cookie-consent.js" defer></script>
   <script>
     (function() {

@@ -111,6 +111,42 @@
   }
 
   // ── Fishing card template ─────────────────────────────────────────────────────
+  // ── Fotos dos spots de pesca (Wikimedia Commons, verificadas 2026-10-07) ──────────
+  // Ficheiros: /images/spots/pesca-<id>-{480,800}.webp. Sem entrada -> fica o fundo de cor (bgClass).
+  var FISH_PHOTO = {
+    'sagres-ponta': "The Cosmonaut · CC BY-SA 2.5 ca",
+    'ria-formosa': "Vitor Oliveira · CC BY-SA 2.0",
+    'costa-de-sines': "Vitor Oliveira · CC BY-SA 2.0",
+    'sesimbra-mar-alto': "Pedro Ribeiro Simões · CC BY 2.0",
+    'ria-de-aveiro': "Inês Severiano · CC BY-SA 4.0",
+    'viana-rio-lima': "Krzysztof Golik · CC BY-SA 4.0",
+    'portimao-barco': "Vitor Oliveira · CC BY-SA 2.0",
+    'acores-sao-miguel': "Ravi Sarma · CC BY 2.0",
+    'rio-lima-ponte-de-lima': "Joseolgon · CC BY-SA 4.0",
+    'albufeira-canicada': "Joseolgon · CC BY-SA 4.0",
+    'rio-douro-peso-regua': "Joseolgon · CC BY-SA 4.0",
+    'praia-esposende-costa': "Joseolgon · CC BY-SA 4.0",
+    'foz-mondego': "Vitor Oliveira · CC BY-SA 2.0",
+    'albufeira-castelo-de-bode': "Vitor Oliveira · CC BY-SA 2.0",
+    'albufeira-maranhao': "Vitor Oliveira · CC BY 2.0",
+    'costa-sines-rocha': "Tiago J. G. Fernandes · CC BY 2.0",
+    'porto-covo': "Paulrocha · CC BY-SA 4.0",
+    'costa-vicentina-odeceixe': "Vitor Oliveira · CC BY-SA 2.0",
+    'ria-de-alvor': "Joseolgon · CC0",
+    'praia-da-rocha-portimao': "CesareBonaparte · CC BY-SA 4.0",
+    'lagoa-dos-salgados': "Kolforn · CC BY-SA 4.0",
+    'ilha-da-culatra': "Tristanm70 · CC BY-SA 4.0",
+    'baia-de-setubal': "DavidFerreira20048 · CC BY-SA 4.0",
+    'ribeira-grande-acores-mar': "Anton Zelenov · CC BY-SA 4.0",
+    'madeira-canical': "Asurnipal · CC BY-SA 4.0"
+  };
+  function fishPhotoHtml(s, lang) {
+    var c = FISH_PHOTO[s.id]; if (!c) return '';
+    var base = '/images/spots/pesca-' + encodeURIComponent(s.id);
+    return '<img class="spot-photo" src="' + base + '-480.webp" srcset="' + base + '-480.webp 480w, ' + base + '-800.webp 800w" sizes="(max-width: 640px) 92vw, 380px" width="480" height="320" alt="' + esc(s.name || s.id) + '" loading="lazy" decoding="async" onerror="this.remove()">' +
+      '<span class="spot-photo-credit">' + esc((lang === 'en' ? 'Photo: ' : 'Foto: ') + c) + '</span>';
+  }
+
   function fishingCardHtml(s, T, lang) {
     var levelLabel = fishingLevelLabel(s, T);
     var tipoLabel  = fishingTipoLabel(s, T);
@@ -122,9 +158,9 @@
     var tagsArr    = (s.tags && s.tags[lang]) ? s.tags[lang] : (s.tags && s.tags.pt) ? s.tags.pt : [];
     var loginHref  = (lang === 'en' ? '/en/' : '/') + 'login.html#register';
     return (
-      '<article class="spot-card" role="listitem">' +
+      '<article class="spot-card' + (FISH_PHOTO[s.id] ? ' spot-card--photo' : '') + '" role="listitem">' +
         '<div class="spot-visual">' +
-          '<div class="spot-visual-bg ' + esc(s.bgClass) + '">' +
+          '<div class="spot-visual-bg ' + esc(s.bgClass) + '">' + fishPhotoHtml(s, lang) +
             '<svg class="spot-visual-wave" viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true">' +
               '<path d="M0,80 C80,40 160,100 240,70 C320,40 370,90 400,70 L400,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/>' +
               '<path d="M0,96 C60,68 140,106 240,86 C320,66 365,102 400,86 L400,120 L0,120 Z" fill="rgba(255,255,255,0.04)"/>' +

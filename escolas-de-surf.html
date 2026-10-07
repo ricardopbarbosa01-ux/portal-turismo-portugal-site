@@ -336,6 +336,7 @@
       .toast { bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important; right: 16px !important; left: 16px !important; }
     }
   </style>
+<link rel="stylesheet" href="/css/footer-v2.css?v=20261007">
 </head>
 <body>
 
@@ -1041,63 +1042,21 @@
 
 </main>
 
-<footer class="footer" role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="footer-logo-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        </div>
-        Portugal Travel Hub
-      </div>
-      <p class="footer-tagline">
-        O portal de refer&ecirc;ncia de praias em Portugal &mdash; condi&ccedil;&otilde;es, webcams, surf, pesca e planeamento de viagens.
-      </p>
-      <form class="footer-search-form" role="search" aria-label="Pesquisar praia">
-        <div class="footer-search-bar">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" id="footer-search-input" placeholder="Pesquisar praia..." aria-label="Pesquisar praia">
-          <button type="submit" class="footer-search-btn" aria-label="Pesquisar">Ir</button>
-        </div>
-      </form>
+<footer class="footer ft2" role="contentinfo" aria-label="Rodapé">
+  <div class="ft2__main">
+    <div>
+      <a class="ft2__brand" href="/"><span class="ft2__logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#0a3d6b"/></svg></span>Portugal Travel Hub</a>
+      <p class="ft2__tag">Praias, webcams, surf e pesca em Portugal — com condições ao vivo.</p>
     </div>
-
-    <nav class="footer-col" aria-label="Destinos">
-      <h3 class="footer-heading">Destinos</h3>
-      <ul>
-        <li><a href="/beaches.html?region=Algarve">Algarve</a></li>
-        <li><a href="/beaches.html?region=Lisboa">Lisboa</a></li>
-        <li><a href="/beaches.html?region=Porto">Porto</a></li>
-        <li><a href="/beaches.html?region=Alentejo">Alentejo</a></li>
-      </ul>
-    </nav>
-
-    <nav class="footer-col" aria-label="Portal">
-      <h3 class="footer-heading">Portal</h3>
-      <ul>
-        <li><a href="/beaches.html">Praias</a></li>
-        <li><a href="/webcams.html">Webcams</a></li>
-        <li><a href="/surf.html">Surf</a></li>
-        <li><a href="/pesca.html">Pesca</a></li>
-        <li><a href="/planear.html">Planear Viagem</a></li>
-      </ul>
-    </nav>
-
-    <nav class="footer-col" aria-label="Parceiros &amp; Ajuda">
-      <h3 class="footer-heading">Parceiros &amp; Ajuda</h3>
-      <ul>
-        <li><a href="/parceiros.html">Parceiros</a></li>
-        <li><a href="/media-kit.html">Media Kit</a></li>
-        <li><a href="/sobre.html">Sobre N&oacute;s</a></li>
-        <li><a href="/contact.html">Contacto</a></li>
-        <li><a href="/privacidade.html">Privacidade</a></li>
-      </ul>
+    <nav class="ft2__nav" aria-label="Rodapé">
+      <p class="ft2__row"><span class="ft2__h">Explorar</span><a href="/beaches">Praias</a><a href="/surf">Surf</a><a href="/pesca">Pesca</a><a href="/webcams">Webcams</a><a href="/guias">Guias</a><a href="/planear">Planear viagem</a><a href="https://www.discovercars.com/pt/portugal?a_aid=portalturismoportugal" target="_blank" rel="noopener noreferrer sponsored">Aluguer de carro</a></p>
+      <p class="ft2__row"><span class="ft2__h">Negócios</span><a href="/parceiros">Para o seu negócio</a><a href="/precos">Preços</a><a href="/media-kit">Media kit</a></p>
+      <p class="ft2__row"><span class="ft2__h">Sobre</span><a href="/sobre">Sobre nós</a><a href="/metodologia-editorial">Metodologia</a><a href="/transparencia-comercial">Transparência</a><a href="/contact">Contacto</a></p>
     </nav>
   </div>
-
-  <div class="footer-bottom">
-    <span>&copy; 2026 Portugal Travel Hub. Todos os direitos reservados.</span>
-    <span><a href="/sobre.html">Sobre</a> &middot; <a href="/metodologia-editorial.html">Metodologia</a> &middot; <a href="/transparencia-comercial.html">Transpar&ecirc;ncia</a> &middot; <a href="/contact.html">Contacto</a> &middot; <a href="/privacidade.html">Privacidade</a> &middot; <a href="/refund-policy.html">Pol&iacute;tica de Reembolso</a> &middot; <a href="/termos.html">Termos</a> &middot; <a href="/cookies.html">Cookies</a></span>
+  <div class="ft2__bottom">
+    <span>© <span id="footer-year">2026</span> Portugal Travel Hub. Todos os direitos reservados.</span>
+    <span class="ft2__legal"><a href="/privacidade">Privacidade</a><a href="/termos">Termos</a><a href="/cookies">Cookies</a><a href="/refund-policy">Reembolsos</a></span>
   </div>
 </footer>
 

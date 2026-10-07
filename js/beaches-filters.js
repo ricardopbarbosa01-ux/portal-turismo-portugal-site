@@ -146,7 +146,9 @@
         if (!chip.dataset.labelText) {
           chip.dataset.labelText = chip.textContent.trim();
         }
-        chip.textContent = chip.dataset.labelText + (count > 0 ? ' (' + count + ')' : '');
+        // v2 (2026-10-07): contagem num <span class="chip-n"> em vez de " (N)" — estilo em css/beach-filters-v2.css
+        chip.textContent = chip.dataset.labelText;
+        if (count > 0) { const n = document.createElement('span'); n.className = 'chip-n'; n.textContent = count; chip.appendChild(n); }
 
         if (count === 0) chip.setAttribute('aria-disabled', 'true');
         else chip.removeAttribute('aria-disabled');

@@ -1,0 +1,114 @@
+/* Hero de /beaches v3 — "Mapa do mar, agora" — Portal Turismo Portugal — 2026-10-07
+ * Substitui o video antigo (praia tropical com palmeiras — nao era Portugal) por um mapa vivo das 111 praias.
+ */
+.bh{
+  --bh-gold:#c9a84c; --bh-gold-l:#e8c97a; --bh-ink:#07152A; --bh-calm:#34d399; --bh-mod:#fbbf24; --bh-rough:#f87171;
+  position:relative; isolation:isolate; overflow:hidden; color:#fff; font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:
+    radial-gradient(90% 70% at 78% 30%, rgba(41,128,212,.28) 0%, rgba(41,128,212,0) 60%),
+    radial-gradient(70% 60% at 10% 100%, rgba(201,168,76,.14) 0%, rgba(201,168,76,0) 60%),
+    linear-gradient(160deg,#050f1f 0%,#08203d 48%,#0b3157 100%);
+}
+.bh *{box-sizing:border-box;}
+.bh__bg{position:absolute; inset:0; z-index:-1; pointer-events:none;}
+.bh__waves{position:absolute; left:-5%; right:-5%; bottom:0; width:110%; height:70%; opacity:.16;}
+.bh__waves path{fill:none; stroke:#7fb6e8; stroke-width:1.2; animation:bh-sway 14s ease-in-out infinite alternate;}
+.bh__waves path:nth-child(2){animation-duration:18s; opacity:.7;}
+.bh__waves path:nth-child(3){animation-duration:22s; opacity:.5;}
+@keyframes bh-sway{from{transform:translateX(0);} to{transform:translateX(-4%);}}
+
+.bh__inner{max-width:1240px; margin:0 auto; padding:72px 28px 92px; display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,440px); gap:40px; align-items:center;}
+.bh__copy{min-width:0;}
+
+/* Texto */
+.bh__kicker{display:inline-flex; align-items:center; gap:10px; margin:0 0 20px; padding:7px 14px 7px 12px; border-radius:999px;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.88);}
+.bh__live{position:relative; width:8px; height:8px; border-radius:50%; background:var(--bh-calm); flex:0 0 8px;}
+.bh__live::after{content:''; position:absolute; inset:-5px; border-radius:50%; border:2px solid rgba(52,211,153,.55); animation:bh-ping 2s cubic-bezier(0,0,.2,1) infinite;}
+@keyframes bh-ping{0%{transform:scale(.6); opacity:1;} 80%,100%{transform:scale(1.6); opacity:0;}}
+.bh__title{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:clamp(2.6rem,5.6vw,4.8rem); line-height:1; letter-spacing:-.015em; color:#fff;
+  animation:bh-up .9s cubic-bezier(.22,1,.36,1) both;}
+.bh__title em{font-style:italic; font-weight:600; background:linear-gradient(100deg,#f3d98f 0%,#c9a84c 45%,#f6e3a6 70%,#c9a84c 100%); background-size:220% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent; animation:bh-sheen 6s ease-in-out 1s infinite;}
+@keyframes bh-sheen{0%,100%{background-position:0 0;} 50%{background-position:100% 0;}}
+.bh__sub{margin:20px 0 0; max-width:48ch; font-size:clamp(1rem,1.3vw,1.14rem); line-height:1.6; color:rgba(255,255,255,.8); animation:bh-up .9s cubic-bezier(.22,1,.36,1) .12s both;}
+.bh__sub strong{color:#fff;}
+@keyframes bh-up{from{opacity:0; transform:translate3d(0,20px,0);} to{opacity:1; transform:none;}}
+
+.bh__legend{display:flex; flex-wrap:wrap; gap:8px; margin:26px 0 0; padding:0; list-style:none; animation:bh-up .9s cubic-bezier(.22,1,.36,1) .24s both;}
+.bh__legend li{display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:12px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); font-size:.86rem; color:rgba(255,255,255,.8);}
+.bh__legend b{font-size:1.05rem; color:#fff; font-variant-numeric:tabular-nums; min-width:1.4em; text-align:right;}
+.bh__sw{width:10px; height:10px; border-radius:50%; box-shadow:0 0 0 3px rgba(255,255,255,.06);}
+.bh__legend [data-level="calm"] .bh__sw{background:var(--bh-calm); box-shadow:0 0 12px rgba(52,211,153,.8);}
+.bh__legend [data-level="moderate"] .bh__sw{background:var(--bh-mod); box-shadow:0 0 12px rgba(251,191,36,.7);}
+.bh__legend [data-level="rough"] .bh__sw{background:var(--bh-rough); box-shadow:0 0 12px rgba(248,113,113,.7);}
+.bh__best{margin:14px 0 0; font-size:.92rem; color:rgba(255,255,255,.78);}
+.bh__best a{color:var(--bh-gold-l); font-weight:600; text-decoration:none; border-bottom:1px solid rgba(232,201,122,.45);}
+.bh__best a:hover{border-bottom-color:var(--bh-gold-l);}
+
+.bh__ctas{display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 0; animation:bh-up .9s cubic-bezier(.22,1,.36,1) .36s both;}
+.bh__cta{display:inline-flex; align-items:center; gap:9px; min-height:52px; padding:0 24px; border-radius:999px; font-weight:600; font-size:.98rem; text-decoration:none; transition:transform .2s ease, filter .2s ease, background .2s ease;}
+.bh__cta svg{width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+.bh__cta--gold{color:var(--bh-ink); background:linear-gradient(135deg,var(--bh-gold) 0%,var(--bh-gold-l) 100%); box-shadow:0 14px 34px -14px rgba(201,168,76,.95), inset 0 1px 0 rgba(255,255,255,.45);}
+.bh__cta--ghost{color:#fff; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.05);}
+.bh__cta:hover{transform:translateY(-2px); filter:brightness(1.05);}
+.bh__stats{display:flex; gap:28px; margin:30px 0 0; padding:0; list-style:none;}
+.bh__stats li{display:flex; flex-direction:column; gap:2px;}
+.bh__stats b{font-family:'Bodoni Moda',Georgia,serif; font-size:1.5rem; font-weight:700; color:#fff; line-height:1;}
+.bh__stats span{font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.55);}
+
+/* Mapa */
+.bh__map{position:relative; margin:0; width:100%; max-width:440px; justify-self:end; aspect-ratio:420/640;}
+.bh__map svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+.bh__coast{fill:none; stroke:rgba(232,201,122,.55); stroke-width:1.4; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1;}
+.bh.is-drawn .bh__coast{animation:bh-draw 2.4s cubic-bezier(.65,0,.35,1) .2s forwards;}
+@keyframes bh-draw{to{stroke-dashoffset:0;}}
+.bh__inset{fill:rgba(255,255,255,.04); stroke:rgba(255,255,255,.14); stroke-dasharray:3 4;}
+.bh__lbl{font-size:10px; letter-spacing:.08em; fill:rgba(255,255,255,.55);}
+.bh__reg{font-size:11px; font-weight:600; letter-spacing:.22em; fill:rgba(255,255,255,.22);}
+.bh__dot{cursor:pointer; outline:none;}
+.bh__core{fill:var(--bh-gold-l); transition:fill .6s ease, r .2s ease;}
+.bh__halo{fill:var(--bh-gold-l); opacity:.14; transition:fill .6s ease, opacity .3s ease;}
+.bh.is-drawn .bh__dot{animation:bh-pop .6s cubic-bezier(.34,1.56,.64,1) both; animation-delay:calc(.9s + var(--i) * 28ms);}
+@keyframes bh-pop{from{opacity:0; transform:scale(.2);} to{opacity:1; transform:none;}}
+.bh__dot{transform-box:fill-box; transform-origin:center;}
+.bh__dot[data-level="calm"] .bh__core, .bh__dot[data-level="calm"] .bh__halo{fill:var(--bh-calm);}
+.bh__dot[data-level="moderate"] .bh__core, .bh__dot[data-level="moderate"] .bh__halo{fill:var(--bh-mod);}
+.bh__dot[data-level="rough"] .bh__core, .bh__dot[data-level="rough"] .bh__halo{fill:var(--bh-rough);}
+.bh.is-live .bh__dot[data-level="calm"] .bh__halo{animation:bh-breathe 3.2s ease-in-out infinite; animation-delay:calc(var(--i) * 80ms);}
+@keyframes bh-breathe{0%,100%{opacity:.12;} 50%{opacity:.4;}}
+.bh__dot:hover .bh__core, .bh__dot:focus .bh__core{r:6;}
+.bh__dot:hover .bh__halo{opacity:.55;}
+.bh__tip{position:absolute; z-index:3; transform:translate(-50%, calc(-100% - 14px)); min-width:160px; max-width:240px; padding:9px 12px; border-radius:12px; pointer-events:none;
+  background:rgba(5,15,31,.92); border:1px solid rgba(255,255,255,.16); box-shadow:0 12px 30px -10px rgba(0,0,0,.6);
+  opacity:0; transition:opacity .15s ease; font-size:.8rem; line-height:1.35; color:rgba(255,255,255,.8);}
+.bh__tip.is-on{opacity:1;}
+.bh__tip strong{display:block; color:#fff; font-size:.88rem;}
+.bh__cap{position:absolute; left:0; right:0; bottom:-26px; text-align:center; font-size:.7rem; color:rgba(255,255,255,.42);}
+.bh__wave{position:absolute; left:0; right:0; bottom:-1px; width:100%; height:56px;}
+
+@media (max-width:900px){
+  .bh__inner{grid-template-columns:minmax(0,1fr) 150px; gap:16px; padding:44px 22px 84px; align-items:start;}
+  .bh__map{width:150px; max-width:none; aspect-ratio:270/625; justify-self:end; margin-top:8px;}
+  .bh__cap{display:none;}
+  .bh__map [data-bh="inset"]{display:none;}
+}
+@media (max-width:640px){
+  .bh__inner{grid-template-columns:minmax(0,1fr) 92px; gap:10px; padding:26px 16px 74px;}
+  .bh__map{width:92px; margin-top:58px;}
+  .bh__reg{display:none;}
+  .bh__kicker{font-size:.62rem; letter-spacing:.08em; margin-bottom:14px; padding:6px 11px 6px 10px;}
+  .bh__title{font-size:2.45rem;}
+  .bh__sub{font-size:.95rem; margin-top:12px;}
+  .bh__legend{gap:6px; margin-top:16px;}
+  .bh__legend li{padding:6px 9px; font-size:.76rem; gap:6px;}
+  .bh__legend b{font-size:.95rem;}
+  .bh__best{font-size:.86rem;}
+  .bh__ctas{margin-top:18px; flex-direction:column;}
+  .bh__cta{justify-content:center; min-height:50px; padding:0 18px;}
+  .bh__stats{display:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  .bh__waves path, .bh__title, .bh__title em, .bh__sub, .bh__legend, .bh__ctas, .bh.is-drawn .bh__dot, .bh.is-live .bh__halo, .bh__live::after{animation:none !important;}
+  .bh__coast{stroke-dashoffset:0;}
+}

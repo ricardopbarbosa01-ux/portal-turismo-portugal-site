@@ -289,6 +289,15 @@ Fonte de verdade detalhada: documento de projeto `claude/afiliados-2026-10.md` (
 - Quando a CJ aprovar a Booking: NAO ativar `BOOKING` no affiliate.js nas paginas onde o Stay22 esta ativo (dupla reescrita). Comparar receita Stay22 vs CJ e escolher um. Se CJ: `BOOKING = { pid:'101718235', adId:'<AID do link Booking na CJ>' }`, bump `?v=` em todas as paginas que carregam affiliate.js, testar 1 clique real.
 - Pendentes: pedir ao Stay22 para desligar GYG no LinkSwap e se o AID "kaptarstudio" pode ser renomeado (portal esta a venda); rever Spark/Nova (ativos por defeito no Stay22) apos 1–2 semanas; confirmar evento `affiliate_click` no GA4.
 
+**Atualizacao 2026-10-05/06 (sessao seguinte):**
+- Stay22: suporte EXCLUIU GetYourGuide do LinkSwap (05/10) → Stay22 tambem em beach.html/en/beach.html. AID "kaptarstudio" nao e editavel (fica). Pagamento configurado.
+- DiscoverCars LIVE: `?a_aid=portalturismoportugal` (deep links /pt/portugal/faro, /portugal/lisbon, etc.) na lista "Proximo passo" das 14 paginas onde-ficar/where-to-stay + rodape da homepage PT/EN (CLAUDE.md antigo dizia "nao tocar em index.html" — Ricardo decide se mantem).
+- BookSurfCamps/Tripaneer LIVE: `?aid=11861` no card "Surf Trip" de surf.html/en/surf.html (affiliate.js?v=20261005b). affiliate.js reconhece tambem `booksurfcamps` (familia Tripaneer) e `fishingbooker`.
+- Guia novo `guias/alugar-carro-algarve.html` + `en/car-hire-algarve.html` (concurso DiscoverCars Q3 2026; A22 sem portagens desde 01/01/2025, Lei 37/2024).
+- Hub de guias: novos guias tem de entrar em `GUIA_CARDS` (js/webcams-guias-data.js) com `published: 'AAAA-MM-DD'` + bump `?v=` em guias.html e en/guides.html + sitemap + link interno. Badge NOVO e automatico (so o guia mais recente, 30 dias) — nao usar isNew. Ver watchlist.
+- Pendentes de aprovacao: FishingBooker, Motorhome Republic (inclui Indie Campers/Roadsurfer), Travelpayouts (conta criada; NAO instalar o script "Drive" — troca links, insere blocos e abre pop-unders; pedido ao suporte para acesso sem Drive). Indie Campers NAO existe na CJ.
+- Proximo trabalho: planeador automatico (`claude/planeador-automatico-2026-10.md`), Fase A = motor de regras em planear.html com links de parceiros pre-preenchidos.
+
 **Notas de ambiente:**
 - Sessoes Cowork (VM Linux) veem o working tree com CRLF vs HEAD LF → `git diff` mostra dezenas de ficheiros "modificados" so por fim de linha. Usar `git --no-optional-locks diff --ignore-cr-at-eol --stat`. Comandos git que escrevem o index a partir da VM deixam `.git/index.lock` que a VM nao consegue apagar e que bloqueia o git no Windows — commits e deploys fazem-se no PowerShell do Windows.
 - Validacao usada nesta sessao (reutilizar): Playwright na pagina de producao com o HTML local servido via route + header CSP lido do `_headers` local; comparar screenshots 375/1280 pixel a pixel; smoke test dos 5 URLs de docs/smoke-test.md apos deploy.

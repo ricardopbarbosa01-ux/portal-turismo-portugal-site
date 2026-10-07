@@ -1,0 +1,93 @@
+/* Filtros v2 — /beaches e /en/beaches — Portal Turismo Portugal — 2026-10-07
+ * So estilo (o HTML e o js/beaches-filters.js nao mudam): barra compacta, chips modernos, menos altura.
+ * Carregado depois de style.css e do <style> inline; o prefixo "body" ganha em especificidade sem !important.
+ */
+body .filters-bar{
+  --bf-navy:#0a3d6b; --bf-ink:#07152A; --bf-line:#e3e9f0; --bf-soft:#f3f6f9; --bf-mute:#64748b;
+  padding:12px max(16px, calc((100% - 1240px) / 2)); gap:0;
+  background:rgba(255,255,255,.94); border-bottom:1px solid var(--bf-line); box-shadow:0 6px 18px -14px rgba(10,61,107,.35);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px); backdrop-filter:saturate(1.4) blur(10px);
+}
+body .filters-top-row{gap:10px; flex-wrap:nowrap; width:100%;}
+body .search-input-wrapper{min-width:0;}
+body .search-input{
+  height:46px; padding:0 16px 0 44px; border-radius:999px; border:1px solid transparent; background:var(--bf-soft);
+  font-family:'Inter',system-ui,sans-serif; font-size:15px; color:var(--bf-ink);
+}
+body .search-input::placeholder{color:#8a97a8;}
+body .search-input:focus{background:#fff; border-color:#c9d6e3; box-shadow:0 0 0 4px rgba(10,61,107,.08);}
+body .search-icon{
+  left:16px; width:18px; height:18px; font-size:0; opacity:.55;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2307152A' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='20' y1='20' x2='16.2' y2='16.2'/%3E%3C/svg%3E") center/18px no-repeat;
+}
+body .sort-button{
+  min-height:46px; height:46px; padding:0 16px; border-radius:999px; border:1px solid transparent; background:var(--bf-soft);
+  font-family:'Inter',system-ui,sans-serif; font-size:14px; color:var(--bf-ink); gap:7px;
+}
+body .sort-button:hover, body .sort-button[aria-expanded="true"]{border-color:#c9d6e3; background-color:#fff;}
+body .sort-label-prefix{font-family:'Inter',system-ui,sans-serif; font-size:11px; letter-spacing:.06em; color:var(--bf-mute); opacity:1;}
+body .sort-current-value{font-weight:600;}
+body .sort-options{border-radius:16px; border-color:var(--bf-line); padding:6px; font-family:'Inter',system-ui,sans-serif;}
+body .sort-options li{border-radius:10px; font-size:14px;}
+body .sort-options li[aria-selected="true"]{background:#0a3d6b; color:#fff;}
+body .results-count{font-family:'Inter',system-ui,sans-serif; font-size:13px; color:var(--bf-mute); opacity:1; padding:0 4px;}
+body #results-count-value{color:var(--bf-ink);}
+
+/* ── Grupos de chips: 2 linhas compactas no computador ─────────────────── */
+body .chip-groups{
+  flex-direction:row; flex-wrap:wrap; align-items:center; gap:10px 28px;
+  padding:12px max(16px, calc((100% - 1240px) / 2)) 16px; background:#fff; border-bottom:1px solid #e3e9f0;
+}
+body .chip-group{display:flex; align-items:center; gap:10px; min-width:0;}
+body .chip-group-label{
+  display:inline-block; margin:0; padding:0; white-space:nowrap; opacity:1;
+  font-family:'Inter',system-ui,sans-serif; font-size:.68rem; font-weight:600; letter-spacing:.08em; color:#94a3b8;
+}
+body .chip-group .chips-bar{
+  position:static; top:auto; z-index:auto; display:flex; flex-wrap:wrap; gap:6px;
+  padding:0; margin:0; background:none; border:0;
+}
+body .chip-group .chip{
+  min-height:36px; padding:0 14px; gap:6px; border-radius:999px; border:1px solid #e3e9f0; background:#fff; color:#334155;
+  font-family:'Inter',system-ui,sans-serif; font-size:.82rem; font-weight:500; letter-spacing:0;
+  transition:background .18s ease, border-color .18s ease, color .18s ease, box-shadow .18s ease;
+}
+body .chip-group .chip:hover{border-color:#b9c7d6; color:#0a3d6b; background:#f8fafc;}
+body .chip-group .chip[aria-pressed="true"], body .chip-group .chip.active{
+  background:#0a3d6b; border-color:#0a3d6b; color:#fff; box-shadow:0 6px 14px -8px rgba(10,61,107,.75);
+}
+body .chip-group .chip:focus-visible{outline:3px solid rgba(201,168,76,.7); outline-offset:2px;}
+body .chip .chip-n{font-size:.72rem; font-weight:600; color:#94a3b8; font-variant-numeric:tabular-nums;}
+body .chip[aria-pressed="true"] .chip-n, body .chip.active .chip-n{color:rgba(255,255,255,.72);}
+
+/* A dica antiga ("cada card mostra... nadador-salvador") ja nao descreve o cartao novo */
+body .beaches-guide-hint{display:none;}
+
+/* ── Telemovel ─────────────────────────────────────────────────────────── */
+@media (max-width:768px){
+  body .filters-bar{flex-direction:row; padding:10px 16px; top:60px;}
+  body .filters-top-row{flex-wrap:nowrap; gap:8px;}
+  body .sort-dropdown-wrapper{width:auto; order:0; position:static;}
+  body .sort-button{
+    width:46px; padding:0; justify-content:center; font-size:0; gap:0;
+    background:var(--bf-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2307152A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 4v16M3 16l4 4 4-4M17 20V4M13 8l4-4 4 4'/%3E%3C/svg%3E") center/19px no-repeat;
+  }
+  body .sort-button > span{font-size:0;}
+  body .sort-options{left:16px; right:16px; top:calc(100% + 6px);}
+  body .results-count{display:none;}
+  body .chip-groups{flex-direction:column; align-items:stretch; gap:8px; padding:10px 0 12px;}
+  body .chip-group{padding:0; gap:0;}
+  body .chip-group-label{
+    flex:0 0 88px; width:88px; padding:0 8px 0 16px; white-space:normal; line-height:1.2; font-size:.6rem; letter-spacing:.05em;
+  }
+  body .chip-group .chips-bar{
+    flex:1; min-width:0; flex-wrap:nowrap; overflow-x:auto; padding:2px 16px 2px 2px; margin:0; gap:6px;
+    scroll-snap-type:none; scrollbar-width:none;
+    -webkit-mask-image:linear-gradient(to right, #000 calc(100% - 24px), transparent); mask-image:linear-gradient(to right, #000 calc(100% - 24px), transparent);
+  }
+  body .chip-group .chips-bar::-webkit-scrollbar{display:none;}
+  body .chip-group .chip{min-height:40px; flex:0 0 auto; padding:0 14px; font-size:.84rem;}
+  body .results-strip{display:block; background:transparent; border:0; padding:10px 16px 0; font-size:.8rem; color:#64748b;}
+  body .results-strip strong{color:#07152A;}
+}
+@media (prefers-reduced-motion:reduce){ body .chip-group .chip{transition:none;} }

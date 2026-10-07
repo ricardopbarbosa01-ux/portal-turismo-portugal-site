@@ -1,0 +1,121 @@
+/* Hero de /beaches v4 — mapa em relevo de Portugal (criado pelo Ricardo) + praias ao vivo — 2026-10-07
+ * Mapa: /images/map/portugal-relevo-{420,720,1000}.webp (1250x2560 original, fundo transparente).
+ * Pontos: SVG no mesmo viewBox (1250x2560) -> alinhamento exato com o relevo; posicoes coladas a costa (js).
+ */
+.bh4{
+  --g1:#d8b55a; --g2:#f2d78f; --ink:#07152a; --calm:#34e0b0; --mod:#ffc24b; --rough:#ff6b6b; --txt:#e3ecf7; --mut:#dbe6f3;
+  position:relative; isolation:isolate; overflow:hidden; color:#fff; font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:radial-gradient(55% 75% at 66% 52%, #12406f 0%, #0b2a4c 42%, #06152a 78%, #040e1d 100%);
+}
+.bh4 *{box-sizing:border-box;}
+.bh4 img, .bh4 svg{max-width:none;}
+.bh4__grid{position:absolute; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none;}
+.bh4__inner{max-width:1240px; margin:0 auto; padding:84px 20px 96px; display:grid; grid-template-columns:440px minmax(0,1fr); gap:20px; align-items:center;}
+
+/* ── Texto ─────────────────────────────────────────────────────────────── */
+.bh4__copy{display:flex; flex-direction:column; align-items:flex-start; gap:24px; min-width:0;}
+.bh4__kicker{display:inline-flex; align-items:center; gap:10px; margin:0; padding:8px 15px 8px 12px; border-radius:999px;
+  background:rgba(52,224,176,.12); border:1px solid rgba(52,224,176,.4); font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#c9fbe9;}
+.bh4__live{position:relative; width:8px; height:8px; flex:0 0 8px; border-radius:50%; background:var(--calm); box-shadow:0 0 0 4px rgba(52,224,176,.28);}
+.bh4__title{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:clamp(3rem,5.6vw,5rem); line-height:.98; letter-spacing:-.02em; color:#fff;}
+.bh4__title em{font-weight:600; color:var(--g2);}
+.bh4__sub{margin:0; font-size:1.125rem; line-height:1.6; color:var(--txt);}
+.bh4__sub strong{color:#fff;}
+.bh4__stats{width:100%; padding:18px 20px; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); display:flex; flex-direction:column; gap:12px;}
+.bh4__stats ul{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:0; padding:0; list-style:none;}
+.bh4__stats b{display:block; font-size:1.9rem; font-weight:700; line-height:1; color:#fff; font-variant-numeric:tabular-nums;}
+.bh4__stats li span{display:flex; align-items:center; gap:7px; margin-top:6px; font-size:.875rem; color:var(--mut);}
+.bh4__stats i{width:10px; height:10px; border-radius:50%; flex:0 0 10px;}
+.bh4__stats [data-level="calm"] i{background:var(--calm);} .bh4__stats [data-level="moderate"] i{background:var(--mod);} .bh4__stats [data-level="rough"] i{background:var(--rough);}
+.bh4__bar{display:flex; gap:2px; height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.1);}
+.bh4__bar span{flex:0 0 auto; width:0; transition:width 1.2s cubic-bezier(.22,1,.36,1);}
+.bh4__bar [data-bar="calm"]{background:var(--calm);} .bh4__bar [data-bar="moderate"]{background:var(--mod);} .bh4__bar [data-bar="rough"]{background:var(--rough);}
+.bh4__ctas{display:flex; flex-wrap:wrap; gap:12px;}
+.bh4__cta{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:0 22px; border-radius:999px; font-weight:700; font-size:1rem; text-decoration:none; transition:transform .2s ease, filter .2s ease;}
+.bh4__cta svg{width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
+.bh4__cta--gold{color:var(--ink); background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 100%); box-shadow:0 16px 36px -14px rgba(216,181,90,.95);}
+.bh4__cta--ghost{color:#fff; font-weight:600; border:1px solid rgba(255,255,255,.4); background:rgba(255,255,255,.06);}
+.bh4__cta:hover{transform:translateY(-2px); filter:brightness(1.06);}
+
+/* ── Palco do mapa ─────────────────────────────────────────────────────── */
+.bh4__stage{position:relative; justify-self:end; width:700px; height:760px;}
+.bh4__stage::before{content:''; position:absolute; left:80px; top:30px; width:500px; height:700px; border-radius:50%; pointer-events:none;
+  background:radial-gradient(closest-side, rgba(120,190,255,.22), rgba(120,190,255,0)); filter:blur(10px);}
+.bh4__map{position:absolute; left:150px; top:10px; width:361px; height:740px; margin:0; animation:bh4-float 7s ease-in-out infinite;}
+@keyframes bh4-float{0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);}}
+.bh4__relief{position:absolute; inset:0; width:100%; height:100%; display:block;
+  filter:drop-shadow(0 0 1px rgba(190,228,255,.9)) drop-shadow(0 0 22px rgba(90,170,255,.45)) drop-shadow(0 46px 50px rgba(0,0,0,.65));}
+.bh4__sweep{position:absolute; inset:0; overflow:hidden; pointer-events:none;
+  -webkit-mask:url('/images/map/portugal-relevo-420.webp') center/100% 100% no-repeat; mask:url('/images/map/portugal-relevo-420.webp') center/100% 100% no-repeat;}
+.bh4__sweep span{position:absolute; left:0; right:0; height:30%; background:linear-gradient(180deg, rgba(190,235,255,0) 0%, rgba(190,235,255,.16) 50%, rgba(190,235,255,0) 100%); animation:bh4-sweep 9s linear infinite;}
+@keyframes bh4-sweep{from{transform:translateY(-110%);} to{transform:translateY(400%);}}
+.bh4__svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+.bh4__dot{cursor:pointer; outline:none;}
+.bh4__glow{fill:#e8c97a; opacity:.5;}
+.bh4__core{fill:#e8c97a; stroke:#06142a; stroke-width:4; transform-box:fill-box; transform-origin:center; transition:transform .2s ease, fill .6s ease;}
+.bh4__dot[data-level="calm"] .bh4__core, .bh4__dot[data-level="calm"] .bh4__glow{fill:var(--calm);}
+.bh4__dot[data-level="moderate"] .bh4__core, .bh4__dot[data-level="moderate"] .bh4__glow{fill:var(--mod);}
+.bh4__dot[data-level="rough"] .bh4__core, .bh4__dot[data-level="rough"] .bh4__glow{fill:var(--rough);}
+.bh4__dot:hover .bh4__core, .bh4__dot:focus .bh4__core{transform:scale(1.7);}
+.bh4__dot{opacity:0; animation:bh4-pop .5s ease-out forwards; animation-delay:calc(.4s + var(--i) * 18ms);}
+@keyframes bh4-pop{to{opacity:1;}}
+.bh4__labels text{font-family:'Inter',system-ui,sans-serif; font-size:40px; font-weight:700; letter-spacing:1px; fill:#fff; stroke:#06142a; stroke-width:11; stroke-linejoin:round; paint-order:stroke; pointer-events:none;}
+.bh4__mark{fill:none; stroke:#fff; stroke-width:6;}
+.bh4__ping{fill:none; stroke:var(--calm); stroke-width:6; transform-box:fill-box; transform-origin:center; animation:bh4-ping 2.2s cubic-bezier(0,0,.2,1) infinite;}
+@keyframes bh4-ping{0%{transform:scale(.5); opacity:.9;} 100%{transform:scale(2.6); opacity:0;}}
+.bh4__tip{position:absolute; z-index:5; transform:translate(-50%, calc(-100% - 14px)); min-width:170px; max-width:250px; padding:9px 12px; border-radius:12px; pointer-events:none;
+  background:rgba(5,15,31,.94); border:1px solid rgba(255,255,255,.18); box-shadow:0 12px 30px -10px rgba(0,0,0,.6); opacity:0; transition:opacity .15s ease; font-size:.8rem; line-height:1.35; color:var(--mut);}
+.bh4__tip.is-on{opacity:1;}
+.bh4__tip strong{display:block; color:#fff; font-size:.9rem;}
+.bh4__compass{position:absolute; left:20px; top:596px; width:120px; height:120px; filter:drop-shadow(0 14px 22px rgba(0,0,0,.6)); animation:bh4-sway 12s ease-in-out infinite;}
+@keyframes bh4-sway{0%,100%{transform:rotate(-4deg);} 50%{transform:rotate(4deg);}}
+.bh4__leaders{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible;}
+.bh4__leaders path{fill:none; stroke:rgba(255,255,255,.75); stroke-width:1.3;}
+
+.bh4__card{position:absolute; display:block; padding:13px 15px; border-radius:16px; text-decoration:none; color:#fff;
+  background:rgba(6,20,42,.88); border:1px solid rgba(255,255,255,.18); box-shadow:0 18px 40px -14px rgba(0,0,0,.75); transition:transform .2s ease, border-color .2s ease;}
+.bh4__card[hidden]{display:none;}
+a.bh4__card:hover{transform:translateY(-2px);}
+.bh4__card p{margin:0;}
+.bh4__eye{margin-bottom:5px !important; font-size:.66rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;}
+.bh4__cname{font-size:.95rem; font-weight:600; color:#fff;}
+.bh4__serif{font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:1.1rem;}
+.bh4__cmeta{margin-top:5px !important; font-size:.8rem; color:var(--mut);}
+.bh4__card--islands{right:0; top:70px; width:180px; background:rgba(255,255,255,.06); box-shadow:none;}
+.bh4__card--islands .bh4__eye{color:#c7d6e8;}
+.bh4__card--waves{left:0; top:340px; width:150px; border-color:rgba(255,194,75,.5);}
+.bh4__card--waves .bh4__eye{color:#ffd27a;}
+.bh4__card--calm{right:0; top:640px; width:180px; border-color:rgba(52,224,176,.5); box-shadow:0 18px 40px -14px rgba(0,0,0,.75), 0 0 24px -6px rgba(52,224,176,.35);}
+.bh4__card--calm .bh4__eye{color:#6ff0c9;}
+.bh4__wave{position:absolute; left:0; right:0; bottom:-1px; width:100%; height:56px;}
+
+/* ── Ecras mais estreitos: uma coluna, mapa por baixo do texto ─────────── */
+@media (max-width:1180px){
+  .bh4__inner{grid-template-columns:minmax(0,1fr); gap:28px; padding:56px 20px 84px; max-width:640px;}
+  .bh4__stage{justify-self:center; width:100%; height:auto; display:flex; flex-direction:column; align-items:center; gap:16px;}
+  .bh4__stage::before{left:50%; top:0; transform:translateX(-50%); width:110%; height:600px;}
+  .bh4__map{position:relative; left:auto; top:auto; width:min(300px, 78vw); height:auto; aspect-ratio:1250/2560;}
+  .bh4__compass{left:auto; right:max(0px, calc(50% - 190px)); top:44%; width:78px; height:78px;}
+  .bh4__leaders, .bh4__card--waves{display:none !important;}
+  .bh4__card{position:relative; left:auto; right:auto; top:auto !important; width:100%;}
+  .bh4__card--calm{order:2;} .bh4__card--islands{order:3;}
+  .bh4__core{transform:scale(1.25);}
+  .bh4__labels text{font-size:50px; stroke-width:13;}
+  .bh4__labels .bh4__minor{display:none;}
+}
+@media (max-width:640px){
+  .bh4__inner{padding:28px 18px 76px; gap:22px;}
+  .bh4__copy{gap:16px;}
+  .bh4__kicker{font-size:.66rem; letter-spacing:.1em; padding:7px 13px 7px 11px;}
+  .bh4__title{font-size:3rem;}
+  .bh4__sub{font-size:1rem;}
+  .bh4__stats{padding:14px 16px;}
+  .bh4__stats b{font-size:1.5rem;}
+  .bh4__stats li span{font-size:.8rem;}
+  .bh4__ctas{width:100%; flex-direction:column;}
+  .bh4__cta{width:100%;}
+}
+@media (prefers-reduced-motion:reduce){
+  .bh4__map, .bh4__sweep span, .bh4__compass, .bh4__ping, .bh4__dot{animation:none !important;}
+  .bh4__dot{opacity:1;}
+}

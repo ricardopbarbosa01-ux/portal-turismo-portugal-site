@@ -1,0 +1,66 @@
+/* Hero dos Guias v2 — guias.html + en/guides.html — Portal Turismo Portugal — 2026-10-07
+ * 4 fotos reais (Wikimedia Commons) em cross-fade com zoom lento (Ken Burns), so CSS (sem JS, sem video).
+ * Ciclo 28 s: cada foto 7 s. Atrasos negativos fazem a 1.a foto aparecer logo (sem ecra vazio = bom LCP).
+ * prefers-reduced-motion: fica so a 1.a foto, parada.
+ */
+.guides-hero{min-height:clamp(500px,72vh,660px); background:#07152A; isolation:isolate;}
+.guides-hero::before{z-index:1; background:
+  linear-gradient(180deg, rgba(7,21,42,.62) 0%, rgba(7,21,42,.30) 38%, rgba(7,21,42,.40) 62%, rgba(7,21,42,.86) 100%),
+  radial-gradient(ellipse at 50% 46%, rgba(7,21,42,.35) 0%, rgba(7,21,42,0) 70%);}
+.guides-hero__badge, .guides-hero__title, .guides-hero__sub, .guides-hero__meta{position:relative; z-index:2;}
+.guides-hero__wave{z-index:3;}
+.guides-hero__title{text-shadow:0 2px 24px rgba(0,0,0,.45);}
+.guides-hero__sub{color:rgba(255,255,255,.88); text-shadow:0 1px 12px rgba(0,0,0,.45);}
+.guides-hero__meta{color:rgba(255,255,255,.75);}
+.guides-hero__badge{background:rgba(7,21,42,.45); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);}
+
+.gh-slides{position:absolute; inset:0; z-index:0; overflow:hidden;}
+.gh-slides img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;
+  opacity:0; transform-origin:50% 55%; will-change:opacity, transform;
+  animation:gh-slide 28s linear infinite;
+}
+.gh-slides img:nth-child(1){animation-delay:0s; opacity:1;}
+.gh-slides img:nth-child(2){animation-delay:-21s;}
+.gh-slides img:nth-child(3){animation-delay:-14s;}
+.gh-slides img:nth-child(4){animation-delay:-7s;}
+@keyframes gh-slide{
+  0%  {opacity:1; transform:scale(1.02);}
+  25% {opacity:1;}
+  30% {opacity:0; transform:scale(1.10);}
+  95% {opacity:0; transform:scale(1.02);}
+  100%{opacity:1; transform:scale(1.02);}
+}
+
+/* Nome do local da foto em exibicao (sincronizado com as fotos) */
+.gh-places{position:absolute; z-index:2; left:max(20px, calc((100% - 1200px) / 2)); bottom:76px; height:30px; width:260px; pointer-events:none;}
+.gh-places span, .gh-places span::before{max-width:none;} /* style.css aplica max-width:100% a tudo */
+.gh-places span{
+  position:absolute; left:0; bottom:0; display:inline-flex; align-items:center; gap:7px; white-space:nowrap;
+  padding:6px 12px 6px 10px; border-radius:999px; background:rgba(7,21,42,.45); border:1px solid rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  font-size:.74rem; font-weight:600; letter-spacing:.04em; color:#fff; opacity:0;
+  animation:gh-place 28s linear infinite;
+}
+.gh-places span::before{content:''; width:7px; height:7px; border-radius:50%; background:#e8c97a; box-shadow:0 0 0 3px rgba(232,201,122,.25);}
+.gh-places span:nth-child(1){animation-delay:0s;}
+.gh-places span:nth-child(2){animation-delay:-21s;}
+.gh-places span:nth-child(3){animation-delay:-14s;}
+.gh-places span:nth-child(4){animation-delay:-7s;}
+@keyframes gh-place{0%{opacity:0;} 3%{opacity:1;} 24%{opacity:1;} 27%{opacity:0;} 100%{opacity:0;}}
+
+/* Creditos (licencas CC BY / CC BY-SA obrigam): discretos, canto inferior direito */
+.gh-credit{position:absolute; z-index:2; right:max(14px, calc((100% - 1200px) / 2)); bottom:66px; margin:0; max-width:min(560px, 70%);
+  font-size:9px; line-height:1.3; letter-spacing:.02em; color:#fff; opacity:.42; text-align:right; pointer-events:none;}
+
+@media (max-width:640px){
+  .guides-hero{min-height:560px;}
+  .gh-places{left:16px; bottom:70px;}
+  .gh-credit{right:12px; left:auto; bottom:44px; max-width:60%;}
+}
+@media (prefers-reduced-motion:reduce){
+  .gh-slides img{animation:none; transform:none;}
+  .gh-slides img:not(:first-child){display:none;}
+  .gh-places span{animation:none;}
+  .gh-places span:first-child{opacity:1;}
+}

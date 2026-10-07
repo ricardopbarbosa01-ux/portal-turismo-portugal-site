@@ -488,3 +488,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit;}
   .spots-grid{grid-template-columns:1fr 1fr;}
   body{padding-bottom:0;}
 }
+
+/* Fotos nos cartoes de pesca (2026-10-07) — so .spot-card--photo; surf nao muda */
+.spot-card--photo .spot-visual{height:200px;}
+.spot-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.22,1,.36,1);}
+.spot-card--photo:hover .spot-photo{transform:scale(1.05);}
+.spot-card--photo .spot-visual-bg::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(7,21,42,.66) 0%,rgba(7,21,42,0) 52%);}
+.spot-card--photo .spot-visual-wave{display:none;}
+.spot-card--photo .spot-visual-content{z-index:2;}
+.spot-card--photo .spot-region-badge{background:rgba(7,21,42,.45);}
+.spot-photo-credit{position:absolute;z-index:2;right:5px;top:10px;max-height:calc(100% - 56px);overflow:hidden;text-overflow:ellipsis;writing-mode:vertical-rl;transform:rotate(180deg);font-size:8.5px;line-height:1;color:#fff;opacity:.4;letter-spacing:.03em;white-space:nowrap;pointer-events:none;}
+@media (prefers-reduced-motion:reduce){.spot-photo{transition:none;}.spot-card--photo:hover .spot-photo{transform:none;}}
