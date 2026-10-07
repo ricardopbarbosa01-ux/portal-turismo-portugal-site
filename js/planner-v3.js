@@ -546,8 +546,15 @@
         sb.querySelector('span').textContent = L.nextBtn[nl.section];
         $('r-sticky').classList.remove('is-done');
       } else {
+        // Viagem completa: mostra a mensagem uns segundos e esconde a barra (e tira o link para nao abrir o ultimo parceiro outra vez)
         st.textContent = L.allDone;
-        $('r-sticky').classList.add('is-done');
+        sb.removeAttribute('href'); sb.removeAttribute('data-plan-section');
+        var bar = $('r-sticky');
+        bar.classList.add('is-done');
+        if (!bar.hidden && !bar.getAttribute('data-done-timer')) {
+          bar.setAttribute('data-done-timer', '1');
+          setTimeout(function () { bar.hidden = true; bar.removeAttribute('data-done-timer'); }, 4000);
+        }
       }
     }
   }
@@ -970,7 +977,9 @@
     $('pv3-next').addEventListener('click', function () { next(false); });
     $('pv3-back').addEventListener('click', back);
     var sg = $('r-sticky-go');
-    if (sg) sg.addEventListener('click', function () { mark(sg.getAttribute('data-plan-section')); setTimeout(paintProgress, 0); });
+    // O link ja abriu o parceiro certo: so depois do clique (setTimeout) se marca o passo e se troca o href para o passo seguinte.
+    // Antes, mark() corria durante o clique e mudava o href ANTES da navegacao -> "Ver alojamento" abria o DiscoverCars, etc.
+    if (sg) sg.addEventListener('click', function () { var sec = sg.getAttribute('data-plan-section'); setTimeout(function () { mark(sec); paintProgress(); }, 0); });
     renderStep(); renderPreview();
     var shared0 = window.PTHPlanEngine && window.PTHPlanEngine.readShared();
     if (!shared0) renderResume();

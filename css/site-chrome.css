@@ -3,7 +3,7 @@
  * Gerado a 07/10/2026 a partir das regras de style.css?v=20260522-navdd-c (so seletores da navegacao). Se a navbar mudar em style.css, regenerar.
  */
 .navbar, .navbar *, .mobile-menu, .mobile-menu *, .mobile-bottom-nav, .mobile-bottom-nav *{box-sizing:border-box;}
-.navbar a, .mobile-menu a, .mobile-bottom-nav a{text-decoration:none; color:inherit;}
+:where(.navbar, .mobile-menu, .mobile-bottom-nav) a{text-decoration:none; color:inherit;}
 .navbar svg, .mobile-bottom-nav svg{max-width:none;}
 .navbar ul, .mobile-menu ul{list-style:none; margin:0; padding:0;}
 .navbar button, .mobile-menu button, .mobile-bottom-nav button{font-family:inherit;}

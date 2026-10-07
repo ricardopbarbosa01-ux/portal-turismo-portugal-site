@@ -1,0 +1,8 @@
+fix(planear): barra 'Proximo' abria o parceiro errado; logotipo da navbar com a cor certa
+
+- O clique em 'Ver alojamento' trocava o link para o passo seguinte antes de abrir (abria DiscoverCars); agora marca o passo depois do clique
+- 'Viagem completa — boa viagem!' desaparece ao fim de 4 s e deixa de ter link
+- Logotipo 'Portugal Travel Hub' branco como no resto do site (reset da navbar sem especificidade)
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Wb84f4PvM5dzzfL8MYuWRL
