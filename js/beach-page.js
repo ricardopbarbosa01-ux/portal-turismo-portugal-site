@@ -916,7 +916,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // ── Main load ────────────────────────────────────────────────────
   (async () => {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
+    // Praias duplicadas desativadas a 08/10/2026 (correcao com a lista oficial EEA) -> abrir a praia que ficou
+    const ALIAS = {"754eb86f-0f1f-4675-89fc-82b8dc01a605": "d723c15c-6b6b-4c47-8182-c06313e0e641", "010ffc15-3125-4156-aa4f-54b6198ae8e3": "925ac239-db1f-432b-98ee-7a308ae9a6b8", "2b2b6f80-d16c-4689-87f8-4b799a24fd9e": "63806db3-12a1-4e83-b354-1ac4b44fcb2d"};
+    const id = ALIAS[params.get('id')] || params.get('id');
 
     console.log('[beach] id from URL:', id);
 

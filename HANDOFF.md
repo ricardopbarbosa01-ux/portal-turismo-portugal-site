@@ -113,6 +113,11 @@ Novos ou por decidir:
 - **Fotos:** só com origem e licença verificadas, com crédito quando a licença o exige.
 - **Escrever na pasta pela VM:** usar ficheiro temporário + `os.replace`. Apagar não é permitido; mover para `docs/_to_delete/`.
 
+## Estado 08/10 — Praias (ler primeiro: `claude/praias-correcao-e-ampliacao-2026-10.md`)
+- **P0 escrito na BD**: coordenadas e qualidade da água oficiais (EEA 2025) em 99 praias; 3 duplicados desativados (ALIAS em beach-page.js). Ficheiros do site (mapa, alias, surf) por publicar.
+- **B1**: 20 praias novas inseridas **INATIVAS**. Depois do deploy das fotos: `python3 _diag/praias/b1/activate.py` (ou pedir ao Claude).
+- Commit único P0+B1: `docs/commit-files-2026-10-08-praias-b1.txt`.
+
 ## Estado 08/10 (sessão Surf/Pesca)
 - Surf lotes 1a+1b prontos por publicar (ver tabela). Pendente: foto da Pedra Branca; próximos lotes de surf (Algarve/Sagres, Norte, Alentejo, Madeira, Açores — lista no fim de `claude/surf-spots-lote1-2026-10.md`).
 - **Pesca lote P1 (08/10) pronto por publicar** (mesma lista de commit): 25 → 33 spots (+Foz do Arelho, Berlengas, Cabo Raso, Lagoa de Albufeira (mar), Milfontes, Ponta da Piedade, Ilha de Tavira, Alqueva); Lagoa dos Salgados → Galé–Armação de Pêra (decisão do Ricardo; a Praia Grande não tinha fontes de pesca); duplicado Açores → Horta (Faial); São Miguel → Ponta Delgada; avisos 'Regras:' (campo `aviso`) em Sagres, Porto Covo, Galé, Berlengas, Lagoa de Albufeira, Milfontes, Alqueva; /en/pesca com paginação. Backup `docs/_backup-pesca-p1-20261008/`.

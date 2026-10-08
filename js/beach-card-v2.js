@@ -64,6 +64,25 @@
      Substituem as fotos automaticas do Pexels (muitas de outros sitios) e 4 da Wikipedia erradas. Credito = autor + licenca.
      Lista completa com links: docs/FOTOS-CREDITOS.md */
   var PHOTO_CREDIT = {
+    // Lote B1 de praias (08/10/2026)
+    '24ef6f3c-123f-4cda-9ed7-53b372fe4790': "Vitor Oliveira · CC BY-SA 2.0",
+    '97427a14-7439-4672-8589-9139d7cb5abe': "Vitor Oliveira · CC BY-SA 2.0",
+    'c4e37952-73a1-42b7-b36f-b4fd60291102': "Vitor Oliveira · CC BY-SA 2.0",
+    '23be37b8-dc27-4a24-b91f-a24e2dd76b3d': "Pacopac · CC BY-SA 4.0",
+    'bdd9928f-c4b0-4e06-95b9-9ccead088030': "Vitor Oliveira · CC BY-SA 2.0",
+    'd298db41-b072-4fcb-9bbb-d6ad9c5bf1f0': "Bosc d'Anjou · CC BY 2.0",
+    '64b383cd-da9c-496c-bc43-77908e175f8d': "Vitor Oliveira · CC BY-SA 2.0",
+    '6116b10b-1e12-4d54-b9ce-86bb6792fa6b': "Vitor Oliveira · CC BY-SA 2.0",
+    'b543a3dd-bfe8-40d7-8d5e-2ac453daf76e': "Jules Verne Times Two · CC BY-SA 4.0",
+    '7f17154c-8b05-4c15-82ae-d14dc121bc21': "Vitor Oliveira · CC BY-SA 2.0",
+    '4a454a94-b132-44dc-a15b-3733e85d52f2': "Vitor Oliveira · CC BY-SA 2.0",
+    '56c6175b-966c-4d7f-a459-9db79d78734c': "Vitor Oliveira · CC BY-SA 2.0",
+    '580c0d76-51d5-476b-94a4-31ce0435471b': "Vitor Oliveira · CC BY-SA 2.0",
+    '5ed26c4c-0979-4497-a021-253ef66f6aeb': "Vitor Oliveira · CC BY-SA 2.0",
+    'f434fab5-7b9b-4587-8397-1614df91d007': "Vitor Oliveira · CC BY-SA 2.0",
+    'c0b66706-af15-47b5-adc4-6ff208c3b855': "Vitor Oliveira · CC BY-SA 2.0",
+    '6541d792-54dd-4b32-b89c-02ef4c7c9f90': "Vitor Oliveira · CC BY-SA 2.0",
+    'e927161a-02ad-4e1c-89f0-541a9e0d99ba': "Kolforn · CC BY-SA 4.0",
     'aa950882-863f-42db-81b8-0c5e9d64ba24': "Nuno Capelo Caldeira · CC BY-SA 4.0",
     '47af766c-c76f-483f-986b-5dbefd6f294a': "jfcfar · CC BY 2.0",
     '10f7f046-fb30-493e-acf0-bf6b2a57858b': "Vitor Oliveira · CC BY-SA 2.0",
@@ -129,6 +148,8 @@
   };
   /* Sem foto verificavel no Commons: cartao sem foto (nunca mostrar outra praia) */
   var NO_PHOTO = {
+    '781cff5a-f003-4f55-a381-f9e94fd2bdc2': 1, /* Praia do Osso da Baleia */
+    'e3da620e-beaf-4a4a-80e3-d3f94c3a311e': 1, /* Praia da Crismina */
     '52e176c2-b7e6-4a85-abcf-6cf871464967': 1 /* Praia da Samoqueira */
   };
 

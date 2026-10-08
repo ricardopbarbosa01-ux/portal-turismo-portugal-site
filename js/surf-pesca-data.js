@@ -1398,15 +1398,16 @@
 
   // Coordenadas dos spots de surf (lat, lng) — condicoes ao vivo (js/surf-live.js) e mapa do hero.
   // Fonte: BD de praias (beaches.latitude/longitude) ou OpenStreetMap/Nominatim (Afife, Salema, Zavial, Acores), 2026-10-07.
+  // 2026-10-08: 9 spots com coordenadas oficiais EEA 2025 (praia correspondente) — supertubos, amado, matosinhos, ofir, furadouro, mira, tocha, buarcos, odeceixe
   var SURF_GEO = {
-    'supertubos': [39.3542, -9.3978], 'praia-da-nazare': [39.6000, -9.0736], 'praia-do-amado': [37.2112, -8.8712],
-    'costa-da-caparica': [38.6333, -9.2333], 'praia-do-guincho': [38.7234, -9.4712], 'praia-de-matosinhos': [41.1833, -8.6833],
+    'supertubos': [39.34535, -9.36440], 'praia-da-nazare': [39.6000, -9.0736], 'praia-do-amado': [37.16698, -8.90345],
+    'costa-da-caparica': [38.6333, -9.2333], 'praia-do-guincho': [38.7234, -9.4712], 'praia-de-matosinhos': [41.17722, -8.69389],
     'praia-de-santa-barbara-acores-1': [37.8167, -25.5488], 'praia-de-moledo': [41.8453, -8.8734], 'praia-de-afife': [41.7850, -8.8715],
     'praia-de-cabedelo': [41.6845, -8.8395], 'praia-de-ancora': [41.8089, -8.8712], 'praia-de-esposende-surf': [41.5312, -8.7823],
-    'praia-de-ofir': [41.5333, -8.7833], 'praia-do-furadouro': [40.8912, -8.6678], 'praia-de-mira': [40.4334, -8.7934],
-    'praia-da-tocha': [40.3212, -8.8023], 'praia-de-buarcos': [40.1664, -8.8633], 'praia-da-arrifana-algarve': [37.2934, -8.8634],
+    'praia-de-ofir': [41.51722, -8.78778], 'praia-do-furadouro': [40.87371, -8.67755], 'praia-de-mira': [40.45644, -8.80472],
+    'praia-da-tocha': [40.32934, -8.84553], 'praia-de-buarcos': [40.16336, -8.87890], 'praia-da-arrifana-algarve': [37.2934, -8.8634],
     'praia-do-castelejo': [37.1001, -8.9455], 'praia-da-zavial': [37.0463, -8.8715], 'praia-da-salema': [37.0650, -8.8246],
-    'praia-de-odeceixe': [37.4333, -8.7833], 'ribeira-grande-reef': [37.8187, -25.5429],
+    'praia-de-odeceixe': [37.44193, -8.79957], 'ribeira-grande-reef': [37.8187, -25.5429],
     // Lote 1a (OpenStreetMap/Nominatim 2026-10-08; Ribeira d'Ilhas e Lagide ajustados a praia)
     'ribeira-dilhas': [38.9880, -9.4210], 'coxos': [39.0043, -9.4254], 'foz-do-lizandro': [38.9420, -9.4155], 'sao-lourenco': [39.0117, -9.4212],
     'pedra-branca': [38.9787, -9.4218], 'baleal': [39.3655, -9.3419], 'lagide': [39.3730, -9.3340], 'consolacao': [39.3378, -9.3602], 'molhe-leste': [39.3503, -9.3671],

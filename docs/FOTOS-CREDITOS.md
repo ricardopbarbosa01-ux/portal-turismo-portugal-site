@@ -104,6 +104,29 @@
 | hero | hero4 | [The Douro Valley vineyards.jpg](https://commons.wikimedia.org/wiki/File:The_Douro_Valley_vineyards.jpg) | mat's eye | CC BY 2.0 |
 | hero | hero6 | [Rabelo boats and Ribeira seen from Cais de Gaia, 20250605 1623 9879.jpg](https://commons.wikimedia.org/wiki/File:Rabelo_boats_and_Ribeira_seen_from_Cais_de_Gaia,_20250605_1623_9879.jpg) | Jakub Hałun | CC BY 4.0 |
 
+## Praias novas — lote B1 (08/10/2026), images/beaches/<id>-{480,800}.webp
+
+| tipo | praia | ficheiro | autor | licença |
+|---|---|---|---|---|
+| praia | Praia de Santa Cruz (`24ef6f3c-123f-4cda-9ed7-53b372fe4790`) | [Praia de Santa Cruz - Portugal (12752794813).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Santa_Cruz_-_Portugal_(12752794813).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia do Baleal (`97427a14-7439-4672-8589-9139d7cb5abe`) | [Praia do Baleal - Portugal (5299852364).jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Baleal_-_Portugal_(5299852364).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia de Paredes da Vitória (`c4e37952-73a1-42b7-b36f-b4fd60291102`) | [Praia de Paredes da Vitória - Portugal (26188107950).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Paredes_da_Vit%C3%B3ria_-_Portugal_(26188107950).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia de Canide (`23be37b8-dc27-4a24-b91f-a24e2dd76b3d`) | [Praia Canide Norte, Canidelo.jpg](https://commons.wikimedia.org/wiki/File:Praia_Canide_Norte,_Canidelo.jpg) | Pacopac | CC BY-SA 4.0 |
+| praia | Praia de Santa Rita (`bdd9928f-c4b0-4e06-95b9-9ccead088030`) | [Praia de Santa Rita - Portugal (27665318982).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Santa_Rita_-_Portugal_(27665318982).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia da Torre (`d298db41-b072-4fcb-9bbb-d6ad9c5bf1f0`) | [L'heure du loup 01 (13711485715).jpg](https://commons.wikimedia.org/wiki/File:L%27heure_du_loup_01_(13711485715).jpg) | Bosc d'Anjou | CC BY 2.0 |
+| praia | Praia da Foz do Lizandro (`64b383cd-da9c-496c-bc43-77908e175f8d`) | [Praia da Foz do Lizandro - Portugal (283412027).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Foz_do_Lizandro_-_Portugal_(283412027).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia da Parede (`6116b10b-1e12-4d54-b9ce-86bb6792fa6b`) | [Praia da Parede - Portugal (350647669).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Parede_-_Portugal_(350647669).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia de São João da Caparica (`b543a3dd-bfe8-40d7-8d5e-2ac453daf76e`) | [Jules and Gabriel at the São João Beach, Costa da Caparica, Portugal julesvernex2.jpg](https://commons.wikimedia.org/wiki/File:Jules_and_Gabriel_at_the_S%C3%A3o_Jo%C3%A3o_Beach,_Costa_da_Caparica,_Portugal_julesvernex2.jpg) | Jules Verne Times Two | CC BY-SA 4.0 |
+| praia | Praia de Paço de Arcos (`7f17154c-8b05-4c15-82ae-d14dc121bc21`) | [Praia de Paço de Arcos - Portugal (547685071).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Pa%C3%A7o_de_Arcos_-_Portugal_(547685071).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia das Bicas (`4a454a94-b132-44dc-a15b-3733e85d52f2`) | [Praia das Bicas - Portugal (43758201151).jpg](https://commons.wikimedia.org/wiki/File:Praia_das_Bicas_-_Portugal_(43758201151).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia da Conceição (`56c6175b-966c-4d7f-a459-9db79d78734c`) | [Praia da Conceição - Portugal (8409412530).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Concei%C3%A7%C3%A3o_-_Portugal_(8409412530).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia das Avencas (`580c0d76-51d5-476b-94a4-31ce0435471b`) | [Praia das Avencas - Portugal (480303662).jpg](https://commons.wikimedia.org/wiki/File:Praia_das_Avencas_-_Portugal_(480303662).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia do Magoito (`5ed26c4c-0979-4497-a021-253ef66f6aeb`) | [Praia de Magoito - Portugal (240711542).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Magoito_-_Portugal_(240711542).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia da Pedra do Ouro (`f434fab5-7b9b-4587-8397-1614df91d007`) | [Praia da Pedra do Ouro - Portugal (53112557741).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Pedra_do_Ouro_-_Portugal_(53112557741).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia de Albarquel (`c0b66706-af15-47b5-adc4-6ff208c3b855`) | [Praia de Albarquel - Portugal (273035688).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Albarquel_-_Portugal_(273035688).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia da Adraga (`6541d792-54dd-4b32-b89c-02ef4c7c9f90`) | [Praia da Adraga - Portugal (9253367923).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Adraga_-_Portugal_(9253367923).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| praia | Praia de Quarteira (`e927161a-02ad-4e1c-89f0-541a9e0d99ba`) | [21-11-2007,Looking west along Praia de Quarteira.JPG](https://commons.wikimedia.org/wiki/File:21-11-2007,Looking_west_along_Praia_de_Quarteira.JPG) | Kolforn | CC BY-SA 4.0 |
+
 ## Surf — spots (/surf e /en/surf), adicionado 2026-10-07
 Ficheiros: `/images/spots/surf-<id>-{480,800}.webp` (recorte 3:2 de miniatura 1600 px do Commons). Crédito no cartão (autor · licença).
 
