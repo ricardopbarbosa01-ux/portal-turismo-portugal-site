@@ -1,10 +1,41 @@
-# HANDOFF — Portal Turismo Portugal (atualizado 07/10/2026)
+# HANDOFF — Portal Turismo Portugal (atualizado 08/10/2026, 17h30)
 
-Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia no projeto Claude: `claude/handoff-proximos-4-2026-10.md`.
+Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia no projeto Claude: `claude/handoff-proximos-4-2026-10.md`. Praias em detalhe: `claude/praias-correcao-e-ampliacao-2026-10.md`.
+
+## Pesca lote P2 (08/10, ~19h30) — PRONTO, POR PUBLICAR
+- 33 -> **76 spots** de pesca (Norte 13, Centro 14, Lisboa 8, Alentejo 12, Algarve 17, Açores 7, Madeira 5). 5 agentes por região; fontes e regras por spot em `claude/pesca-spots-lote-p2-2026-10.md` (projeto Claude). Cortados: molhe de Quarteira (regra dos 100 m do porto), Bravura (1 fonte), Lagoa Comprida (só competições), Cabo Espichel (zonamento do parque marinho por confirmar), Lajes/Cavaleiro (dentro da zona interdita do Cabo Sardão), Morgavel, Póvoa e Meadas, Tróia, Zavial/Ingrina, Beliche, molhe norte do Douro (proibido).
+- Fotos Commons verificadas em 38 spots (`images/spots/pesca-<id>-*.webp`, créditos em `docs/FOTOS-CREDITOS.md`); 5 sem foto ficam com fundo de cor (Alto Ceira, Unhais, Santa Clara, Tapada Grande, Odeleite).
+- Testado: Playwright com CSP real, 1280/375, PT+EN: 76 cartões, filtros por região OK, 0 erros JS, 0 fotos partidas. Backup `docs/_backup-pesca-p2-20261008/`.
+- **Commit:** os ficheiros partilhados (`js/surf-pesca-data.js`, `js/surf-pesca-page.js`, `surf.html`, `en/surf.html`, `docs/FOTOS-CREDITOS.md`) também têm o lote **Surf S2** por publicar → fazer UM commit com as duas listas: `git add -f (Get-Content docs\commit-files-2026-10-08-surf-s2.txt)` + `git add -f (Get-Content docs\commit-files-2026-10-08-pesca-p2.txt)`.
+- Para o Ricardo decidir (conteúdo já publicado, não mexido): o cartão Madeira — Caniçal lista "Atum rabilho"; Viana — Rio Lima e Rio Lima — Ponte de Lima listam sável e lampreia (a DGRM lista-os como proibidos na pesca lúdica — confirmar regra do troço); nova Portaria 330/2026/1 do Tejo (2 canas, sem limite de anzóis próprio) — rever textos antigos que digam "Tejo: 2 canas, 3 anzóis"; defeso do sargo no PNSACV: fontes dizem 1 fev–15 mar (os avisos antigos dizem 1–28 fev).
+
+## PRÓXIMA SESSÃO — análise fria de https://www.pesca-pt.com/ (pedido do Ricardo, 08/10)
+Objetivo: com mentalidade de prosperar e faturar, ver o que podemos aproveitar desse site para **aumentar visualizações** no portalturismoportugal.com e **converter visitas em compras** (afiliados que faturam + Pro).
+- O que já se sabe (leitura rápida a 08/10): pesca-pt.com é um site PT de pesca lúdica com conteúdo de referência — nós, técnicas, peixes de mar e de rio, montagens, dicas, "Pesqueiros", material (anzóis, canas, carretos, chumbadas, iscos, linhas), peixes perigosos, glossário, calendário de defesos e tamanhos mínimos 2025 (atualizado 22/07/2025). Não mostra loja, anúncios, afiliados nem marés/previsões.
+- Hipótese a testar (não é conclusão): eles têm conteúdo evergreen de "como pescar" que capta pesquisa; nós temos dados ao vivo (mar, marés, spots com mapa, webcams) e monetização. Lacunas possíveis do lado deles = oportunidade nossa (condições ao vivo, calendário 2026 atualizado, material com afiliados, saídas de pesca GYG).
+- Como fazer: 1) inventário do site deles (páginas, temas, profundidade, data de atualização, estrutura de URLs, schema); 2) estimar procura das palavras-chave por trás de cada secção (GSC do Ricardo: `claude/gsc-palavras-chave-2026-10.md`; pesquisa web); 3) comparar com /pesca e /en/pesca (33 spots, `claude/pesca-pesquisa-spots-2026-10.md`); 4) lista priorizada com custo-benefício: o que copiar como formato (nunca copiar texto), o que fazer melhor, onde pôr afiliados (material de pesca — verificar programas que faturam em PT: Amazon? Decathlon? Pescamar? — confirmar antes de propor), saídas de pesca GYG `0WTBHZE`, Pro; 5) não mexer no site sem aprovação — primeiro o relatório.
+- Regras do Ricardo: tudo digital (sem vendas offline), só links que faturam, design próprio por página, hero sempre o elemento principal, créditos de foto quase invisíveis.
+
+## Estado no fim de 08/10 — TUDO PUBLICADO
+- Commits publicados hoje (Ricardo): `c83586d` surf +15 spots e pesca P1, `6c7d136` barra do telemóvel com Webcams em todas as páginas, `b3968f3` praias P0 + B1, `5475dd6` praias B2+B3+B4 (201 praias, Açores região nova, câmaras ligadas às praias, contadores dinâmicos).
+- **Praias: 329 públicas** (eram ~111/128). Verificado em produção: 329 cartões, 210 pontos no mapa, cartões Madeira 39 e Açores 80, calmo+moderado+agitado = 329, 0 fotos partidas.
+- Surf: 38 spots. Pesca: 33 spots. Webcams: 146 câmaras com "Guia da praia".
+- Depois do último deploy só mudou a BD (aviso de interdições na Praia dos Mosteiros) e este HANDOFF.md (não se publica).
+- Ferramenta de teste: `.\testar-praias.ps1` (local / `-Lan` / `-Preview`) mostra praias ainda inativas só na cópia de teste.
+- Lixo a apagar pelo Ricardo (a VM não pode apagar): `docs/_to_delete/` (124 imagens órfãs de um build interrompido + listas antigas).
+
+## Pendentes (por valor)
+1. Página "mapa praias algarve" (1k–10k pesquisas/mês, concorrência baixa) — já há 78 praias do Algarve na BD.
+2. Praias que faltam no mar: ~33 Norte (muitos troços urbanos Póvoa/Matosinhos/Gaia), ~10 Centro, ~4 Alentejo; depois 167 fluviais. Método em `claude/praias-correcao-e-ampliacao-2026-10.md` (4–5 agentes em paralelo; ~1h30 por 100 praias).
+3. Bandeira Azul 2026 para todas antes de mostrar selo; 33 praias sem foto; páginas estáticas `praias/*` com qualidade da água desatualizada (só Matosinhos corrigida); banner de região nunca aparece em /en/beaches.
+4. Pesca: lotes seguintes da pesquisa; Surf: lotes Algarve/Sagres, Norte, Alentejo, Madeira, Açores; foto da Pedra Branca.
+5. Medir ~14/10 e ~04/11: GA4 `affiliate_click`, `webcam_action`, `surf_webcam_click`; Stay22/GYG por campanha.
+
+---
 
 ## Repositório
-- Branch: `main`. Último commit: `f0ab61a` (fix planear, 07/10 17:48); antes `557223f` (fotos webcams + créditos + planear com navbar), `f4337b2` (webcams v2), `47d8c86` (pesca v2).
-- `main` = `origin/main`; **tudo publicado e confirmado em produção a 07/10 ~18h** (`/planear` com `planner-v3.js?v=20261007s` e `site-chrome.css?v=20261007b`; header `geolocation=(self)`).
+- Branch: `main`. Último commit: `5475dd6` (praias B2+B3+B4, 08/10). Antes: `b3968f3`, `6c7d136`, `c83586d` (08/10), `f0ab61a` (07/10).
+- Tudo publicado e confirmado em produção a 08/10 ~17h30 (329 praias).
 - Há ficheiros "modificados" que são só diferença de fim de linha (CRLF na VM vs LF no HEAD). Para ver diferenças reais: `git --no-optional-locks diff --ignore-cr-at-eol --numstat HEAD`.
 - Commits grandes: gerar a lista exata de ficheiros (`docs/commit-files-*.txt`) e usar `git add --pathspec-from-file=...` para não apanhar ruído de fim de linha.
 
@@ -128,7 +159,7 @@ Novos ou por decidir:
 - Pesca: pesquisa feita em `claude/pesca-pesquisa-spots-2026-10.md` (40 candidatos com fontes + licenças DGRM/ICNF). Correções urgentes: Porto Covo (Ilha do Pessegueiro interdita), Sagres (Martinhal e 100 m das Pedras das Gaivotas/Gigante interditos), Açores big game = Ponta Delgada/Horta (não Ribeira Grande), Lagoa dos Salgados SEM reserva criada e dentro do PNM Pedra do Valado (autorização ICNF).
 - Scripts novos: `_scripts/surf_commons.py` (geosearch Commons + folhas de contacto) e `_scripts/spots_fetch.py` (recorte 3:2 → images/spots). O Commons só aceita miniaturas de largura-padrão (1280).
 
-## Próximo passo — PRÓXIMA SESSÃO: ampliar Praias, Surf e Pesca
+## (HISTÓRICO — feito a 08/10) Ampliar Praias, Surf e Pesca
 Pedido do Ricardo (07/10): "na próxima sessão iremos ampliar praias, surf, pesca". Detalhe e números em `claude/handoff-proximos-4-2026-10.md` (projeto Claude).
 
 **Antes de começar:** ler este ficheiro, `CLAUDE.md`, `docs/REGRESSION-WATCHLIST.md`; confirmar `git log -3` e diff real; perguntar ao Ricardo a ordem (proposta: Surf → Pesca → Praias) e o tamanho de cada lote.
@@ -156,3 +187,12 @@ Outros pendentes (não urgentes):
 - Medir ~14/10 e ~04/11: CTR de /en/webcams no GSC (antes 3,5%, pos. 7), eventos GA4 `webcam_action` e `affiliate_click`, Stay22 por campanha, GYG por `cmp`.
 - B (filtros uniformes) e D (monetização nos cartões de surf/pesca/praias) do plano A–E continuam por fazer.
 - Limpeza de ficheiros públicos por engano (ver acima) — decisão do Ricardo.
+
+## Estado 08/10 (fim da tarde) — Praias lote B5 (mar Norte/Centro/Alentejo)
+- **42 praias novas inseridas INATIVAS** (Norte 30, Centro 8, Alentejo 4). BD pública continua com 329 até à ativação.
+- Fora: Pedras Negras (retirada da lista de águas balneares 2026), Jardim Oudinot (interdita desde 22/07/2026 sem levantamento publicado), Frente Urbana Sul de Vila do Conde (troço sem nome, perto das Caxinas).
+- Póvoa de Varzim = 1 cartão (Zona Urbana Norte/Sul I/II + Lagoa + Fragosa). "Marbelo" da EEA tem coordenada em S. Félix da Marinha → cartão "Praia de São Félix da Marinha".
+- Fotos: 34 com foto Commons verificada; 8 sem foto (NO_PHOTO): Rodanho, Amorosa, Rio de Moinhos, Ramalha, Paimó, Quião, Pedras Brancas, Francelos.
+- Commit: `docs/commit-files-2026-10-08-praias-b5.txt` (usar `git add -f`, tem `_data/`). Os ficheiros partilhados `docs/FOTOS-CREDITOS.md`, `docs/REGRESSION-WATCHLIST.md` e `HANDOFF.md` têm também linhas da sessão surf/pesca — ficam fora desta lista (não são publicados).
+- Testar: `.\testar-praias.ps1` (mostra as 42 inativas). Depois do deploy: `python3 _diag/praias/b5/activate.py` → 371 praias.
+- Próximo: praias fluviais (159 distintas) — decisões em aberto: região (distrito/concelho), filtro "Fluviais" vs etiqueta, pontos no mapa, tamanho dos lotes; cartões/contadores do mar têm de lidar com praias sem dados de mar (também as 7 de ria/estuário do B5 e a Armona).

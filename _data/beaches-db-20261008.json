@@ -2301,5 +2301,299 @@
 "region": "Açores",
 "latitude": 38.43078,
 "longitude": -28.46104
+},
+{
+"id": "155d7724-e194-428d-8bf4-7e18abb2aed7",
+"name": "Praia das Pedras Ruivas",
+"region": "Norte",
+"latitude": 41.89059,
+"longitude": -8.82548
+},
+{
+"id": "055cca4d-ee7d-4ef6-8204-ea9265ec704e",
+"name": "Praia da Foz do Minho",
+"region": "Norte",
+"latitude": 41.86694,
+"longitude": -8.86417
+},
+{
+"id": "bc1e4246-a8e1-42c5-8577-119318b3fbb9",
+"name": "Praia do Forte do Cão",
+"region": "Norte",
+"latitude": 41.80056,
+"longitude": -8.87111
+},
+{
+"id": "37c4cd58-a82c-4f38-9710-48d3dd24660b",
+"name": "Praia de Paçô",
+"region": "Norte",
+"latitude": 41.75972,
+"longitude": -8.87806
+},
+{
+"id": "6ce5992f-4bd3-42c3-a710-d2d987c8363c",
+"name": "Praia Norte (Viana do Castelo)",
+"region": "Norte",
+"latitude": 41.69611,
+"longitude": -8.85028
+},
+{
+"id": "cc5562a4-a203-4797-89bf-b8703ff615c4",
+"name": "Praia do Rodanho",
+"region": "Norte",
+"latitude": 41.66669,
+"longitude": -8.82626
+},
+{
+"id": "2ee1dd1f-3e70-46cc-8e65-ef7e035a78f8",
+"name": "Praia da Amorosa",
+"region": "Norte",
+"latitude": 41.64694,
+"longitude": -8.825
+},
+{
+"id": "65cf5f44-de44-41c0-a419-00e0554f607f",
+"name": "Praia de Castelo de Neiva",
+"region": "Norte",
+"latitude": 41.62528,
+"longitude": -8.81722
+},
+{
+"id": "f1e950a5-61b6-41e3-b173-22153898c3b3",
+"name": "Praia de Rio de Moinhos",
+"region": "Norte",
+"latitude": 41.56528,
+"longitude": -8.79833
+},
+{
+"id": "9cf66c0f-974c-475b-9668-88731057e69f",
+"name": "Praia da Ramalha",
+"region": "Norte",
+"latitude": 41.47389,
+"longitude": -8.77639
+},
+{
+"id": "dfd873aa-3fc6-48d4-9cd1-1b64e235af9a",
+"name": "Praia de Paimó",
+"region": "Norte",
+"latitude": 41.43167,
+"longitude": -8.78417
+},
+{
+"id": "f058fd9e-b587-41d2-bc5a-de0385aa8b73",
+"name": "Praia do Quião",
+"region": "Norte",
+"latitude": 41.41646,
+"longitude": -8.78853
+},
+{
+"id": "7cf2d44f-99d9-4338-a8c7-5894e891137f",
+"name": "Praia da Póvoa de Varzim",
+"region": "Norte",
+"latitude": 41.38761,
+"longitude": -8.7755
+},
+{
+"id": "61887f8a-8922-4ba5-ad0a-45f881c351bf",
+"name": "Praia da Árvore",
+"region": "Norte",
+"latitude": 41.33031,
+"longitude": -8.74007
+},
+{
+"id": "46869249-375b-4a32-9adb-c372544414ba",
+"name": "Praia de Mindelo",
+"region": "Norte",
+"latitude": 41.31,
+"longitude": -8.74111
+},
+{
+"id": "eab15399-eeb4-48a2-a798-eba7a12e0d28",
+"name": "Praia de Vila Chã",
+"region": "Norte",
+"latitude": 41.29,
+"longitude": -8.73306
+},
+{
+"id": "e4fb473e-c931-412b-89a3-f165663cc0df",
+"name": "Praia de Labruge",
+"region": "Norte",
+"latitude": 41.27444,
+"longitude": -8.72861
+},
+{
+"id": "12507b31-9a7c-41c4-a13a-306fe86756bb",
+"name": "Praia das Pedras Brancas",
+"region": "Norte",
+"latitude": 41.25333,
+"longitude": -8.72472
+},
+{
+"id": "03fbf94b-0b57-4dc6-b591-c0c6e3741a4d",
+"name": "Praia da Agudela",
+"region": "Norte",
+"latitude": 41.24139,
+"longitude": -8.72778
+},
+{
+"id": "865a8bf2-f14c-4162-b617-c30fe5e8df5d",
+"name": "Praia da Memória",
+"region": "Norte",
+"latitude": 41.23056,
+"longitude": -8.72194
+},
+{
+"id": "73903aa6-2381-4de2-bb7e-711c3f7eeedb",
+"name": "Praia do Aterro",
+"region": "Norte",
+"latitude": 41.20611,
+"longitude": -8.71667
+},
+{
+"id": "57526254-1697-4e4e-bccb-8aad4845637c",
+"name": "Praia do Ourigo",
+"region": "Norte",
+"latitude": 41.15,
+"longitude": -8.67694
+},
+{
+"id": "5b6a2683-e641-4d24-ab09-8344ab155721",
+"name": "Praia da Madalena (Gaia)",
+"region": "Norte",
+"latitude": 41.10139,
+"longitude": -8.66153
+},
+{
+"id": "7191f050-c51a-4b02-be5d-f05e2cf9e26e",
+"name": "Praia de Valadares",
+"region": "Norte",
+"latitude": 41.09056,
+"longitude": -8.65764
+},
+{
+"id": "2bc9625b-be86-4e05-8863-9cc2bb287a79",
+"name": "Praia de Francelos",
+"region": "Norte",
+"latitude": 41.0825,
+"longitude": -8.65694
+},
+{
+"id": "58f01940-1eba-48f6-9f31-3b9a085a8e84",
+"name": "Praia de São Félix da Marinha",
+"region": "Norte",
+"latitude": 41.03056,
+"longitude": -8.64639
+},
+{
+"id": "8e8b1a53-d25b-4819-bbb2-a5ea088797e6",
+"name": "Praia de Silvalde",
+"region": "Norte",
+"latitude": 40.99028,
+"longitude": -8.6475
+},
+{
+"id": "d6ed45a0-b239-4478-bd96-dc730241b2c7",
+"name": "Praia de Paramos",
+"region": "Norte",
+"latitude": 40.97722,
+"longitude": -8.64972
+},
+{
+"id": "47ae4764-a60d-4ec5-a7c5-00a21e871fdb",
+"name": "Praia de Cortegaça",
+"region": "Norte",
+"latitude": 40.93958,
+"longitude": -8.65859
+},
+{
+"id": "01e58d32-5fe4-4700-9772-5cc1cd9760fc",
+"name": "Praia de São Pedro de Maceda",
+"region": "Norte",
+"latitude": 40.92042,
+"longitude": -8.66329
+},
+{
+"id": "1c240aa4-6970-4f9d-8635-80cb7422cb35",
+"name": "Praia do Areinho (Ovar)",
+"region": "Centro",
+"latitude": 40.84583,
+"longitude": -8.66194
+},
+{
+"id": "06b247da-0079-4522-a065-25add87fb95f",
+"name": "Praia do Torrão do Lameiro",
+"region": "Centro",
+"latitude": 40.82889,
+"longitude": -8.69167
+},
+{
+"id": "00788621-1158-4184-9bcd-43c1d8755977",
+"name": "Praia do Monte Branco",
+"region": "Centro",
+"latitude": 40.75389,
+"longitude": -8.70139
+},
+{
+"id": "f18f80b9-9924-469d-818d-c23488065d31",
+"name": "Praia do Bico (Murtosa)",
+"region": "Centro",
+"latitude": 40.72993,
+"longitude": -8.64999
+},
+{
+"id": "f0074430-0747-4d08-a8e9-162468afc3d8",
+"name": "Praia do Poço da Cruz",
+"region": "Centro",
+"latitude": 40.49023,
+"longitude": -8.79393
+},
+{
+"id": "6fcea0e0-eed8-4e71-b4ad-33c24815692e",
+"name": "Praia do Palheirão",
+"region": "Centro",
+"latitude": 40.38802,
+"longitude": -8.82635
+},
+{
+"id": "18030e2e-70b5-4e6e-9a5c-7935cdd13f6f",
+"name": "Praia do Cabo Mondego",
+"region": "Centro",
+"latitude": 40.17509,
+"longitude": -8.89673
+},
+{
+"id": "dc0629c2-fb75-4706-bafd-08d8cf4466be",
+"name": "Praia da Cova-Gala",
+"region": "Centro",
+"latitude": 40.13065,
+"longitude": -8.86308
+},
+{
+"id": "06d98cdf-b310-4dfb-ac51-89ba00cdf277",
+"name": "Praia da Fonte do Cortiço",
+"region": "Alentejo",
+"latitude": 38.05455,
+"longitude": -8.82103
+},
+{
+"id": "400e7e4d-66b0-4efc-baf0-d3b79f694039",
+"name": "Praia Vasco da Gama (Sines)",
+"region": "Alentejo",
+"latitude": 37.95134,
+"longitude": -8.86405
+},
+{
+"id": "71adeb03-5026-4bba-b65f-8d79125e3c5d",
+"name": "Praia de Morgavel",
+"region": "Alentejo",
+"latitude": 37.90779,
+"longitude": -8.80045
+},
+{
+"id": "e0c0455f-3e2c-4d90-95c9-01b28f661172",
+"name": "Praia da Vieirinha",
+"region": "Alentejo",
+"latitude": 37.89506,
+"longitude": -8.79775
 }
 ]
