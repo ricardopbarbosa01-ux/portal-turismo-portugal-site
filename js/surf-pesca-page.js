@@ -93,7 +93,23 @@
     'praia-da-zavial': "Marty B · CC BY-SA 2.0",
     'praia-da-salema': "Joseolgon · CC BY-SA 4.0",
     'praia-de-odeceixe': "Beeston · CC BY 3.0",
-    'ribeira-grande-reef': "Ajay Suresh · CC BY 2.0"
+    'ribeira-grande-reef': "Ajay Suresh · CC BY 2.0",
+    // Lote 1a (2026-10-08)
+    'ribeira-dilhas': "Vitor Oliveira · CC BY-SA 4.0",
+    'coxos': "Vitor Oliveira · CC BY-SA 2.0",
+    'foz-do-lizandro': "Vitor Oliveira · CC BY-SA 2.0",
+    'sao-lourenco': "Vitor Oliveira · CC BY-SA 2.0",
+    'baleal': "Vitor Oliveira · CC BY-SA 2.0",
+    'lagide': "Vitor Oliveira · CC BY-SA 2.0",
+    'consolacao': "Vitor Oliveira · CC BY-SA 2.0",
+    'molhe-leste': "Vitor Oliveira · CC BY-SA 2.0",
+    // Lote 1b (2026-10-08)
+    'carcavelos': "Bosc d'Anjou · CC BY 2.0",
+    'sao-pedro-do-estoril': "Vitor Oliveira · CC BY-SA 2.0",
+    'bafureira': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-grande-sintra': "Alexkom000 · CC BY 4.0",
+    'praia-das-macas': "Vitor Oliveira · CC BY-SA 2.0",
+    'fonte-da-telha': "Vitor Oliveira · CC BY-SA 2.0"
   };
   // Pagina estatica da praia (praias/<slug>/ e en/praias/<slug>/), quando existe
   var SURF_BEACH = {
@@ -104,18 +120,39 @@
   };
   // Regiao do planeador (js/planner-v3.js) e regiao da BD de praias (/beaches?region=)
   var SURF_PLAN_R = { Norte: 'minho', Porto: 'minho', Centro: 'costa-prata', Lisboa: 'cascais', Alentejo: 'alentejo', Algarve: 'algarve', 'Açores': 'acores' };
-  var SURF_PLAN_R_ID = { 'supertubos': 'oeste', 'costa-da-caparica': 'setubal' };
+  var SURF_PLAN_R_ID = { 'supertubos': 'oeste', 'costa-da-caparica': 'setubal',
+    'ribeira-dilhas': 'oeste', 'coxos': 'oeste', 'foz-do-lizandro': 'oeste', 'sao-lourenco': 'oeste', 'pedra-branca': 'oeste',
+    'baleal': 'oeste', 'lagide': 'oeste', 'consolacao': 'oeste', 'molhe-leste': 'oeste', 'fonte-da-telha': 'setubal' };
+  // Webcam ao vivo do spot (ou a mais perto) em /webcams (abre o painel por #cam-<id>; MEO so por link, YouTube incorporado).
+  // Escolhidas a mao por nome (2026-10-08): as coordenadas de algumas camaras MEO estao agrupadas, por isso nao se usa so a distancia.
+  var SURF_CAM = {
+    'supertubos': ['peniche-supertubos', 'Supertubos'], 'praia-da-nazare': ['praia-do-norte-canhao-nazare', 'Praia do Norte'],
+    'praia-do-amado': ['praia-do-amado', 'Praia do Amado'], 'costa-da-caparica': ['costa-da-caparica', 'CDS Norte'],
+    'praia-do-guincho': ['praia-do-guincho', 'Guincho'], 'praia-de-matosinhos': ['praia-de-matosinhos', 'Matosinhos'],
+    'praia-de-afife': ['viana-do-castelo-afife-arda', 'Arda · Afife'], 'praia-de-cabedelo': ['viana-do-castelo-cabedelo', 'Cabedelo'],
+    'praia-de-ancora': ['vila-praia-de-ancora', 'Vila Praia de Âncora'], 'praia-de-esposende-surf': ['esposende', 'Esposende'],
+    'praia-de-ofir': ['ofir', 'Ofir'], 'praia-do-furadouro': ['furadouro', 'Furadouro'], 'praia-de-mira': ['praia-de-mira', 'Praia de Mira'],
+    'praia-da-tocha': ['praia-da-tocha', 'Praia da Tocha'], 'praia-de-buarcos': ['figueira-da-foz-tamargueira', 'Buarcos'],
+    'praia-da-arrifana-algarve': ['arrifana', 'Arrifana'], 'praia-do-castelejo': ['cordoama', 'Cordoama'], 'praia-de-odeceixe': ['odeceixe', 'Odeceixe'],
+    'ribeira-dilhas': ['ribeira-dilhas', "Ribeira d'Ilhas"], 'coxos': ['ribeira-dilhas', "Ribeira d'Ilhas"],
+    'foz-do-lizandro': ['foz-do-lizandro', 'Foz do Lizandro'], 'sao-lourenco': ['ericeira-praia-da-calada', 'Praia da Calada'],
+    'pedra-branca': ['ericeira', 'Reef · Pedra Branca'], 'baleal': ['peniche-baleal-panoramica', 'Baleal'], 'lagide': ['lagide', 'Lagide'],
+    'consolacao': ['praia-da-consolacao', 'Consolação'], 'molhe-leste': ['peniche-molhe-leste', 'Molhe Leste'],
+    'carcavelos': ['praia-de-carcavelos', 'Carcavelos'], 'sao-pedro-do-estoril': ['sao-pedro-do-estoril', 'São Pedro do Estoril'],
+    'bafureira': ['bafureira', 'Bafureira'], 'praia-grande-sintra': ['praia-grande', 'Praia Grande · Norte'],
+    'praia-das-macas': ['praia-das-macas', 'Praia das Maçãs'], 'fonte-da-telha': ['fonte-da-telha', 'Fonte da Telha · Norte']
+  };
   var SURF_DB_REGION = { Norte: 'Norte', Porto: 'Norte', Centro: 'Centro', Lisboa: 'Lisboa e Setúbal', Alentejo: 'Alentejo', Algarve: 'Algarve' };
   var SURF_LEVELS = ['iniciante', 'intermedio', 'avancado', 'profissional'];
   var SURF_REGION_EN = { Norte: 'North', Centro: 'Centre', Lisboa: 'Lisbon', 'Açores': 'Azores' };
   var SC2 = {
     pt: { photo: 'Foto', level: 'Nível', season: 'Melhor época', swell: 'Swell ideal', wind: 'Vento ideal', beach: 'Ver praia',
-          zone: 'Praias da zona', plan: 'Planear', worldClass: 'Classe mundial',
+          zone: 'Praias da zona', plan: 'Planear', worldClass: 'Classe mundial', cam: 'Webcam ao vivo',
           short: { iniciante: 'Iniciante', intermedio: 'Intermédio', avancado: 'Avançado', profissional: 'Pro' },
           ariaLevel: function (t) { return 'Nível recomendado: ' + t; }, ariaBeach: function (n) { return 'Ver a página da praia ' + n; },
           ariaZone: function (r) { return 'Ver praias da região ' + r; }, ariaPlan: function (n) { return 'Planear uma viagem de surf a ' + n; } },
     en: { photo: 'Photo', level: 'Level', season: 'Best season', swell: 'Best swell', wind: 'Best wind', beach: 'View beach',
-          zone: 'Beaches nearby', plan: 'Plan trip', worldClass: 'World-class',
+          zone: 'Beaches nearby', plan: 'Plan trip', worldClass: 'World-class', cam: 'Live webcam',
           short: { iniciante: 'Beginner', intermedio: 'Intermediate', avancado: 'Advanced', profissional: 'Pro' },
           ariaLevel: function (t) { return 'Recommended level: ' + t; }, ariaBeach: function (n) { return 'View the beach page for ' + n; },
           ariaZone: function (r) { return 'See beaches in ' + r; }, ariaPlan: function (n) { return 'Plan a surf trip to ' + n; } }
@@ -174,11 +211,21 @@
             '<div><dt>' + esc(L.swell) + '</dt><dd>' + esc(pickLang(s.best_swell, lang)) + '</dd></div>' +
             '<div><dt>' + esc(L.wind) + '</dt><dd>' + esc(pickLang(s.best_wind, lang)) + '</dd></div>' +
           '</dl>' +
+          surfCamHtml(s, lang, L) +
           '<div class="sc2__actions">' + primary + plan + '</div>' +
         '</div>' +
       '</article>'
     );
   }
+  function surfCamHtml(s, lang, L) {
+    var c = SURF_CAM[s.id]; if (!c) return '';
+    return '<a class="sc2__cam" href="' + (lang === 'en' ? '/en/' : '/') + 'webcams#cam-' + encodeURIComponent(c[0]) + '" data-cam="' + esc(c[0]) + '">' +
+      '<i aria-hidden="true"></i><span>' + esc(L.cam) + '</span><b>' + esc(c[1]) + '</b>' + SC2_ICON.arrow + '</a>';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('.sc2__cam') : null; if (!a) return;
+    try { if (typeof window.track === 'function') window.track('surf_webcam_click', { cam: a.getAttribute('data-cam') }); } catch (_) {}
+  });
 
   // ── Fishing card template ─────────────────────────────────────────────────────
   // ── Fotos dos spots de pesca (Wikimedia Commons, verificadas 2026-10-07) ──────────
@@ -204,11 +251,20 @@
     'costa-vicentina-odeceixe': "Vitor Oliveira · CC BY-SA 2.0",
     'ria-de-alvor': "Joseolgon · CC0",
     'praia-da-rocha-portimao': "CesareBonaparte · CC BY-SA 4.0",
-    'lagoa-dos-salgados': "Kolforn · CC BY-SA 4.0",
+    'gale-armacao-de-pera': "Kolforn · CC BY-SA 4.0",
     'ilha-da-culatra': "Tristanm70 · CC BY-SA 4.0",
     'baia-de-setubal': "DavidFerreira20048 · CC BY-SA 4.0",
-    'ribeira-grande-acores-mar': "Anton Zelenov · CC BY-SA 4.0",
-    'madeira-canical': "Asurnipal · CC BY-SA 4.0"
+    'horta-faial': "Vitor Oliveira · CC BY-SA 2.0",
+    'madeira-canical': "Asurnipal · CC BY-SA 4.0",
+    // Lote P1 (2026-10-08)
+    'foz-do-arelho': "Vitor Oliveira · CC BY-SA 2.0",
+    'berlengas': "Alexkom000 · CC BY 4.0",
+    'cabo-raso': "Vitor Oliveira · CC BY-SA 2.0",
+    'lagoa-de-albufeira-mar': "Vitor Oliveira · CC BY-SA 2.0",
+    'vila-nova-de-milfontes': "Vitor Oliveira · CC BY-SA 2.0",
+    'ponta-da-piedade': "François Philipp · CC BY 2.0",
+    'ilha-de-tavira': "Vitor Oliveira · CC BY-SA 2.0",
+    'alqueva-mourao': "Vitor Oliveira · CC BY-SA 2.0"
   };
   function fishPhotoHtml(s, lang) {
     var c = FISH_PHOTO[s.id]; if (!c) return '';
@@ -219,14 +275,15 @@
 
   // ── Cartao de pesca v2 (2026-10-07) — mesma linguagem do cartao de surf (.sc2, css/surf-card-v2.css) ──
   var FISH_PLAN_R = { Norte: 'minho', Porto: 'minho', Centro: 'costa-prata', Lisboa: 'setubal', Alentejo: 'alentejo', Algarve: 'algarve', 'Açores': 'acores', Madeira: 'madeira' };
-  var FISH_INLAND = { 'albufeira-canicada': 1, 'rio-douro-peso-regua': 1, 'albufeira-castelo-de-bode': 1, 'albufeira-maranhao': 1, 'rio-lima-ponte-de-lima': 1 };
+  var FISH_INLAND = { 'albufeira-canicada': 1, 'rio-douro-peso-regua': 1, 'albufeira-castelo-de-bode': 1, 'albufeira-maranhao': 1, 'rio-lima-ponte-de-lima': 1, 'alqueva-mourao': 1 };
+  var FISH_PLAN_R_ID = { 'foz-do-arelho': 'oeste', 'berlengas': 'oeste', 'cabo-raso': 'cascais' };
   var FISH_LEVELS = ['iniciante', 'intermedio', 'experiente'];
   var FC2 = {
     pt: { photo: 'Foto', level: 'Nível', species: 'Espécies', tech: 'Técnica', season: 'Melhor época', plan: 'Planear saída', save: 'Guardar',
-          ref: 'Destino de referência', short: { iniciante: 'Iniciante', intermedio: 'Intermédio', experiente: 'Experiente' },
+          ref: 'Destino de referência', rules: 'Regras:', short: { iniciante: 'Iniciante', intermedio: 'Intermédio', experiente: 'Experiente' },
           ariaLevel: function (t) { return 'Nível recomendado: ' + t; }, ariaPlan: function (n) { return 'Planear uma saída de pesca em ' + n; } },
     en: { photo: 'Photo', level: 'Level', species: 'Species', tech: 'Technique', season: 'Best season', plan: 'Plan a trip', save: 'Save',
-          ref: 'Top destination', short: { iniciante: 'Beginner', intermedio: 'Intermediate', experiente: 'Experienced' },
+          ref: 'Top destination', rules: 'Rules:', short: { iniciante: 'Beginner', intermedio: 'Intermediate', experiente: 'Experienced' },
           ariaLevel: function (t) { return 'Recommended level: ' + t; }, ariaPlan: function (n) { return 'Plan a fishing trip to ' + n; } }
   };
   var FC2_ICON = {
@@ -248,7 +305,7 @@
     var tipos = (s.tipos || [s.tipoKey]).map(function (k) { return (T.fishing.tipoLabel && T.fishing.tipoLabel[k]) || k; });
     var species = pickLang(s.especies, lang).split(/\s*,\s*/).filter(Boolean);
     var pre = lang === 'en' ? '/en/' : '/';
-    var r = FISH_INLAND[s.id] ? '' : (FISH_PLAN_R[s.region] || '');
+    var r = FISH_INLAND[s.id] ? '' : (FISH_PLAN_R_ID[s.id] || FISH_PLAN_R[s.region] || '');
     var planHref = pre + 'planear?' + (r ? 'r=' + r + '&' : '') + 'i=pesca&ref=pesca';
     var loginHref = pre + 'login.html#register';
     var photo = FISH_PHOTO[s.id];
@@ -272,6 +329,7 @@
             '<ul class="sc2__meter sc2__meter--3" aria-label="' + esc(L.ariaLevel(levelLabel)) + '">' + meter + '</ul></div>' +
           '<p class="sc2__hook">' + esc(pickLang(s.desc, lang)) + '</p>' +
           '<div class="sc2__species"><span class="sc2__k">' + esc(L.species) + '</span><ul>' + species.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>' +
+          (s.aviso ? '<p class="sc2__warn"><b>' + esc(L.rules) + '</b> ' + esc(pickLang(s.aviso, lang)) + '</p>' : '') +
           '<dl class="sc2__specs sc2__specs--2">' +
             '<div><dt>' + esc(L.tech) + '</dt><dd>' + esc(pickLang(s.tecnica, lang)) + '</dd></div>' +
             '<div><dt>' + esc(L.season) + '</dt><dd>' + esc(pickLang(s.season, lang)) + '</dd></div>' +

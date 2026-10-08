@@ -89,6 +89,16 @@
 | pesca | baia-de-setubal | [Baía de Setúbal.jpg](https://commons.wikimedia.org/wiki/File:Ba%C3%ADa_de_Set%C3%BAbal.jpg) | DavidFerreira20048 | CC BY-SA 4.0 |
 | pesca | ribeira-grande-acores-mar | [Tea fields of Porto Formoso 01.jpg](https://commons.wikimedia.org/wiki/File:Tea_fields_of_Porto_Formoso_01.jpg) | Anton Zelenov | CC BY-SA 4.0 |
 | pesca | madeira-canical | [Madeira-Canical-harbour-14ASD.jpg](https://commons.wikimedia.org/wiki/File:Madeira-Canical-harbour-14ASD.jpg) | Asurnipal | CC BY-SA 4.0 |
+| pesca | gale-armacao-de-pera | [09-05-2017 Praia da Balbina (3).JPG](https://commons.wikimedia.org/wiki/File:09-05-2017_Praia_da_Balbina_(3).JPG) | Kolforn | CC BY-SA 4.0 |
+| pesca | foz-do-arelho | [Praia da Foz do Arelho - Portugal (51280354862).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Foz_do_Arelho_-_Portugal_(51280354862).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| pesca | berlengas | [2026-06-21 Berlenga Grande 04.jpg](https://commons.wikimedia.org/wiki/File:2026-06-21_Berlenga_Grande_04.jpg) | Alexkom000 | CC BY 4.0 |
+| pesca | cabo-raso | [Cabo Raso - Portugal (429676841).jpg](https://commons.wikimedia.org/wiki/File:Cabo_Raso_-_Portugal_(429676841).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| pesca | lagoa-de-albufeira-mar | [Litoral entre a Praia de Alfarim e a Praia da Lagoa de Albufeira - Portugal (42854075545).jpg](https://commons.wikimedia.org/wiki/File:Litoral_entre_a_Praia_de_Alfarim_e_a_Praia_da_Lagoa_de_Albufeira_-_Portugal_(42854075545).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| pesca | vila-nova-de-milfontes | [Litoral a Norte de Vila Nova de Milfontes - Portugal (28959282755).jpg](https://commons.wikimedia.org/wiki/File:Litoral_a_Norte_de_Vila_Nova_de_Milfontes_-_Portugal_(28959282755).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| pesca | ponta-da-piedade | [Ponta da Piedade, Lagos (10250443935).jpg](https://commons.wikimedia.org/wiki/File:Ponta_da_Piedade,_Lagos_(10250443935).jpg) | François Philipp | CC BY 2.0 |
+| pesca | ilha-de-tavira | [Ilha de Tavira - Portugal (9395375419).jpg](https://commons.wikimedia.org/wiki/File:Ilha_de_Tavira_-_Portugal_(9395375419).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| pesca | alqueva-mourao | [Albufeira do Alqueva - Portugal (6807053707).jpg](https://commons.wikimedia.org/wiki/File:Albufeira_do_Alqueva_-_Portugal_(6807053707).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| pesca | horta-faial | [Marina da Horta - Portugal (53471105167).jpg](https://commons.wikimedia.org/wiki/File:Marina_da_Horta_-_Portugal_(53471105167).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
 | hero | hero1 | [Lagos portugal 081 (22522178562).jpg](https://commons.wikimedia.org/wiki/File:Lagos_portugal_081_(22522178562).jpg) | Sergei Gussev | CC BY 2.0 |
 | hero | hero3 | [Tram 28 (34791358090).jpg](https://commons.wikimedia.org/wiki/File:Tram_28_(34791358090).jpg) | Shadowgate | CC BY 2.0 |
 | hero | hero4 | [The Douro Valley vineyards.jpg](https://commons.wikimedia.org/wiki/File:The_Douro_Valley_vineyards.jpg) | mat's eye | CC BY 2.0 |
@@ -122,7 +132,23 @@ Ficheiros: `/images/spots/surf-<id>-{480,800}.webp` (recorte 3:2 de miniatura 16
 | surf | Praia da Salema (`praia-da-salema`) | [Salema Beach.JPG](https://commons.wikimedia.org/wiki/File:Salema_Beach.JPG) | Joseolgon | CC BY-SA 4.0 |
 | surf | Praia de Odeceixe (`praia-de-odeceixe`) | [Praia de Odeceixe Mar 11 November 2013 (2).JPG](https://commons.wikimedia.org/wiki/File:Praia_de_Odeceixe_Mar_11_November_2013_(2).JPG) | Beeston | CC BY 3.0 |
 | surf | Ribeira Grande (`ribeira-grande-reef`) | [Azores-Day3-19 (34568123136).jpg](https://commons.wikimedia.org/wiki/File:Azores-Day3-19_(34568123136).jpg) | Ajay Suresh | CC BY 2.0 |
+| surf | Ribeira d'Ilhas (`ribeira-dilhas`) | [Praia de Ribeira de Ilhas - Portugal 🇵🇹 (55239235443).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_Ribeira_de_Ilhas_-_Portugal_%F0%9F%87%B5%F0%9F%87%B9_(55239235443).jpg) | Vitor Oliveira | CC BY-SA 4.0 |
+| surf | Coxos (`coxos`) | [Praia dos Coxos - Portugal (51969941540).jpg](https://commons.wikimedia.org/wiki/File:Praia_dos_Coxos_-_Portugal_(51969941540).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Foz do Lizandro (`foz-do-lizandro`) | [Praia da Foz do Lizandro- Portugal (4954909506).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Foz_do_Lizandro-_Portugal_(4954909506).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | São Lourenço (`sao-lourenco`) | [Praia de São Lourenço - Portugal (8417255183).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_S%C3%A3o_Louren%C3%A7o_-_Portugal_(8417255183).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Baleal (`baleal`) | [Praia do Baleal - Portugal (10697718175).jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Baleal_-_Portugal_(10697718175).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Lagide (`lagide`) | [Praia do Baleal Norte - Portugal (21454387032).jpg](https://commons.wikimedia.org/wiki/File:Praia_do_Baleal_Norte_-_Portugal_(21454387032).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Consolação (`consolacao`) | [Praia da Consolação - Portugal (2823825521).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Consola%C3%A7%C3%A3o_-_Portugal_(2823825521).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Molhe Leste (`molhe-leste`) | [Praias do Molhe Leste e Supertubos - Portugal (300078750).jpg](https://commons.wikimedia.org/wiki/File:Praias_do_Molhe_Leste_e_Supertubos_-_Portugal_(300078750).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Carcavelos (`carcavelos`) | [Winter sports at Carcavelos (23436284501).jpg](https://commons.wikimedia.org/wiki/File:Winter_sports_at_Carcavelos_(23436284501).jpg) | Bosc d'Anjou | CC BY 2.0 |
+| surf | São Pedro do Estoril (`sao-pedro-do-estoril`) | [Praia de São Pedro do Estoril - Portugal (9232316598).jpg](https://commons.wikimedia.org/wiki/File:Praia_de_S%C3%A3o_Pedro_do_Estoril_-_Portugal_(9232316598).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Bafureira (`bafureira`) | [Praia da Bafureira - Portugal (239281390).jpg](https://commons.wikimedia.org/wiki/File:Praia_da_Bafureira_-_Portugal_(239281390).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Praia Grande, Sintra (`praia-grande-sintra`) | [2025-08-17 Colares, Praia Grande.jpg](https://commons.wikimedia.org/wiki/File:2025-08-17_Colares,_Praia_Grande.jpg) | Alexkom000 | CC BY 4.0 |
+| surf | Praia das Maçãs (`praia-das-macas`) | [Praia das Maçãs - Portugal (48491470407).jpg](https://commons.wikimedia.org/wiki/File:Praia_das_Ma%C3%A7%C3%A3s_-_Portugal_(48491470407).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
+| surf | Fonte da Telha (`fonte-da-telha`) | [Fonte da Telha - Portugal (37326336061).jpg](https://commons.wikimedia.org/wiki/File:Fonte_da_Telha_-_Portugal_(37326336061).jpg) | Vitor Oliveira | CC BY-SA 2.0 |
 
+Lotes 1a e 1b do surf (08/10/2026): 14 fotos acima; Pedra Branca fica sem foto (nenhuma do sítio certo no Commons).
+Lote P1 da pesca (08/10/2026): 10 fotos novas na tabela da pesca (gale-armacao-de-pera … horta-faial); deixaram de ser usadas as de lagoa-dos-salgados e ribeira-grande-acores-mar (spots substituídos).
 
 ## Webcams (fotos do Wikimedia Commons escolhidas a 07/10/2026 — images/webcams/<id>-{480,800}.webp, recorte 16:10)
 

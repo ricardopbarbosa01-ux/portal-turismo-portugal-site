@@ -68,7 +68,8 @@
     var defs = mk('defs', {}, svg), fl = mk('filter', { id: 'sh-glow', x: '-200%', y: '-200%', width: '500%', height: '500%' }, defs);
     mk('feGaussianBlur', { stdDeviation: '10' }, fl);
     var glow = mk('g', {}, g), core = mk('g', {}, g);
-    SPOTS.forEach(function (s, i) {
+    // Spots muito juntos (Ericeira, Peniche): desenhar por qualidade crescente para os de classe mundial ficarem por cima (2026-10-08)
+    SPOTS.slice().sort(function (a, b) { return (a.quality || 0) - (b.quality || 0); }).forEach(function (s, i) {
       var g0 = G[s.id]; if (!g0 || g0[1] < -12) return; // ilhas: cartao proprio
       var xy = project(s.id); if (!xy) return;
       var p = { s: s, x: xy[0], y: xy[1] };

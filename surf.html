@@ -111,7 +111,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="/css/surf-pesca-page.css?v=20261007cr">
-  <link rel="stylesheet" href="/css/surf-card-v2.css?v=20261007cr">
+  <link rel="stylesheet" href="/css/surf-card-v2.css?v=20261008p">
   <link rel="stylesheet" href="/css/beaches-hero-v4.css?v=20261007p">
   <link rel="stylesheet" href="/css/surf-hero.css?v=20261007b">
   <link rel="stylesheet" href="/css/surf-sections.css?v=20261007cr">
@@ -204,9 +204,9 @@
     <svg class="bh4__grid" aria-hidden="true"><defs><pattern id="sh-grid" width="106" height="137" patternUnits="userSpaceOnUse"><path d="M106 0V137M0 137H106" fill="none" stroke="#8fc2f2" stroke-opacity=".09"/></pattern></defs><rect width="100%" height="100%" fill="url(#sh-grid)"/></svg>
     <div class="bh4__inner">
       <div class="bh4__copy">
-        <p class="bh4__kicker"><span class="bh4__live" aria-hidden="true"></span><span data-sh="time">Ao vivo · 23 spots de surf</span></p>
+        <p class="bh4__kicker"><span class="bh4__live" aria-hidden="true"></span><span data-sh="time">Ao vivo · 38 spots de surf</span></p>
         <h1 class="bh4__title" id="sh-title">Surf em Portugal,<br><em>hoje</em></h1>
-        <p class="bh4__sub">Ondas, período e vento <strong>agora</strong> nos 23 spots que verificámos — e onde vale a pena entrar na água para o teu nível.</p>
+        <p class="bh4__sub">Ondas, período e vento <strong>agora</strong> nos 38 spots que verificámos — e onde vale a pena entrar na água para o teu nível.</p>
         <div class="sh__now">
           <div class="sh__head"><span class="sh__k">O meu nível</span></div>
           <div class="sh__lv" role="group" aria-label="O meu nível"><button type="button" data-lv="iniciante" aria-pressed="false">Iniciante</button><button type="button" data-lv="intermedio" aria-pressed="false">Intermédio</button><button type="button" data-lv="avancado" aria-pressed="false">Avançado</button></div>
@@ -216,7 +216,7 @@
           <p class="sh__note">Estimativa automática com dados Open-Meteo: tamanho da onda para o nível, período, vento e swell. Confirma sempre as condições no local.</p>
         </div>
         <div class="bh4__ctas">
-          <a href="#spot-filters" class="bh4__cta bh4__cta--gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>Ver os 23 spots</a>
+          <a href="#spot-filters" class="bh4__cta bh4__cta--gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>Ver os 38 spots</a>
           <a href="/planear?i=surf&ref=surf-hero" class="bh4__cta bh4__cta--ghost"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Planear surf trip</a>
         </div>
       </div>
@@ -365,21 +365,21 @@
   </section>
 
   <!-- Surf alerts email capture -->
-  <section class="surf-alerts" aria-label="Alertas semanais de surf">
+  <section class="surf-alerts" aria-label="Novidades de surf por email">
     <div class="surf-alerts-inner">
-      <span class="surf-alerts-eyebrow">Alertas Gratuitos</span>
-      <h2 class="surf-alerts-title">Condições de surf<br>toda a sexta-feira</h2>
-      <p class="surf-alerts-sub">O resumo semanal dos melhores spots — ondas, vento, marés e previsão para o fim de semana. Grátis, sem spam.</p>
+      <span class="surf-alerts-eyebrow">Grátis</span>
+      <h2 class="surf-alerts-title">Novidades de surf<br>no teu email</h2>
+      <p class="surf-alerts-sub">Spots novos e guias de surf, enviados quando saem. Grátis, sem spam.</p>
       <form class="surf-alerts-form" id="surf-alerts-form" novalidate>
         <input type="email" class="surf-alerts-input" id="surf-alerts-email"
                placeholder="o.teu@email.com" required autocomplete="email"
-               aria-label="O teu email para alertas de surf">
+               aria-label="O teu email para as novidades de surf">
         <div class="cf-turnstile" data-sitekey="0x4AAAAAADFrwvqNt1FGaqkB" data-theme="auto"></div>
         <button type="submit" class="surf-alerts-btn" id="surf-alerts-btn">Subscrever</button>
       </form>
       <div class="surf-alerts-success" id="surf-alerts-success" role="status" aria-live="polite">
         <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-        Subscrito! Recebe as condições esta sexta às 18h.
+        Subscrito! Vais receber as novidades por email.
       </div>
       <p class="surf-alerts-note">Sem spam. Cancela quando quiseres.</p>
     </div>
@@ -450,10 +450,10 @@
 <script src="/js/config.js?v=20260508-isactive" defer></script>
 <script src="/js/affiliate.js?v=20261005b" defer></script>
 <script src="/js/beach-renderer.js?v=20260513-i18n4" defer></script>
-<script src="/js/surf-pesca-data.js?v=20261007-pesca" defer></script>
-<script src="/js/surf-pesca-page.js?v=20261007-pesca" defer></script>
+<script src="/js/surf-pesca-data.js?v=20261008p" defer></script>
+<script src="/js/surf-pesca-page.js?v=20261008p" defer></script>
 <script src="/js/surf-live.js?v=20261007" defer></script>
-<script src="/js/surf-hero.js?v=20261007" defer></script>
+<script src="/js/surf-hero.js?v=20261008" defer></script>
 <script>
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
   document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });

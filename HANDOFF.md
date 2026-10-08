@@ -17,7 +17,7 @@ Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia n
 | A. Surf — cartão v2 + fotos (`d6d1e77`) | sim | **sim, 07/10** | local + produção |
 | **A2. Surf — hero 'Surf hoje' ao vivo + secções refeitas + fix moldura AVIF do mapa** (`docs/commit-2026-10-07-surf-hero.txt`, backups `docs/_backup-surf-hero-20261007/`, `docs/_backup-avif-20261007/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo |
 | A2. Surf hero + secções (`898f6bb`) + fix GYG | sim | **sim, 07/10** | produção (Chrome: GYG 495 px) |
-| A3. Surf — 23 → ~60 spots por lotes | lote 1 pesquisado (`claude/surf-spots-lote1-2026-10.md`) | — | por escrever no site |
+| A3. Surf — lotes 1a+1b (08/10): 23 → 38 spots (+Ericeira/Peniche/Cascais/Sintra/Almada), 14 fotos Commons, link 'Webcam ao vivo' em 33 cartões (SURF_CAM), pontos do mapa por qualidade, paginação em /en/surf, textos de alertas honestos, Odeceixe → Algarve (lista `docs/commit-files-2026-10-08-surf-1a.txt`, backup `docs/_backup-surf-lote1-20261008/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375, PT+EN, Open-Meteo sintético |
 | P. Pesca v2 (`47d8c86`) | sim | **sim, 07/10** (Ricardo: "Feito") | local; produção por confirmar no Chrome |
 | **W. Webcams v2 — 'Portugal ao vivo'**: 172 câmaras (MEO só link + 13 diretos YouTube incorporáveis), hero 'ecrã em direto' (sem mapa) com canais e pesquisa, painel da câmara com planear (hotéis/atividades/carro/planeador), regresso do separador MEO, pedido de câmara (submit-contact), diretório e FAQ (`docs/commit-2026-10-07-webcams.txt`, backup `docs/_backup-webcams-20261007/`, dados `_scripts/build_webcams_data.py`) | sim (`f4337b2`) | **sim, 07/10** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo, funcionais |
 | **W2. Fotos nas webcams (144 + 13 diretos), créditos discretos no site todo, /planear com navbar e rodapé do site, geolocation=(self)** (`docs/commit-2026-10-07-creditos-planear.txt`, lista de ficheiros `docs/commit-files-2026-10-07-creditos.txt`, backups `docs/_backup-creditos-20261007/`, `docs/_backup-planear-20261007/`) | sim (`557223f`) | **sim, 07/10** | local, CSP real, 1280/375/320, planeador até aos resultados |
@@ -112,6 +112,12 @@ Novos ou por decidir:
 - **Ao alterar JS/CSS publicado:** subir o `?v=` e atualizar a watchlist.
 - **Fotos:** só com origem e licença verificadas, com crédito quando a licença o exige.
 - **Escrever na pasta pela VM:** usar ficheiro temporário + `os.replace`. Apagar não é permitido; mover para `docs/_to_delete/`.
+
+## Estado 08/10 (sessão Surf/Pesca)
+- Surf lotes 1a+1b prontos por publicar (ver tabela). Pendente: foto da Pedra Branca; próximos lotes de surf (Algarve/Sagres, Norte, Alentejo, Madeira, Açores — lista no fim de `claude/surf-spots-lote1-2026-10.md`).
+- **Pesca lote P1 (08/10) pronto por publicar** (mesma lista de commit): 25 → 33 spots (+Foz do Arelho, Berlengas, Cabo Raso, Lagoa de Albufeira (mar), Milfontes, Ponta da Piedade, Ilha de Tavira, Alqueva); Lagoa dos Salgados → Galé–Armação de Pêra (decisão do Ricardo; a Praia Grande não tinha fontes de pesca); duplicado Açores → Horta (Faial); São Miguel → Ponta Delgada; avisos 'Regras:' (campo `aviso`) em Sagres, Porto Covo, Galé, Berlengas, Lagoa de Albufeira, Milfontes, Alqueva; /en/pesca com paginação. Backup `docs/_backup-pesca-p1-20261008/`.
+- Pesca: pesquisa feita em `claude/pesca-pesquisa-spots-2026-10.md` (40 candidatos com fontes + licenças DGRM/ICNF). Correções urgentes: Porto Covo (Ilha do Pessegueiro interdita), Sagres (Martinhal e 100 m das Pedras das Gaivotas/Gigante interditos), Açores big game = Ponta Delgada/Horta (não Ribeira Grande), Lagoa dos Salgados SEM reserva criada e dentro do PNM Pedra do Valado (autorização ICNF).
+- Scripts novos: `_scripts/surf_commons.py` (geosearch Commons + folhas de contacto) e `_scripts/spots_fetch.py` (recorte 3:2 → images/spots). O Commons só aceita miniaturas de largura-padrão (1280).
 
 ## Próximo passo — PRÓXIMA SESSÃO: ampliar Praias, Surf e Pesca
 Pedido do Ricardo (07/10): "na próxima sessão iremos ampliar praias, surf, pesca". Detalhe e números em `claude/handoff-proximos-4-2026-10.md` (projeto Claude).

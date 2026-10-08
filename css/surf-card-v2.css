@@ -118,3 +118,21 @@
 /* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
 .sc2__credit{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
 .sc2__credit:hover, .sc2__credit:focus-within{opacity:.75 !important;}
+
+/* Webcam ao vivo do spot (2026-10-08): link discreto para /webcams#cam-<id> (painel da camara). */
+.sc2__cam{display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:12px; background:#f3f7fb; color:var(--sc2-navy);
+  font-size:.8rem; text-decoration:none; min-height:40px; transition:background .2s ease;}
+.sc2__cam:hover{background:#e8f0f8;}
+.sc2__cam:focus-visible{outline:3px solid var(--sc2-gold-l); outline-offset:2px;}
+.sc2__cam i{position:relative; flex:0 0 8px; width:8px; height:8px; border-radius:50%; background:#e11d48;}
+.sc2__cam i::after{content:""; position:absolute; inset:-3px; border-radius:50%; border:1.5px solid #e11d48; opacity:0; animation:sc2CamPulse 2.2s ease-out infinite;}
+.sc2__cam span{font-weight:600; letter-spacing:.06em; text-transform:uppercase; font-size:.64rem; color:#7a8699; white-space:nowrap;}
+.sc2__cam b{flex:1 1 auto; min-width:0; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.sc2__cam svg{flex:0 0 15px; width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+.sc2__cam:hover .sc2__arr{transform:translateX(3px);}
+@keyframes sc2CamPulse{0%{transform:scale(.6); opacity:.7;} 100%{transform:scale(1.5); opacity:0;}}
+@media (prefers-reduced-motion:reduce){ .sc2__cam i::after{animation:none;} }
+
+/* Aviso de regras / zonas interditas no cartao de pesca (2026-10-08) */
+.sc2__warn{margin:0; padding:8px 10px; border-radius:10px; background:#fff7e6; border:1px solid #f5d9a8; color:#7a4b00; font-size:.76rem; line-height:1.4;}
+.sc2__warn b{font-weight:700; margin-right:2px;}
