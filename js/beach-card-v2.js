@@ -12,13 +12,13 @@
   var I = {
     pt: { hotels: 'Hotéis perto', prices: 'ver preços', plan: 'Planear', details: 'Ver praia', excellent: 'Água excelente',
           now: 'Agora', waves: 'ondas', water: 'água', photo: 'Foto',
-          feats: { 'família': 'Família', surf: 'Surf', natureza: 'Natureza', ilhas: 'Ilhas', pesca: 'Pesca' },
+          feats: { fluvial: 'Praia fluvial', 'família': 'Família', surf: 'Surf', natureza: 'Natureza', ilhas: 'Ilhas', pesca: 'Pesca' },
           ariaHotels: function (n) { return 'Ver hotéis perto de ' + n + ' e preços'; },
           ariaPlan: function (n) { return 'Planear viagem a ' + n; }, ariaDetails: function (n) { return 'Ver a praia ' + n; },
           beach: function (id) { return 'beach.html?id=' + encodeURIComponent(id); }, planner: '/planear', booking: 'pt-pt' },
     en: { hotels: 'Hotels nearby', prices: 'see prices', plan: 'Plan trip', details: 'View beach', excellent: 'Excellent water',
           now: 'Now', waves: 'waves', water: 'sea', photo: 'Photo',
-          feats: { 'família': 'Family', surf: 'Surf', natureza: 'Nature', ilhas: 'Islands', pesca: 'Fishing' },
+          feats: { fluvial: 'River beach', 'família': 'Family', surf: 'Surf', natureza: 'Nature', ilhas: 'Islands', pesca: 'Fishing' },
           ariaHotels: function (n) { return 'See hotels near ' + n + ' and prices'; },
           ariaPlan: function (n) { return 'Plan a trip to ' + n; }, ariaDetails: function (n) { return 'View ' + n; },
           beach: function (id) { return '/en/beach.html?id=' + encodeURIComponent(id); }, planner: '/en/planear', booking: 'en-gb' }
@@ -36,7 +36,7 @@
     pesca: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M6.5 12L3 9v6z"/></svg>',
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg>'
   };
-  ICON.surf = ICON.wave;
+  ICON.surf = ICON.wave; ICON.fluvial = ICON.pin;
 
   /* Mesma logica de etiquetas que a pagina ja usava (deriveTags) */
   function tags(b, lang) {
@@ -48,6 +48,7 @@
     if (desc.indexOf('naturez') > -1 || desc.indexOf('isolad') > -1 || region === 'alentejo') t.push('natureza');
     if (region === 'madeira' || region === 'açores') t.push('ilhas');
     if (desc.indexOf('pesc') > -1) t.push('pesca');
+    if (b.beach_type === 'fluvial') t = ['fluvial'].concat(t.filter(function (x) { return x !== 'surf' && x !== 'ilhas'; }));
     return t;
   }
   function credit(b, L) {
@@ -64,6 +65,88 @@
      Substituem as fotos automaticas do Pexels (muitas de outros sitios) e 4 da Wikipedia erradas. Credito = autor + licenca.
      Lista completa com links: docs/FOTOS-CREDITOS.md */
   var PHOTO_CREDIT = {
+    // Praias fluviais B6 (08/10/2026)
+    'd69441fd-89c2-433d-9754-a88f52e5816c': "Vitor Oliveira · CC BY-SA 2.0",
+    '3c236118-430c-4f99-a366-3affe99ac81d': "tiago186703274 · CC BY-SA 3.0",
+    'ac769631-d8b0-47e3-b500-627f8895154d': "Vitor Oliveira · CC BY-SA 2.0",
+    'bf314ac0-7003-4dba-a906-59bfe51abafa': "Vitor Oliveira · CC BY-SA 2.0",
+    '3897b9c3-88da-4859-a5f1-2e6605fb46d4': "Vitor Oliveira · CC BY-SA 2.0",
+    '0418baf9-99f8-4c91-badd-7a05d5bc1b98': "Vitor Oliveira · CC BY-SA 4.0",
+    '63787289-52bd-4a85-950b-11f81edb5763': "Joseolgon · CC BY-SA 4.0",
+    'a0894825-7bb4-4c38-a94c-7d1e22c19f53': "Vitor Oliveira · CC BY-SA 4.0",
+    '50c53b1c-ee03-46fe-8ea1-225dc8ea4cc9': "Joseolgon · CC BY-SA 4.0",
+    '4c948cd0-8542-4f06-9042-ea0c1184ab3b': "Vitor Oliveira · CC BY-SA 2.0",
+    '617c8b79-ba40-404f-a4d0-0daaea7502f9': "Vitor Oliveira · CC BY-SA 2.0",
+    '3832dad2-bcda-4faa-b308-05ccafed5132': "Vitor Oliveira · CC BY-SA 2.0",
+    'bb421e7b-a80d-46b2-9519-7142a6fec6cd': "Vitor Oliveira · CC BY-SA 2.0",
+    '1f0d3caa-52c7-469e-a983-e96f60d2d4b3': "Vitor Oliveira · CC BY-SA 2.0",
+    '8cd04ca0-d5b0-4e2a-9c01-8e03d0511404': "Vitor Oliveira · CC BY-SA 2.0",
+    '6d929aae-425a-4443-9e2e-b3ae38545823': "Vitor Oliveira · CC BY-SA 2.0",
+    'b6214cb6-8bda-4e78-a3e9-e9f88c1a44a1': "Vitor Oliveira · CC BY-SA 2.0",
+    '73b2e239-4e41-4846-b544-fbdcb8079419': "Vitor Oliveira · CC BY-SA 2.0",
+    'b37cac89-3e52-49a2-883e-b6438d218e4d': "Vitor Oliveira · CC BY-SA 2.0",
+    'ba416c4f-ea36-4e72-9f39-30e8dbfb9a1a': "Vitor Oliveira · CC BY-SA 2.0",
+    '53d1c305-b0d8-4b5e-84c1-535a9a28be4a': "Vitor Oliveira · CC BY-SA 2.0",
+    'a4c1e46c-8ee8-4c0f-8d3e-5987dd6203b4': "Vitor Oliveira · CC BY-SA 2.0",
+    '3030e902-d1ea-4836-b7cc-2673adece120': "Vitor Oliveira · CC BY-SA 2.0",
+    '2b101b40-62a2-4b92-98fd-ba8080d606f4': "Vitor Oliveira · CC BY-SA 2.0",
+    '3f82ecdf-2929-4b08-85b6-435ed8e66a9a': "Hipersyl · CC BY-SA 4.0",
+    '09ed9e2a-873c-4ced-9523-2be28784e238': "DiogoBaptista · CC BY-SA 4.0",
+    '7c56e770-6460-494e-a79c-5dec748dfc2d': "Hipersyl · CC BY-SA 4.0",
+    'f7f1b6d8-26f9-4f8d-b23f-1b3f00b60244': "Vitor Oliveira · CC BY-SA 2.0",
+    'b31e8924-d13d-452b-8755-648f8b7fc50f': "DiogoBaptista · CC BY-SA 4.0",
+    'f8a2db74-11c1-4454-bea9-a97ffc5aa4d3': "Vitor Oliveira · CC BY-SA 2.0",
+    'b865aad4-9976-4eb8-9998-85d189759adf': "Vitor Oliveira · CC BY-SA 2.0",
+    '4bc3877c-8cca-4e8a-a495-5a786ef04b7e': "Vitor Oliveira · CC BY-SA 2.0",
+    'cc954d3f-13d9-4df5-a5f2-1eaee1cd3156': "Vitor Oliveira · CC BY-SA 2.0",
+    '0a50fc5e-c47a-455f-83ce-d591e1936e28': "Vitor Oliveira · CC BY-SA 2.0",
+    '8f91cf8e-465f-4a36-ba88-c1ddcad5fc28': "Vitor Oliveira · CC BY-SA 2.0",
+    '393b934a-4182-48e1-a41b-aa3cc76874b8': "Vitor Oliveira · CC BY-SA 2.0",
+    'b0c46c35-ec59-4c6e-929f-8386e93950ad': "Vitor Oliveira · CC BY-SA 2.0",
+    '46d0bed0-98e6-4d85-828a-30269de38219': "Vitor Oliveira · CC BY-SA 2.0",
+    '95d5f701-d9a7-4578-9653-b5f4a966aacf': "Vitor Oliveira · CC BY-SA 2.0",
+    'a3a240f3-6564-49a4-9539-4dbc1677169b': "Vitor Oliveira · CC BY-SA 2.0",
+    '4c1f2b21-5d87-46ed-bfd9-bd49557b985d': "Vitor Oliveira · CC BY-SA 2.0",
+    '845b72d5-3417-4847-aeab-453c857a45a9': "Vitor Oliveira · CC BY-SA 2.0",
+    'ac00493b-8784-4aff-b3be-1a33fd2125c8': "Vitor Oliveira · CC BY-SA 2.0",
+    '6d773184-c625-4b17-8573-d1feefa8efcf': "Vitor Oliveira · CC BY-SA 2.0",
+    '7a9a1edf-3236-48b6-9f56-22098d0a1880': "Vitor Oliveira · CC BY-SA 2.0",
+    '2ab6aba1-ce86-43d2-a0b9-18f55a06e796': "Vitor Oliveira · CC BY-SA 2.0",
+    '2cd16507-3536-45cb-9f29-a84fdcc3d7bb': "Vitor Oliveira · CC BY-SA 2.0",
+    '1698508a-7190-450e-9021-61b6ba227f47': "Vitor Oliveira · CC BY-SA 2.0",
+    '3548e3b8-ce48-48cd-8a81-338ae015f809': "Vitor Oliveira · CC BY-SA 2.0",
+    '7719cc26-30ea-4bd2-891d-79e76db204cb': "Vitor Oliveira · CC BY-SA 2.0",
+    'd30135f5-5525-4f3a-a8ee-17174ae788db': "Vitor Oliveira · CC BY-SA 2.0",
+    '2a2468d2-b830-46ec-8bb4-d41751bf51a8': "Vitor Oliveira · CC BY-SA 2.0",
+    '5e16a49e-553e-48bc-bb82-093a6126ebbb': "Vitor Oliveira · CC BY-SA 2.0",
+    '41858b36-d73c-4a71-8f2c-b02623363a33': "SartagoSternitSartagineHostes · CC BY-SA 4.0",
+    'b749bf41-ec1b-4fa3-9973-f19011506f47': "Vitor Oliveira · CC BY-SA 2.0",
+    '642eefb0-efe0-4fca-9fa5-47ebef8262e4': "Vitor Oliveira · CC BY-SA 2.0",
+    '1167225e-cedc-4acd-b72a-a08817830c0c': "Vitor Oliveira · CC BY-SA 2.0",
+    'ef8e0a92-1e4a-4b5c-b483-05dc2754859e': "Vitor Oliveira · CC BY-SA 2.0",
+    '452065a5-d56c-4ec7-b8de-53735e6a66d4': "Vitor Oliveira · CC BY-SA 2.0",
+    'e17fd8df-3dbe-448c-ad7b-15245641fcb5': "Vitor Oliveira · CC BY-SA 2.0",
+    '114d03a5-b9f3-44ee-9701-98b438c6c47b': "Vitor Oliveira · CC BY-SA 2.0",
+    '28302e25-c73e-428d-94a9-928fffc166c1': "Vitor Oliveira · CC BY-SA 2.0",
+    'ec0245de-9edc-47f5-94c0-2ca318371172': "Vitor Oliveira · CC BY-SA 2.0",
+    'decd7e63-95ab-4aea-b7c5-08ece0446860': "Vitor Oliveira · CC BY-SA 2.0",
+    '1e968526-3406-4fa9-b573-f986a6fb6f0b': "Vitor Oliveira · CC BY-SA 2.0",
+    '9128483f-6da4-4b70-9b29-1129ad099dee': "Vitor Oliveira · CC BY-SA 2.0",
+    '887c5461-ef30-43dc-8ed4-1086cf714978': "Vitor Oliveira · CC BY-SA 2.0",
+    'fb1c03dd-37a1-48d9-9ca8-3cd33bfebc77': "Vitor Oliveira · CC BY-SA 2.0",
+    'ac0c735a-418c-4bd5-b8ab-c08df50284e9': "Vitor Oliveira · CC BY-SA 2.0",
+    '84058a9b-a361-4ee9-b738-fcf9eb0af4fc': "Panegyrics of Granovetter · CC BY-SA 4.0",
+    '0401e475-0b3f-4a20-8f7c-e2399a7e8bd4': "Vitor Oliveira · CC BY-SA 2.0",
+    '004cc2ac-510e-4246-a32e-ee3cec8be170': "Vitor Oliveira · CC BY-SA 2.0",
+    '90add15e-cb1b-4121-909d-c63dec21fb49': "Vitor Oliveira · CC BY-SA 2.0",
+    '60ddab73-f7ab-4215-8032-649e0a9b93af': "Vitor Oliveira · CC BY-SA 2.0",
+    '972aa56d-f547-4740-9108-829901737a4f': "José Carlos Oliveira · CC BY-SA 2.0",
+    'a1ac8752-1d9e-4c5f-8583-6a2962a76bdf': "Vitor Oliveira · CC BY-SA 2.0",
+    'ed336295-4319-45ff-90df-03c0c1b3a947': "Vitor Oliveira · CC BY-SA 2.0",
+    '52b1cf94-125e-419d-b7bb-626f8a9d7300': "Vitor Oliveira · CC BY-SA 2.0",
+    'e9887042-af56-4f22-a72e-1e16f993d0ad': "DiogoBaptista · CC BY-SA 4.0",
+    '70007136-e8de-41eb-a7f0-42b334cfc42f': "Vitor Oliveira · CC BY-SA 2.0",
+    'cfc5dae4-cf02-4df1-970c-245c49e1869e': "Vitor Oliveira · CC BY-SA 2.0",
     // Lote B5 de praias (08/10/2026)
     '155d7724-e194-428d-8bf4-7e18abb2aed7': "Vitor Oliveira · CC BY-SA 2.0",
     '055cca4d-ee7d-4ef6-8204-ea9265ec704e': "Sergei Gussev · CC BY 2.0",
@@ -357,6 +440,76 @@
   };
   /* Sem foto verificavel no Commons: cartao sem foto (nunca mostrar outra praia) */
   var NO_PHOTO = {
+    '3d050ae0-0971-4022-8782-e446fc75ba46': 1, /* Ponte Frades (Vinhais) */
+    'edc26ed2-7818-416d-9596-bc8790e7b594': 1, /* Praia Fluvial de Verim */
+    '825e23f2-d6e7-4ccc-a6cb-ce796125c5cf': 1, /* Praia Fluvial do Rabaçal (Valpaços) */
+    '2b152650-3282-4b28-8a31-c33e31c53443': 1, /* Praia Fluvial do Cavadinho */
+    '75e73717-9129-467f-baca-7e4c2b259c81': 1, /* Praia Fluvial de Adaúfe */
+    '03db63fd-994c-4d1f-a570-bc77f4d77ab9': 1, /* Praia Fluvial do Faial (Vila Verde) */
+    'bb6b9637-91e2-43eb-bcb3-140b7bf5df04': 1, /* Praia Fluvial de Quintas */
+    'd120bba7-6d3e-432e-a0b6-4487ec9403ba': 1, /* Praia Fluvial do Ermal */
+    '5a4dc692-c6fb-4f41-b6b9-de7ff7875890': 1, /* Praia Fluvial de Vale de Juncal */
+    '9e1d9133-5b46-442f-8d1b-949c5e7226c2': 1, /* Praia Fluvial da Albufeira da Queimadela */
+    '482497f5-b8f2-4714-a48a-e7a670eef48d': 1, /* Praia Fluvial da Maravilha (Mirandela) */
+    '3adc15a2-9e07-402f-be4f-d9efb27886ac': 1, /* Praia Fluvial da Congida */
+    'e9f3217c-0e61-4793-9b8b-b75d88062bbf': 1, /* Praia Fluvial de Bitetos */
+    '30276a4e-2034-4e5d-86f5-6be718ae4ba8': 1, /* Zona Balnear da Barragem de Vilar (Moimenta da Beira) */
+    '0c7e0fa9-249e-47ec-897c-80889383a90a': 1, /* Praia Fluvial da Mâmoa */
+    'e22b2d3e-2fee-481d-8aeb-2c890694bd32': 1, /* Praia Fluvial de Burgães */
+    '29a0a0f4-b5b6-4353-ab16-cbbb152730be': 1, /* Praia Fluvial do Açude de Vais */
+    'bc0148e8-31b0-4e22-a022-87ecf61466b0': 1, /* Praia Fluvial da Barragem do Caldeirão */
+    '4883aa5e-2354-42bb-b7bc-942a2b95d45f': 1, /* Praia Fluvial de Badamalos */
+    '00e7d4ff-80a6-4382-a26d-89efffbffc51': 1, /* Praia Fluvial de Vale das Éguas (Ínsua) */
+    'a772005a-a44a-4db0-887a-24746a6dc983': 1, /* Praia Fluvial de Rapoula do Côa */
+    'ca33aff4-d5e9-4b9b-8546-62b90b76a2fa': 1, /* Praia Fluvial de Valhelhas */
+    '1e9d795c-410d-48bb-94c8-f664850ea924': 1, /* Praia Fluvial do Sabugueiro */
+    '34234ca8-9855-44b2-9c1e-075af6ebc34a': 1, /* Praia Fluvial da Albufeira de Alfaiates */
+    '82f5ee9b-2862-4ee5-ba37-07a003b0470d': 1, /* Praia Fluvial de Vila Cova à Coelheira */
+    '13a521be-daa3-45fc-bdff-316f3b76f579': 1, /* Praia Fluvial das Sete Fontes (Cantanhede) */
+    '1360ff98-df5b-4a51-8b3a-8f933e0393d1': 1, /* Praia Fluvial de Quadrazais */
+    '6d2a95e8-cba3-457f-9d46-b47725f20714': 1, /* Praia Fluvial do Cornicovo */
+    'bc91846d-fb69-42dd-ab0c-d70c743d6039': 1, /* Praia Fluvial do Poço do Lagar */
+    'fb319a05-653b-4d75-9709-6a609b530de9': 1, /* Praia Fluvial do Vimieiro (Penacova) */
+    'c05734ce-a8f7-43bf-9f85-d451aaa7fb0c': 1, /* Praia Fluvial de Benfeita */
+    '0bca9fdd-734a-4d66-8112-d85516eb9771': 1, /* Zona Balnear do Meimão (Albufeira da Meimoa) */
+    'd1978858-1dba-4c5c-ac87-19de955ead99': 1, /* Praia Fluvial de Unhais da Serra */
+    'afb01794-bdda-43c8-ad69-52f19c1d0e05': 1, /* Zona Balnear da Peneda Talhada */
+    'b752b91e-f0b3-4bdf-b6cc-d0276a85e9cd': 1, /* Praia Fluvial do Rebolim */
+    '9c5f9c15-87ec-4f47-9058-262fa54faec5': 1, /* Praia Fluvial da Peneda/Pêgo Escuro */
+    'b3615ef1-04cd-4467-a8f3-dfd16eb87c5d': 1, /* Zona Balnear da Ponte Velha (Cabreira, Góis) */
+    '5bd1b50e-6966-49e8-b1e6-26505a8a0bd3': 1, /* Praia Fluvial da Ponte do Sótão */
+    '6a3c0e42-0776-4dcb-bc7f-8df79fc14f5b': 1, /* Zona Balnear da Ponte (Colmeal, Góis) */
+    '880612de-a3f3-4670-a339-f7e95966a5f1': 1, /* Praia Fluvial da Senhora da Piedade (Lousã) */
+    '4e121916-bf77-440c-b019-30f9fc0955db': 1, /* Praia Fluvial de Castelo Novo */
+    'b27f8d0e-b8c9-4134-a060-3020a8024001': 1, /* Praia Fluvial do Pessegueiro (Pampilhosa da Serra) */
+    '19e1ec66-2e25-43df-8788-5fe7664f4188': 1, /* Praia Fluvial de Pampilhosa da Serra */
+    'f404a1f3-4bfd-4ad5-bf69-0e453f5a91fd': 1, /* Praia Fluvial de Alvares */
+    'e892b051-0d3b-4eea-847c-846590315d7f': 1, /* Praia Fluvial de Almaceda */
+    'c426b02a-9fdf-4ac0-89c1-36dbc5ed9eb8': 1, /* Praia Fluvial de Mega Fundeira */
+    'c557ded4-c26f-45ca-894b-4db7a6d278d4': 1, /* Praia Fluvial de Álvaro */
+    '01e9c37f-4911-4639-89dd-63c5930b8583': 1, /* Praia Fluvial do Sesmo */
+    '41fdbb12-bc0c-48be-bad5-55aacfcb60ea': 1, /* Praia Fluvial da Ribeira Grande (Sertã) */
+    '85f79df4-36e2-46ec-b9b1-351571fce9fc': 1, /* Praia Fluvial da Fróia */
+    '7989d71e-8aac-467a-a39d-08330760d97e': 1, /* Praia Fluvial da Aldeia Ruiva */
+    '044023d0-0318-4003-93d0-757aec44f726': 1, /* Praia Fluvial do Bostelim */
+    'e3c28b9a-554a-4388-93e1-869826df0888': 1, /* Praia Fluvial de Cardigos */
+    '86bbc548-8e7f-46f9-8e27-dedf830f138f': 1, /* Praia Fluvial do Agroal (Ourém) */
+    'bbaf7b71-1cd4-43df-ae4a-b1aca4a12cfe': 1, /* Praia Fluvial da Bairrada/Bairradinha */
+    'a2e6faa1-1a05-4e1f-94e0-6fd48851380f': 1, /* Praia Fluvial do Carvoeiro (Mação) */
+    'd2c7c90c-fc31-4c83-8b40-fb1ee6f0cc70': 1, /* Praia Fluvial de Montes (Tomar) */
+    '86dcf59d-6f02-4ee2-bfaf-8a1e6efd4997': 1, /* Praia Fluvial de Fontes (Abrantes) */
+    '5899bee3-c493-40fa-8de8-f18320dca8a3': 1, /* Praia Fluvial de Vila Nova da Serra (Tomar) */
+    'a60a4260-0b3b-4215-b6b7-1b6a81dbb110': 1, /* Praia Fluvial de Constância */
+    '22b74913-a8be-4ed6-b1d7-8a3a2120ca9d': 1, /* Praia Fluvial de Montalvo/Tesos */
+    'e1885c3e-cc2f-4bc9-be00-9d54affc6c33': 1, /* Praia Fluvial do Sorraia */
+    '069a235a-ffde-4be8-a119-15f1f4106a6b': 1, /* Praia Fluvial de Azenhas d'El Rei */
+    '678f6bd3-d345-405f-9261-16197aae9a59': 1, /* Praia Fluvial de Oriola */
+    'fd9d685a-7be8-4341-804f-e7a40ccc8123': 1, /* Praia Fluvial da Amieira (Portel) */
+    '7280cc32-c682-4a50-ad03-baf4cf5628d6': 1, /* Praia Fluvial de Alqueva */
+    '1329b76f-d2a6-4b8b-9f50-ec03f45bca41': 1, /* Praia do Lago (Moura) */
+    'd7e0ca48-cd77-4bd4-a74f-4f68645a6a59': 1, /* Praia Fluvial da Tapada Grande */
+    '00849a9b-a176-4978-bd9e-91cf2755a47a': 1, /* Praia Fluvial de Santa Clara */
+    '22acd435-bbe7-4854-b04c-ad0983731de4': 1, /* Praia Fluvial de Odeleite */
     'cc5562a4-a203-4797-89bf-b8703ff615c4': 1, /* Praia do Rodanho */
     '2ee1dd1f-3e70-46cc-8e65-ef7e035a78f8': 1, /* Praia da Amorosa */
     'f1e950a5-61b6-41e3-b173-22153898c3b3': 1, /* Praia de Rio de Moinhos */
@@ -415,12 +568,12 @@
       ? '<img src="/images/beaches/' + esc(id) + '-480.webp" srcset="/images/beaches/' + esc(id) + '-480.webp 480w, /images/beaches/' + esc(id) + '-800.webp 800w" sizes="(max-width: 640px) 92vw, 380px" width="480" height="320" alt="' + esc(name) + '" loading="lazy" decoding="async" data-orig="' + esc(orig) + '" onerror="BC2.imgErr(this)">'
       : '';
     var h = '';
-    h += '<article class="beach-card bc2" role="listitem" data-beach-id="' + esc(id) + '" data-region="' + esc(b.region || '') + '" data-quality="' + esc(b.water_quality || '') + '" data-name="' + esc(name) + '" data-slug="' + esc(slug) + '" data-tags="' + esc((Array.isArray(b.tags) ? b.tags : []).join(',')) + '" data-editorial-rank="' + esc(b.editorial_rank || '') + '" data-lat="' + esc(b.latitude || '') + '" data-lng="' + esc(b.longitude || '') + '" tabindex="0" onclick="window.location.href=\'' + detail + '\'" onkeydown="if(event.target===this&&(event.key===\'Enter\'||event.key===\' \')){event.preventDefault();window.location.href=\'' + detail + '\'}">';
+    h += '<article class="beach-card bc2" role="listitem" data-beach-id="' + esc(id) + '"' + (b.beach_type === 'fluvial' ? ' data-river="1"' : '') + ' data-region="' + esc(b.region || '') + '" data-quality="' + esc(b.water_quality || '') + '" data-name="' + esc(name) + '" data-slug="' + esc(slug) + '" data-tags="' + esc((Array.isArray(b.tags) ? b.tags : []).join(',')) + '" data-editorial-rank="' + esc(b.editorial_rank || '') + '" data-lat="' + esc(b.latitude || '') + '" data-lng="' + esc(b.longitude || '') + '" tabindex="0" onclick="window.location.href=\'' + detail + '\'" onkeydown="if(event.target===this&&(event.key===\'Enter\'||event.key===\' \')){event.preventDefault();window.location.href=\'' + detail + '\'}">';
     h += '<figure class="bc2__media">' + img +
          '<div class="bc2__fallback"' + (img ? ' style="display:none"' : '') + '>' + ICON.wave + '<span>' + esc(name) + '</span></div>' +
          (b.region ? '<span class="bc2__chip bc2__chip--region">' + esc(b.region) + '</span>' : '') +
          (b.water_quality === 'Excelente' ? '<span class="bc2__chip bc2__chip--quality">' + ICON.check + esc(L.excellent) + '</span>' : '') +
-         '<p class="bc2__live" aria-live="polite"><span class="bc2__dot" aria-hidden="true"></span><span class="bc2__live-t"></span></p>' +
+         (b.beach_type === 'fluvial' ? '' : '<p class="bc2__live" aria-live="polite"><span class="bc2__dot" aria-hidden="true"></span><span class="bc2__live-t"></span></p>') +
          (cr ? '<figcaption class="bc2__credit">' + esc(cr) + '</figcaption>' : '') +
          '</figure>';
     h += '<div class="bc2__body"><h2 class="bc2__name">' + esc(name) + '</h2>' +
@@ -494,6 +647,7 @@
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         observer.unobserve(e.target);
+        if (e.target.getAttribute('data-river') === '1') return; // praia fluvial: sem dados de mar
         var la = parseFloat(e.target.getAttribute('data-lat')), ln = parseFloat(e.target.getAttribute('data-lng'));
         if (!isFinite(la) || !isFinite(ln)) return;
         queue.push(e.target);

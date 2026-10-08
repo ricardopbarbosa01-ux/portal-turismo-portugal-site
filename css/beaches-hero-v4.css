@@ -56,6 +56,7 @@
 .bh4__dot[data-level="calm"] .bh4__core, .bh4__dot[data-level="calm"] .bh4__glow{fill:var(--calm);}
 .bh4__dot[data-level="moderate"] .bh4__core, .bh4__dot[data-level="moderate"] .bh4__glow{fill:var(--mod);}
 .bh4__dot[data-level="rough"] .bh4__core, .bh4__dot[data-level="rough"] .bh4__glow{fill:var(--rough);}
+.bh4__dot[data-level="river"] .bh4__core{fill:#9db8d6;} /* praias fluviais: cor neutra (sem dados de mar) */
 .bh4__dot:hover .bh4__core, .bh4__dot:focus .bh4__core{transform:scale(1.7);}
 .bh4__dot{opacity:0; animation:bh4-pop .5s ease-out forwards; animation-delay:calc(.4s + var(--i) * 18ms);}
 @keyframes bh4-pop{to{opacity:1;}}

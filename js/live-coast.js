@@ -10,8 +10,8 @@
   'use strict';
   var SB_URL = 'https://glupdjvdvunogkqgxoui.supabase.co';
   var SB_KEY = 'sb_publishable_HKdE2IRmz9lMDcg4p3l1tw_HiTdD4nw'; /* chave publica (a mesma de js/config.js) */
-  var KEY_SEA = 'pth_bc2_live_v1', KEY_B = 'pth_beaches_min_v1', TTL_SEA = 30 * 60 * 1000, TTL_B = 60 * 60 * 1000;
-  var mem = null, inflight = [], beachesP = null;
+  var KEY_SEA = 'pth_bc2_live_v1', KEY_B = 'pth_beaches_min_v2', TTL_SEA = 30 * 60 * 1000, TTL_B = 60 * 60 * 1000;
+  var mem = null, inflight = [], beachesP = null, RIVER = {}; /* praias fluviais: sem dados de mar (Open-Meteo Marine nao se aplica) */
 
   function sget(k) { try { return JSON.parse(sessionStorage.getItem(k) || 'null'); } catch (e) { return null; } }
   function sset(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -24,11 +24,12 @@
   }
   function norm(b) {
     var lat = parseFloat(b.latitude != null ? b.latitude : b.lat), lng = parseFloat(b.longitude != null ? b.longitude : b.lng);
-    return { id: String(b.id), name: b.name || '', region: b.region || '', lat: lat, lng: lng, quality: b.water_quality || b.quality || '' };
+    return { id: String(b.id), name: b.name || '', region: b.region || '', lat: lat, lng: lng, quality: b.water_quality || b.quality || '', river: b.beach_type === 'fluvial' || b.river === true };
   }
 
   function setBeaches(list) {
     var l = (list || []).map(norm).filter(function (b) { return isFinite(b.lat) && isFinite(b.lng); });
+    l.forEach(function (b) { if (b.river) RIVER[b.id] = 1; });
     beachesP = Promise.resolve(l);
     sset(KEY_B, { ts: Date.now(), list: l });
     return beachesP;
@@ -36,8 +37,8 @@
   function beaches() {
     if (beachesP) return beachesP;
     var c = sget(KEY_B);
-    if (c && c.list && Date.now() - c.ts < TTL_B) return (beachesP = Promise.resolve(c.list));
-    var u = SB_URL + '/rest/v1/beaches?select=id,name,region,latitude,longitude,water_quality&is_active=eq.true&order=name';
+    if (c && c.list && Date.now() - c.ts < TTL_B) { c.list.forEach(function (b) { if (b.river) RIVER[b.id] = 1; }); return (beachesP = Promise.resolve(c.list)); }
+    var u = SB_URL + '/rest/v1/beaches?select=id,name,region,latitude,longitude,water_quality,beach_type&is_active=eq.true&order=name';
     beachesP = timed(u, { headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY } }, 9000)
       .then(function (rows) { return setBeaches(rows); })
       .catch(function () { beachesP = null; return []; });
@@ -57,7 +58,7 @@
     }).catch(function () { if (!retry) return new Promise(function (r) { setTimeout(r, 600); }).then(function () { return fetchChunk(pts, true); }); });
   }
   function sea(points) {
-    var pts = (points || []).filter(function (p) { return p && p.id && isFinite(p.lat) && isFinite(p.lng); });
+    var pts = (points || []).filter(function (p) { return p && p.id && !p.river && !RIVER[p.id] && isFinite(p.lat) && isFinite(p.lng); });
     var wait = inflight.slice();
     return Promise.all(wait).then(function () {
       var c = cache(), now = Date.now();
@@ -74,5 +75,6 @@
   }
   function level(w) { return w == null ? 'na' : (w <= 0.6 ? 'calm' : (w <= 1.2 ? 'moderate' : 'rough')); }
 
-  window.LiveCoast = { beaches: beaches, setBeaches: setBeaches, sea: sea, level: level };
+  function isRiver(id) { return !!RIVER[id]; }
+  window.LiveCoast = { beaches: beaches, setBeaches: setBeaches, sea: sea, level: level, isRiver: isRiver };
 })(window);

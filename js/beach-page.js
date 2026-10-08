@@ -931,7 +931,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     try {
       const { data: beach, error } = await db.from('beaches')
-        .select('id, name, region, description, i18n, image_url, image_storage_url, image_source, image_photographer, image_source_url, image_license, water_quality, facilities, latitude, longitude, is_active, town')
+        .select('id, name, region, beach_type, description, i18n, image_url, image_storage_url, image_source, image_photographer, image_source_url, image_license, water_quality, facilities, latitude, longitude, is_active, town')
         .eq('id', id)
         .single();
 
@@ -1066,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       // Mar & Ondulação — async, não bloqueia render
-      loadWaves(beach);
+      if (beach.beach_type !== 'fluvial') loadWaves(beach); // praia fluvial: sem mar nem ondas
 
       // "Ideal para" section
       const idealGrid = document.getElementById('ideal-para-grid');
@@ -1111,7 +1111,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       // Load tides async
-      loadTides(beach.latitude, beach.longitude);
+      if (beach.beach_type !== 'fluvial') loadTides(beach.latitude, beach.longitude); // praia fluvial: sem mares
 
     } catch(e) {
       console.error('[beach.html] load error:', e);

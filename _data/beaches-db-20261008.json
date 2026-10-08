@@ -2595,5 +2595,1062 @@
 "region": "Alentejo",
 "latitude": 37.89506,
 "longitude": -8.79775
+},
+{
+"id": "d69441fd-89c2-433d-9754-a88f52e5816c",
+"name": "Praia Fluvial da Lenta",
+"region": "Norte",
+"latitude": 41.95682,
+"longitude": -8.74669
+},
+{
+"id": "3c236118-430c-4f99-a366-3affe99ac81d",
+"name": "Praia Fluvial das Azenhas (Vilar de Mouros)",
+"region": "Norte",
+"latitude": 41.88889,
+"longitude": -8.78362
+},
+{
+"id": "3d050ae0-0971-4022-8782-e446fc75ba46",
+"name": "Ponte Frades (Vinhais)",
+"region": "Norte",
+"latitude": 41.85875,
+"longitude": -7.12151
+},
+{
+"id": "ac769631-d8b0-47e3-b500-627f8895154d",
+"name": "Praia Fluvial da Ponte de Soeira",
+"region": "Norte",
+"latitude": 41.85355,
+"longitude": -6.93193
+},
+{
+"id": "bf314ac0-7003-4dba-a906-59bfe51abafa",
+"name": "Praia Fluvial da Valeta",
+"region": "Norte",
+"latitude": 41.84889,
+"longitude": -8.41866
+},
+{
+"id": "3897b9c3-88da-4859-a5f1-2e6605fb46d4",
+"name": "Praia Fluvial de Ponte da Barca",
+"region": "Norte",
+"latitude": 41.80971,
+"longitude": -8.42074
+},
+{
+"id": "0418baf9-99f8-4c91-badd-7a05d5bc1b98",
+"name": "Praia Fluvial do Alqueirão",
+"region": "Norte",
+"latitude": 41.67907,
+"longitude": -8.17846
+},
+{
+"id": "edc26ed2-7818-416d-9596-bc8790e7b594",
+"name": "Praia Fluvial de Verim",
+"region": "Norte",
+"latitude": 41.64382,
+"longitude": -8.31317
+},
+{
+"id": "825e23f2-d6e7-4ccc-a6cb-ce796125c5cf",
+"name": "Praia Fluvial do Rabaçal (Valpaços)",
+"region": "Norte",
+"latitude": 41.632,
+"longitude": -7.24716
+},
+{
+"id": "2b152650-3282-4b28-8a31-c33e31c53443",
+"name": "Praia Fluvial do Cavadinho",
+"region": "Norte",
+"latitude": 41.61653,
+"longitude": -8.35649
+},
+{
+"id": "75e73717-9129-467f-baca-7e4c2b259c81",
+"name": "Praia Fluvial de Adaúfe",
+"region": "Norte",
+"latitude": 41.60884,
+"longitude": -8.40505
+},
+{
+"id": "63787289-52bd-4a85-950b-11f81edb5763",
+"name": "Praia Fluvial da Ponte do Bico",
+"region": "Norte",
+"latitude": 41.60541,
+"longitude": -8.43105
+},
+{
+"id": "03db63fd-994c-4d1f-a570-bc77f4d77ab9",
+"name": "Praia Fluvial do Faial (Vila Verde)",
+"region": "Norte",
+"latitude": 41.59826,
+"longitude": -8.45847
+},
+{
+"id": "bb6b9637-91e2-43eb-bcb3-140b7bf5df04",
+"name": "Praia Fluvial de Quintas",
+"region": "Norte",
+"latitude": 41.59639,
+"longitude": -7.16417
+},
+{
+"id": "a0894825-7bb4-4c38-a94c-7d1e22c19f53",
+"name": "Praia da Ribeira (Albufeira do Azibo)",
+"region": "Norte",
+"latitude": 41.58611,
+"longitude": -6.90556
+},
+{
+"id": "d120bba7-6d3e-432e-a0b6-4487ec9403ba",
+"name": "Praia Fluvial do Ermal",
+"region": "Norte",
+"latitude": 41.57554,
+"longitude": -8.12862
+},
+{
+"id": "5a4dc692-c6fb-4f41-b6b9-de7ff7875890",
+"name": "Praia Fluvial de Vale de Juncal",
+"region": "Norte",
+"latitude": 41.53333,
+"longitude": -7.18417
+},
+{
+"id": "50c53b1c-ee03-46fe-8ea1-225dc8ea4cc9",
+"name": "Praia Fluvial de Cavez",
+"region": "Norte",
+"latitude": 41.51616,
+"longitude": -7.89003
+},
+{
+"id": "9e1d9133-5b46-442f-8d1b-949c5e7226c2",
+"name": "Praia Fluvial da Albufeira da Queimadela",
+"region": "Norte",
+"latitude": 41.50524,
+"longitude": -8.16276
+},
+{
+"id": "482497f5-b8f2-4714-a48a-e7a670eef48d",
+"name": "Praia Fluvial da Maravilha (Mirandela)",
+"region": "Norte",
+"latitude": 41.50487,
+"longitude": -7.19685
+},
+{
+"id": "4c948cd0-8542-4f06-9042-ea0c1184ab3b",
+"name": "Praia Fluvial Arquiteto Albino Mendo",
+"region": "Norte",
+"latitude": 41.48806,
+"longitude": -7.18722
+},
+{
+"id": "3adc15a2-9e07-402f-be4f-d9efb27886ac",
+"name": "Praia Fluvial da Congida",
+"region": "Norte",
+"latitude": 41.07598,
+"longitude": -6.7796
+},
+{
+"id": "e9f3217c-0e61-4793-9b8b-b75d88062bbf",
+"name": "Praia Fluvial de Bitetos",
+"region": "Norte",
+"latitude": 41.0721,
+"longitude": -8.26047
+},
+{
+"id": "617c8b79-ba40-404f-a4d0-0daaea7502f9",
+"name": "Praia Fluvial da Lomba (Gondomar)",
+"region": "Norte",
+"latitude": 41.06994,
+"longitude": -8.41379
+},
+{
+"id": "30276a4e-2034-4e5d-86f5-6be718ae4ba8",
+"name": "Zona Balnear da Barragem de Vilar (Moimenta da Beira)",
+"region": "Norte",
+"latitude": 40.96388,
+"longitude": -7.54372
+},
+{
+"id": "0c7e0fa9-249e-47ec-897c-80889383a90a",
+"name": "Praia Fluvial da Mâmoa",
+"region": "Norte",
+"latitude": 40.92834,
+"longitude": -8.4672
+},
+{
+"id": "3832dad2-bcda-4faa-b308-05ccafed5132",
+"name": "Praia Fluvial de Vila da Ponte",
+"region": "Norte",
+"latitude": 40.91907,
+"longitude": -7.51417
+},
+{
+"id": "bb421e7b-a80d-46b2-9519-7142a6fec6cd",
+"name": "Praia Fluvial de Segões",
+"region": "Norte",
+"latitude": 40.86259,
+"longitude": -7.6816
+},
+{
+"id": "1f0d3caa-52c7-469e-a983-e96f60d2d4b3",
+"name": "Praia Fluvial de Paço de Mato",
+"region": "Norte",
+"latitude": 40.85409,
+"longitude": -8.30499
+},
+{
+"id": "e22b2d3e-2fee-481d-8aeb-2c890694bd32",
+"name": "Praia Fluvial de Burgães",
+"region": "Norte",
+"latitude": 40.83437,
+"longitude": -8.38296
+},
+{
+"id": "8cd04ca0-d5b0-4e2a-9c01-8e03d0511404",
+"name": "Praia Fluvial de Pontemieiro",
+"region": "Norte",
+"latitude": 40.80734,
+"longitude": -8.31364
+},
+{
+"id": "6d929aae-425a-4443-9e2e-b3ae38545823",
+"name": "Praia Fluvial de Folgosa (Castro Daire)",
+"region": "Centro",
+"latitude": 40.89044,
+"longitude": -7.89793
+},
+{
+"id": "b6214cb6-8bda-4e78-a3e9-e9f88c1a44a1",
+"name": "Zona de Lazer da Ucha",
+"region": "Centro",
+"latitude": 40.82016,
+"longitude": -8.01346
+},
+{
+"id": "73b2e239-4e41-4846-b544-fbdcb8079419",
+"name": "Praia Fluvial da Carriça",
+"region": "Centro",
+"latitude": 40.78803,
+"longitude": -8.25759
+},
+{
+"id": "b37cac89-3e52-49a2-883e-b6438d218e4d",
+"name": "Praia Fluvial do Trabulo",
+"region": "Centro",
+"latitude": 40.7724,
+"longitude": -7.65214
+},
+{
+"id": "ba416c4f-ea36-4e72-9f39-30e8dbfb9a1a",
+"name": "Praia Fluvial da Quinta do Barco",
+"region": "Centro",
+"latitude": 40.70833,
+"longitude": -8.36111
+},
+{
+"id": "29a0a0f4-b5b6-4353-ab16-cbbb152730be",
+"name": "Praia Fluvial do Açude de Vais",
+"region": "Centro",
+"latitude": 40.66478,
+"longitude": -7.65721
+},
+{
+"id": "53d1c305-b0d8-4b5e-84c1-535a9a28be4a",
+"name": "Praia Fluvial da Ponte de Juncais",
+"region": "Centro",
+"latitude": 40.61229,
+"longitude": -7.51829
+},
+{
+"id": "a4c1e46c-8ee8-4c0f-8d3e-5987dd6203b4",
+"name": "Praia Fluvial do Vale do Mondego",
+"region": "Centro",
+"latitude": 40.6083,
+"longitude": -7.29984
+},
+{
+"id": "3030e902-d1ea-4836-b7cc-2673adece120",
+"name": "Praia Fluvial de São João do Monte",
+"region": "Centro",
+"latitude": 40.59708,
+"longitude": -8.23659
+},
+{
+"id": "2b101b40-62a2-4b92-98fd-ba8080d606f4",
+"name": "Praia Fluvial de Aldeia Viçosa",
+"region": "Centro",
+"latitude": 40.5767,
+"longitude": -7.30705
+},
+{
+"id": "bc0148e8-31b0-4e22-a022-87ecf61466b0",
+"name": "Praia Fluvial da Barragem do Caldeirão",
+"region": "Centro",
+"latitude": 40.51692,
+"longitude": -7.33032
+},
+{
+"id": "3f82ecdf-2929-4b08-85b6-435ed8e66a9a",
+"name": "Praia Fluvial da Quinta da Taberna",
+"region": "Centro",
+"latitude": 40.48602,
+"longitude": -7.41499
+},
+{
+"id": "4883aa5e-2354-42bb-b7bc-942a2b95d45f",
+"name": "Praia Fluvial de Badamalos",
+"region": "Centro",
+"latitude": 40.48562,
+"longitude": -6.99113
+},
+{
+"id": "00e7d4ff-80a6-4382-a26d-89efffbffc51",
+"name": "Praia Fluvial de Vale das Éguas (Ínsua)",
+"region": "Centro",
+"latitude": 40.43549,
+"longitude": -7.02451
+},
+{
+"id": "a772005a-a44a-4db0-887a-24746a6dc983",
+"name": "Praia Fluvial de Rapoula do Côa",
+"region": "Centro",
+"latitude": 40.41813,
+"longitude": -7.04409
+},
+{
+"id": "09ed9e2a-873c-4ced-9523-2be28784e238",
+"name": "Praia Fluvial da Relva da Reboleira",
+"region": "Centro",
+"latitude": 40.412,
+"longitude": -7.46718
+},
+{
+"id": "ca33aff4-d5e9-4b9b-8546-62b90b76a2fa",
+"name": "Praia Fluvial de Valhelhas",
+"region": "Centro",
+"latitude": 40.4027,
+"longitude": -7.40298
+},
+{
+"id": "1e9d795c-410d-48bb-94c8-f664850ea924",
+"name": "Praia Fluvial do Sabugueiro",
+"region": "Centro",
+"latitude": 40.40032,
+"longitude": -7.63952
+},
+{
+"id": "7c56e770-6460-494e-a79c-5dec748dfc2d",
+"name": "Praia Fluvial Dr. Pedro",
+"region": "Centro",
+"latitude": 40.39907,
+"longitude": -7.68663
+},
+{
+"id": "f7f1b6d8-26f9-4f8d-b23f-1b3f00b60244",
+"name": "Praia Fluvial do Vale do Rossim",
+"region": "Centro",
+"latitude": 40.39796,
+"longitude": -7.58271
+},
+{
+"id": "b31e8924-d13d-452b-8755-648f8b7fc50f",
+"name": "Praia Fluvial da Lapa dos Dinheiros",
+"region": "Centro",
+"latitude": 40.38539,
+"longitude": -7.69702
+},
+{
+"id": "34234ca8-9855-44b2-9c1e-075af6ebc34a",
+"name": "Praia Fluvial da Albufeira de Alfaiates",
+"region": "Centro",
+"latitude": 40.38213,
+"longitude": -6.92675
+},
+{
+"id": "82f5ee9b-2862-4ee5-ba37-07a003b0470d",
+"name": "Praia Fluvial de Vila Cova à Coelheira",
+"region": "Centro",
+"latitude": 40.37857,
+"longitude": -7.73612
+},
+{
+"id": "13a521be-daa3-45fc-bdff-316f3b76f579",
+"name": "Praia Fluvial das Sete Fontes (Cantanhede)",
+"region": "Centro",
+"latitude": 40.35704,
+"longitude": -8.53766
+},
+{
+"id": "f8a2db74-11c1-4454-bea9-a97ffc5aa4d3",
+"name": "Praia Fluvial de Sandomil",
+"region": "Centro",
+"latitude": 40.3567,
+"longitude": -7.78301
+},
+{
+"id": "b865aad4-9976-4eb8-9998-85d189759adf",
+"name": "Praia Fluvial dos Olhos da Fervença",
+"region": "Centro",
+"latitude": 40.34889,
+"longitude": -8.69639
+},
+{
+"id": "4bc3877c-8cca-4e8a-a495-5a786ef04b7e",
+"name": "Praia Fluvial da Devesa (Sabugal)",
+"region": "Centro",
+"latitude": 40.34877,
+"longitude": -7.09278
+},
+{
+"id": "cc954d3f-13d9-4df5-a5f2-1eaee1cd3156",
+"name": "Praia Fluvial de São Gião",
+"region": "Centro",
+"latitude": 40.34708,
+"longitude": -7.80751
+},
+{
+"id": "0a50fc5e-c47a-455f-83ce-d591e1936e28",
+"name": "Praia Fluvial da Senhora da Ribeira (Santa Comba Dão)",
+"region": "Centro",
+"latitude": 40.34219,
+"longitude": -8.12251
+},
+{
+"id": "8f91cf8e-465f-4a36-ba88-c1ddcad5fc28",
+"name": "Praia Fluvial de Loriga",
+"region": "Centro",
+"latitude": 40.32716,
+"longitude": -7.67851
+},
+{
+"id": "393b934a-4182-48e1-a41b-aa3cc76874b8",
+"name": "Praia Fluvial de São Sebastião da Feira",
+"region": "Centro",
+"latitude": 40.31472,
+"longitude": -7.86583
+},
+{
+"id": "1360ff98-df5b-4a51-8b3a-8f933e0393d1",
+"name": "Praia Fluvial de Quadrazais",
+"region": "Centro",
+"latitude": 40.31291,
+"longitude": -6.98684
+},
+{
+"id": "b0c46c35-ec59-4c6e-929f-8386e93950ad",
+"name": "Praia Fluvial de Alvoco das Várzeas",
+"region": "Centro",
+"latitude": 40.30183,
+"longitude": -7.83634
+},
+{
+"id": "46d0bed0-98e6-4d85-828a-30269de38219",
+"name": "Zona Balnear do Urtigal",
+"region": "Centro",
+"latitude": 40.295,
+"longitude": -7.95904
+},
+{
+"id": "95d5f701-d9a7-4578-9653-b5f4a966aacf",
+"name": "Praia Fluvial de Avô",
+"region": "Centro",
+"latitude": 40.29414,
+"longitude": -7.90564
+},
+{
+"id": "6d2a95e8-cba3-457f-9d46-b47725f20714",
+"name": "Praia Fluvial do Cornicovo",
+"region": "Centro",
+"latitude": 40.29033,
+"longitude": -8.21247
+},
+{
+"id": "bc91846d-fb69-42dd-ab0c-d70c743d6039",
+"name": "Praia Fluvial do Poço do Lagar",
+"region": "Centro",
+"latitude": 40.28784,
+"longitude": -7.70788
+},
+{
+"id": "fb319a05-653b-4d75-9709-6a609b530de9",
+"name": "Praia Fluvial do Vimieiro (Penacova)",
+"region": "Centro",
+"latitude": 40.27686,
+"longitude": -8.19819
+},
+{
+"id": "c05734ce-a8f7-43bf-9f85-d451aaa7fb0c",
+"name": "Praia Fluvial de Benfeita",
+"region": "Centro",
+"latitude": 40.27411,
+"longitude": -7.98421
+},
+{
+"id": "a3a240f3-6564-49a4-9539-4dbc1677169b",
+"name": "Piscina Natural de Ançã",
+"region": "Centro",
+"latitude": 40.27251,
+"longitude": -8.52482
+},
+{
+"id": "4c1f2b21-5d87-46ed-bfd9-bd49557b985d",
+"name": "Praia Fluvial de Pomares (Arganil)",
+"region": "Centro",
+"latitude": 40.27008,
+"longitude": -7.89315
+},
+{
+"id": "845b72d5-3417-4847-aeab-453c857a45a9",
+"name": "Praia Fluvial de Côja",
+"region": "Centro",
+"latitude": 40.26843,
+"longitude": -8.00266
+},
+{
+"id": "0bca9fdd-734a-4d66-8112-d85516eb9771",
+"name": "Zona Balnear do Meimão (Albufeira da Meimoa)",
+"region": "Centro",
+"latitude": 40.2669,
+"longitude": -7.14269
+},
+{
+"id": "ac00493b-8784-4aff-b3be-1a33fd2125c8",
+"name": "Praia Fluvial de Reconquinho",
+"region": "Centro",
+"latitude": 40.26636,
+"longitude": -8.27982
+},
+{
+"id": "d1978858-1dba-4c5c-ac87-19de955ead99",
+"name": "Praia Fluvial de Unhais da Serra",
+"region": "Centro",
+"latitude": 40.25738,
+"longitude": -7.62294
+},
+{
+"id": "6d773184-c625-4b17-8573-d1feefa8efcf",
+"name": "Praia Fluvial da Ronqueira",
+"region": "Centro",
+"latitude": 40.24926,
+"longitude": -8.03673
+},
+{
+"id": "7a9a1edf-3236-48b6-9f56-22098d0a1880",
+"name": "Zona Balnear de Foz d'Égua",
+"region": "Centro",
+"latitude": 40.24703,
+"longitude": -7.81262
+},
+{
+"id": "afb01794-bdda-43c8-ad69-52f19c1d0e05",
+"name": "Zona Balnear da Peneda Talhada",
+"region": "Centro",
+"latitude": 40.23663,
+"longitude": -8.05132
+},
+{
+"id": "2ab6aba1-ce86-43d2-a0b9-18f55a06e796",
+"name": "Praia Fluvial de Piódão",
+"region": "Centro",
+"latitude": 40.22953,
+"longitude": -7.82627
+},
+{
+"id": "2cd16507-3536-45cb-9f29-a84fdcc3d7bb",
+"name": "Zona Balnear de Folques",
+"region": "Centro",
+"latitude": 40.22164,
+"longitude": -8.01472
+},
+{
+"id": "1698508a-7190-450e-9021-61b6ba227f47",
+"name": "Praia Fluvial de Palheiros e Zorro",
+"region": "Centro",
+"latitude": 40.20327,
+"longitude": -8.36542
+},
+{
+"id": "3548e3b8-ce48-48cd-8a81-338ae015f809",
+"name": "Praia Fluvial das Canaveias",
+"region": "Centro",
+"latitude": 40.18465,
+"longitude": -8.14985
+},
+{
+"id": "b752b91e-f0b3-4bdf-b6cc-d0276a85e9cd",
+"name": "Praia Fluvial do Rebolim",
+"region": "Centro",
+"latitude": 40.1801,
+"longitude": -8.41751
+},
+{
+"id": "7719cc26-30ea-4bd2-891d-79e76db204cb",
+"name": "Praia Fluvial da Senhora da Graça (Lousã)",
+"region": "Centro",
+"latitude": 40.1581,
+"longitude": -8.19883
+},
+{
+"id": "9c5f9c15-87ec-4f47-9058-262fa54faec5",
+"name": "Praia Fluvial da Peneda/Pêgo Escuro",
+"region": "Centro",
+"latitude": 40.1543,
+"longitude": -8.112
+},
+{
+"id": "d30135f5-5525-4f3a-a8ee-17174ae788db",
+"name": "Praia Fluvial da Bogueira",
+"region": "Centro",
+"latitude": 40.15365,
+"longitude": -8.24143
+},
+{
+"id": "2a2468d2-b830-46ec-8bb4-d41751bf51a8",
+"name": "Praia Fluvial da Ereira",
+"region": "Centro",
+"latitude": 40.14938,
+"longitude": -8.71236
+},
+{
+"id": "b3615ef1-04cd-4467-a8f3-dfd16eb87c5d",
+"name": "Zona Balnear da Ponte Velha (Cabreira, Góis)",
+"region": "Centro",
+"latitude": 40.14167,
+"longitude": -8.06616
+},
+{
+"id": "5bd1b50e-6966-49e8-b1e6-26505a8a0bd3",
+"name": "Praia Fluvial da Ponte do Sótão",
+"region": "Centro",
+"latitude": 40.14015,
+"longitude": -8.14837
+},
+{
+"id": "6a3c0e42-0776-4dcb-bc7f-8df79fc14f5b",
+"name": "Zona Balnear da Ponte (Colmeal, Góis)",
+"region": "Centro",
+"latitude": 40.13927,
+"longitude": -7.99839
+},
+{
+"id": "880612de-a3f3-4670-a339-f7e95966a5f1",
+"name": "Praia Fluvial da Senhora da Piedade (Lousã)",
+"region": "Centro",
+"latitude": 40.10052,
+"longitude": -8.23665
+},
+{
+"id": "5e16a49e-553e-48bc-bb82-093a6126ebbb",
+"name": "Praia Fluvial de Santa Luzia (Pampilhosa da Serra)",
+"region": "Centro",
+"latitude": 40.09111,
+"longitude": -7.85322
+},
+{
+"id": "4e121916-bf77-440c-b019-30f9fc0955db",
+"name": "Praia Fluvial de Castelo Novo",
+"region": "Centro",
+"latitude": 40.07733,
+"longitude": -7.49001
+},
+{
+"id": "b27f8d0e-b8c9-4134-a060-3020a8024001",
+"name": "Praia Fluvial do Pessegueiro (Pampilhosa da Serra)",
+"region": "Centro",
+"latitude": 40.05219,
+"longitude": -8.02389
+},
+{
+"id": "19e1ec66-2e25-43df-8788-5fe7664f4188",
+"name": "Praia Fluvial de Pampilhosa da Serra",
+"region": "Centro",
+"latitude": 40.04717,
+"longitude": -7.94895
+},
+{
+"id": "41858b36-d73c-4a71-8f2c-b02623363a33",
+"name": "Praia Fluvial de Janeiro de Baixo",
+"region": "Centro",
+"latitude": 40.04623,
+"longitude": -7.80117
+},
+{
+"id": "b749bf41-ec1b-4fa3-9973-f19011506f47",
+"name": "Praia Fluvial da Louçainha",
+"region": "Centro",
+"latitude": 40.0262,
+"longitude": -8.30424
+},
+{
+"id": "642eefb0-efe0-4fca-9fa5-47ebef8262e4",
+"name": "Praia Fluvial do Poço Corga",
+"region": "Centro",
+"latitude": 40.02459,
+"longitude": -8.18945
+},
+{
+"id": "f404a1f3-4bfd-4ad5-bf69-0e453f5a91fd",
+"name": "Praia Fluvial de Alvares",
+"region": "Centro",
+"latitude": 40.01661,
+"longitude": -8.10046
+},
+{
+"id": "1167225e-cedc-4acd-b72a-a08817830c0c",
+"name": "Praia Fluvial de Cambas",
+"region": "Centro",
+"latitude": 40.01293,
+"longitude": -7.84646
+},
+{
+"id": "e892b051-0d3b-4eea-847c-846590315d7f",
+"name": "Praia Fluvial de Almaceda",
+"region": "Centro",
+"latitude": 40.00758,
+"longitude": -7.66117
+},
+{
+"id": "c426b02a-9fdf-4ac0-89c1-36dbc5ed9eb8",
+"name": "Praia Fluvial de Mega Fundeira",
+"region": "Centro",
+"latitude": 39.98562,
+"longitude": -8.12168
+},
+{
+"id": "c557ded4-c26f-45ca-894b-4db7a6d278d4",
+"name": "Praia Fluvial de Álvaro",
+"region": "Centro",
+"latitude": 39.97749,
+"longitude": -7.96163
+},
+{
+"id": "ef8e0a92-1e4a-4b5c-b483-05dc2754859e",
+"name": "Praia Fluvial do Mosteiro (Pedrógão Grande)",
+"region": "Centro",
+"latitude": 39.93574,
+"longitude": -8.18634
+},
+{
+"id": "452065a5-d56c-4ec7-b8de-53735e6a66d4",
+"name": "Praia Fluvial da Lagoa da Ervedeira",
+"region": "Centro",
+"latitude": 39.93249,
+"longitude": -8.8956
+},
+{
+"id": "e17fd8df-3dbe-448c-ad7b-15245641fcb5",
+"name": "Praia Fluvial do Açude do Pinto",
+"region": "Centro",
+"latitude": 39.92295,
+"longitude": -7.89412
+},
+{
+"id": "114d03a5-b9f3-44ee-9701-98b438c6c47b",
+"name": "Praia Fluvial do Cabril (Pedrógão Grande)",
+"region": "Centro",
+"latitude": 39.92241,
+"longitude": -8.13308
+},
+{
+"id": "28302e25-c73e-428d-94a9-928fffc166c1",
+"name": "Praia Fluvial de Ana de Aviz",
+"region": "Centro",
+"latitude": 39.91857,
+"longitude": -8.28429
+},
+{
+"id": "ec0245de-9edc-47f5-94c0-2ca318371172",
+"name": "Praia Fluvial das Fragas de São Simão",
+"region": "Centro",
+"latitude": 39.91592,
+"longitude": -8.31702
+},
+{
+"id": "decd7e63-95ab-4aea-b7c5-08ece0446860",
+"name": "Praia Fluvial do Troviscal",
+"region": "Centro",
+"latitude": 39.86019,
+"longitude": -8.00848
+},
+{
+"id": "01e9c37f-4911-4639-89dd-63c5930b8583",
+"name": "Praia Fluvial do Sesmo",
+"region": "Centro",
+"latitude": 39.85978,
+"longitude": -7.74267
+},
+{
+"id": "41fdbb12-bc0c-48be-bad5-55aacfcb60ea",
+"name": "Praia Fluvial da Ribeira Grande (Sertã)",
+"region": "Centro",
+"latitude": 39.8073,
+"longitude": -8.09634
+},
+{
+"id": "1e968526-3406-4fa9-b573-f986a6fb6f0b",
+"name": "Zona Balnear do Boiçô",
+"region": "Centro",
+"latitude": 39.80358,
+"longitude": -8.00884
+},
+{
+"id": "9128483f-6da4-4b70-9b29-1129ad099dee",
+"name": "Praia Fluvial do Malhadal",
+"region": "Centro",
+"latitude": 39.79702,
+"longitude": -7.95148
+},
+{
+"id": "85f79df4-36e2-46ec-b9b1-351571fce9fc",
+"name": "Praia Fluvial da Fróia",
+"region": "Centro",
+"latitude": 39.78996,
+"longitude": -7.83894
+},
+{
+"id": "7989d71e-8aac-467a-a39d-08330760d97e",
+"name": "Praia Fluvial da Aldeia Ruiva",
+"region": "Centro",
+"latitude": 39.7691,
+"longitude": -7.98226
+},
+{
+"id": "887c5461-ef30-43dc-8ed4-1086cf714978",
+"name": "Praia Fluvial do Pego das Cancelas",
+"region": "Centro",
+"latitude": 39.7349,
+"longitude": -8.05812
+},
+{
+"id": "fb1c03dd-37a1-48d9-9ca8-3cd33bfebc77",
+"name": "Praia Fluvial de Fernandaires",
+"region": "Centro",
+"latitude": 39.73435,
+"longitude": -8.20929
+},
+{
+"id": "ac0c735a-418c-4bd5-b8ab-c08df50284e9",
+"name": "Praia Fluvial do Marmeleiro (Sertã)",
+"region": "Centro",
+"latitude": 39.73339,
+"longitude": -8.09038
+},
+{
+"id": "84058a9b-a361-4ee9-b738-fcf9eb0af4fc",
+"name": "Praia Fluvial da Foz do Cobrão",
+"region": "Centro",
+"latitude": 39.73002,
+"longitude": -7.76033
+},
+{
+"id": "044023d0-0318-4003-93d0-757aec44f726",
+"name": "Praia Fluvial do Bostelim",
+"region": "Centro",
+"latitude": 39.72358,
+"longitude": -8.10796
+},
+{
+"id": "e3c28b9a-554a-4388-93e1-869826df0888",
+"name": "Praia Fluvial de Cardigos",
+"region": "Centro",
+"latitude": 39.70905,
+"longitude": -8.01407
+},
+{
+"id": "0401e475-0b3f-4a20-8f7c-e2399a7e8bd4",
+"name": "Praia Fluvial da Zaboeira",
+"region": "Centro",
+"latitude": 39.70436,
+"longitude": -8.22268
+},
+{
+"id": "86bbc548-8e7f-46f9-8e27-dedf830f138f",
+"name": "Praia Fluvial do Agroal (Ourém)",
+"region": "Centro",
+"latitude": 39.67919,
+"longitude": -8.43631
+},
+{
+"id": "004cc2ac-510e-4246-a32e-ee3cec8be170",
+"name": "Praia Fluvial do Lago Azul (Ferreira do Zêzere)",
+"region": "Centro",
+"latitude": 39.67582,
+"longitude": -8.23071
+},
+{
+"id": "bbaf7b71-1cd4-43df-ae4a-b1aca4a12cfe",
+"name": "Praia Fluvial da Bairrada/Bairradinha",
+"region": "Centro",
+"latitude": 39.64864,
+"longitude": -8.24143
+},
+{
+"id": "a2e6faa1-1a05-4e1f-94e0-6fd48851380f",
+"name": "Praia Fluvial do Carvoeiro (Mação)",
+"region": "Centro",
+"latitude": 39.63021,
+"longitude": -7.92298
+},
+{
+"id": "d2c7c90c-fc31-4c83-8b40-fb1ee6f0cc70",
+"name": "Praia Fluvial de Montes (Tomar)",
+"region": "Centro",
+"latitude": 39.63019,
+"longitude": -8.25261
+},
+{
+"id": "90add15e-cb1b-4121-909d-c63dec21fb49",
+"name": "Praia Fluvial do Penedo Furado",
+"region": "Centro",
+"latitude": 39.62571,
+"longitude": -8.16262
+},
+{
+"id": "86dcf59d-6f02-4ee2-bfaf-8a1e6efd4997",
+"name": "Praia Fluvial de Fontes (Abrantes)",
+"region": "Centro",
+"latitude": 39.60499,
+"longitude": -8.2635
+},
+{
+"id": "5899bee3-c493-40fa-8de8-f18320dca8a3",
+"name": "Praia Fluvial de Vila Nova da Serra (Tomar)",
+"region": "Centro",
+"latitude": 39.57487,
+"longitude": -8.26617
+},
+{
+"id": "60ddab73-f7ab-4215-8032-649e0a9b93af",
+"name": "Praia Fluvial da Aldeia do Mato",
+"region": "Centro",
+"latitude": 39.54515,
+"longitude": -8.27767
+},
+{
+"id": "a60a4260-0b3b-4215-b6b7-1b6a81dbb110",
+"name": "Praia Fluvial de Constância",
+"region": "Centro",
+"latitude": 39.47444,
+"longitude": -8.34159
+},
+{
+"id": "972aa56d-f547-4740-9108-829901737a4f",
+"name": "Praia Fluvial dos Olhos d'Água do Alviela",
+"region": "Centro",
+"latitude": 39.44478,
+"longitude": -8.71074
+},
+{
+"id": "22b74913-a8be-4ed6-b1d7-8a3a2120ca9d",
+"name": "Praia Fluvial de Montalvo/Tesos",
+"region": "Alentejo",
+"latitude": 39.12088,
+"longitude": -8.12537
+},
+{
+"id": "a1ac8752-1d9e-4c5f-8583-6a2962a76bdf",
+"name": "Praia Fluvial do Clube Náutico de Avis",
+"region": "Alentejo",
+"latitude": 39.05668,
+"longitude": -7.91341
+},
+{
+"id": "e1885c3e-cc2f-4bc9-be00-9d54affc6c33",
+"name": "Praia Fluvial do Sorraia",
+"region": "Alentejo",
+"latitude": 38.95733,
+"longitude": -8.52174
+},
+{
+"id": "069a235a-ffde-4be8-a119-15f1f4106a6b",
+"name": "Praia Fluvial de Azenhas d'El Rei",
+"region": "Alentejo",
+"latitude": 38.54642,
+"longitude": -7.30408
+},
+{
+"id": "ed336295-4319-45ff-90df-03c0c1b3a947",
+"name": "Praia Fluvial de Monsaraz",
+"region": "Alentejo",
+"latitude": 38.43608,
+"longitude": -7.351
+},
+{
+"id": "52b1cf94-125e-419d-b7bb-626f8a9d7300",
+"name": "Praia Fluvial de Mourão",
+"region": "Alentejo",
+"latitude": 38.36789,
+"longitude": -7.35465
+},
+{
+"id": "678f6bd3-d345-405f-9261-16197aae9a59",
+"name": "Praia Fluvial de Oriola",
+"region": "Alentejo",
+"latitude": 38.31445,
+"longitude": -7.8624
+},
+{
+"id": "fd9d685a-7be8-4341-804f-e7a40ccc8123",
+"name": "Praia Fluvial da Amieira (Portel)",
+"region": "Alentejo",
+"latitude": 38.2911,
+"longitude": -7.56046
+},
+{
+"id": "e9887042-af56-4f22-a72e-1e16f993d0ad",
+"name": "Praia Fluvial da Albergaria dos Fusos",
+"region": "Alentejo",
+"latitude": 38.28846,
+"longitude": -7.91802
+},
+{
+"id": "7280cc32-c682-4a50-ad03-baf4cf5628d6",
+"name": "Praia Fluvial de Alqueva",
+"region": "Alentejo",
+"latitude": 38.21361,
+"longitude": -7.52128
+},
+{
+"id": "1329b76f-d2a6-4b8b-9f50-ec03f45bca41",
+"name": "Praia do Lago (Moura)",
+"region": "Alentejo",
+"latitude": 38.20159,
+"longitude": -7.48669
+},
+{
+"id": "70007136-e8de-41eb-a7f0-42b334cfc42f",
+"name": "Praia Fluvial de Cinco Reis",
+"region": "Alentejo",
+"latitude": 38.01273,
+"longitude": -7.93589
+},
+{
+"id": "d7e0ca48-cd77-4bd4-a74f-4f68645a6a59",
+"name": "Praia Fluvial da Tapada Grande",
+"region": "Alentejo",
+"latitude": 37.66987,
+"longitude": -7.50406
+},
+{
+"id": "00849a9b-a176-4978-bd9e-91cf2755a47a",
+"name": "Praia Fluvial de Santa Clara",
+"region": "Alentejo",
+"latitude": 37.51696,
+"longitude": -8.44443
+},
+{
+"id": "cfc5dae4-cf02-4df1-970c-245c49e1869e",
+"name": "Praia Fluvial do Pego Fundo",
+"region": "Algarve",
+"latitude": 37.47199,
+"longitude": -7.47713
+},
+{
+"id": "22acd435-bbe7-4854-b04c-ad0983731de4",
+"name": "Praia Fluvial de Odeleite",
+"region": "Algarve",
+"latitude": 37.33014,
+"longitude": -7.49222
 }
 ]
