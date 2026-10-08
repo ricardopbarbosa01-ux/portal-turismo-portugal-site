@@ -1,0 +1,2520 @@
+[
+ {
+  "id": "rio-mouro-riba-de-mouro",
+  "name": "Rio Mouro — Riba de Mouro (ZPL)",
+  "region": "Norte",
+  "location": {
+   "pt": "Riba de Mouro, Monção",
+   "en": "Riba de Mouro, Monção"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Do 3.º sábado de março ao 3.º sábado de agosto (ZPL); bogas e escalos em defeso de 16 mar a 14 jun",
+   "en": "Third Saturday of March to third Saturday of August (ZPL); boga and chub closed 16 Mar–14 Jun"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Truta-de-rio, boga, escalo",
+   "en": "Brown trout, boga (Iberian nase), chub"
+  },
+  "tecnica": {
+   "pt": "Pesca à pluma e com boia de água, amostras pequenas ou minhoca (único isco natural no troço com morte)",
+   "en": "Fly fishing (incl. float-and-fly), small spinners, or worm (the only natural bait allowed on the kill stretch)"
+  },
+  "desc": {
+   "pt": "Rio de trutas de montanha entre Melgaço e Monção, gerido pelo ICNF como Zona de Pesca Lúdica dividida em troços: na zona de Riba de Mouro (troço 2) pode-se reter até 5 trutas por dia com 20 cm ou mais. Os afluentes e o troço final junto à Ponte do Mouro são zona de proteção, por isso confirme o mapa do edital antes de entrar na água.",
+   "en": "A mountain trout stream between Melgaço and Monção, run by ICNF as a Recreational Fishing Zone split into stretches: around Riba de Mouro (stretch 2) you may keep up to 5 trout a day of 20 cm or more. The tributaries and the last stretch by Ponte do Mouro are protection zones, so check the edital map before you wade in."
+  },
+  "aviso": {
+   "pt": "Exige licença especial diária da ZPL (com morte 5 €, sem morte 1 €) além da licença de águas interiores; só 1 cana; declaração de capturas obrigatória (Edital ICNF 2026).",
+   "en": "Requires a daily ZPL permit (kill 5 €, catch-and-release 1 €) on top of the inland fishing licence; one rod only; catch report mandatory (ICNF 2026 edital)."
+  },
+  "tags": {
+   "pt": [
+    "Truta",
+    "Pesca à pluma",
+    "Zona de pesca lúdica",
+    "Peneda"
+   ],
+   "en": [
+    "Trout",
+    "Fly fishing",
+    "Managed fishery",
+    "Peneda"
+   ]
+  },
+  "quality": 4,
+  "lat": 42.0426,
+  "lng": -8.3326,
+  "inland": true,
+  "sources": [
+   "https://www.icnf.pt/api/file/doc/8fd4c86a7d1d7a57",
+   "https://silva-lusitana.edpsciences.org/articles/silu/pdf/2024/02/silu20243202p149.pdf"
+  ],
+  "n_sources": 2,
+  "notes": "Licenças no ICNF Monção (Rua das Portas do Sol 1000, tel. 251 652 335) ou por email ledpescanorte@icnf.pt com 72 h de antecedência. Troços 3 e 6 só sem morte (anzol sem barbela); troços 1, 4 (foz/Ponte do Mouro) e 5 interditos. O edital 2026 tem as datas de abertura com o ano errado (2025) — confirmar no ICNF. Coordenada: lugar de Ponte da Veiga (Riba de Mouro), no troço 2."
+ },
+ {
+  "id": "rio-castro-laboreiro-assureira",
+  "name": "Rio Castro Laboreiro — Assureira",
+  "region": "Norte",
+  "location": {
+   "pt": "Castro Laboreiro, Melgaço",
+   "en": "Castro Laboreiro, Melgaço"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "experiente",
+  "season": {
+   "pt": "31 de março a 31 de julho (truta); boga de 15 de junho a 31 de julho (Edital 2026)",
+   "en": "31 March to 31 July (trout); boga 15 June to 31 July (2026 edital)"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Truta-de-rio, boga",
+   "en": "Brown trout, boga (Iberian nase)"
+  },
+  "tecnica": {
+   "pt": "Pesca à truta com minhoca, amostra ou mosca, a subir o rio a pé",
+   "en": "Trout fishing with worm, small lure or fly, wading upstream"
+  },
+  "desc": {
+   "pt": "Troço de alta montanha no Parque Nacional da Peneda-Gerês, dividido em 14 lotes com apenas duas licenças por lote e por dia; junto às pontes da Assureira os lotes 10 e 11 permitem pesca com morte. A truta sofreu muita pressão de pescadores portugueses e galegos, por isso conte com peixe desconfiado e pouco abundante.",
+   "en": "A high-mountain stretch inside Peneda-Gerês National Park, split into 14 beats with only two permits per beat per day; by the Assureira bridges, beats 10 and 11 allow fish to be kept. Trout have been heavily fished by Portuguese and Galician anglers, so expect wary fish in modest numbers."
+  },
+  "aviso": {
+   "pt": "Licença especial diária por lote (5,50 € para pescadores de fora de Melgaço) no Café Boca Negra; 1 cana; lotes 8 e 13 são zona de proteção (Edital ZPL 2026).",
+   "en": "Daily permit per beat (5.50 € for non-local anglers) from Café Boca Negra; one rod; beats 8 and 13 are protection zones (2026 ZPL edital)."
+  },
+  "tags": {
+   "pt": [
+    "Truta",
+    "Montanha",
+    "Parque Nacional",
+    "Lotes limitados"
+   ],
+   "en": [
+    "Trout",
+    "Mountain",
+    "National park",
+    "Limited beats"
+   ]
+  },
+  "quality": 3,
+  "lat": 42.0036,
+  "lng": -8.1656,
+  "inland": true,
+  "sources": [
+   "https://www.icnf.pt/api/file/doc/5693ee97f258d764",
+   "https://trutaseserras.blogspot.com/2011/02/rios-e-ribeiras-dentro-do-parque.html"
+  ],
+  "n_sources": 2,
+  "notes": "Gerida pela Associação Desportiva e Cultural de Caça e Pesca de Castro Laboreiro. Licenças: Café Boca Negra, Av. Padre Aníbal Rodrigues, Castro Laboreiro (ter–dom 10h–18h, tel. 251 466 076). Máx. 24 licenças/dia (2 por lote). Menores de 16 acompanhados. Sem engodo; sem peixe como isco. Coordenada: ponte da estrada na Assureira (limite lotes 10/11). Blog de 2011 refere pouca truta — qualidade 3."
+ },
+ {
+  "id": "albufeira-azibo-santa-combinha",
+  "name": "Albufeira do Azibo — Santa Combinha",
+  "region": "Norte",
+  "location": {
+   "pt": "Santa Combinha, Macedo de Cavaleiros",
+   "en": "Santa Combinha, Macedo de Cavaleiros"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Ano inteiro, com os defesos de cada espécie; períodos da concessão fixados por edital anual",
+   "en": "Year-round, subject to each species' closed season; concession dates set by annual edital"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Carpa, barbo, lúcio",
+   "en": "Carp, barbel, pike"
+  },
+  "tecnica": {
+   "pt": "Boia e fundo para carpa e barbo; spinning para lúcio",
+   "en": "Float and ledger for carp and barbel; spinning for pike"
+  },
+  "desc": {
+   "pt": "Grande albufeira transmontana dentro de uma paisagem protegida, onde o clube de Macedo de Cavaleiros organiza concursos e o lúcio se pesca ao spinning. Carpa e barbo respondem à boia e ao fundo; em anos secos o nível baixa e surgem muitas ervas.",
+   "en": "A large Trás-os-Montes reservoir inside a protected landscape, where the Macedo de Cavaleiros club runs matches and pike are taken on spinning tackle. Carp and barbel take float and ledger baits; in dry years the level drops and weed builds up."
+  },
+  "aviso": {
+   "pt": "Pesca proibida nas praias fluviais da Ribeira e da Fraga da Pegada (regulamento municipal); parte da albufeira é concessão da Câmara com licença especial diária — confirme antes de ir.",
+   "en": "No fishing at the Ribeira and Fraga da Pegada river beaches (municipal rules); part of the reservoir is a council concession needing a daily permit — check before you go."
+  },
+  "tags": {
+   "pt": [
+    "Albufeira",
+    "Carpa",
+    "Lúcio",
+    "Paisagem protegida"
+   ],
+   "en": [
+    "Reservoir",
+    "Carp",
+    "Pike",
+    "Protected landscape"
+   ]
+  },
+  "quality": 4,
+  "lat": 41.5774,
+  "lng": -6.8896,
+  "inland": true,
+  "sources": [
+   "https://www.cm-macedodecavaleiros.pt/cmmacedocavaleiros/uploads/document/file/493/20111115095917875847.pdf",
+   "https://ondalivrefm.net/2012/06/28/albufeira-do-azibo-recebeu-concurso-de-pesca/",
+   "https://www.apesca.pt/pesca-lucios-ao-spinning-barragem-do-azibo/",
+   "https://www.cm-macedodecavaleiros.pt/cmmacedocavaleiros/uploads/document/file/14187/regulamento_zona_banear.pdf"
+  ],
+  "n_sources": 4,
+  "notes": "Regulamento da concessão (CM Macedo de Cavaleiros, 2011): licenças A (residentes), B (geral), C (sem morte); pesca da margem, a vau ou de barco a remos/vela; proibida a 100 m a montante nas ribeiras afluentes. Validade atual da concessão não confirmada — contactar a Câmara. POAA revogado em jan. 2026. Lúcio: verificar regra de devolução no calendário ICNF. Coordenada: aldeia de Santa Combinha, margem nascente."
+ },
+ {
+  "id": "albufeira-alto-rabagao-pisoes",
+  "name": "Alto Rabagão — Pisões",
+  "region": "Norte",
+  "location": {
+   "pt": "Pisões, Montalegre",
+   "en": "Pisões, Montalegre"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Todo o ano para carpa; as provas de 72 horas realizam-se na primavera",
+   "en": "Year-round for carp; the 72-hour matches are held in spring"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Carpa",
+   "en": "Carp"
+  },
+  "tecnica": {
+   "pt": "Carpfishing ao fundo com montagens de cabelo e engodo, sessões longas",
+   "en": "Bottom carp fishing with hair rigs and bait, long sessions"
+  },
+  "desc": {
+   "pt": "A albufeira do Alto Rabagão, junto a Pisões, recebe provas nacionais e internacionais de carpa de 72 horas, com exemplares acima de 10 kg registados em competição. As margens são abertas e expostas ao vento do planalto barrosão, por isso leve abrigo e roupa quente mesmo fora do inverno.",
+   "en": "The Alto Rabagão reservoir near Pisões hosts national and international 72-hour carp matches, with fish over 10 kg recorded in competition. The banks are open and exposed to the wind of the Barroso plateau, so bring shelter and warm clothes even outside winter."
+  },
+  "aviso": {
+   "pt": "Licença de pesca em águas interiores obrigatória; em albufeiras a devolução da carpa é permitida (ICNF).",
+   "en": "Inland fishing licence required; carp may be released in reservoirs (ICNF)."
+  },
+  "tags": {
+   "pt": [
+    "Carpfishing",
+    "Albufeira",
+    "Barroso",
+    "Peixe grande"
+   ],
+   "en": [
+    "Carp fishing",
+    "Reservoir",
+    "Barroso",
+    "Big fish"
+   ]
+  },
+  "quality": 4,
+  "lat": 41.7403,
+  "lng": -7.8675,
+  "inland": true,
+  "sources": [
+   "https://www.tsf.pt/portugal/sociedade/cem-pescadores-tentam-capturar-a-maior-carpa-em-montalegre-13802585.html",
+   "https://biblioteca.cm-montalegre.pt/alto-rabagao-nacional-de-pesca-a-carpa-2-a-prova/"
+  ],
+  "n_sources": 2,
+  "notes": "Barragem de Pisões. Provas: Pisões Carp Classic (Associação Portuguesa de Carp Fishing; recorde local de prova 12 kg; mínimo 3,5 kg para pontuar) e Campeonato Nacional de Carpa 2020 (FPPD). A concessão do rio Rabagão (Montes Perdidos) é só o troço do rio a jusante — não a albufeira. Provas de 72 h incluem pesca noturna autorizada; para pesca livre de noite confirmar a regra no ICNF (não verificada). Coordenada: lugar de Pisões, junto à barragem."
+ },
+ {
+  "id": "rio-tua-mirandela",
+  "name": "Rio Tua — Mirandela",
+  "region": "Norte",
+  "location": {
+   "pt": "Mirandela",
+   "en": "Mirandela"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Ano inteiro com defesos por espécie (ciprinídeos e achigã fecham parte da primavera; truta de 1 mar a 31 jul) — confirmar no edital do clube",
+   "en": "Year-round with species closed seasons (cyprinids and bass close for part of spring; trout 1 Mar–31 Jul) — check the club edital"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Barbo, boga, carpa, achigã, tenca",
+   "en": "Barbel, boga, carp, largemouth bass, tench"
+  },
+  "tecnica": {
+   "pt": "Boia e fundo a partir das margens urbanas; spinning leve para achigã",
+   "en": "Float and ledger from the town banks; light spinning for bass"
+  },
+  "desc": {
+   "pt": "O troço urbano do Tua, entre o Açude do Gomes e o açude da Quinta do Choupim, é concessão de pesca do clube local e passa pela Ponte Velha e pelo Parque Dr. José Gama. Pesca de margem dentro da cidade, cómoda para iniciar miúdos na boia.",
+   "en": "The town stretch of the Tua, between the Gomes weir and the Quinta do Choupim weir, is the local club's fishing concession and runs past the old bridge and the Dr. José Gama park. Bank fishing right in town, handy for starting children on float fishing."
+  },
+  "aviso": {
+   "pt": "Concessão do Clube de Caça e Pesca de Mirandela: licença especial diária (cerca de 5 € para não residentes); máx. 2 canas; proibido pescar de barco. Evite a praia fluvial na época balnear.",
+   "en": "Mirandela hunting and fishing club concession: daily permit (about 5 € for non-residents); max 2 rods; no fishing from boats. Avoid the river beach in bathing season."
+  },
+  "tags": {
+   "pt": [
+    "Família",
+    "Rio urbano",
+    "Ciprinídeos",
+    "Concessão"
+   ],
+   "en": [
+    "Family",
+    "Town river",
+    "Coarse fish",
+    "Concession"
+   ]
+  },
+  "quality": 3,
+  "lat": 41.4849,
+  "lng": -7.1849,
+  "inland": true,
+  "sources": [
+   "https://www.visitmirandela.com/cmmirandela/uploads/writer_file/document/717/resum_regul_rio_tua_206.pdf",
+   "https://www.cm-mirandela.pt/pages/750",
+   "https://www.cm-mirandela.pt/pages/1801?news_id=1959",
+   "https://www.jf-mirandela.pt/autarquia/noticias/140-pista_de_pesca_desportiva"
+  ],
+  "n_sources": 4,
+  "notes": "Licenças: Clube de Caça e Pesca de Mirandela, Bairro do Fundo de Fomento da Habitação, bloco 14, cave esq. (todos os dias 8h–22h, segundo o resumo do regulamento). Pesca suspensa em 2019 por poluição e retomada em junho de 2020 (edital municipal); pista de pesca desportiva em obra em 2022. Preços do resumo podem estar desatualizados. Coordenada: Ponte Velha."
+ },
+ {
+  "id": "albufeira-touvedo-entre-ambos-os-rios",
+  "name": "Albufeira de Touvedo — Entre Ambos-os-Rios",
+  "region": "Norte",
+  "location": {
+   "pt": "Entre Ambos-os-Rios, Ponte da Barca",
+   "en": "Entre Ambos-os-Rios, Ponte da Barca"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Truta de 1 de março a 31 de julho; barbo, boga e escalo fora do defeso de primavera",
+   "en": "Trout 1 March to 31 July; barbel, boga and chub outside the spring closed season"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Truta-de-rio, barbo, boga, escalo",
+   "en": "Brown trout, barbel, boga, chub"
+  },
+  "tecnica": {
+   "pt": "Boia e fundo para ciprinídeos; amostra ou minhoca para truta na cauda da albufeira",
+   "en": "Float and ledger for coarse fish; lure or worm for trout at the head of the reservoir"
+  },
+  "desc": {
+   "pt": "Albufeira estreita no rio Lima entre o Alto Lindoso e a barragem de Touvedo, com as duas margens concessionadas pelas câmaras de Ponte da Barca e de Arcos de Valdevez. Entre Ambos-os-Rios fica a meio do troço da margem esquerda, que vai da ponte de Paradamonte até perto da barragem.",
+   "en": "A narrow reservoir on the river Lima between Alto Lindoso and the Touvedo dam, with both banks held as concessions by the Ponte da Barca and Arcos de Valdevez councils. Entre Ambos-os-Rios sits midway along the left-bank stretch, which runs from the Paradamonte bridge to just above the dam."
+  },
+  "aviso": {
+   "pt": "Ambas as margens exigem licença especial diária da respetiva câmara (margem direita: 1 € para não residentes, venda na Fluvivez); pesca do nascer ao pôr do sol. Confirme o edital em vigor.",
+   "en": "Both banks need a daily permit from the relevant council (right bank: 1 € for non-residents, sold at Fluvivez); fishing sunrise to sunset. Check the current edital."
+  },
+  "tags": {
+   "pt": [
+    "Albufeira",
+    "Truta",
+    "Rio Lima",
+    "Concessão"
+   ],
+   "en": [
+    "Reservoir",
+    "Trout",
+    "River Lima",
+    "Concession"
+   ]
+  },
+  "quality": 3,
+  "lat": 41.8189,
+  "lng": -8.3104,
+  "inland": true,
+  "sources": [
+   "https://www.cmav.pt/cmarcos/uploads/writer_file/document/1057/Resum-regul-Albufeira-Touvedo-225-2016SET05.pdf",
+   "https://www.icnf.pt/api/file/doc/299b838c8bef43b4",
+   "https://trutaseserras.blogspot.com/2011/02/rios-e-ribeiras-dentro-do-parque.html"
+  ],
+  "n_sources": 3,
+  "notes": "Margem esquerda: concessão CM Ponte da Barca, da ponte de Paradamonte até 250 m a montante da barragem (~9,5 km), alvará de 10 anos — data não confirmada, pode estar a terminar. Margem direita: CM Arcos de Valdevez (resumo 2016): truta mín. 19 cm, 10/dia; barbo 20 cm; boga/escalo 10 cm; máx. 55 licenças/dia; venda na Fluvivez (Lamela/Casares, dias úteis). Espécies exóticas capturadas não podem ser devolvidas. Coordenada: aldeia de Entre Ambos-os-Rios."
+ },
+ {
+  "id": "douro-crestuma-melres",
+  "name": "Albufeira de Crestuma — Melres",
+  "region": "Norte",
+  "location": {
+   "pt": "Melres, Gondomar",
+   "en": "Melres, Gondomar"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Ano inteiro; barbo em defeso de 16 de março a 14 de junho",
+   "en": "Year-round; barbel closed 16 March to 14 June"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Barbo, carpa, boga",
+   "en": "Barbel, carp, boga"
+  },
+  "tecnica": {
+   "pt": "Feeder e boia a partir do cais; fundo com milho para carpa",
+   "en": "Feeder and float from the quay; bottom fishing with sweetcorn for carp"
+  },
+  "desc": {
+   "pt": "O cais de Melres, na albufeira de Crestuma-Lever, é palco habitual de provas de feeder e de concursos livres onde o barbo domina as capturas. As margens com boa profundidade também guardam carpas grandes, mas os melhores pesqueiros enchem cedo ao fim de semana.",
+   "en": "The Melres quay on the Crestuma-Lever reservoir regularly hosts feeder matches and open contests where barbel make up most of the catch. The deep banks also hold big carp, but the best pegs fill up early at weekends."
+  },
+  "aviso": {
+   "pt": "Águas interiores: licença de pesca do ICNF obrigatória; devolução da carpa permitida em albufeiras. Não pesque junto à rampa quando houver barcos a manobrar.",
+   "en": "Inland waters: ICNF fishing licence required; carp may be released in reservoirs. Keep clear of the slipway when boats are launching."
+  },
+  "tags": {
+   "pt": [
+    "Feeder",
+    "Barbo",
+    "Carpa",
+    "Perto do Porto"
+   ],
+   "en": [
+    "Feeder",
+    "Barbel",
+    "Carp",
+    "Near Porto"
+   ]
+  },
+  "quality": 4,
+  "lat": 41.0712,
+  "lng": -8.4064,
+  "inland": true,
+  "sources": [
+   "https://arnpd.pt/abrePDF.php?file=calendarioRioPDF.pdf&folder=calendarios",
+   "https://clubeedp.pt/pesca-e-magusto-juntam-participantes-em-melres/",
+   "http://ultimatecarper.blogspot.com/2011/02/o-rio-douro.html"
+  ],
+  "n_sources": 3,
+  "notes": "Calendário ARNPD 2026: fase de apuramento de clubes feeder/Norte em 'Barragem Crest/Lever - Melres' (9–10 maio). Clube EDP organiza concurso livre em Melres (14 nov 2026). A montante da barragem de Crestuma (águas interiores, não aplica a regra marítima do estuário). Coordenada: rampa do Cais de Melres."
+ },
+ {
+  "id": "lagos-do-sabor-moncorvo",
+  "name": "Lagos do Sabor — Torre de Moncorvo",
+  "region": "Norte",
+  "location": {
+   "pt": "Felgar, Torre de Moncorvo",
+   "en": "Felgar, Torre de Moncorvo"
+  },
+  "bgClass": "spot-bg--porto",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial",
+   "embarcacao"
+  ],
+  "levelKey": "experiente",
+  "season": {
+   "pt": "Ano inteiro; achigã com período de defeso na primavera (confirmar no calendário ICNF)",
+   "en": "Year-round; largemouth bass has a spring closed season (check the ICNF calendar)"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Achigã, lúcio-perca",
+   "en": "Largemouth bass, zander"
+  },
+  "tecnica": {
+   "pt": "Spinning e pesca com vinis a partir de barco ou caiaque; margem nas enseadas",
+   "en": "Spinning and soft plastics from a boat or kayak; bank fishing in the coves"
+  },
+  "desc": {
+   "pt": "A albufeira do Baixo Sabor tornou-se uma referência do achigã em Portugal e recebeu campeonatos do mundo de pesca embarcada e em caiaque. A água é extensa e encaixada no vale, por isso um barco ou caiaque com sonda faz toda a diferença para encontrar o peixe.",
+   "en": "The Baixo Sabor reservoir has become one of Portugal's top bass waters and has hosted world championships from boats and kayaks. The water is vast and set deep in the valley, so a boat or kayak with a sounder makes all the difference in finding fish."
+  },
+  "aviso": {
+   "pt": "Licença de águas interiores obrigatória; o lúcio-perca não pode ser devolvido à água. A GNR fiscaliza a navegação e a pesca na albufeira desde 2025.",
+   "en": "Inland fishing licence required; zander may not be returned to the water. GNR has patrolled boating and fishing on the reservoir since 2025."
+  },
+  "tags": {
+   "pt": [
+    "Achigã",
+    "Caiaque",
+    "Barco",
+    "Competição"
+   ],
+   "en": [
+    "Bass",
+    "Kayak",
+    "Boat",
+    "Competition venue"
+   ]
+  },
+  "quality": 5,
+  "lat": 41.2394,
+  "lng": -6.9775,
+  "inland": true,
+  "sources": [
+   "https://www.jornalnordeste.com/noticia/pesca-desportiva-tem-impacto-na-economia-de-torre-de-moncorvo",
+   "https://www.mdb.pt/noticia/lagos-do-sabor-palco-do-primeiro-campeonato-do-mundo-de-pesca-em-caiaque",
+   "https://www.alleangeln.de/gewaesser/albufeira-da-barragem-do-beixo-sabor",
+   "https://observador.pt/2025/05/09/lagos-do-sabor-passam-a-ser-fiscalizados-pela-gnr-com-recurso-a-embarcacao/"
+  ],
+  "n_sources": 4,
+  "notes": "Coordenada do plano de água segundo a ficha alleangeln (troço de jusante, perto de Felgar) — não foi possível verificar uma rampa concreta no OSM; a Estação Náutica dos Lagos do Sabor (AMBS) lista um cais/rampa em Torre de Moncorvo. Calendário ARNPD 2026: achigã embarcado (12–13 set) e pesca em caiaque (13–14 jun) nos Lagos do Sabor. Navegação sujeita às regras da albufeira — confirmar com a Câmara de Torre de Moncorvo."
+ },
+ {
+  "id": "pateira-de-fermentelos",
+  "name": "Pateira de Fermentelos — Óis da Ribeira",
+  "region": "Centro",
+  "location": {
+   "pt": "Óis da Ribeira, Águeda",
+   "en": "Óis da Ribeira, Águeda"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Todo o ano; dias calmos e sem vento rendem mais",
+   "en": "Year-round; calm, windless days fish best"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Carpa, pimpão, tainha",
+   "en": "Carp, goldfish (pimpão), grey mullet"
+  },
+  "tecnica": {
+   "pt": "Bóia e pesca à francesa, feeder e carpfishing a partir da margem",
+   "en": "Float and pole fishing, feeder and carp fishing from the bank"
+  },
+  "desc": {
+   "pt": "Esta lagoa natural entre Águeda e Oliveira do Bairro tem margens acessíveis junto ao parque de merendas de Óis da Ribeira e águas paradas boas para carpa e pimpão. Leve isco de engodo (larva, minhoca, milho) e conte com alguma ondulação quando sopra vento.",
+   "en": "This natural lagoon between Águeda and Oliveira do Bairro has easy banks by the Óis da Ribeira picnic park and still water suited to carp and goldfish. Bring groundbait and maggots, worms or corn, and expect some chop when the wind picks up."
+  },
+  "aviso": {
+   "pt": "Pesca lúdica em águas interiores exige licença (ICNF). Em albufeiras pode devolver achigã e carpa; é proibido devolver lúcio-perca, siluro, peixe-gato, perca-sol e alburno. Zona húmida sensível: não pisar caniçais.",
+   "en": "Recreational inland fishing requires an ICNF inland-waters licence. In reservoirs you may release bass and carp; returning zander, wels catfish, black bullhead, pumpkinseed and bleak is prohibited. Sensitive wetland: keep off the reed beds."
+  },
+  "tags": {
+   "pt": [
+    "lagoa",
+    "carpa",
+    "família",
+    "margem fácil"
+   ],
+   "en": [
+    "lagoon",
+    "carp",
+    "family",
+    "easy bank"
+   ]
+  },
+  "quality": 4,
+  "lat": 40.5706,
+  "lng": -8.5072,
+  "inland": true,
+  "sources": [
+   "https://www.e-konomista.pt/pateira-de-fermentelos-agueda/",
+   "https://www.pesca-pt.com/pesqueiro.php?id=723",
+   "https://lucaspesca.blogspot.com/2011/12/pesca-pateira-de-fermentelos.html"
+  ],
+  "n_sources": 3,
+  "notes": "Licença de águas interiores (ICNF). Acesso por estrada até ao Parque de Lazer de Óis da Ribeira (OSM marca ponto de pesca em 40.5706,-8.5072). Pesca profissional também é permitida na Pateira (Portaria 1080/99) — ter atenção a redes."
+ },
+ {
+  "id": "albufeira-do-cabril",
+  "name": "Albufeira do Cabril — Pedrógão Grande",
+  "region": "Centro",
+  "location": {
+   "pt": "Vale de Góis, Pedrógão Grande",
+   "en": "Vale de Góis, Pedrógão Grande"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial",
+   "embarcacao"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Maio a outubro para o achigã (época das provas)",
+   "en": "May to October for bass (competition season)"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Achigã, barbo, carpa, boga",
+   "en": "Largemouth bass, barbel, carp, Iberian nase (boga)"
+  },
+  "tecnica": {
+   "pt": "Amostras e vinil ao achigã (margem ou barco); fundo e bóia para barbo e carpa",
+   "en": "Lures and soft plastics for bass (bank or boat); bottom and float rigs for barbel and carp"
+  },
+  "desc": {
+   "pt": "Albufeira funda e encaixada no Zêzere que recebe provas do Campeonato Nacional de Achigã Embarcado e de circuitos regionais, com rampa de barcos junto à praia fluvial do Cabril. Da margem pescam-se barbo, carpa e boga; as margens são íngremes, por isso escolha bem o sítio.",
+   "en": "A deep, steep-sided Zêzere reservoir that hosts national boat-bass championship rounds and regional circuits, with a boat ramp next to the Cabril river beach. Barbel, carp and nase are taken from the bank; the shores are steep, so pick your spot carefully."
+  },
+  "aviso": {
+   "pt": "Pesca lúdica em águas interiores exige licença (ICNF). Em albufeiras pode devolver achigã e carpa; é proibido devolver lúcio-perca, siluro, peixe-gato, perca-sol e alburno. Não pescar na zona balnear da praia fluvial durante a época balnear.",
+   "en": "Recreational inland fishing requires an ICNF inland-waters licence. In reservoirs you may release bass and carp; returning zander, wels catfish, black bullhead, pumpkinseed and bleak is prohibited. Do not fish in the river-beach bathing area during the bathing season."
+  },
+  "tags": {
+   "pt": [
+    "achigã",
+    "albufeira",
+    "barco",
+    "Zêzere"
+   ],
+   "en": [
+    "bass",
+    "reservoir",
+    "boat",
+    "Zêzere"
+   ]
+  },
+  "quality": 4,
+  "lat": 39.9212,
+  "lng": -8.1327,
+  "inland": true,
+  "sources": [
+   "https://aquapolis.com.pt/praia-fluvial-do-cabril-pedrogao-grande/",
+   "https://mediotejo.net/serta-acolhe-campeonato-nacional-de-pesca-ao-achiga/",
+   "https://www.e-konomista.pt/achiga-challenge-2-circuito-pesca-aldeias-do-xisto/"
+  ],
+  "n_sources": 3,
+  "notes": "Licença de águas interiores; embarcada exige licença com modalidade de embarcação. Rampa do Clube Náutico de Pedrógão Grande junto à praia fluvial (≈3 km de Pedrógão Grande, perto da N2). Outro ponto de lançamento usado em provas: Vau (margem de Pedrógão Pequeno, Sertã). As provas são sem morte."
+ },
+ {
+  "id": "rio-tejo-constancia",
+  "name": "Rio Tejo — Constância",
+  "region": "Centro",
+  "location": {
+   "pt": "Constância, Santarém",
+   "en": "Constância, Santarém"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Todo o ano, respeitando os defesos de cada espécie",
+   "en": "Year-round, observing each species' closed season"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Barbo, boga, achigã, siluro",
+   "en": "Barbel, Iberian nase, largemouth bass, wels catfish"
+  },
+  "tecnica": {
+   "pt": "Bóia com minhoca ou larva na margem; amostras ao achigã junto a pontes e estruturas submersas",
+   "en": "Float with worm or maggot from the bank; lures for bass near bridges and submerged structure"
+  },
+  "desc": {
+   "pt": "No encontro do Zêzere com o Tejo, as margens de Constância e o troço até Almourol e Tancos dão barbo e boga à bóia e achigã junto a pilares e estruturas. O siluro, espécie invasora, também entra e já motivou provas de controlo em Tancos.",
+   "en": "Where the Zêzere meets the Tejo, the Constância banks and the stretch down to Almourol and Tancos give barbel and nase on the float, and bass around bridge piers and structure. Invasive wels catfish are also caught and have been the target of control competitions at Tancos."
+  },
+  "aviso": {
+   "pt": "Pesca lúdica em águas interiores exige licença (ICNF). Em albufeiras pode devolver achigã e carpa; é proibido devolver lúcio-perca, siluro, peixe-gato, perca-sol e alburno. O troço Constância/Barquinha é zona de pesca profissional: a lúdica é permitida, mas não se pode visar sável, savelha, lampreia nem enguia.",
+   "en": "Recreational inland fishing requires an ICNF inland-waters licence. In reservoirs you may release bass and carp; returning zander, wels catfish, black bullhead, pumpkinseed and bleak is prohibited. The Constância/Barquinha stretch is a professional fishing zone: recreational fishing is allowed, but shad, lamprey and eel must not be targeted."
+  },
+  "tags": {
+   "pt": [
+    "Tejo",
+    "Zêzere",
+    "barbo",
+    "siluro"
+   ],
+   "en": [
+    "Tejo",
+    "Zêzere",
+    "barbel",
+    "catfish"
+   ]
+  },
+  "quality": 3,
+  "lat": 39.4745,
+  "lng": -8.3368,
+  "inland": true,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=191",
+   "https://pescador.com.pt/questao/melhores-locais-para-pescar-achiga-no-rio-tejo",
+   "https://mediotejo.net/concurso-de-pesca-desportiva-combate-o-invasor-siluro-em-tancos/"
+  ],
+  "n_sources": 3,
+  "notes": "Licença de águas interiores (ICNF). Acesso pela marginal ribeirinha de Constância; Almourol/Tancos fica ~4 km a jusante (pesca-pt id 82: boga, barbo, fataça). Há praia fluvial — evitar a zona balnear no verão. Siluro capturado não pode ser devolvido."
+ },
+ {
+  "id": "rio-mondego-coimbra-choupalinho",
+  "name": "Rio Mondego — Coimbra (Choupalinho)",
+  "region": "Centro",
+  "location": {
+   "pt": "Santa Clara, Coimbra",
+   "en": "Santa Clara, Coimbra"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Todo o ano, com caudal estável",
+   "en": "Year-round, when the flow is stable"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Barbo, boga, ruivaco, escalo",
+   "en": "Barbel, Iberian nase, ruivaco, chub (escalo)"
+  },
+  "tecnica": {
+   "pt": "Bóia e pesca à inglesa ou à francesa com milho e larva",
+   "en": "Float, waggler or pole fishing with corn and maggots"
+  },
+  "desc": {
+   "pt": "Pista de pesca de margem em pleno centro de Coimbra, na margem esquerda junto ao Parque do Choupalinho, com cerca de 30 pesqueiros usados em provas. Barbo e boga são o prato forte; vá com engodo leve e evite os dias de descargas da barragem, quando a corrente sobe.",
+   "en": "A bank-fishing course right in central Coimbra, on the left bank by Choupalinho Park, with around 30 pegs used for competitions. Barbel and nase are the mainstay; bring light groundbait and avoid days of dam releases, when the current rises."
+  },
+  "aviso": {
+   "pt": "Pesca lúdica em águas interiores exige licença (ICNF). Durante provas a pista fica reservada aos concorrentes.",
+   "en": "Recreational inland fishing requires an ICNF licence. The course is reserved for competitors during events."
+  },
+  "tags": {
+   "pt": [
+    "cidade",
+    "barbo",
+    "pista de pesca",
+    "acesso fácil"
+   ],
+   "en": [
+    "city",
+    "barbel",
+    "match course",
+    "easy access"
+   ]
+  },
+  "quality": 4,
+  "lat": 40.2003,
+  "lng": -8.4288,
+  "inland": true,
+  "sources": [
+   "https://www.fppd.pt/locais-de-pesca-agua-doce/",
+   "https://www.pesca-pt.com/pesqueiro.php?id=323"
+  ],
+  "n_sources": 2,
+  "notes": "Licença de águas interiores. Estacionamento e acesso a pé pelo Parque do Choupalinho/Av. Inês de Castro. FPPD lista a pista como gerida pelo ICNF. Outros pontos no mesmo troço: Torres do Mondego (pesca-pt id 140: barbos, escalos, bogas). Penacova (a montante) é concessão com licença especial — não incluída."
+ },
+ {
+  "id": "albufeira-idanha-marechal-carmona",
+  "name": "Barragem da Idanha (Marechal Carmona)",
+  "region": "Centro",
+  "location": {
+   "pt": "Idanha-a-Nova, Castelo Branco",
+   "en": "Idanha-a-Nova, Castelo Branco"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Todo o ano (várias provas ao longo do ano)",
+   "en": "Year-round (several competitions throughout the year)"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Carpa, achigã, barbo, boga",
+   "en": "Carp, largemouth bass, barbel, Iberian nase"
+  },
+  "tecnica": {
+   "pt": "Fundo e feeder à carpa; amostras ao achigã junto às margens com pedra e vegetação",
+   "en": "Bottom and feeder rigs for carp; lures for bass along rocky, weedy margins"
+  },
+  "desc": {
+   "pt": "Albufeira do rio Pônsul a poucos quilómetros de Idanha-a-Nova, abrigada do vento e conhecida pelas provas de pesca desportiva. A margem junto à praia fluvial e ao parque de campismo é o acesso mais cómodo para carpa e achigã.",
+   "en": "A reservoir on the Pônsul river a few kilometres from Idanha-a-Nova, sheltered from the wind and known for angling competitions. The bank near the river beach and campsite is the easiest access for carp and bass."
+  },
+  "aviso": {
+   "pt": "Pesca lúdica em águas interiores exige licença (ICNF). Em albufeiras pode devolver achigã e carpa; é proibido devolver lúcio-perca, siluro, peixe-gato, perca-sol e alburno. No verão, evitar a zona balnear da praia fluvial.",
+   "en": "Recreational inland fishing requires an ICNF inland-waters licence. In reservoirs you may release bass and carp; returning zander, wels catfish, black bullhead, pumpkinseed and bleak is prohibited. In summer, keep clear of the river-beach bathing area."
+  },
+  "tags": {
+   "pt": [
+    "albufeira",
+    "carpa",
+    "achigã",
+    "campismo"
+   ],
+   "en": [
+    "reservoir",
+    "carp",
+    "bass",
+    "camping"
+   ]
+  },
+  "quality": 4,
+  "lat": 39.9762,
+  "lng": -7.1807,
+  "inland": true,
+  "sources": [
+   "https://www.fishsurfing.com/pt/map/idanha-marechal-carmona-1114119580/",
+   "https://www.praiafluvial.pt/barragem-da-idanha/"
+  ],
+  "n_sources": 2,
+  "notes": "Licença de águas interiores (ICNF). Parque de Campismo Municipal com bungalows e restaurante perto da albufeira. Em época de Boom Festival a zona fica muito concorrida. Profundidade máx. ~44 m."
+ },
+ {
+  "id": "sao-martinho-do-porto-tunel",
+  "name": "São Martinho do Porto — Pesqueiro do Túnel",
+  "region": "Centro",
+  "location": {
+   "pt": "São Martinho do Porto, Alcobaça",
+   "en": "São Martinho do Porto, Alcobaça"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "rocha",
+  "tipos": [
+   "rocha",
+   "costeira"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Todo o ano com mar calmo; confirmar maré e ondulação antes de ir",
+   "en": "Year-round in calm seas; check tide and swell before going"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Sargo, robalo, carapau",
+   "en": "White seabream, European seabass, horse mackerel"
+  },
+  "tecnica": {
+   "pt": "Bóia com chumbadinha em fundo misto; camarão, sardinha ou amêijoa",
+   "en": "Float with a small sinker over mixed ground; shrimp, sardine or clam"
+  },
+  "desc": {
+   "pt": "Pelo túnel do Morro de Santo António chega-se às rochas viradas ao mar, à entrada da concha de São Martinho, onde o sargo e o robalo entram à bóia sobre fundo misto. Dentro da baía a água é mais parada e dá sobretudo carapau.",
+   "en": "The tunnel through Morro de Santo António leads to sea-facing rocks at the mouth of São Martinho's shell-shaped bay, where seabream and bass take float baits over mixed ground. Inside the bay the water is calmer and mostly yields horse mackerel."
+  },
+  "aviso": {
+   "pt": "Lúdica apeada (DGRM): até 3 canas e 9 anzóis; proibida nas praias concessionadas durante a época balnear. Robalo mín. 36 cm, registo na app RecFishing.",
+   "en": "Shore recreational fishing (DGRM): up to 3 rods and 9 hooks; banned on lifeguarded concession beaches in bathing season. Seabass min. 36 cm, log it in the RecFishing app."
+  },
+  "tags": {
+   "pt": [
+    "rocha",
+    "sargo",
+    "bóia",
+    "baía"
+   ],
+   "en": [
+    "rocks",
+    "seabream",
+    "float",
+    "bay"
+   ]
+  },
+  "quality": 4,
+  "lat": 39.5118,
+  "lng": -9.1421,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=97",
+   "https://www.pesqueiro.pt/index.php?topic=24000.0"
+  ],
+  "n_sources": 2,
+  "notes": "Acesso a pé pelo túnel (OSM: 'Pesqueiro do Túnel'). Rocha molhada e escorregadia; com ondulação o mar varre a plataforma — não ir com mar grosso. Alternativa de sargos para quem conhece: Lagides/Bico do Corvo (estrada de Salir para Foz do Arelho, acesso 4x4 + 200 m a pé, descidas com corda)."
+ },
+ {
+  "id": "santa-cruz-torres-vedras",
+  "name": "Santa Cruz — praias e rochas",
+  "region": "Centro",
+  "location": {
+   "pt": "Santa Cruz, Torres Vedras",
+   "en": "Santa Cruz, Torres Vedras"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira",
+   "rocha"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Todo o ano com mar calmo; meia-maré a subir na areia, vazante nas rochas; outono bom para spinning ao robalo",
+   "en": "Year-round in calm seas; rising mid-tide on the sand, ebb on the rocks; autumn is good for bass spinning"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Robalo, sargo, dourada, carapau",
+   "en": "European seabass, white seabream, gilthead seabream, horse mackerel"
+  },
+  "tecnica": {
+   "pt": "Surfcasting na areia, bóia leve com engodo de sardinha, spinning nas rochas",
+   "en": "Surfcasting on the sand, light float with sardine groundbait, spinning off the rocks"
+  },
+  "desc": {
+   "pt": "Areais intercalados com lajes rochosas entre a Praia da Vigia e a Praia Azul, com robalo, sargo e dourada ao surfcasting e à bóia. Rende mais com mar calmo; perto das rochas as laminárias prendem o aparelho.",
+   "en": "Sandy beaches broken by rock shelves between Praia da Vigia and Praia Azul, giving bass, seabream and gilthead to surfcasting and float rigs. It fishes best in calm seas; near the rocks, kelp snags tackle."
+  },
+  "aviso": {
+   "pt": "Lúdica apeada (DGRM): até 3 canas e 9 anzóis; proibida nas praias concessionadas (Santa Cruz, Formosa, Azul) durante a época balnear. Robalo mín. 36 cm, registo na app RecFishing.",
+   "en": "Shore recreational fishing (DGRM): up to 3 rods and 9 hooks; banned on concession beaches (Santa Cruz, Formosa, Azul) during bathing season. Seabass min. 36 cm, log it in the RecFishing app."
+  },
+  "tags": {
+   "pt": [
+    "surfcasting",
+    "robalo",
+    "Oeste",
+    "spinning"
+   ],
+   "en": [
+    "surfcasting",
+    "seabass",
+    "West coast",
+    "spinning"
+   ]
+  },
+  "quality": 4,
+  "lat": 39.136,
+  "lng": -9.3827,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=105",
+   "https://www.pesqueiro.pt/index.php?topic=33416.0",
+   "http://pescadecana.blogspot.com/2012/11/praia-azul.html"
+  ],
+  "n_sources": 3,
+  "notes": "Acesso fácil de carro. Praia da Vigia (a norte) não é concessionada — opção no verão. Praia Azul (sul) tem lajes com caneiros, abrigadas da nortada. Laminárias tornam Porto Novo quase impraticável. ~17 km de Porto Dinheiro."
+ },
+ {
+  "id": "nazare-praia-surfcasting",
+  "name": "Nazaré — Praia da Nazaré (sul)",
+  "region": "Centro",
+  "location": {
+   "pt": "Pederneira, Nazaré",
+   "en": "Pederneira, Nazaré"
+  },
+  "bgClass": "spot-bg--centro",
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Fora da época balnear, com mar calmo",
+   "en": "Outside the bathing season, in calm seas"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Sargo, dourada, robalo",
+   "en": "White seabream, gilthead seabream, European seabass"
+  },
+  "tecnica": {
+   "pt": "Surfcasting de fundo com casulo, sardinha ou camarão",
+   "en": "Bottom surfcasting with lugworm, sardine or shrimp"
+  },
+  "desc": {
+   "pt": "O areal sul da Praia da Nazaré, a caminho do porto, é usado para surfcasting ao sargo e à dourada, longe da rebentação gigante da Praia do Norte. Pesque fora da época balnear e mantenha distância das estruturas do porto.",
+   "en": "The southern end of Praia da Nazaré, towards the harbour, is used for surfcasting for seabream and gilthead, away from Praia do Norte's giant surf. Fish outside the bathing season and keep clear of the harbour structures."
+  },
+  "aviso": {
+   "pt": "Lúdica apeada (DGRM): até 3 canas e 9 anzóis; a ≥100 m do porto; proibida na praia concessionada durante a época balnear. Robalo mín. 36 cm, registo na app RecFishing.",
+   "en": "Shore recreational fishing (DGRM): up to 3 rods and 9 hooks; at least 100 m from the harbour; banned on the concession beach during bathing season. Seabass min. 36 cm, log it in the RecFishing app."
+  },
+  "tags": {
+   "pt": [
+    "surfcasting",
+    "praia",
+    "sargo",
+    "inverno"
+   ],
+   "en": [
+    "surfcasting",
+    "beach",
+    "seabream",
+    "winter"
+   ]
+  },
+  "quality": 3,
+  "lat": 39.5969,
+  "lng": -9.0716,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=534",
+   "https://www.apesca.pt/surfcasting-nazare-por-luis-moreno/",
+   "https://pescador.com.pt/questao/melhores-pesqueiros-na-nazare"
+  ],
+  "n_sources": 3,
+  "notes": "Fontes fracas em detalhe (fichas e vídeo); qualidade 3. Ponto ~1 km a norte do molhe do porto. Não incluir molhes nem Praia do Norte. Mar perigoso com ondulação de oeste — consultar a Capitania da Nazaré."
+ },
+ {
+  "id": "ericeira-praia-do-sul",
+  "name": "Ericeira — Praia do Sul",
+  "region": "Lisboa",
+  "location": {
+   "pt": "Ericeira, Mafra",
+   "en": "Ericeira, Mafra"
+  },
+  "bgClass": "spot-bg--lisboa",
+  "tipoKey": "rocha",
+  "tipos": [
+   "rocha",
+   "costeira"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Com mar calmo; carapau sobretudo em noites calmas de verão",
+   "en": "In calm seas; horse mackerel mainly on calm summer nights"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Sargo, robalo, tainha, salema, carapau, dourada",
+   "en": "White seabream, sea bass, mullet, salema, horse mackerel, gilthead bream"
+  },
+  "tecnica": {
+   "pt": "Bóia com engodo de sardinha, chumbadinha e spinning",
+   "en": "Float fishing with sardine groundbait, light ledgering and spinning"
+  },
+  "desc": {
+   "pt": "Praia central da Ericeira com lajes e caneiros entre rocha e areia, onde se pesca à bóia junto à poça natural do lado norte e nos canais a sul do pequeno pontão. É um pesqueiro de acesso fácil, bom para começar, mas convém escolher dias de mar calmo e água limpa.",
+   "en": "Ericeira's central beach mixes rock ledges, gullies and sand; float fishing works by the natural pool on the north side and in the channels just south of the small jetty. Access is easy, which makes it a good starter spot, but pick days with a calm sea and clear water."
+  },
+  "aviso": {
+   "pt": "Lúdica marítima: até 3 canas e 9 anzóis; manter ≥100 m do porto; proibido pescar na zona balnear concessionada durante a época balnear (DGRM). Robalo mín. 36 cm e registo na app RecFishing.",
+   "en": "Marine recreational rules: up to 3 rods and 9 hooks; stay ≥100 m from the harbour; no fishing in the licensed bathing area during the bathing season (DGRM). Sea bass min. 36 cm, log it in the RecFishing app."
+  },
+  "tags": {
+   "pt": [
+    "sargo",
+    "bóia",
+    "acesso fácil",
+    "Ericeira"
+   ],
+   "en": [
+    "seabream",
+    "float fishing",
+    "easy access",
+    "Ericeira"
+   ]
+  },
+  "quality": 4,
+  "lat": 38.9576,
+  "lng": -9.4155,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=64",
+   "http://pescadecana.blogspot.com/2012/04/praia-do-sul-ericeira.html",
+   "https://pescador.com.pt/questao/quais-os-melhores-pesqueiros-na-ericeira"
+  ],
+  "n_sources": 3,
+  "notes": "Licença de pesca lúdica marítima (DGRM). Acesso pela estrada a sul, com descida junto ao hotel Vila Galé. Outros pesqueiros citados na vila: Praia dos Pescadores e molhes (respeitar os 100 m do porto). Ericeira é Reserva Mundial de Surf: evitar zonas com surfistas."
+ },
+ {
+  "id": "azenhas-do-mar-rochas",
+  "name": "Azenhas do Mar — rochas",
+  "region": "Lisboa",
+  "location": {
+   "pt": "Azenhas do Mar, Colares (Sintra)",
+   "en": "Azenhas do Mar, Colares (Sintra)"
+  },
+  "bgClass": "spot-bg--lisboa",
+  "tipoKey": "rocha",
+  "tipos": [
+   "rocha"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Dias calmos, com ondulação abaixo de 1,5 m",
+   "en": "Calm days with swell under 1.5 m"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Dourada, sargo, robalo, baila",
+   "en": "Gilthead bream, white seabream, sea bass, spotted sea bass"
+  },
+  "tecnica": {
+   "pt": "Bóia com engodo de sardinha; fundo nas zonas de areia",
+   "en": "Float fishing with sardine groundbait; bottom fishing over sand patches"
+  },
+  "desc": {
+   "pt": "Pesqueiros de rocha de acesso simples junto à aldeia, a poucos minutos a pé do estacionamento, entre as Azenhas e a Praia das Maçãs; o Bico da Messe enche quando chegam as douradas. A costa assoreia com facilidade e é muito exposta a norte e oeste, por isso só vale a pena com mar manso.",
+   "en": "Easy-to-reach rock marks a few minutes' walk from the village car park, between Azenhas and Praia das Maçãs; Bico da Messe gets crowded when the bream arrive. The shore silts up easily and is fully exposed to northerly and westerly swell, so only go on gentle days."
+  },
+  "aviso": {
+   "pt": "Sem pesca na zona balnear concessionada durante a época balnear (DGRM). A Capitania de Cascais proíbe o acesso a zonas costeiras sinalizadas com aviso laranja ou superior de agitação marítima (Edital 5/2021).",
+   "en": "No fishing in the licensed bathing area during the bathing season (DGRM). The Cascais harbour authority bans access to signposted coastal areas under an orange or higher sea-state warning (Edital 5/2021)."
+  },
+  "tags": {
+   "pt": [
+    "dourada",
+    "rocha",
+    "Sintra",
+    "mar calmo"
+   ],
+   "en": [
+    "gilthead bream",
+    "rock",
+    "Sintra",
+    "calm sea"
+   ]
+  },
+  "quality": 4,
+  "lat": 38.8404,
+  "lng": -9.4628,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=218",
+   "https://www.segredosdepesca.com/blog/pesca-nas-azenhas-do-mar",
+   "http://cronicasdeumpescador-rubenroche.blogspot.com/2013/06/o-litoral-sintrense.html"
+  ],
+  "n_sources": 3,
+  "notes": "Licença lúdica marítima. Estacionar na aldeia (junto ao restaurante) e descer a pé. Rochas escorregadias; vento norte forte obriga a mudar de pesqueiro."
+ },
+ {
+  "id": "cascais-boca-do-inferno",
+  "name": "Cascais — Boca do Inferno",
+  "region": "Lisboa",
+  "location": {
+   "pt": "Boca do Inferno, Cascais",
+   "en": "Boca do Inferno, Cascais"
+  },
+  "bgClass": "spot-bg--lisboa",
+  "tipoKey": "rocha",
+  "tipos": [
+   "rocha"
+  ],
+  "levelKey": "experiente",
+  "season": {
+   "pt": "Todo o ano, exceto com mar agitado; lulas sobretudo à noite",
+   "en": "Year-round except in rough seas; squid mainly at night"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Sargo, robalo, safia, cavala, carapau, peixe-agulha, lula, choco",
+   "en": "White seabream, sea bass, two-banded bream, mackerel, horse mackerel, garfish, squid, cuttlefish"
+  },
+  "tecnica": {
+   "pt": "Bóia, rockfishing e amostras; toneira para lulas à noite",
+   "en": "Float fishing, rockfishing and lures; squid jigs at night"
+  },
+  "desc": {
+   "pt": "Plataformas de rocha alta junto à famosa gruta, a oeste da vila, com água funda perto da margem para cavalas, carapaus e agulhas no verão e sargos e robalos à bóia. É o pesqueiro mais conhecido desta costa, mas também um dos mais traiçoeiros: só com mar muito calmo e longe da beira.",
+   "en": "High rock platforms around the famous sea cave west of town, with deep water close in for summer mackerel, horse mackerel and garfish, plus seabream and bass on the float. It is the best-known mark on this coast and one of the most treacherous: fish it only on a flat sea and well back from the edge."
+  },
+  "aviso": {
+   "pt": "Dois pescadores morreram aqui em 2020, arrastados pelo mar. Acesso proibido a zonas costeiras sinalizadas com aviso laranja de agitação marítima; a baía e a marina de Cascais estão interditas à pesca lúdica (Capitania de Cascais, Edital 5/2021).",
+   "en": "Two anglers died here in 2020, swept off by the sea. Access to signposted coastal areas is banned under an orange sea-state warning; Cascais bay and marina are closed to recreational fishing (Cascais harbour authority, Edital 5/2021)."
+  },
+  "tags": {
+   "pt": [
+    "rocha alta",
+    "cavala",
+    "lulas",
+    "risco"
+   ],
+   "en": [
+    "high rocks",
+    "mackerel",
+    "squid",
+    "hazard"
+   ]
+  },
+  "quality": 4,
+  "lat": 38.6911,
+  "lng": -9.4308,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=1271",
+   "http://cronicasdeumpescador-rubenroche.blogspot.com/2020/11/pesca-na-boca-do-inferno.html",
+   "http://ospescas.blogspot.com/2011/02/boca-do-inferno-cascais.html",
+   "https://www.dn.pt/arquivo/diario-de-noticias/comportamento-de-risco-seis-anos-a-espera-de-um-despacho-que-proiba-pesca-nas-arribas-11805540.html",
+   "https://www.amn.pt/DGAM/Capitanias/Cascais/Lists/Documentos_AMN/Edital%20N.%C2%BA%205_2021-NORMAS%20DE%20PERMAN%C3%8ANCIA%20NA%20AREA%20DE%20JURISDI%C3%87%C3%83O.pdf"
+  ],
+  "n_sources": 5,
+  "notes": "Licença lúdica marítima. Estacionamento na Av. Rei Humberto II; zona muito turística de dia. Colete e calçado antiderrapante recomendados. ~5 km a leste do spot existente Cabo Raso. AMN (2020): sem despacho, não há zonas interditas à pesca apeada nas arribas."
+ },
+ {
+  "id": "fonte-da-telha-surfcasting",
+  "name": "Fonte da Telha — surfcasting",
+  "region": "Lisboa",
+  "location": {
+   "pt": "Fonte da Telha, Costa da Caparica (Almada)",
+   "en": "Fonte da Telha, Costa da Caparica (Almada)"
+  },
+  "bgClass": "spot-bg--lisboa",
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Dias de mar calmo e pouca corrente lateral",
+   "en": "Calm days with little longshore drift"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Robalo, sargo, tainha, baila, peixe-aranha",
+   "en": "Sea bass, white seabream, mullet, spotted sea bass, weever"
+  },
+  "tecnica": {
+   "pt": "Surfcasting ao fundo com casulo ou sardinha",
+   "en": "Surfcasting on the bottom with lugworm or sardine"
+  },
+  "desc": {
+   "pt": "Areal extenso ao fundo da arriba fóssil, usado em provas de pesca de fundo, com acesso fácil e bares de praia. A praia é baixa e a corrente puxa para sul, por isso rende mais em dias calmos, lançando longe ou na maré que deixar chegar aos fundões.",
+   "en": "A long beach below the fossil cliff, used for bottom-fishing competitions, with easy access and beach bars. It is shallow and the current runs south, so it fishes best on calm days, casting long or on the tide that lets you reach the deeper troughs."
+  },
+  "aviso": {
+   "pt": "Sem pesca na zona balnear concessionada durante a época balnear (DGRM). O peixe-aranha tem espinhos venenosos: manusear com alicate.",
+   "en": "No fishing in the licensed bathing area during the bathing season (DGRM). Weever fish have venomous spines: handle with pliers."
+  },
+  "tags": {
+   "pt": [
+    "surfcasting",
+    "areia",
+    "robalo",
+    "acesso fácil"
+   ],
+   "en": [
+    "surfcasting",
+    "sand",
+    "sea bass",
+    "easy access"
+   ]
+  },
+  "quality": 3,
+  "lat": 38.5719,
+  "lng": -9.1961,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=181",
+   "https://www.fppd.pt/locais-de-pesca-mar/",
+   "https://www.pesqueiro.pt/index.php?topic=29935.0"
+  ],
+  "n_sources": 3,
+  "notes": "Licença lúdica marítima. ~6 km a norte do spot existente Lagoa de Albufeira (fóruns consideram a Lagoa mais funda e produtiva). Estacionamento no topo do bairro da Fonte da Telha."
+ },
+ {
+  "id": "troia-praia-atlantica",
+  "name": "Tróia — Praia Atlântica (Soltróia)",
+  "region": "Alentejo",
+  "location": {
+   "pt": "Soltróia, Carvalhal (Grândola)",
+   "en": "Soltróia, Carvalhal (Grândola)"
+  },
+  "bgClass": "spot-bg--alentejo",
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Sem época definida nas fontes; testar marés (enchente é a preferida de vários pescadores)",
+   "en": "No set season in sources; try different tides (many anglers prefer the flood)"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Robalo, dourada, sargo, safio, linguado",
+   "en": "Sea bass, gilthead bream, white seabream, conger, sole"
+  },
+  "tecnica": {
+   "pt": "Surfcasting com minhoca, lingueirão, tita ou tiras de choco",
+   "en": "Surfcasting with worms, razor clam, tita worm or cuttlefish strips"
+  },
+  "desc": {
+   "pt": "Longo areal virado ao Atlântico na península de Tróia, de fundo limpo e com muito espaço, palco de provas de pesca desportiva. Robalos e douradas são os alvos principais; a correnteza pode ser forte e o rendimento muda muito ao longo da praia.",
+   "en": "A long, snag-free Atlantic beach on the Tróia peninsula with plenty of room, used for sport-fishing competitions. Bass and gilthead bream are the main targets; currents can be strong and results change a lot along the beach."
+  },
+  "aviso": {
+   "pt": "Sem pesca na zona balnear concessionada durante a época balnear e ≥100 m de portos e marinas (DGRM). Na ponta norte, junto à marina e ao cais dos ferries, há relatos de proibição; no lado do estuário aplicam-se as regras do Sado (2 canas, 3 anzóis).",
+   "en": "No fishing in the licensed bathing area during the bathing season and stay ≥100 m from ports and marinas (DGRM). At the northern tip, by the marina and ferry pier, anglers report a ban; on the estuary side Sado rules apply (2 rods, 3 hooks)."
+  },
+  "tags": {
+   "pt": [
+    "surfcasting",
+    "dourada",
+    "robalo",
+    "praia extensa"
+   ],
+   "en": [
+    "surfcasting",
+    "gilthead bream",
+    "sea bass",
+    "long beach"
+   ]
+  },
+  "quality": 4,
+  "lat": 38.4592,
+  "lng": -8.8731,
+  "inland": false,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=41",
+   "https://www.pesqueiro.pt/index.php?topic=18038.0",
+   "https://www.fppd.pt/locais-de-pesca-mar/"
+  ],
+  "n_sources": 3,
+  "notes": "Licença lúdica marítima. Acesso de carro pela N253-1 ou ferry Setúbal–Tróia (passageiros) e caminhada. ~10 km a norte do spot existente Comporta/Pego. Lixo nas linhas e baixios em certas marés (fórum)."
+ },
+ {
+  "id": "barragem-pego-do-altar",
+  "name": "Barragem do Pego do Altar",
+  "region": "Alentejo",
+  "location": {
+   "pt": "Santa Susana, Alcácer do Sal",
+   "en": "Santa Susana, Alcácer do Sal"
+  },
+  "bgClass": "spot-bg--alentejo",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "No pico do verão, madrugada e fim de tarde (barbo encosta à margem)",
+   "en": "In high summer, dawn and dusk (barbel come close to the bank)"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Achigã, carpa, barbo",
+   "en": "Largemouth bass, carp, barbel"
+  },
+  "tecnica": {
+   "pt": "Spinning com amostras pequenas; bóia com minhoca ou asticot; engodo leve com milho",
+   "en": "Spinning with small lures; float fishing with worm or maggots; light corn groundbait"
+  },
+  "desc": {
+   "pt": "Albufeira da ribeira de Alcáçovas, cercada de montado, conhecida pela pesca desportiva ao achigã e pelos barbos junto às margens fundas. Pesca-se a partir das margens perto do paredão e do lado de Santa Susana, onde no verão há motas de água.",
+   "en": "A reservoir on the Alcáçovas stream ringed by cork-oak woodland, known for largemouth bass and for barbel along the deeper banks. Fish from the banks near the dam wall and on the Santa Susana side, which gets jet skis in summer."
+  },
+  "aviso": {
+   "pt": "Licença de pesca em águas interiores (ICNF). Achigã e carpa podem ser devolvidos; perca-sol e alburno (ablete) não podem voltar à água.",
+   "en": "Inland fishing licence required (ICNF). Bass and carp may be released; pumpkinseed and bleak must not be returned to the water."
+  },
+  "tags": {
+   "pt": [
+    "achigã",
+    "barbo",
+    "montado",
+    "margem"
+   ],
+   "en": [
+    "bass",
+    "barbel",
+    "cork oaks",
+    "bank fishing"
+   ]
+  },
+  "quality": 4,
+  "lat": 38.437,
+  "lng": -8.3707,
+  "inland": true,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=365",
+   "https://www.pesqueiro.pt/index.php?topic=30549.0",
+   "https://www.timeout.pt/lisboa/pt/coisas-para-fazer/barragem-do-pego-do-altar",
+   "https://www.fishsurfing.com/pt/map/pego-do-altar-614678772/"
+  ],
+  "n_sources": 4,
+  "notes": "Licença ICNF de águas interiores. Acesso por Santa Susana (EN5/N253). Zona isolada, sem serviços perto; levar água. Fórum de 2021 — confirmar nível da água."
+ },
+ {
+  "id": "barragem-vale-do-gaio",
+  "name": "Barragem de Vale do Gaio (Trigo de Morais)",
+  "region": "Alentejo",
+  "location": {
+   "pt": "Torrão, Alcácer do Sal",
+   "en": "Torrão, Alcácer do Sal"
+  },
+  "bgClass": "spot-bg--alentejo",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Sem época definida nas fontes",
+   "en": "No set season in sources"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Achigã, carpa, barbo",
+   "en": "Largemouth bass, carp, barbel"
+  },
+  "tecnica": {
+   "pt": "Fundo com minhoca ou milho para carpa e barbo; amostras para achigã",
+   "en": "Bottom fishing with worm or corn for carp and barbel; lures for bass"
+  },
+  "desc": {
+   "pt": "Albufeira do rio Xarrama, perto do Torrão, onde a pesca e os banhos são permitidos e há alojamento junto à barragem. Carpa e barbo pescam-se ao fundo e o achigã com amostra, nas margens do braço que sobe para o Torrão.",
+   "en": "A reservoir on the Xarrama river near Torrão where fishing and swimming are allowed, with lodging by the dam. Carp and barbel are taken on the bottom and bass on lures along the arm that runs up towards Torrão."
+  },
+  "aviso": {
+   "pt": "Licença de pesca em águas interiores (ICNF). Achigã e carpa podem ser devolvidos em albufeiras.",
+   "en": "Inland fishing licence required (ICNF). Bass and carp may be released in reservoirs."
+  },
+  "tags": {
+   "pt": [
+    "carpa",
+    "achigã",
+    "Alentejo interior",
+    "sossego"
+   ],
+   "en": [
+    "carp",
+    "bass",
+    "inland Alentejo",
+    "quiet"
+   ]
+  },
+  "quality": 3,
+  "lat": 38.2917,
+  "lng": -8.2401,
+  "inland": true,
+  "sources": [
+   "https://www.pesca-pt.com/pesqueiro.php?id=157",
+   "https://www.allaboutportugal.pt/en/alcacer-do-sal/natural-resources/barragem-de-vale-de-gaio-barragem-de-trigo-de-morais",
+   "https://www.pesqueiro.pt/index.php?topic=30549.0",
+   "http://omelhoralentejodomundo.blogspot.com/2019/07/barragem-trigo-de-morais-torrao.html"
+  ],
+  "n_sources": 4,
+  "notes": "Licença ICNF. Ponto no braço do Torrão (ficha pesca-pt). ~20 km do Pego do Altar."
+ },
+ {
+  "id": "barragem-de-odivelas",
+  "name": "Barragem de Odivelas",
+  "region": "Alentejo",
+  "location": {
+   "pt": "Odivelas, Ferreira do Alentejo / Alvito",
+   "en": "Odivelas, Ferreira do Alentejo / Alvito"
+  },
+  "bgClass": "spot-bg--alentejo",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Sem época definida nas fontes; provas internacionais de feeder em julho",
+   "en": "No set season in sources; international feeder events held in July"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Carpa, barbo, pimpão, ablete, achigã, lúcio-perca, peixe-gato",
+   "en": "Carp, barbel, Prussian carp, bleak, largemouth bass, zander, catfish"
+  },
+  "tecnica": {
+   "pt": "Feeder e fundo com asticot, milho, minhoca ou trigo; amostras para predadores",
+   "en": "Feeder and bottom fishing with maggots, corn, worm or wheat; lures for predators"
+  },
+  "desc": {
+   "pt": "Uma das maiores albufeiras do Baixo Alentejo e palco de campeonatos do mundo de feeder, com água limpa sem corrente e margens de terra. Pesca-se a 20–60 m da margem, consoante a profundidade, e há rampa, cais e praia fluvial.",
+   "en": "One of the largest reservoirs in Baixo Alentejo and a venue for world feeder championships, with clear, still water and earth banks. Anglers fish 20–60 m out depending on depth, and there is a slipway, a jetty and a river beach."
+  },
+  "aviso": {
+   "pt": "Licença de pesca em águas interiores (ICNF). Proibido devolver lúcio-perca, peixe-gato e alburno (ablete) à água.",
+   "en": "Inland fishing licence required (ICNF). Zander, catfish and bleak must not be returned to the water."
+  },
+  "tags": {
+   "pt": [
+    "feeder",
+    "carpa",
+    "provas",
+    "margem"
+   ],
+   "en": [
+    "feeder",
+    "carp",
+    "competitions",
+    "bank fishing"
+   ]
+  },
+  "quality": 4,
+  "lat": 38.1974,
+  "lng": -8.1037,
+  "inland": true,
+  "sources": [
+   "https://www.fppd.pt/wp-content/uploads/2025/04/Brochura_Free-Style-Feeder-Portugues.pdf",
+   "https://knoow.net/terraselocais/locaisdeportugal/barragem-de-odivelas-ferreira-do-alentejo/"
+  ],
+  "n_sources": 2,
+  "notes": "Licença ICNF. Acesso pela N2: 3 km a norte de Odivelas, placa à direita. Parque de campismo perto (EN257). Natação e vela também permitidas."
+ },
+ {
+  "id": "barragem-do-caia",
+  "name": "Barragem do Caia",
+  "region": "Alentejo",
+  "location": {
+   "pt": "Campo Maior / Arronches / Elvas",
+   "en": "Campo Maior / Arronches / Elvas"
+  },
+  "bgClass": "spot-bg--alentejo",
+  "tipoKey": "fluvial",
+  "tipos": [
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Sem época definida nas fontes; respeitar os períodos de defeso do ICNF",
+   "en": "No set season in sources; observe ICNF closed periods"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Achigã, carpa, barbo, boga-do-guadiana, tenca, pimpão",
+   "en": "Largemouth bass, carp, barbel, Guadiana nase, tench, Prussian carp"
+  },
+  "tecnica": {
+   "pt": "Spinning ao achigã, carpfishing, feeder e bóia (à francesa ou bolonhesa)",
+   "en": "Spinning for bass, carp fishing, feeder and float (pole or bolognese)"
+  },
+  "desc": {
+   "pt": "Grande albufeira do Alto Alentejo, entre Campo Maior, Arronches e Elvas, onde se realizam convívios e provas de achigã a partir da margem. Há zonas com fundos e profundidades muito diferentes, e o carro é a forma prática de chegar aos vários pontos de pesca.",
+   "en": "A large Alto Alentejo reservoir between Campo Maior, Arronches and Elvas that hosts bank-fishing bass meets and competitions. Depths and bottoms vary a lot from zone to zone, and a car is the practical way to reach the different access points."
+  },
+  "aviso": {
+   "pt": "Licença de pesca em águas interiores (ICNF). Abastece água pública: proibido pescar nas zonas de proteção imediata das captações; barco ou kayak só onde a navegação é permitida. Proibido usar peixe como isco ou engodo.",
+   "en": "Inland fishing licence required (ICNF). Public water supply: no fishing in the immediate protection zones around intakes; boat or kayak only where navigation is allowed. Using fish as bait or groundbait is banned."
+  },
+  "tags": {
+   "pt": [
+    "achigã",
+    "carpa",
+    "Alto Alentejo",
+    "provas"
+   ],
+   "en": [
+    "bass",
+    "carp",
+    "Alto Alentejo",
+    "competitions"
+   ]
+  },
+  "quality": 4,
+  "lat": 39.0256,
+  "lng": -7.1482,
+  "inland": true,
+  "sources": [
+   "https://barragemdocaia.com/pesca/",
+   "https://radioelvas.com/2026/08/03/barragem-do-caia-reuniu-dezenas-de-pescadores-em-mais-uma-prova-do-circuito-master-bass-alentejo/",
+   "https://www.pesca-pt.com/pesqueiro.php?id=339"
+  ],
+  "n_sources": 3,
+  "notes": "Licença ICNF. Ponto na margem nascente (zona da Contenda, ficha pesca-pt). Lúcio só com relatos esporádicos — não listado como alvo."
+ },
+ {
+  "id": "alqueva-amieira-marina",
+  "name": "Alqueva — Amieira (marina)",
+  "region": "Alentejo",
+  "location": {
+   "pt": "Amieira, Portel",
+   "en": "Amieira, Portel"
+  },
+  "bgClass": "spot-bg--alentejo",
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao",
+   "fluvial"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Final de março a maio e outubro–novembro; no verão, superfície ao amanhecer",
+   "en": "Late March to May and October–November; in summer, topwater at dawn"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Achigã, lúcio-perca, carpa, barbo",
+   "en": "Largemouth bass, zander, carp, barbel"
+  },
+  "tecnica": {
+   "pt": "Spinning de barco junto a árvores submersas; amostras de superfície no verão",
+   "en": "Boat spinning around submerged trees; topwater lures in summer"
+  },
+  "desc": {
+   "pt": "Base náutica no norte do Grande Lago, com aluguer de barcos e saídas de pesca com piloto, a dois passos dos braços do Álamo e do Lucefécit, ricos em estrutura submersa. O achigã é o alvo principal, com o lúcio-perca como captura ocasional.",
+   "en": "A boating base on the northern Grande Lago with boat hire and skippered fishing trips, close to the Álamo and Lucefécit arms with plenty of submerged cover. Largemouth bass is the main target, with zander an occasional bonus."
+  },
+  "aviso": {
+   "pt": "Licença de pesca em águas interiores (ICNF). O lúcio-perca não pode ser devolvido à água; o achigã pode ser devolvido em albufeiras.",
+   "en": "Inland fishing licence required (ICNF). Zander must not be returned to the water; bass may be released in reservoirs."
+  },
+  "tags": {
+   "pt": [
+    "achigã",
+    "barco",
+    "Grande Lago",
+    "guia"
+   ],
+   "en": [
+    "bass",
+    "boat",
+    "Grande Lago",
+    "guided"
+   ]
+  },
+  "quality": 5,
+  "lat": 38.2763,
+  "lng": -7.5335,
+  "inland": true,
+  "sources": [
+   "https://godiscoverportugal.com/leisure-activities-alqueva-lake-alentejo/",
+   "https://guiadepesca.es/pesca-embalse-alqueva",
+   "https://barrocal.pt/pt/all-activities/sport-fishing/"
+  ],
+  "n_sources": 3,
+  "notes": "Licença ICNF (a empresa da marina trata da licença). Barco de pesca com piloto até 3 pessoas: ~200–240 € meio dia, ~280–300 € dia inteiro, combustível à parte; kit de cana 5–20 €/dia (preços publicados, confirmar). ~20 km do spot existente Alqueva-Mourão."
+ },
+ {
+  "id": "tavira-quatro-aguas-barco",
+  "name": "Tavira — saídas de pesca (Quatro Águas)",
+  "location": {
+   "pt": "Quatro Águas, Tavira",
+   "en": "Quatro Águas, Tavira"
+  },
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Pesca de fundo todo o ano (boa aposta no inverno); tubarão de maio a setembro; dourado e marlins de agosto a outubro.",
+   "en": "Bottom fishing year-round (a good bet in winter); sharks May–September; mahi-mahi and marlin August–October."
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Dourada, pargo, dentão, besugo, choupa, cavala, peixe-porco; no verão, dourado e marlim-branco",
+   "en": "Gilthead bream, red porgy, dentex, axillary bream, black bream, chub mackerel, grey triggerfish; mahi-mahi and white marlin in summer"
+  },
+  "tecnica": {
+   "pt": "Pesca de fundo sobre recifes a 3–5 km da costa, com cana e isco do barco; corrico e isco vivo nas saídas de alto mar.",
+   "en": "Bottom fishing over reefs 3–5 km offshore with the boat's rods and bait; trolling and live bait on offshore trips."
+  },
+  "desc": {
+   "pt": "Os barcos de pesca de Tavira saem da doca das Quatro Águas e de Cabanas, cruzam a barra da Ria Formosa e fundeiam sobre recifes a poucas milhas da costa. As saídas de fundo de 2,5 a 5 horas são uma boa estreia para famílias; de agosto a outubro também há saídas de alto mar ao dourado e aos marlins.",
+   "en": "Tavira's fishing boats leave from the Quatro Águas dock and from Cabanas, cross the Ria Formosa inlet and anchor over reefs a few miles out. The 2.5–5 hour bottom-fishing trips are an easy first outing for families, and from August to October there are also offshore trips for mahi-mahi and marlin."
+  },
+  "aviso": {
+   "pt": "Nem todos os operadores incluem a licença de pesca embarcada: confirme antes de reservar. Não se pesca na barra nem nos canais; o atum-rabilho só pode ser retido em pesca-turística autorizada.",
+   "en": "Not every operator includes the boat fishing licence, so check before booking. No fishing in the inlet or channels; bluefin tuna may only be kept on licensed fishing-tourism trips."
+  },
+  "tags": {
+   "pt": [
+    "Saída de barco",
+    "Famílias",
+    "Pesca de fundo",
+    "Big game"
+   ],
+   "en": [
+    "Boat trip",
+    "Families",
+    "Bottom fishing",
+    "Big game"
+   ]
+  },
+  "quality": 4,
+  "lat": 37.1181,
+  "lng": -7.631,
+  "sources": [
+   "https://fishingbooker.com/charters/view/43825",
+   "https://flyplay.tourdesk.com/en/Tour/Item/1273/14/Sport_Fishing_-_Tavira"
+  ],
+  "notes": "Aquasares 'Mariola' (FishingBooker): sai da Marina Ginásio Clube Tavira, Estrada das 4 Águas; fundo 5 h às 07:30 desde ~US$224 (partilhado, 2 pax); tubarão 1 mai–30 set; game 1 ago–15 out; marlim 20 jul–31 out; licença NÃO incluída (comprar antes). Passeios Ria Formosa (Tourdesk): 2,5 h a 2–3 milhas da costa, sai de Av. Ria Formosa 40, Cabanas de Tavira, equipamento e isco incluídos, preço não publicado. Outros em Tavira no FishingBooker (Aqua Fishing, Mandrake, Lusopeche) desde ~US$448–1,064. 'Red snapper' do operador traduzido como pargo. Ponto = Doca das Três Marias/Quatro Águas (Nominatim). ~5 km de 'ilha-de-tavira' mas tipo diferente (barco vs surfcasting).",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 2
+ },
+ {
+  "id": "olhao-marina-big-game",
+  "name": "Olhão — big game e fundo (marina)",
+  "location": {
+   "pt": "Marina de Olhão, Olhão",
+   "en": "Olhão Marina, Olhão"
+  },
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Marlim-azul de junho a outubro; marlim-branco e saídas de fundo de agosto a outubro.",
+   "en": "Blue marlin June–October; white marlin and bottom-fishing trips August–October."
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Marlim-branco, marlim-azul, dourado, bonito, atum-voador, dentão; no fundo, dourada e robalo",
+   "en": "White marlin, blue marlin, mahi-mahi, skipjack, albacore, dentex; on the bottom, gilthead bream and sea bass"
+  },
+  "tecnica": {
+   "pt": "Corrico ao largo com amostras e isco vivo em saídas de 7 a 12 horas; pesca de fundo nas saídas de meio dia.",
+   "en": "Offshore trolling with lures and live bait on 7–12 hour trips; bottom fishing on half-day trips."
+  },
+  "desc": {
+   "pt": "Da marina de Olhão saem alguns dos barcos de big game mais procurados do Algarve, rumo ao largo por onde passam marlins e dourados entre o início do verão e outubro. Também há saídas de meio dia ao fundo, mas o preço é por barco (até 6 pessoas), por isso compensa juntar o grupo.",
+   "en": "Some of the Algarve's best-known big-game boats sail from Olhão Marina, heading offshore where marlin and mahi-mahi pass from early summer to October. Half-day bottom-fishing trips run too, but prices are per boat (up to 6 people), so it pays to fill it."
+  },
+  "aviso": {
+   "pt": "Marlins: captura e devolução, com registo na app RecFishing (2026). O atum-rabilho só pode ser retido em pesca-turística autorizada. Não se pesca na barra da Ria Formosa.",
+   "en": "Marlin are catch-and-release and must be logged in the RecFishing app (2026). Bluefin tuna may only be kept on licensed fishing-tourism trips. No fishing in the Ria Formosa inlet."
+  },
+  "tags": {
+   "pt": [
+    "Big game",
+    "Marlim",
+    "Barco privado",
+    "Alto mar"
+   ],
+   "en": [
+    "Big game",
+    "Marlin",
+    "Private charter",
+    "Offshore"
+   ]
+  },
+  "quality": 4,
+  "lat": 37.0226,
+  "lng": -7.8454,
+  "sources": [
+   "https://fishingbooker.com/charters/view/9553",
+   "https://captainexperiences.com/locations/portugal/olhao"
+  ],
+  "notes": "Ocean Fun & Fishing (FishingBooker 9553): sai da marina de Olhão (Av. 5 de Outubro); licença incluída (24 h, levar documento); fundo/meio dia 5 h ~€1.100 por barco (6 ago–30 out); marlim-branco 7 h ~US$1,567 (3 ago–31 out); marlim-azul 12 h ~€2.900 (15 jun–31 out). Tightlines (FishingBooker 4134, mesma plataforma): 8 h, 1 jul–1 out, licença incluída. Captain Experiences (outra plataforma): viagens em Olhão de ~US$1,200 (meio dia, fundo) a US$2,400. Operadores também vendem rabilho e garoupa — não listados. ATENÇÃO: a marina fica a ~3 km da Culatra; se 'ilha-da-culatra (barco)' for tipo embarcação, rever sobreposição (este é big game/alto mar).",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 2
+ },
+ {
+  "id": "sagres-baleeira-barco",
+  "name": "Sagres — pesca de fundo (Porto da Baleeira)",
+  "location": {
+   "pt": "Porto da Baleeira, Sagres (Vila do Bispo)",
+   "en": "Baleeira harbour, Sagres (Vila do Bispo)"
+  },
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Todo o ano, conforme o estado do mar (indicativa).",
+   "en": "Year-round, depending on sea conditions (indicative)."
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Pargo, sargo, dourada, besugo, choupa",
+   "en": "Red porgy, white bream, gilthead bream, axillary bream, black bream"
+  },
+  "tecnica": {
+   "pt": "Pesca de fundo com canas e isco do barco, em saídas de 2,5 a 3 horas de manhã ou à tarde.",
+   "en": "Bottom fishing with the boat's rods and bait on 2.5–3 hour morning or afternoon trips."
+  },
+  "desc": {
+   "pt": "No porto de pesca da Baleeira, junto à vila, há saídas curtas de pesca de fundo aos pesqueiros ao largo de Sagres, com equipamento, isco e instrutor incluídos. É uma boa estreia para famílias e uma alternativa segura às arribas da Ponta de Sagres, que pedem experiência.",
+   "en": "From Baleeira fishing harbour, right by the village, short bottom-fishing trips head to the grounds off Sagres with tackle, bait and an instructor included. It is an easy first trip for families and a safer alternative to the Sagres cliffs, which call for experience."
+  },
+  "aviso": {
+   "pt": "No Parque Natural do Sudoeste Alentejano e Costa Vicentina, a pesca em barco próprio só é permitida de quinta a segunda (e feriados) fora de 1 jun–30 set; os barcos marítimo-turísticos estão isentos (Portaria 14/2014, art. 9.º). Alguns operadores cobram a licença à parte (~5 €).",
+   "en": "In the Southwest Alentejo and Vicentine Coast Natural Park, fishing from your own boat is only allowed Thursday to Monday (and public holidays) outside 1 Jun–30 Sep; licensed tour boats are exempt (Portaria 14/2014, art. 9). Some operators charge the licence separately (~€5)."
+  },
+  "tags": {
+   "pt": [
+    "Família",
+    "Saída curta",
+    "Pesca de fundo",
+    "Costa Vicentina"
+   ],
+   "en": [
+    "Family",
+    "Short trip",
+    "Bottom fishing",
+    "Vicentine Coast"
+   ]
+  },
+  "quality": 4,
+  "lat": 37.0095,
+  "lng": -8.9269,
+  "sources": [
+   "https://www.yumping.com/en/deals/fishing/faro/departure-bottom-fishing-port-of-baleeira-2h30--o81180",
+   "https://www.algarvefun.com/listing-category/reef-fishing/",
+   "https://fishingbooker.com/blog/?p=50305"
+  ],
+  "notes": "Cape Cruiser (Yumping): Porto da Baleeira, saídas 07:30 e 14:00, 2,5–3 h, 2–8 pax (mín. 4 para sair), idade mín. 3, desde 60 € (voucher), licença +5 €, instrutor, canas e isco incluídos; espécies 'sea bream and snapper'. Algarvefun: reef fishing a partir de Sagres, 'breams, pargos, golden breams, besugos'. FishingBooker blog: Sagres com pesca de fundo e billfish (garoupa referida — não listada). Regra PNSACV verificada no texto da Portaria 14/2014 art. 9.º n.º 2–3 (https://ccdr-lvt.pt/wp-content/uploads/2024/12/Portaria-14-2014.pdf): restrição qui–seg não se aplica 1 jun–30 set e não se aplica a embarcações marítimo-turísticas. Ponto = Porto de Pesca de Baleeira (Nominatim). Distinto de 'sagres-ponta' (rocha).",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 3
+ },
+ {
+  "id": "carvoeiro-rochas",
+  "name": "Carvoeiro — rochas da praia",
+  "location": {
+   "pt": "Carvoeiro, Lagoa",
+   "en": "Carvoeiro, Lagoa"
+  },
+  "tipoKey": "rocha",
+  "tipos": [
+   "rocha"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Outubro (dourada e robalo) e janeiro (dourada e safio); na primavera e no verão, só com mar calmo.",
+   "en": "October (gilthead bream and sea bass) and January (gilthead bream and conger); in spring and summer only on calm days."
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Dourada, sargo, robalo, safio",
+   "en": "Gilthead bream, white bream, sea bass, conger eel"
+  },
+  "tecnica": {
+   "pt": "Pesca ao fundo e spinning a partir das lajes de rocha.",
+   "en": "Bottom fishing and spinning from the rock ledges."
+  },
+  "desc": {
+   "pt": "As lajes de rocha nas pontas da Praia do Carvoeiro dão acesso a fundos mistos onde a dourada e o robalo entram no outono e o safio aparece no inverno. Pesque com mar calmo e mantenha distância da base das arribas, que são instáveis.",
+   "en": "The rock ledges at either end of Carvoeiro beach reach mixed ground where gilthead bream and sea bass move in during autumn and conger turns up in winter. Fish on calm days and keep clear of the foot of the cliffs, which are unstable."
+  },
+  "aviso": {
+   "pt": "Praia concessionada: na época balnear não se pesca na zona de banhos. A leste do farol de Alfanzina começa o Parque Natural Marinho Pedra do Valado, onde a pesca lúdica precisa de autorização do ICNF (RCM 1/2024).",
+   "en": "Supervised beach: no fishing in the bathing area during the bathing season. East of the Alfanzina lighthouse begins the Pedra do Valado Marine Park, where recreational fishing needs ICNF authorisation (RCM 1/2024)."
+  },
+  "tags": {
+   "pt": [
+    "Rocha",
+    "Outono",
+    "Inverno",
+    "Spinning"
+   ],
+   "en": [
+    "Rocks",
+    "Autumn",
+    "Winter",
+    "Spinning"
+   ]
+  },
+  "quality": 3,
+  "lat": 37.096,
+  "lng": -8.472,
+  "sources": [
+   "https://fishingbooker.com/blog/?p=50305",
+   "https://algarvefun.com/algarve-tips/when-where-to-go-fishing-in-the-algarve/"
+  ],
+  "notes": "FishingBooker blog (calendário): janeiro dourada e safio nas rochas da Praia do Carvoeiro; outubro dourada e robalo; fundo e spinning. Algarvefun: arribas de Carvoeiro, melhor com mar calmo (primavera/verão), peixe pequeno (sargos). Limite oeste do PNM Pedra do Valado = Farol de Alfanzina, 37°5'9\"N 8°26'33\"W (RCM 1/2024, https://www.dgrm.pt/documents/20143/121101/RCMpedravalado.pdf/2eddcca6-d43f-f390-4ddd-210ed34b08b8); Carvoeiro (8°28'W) fica fora. Licença apeada DGRM. Ponto = Praia do Carvoeiro (Nominatim); rochas nas pontas da praia. ~5 km de 'ferragudo-molhe-ponta-do-altar'.",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 2
+ },
+ {
+  "id": "fuzeta-praia-mar",
+  "name": "Fuzeta — praia da ilha (lado mar)",
+  "location": {
+   "pt": "Ilha da Fuzeta, Olhão",
+   "en": "Fuzeta island, Olhão"
+  },
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Melhor no inverno, com mar mexido, e fora da época balnear.",
+   "en": "Best in winter with a lively sea, outside the bathing season."
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Dourada, robalo, safio",
+   "en": "Gilthead bream, sea bass, conger eel"
+  },
+  "tecnica": {
+   "pt": "Surfcasting e pesca ao fundo na praia; junto à barra, amostra ou corrico ao robalo.",
+   "en": "Surfcasting and bottom fishing from the beach; near the inlet, lures or trolling for sea bass."
+  },
+  "desc": {
+   "pt": "Do cais da Fuzeta atravessa-se a ria de barco até à ilha, cujo areal virado ao mar aberto já recebeu concursos internacionais de pesca de mar. Lance para a rebentação ao amanhecer ou ao fim do dia, com mar mexido, à procura de douradas e robalos.",
+   "en": "A short boat ride across the lagoon from Fuzeta quay takes you to the island, whose open-sea beach has hosted international sea-angling contests. Cast into the surf at dawn or dusk when the sea is up for gilthead bream and sea bass."
+  },
+  "aviso": {
+   "pt": "Ilha do Parque Natural da Ria Formosa: do lado da ria aplicam-se 2 canas e 3 anzóis. Praia concessionada: sem pesca na zona de banhos na época balnear. Confirme os horários do barco fora do verão.",
+   "en": "Island within the Ria Formosa Natural Park: on the lagoon side the limit is 2 rods and 3 hooks. Supervised beach: no fishing in the bathing area in season. Check boat times outside summer."
+  },
+  "tags": {
+   "pt": [
+    "Surfcasting",
+    "Ilha",
+    "Inverno",
+    "Ria Formosa"
+   ],
+   "en": [
+    "Surfcasting",
+    "Island",
+    "Winter",
+    "Ria Formosa"
+   ]
+  },
+  "quality": 4,
+  "lat": 37.0462,
+  "lng": -7.7384,
+  "sources": [
+   "https://algarvefun.com/algarve-tips/when-where-to-go-fishing-in-the-algarve/",
+   "https://postal.pt/nacional/fuseta-recebe-11o-concurso-internacional-de-pesca-desportiva-de-mar/",
+   "https://www.pesca-pt.com/pesqueiro.php?id=312"
+  ],
+  "notes": "Excluído no P2 por ter só pesca-pt; prova nova: algarvefun lista a Praia da Fuseta para pesca de praia (dourada e robalo, mar mexido/inverno) e o Postal (14/09/2016) noticia o 11.º Concurso Internacional de Pesca Desportiva de Mar na Ilha da Fuseta (Clube de Caça e Pesca Cavaquense). pesca-pt 312 (molhe: dourada, safio, fundo) e 301 (barra: robalo, corrico) contam como uma fonte. Ponto = Praia da Fuseta-Mar (Nominatim). Acesso: barco/táxi aquático a partir da Fuzeta. Distinto de 'ria-formosa' (pesca dentro da ria) e a ~7 km de 'ilha-de-tavira'.",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 3
+ },
+ {
+  "id": "falesia-rocha-baixinha",
+  "name": "Falésia — Rocha Baixinha (surfcasting)",
+  "location": {
+   "pt": "Praia da Falésia, Albufeira/Loulé",
+   "en": "Falésia beach, Albufeira/Loulé"
+  },
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Do outono à primavera, com alguma ondulação (indicativa).",
+   "en": "Autumn to spring, with some swell (indicative)."
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Robalo, dourada, sargo",
+   "en": "Sea bass, gilthead bream, white bream"
+  },
+  "tecnica": {
+   "pt": "Surfcasting com minhoca, coreana e sardinha, os iscos distribuídos no Mundial de 2025.",
+   "en": "Surfcasting with ragworm, Korean worm and sardine — the baits handed out at the 2025 World Championship."
+  },
+  "desc": {
+   "pt": "O longo areal entre Olhos de Água e Vilamoura foi um dos palcos do Campeonato do Mundo de Clubes de pesca de praia, em março de 2025. A zona da Rocha Baixinha, com arribas mais baixas, é a mais prática; vá fora da época balnear e de preferência com mar um pouco mexido.",
+   "en": "The long beach between Olhos de Água and Vilamoura was one of the venues of the Shore Angling World Club Championship in March 2025. The Rocha Baixinha end, where the cliffs drop away, is the most practical; go outside the bathing season, ideally with a bit of surf."
+  },
+  "aviso": {
+   "pt": "Praia concessionada: sem pesca na zona de banhos na época balnear. Mantenha pelo menos 100 m da marina de Vilamoura e não pesque junto ao sopé das arribas. Fica a leste do Parque Marinho Pedra do Valado, que termina na marina de Albufeira.",
+   "en": "Supervised beach: no fishing in the bathing area in season. Stay at least 100 m from Vilamoura marina and away from the foot of the cliffs. It lies east of the Pedra do Valado Marine Park, which ends at Albufeira marina."
+  },
+  "tags": {
+   "pt": [
+    "Surfcasting",
+    "Competições",
+    "Areal extenso",
+    "Inverno"
+   ],
+   "en": [
+    "Surfcasting",
+    "Competitions",
+    "Long beach",
+    "Winter"
+   ]
+  },
+  "quality": 4,
+  "lat": 37.0805,
+  "lng": -8.1495,
+  "sources": [
+   "https://postal.pt/algarve/portugal-conquista-2-o-lugar-no-mundial-de-pesca-de-mar-em-albufeira/",
+   "https://fips-m.org/upload/pdf/brochures/2025/WCh%20Shore%20Angling%20for%20Clubs%202024%20EN.pdf",
+   "https://algarvefun.com/algarve-tips/when-where-to-go-fishing-in-the-algarve/"
+  ],
+  "notes": "existing.txt lista 'Olhos de Água/Falésia (Pedra do Valado)' como excluído — prova nova: (1) RCM 1/2024 fixa o limite leste do PNM Pedra do Valado na marina de Albufeira (8°15'40\"W); a Falésia (8°09'W) fica fora; (2) FIPS-M/FPPD e Postal (09/04/2025): 32.º Campeonato do Mundo de Clubes de Pesca de Mar de Praia, 22–28 mar 2025, setores Falésia/Rocha Baixinha, Salgados e Garrão; iscos: minhoca (wormslime), coreana, sardinha; captura e devolução; ~200 pescadores. A Câmara diz que Albufeira recebe provas de surfcasting todos os anos. Algarvefun cita as arribas da Falésia (mar calmo, sargos). Espécies = orientação geral algarvefun para praias do Algarve (dourada, robalo); lista oficial da prova é imagem ilegível. Ponto = Praia da Falésia (Nominatim), ~2,5 km da marina de Vilamoura. Licença apeada DGRM.",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 3
+ },
+ {
+  "id": "garrao-surfcasting",
+  "name": "Garrão — praia de surfcasting",
+  "location": {
+   "pt": "Praia do Garrão, Almancil (Loulé)",
+   "en": "Garrão beach, Almancil (Loulé)"
+  },
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Do outono à primavera, com alguma ondulação (indicativa).",
+   "en": "Autumn to spring, with some swell (indicative)."
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Robalo, dourada, sargo",
+   "en": "Sea bass, gilthead bream, white bream"
+  },
+  "tecnica": {
+   "pt": "Surfcasting na rebentação com minhoca, coreana ou sardinha.",
+   "en": "Surfcasting into the breakers with ragworm, Korean worm or sardine."
+  },
+  "desc": {
+   "pt": "No Garrão as arribas dão lugar a dunas e a um areal aberto que serviu de setor de prova no Mundial de Clubes de pesca de praia de 2025. É mais sossegado do que as praias de Albufeira, mas o acesso faz-se pelos passadiços, com alguma caminhada carregado de material.",
+   "en": "At Garrão the cliffs give way to dunes and an open beach that was a competition sector at the 2025 Shore Angling World Club Championship. It is quieter than the Albufeira beaches, but access is via boardwalks, with a walk carrying your gear."
+  },
+  "aviso": {
+   "pt": "Praia concessionada: sem pesca na zona de banhos na época balnear. Use só os acessos sinalizados: as dunas são frágeis.",
+   "en": "Supervised beach: no fishing in the bathing area in season. Use only the marked paths — the dunes are fragile."
+  },
+  "tags": {
+   "pt": [
+    "Surfcasting",
+    "Dunas",
+    "Competições",
+    "Sossegado"
+   ],
+   "en": [
+    "Surfcasting",
+    "Dunes",
+    "Competitions",
+    "Quiet"
+   ]
+  },
+  "quality": 3,
+  "lat": 37.0412,
+  "lng": -8.0528,
+  "sources": [
+   "https://fips-m.org/upload/pdf/brochures/2025/WCh%20Shore%20Angling%20for%20Clubs%202024%20EN.pdf",
+   "https://postal.pt/algarve/portugal-conquista-2-o-lugar-no-mundial-de-pesca-de-mar-em-albufeira/"
+  ],
+  "notes": "Setor 'Garrão Beach' do 32.º Mundial de Clubes de Pesca de Praia (22–28 mar 2025), confirmado pela brochura FIPS-M/FPPD e pelo Postal (09/04/2025). Espécies/época sem fonte específica para o Garrão (orientação geral). Ponto = Praia do Garrão (Nominatim). ~6,5 km da Praia de Faro e ~10 km da Falésia. Licença apeada DGRM. Spot mais fraco do lote (quality 3).",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 2
+ },
+ {
+  "id": "praia-de-faro-surfcasting",
+  "name": "Praia de Faro — surfcasting",
+  "location": {
+   "pt": "Ilha de Faro, Faro",
+   "en": "Faro Island, Faro"
+  },
+  "tipoKey": "costeira",
+  "tipos": [
+   "costeira"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Inverno e dias de mar mexido.",
+   "en": "Winter and days with a lively sea."
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Dourada, robalo",
+   "en": "Gilthead bream, sea bass"
+  },
+  "tecnica": {
+   "pt": "Surfcasting do lado do mar aberto.",
+   "en": "Surfcasting on the open-sea side."
+  },
+  "desc": {
+   "pt": "A Praia de Faro, ligada à cidade por uma ponte, é um dos areais da Ria Formosa onde os pescadores de cana aparecem quando o mar se agita no inverno, atrás de douradas e robalos. Fora do verão estaciona-se com facilidade e há quilómetros de praia para escolher onde lançar.",
+   "en": "Faro beach, linked to the city by a bridge, is one of the Ria Formosa sands where rod anglers show up when winter seas pick up, after gilthead bream and sea bass. Outside summer parking is easy and there are kilometres of beach to choose from."
+  },
+  "aviso": {
+   "pt": "A Polícia Marítima fiscaliza a licença de pesca nesta praia. Praia concessionada: sem pesca na zona de banhos na época balnear. Do lado da ria aplicam-se as regras da Ria Formosa (2 canas, 3 anzóis).",
+   "en": "The Maritime Police check fishing licences on this beach. Supervised beach: no fishing in the bathing area in season. On the lagoon side Ria Formosa rules apply (2 rods, 3 hooks)."
+  },
+  "tags": {
+   "pt": [
+    "Surfcasting",
+    "Inverno",
+    "Acesso fácil",
+    "Ria Formosa"
+   ],
+   "en": [
+    "Surfcasting",
+    "Winter",
+    "Easy access",
+    "Ria Formosa"
+   ]
+  },
+  "quality": 3,
+  "lat": 37.0031,
+  "lng": -7.986,
+  "sources": [
+   "https://algarvefun.com/algarve-tips/when-where-to-go-fishing-in-the-algarve/",
+   "https://postal.pt/nacional/policia-maritima-de-faro-intercepta-pescador-em-situacao-ilegal/"
+  ],
+  "notes": "Algarvefun lista a Praia de Faro entre as praias de pesca (melhor com mar mexido/inverno, dourada e robalo; proibido pescar onde há banhistas). Postal (28/12/2016): pescador lúdico de cana sem licença na Praia de Faro, cana apreendida — confirma uso por pescadores e fiscalização. Ponto = acesso central da Praia de Faro (terminal junto à Av. Nascente, Nominatim); o areal de mar fica a poucos metros a sul. Acesso por ponte de faixa única (estacionamento difícil no verão).",
+  "region": "Algarve",
+  "bgClass": "spot-bg--algarve",
+  "inland": false,
+  "n_sources": 2
+ },
+ {
+  "id": "madeira-machico",
+  "name": "Madeira — Machico",
+  "region": "Madeira",
+  "location": {
+   "pt": "Machico, Madeira",
+   "en": "Machico, Madeira"
+  },
+  "bgClass": "spot-bg--acores",
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao",
+   "costeira"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Todo o ano; primavera e outono são as épocas mais confortáveis",
+   "en": "Year-round; spring and autumn are the most comfortable seasons"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Sargo, bodião, bica, pargo, peixe-porco, garoupa",
+   "en": "White seabream, wrasse, common pandora, red porgy, grey triggerfish, grouper"
+  },
+  "tecnica": {
+   "pt": "Pesca de fundo de barco; bóia e fundo ligeiro na costa",
+   "en": "Bottom fishing from the boat; float and light ledgering from shore"
+  },
+  "desc": {
+   "pt": "A baía abrigada de Machico, a 10 minutos do aeroporto, é ponto de partida de saídas de pesca de fundo em barcos pequenos, à procura de pargo, bica e peixe-porco sobre fundos rochosos perto da costa. Em terra é um sítio calmo para principiantes apanharem sargo e bodião, mas as duas praias da baía obrigam a pescar longe das zonas de banho.",
+   "en": "Machico's sheltered bay, ten minutes from the airport, is a starting point for small-boat bottom-fishing trips targeting red porgy, pandora and triggerfish over rocky ground close to shore. From land it is a calm spot for beginners after seabream and wrasse, but the bay's two beaches mean you must keep well away from bathing areas."
+  },
+  "aviso": {
+   "pt": "Na Madeira é proibido pescar nas concessões balneares e a menos de 300 m de locais habituais de banho (Portaria 484/2016, JORAM). Licença lúdica no portal Simplifica. Charuteiro/írio acima de 10 kg e badejo abaixo de 2 kg não podem ser retidos.",
+   "en": "In Madeira, fishing is banned in beach concession waters and within 300 m of places normally used for bathing (Portaria 484/2016, JORAM). Recreational licence via the Simplifica portal. Amberjack over 10 kg and island grouper (badejo) under 2 kg may not be kept."
+  },
+  "tags": {
+   "pt": [
+    "Pesca de fundo",
+    "Barco",
+    "Principiantes",
+    "Madeira"
+   ],
+   "en": [
+    "Bottom fishing",
+    "Boat",
+    "Beginners",
+    "Madeira"
+   ]
+  },
+  "quality": 4,
+  "lat": 32.7179,
+  "lng": -16.7603,
+  "inland": false,
+  "sources": [
+   "https://fishingbooker.com/destinations/location/pt/MA/machico",
+   "https://catchaguide.com/destination/portugal/madeira",
+   "https://www.dnoticias.pt/2020/1/24/56778-vem-pescar-na-madeira-como-o-cristiano-ronaldo/",
+   "https://adrenalineadventures.pt/en/blog/fishing-madeira",
+   "https://gt-fishing.com/en/fishing-destinations/atlantik/angeln-madeira/",
+   "https://joram.madeira.gov.pt/joram/1serie/Ano%20de%202016/ISerie-199-2016-11-14sup.pdf"
+  ],
+  "n_sources": 5,
+  "notes": "Coordenadas: Marina de Machico (OSM/Photon; reverse Nominatim = rampa, Rua do Desembarcadouro). Barco: ODF – Ocean Dive & Fishing (28 ft, até 8 pax) parte de Machico, desde ~US$616/viagem privada (FishingBooker); Catch a Guide lista 'Bottom Fishing – Madeira' em Machico desde €96/pessoa. Confirmar se a licença está incluída. Costa: dnoticias (delegado de pesca do CD Mar e Serra) cita Machico entre os locais preferidos; adrenalineadventures diz abrigado e bom para principiantes (sargo, bodião). ATENÇÃO: Praia de Machico e Banda d'Além são zonas balneares — a regra dos 300 m (Portaria 484/2016) limita muito a pesca apeada dentro da baía; não indicar a praia/cais da praia como pesqueiro. Fica a ~3 km do Porto do Caniçal (spot existente madeira-canical), mas a oferta é diferente: aqui pesca de fundo em barcos pequenos/costa, no Caniçal big game."
+ },
+ {
+  "id": "madeira-camara-de-lobos",
+  "name": "Madeira — Câmara de Lobos",
+  "region": "Madeira",
+  "location": {
+   "pt": "Câmara de Lobos, Madeira",
+   "en": "Câmara de Lobos, Madeira"
+  },
+  "bgClass": "spot-bg--acores",
+  "tipoKey": "rocha",
+  "tipos": [
+   "rocha",
+   "costeira"
+  ],
+  "levelKey": "intermedio",
+  "season": {
+   "pt": "Todo o ano; melhor na primavera e no outono",
+   "en": "Year-round; best in spring and autumn"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Sargo-legítimo e outros sargos",
+   "en": "White seabream and other Diplodus breams"
+  },
+  "tecnica": {
+   "pt": "Bóia e fundo ligeiro nas plataformas rochosas e na entrada do porto",
+   "en": "Float and light ledgering from the rock platforms and the harbour entrance"
+  },
+  "desc": {
+   "pt": "A vila piscatória a oeste do Funchal tem várias plataformas de rocha e uma entrada de porto que os guias apontam como zona procurada para o sargo. É pesca de costa simples e perto de cafés e autocarros, mas em dias de ondulação de sul as rochas baixas ficam lavadas pelo mar.",
+   "en": "This fishing village west of Funchal has several rock platforms and a harbour mouth that guides single out as a popular place for seabream. It is easy shore fishing close to cafés and buses, but on days with a southerly swell the low rocks get washed by the sea."
+  },
+  "aviso": {
+   "pt": "Na Madeira é proibido pescar nas concessões balneares e a menos de 300 m de locais habituais de banho (Portaria 484/2016, JORAM). Licença lúdica no portal Simplifica.",
+   "en": "In Madeira, fishing is banned in beach concession waters and within 300 m of places normally used for bathing (Portaria 484/2016, JORAM). Recreational licence via the Simplifica portal."
+  },
+  "tags": {
+   "pt": [
+    "Pesca de costa",
+    "Sargo",
+    "Vila piscatória",
+    "Madeira"
+   ],
+   "en": [
+    "Shore fishing",
+    "Seabream",
+    "Fishing village",
+    "Madeira"
+   ]
+  },
+  "quality": 3,
+  "lat": 32.6476,
+  "lng": -16.9752,
+  "inland": false,
+  "sources": [
+   "https://adrenalineadventures.pt/en/blog/fishing-madeira",
+   "https://gt-fishing.com/en/fishing-destinations/atlantik/angeln-madeira/",
+   "https://joram.madeira.gov.pt/joram/1serie/Ano%20de%202016/ISerie-199-2016-11-14sup.pdf"
+  ],
+  "n_sources": 2,
+  "notes": "Coordenadas: rampa junto ao porto, Rua de Nossa Senhora da Conceição (reverse Nominatim). adrenalineadventures: 'multiple rock platforms and harbour fishing', white seabream e blacktail; gt-fishing: 'harbor entrance a particularly popular spot'. Espécies limitadas ao que as fontes dizem. Licença apeada €4–8 (dnoticias 2020); balcão da Direção Regional de Pescas em Câmara de Lobos (dnoticias). Distância ao spot existente madeira-funchal-costa (Cais do Carvão–Praia Formosa): ~3,9 km do ponto registado, ~2,5 km da ponta oeste da Praia Formosa — vila e porto diferentes. A frase sobre ondulação de sul é conselho geral de segurança (adrenalineadventures avisa que tempestades tornam plataformas expostas inseguras); a 'perto de cafés e autocarros' é contexto urbano."
+ },
+ {
+  "id": "madeira-porto-santo",
+  "name": "Porto Santo — Porto de Abrigo",
+  "region": "Madeira",
+  "location": {
+   "pt": "Vila Baleira, Porto Santo",
+   "en": "Vila Baleira, Porto Santo"
+  },
+  "bgClass": "spot-bg--acores",
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao",
+   "costeira"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Saídas de barco sobretudo no verão (manhã e fim de tarde)",
+   "en": "Boat trips mainly in summer (morning and late afternoon)"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Peixes de fundo (barco); sargo, tainha, salmonete, peixe-lagarto (costa)",
+   "en": "Bottom fish (boat); white seabream, grey mullet, red mullet, lizardfish (shore)"
+  },
+  "tecnica": {
+   "pt": "Pesca de fundo de barco; bóia na costa",
+   "en": "Bottom fishing from the boat; float fishing from shore"
+  },
+  "desc": {
+   "pt": "Do Porto de Abrigo de Porto Santo saem pequenas saídas de pesca de fundo de cerca de 4h30, com material incluído e grupos de até quatro pessoas, uma boa opção para famílias. Da costa pesca-se sargo e tainha à bóia, mas grande parte do areal está ocupado por concessões balneares e algumas rochas do norte são friáveis.",
+   "en": "Small bottom-fishing trips of about 4.5 hours leave Porto Santo's harbour, with gear included and groups of up to four, a good option for families. From shore anglers float-fish for seabream and mullet, but much of the beach is taken by bathing concessions and some northern rocks crumble easily."
+  },
+  "aviso": {
+   "pt": "Na Rede de Áreas Marinhas Protegidas do Porto Santo a pesca lúdica só é permitida com até 3 anzóis simples por linha (regulamento da Rede, Portaria 75). Na Madeira é proibido pescar nas concessões balneares e a menos de 300 m de locais habituais de banho (Portaria 484/2016, JORAM). Licença lúdica no portal Simplifica.",
+   "en": "Inside the Porto Santo Marine Protected Areas Network, recreational fishing is only allowed with up to 3 single hooks per line (Network regulations, Portaria 75). In Madeira, fishing is banned in beach concession waters and within 300 m of places normally used for bathing (Portaria 484/2016, JORAM). Recreational licence via the Simplifica portal."
+  },
+  "tags": {
+   "pt": [
+    "Pesca de fundo",
+    "Famílias",
+    "Barco",
+    "Porto Santo"
+   ],
+   "en": [
+    "Bottom fishing",
+    "Families",
+    "Boat",
+    "Porto Santo"
+   ]
+  },
+  "quality": 3,
+  "lat": 33.059,
+  "lng": -16.3108,
+  "inland": false,
+  "sources": [
+   "https://www.mardourado.pt/",
+   "https://www.pesqueiro.pt/index.php?topic=8035.0",
+   "https://intertours.com.pt/tour-item/porto-santo-pesca-turistica/",
+   "https://simplifica.madeira.gov.pt/arquivo/Portaria%2075%20Regulamentos%20das%20areas%20de%20utiliza%C3%A7%C3%A3o%20da%20rede%20areas%20marinhas%20Porto%20Santo.pdf"
+  ],
+  "n_sources": 2,
+  "notes": "Coordenadas: Porto de Abrigo (Nominatim, paragem 'Porto de Abrigo, Cais 1'; Visit Madeira dá 33.0589,-16.3121). Barco: Mar Dourado 'Pesca Turística' — 4h30, 8:00–12:30 e 16:00–20:30 no verão, €70 adulto / €45 criança (4–11) / €35 acompanhante, máx. 4 pessoas, material + lanche + transfer incluídos, 'pesca de fundo'. Intertours vende produto equivalente (€70, máx. 3–4, tarde só jul–ago) — provavelmente revenda, não contado como fonte independente. Costa: fórum pesqueiro.pt (2015 e 2023) — pontão/cais antigo à bóia, sargo, tainha (pão), facaio, peixe-lagarto, salmonete; zonas de pesca melhores no norte, sul mais fácil; rochas sedimentares que se desfazem; em 2023 grande parte da praia bloqueada por concessões. O pontão de Vila Baleira fica junto à praia — não o indicar como pesqueiro (regra dos 300 m). Espécies de barco não especificadas pelas fontes. Ferry diário do Funchal (Visit Madeira)."
+ },
+ {
+  "id": "acores-sao-miguel-rabo-de-peixe",
+  "name": "São Miguel — Rabo de Peixe (costa norte)",
+  "region": "Açores",
+  "location": {
+   "pt": "Rabo de Peixe, Ribeira Grande",
+   "en": "Rabo de Peixe, Ribeira Grande"
+  },
+  "bgClass": "spot-bg--acores",
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Todo o ano, conforme o estado do mar",
+   "en": "Year-round, depending on sea conditions"
+  },
+  "season_sourced": false,
+  "especies": {
+   "pt": "Bica, peixe-porco, lula, congro, bicuda, anchova, írio",
+   "en": "Common pandora, grey triggerfish, squid, conger, barracuda, bluefish, amberjack"
+  },
+  "tecnica": {
+   "pt": "Pesca de fundo, jigging e corrico costeiro",
+   "en": "Bottom fishing, jigging and inshore trolling"
+  },
+  "desc": {
+   "pt": "O porto de pesca de Rabo de Peixe, na costa norte de São Miguel, é base de saídas de pesca tradicional em barcos de pescadores locais, com fundo à bica e ao peixe-porco e lula ao fim do dia. É uma alternativa mais barata e mais 'de pescador' ao big game de Ponta Delgada, mas a costa norte é mais exposta e as saídas dependem muito do vento.",
+   "en": "Rabo de Peixe's fishing harbour on São Miguel's north coast is the base for traditional trips on local fishermen's boats, bottom fishing for pandora and triggerfish and squid towards evening. It is a cheaper, more hands-on alternative to big game out of Ponta Delgada, but the north coast is more exposed and trips depend heavily on the wind."
+  },
+  "aviso": {
+   "pt": "A pesca lúdica embarcada nos Açores exige licença RIAC (10 € dia a 150 € três anos); confirme se o operador a inclui.",
+   "en": "Recreational boat fishing in the Azores requires a RIAC licence (€10 per day to €150 for three years); check whether the operator includes it."
+  },
+  "tags": {
+   "pt": [
+    "Pesca tradicional",
+    "Barco",
+    "Costa norte",
+    "São Miguel"
+   ],
+   "en": [
+    "Traditional fishing",
+    "Boat",
+    "North coast",
+    "São Miguel"
+   ]
+  },
+  "quality": 4,
+  "lat": 37.8162,
+  "lng": -25.5826,
+  "inland": false,
+  "sources": [
+   "https://fishingbooker.com/charters/view/41377",
+   "https://www.northshoreseatours.com/",
+   "https://fishingbooker.com/destinations/location/pt/AC/rabo-de-peixe",
+   "https://riac.azores.gov.pt/en/web/guest/w/pesca-a-bordo-de-embarcacao"
+  ],
+  "n_sources": 2,
+  "notes": "Coordenadas: ponto de encontro 'Porto Pescas Rabo de Peixe' da ficha FishingBooker (37.81622,-25.58258); reverse Nominatim = frente de Rabo de Peixe (o porto não está mapeado no OSM). Leo Fishing – Traditional Fishing (cap. Leonardo Rebelo, barco 29 ft 'Leonardo da Gilda', até 6): 4h partilhada ~US$224 (2 pax), barco inteiro 4h ~US$336, 7h ~US$448; LICENÇA INCLUÍDA; espécies na ficha: bica, congro, rocaz/rascasso, dourada, lula, peixe-porco, atum-voador. North Shore Sea Tours / NSTours (base Calhau d'Areia, Maia, perto de Porto Formoso, ~13 km a leste): pesca costeira 4h desde €150/pessoa, 7h desde €250/pessoa, aluguer 4h €500 / 7h €650; métodos jigging, fundo, corrico, deep drop; reviews: bicuda, anchova, cavala, garoupa, írio, goraz, peixe-porco, lula. Época não indicada pelos operadores (reviews de fevereiro, junho e setembro). Diferente do spot existente acores-sao-miguel (marina de Ponta Delgada, big game, costa sul)."
+ },
+ {
+  "id": "acores-sao-jorge-velas",
+  "name": "São Jorge — Porto de Velas",
+  "region": "Açores",
+  "location": {
+   "pt": "Velas, São Jorge",
+   "en": "Velas, São Jorge"
+  },
+  "bgClass": "spot-bg--acores",
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Abril a outubro (mar mais calmo nos Açores)",
+   "en": "April to October (calmer seas across the Azores)"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Lula, bonito, peixes de fundo",
+   "en": "Squid, bonito, bottom fish"
+  },
+  "tecnica": {
+   "pt": "Pesca de fundo e jigging",
+   "en": "Bottom fishing and jigging"
+  },
+  "desc": {
+   "pt": "Do núcleo de pescas do porto de Velas partem saídas de pesca de fundo e jigging de manhã ou de dia inteiro, muitas vezes combinadas com snorkeling e vista para o Pico. O canal entre São Jorge e o Pico tem bonito e atum pequeno, mas a oferta na ilha é curta e convém reservar com antecedência.",
+   "en": "Bottom-fishing and jigging trips leave the fishing dock in Velas harbour for a morning or a full day, often combined with snorkelling and views of Pico. The channel between São Jorge and Pico holds bonito and small tuna, but there are few operators on the island, so book ahead."
+  },
+  "aviso": {
+   "pt": "A pesca lúdica embarcada nos Açores exige licença RIAC (10 € dia a 150 € três anos); confirme se o operador a inclui.",
+   "en": "Recreational boat fishing in the Azores requires a RIAC licence (€10 per day to €150 for three years); check whether the operator includes it."
+  },
+  "tags": {
+   "pt": [
+    "Pesca de fundo",
+    "Barco",
+    "Ilha tranquila",
+    "São Jorge"
+   ],
+   "en": [
+    "Bottom fishing",
+    "Boat",
+    "Quiet island",
+    "São Jorge"
+   ]
+  },
+  "quality": 3,
+  "lat": 38.6786,
+  "lng": -28.201,
+  "inland": false,
+  "sources": [
+   "https://velasfishingtur.webnode.pt/",
+   "https://www.visitportugal.com/en/content/velasfishingtur-pesca-turismo",
+   "https://www.tripadvisor.com/Attraction_Review-g189133-d4740573-Reviews-Velasfishingtur-Velas_Sao_Jorge_Azores.html",
+   "https://travelworldnews.com/?p=26099",
+   "https://gt-fishing.com/fishing-destinations/atlantik/jigging-azores-islands/?lang=en",
+   "https://riac.azores.gov.pt/en/web/guest/w/pesca-a-bordo-de-embarcacao"
+  ],
+  "n_sources": 4,
+  "notes": "Coordenadas: Porto das Velas / Núcleo de Recreio Náutico (Photon + reverse Nominatim); o núcleo de pescas fica junto ao varadouro. Operador: Velasfishingtur – Pesca Turismo (Jaime Pereira; +351 919 821 513), 'Bottom Fishing / Jigging' de manhã ou dia inteiro a partir do 'Núcleo de Pescas do Porto de Velas', licenças AT 28/2018 e MT 07/2022 (site webnode, 2023). Sem preço publicado. CUIDADO: o domínio velasfishingtur.com já não resolve e as reviews recentes do TripAdvisor (2025–26) são sobre tours de carrinha — confirmar que ainda fazem pesca antes de destacar. Reviews de pesca 2013–2015: lula, peixe pequeno, tardes até ao pôr do sol. Época abril–outubro = Açores em geral (travelworldnews 2013); gt-fishing: popping a bonito e atum pequeno no canal São Jorge–Pico, junho–setembro. Velas fica a ~20 km da Madalena do Pico (spot existente) — outra ilha."
+ },
+ {
+  "id": "acores-terceira-praia-da-vitoria",
+  "name": "Terceira — Praia da Vitória",
+  "region": "Açores",
+  "location": {
+   "pt": "Praia da Vitória, Terceira",
+   "en": "Praia da Vitória, Terceira"
+  },
+  "bgClass": "spot-bg--acores",
+  "tipoKey": "embarcacao",
+  "tipos": [
+   "embarcacao"
+  ],
+  "levelKey": "iniciante",
+  "season": {
+   "pt": "Abril a outubro (mar mais calmo nos Açores)",
+   "en": "April to October (calmer seas across the Azores)"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Garoupa, írio, bodião, rocaz",
+   "en": "Grouper, amberjack, wrasse, scorpionfish"
+  },
+  "tecnica": {
+   "pt": "Pesca de fundo com isco natural (canas e isco incluídos)",
+   "en": "Bottom fishing with natural bait (rods and bait included)"
+  },
+  "desc": {
+   "pt": "A marina da Praia da Vitória, na grande baía do lado leste da Terceira, tem saídas de pesca de cerca de quatro horas com canas e isco incluídos, em grupos até seis pessoas. É a alternativa a Angra para quem fica no lado leste da ilha ou perto do aeroporto das Lajes, com pesca de fundo sobre os recifes rochosos da costa.",
+   "en": "Praia da Vitória marina, on the big bay on Terceira's east side, runs fishing trips of about four hours with rods and bait included, for groups of up to six. It is the alternative to Angra for anyone staying on the east of the island or near Lajes airport, with bottom fishing over the coast's rocky reefs."
+  },
+  "aviso": {
+   "pt": "A pesca lúdica embarcada nos Açores exige licença RIAC (10 € dia a 150 € três anos); confirme se o operador a inclui.",
+   "en": "Recreational boat fishing in the Azores requires a RIAC licence (€10 per day to €150 for three years); check whether the operator includes it."
+  },
+  "tags": {
+   "pt": [
+    "Pesca de fundo",
+    "Barco",
+    "Marina",
+    "Terceira"
+   ],
+   "en": [
+    "Bottom fishing",
+    "Boat",
+    "Marina",
+    "Terceira"
+   ]
+  },
+  "quality": 3,
+  "lat": 38.7311,
+  "lng": -27.0569,
+  "inland": false,
+  "sources": [
+   "https://www.expedia.com/things-to-do/boat-trip-and-fishing-southeast-of-terceira-island-4h-max-6px.a50909189.activity-details",
+   "https://marinas.visitazores.com/marinas/praia-da-vitoria/",
+   "https://www.exploreterceiraisland.com/en/?p=29014",
+   "https://travelworldnews.com/?p=26099",
+   "https://gt-fishing.com/fishing-destinations/atlantik/jigging-azores-islands/?lang=en",
+   "https://riac.azores.gov.pt/en/web/guest/w/pesca-a-bordo-de-embarcacao"
+  ],
+  "n_sources": 4,
+  "notes": "Coordenadas: Marina da Praia da Vitória (Nominatim). Operador: Rossio Tours — 'Boat trip and fishing southeast of Terceira Island', até 4 h, máx. 6, canas e isco incluídos, partida Marina da Praia da Vitória; preço não mostrado (Expedia). Visit Azores Marinas e Explore Terceira referem a pesca desportiva/de mar na baía (genérico). Espécies: gt-fishing (recifes da Terceira: írio e garoupa) + reviews ProIslandTour (empresa listada na Praia da Vitória mas saídas relatadas a partir de Angra, 2017): garoupa, bodião, rocaz, €250/dia barco privado. Época abril–outubro = Açores em geral. ~20 km da marina de Angra (spot existente acores-terceira-angra, que já menciona partidas da Praia da Vitória) — diferenciar como base do lado leste."
+ },
+ {
+  "id": "acores-flores-santa-cruz",
+  "name": "Flores — Santa Cruz e Lajes",
+  "region": "Açores",
+  "location": {
+   "pt": "Santa Cruz das Flores, Flores",
+   "en": "Santa Cruz das Flores, Flores"
+  },
+  "bgClass": "spot-bg--acores",
+  "tipoKey": "rocha",
+  "tipos": [
+   "rocha",
+   "embarcacao"
+  ],
+  "levelKey": "experiente",
+  "season": {
+   "pt": "Junho a setembro",
+   "en": "June to September"
+  },
+  "season_sourced": true,
+  "especies": {
+   "pt": "Anchova, bicuda, írio, pargo, peixe-porco, sargo",
+   "en": "Bluefish, barracuda, amberjack, red porgy, grey triggerfish, white seabream"
+  },
+  "tecnica": {
+   "pt": "Spinning e jigging da costa; jigging de barco",
+   "en": "Spinning and shore jigging; jigging from the boat"
+  },
+  "desc": {
+   "pt": "Nas Flores a água funda chega logo junto à costa e, ao fim do dia, as enseadas de Santa Cruz e o porto das Lajes dão anchova e bicuda ao spinning, com hipótese de pargo ou írio. É pesca para quem traz material forte e alguma experiência: a ilha é remota, o mar muda depressa e quase não há operadores com reserva online.",
+   "en": "On Flores deep water comes right up to the shore, and at dusk the coves of Santa Cruz and Lajes harbour produce bluefish and barracuda on spinning gear, with a chance of red porgy or amberjack. It suits anglers with strong tackle and some experience: the island is remote, the sea changes fast and there are almost no operators bookable online."
+  },
+  "aviso": {
+   "pt": "Nos Açores é proibida a pesca lúdica nas áreas concessionadas das praias durante a época balnear (Portaria 205-A/2025/1, aviso RIAC), o que inclui piscinas naturais como o Porto das Poças. A licença para pesca apeada não está confirmada: verifique junto da RIAC; de barco é obrigatória a licença RIAC.",
+   "en": "In the Azores, recreational fishing is banned in beach concession areas during the bathing season (Portaria 205-A/2025/1, RIAC notice), which covers natural pools such as Porto das Poças. The shore-fishing licence requirement is unconfirmed: check with RIAC; from a boat a RIAC licence is mandatory."
+  },
+  "tags": {
+   "pt": [
+    "Spinning",
+    "Jigging",
+    "Ilha remota",
+    "Flores"
+   ],
+   "en": [
+    "Spinning",
+    "Jigging",
+    "Remote island",
+    "Flores"
+   ]
+  },
+  "quality": 4,
+  "lat": 39.4543,
+  "lng": -31.125,
+  "inland": false,
+  "sources": [
+   "http://www.robaloshotspot.com/2013/07/o-paraiso-nas-flores-ii-pesca-ao.html",
+   "https://pesca-embarcada.com/wp/2020/01/14/acores-ilha-das-flores/",
+   "https://gt-fishing.com/fishing-destinations/atlantik/jigging-azores-islands/?lang=en",
+   "https://riac.azores.gov.pt/en/web/guest/w/pesca-a-bordo-de-embarcacao"
+  ],
+  "n_sources": 3,
+  "notes": "Coordenadas: Porto Velho, Santa Cruz das Flores (Photon + reverse Nominatim = marina). Fontes: robaloshotspot (jul. 2013) — spinning da costa em Santa Cruz (enseada junto ao hotel), Fajã Grande e porto das Lajes: pargo grande ao anoitecer, anchova, bicuda, peixe-porco, írio pequeno; barco do 'Sr. Vasco'. pesca-embarcada.com (2020) — barco de 'Vasco da Zagaia Flores' (Santa Cruz), jigging 30–120 m: enxaréu, bicuda, anchova, írio de 18 kg; spinning da costa: 7 anchovas >6 kg em 2 h; bóia: sargo. gt-fishing: Flores 'provavelmente o melhor spot de shore jigging da Europa'; meses junho–setembro. Meros também aparecem nas fontes (soltos) — excluídos da lista por regra. Sem operador com reserva online encontrado; não indicar preços. Flores tem áreas marinhas do Parque Natural de Ilha — zonamento não verificado; Porto das Poças é piscina natural/zona balnear. Lajes das Flores fica ~10 km a sul (Porto das Lajes 39.3800,-31.1696)."
+ }
+]
