@@ -2,12 +2,12 @@
 
 Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia no projeto Claude: `claude/handoff-proximos-4-2026-10.md`. Praias em detalhe: `claude/praias-correcao-e-ampliacao-2026-10.md`.
 
-## Pesca lote P2 (08/10, ~19h30) — PRONTO, POR PUBLICAR
-- 33 -> **76 spots** de pesca (Norte 13, Centro 14, Lisboa 8, Alentejo 12, Algarve 17, Açores 7, Madeira 5). 5 agentes por região; fontes e regras por spot em `claude/pesca-spots-lote-p2-2026-10.md` (projeto Claude). Cortados: molhe de Quarteira (regra dos 100 m do porto), Bravura (1 fonte), Lagoa Comprida (só competições), Cabo Espichel (zonamento do parque marinho por confirmar), Lajes/Cavaleiro (dentro da zona interdita do Cabo Sardão), Morgavel, Póvoa e Meadas, Tróia, Zavial/Ingrina, Beliche, molhe norte do Douro (proibido).
-- Fotos Commons verificadas em 38 spots (`images/spots/pesca-<id>-*.webp`, créditos em `docs/FOTOS-CREDITOS.md`); 5 sem foto ficam com fundo de cor (Alto Ceira, Unhais, Santa Clara, Tapada Grande, Odeleite).
-- Testado: Playwright com CSP real, 1280/375, PT+EN: 76 cartões, filtros por região OK, 0 erros JS, 0 fotos partidas. Backup `docs/_backup-pesca-p2-20261008/`.
-- **Commit:** os ficheiros partilhados (`js/surf-pesca-data.js`, `js/surf-pesca-page.js`, `surf.html`, `en/surf.html`, `docs/FOTOS-CREDITOS.md`) também têm o lote **Surf S2** por publicar → fazer UM commit com as duas listas: `git add -f (Get-Content docs\commit-files-2026-10-08-surf-s2.txt)` + `git add -f (Get-Content docs\commit-files-2026-10-08-pesca-p2.txt)`.
-- Para o Ricardo decidir (conteúdo já publicado, não mexido): o cartão Madeira — Caniçal lista "Atum rabilho"; Viana — Rio Lima e Rio Lima — Ponte de Lima listam sável e lampreia (a DGRM lista-os como proibidos na pesca lúdica — confirmar regra do troço); nova Portaria 330/2026/1 do Tejo (2 canas, sem limite de anzóis próprio) — rever textos antigos que digam "Tejo: 2 canas, 3 anzóis"; defeso do sargo no PNSACV: fontes dizem 1 fev–15 mar (os avisos antigos dizem 1–28 fev).
+## Pesca lotes P2 + P3 (08/10, noite) — PRONTO, POR PUBLICAR
+- Pesca: 33 -> 76 (P2) -> **117 spots** (P3). Por região: Norte 20, Centro 20, Lisboa 12, Alentejo 18, Algarve 20, Açores 11, Madeira 8. Fontes e regras por spot: `claude/pesca-spots-lote-p2-2026-10.md` e `claude/pesca-spots-lote-p3-2026-10.md` (projeto Claude).
+- Fotos Commons verificadas: 38 (P2) + 33 (P3). Sem foto (fundo de cor): Alto Ceira, Unhais, Santa Clara, Tapada Grande, Odeleite, Rio Mouro, Lagos do Sabor, Idanha, Ericeira, Pego do Altar, Vale do Gaio, Odivelas, Olhão.
+- Decisões tomadas (Ricardo: "você decide"): tirados sável/lampreia (Rio Lima) e atum-rabilho (Caniçal, Sesimbra, Portimão) das espécies-alvo + aviso; FAQ "sável e lampreia nos rios" -> truta 1 mar–31 jul; defeso do sargo PNSACV = 1–28 fev (FAQ DGRM 2026); Tejo = Portaria 330/2026/1 (2 canas, 3 anzóis).
+- Testado: Playwright com CSP real, 1280/375, PT+EN: 117 cartões, 0 erros JS, 0 fotos partidas. **Risco Open-Meteo** (ver watchlist): 117+126 coordenadas por pedido.
+- **Commit único** (ficheiros partilhados com o surf): `git add -f` das listas `docs/commit-files-2026-10-08-surf-s2.txt`, `...-surf-s3.txt`, `...-pesca-p2.txt`, `...-pesca-p3.txt`.
 
 ## PRÓXIMA SESSÃO — análise fria de https://www.pesca-pt.com/ (pedido do Ricardo, 08/10)
 Objetivo: com mentalidade de prosperar e faturar, ver o que podemos aproveitar desse site para **aumentar visualizações** no portalturismoportugal.com e **converter visitas em compras** (afiliados que faturam + Pro).
@@ -194,5 +194,12 @@ Outros pendentes (não urgentes):
 - Póvoa de Varzim = 1 cartão (Zona Urbana Norte/Sul I/II + Lagoa + Fragosa). "Marbelo" da EEA tem coordenada em S. Félix da Marinha → cartão "Praia de São Félix da Marinha".
 - Fotos: 34 com foto Commons verificada; 8 sem foto (NO_PHOTO): Rodanho, Amorosa, Rio de Moinhos, Ramalha, Paimó, Quião, Pedras Brancas, Francelos.
 - Commit: `docs/commit-files-2026-10-08-praias-b5.txt` (usar `git add -f`, tem `_data/`). Os ficheiros partilhados `docs/FOTOS-CREDITOS.md`, `docs/REGRESSION-WATCHLIST.md` e `HANDOFF.md` têm também linhas da sessão surf/pesca — ficam fora desta lista (não são publicados).
-- Testar: `.\testar-praias.ps1` (mostra as 42 inativas). Depois do deploy: `python3 _diag/praias/b5/activate.py` → 371 praias.
+- **ATIVO desde 08/10 ~19h10: 371 praias públicas.** Os ficheiros do B5 foram publicados com o deploy do Surf S2 (da50d2a); confirmado em produção: 371 cartões PT/EN 1280/375, 252 pontos, calmo+moderado+agitado = 371, 34/34 fotos novas, 0 erros, 0 CSP. **Falta o commit** da lista `docs/commit-files-2026-10-08-praias-b5.txt` (o git está atrás da produção).
 - Próximo: praias fluviais (159 distintas) — decisões em aberto: região (distrito/concelho), filtro "Fluviais" vs etiqueta, pontos no mapa, tamanho dos lotes; cartões/contadores do mar têm de lidar com praias sem dados de mar (também as 7 de ria/estuário do B5 e a Armona).
+
+## Estado 08/10 (noite) — Praias FLUVIAIS (lote B6)
+- **151 praias fluviais inseridas INATIVAS** (beach_type='fluvial', tag 'fluvial'; região pelo concelho: Norte 31, Centro 104, Alentejo 14, Algarve 2; concelho em `subregion`). Fora: 8 que não são águas balneares em 2026. 9 com água Má em 2025 ficam (designadas em 2026) com aviso no texto. 81 com foto, 70 sem foto.
+- Código: as fluviais nunca pedem dados de mar (live-coast.js), cartão com etiqueta "Praia fluvial" e sem selo do mar, pontos azul-acinzentados no mapa do /beaches, página de praia sem "Mar e ondulação" nem marés, chip "Fluviais"/"River beaches". Calmo+moderado+agitado = só praias de mar (371).
+- Commit: `docs/commit-files-2026-10-08-praias-fluviais.txt` (`git add -f`). Partilhados fora da lista: FOTOS-CREDITOS.md, REGRESSION-WATCHLIST.md, HANDOFF.md.
+- Depois do deploy: `python3 _diag/praias/b6/activate.py` → 522 praias.
+- Pendentes: Fraga da Pegada (Azibo) e Merelim S. Paio (Braga) são águas balneares 2026 separadas, não incluídas; câmara "Praia Fluvial Lago Azul" não ligou à praia; home/planear/preços ainda dizem "mais de 300 praias".

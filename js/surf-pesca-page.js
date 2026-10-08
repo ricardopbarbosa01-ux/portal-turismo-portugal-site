@@ -152,7 +152,43 @@
     "paul-do-mar": "Vitor Oliveira · CC BY-SA 2.0",
     "faja-da-areia": "Alberto-g-rovi · CC BY 3.0",
     "mosteiros": "JCNazza · CC BY 3.0",
-    "praia-da-vitoria": "Vitor Oliveira · CC BY-SA 2.0"
+    "praia-da-vitoria": "Vitor Oliveira · CC BY-SA 2.0",
+    "adraga": "Alexkom000 · CC BY 4.0",
+    "santo-amaro-oeiras": "Vitor Oliveira · CC BY-SA 2.0",
+    "praia-do-meco": "Vitor Oliveira · CC BY-SA 2.0",
+    "praia-da-foz-cabo-espichel": "Vitor Oliveira · CC BY-SA 2.0",
+    "paredes-da-vitoria": "Vitor Oliveira · CC BY-SA 2.0",
+    "santa-rita": "Vitor Oliveira · CC BY-SA 2.0",
+    "apulia": "Joseolgon · CC BY-SA 4.0",
+    "torreira": "Vanbasten 23 · CC BY-SA 3.0",
+    "cova-gala": "Vitor Oliveira · CC BY-SA 2.0",
+    "alvor": "Tiago J. G. Fernandes · CC BY 2.0",
+    "porto-moniz": "Hansueli Krapf · CC BY-SA 3.0",
+    "crazy-left-ericeira": "Vitor Oliveira · CC BY-SA 2.0",
+    "azarujinha": "Vitor Oliveira · CC BY-SA 2.0",
+    "lagoa-de-albufeira": "Vitor Oliveira · CC BY-SA 2.0",
+    "canal-das-barcas": "Vitor Oliveira · CC BY-SA 2.0",
+    "foz-do-arelho": "Vitor Oliveira · CC BY-SA 2.0",
+    "porto-batel": "Vitor Oliveira · CC BY-SA 2.0",
+    "angeiras": "Vitor Oliveira · CC BY-SA 2.0",
+    "miramar-gaia": "Sergei Gussev · CC BY 2.0",
+    "sao-jacinto": "Vitor Oliveira · CC BY-SA 2.0",
+    "ingrina": "Vitor Oliveira · CC BY-SA 2.0",
+    "praia-de-faro": "Vitor Oliveira · CC BY-SA 2.0",
+    "praia-do-norte-faial": "Vitor Oliveira · CC BY-SA 2.0",
+    "magoito": "Alexkom000 · CC BY 4.0",
+    "parede": "Vitor Oliveira · CC BY-SA 2.0",
+    "sao-joao-da-caparica": "Jules Verne Times Two · CC BY-SA 4.0",
+    "comporta": "Vitor Oliveira · CC BY-SA 2.0",
+    "nazare-praia-da-vila": "Berthold Werner · CC BY-SA 4.0",
+    "praia-azul": "Vitor Oliveira · CC BY-SA 2.0",
+    "almagreira": "Alexkom000 · CC BY 4.0",
+    "cortegaca": "Vitor Oliveira · CC BY-SA 2.0",
+    "vagueira": "Vitor Oliveira · CC BY-SA 2.0",
+    "praia-da-luz": "Sergei Gussev · CC BY 2.0",
+    "ponta-delgada-madeira": "Alberto-g-rovi · CC BY 3.0",
+    "populo-milicias": "JCNazza · CC BY 3.0",
+    "praia-formosa-santa-maria": "Carlos Luis Cruz · Public domain"
   };
   // Pagina estatica da praia (praias/<slug>/ e en/praias/<slug>/), quando existe
   var SURF_BEACH = {
@@ -169,16 +205,23 @@
     "sao-pedro-de-moel": "praia-de-sao-pedro-de-moel",
     "praia-da-vieira": "praia-de-vieira-de-leiria",
     "bordeira": "praia-de-carrapateira",
-    "mosteiros": "praia-de-mosteiros"
+    "mosteiros": "praia-de-mosteiros",
+    "praia-do-meco": "praia-do-meco",
+    "lagoa-de-albufeira": "lagoa-de-albufeira",
+    "comporta": "praia-da-comporta",
+    "praia-da-luz": "praia-da-luz",
+    "alvor": "praia-de-alvor",
+    "praia-de-faro": "praia-de-faro"
   };
   // Sem pagina estatica: pagina da praia da BD (/beach?id=) a menos de 1 km e com nome em comum (2026-10-08)
-  var SURF_BEACH_ID = {"praia-de-santa-barbara-acores-1": "0da1d9ed-858e-4011-9506-4a9bfe6653eb", "praia-de-afife": "0746921c-411a-46b6-a8a2-9df52412abee", "praia-de-cabedelo": "10f7f046-fb30-493e-acf0-bf6b2a57858b", "praia-de-ancora": "43290bbc-db7f-4b1e-9cb5-a51b644c0ca6", "praia-de-ofir": "dd37d1cd-8ecc-45af-b8d2-3ceabf881969", "praia-do-furadouro": "c63cbf17-1445-4697-aa21-a5b9dff08851", "praia-da-tocha": "f400d000-20b2-414c-ba38-bae63856431f", "praia-de-buarcos": "63806db3-12a1-4e83-b354-1ac4b44fcb2d", "praia-da-zavial": "37fd270d-1dd5-4701-af07-f0ede1590069", "praia-da-salema": "88102fe2-62d3-4721-a27a-bab4d2ffe15c", "ribeira-dilhas": "a9b0eada-8f04-4862-85aa-2892039baecd", "foz-do-lizandro": "64b383cd-da9c-496c-bc43-77908e175f8d", "sao-lourenco": "025349fa-956a-448e-ad3a-ff58cfacb514", "baleal": "97427a14-7439-4672-8589-9139d7cb5abe", "carcavelos": "406a09d1-daa7-44b3-aa19-3a13b4aab711", "sao-pedro-do-estoril": "7b053b2b-f6f9-4d2b-b897-e4f4b52f463a", "praia-grande-sintra": "513d687d-b8f9-4d87-b5a7-c6de1d7d695c", "praia-das-macas": "d81736c8-0e7d-4d98-b369-377998fc5c2f", "fonte-da-telha": "508706d1-2ddd-4377-8319-75a5bb347435", "beliche": "fa66de51-13bc-4088-8b94-942d33e525fc", "martinhal": "5c45c033-1182-4e59-b0de-61ec81ab38f2", "sao-torpes": "dee27f4d-ec13-43b4-a618-4ac272d22cf2", "malhao": "a8e9c668-f606-4100-87ea-b00ea61617e5", "vila-nova-de-milfontes-farol": "2dd735c3-9317-45bb-aed7-c3832af7653d", "almograve": "6b2661a4-4126-4ac4-8a03-ec2193cd4494", "zambujeira-do-mar": "4bd3bca5-6c5b-486d-87c0-bd21ea5435ce", "carvalhal": "f940e21f-3169-486c-9438-30dd3e503eb3", "leca-da-palmeira": "62030703-6711-4653-bc35-b1284f35cd5e", "pedrogao": "c4bea301-56f1-49b5-934d-f576e41f5132", "murtinheira": "b5d5f332-d553-49d9-ad92-77d658de945f", "santa-cruz": "24ef6f3c-123f-4cda-9ed7-53b372fe4790", "areia-branca": "fd1474e1-7acb-4635-822d-df649332769e", "sao-juliao": "304b2207-d81b-4fef-bdc3-74392d207133", "praia-do-sul-ericeira": "67e04297-3a9a-4e41-808f-cae811d0680b", "jardim-do-mar": "cd25fc03-d97d-48db-9e96-0b4af33a14db", "porto-da-cruz": "bf016917-24ac-4a91-a372-568b5162e4e5", "quatro-ribeiras": "473e8adb-9673-4200-95a5-c606435674eb"};
+  var SURF_BEACH_ID = {"praia-de-santa-barbara-acores-1": "0da1d9ed-858e-4011-9506-4a9bfe6653eb", "praia-de-afife": "0746921c-411a-46b6-a8a2-9df52412abee", "praia-de-cabedelo": "10f7f046-fb30-493e-acf0-bf6b2a57858b", "praia-de-ancora": "43290bbc-db7f-4b1e-9cb5-a51b644c0ca6", "praia-de-ofir": "dd37d1cd-8ecc-45af-b8d2-3ceabf881969", "praia-do-furadouro": "c63cbf17-1445-4697-aa21-a5b9dff08851", "praia-da-tocha": "f400d000-20b2-414c-ba38-bae63856431f", "praia-de-buarcos": "63806db3-12a1-4e83-b354-1ac4b44fcb2d", "praia-da-zavial": "37fd270d-1dd5-4701-af07-f0ede1590069", "praia-da-salema": "88102fe2-62d3-4721-a27a-bab4d2ffe15c", "ribeira-dilhas": "a9b0eada-8f04-4862-85aa-2892039baecd", "foz-do-lizandro": "64b383cd-da9c-496c-bc43-77908e175f8d", "sao-lourenco": "025349fa-956a-448e-ad3a-ff58cfacb514", "baleal": "97427a14-7439-4672-8589-9139d7cb5abe", "carcavelos": "406a09d1-daa7-44b3-aa19-3a13b4aab711", "sao-pedro-do-estoril": "7b053b2b-f6f9-4d2b-b897-e4f4b52f463a", "praia-grande-sintra": "513d687d-b8f9-4d87-b5a7-c6de1d7d695c", "praia-das-macas": "d81736c8-0e7d-4d98-b369-377998fc5c2f", "fonte-da-telha": "508706d1-2ddd-4377-8319-75a5bb347435", "beliche": "fa66de51-13bc-4088-8b94-942d33e525fc", "martinhal": "5c45c033-1182-4e59-b0de-61ec81ab38f2", "sao-torpes": "dee27f4d-ec13-43b4-a618-4ac272d22cf2", "malhao": "a8e9c668-f606-4100-87ea-b00ea61617e5", "vila-nova-de-milfontes-farol": "2dd735c3-9317-45bb-aed7-c3832af7653d", "almograve": "6b2661a4-4126-4ac4-8a03-ec2193cd4494", "zambujeira-do-mar": "4bd3bca5-6c5b-486d-87c0-bd21ea5435ce", "carvalhal": "f940e21f-3169-486c-9438-30dd3e503eb3", "leca-da-palmeira": "62030703-6711-4653-bc35-b1284f35cd5e", "povoa-de-varzim": "7cf2d44f-99d9-4338-a8c7-5894e891137f", "pedrogao": "c4bea301-56f1-49b5-934d-f576e41f5132", "murtinheira": "b5d5f332-d553-49d9-ad92-77d658de945f", "santa-cruz": "24ef6f3c-123f-4cda-9ed7-53b372fe4790", "areia-branca": "fd1474e1-7acb-4635-822d-df649332769e", "sao-juliao": "304b2207-d81b-4fef-bdc3-74392d207133", "praia-do-sul-ericeira": "67e04297-3a9a-4e41-808f-cae811d0680b", "jardim-do-mar": "cd25fc03-d97d-48db-9e96-0b4af33a14db", "porto-da-cruz": "bf016917-24ac-4a91-a372-568b5162e4e5", "quatro-ribeiras": "473e8adb-9673-4200-95a5-c606435674eb", "praia-do-norte-ericeira": "67e04297-3a9a-4e41-808f-cae811d0680b", "magoito": "5ed26c4c-0979-4497-a021-253ef66f6aeb", "adraga": "6541d792-54dd-4b32-b89c-02ef4c7c9f90", "cresmina": "e3da620e-beaf-4a4a-80e3-d3f94c3a311e", "parede": "6116b10b-1e12-4d54-b9ce-86bb6792fa6b", "santo-amaro-oeiras": "1da81451-1187-4895-8c9e-ddb4d58a2f82", "sao-joao-da-caparica": "b543a3dd-bfe8-40d7-8d5e-2ac453daf76e", "nazare-praia-da-vila": "4c907c07-8bbd-4c37-90f2-8f9e2696f5a0", "paredes-da-vitoria": "c4e37952-73a1-42b7-b36f-b4fd60291102", "foz-do-arelho": "fefd19c5-2dad-4627-a476-daa13be99352", "praia-azul": "6013ec3e-6d45-4060-a59f-55952d81b191", "santa-rita": "bdd9928f-c4b0-4e06-95b9-9ccead088030", "apulia": "51c5eb21-e534-4c5c-98e0-305c78721686", "angeiras": "e7a9f6a0-35ee-4332-be39-a8d37c78fe3f", "miramar-gaia": "541f339e-9287-452d-80be-56e0ce86c70a", "cortegaca": "47ae4764-a60d-4ec5-a7c5-00a21e871fdb", "torreira": "e5113c93-c469-489a-8db6-7d877c0de22c", "sao-jacinto": "88233a0a-3a55-4a95-9ff2-144f5459647c", "vagueira": "6b3928b3-4680-4051-b2f1-e3bdb41cab35", "cova-gala": "dc0629c2-fb75-4706-bafd-08d8cf4466be", "ponta-delgada-madeira": "4e7964bf-1efa-4e28-b232-70818b6bb7c7", "populo-milicias": "c3f48c57-0e24-4746-b128-8abd6110bfd3", "praia-do-norte-faial": "586da732-8832-4c78-b746-b4854f3c1c9f", "praia-formosa-santa-maria": "85b78ee3-7b8e-4633-825f-d03d80c7dc68"};
   // Regiao do planeador (js/planner-v3.js) e regiao da BD de praias (/beaches?region=)
   var SURF_PLAN_R = { Norte: 'minho', Porto: 'minho', Centro: 'costa-prata', Lisboa: 'cascais', Alentejo: 'alentejo', Algarve: 'algarve', 'Açores': 'acores', Madeira: 'madeira' };
   var SURF_PLAN_R_ID = { 'supertubos': 'oeste', 'costa-da-caparica': 'setubal',
     'ribeira-dilhas': 'oeste', 'coxos': 'oeste', 'foz-do-lizandro': 'oeste', 'sao-lourenco': 'oeste', 'pedra-branca': 'oeste',
     'baleal': 'oeste', 'lagide': 'oeste', 'consolacao': 'oeste', 'molhe-leste': 'oeste', 'fonte-da-telha': 'setubal',
-    "santa-cruz": 'oeste', "areia-branca": 'oeste', "sao-juliao": 'oeste', "matadouro": 'oeste', "praia-do-sul-ericeira": 'oeste', "reef-ericeira": 'oeste', "cave-ericeira": 'oeste' };
+    "santa-cruz": 'oeste', "areia-branca": 'oeste', "sao-juliao": 'oeste', "matadouro": 'oeste', "praia-do-sul-ericeira": 'oeste', "reef-ericeira": 'oeste', "cave-ericeira": 'oeste',
+    "praia-do-norte-ericeira": "oeste", "crazy-left-ericeira": "oeste", "nazare-praia-da-vila": "oeste", "paredes-da-vitoria": "oeste", "foz-do-arelho": "oeste", "praia-azul": "oeste", "santa-rita": "oeste", "porto-batel": "oeste", "almagreira": "oeste", "sao-joao-da-caparica": "setubal", "praia-do-meco": "setubal", "lagoa-de-albufeira": "setubal", "praia-da-foz-cabo-espichel": "setubal" };
   // Webcam ao vivo do spot (ou a mais perto) em /webcams (abre o painel por #cam-<id>; MEO so por link, YouTube incorporado).
   // Escolhidas a mao por nome (2026-10-08): as coordenadas de algumas camaras MEO estao agrupadas, por isso nao se usa so a distancia.
   var SURF_CAM = {
@@ -228,7 +271,32 @@
     "lugar-de-baixo": ["yt-ponta-do-sol", "Ponta do Sol"],
     "porto-da-cruz": ["madeira-maiata", "Praia da Maiata"],
     "faja-da-areia": ["faja-da-areia", "Fajã da Areia"],
-    "monte-verde": ["acores-ribeira-grande-praia-do-monte-verde", "Praia do Monte Verde"]
+    "monte-verde": ["acores-ribeira-grande-praia-do-monte-verde", "Praia do Monte Verde"],
+    "praia-do-norte-ericeira": ["praia-dos-pescadores", "Praia dos Pescadores"],
+    "magoito": ["praia-do-magoito", "Praia do Magoito"],
+    "adraga": ["praia-da-adraga", "Praia da Adraga"],
+    "cresmina": ["cresmina", "Praia da Cresmina"],
+    "parede": ["praia-das-avencas", "Praia das Avencas"],
+    "santo-amaro-oeiras": ["santo-amaro", "Santo Amaro"],
+    "azarujinha": ["tamariz", "Praia do Tamariz"],
+    "sao-joao-da-caparica": ["costa-de-caparica-sao-joao-cova-do-vapor", "São João · Cova do Vapor"],
+    "praia-do-meco": ["praia-do-meco", "Praia do Meco"],
+    "lagoa-de-albufeira": ["lagoa-de-albufeira", "Lagoa de Albufeira"],
+    "comporta": ["comporta", "Comporta"],
+    "nazare-praia-da-vila": ["praia-da-nazare", "Nazaré · Praia da Vila"],
+    "paredes-da-vitoria": ["paredes-da-vitoria", "Paredes da Vitória"],
+    "foz-do-arelho": ["foz-do-arelho", "Foz do Arelho"],
+    "praia-azul": ["santa-cruz-praia-azul", "Praia Azul"],
+    "santa-rita": ["praia-de-santa-rita", "Praia de Santa Rita"],
+    "apulia": ["apulia", "Apúlia"],
+    "canidelo": ["praia-canide-norte-sul", "Praia de Canide"],
+    "torreira": ["praia-da-torreira", "Praia da Torreira"],
+    "vagueira": ["vagueiracasablanca", "Vagueira · Casablanca"],
+    "cova-gala": ["figueira-da-foz-cabedelo", "Cabedelo"],
+    "praia-da-luz": ["praia-da-luz", "Praia da Luz"],
+    "alvor": ["alvor", "Alvor"],
+    "praia-de-faro": ["faro-oeste", "Praia de Faro"],
+    "porto-moniz": ["yt-porto-moniz", "Porto Moniz"]
   };
   var SURF_DB_REGION = { Norte: 'Norte', Porto: 'Norte', Centro: 'Centro', Lisboa: 'Lisboa e Setúbal', Alentejo: 'Alentejo', Algarve: 'Algarve', Madeira: 'Madeira', 'Açores': 'Açores' };
   var SURF_LEVELS = ['iniciante', 'intermedio', 'avancado', 'profissional'];
@@ -393,7 +461,41 @@
     'acores-lagoa-sete-cidades': "JCNazza · CC BY 3.0",
     'acores-lagoa-furnas': "Jan Helebrant · CC0",
     'ferragudo-molhe-ponta-do-altar': "Glen Bowman · CC BY 2.0",
-    'zambujeira-do-mar-rochas': "Tulumnes · CC BY-SA 4.0"
+    'zambujeira-do-mar-rochas': "Tulumnes · CC BY-SA 4.0",
+    // Lote P3 (2026-10-08)
+    'rio-castro-laboreiro-assureira': "JCNazza · CC BY 3.0",
+    'rio-tua-mirandela': "Vitor Oliveira · CC BY-SA 2.0",
+    'pateira-de-fermentelos': "Vitor Oliveira · CC BY-SA 2.0",
+    'rio-mondego-coimbra-choupalinho': "Marmontel · CC BY 2.0",
+    'nazare-praia-surfcasting': "Terry Kearney · CC0",
+    'fonte-da-telha-surfcasting': "Cossel · CC BY 3.0",
+    'alqueva-amieira-marina': "Vitor Oliveira · CC BY-SA 2.0",
+    'carvoeiro-rochas': "Jules Verne Times Two · CC BY-SA 4.0",
+    'garrao-surfcasting': "Vitor Oliveira · CC BY-SA 2.0",
+    'madeira-camara-de-lobos': "Asurnipal · CC BY-SA 4.0",
+    'acores-sao-jorge-velas': "Alacoolwiki · CC BY-SA 4.0",
+    'albufeira-azibo-santa-combinha': "VetK2O3 · CC BY-SA 4.0",
+    'albufeira-touvedo-entre-ambos-os-rios': "Vitor Oliveira · CC BY-SA 2.0",
+    'albufeira-do-cabril': "Vitor Oliveira · CC BY-SA 2.0",
+    'sao-martinho-do-porto-tunel': "Alvesgaspar · CC BY-SA 3.0",
+    'azenhas-do-mar-rochas': "Paulo Costa · CC BY-SA 3.0",
+    'troia-praia-atlantica': "Vitor Oliveira · CC BY-SA 2.0",
+    'tavira-quatro-aguas-barco': "Vitor Oliveira · CC BY-SA 4.0",
+    'fuzeta-praia-mar': "Vitor Oliveira · CC BY-SA 2.0",
+    'praia-de-faro-surfcasting': "Vitor Oliveira · CC BY-SA 2.0",
+    'madeira-porto-santo': "Vitor Oliveira · CC BY-SA 2.0",
+    'acores-terceira-praia-da-vitoria': "Bybbisch94, Christian Gebhardt · CC BY-SA 4.0",
+    'albufeira-alto-rabagao-pisoes': "Vitor Oliveira · CC BY-SA 2.0",
+    'douro-crestuma-melres': "Vitor Oliveira · CC BY-SA 2.0",
+    'rio-tejo-constancia': "Vitor Oliveira · CC BY-SA 2.0",
+    'santa-cruz-torres-vedras': "GualdimG · CC BY-SA 4.0",
+    'cascais-boca-do-inferno': "Sergei Gussev · CC BY 2.0",
+    'barragem-do-caia': "Vitor Oliveira · CC BY-SA 2.0",
+    'sagres-baleeira-barco': "Vitor Oliveira · CC BY-SA 2.0",
+    'falesia-rocha-baixinha': "Vitor Oliveira · CC BY-SA 2.0",
+    'madeira-machico': "Ввласенко · CC BY-SA 3.0",
+    'acores-sao-miguel-rabo-de-peixe': "JCNazza · CC BY 3.0",
+    'acores-flores-santa-cruz': "Emin Başar ÖZDEMİR · CC BY 3.0"
   };
   function fishPhotoHtml(s, lang) {
     var c = FISH_PHOTO[s.id]; if (!c) return '';
@@ -404,8 +506,8 @@
 
   // ── Cartao de pesca v2 (2026-10-07) — mesma linguagem do cartao de surf (.sc2, css/surf-card-v2.css) ──
   var FISH_PLAN_R = { Norte: 'minho', Porto: 'minho', Centro: 'costa-prata', Lisboa: 'setubal', Alentejo: 'alentejo', Algarve: 'algarve', 'Açores': 'acores', Madeira: 'madeira' };
-  var FISH_INLAND = { 'albufeira-canicada': 1, 'rio-douro-peso-regua': 1, 'albufeira-castelo-de-bode': 1, 'albufeira-maranhao': 1, 'rio-lima-ponte-de-lima': 1, 'alqueva-mourao': 1, 'rio-vez-sistelo': 1, 'rio-coura-taboao': 1, 'rio-homem-amares': 1, 'rio-tamega-chaves': 1, 'rio-tamega-amarante-formao': 1, 'rio-neiva-antas': 1, 'alto-ceira-piodao': 1, 'rio-unhais-pampilhosa': 1, 'albufeira-vascoveiro': 1, 'albufeira-aguieira': 1, 'barragem-santa-clara': 1, 'barragem-de-montargil': 1, 'tapada-grande-mina-sao-domingos': 1, 'barragem-de-odeleite': 1, 'alhandra-alverca-corvinas': 1 };
-  var FISH_PLAN_R_ID = { 'foz-do-arelho': 'oeste', 'berlengas': 'oeste', 'cabo-raso': 'cascais', 'peniche-papoa': 'oeste', 'porto-dinheiro-lourinha': 'oeste', 'alges-cruz-quebrada': 'cascais' };
+  var FISH_INLAND = { 'albufeira-canicada': 1, 'rio-douro-peso-regua': 1, 'albufeira-castelo-de-bode': 1, 'albufeira-maranhao': 1, 'rio-lima-ponte-de-lima': 1, 'alqueva-mourao': 1, 'rio-vez-sistelo': 1, 'rio-coura-taboao': 1, 'rio-homem-amares': 1, 'rio-tamega-chaves': 1, 'rio-tamega-amarante-formao': 1, 'rio-neiva-antas': 1, 'alto-ceira-piodao': 1, 'rio-unhais-pampilhosa': 1, 'albufeira-vascoveiro': 1, 'albufeira-aguieira': 1, 'barragem-santa-clara': 1, 'barragem-de-montargil': 1, 'tapada-grande-mina-sao-domingos': 1, 'barragem-de-odeleite': 1, 'alhandra-alverca-corvinas': 1, 'rio-mouro-riba-de-mouro': 1, 'rio-castro-laboreiro-assureira': 1, 'albufeira-azibo-santa-combinha': 1, 'albufeira-alto-rabagao-pisoes': 1, 'rio-tua-mirandela': 1, 'albufeira-touvedo-entre-ambos-os-rios': 1, 'douro-crestuma-melres': 1, 'lagos-do-sabor-moncorvo': 1, 'pateira-de-fermentelos': 1, 'albufeira-do-cabril': 1, 'rio-tejo-constancia': 1, 'rio-mondego-coimbra-choupalinho': 1, 'albufeira-idanha-marechal-carmona': 1, 'barragem-pego-do-altar': 1, 'barragem-vale-do-gaio': 1, 'barragem-de-odivelas': 1, 'barragem-do-caia': 1, 'alqueva-amieira-marina': 1 };
+  var FISH_PLAN_R_ID = { 'foz-do-arelho': 'oeste', 'berlengas': 'oeste', 'cabo-raso': 'cascais', 'peniche-papoa': 'oeste', 'porto-dinheiro-lourinha': 'oeste', 'alges-cruz-quebrada': 'cascais', 'sao-martinho-do-porto-tunel': 'oeste', 'santa-cruz-torres-vedras': 'oeste', 'ericeira-praia-do-sul': 'oeste', 'azenhas-do-mar-rochas': 'cascais', 'cascais-boca-do-inferno': 'cascais', 'fonte-da-telha-surfcasting': 'setubal', 'troia-praia-atlantica': 'setubal' };
   var FISH_LEVELS = ['iniciante', 'intermedio', 'experiente'];
   var FC2 = {
     pt: { photo: 'Foto', level: 'Nível', species: 'Espécies', tech: 'Técnica', season: 'Melhor época', plan: 'Planear saída', save: 'Guardar',

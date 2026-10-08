@@ -445,7 +445,7 @@
           },
           {
             q: 'Qual é a melhor época para pesca em Portugal?',
-            a: 'Depende da espécie e do tipo de pesca. Para atum e espadim em mar alto: Junho a Outubro. Para sável e lampreia nos rios: Março a Junho. Para robalão e pargo na costa: todo o ano com pico no Outono e Inverno. A Ria Formosa e a Ria de Aveiro são produtivas ao longo de todo o ano.'
+            a: 'Depende da espécie e do tipo de pesca. Para atum e espadim em mar alto: Junho a Outubro. Para truta nos rios: 1 de Março a 31 de Julho. Para robalo e pargo na costa: todo o ano com pico no Outono e Inverno. A Ria Formosa e a Ria de Aveiro são produtivas ao longo de todo o ano.'
           },
           {
             q: 'Posso pescar sem barco em Portugal?',
@@ -926,7 +926,7 @@
         },
         {
           q: 'What is the best season for fishing in Portugal?',
-          a: 'It depends on the species and type of fishing. For bluefin tuna and billfish offshore: June to October. For shad and lamprey in rivers: March to June. For bass and bream on the coast: year-round with a peak in autumn and winter. Ria Formosa and Ria de Aveiro are productive throughout the year.'
+          a: 'It depends on the species and type of fishing. For tuna and billfish offshore: June to October. For trout in rivers: 1 March to 31 July. For bass and bream on the coast: year-round with a peak in autumn and winter. Ria Formosa and Ria de Aveiro are productive throughout the year.'
         },
         {
           q: 'Can I fish without a boat in Portugal?',
