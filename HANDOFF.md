@@ -3,10 +3,10 @@
 Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia no projeto Claude: `claude/handoff-proximos-4-2026-10.md`.
 
 ## Repositório
-- Branch: `main`. Último commit: `a4eb7b6` (HANDOFF + scripts); antes `511ee73` (velocidade) e `2c888ed` (redesign).
-- `main` = `origin/main` (push feito, confirmado 07/10 às 11h).
+- Branch: `main`. Último commit: `f0ab61a` (fix planear, 07/10 17:48); antes `557223f` (fotos webcams + créditos + planear com navbar), `f4337b2` (webcams v2), `47d8c86` (pesca v2).
+- `main` = `origin/main`; **tudo publicado e confirmado em produção a 07/10 ~18h** (`/planear` com `planner-v3.js?v=20261007s` e `site-chrome.css?v=20261007b`; header `geolocation=(self)`).
 - Há ficheiros "modificados" que são só diferença de fim de linha (CRLF na VM vs LF no HEAD). Para ver diferenças reais: `git --no-optional-locks diff --ignore-cr-at-eol --numstat HEAD`.
-- Ver também a secção "Pendentes" (ficheiros soltos na raiz, que não entram em commit).
+- Commits grandes: gerar a lista exata de ficheiros (`docs/commit-files-*.txt`) e usar `git add --pathspec-from-file=...` para não apanhar ruído de fim de linha.
 
 ## Estado real
 
@@ -20,7 +20,8 @@ Ler isto primeiro, depois `CLAUDE.md` e `docs/REGRESSION-WATCHLIST.md`. Cópia n
 | A3. Surf — 23 → ~60 spots por lotes | lote 1 pesquisado (`claude/surf-spots-lote1-2026-10.md`) | — | por escrever no site |
 | P. Pesca v2 (`47d8c86`) | sim | **sim, 07/10** (Ricardo: "Feito") | local; produção por confirmar no Chrome |
 | **W. Webcams v2 — 'Portugal ao vivo'**: 172 câmaras (MEO só link + 13 diretos YouTube incorporáveis), hero 'ecrã em direto' (sem mapa) com canais e pesquisa, painel da câmara com planear (hotéis/atividades/carro/planeador), regresso do separador MEO, pedido de câmara (submit-contact), diretório e FAQ (`docs/commit-2026-10-07-webcams.txt`, backup `docs/_backup-webcams-20261007/`, dados `_scripts/build_webcams_data.py`) | sim (`f4337b2`) | **sim, 07/10** | local, CSP real, 1280/375/320, PT+EN, sem Open-Meteo, funcionais |
-| **W2. Fotos nas webcams (144 + 13 diretos), créditos discretos no site todo, /planear com navbar e rodapé do site, geolocation=(self)** (`docs/commit-2026-10-07-creditos-planear.txt`, lista de ficheiros `docs/commit-files-2026-10-07-creditos.txt`, backups `docs/_backup-creditos-20261007/`, `docs/_backup-planear-20261007/`) | **não (por fazer commit)** | **não** | local, CSP real, 1280/375/320, planeador até aos resultados |
+| **W2. Fotos nas webcams (144 + 13 diretos), créditos discretos no site todo, /planear com navbar e rodapé do site, geolocation=(self)** (`docs/commit-2026-10-07-creditos-planear.txt`, lista de ficheiros `docs/commit-files-2026-10-07-creditos.txt`, backups `docs/_backup-creditos-20261007/`, `docs/_backup-planear-20261007/`) | sim (`557223f`) | **sim, 07/10** | local, CSP real, 1280/375/320, planeador até aos resultados |
+| F. /planear: barra 'Próximo' abria o parceiro errado + logotipo escuro (`f0ab61a`) | sim | **sim, 07/10** | local (3 cliques abrem Stay22/DiscoverCars/GYG certos) + produção |
 | HANDOFF.md + `preview.ps1` + `serve-local.ps1` | sim (checkpoint 2) | não se publica (excluído do deploy) | — |
 
 **Redesign publicado em `2c888ed`:**
@@ -112,16 +113,31 @@ Novos ou por decidir:
 - **Fotos:** só com origem e licença verificadas, com crédito quando a licença o exige.
 - **Escrever na pasta pela VM:** usar ficheiro temporário + `os.replace`. Apagar não é permitido; mover para `docs/_to_delete/`.
 
-## Próximo passo
-**A. Surf: feito localmente em 07/10** (falta commit + deploy pelo Ricardo). Seguinte, por esta ordem:
-- B. filtros uniformes, com /beaches como padrão (no surf os filtros já ficam colados aos resultados);
-- C. webcams;
-- D. monetização dos cartões;
-- E. Planear com o header, footer e linguagem visual do site.
+## Próximo passo — PRÓXIMA SESSÃO: ampliar Praias, Surf e Pesca
+Pedido do Ricardo (07/10): "na próxima sessão iremos ampliar praias, surf, pesca". Detalhe e números em `claude/handoff-proximos-4-2026-10.md` (projeto Claude).
 
-Pendentes do surf (A):
-- Odeceixe está como região Alentejo mas a localização diz Aljezur (a praia fica do lado do Algarve) — decidir.
-- /en/surf não tem paginação (mostra os 23) — já era assim.
-- Bloco GYG do surf desceu para depois dos spots (no telemóvel ~12 000 px): GYG no surf tem ~0 cliques (GA4), mas medir.
-- CSP bloqueia `https://www.google.com/g/collect` (GA4 user_engagement) em todas as páginas — já existia; GA4 não se toca sem razão: decidir.
-- Monetização nos cartões de surf (aulas GYG, alojamento) fica para a etapa D.
+**Antes de começar:** ler este ficheiro, `CLAUDE.md`, `docs/REGRESSION-WATCHLIST.md`; confirmar `git log -3` e diff real; perguntar ao Ricardo a ordem (proposta: Surf → Pesca → Praias) e o tamanho de cada lote.
+
+1. **Surf: 23 → ~60 spots, por lotes.**
+   - Lote 1 já pesquisado com fontes: `claude/surf-spots-lote1-2026-10.md` (14 spots: Ribeira d'Ilhas, Coxos, Foz do Lizandro, São Lourenço, Pedra Branca, Baleal, Lagide, Consolação, Molhe Leste, Carcavelos, São Pedro do Estoril/Bafureira, Praia Grande, Praia das Maçãs, Fonte da Telha).
+   - Onde: `js/surf-pesca-data.js` (`SURF_SPOTS` PT/EN: id, name, region, location, levelKey, levels, type, season, best_swell, best_wind, desc, tags, quality; `SURF_GEO`), `js/surf-pesca-page.js` (`SURF_PHOTO` créditos, `SURF_BEACH`, `SURF_PLAN_R`/`_ID`, `SURF_DB_REGION`), `js/surf-hero.js` (`XY` posição no mapa — ou deixa projetar por `SURF_GEO`).
+   - Fotos: Commons no device (`_scripts/commons_photos.py` é o modelo: geosearch + licença + revisão visual em folhas de contacto em `_diag/`) → `images/spots/surf-<id>-{480,800}.webp` + `docs/FOTOS-CREDITOS.md`. Muitas câmaras das webcams já têm foto (`images/webcams/`) e coordenadas (`_data/meo-livecams-20261007.json`).
+   - Ligar cada spot à webcam MEO mais perto (há 172 em `js/webcams-cams.js`) = valor novo para o surfista.
+   - Decisões em aberto: Odeceixe (Alentejo vs Aljezur/Algarve); promessa "alertas toda a sexta" no surf (não há email semanal).
+2. **Pesca: 25 spots → ampliar.**
+   - Onde: `js/surf-pesca-data.js` (`FISH_SPOTS`: id, name, region, location, tipoKey, tipos, levelKey, season, especies, tecnica, desc, tags, quality; `FISH_GEO`), `js/surf-pesca-page.js` (`FISH_PHOTO`, `FISH_PLAN_R`, `FISH_INLAND`, `FISH_LEVELS`), `js/pesca-hero.js`, `js/pesca-live.js`.
+   - Decisões do Ricardo em aberto: juntar Açores duplicados (`acores-sao-miguel` vs `ribeira-grande-acores-mar`)? Pesca permitida na Lagoa dos Salgados? Os "alertas de maré/lua/vento" do Pro existem mesmo?
+   - Licenças: DGRM (bmar.pt) para mar, ICNF para águas interiores — não inventar regras.
+3. **Praias: ampliar.**
+   - Hoje: 114 praias na BD (`beaches`, Supabase) com foto em `images/beaches/<id>-{480,800}.webp`; 60 páginas estáticas `praias/<slug>/` + `en/praias/<slug>/`.
+   - Opções a decidir com o Ricardo: mais praias na BD (há 172 câmaras MEO com coordenadas = lista pronta de praias com procura) e/ou mais páginas estáticas (SEO); páginas regionais "Mapa das praias do Algarve/Centro/Norte" (GSC: 8 400 impressões "mapa praias", CTR 0,5%).
+   - Atenção: duplicados na BD (Buarcos, Alvor, Armação de Pêra); fotos antigas na BD usadas por `beach.html`.
+
+Regras que se mantêm: cada página com design próprio (não repetir o mapa de relevo — já está em /beaches, /surf, /pesca); hero sempre o elemento principal; créditos de foto quase invisíveis; só fotos com licença verificada; capturas antes/depois; testar 1280/375/320 com a CSP real; Ricardo faz commit/push/deploy.
+
+Outros pendentes (não urgentes):
+- Webcams: aprovar/rever a lista de diretos YouTube (IDs mudam — verificar com oEmbed antes de cada deploy; se o da Nazaré mudar o hero fica sem imagem inicial); páginas por câmara (Porto, Matosinhos, Supertubos, Nazaré, Póvoa→Caxinas); 18 câmaras sem foto.
+- Open-Meteo gratuito é para uso não comercial — ver termos/plano pago (site tem afiliados).
+- Medir ~14/10 e ~04/11: CTR de /en/webcams no GSC (antes 3,5%, pos. 7), eventos GA4 `webcam_action` e `affiliate_click`, Stay22 por campanha, GYG por `cmp`.
+- B (filtros uniformes) e D (monetização nos cartões de surf/pesca/praias) do plano A–E continuam por fazer.
+- Limpeza de ficheiros públicos por engano (ver acima) — decisão do Ricardo.
