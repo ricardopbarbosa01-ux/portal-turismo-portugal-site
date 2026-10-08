@@ -83,6 +83,7 @@ a.bh4__card:hover{transform:translateY(-2px);}
 .bh4__cmeta{margin-top:5px !important; font-size:.8rem; color:var(--mut);}
 .bh4__card--islands{right:0; top:70px; width:180px; background:rgba(255,255,255,.06); box-shadow:none;}
 .bh4__card--islands .bh4__eye{color:#c7d6e8;}
+.bh4__card--azores{top:204px;}
 .bh4__card--waves{left:0; top:340px; width:150px; border-color:rgba(255,194,75,.5);}
 .bh4__card--waves .bh4__eye{color:#ffd27a;}
 .bh4__card--calm{right:0; top:640px; width:180px; border-color:rgba(52,224,176,.5); box-shadow:0 18px 40px -14px rgba(0,0,0,.75), 0 0 24px -6px rgba(52,224,176,.35);}
@@ -98,7 +99,7 @@ a.bh4__card:hover{transform:translateY(-2px);}
   .bh4__compass{left:auto; right:max(0px, calc(50% - 190px)); top:44%; width:78px; height:78px;}
   .bh4__leaders, .bh4__card--waves{display:none !important;}
   .bh4__card{position:relative; left:auto; right:auto; top:auto !important; width:100%;}
-  .bh4__card--calm{order:2;} .bh4__card--islands{order:3;}
+  .bh4__card--calm{order:2;} .bh4__card--islands{order:3;} .bh4__card--azores{order:4;}
   .bh4__core{transform:scale(1.25);}
   .bh4__labels text{font-size:50px; stroke-width:13;}
   .bh4__labels .bh4__minor{display:none;}

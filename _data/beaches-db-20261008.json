@@ -1,0 +1,2305 @@
+[
+{
+"id": "e11188da-c19e-4c9d-a2a6-59f777412a05",
+"name": "Lagoa de Albufeira",
+"region": "Oeste",
+"latitude": 38.50897,
+"longitude": -9.1767
+},
+{
+"id": "6cafdc55-fcea-4e55-b2a1-78995f44b609",
+"name": "Praia da Senhora da Rocha",
+"region": "Algarve",
+"latitude": 37.09687,
+"longitude": -8.38583
+},
+{
+"id": "aa950882-863f-42db-81b8-0c5e9d64ba24",
+"name": "Fajã da Areia",
+"region": "Madeira",
+"latitude": 32.8234,
+"longitude": -17.2334
+},
+{
+"id": "8c523fc0-993c-4e0e-9d29-755d7257be50",
+"name": "Praia de Vilamoura",
+"region": "Algarve",
+"latitude": 37.07188,
+"longitude": -8.11896
+},
+{
+"id": "10f7f046-fb30-493e-acf0-bf6b2a57858b",
+"name": "Praia do Cabedelo",
+"region": "Norte",
+"latitude": 41.68,
+"longitude": -8.83556
+},
+{
+"id": "37ac39ea-0a07-480a-9147-5aed9a9ae388",
+"name": "Praia da Bordeira",
+"region": "Algarve",
+"latitude": 37.19851,
+"longitude": -8.90459
+},
+{
+"id": "47af766c-c76f-483f-986b-5dbefd6f294a",
+"name": "Praia da Barra",
+"region": "Centro",
+"latitude": 40.64169,
+"longitude": -8.74994
+},
+{
+"id": "3be6e364-0660-4b97-be03-67b7c4053070",
+"name": "Manta Rota",
+"region": "Algarve",
+"latitude": 37.16333,
+"longitude": -7.5175
+},
+{
+"id": "a45ef0a4-98ff-4eb2-bc3d-3cee21ca5570",
+"name": "Praia da Fuseta",
+"region": "Algarve",
+"latitude": 37.05074,
+"longitude": -7.74213
+},
+{
+"id": "a6625ef3-a4ad-4e38-b74e-856ffc9fa724",
+"name": "Praia da Arrifana",
+"region": "Algarve",
+"latitude": 37.29455,
+"longitude": -8.86632
+},
+{
+"id": "07b0b2c3-f11d-474d-9f5f-02dc87a4be64",
+"name": "Praia da Figueira da Foz",
+"region": "Centro",
+"latitude": 40.1502,
+"longitude": -8.87149
+},
+{
+"id": "6b2661a4-4126-4ac4-8a03-ec2193cd4494",
+"name": "Praia do Almograve",
+"region": "Alentejo",
+"latitude": 37.65281,
+"longitude": -8.80324
+},
+{
+"id": "508706d1-2ddd-4377-8319-75a5bb347435",
+"name": "Praia da Fonte da Telha",
+"region": "Lisboa e Setúbal",
+"latitude": 38.57143,
+"longitude": -9.19748
+},
+{
+"id": "d8c2c61e-734a-41c5-aec1-66981023cfca",
+"name": "Praia de Setúbal",
+"region": "Lisboa e Setúbal",
+"latitude": 38.5244,
+"longitude": -8.8882
+},
+{
+"id": "fede421d-0f75-46f7-9248-9a374bc63c4c",
+"name": "Praia de Cascais",
+"region": "Lisboa e Setúbal",
+"latitude": 38.69913,
+"longitude": -9.41794
+},
+{
+"id": "0f616614-30d1-488a-986a-acd1caebbe6c",
+"name": "Praia de Supertubos",
+"region": "Oeste",
+"latitude": 39.34535,
+"longitude": -9.3644
+},
+{
+"id": "d762875e-3d8a-467c-bb1b-efed5b1c42d0",
+"name": "Praia de Mira",
+"region": "Centro",
+"latitude": 40.45644,
+"longitude": -8.80472
+},
+{
+"id": "868b17e0-9f74-46b1-8f84-bacc0ff7db94",
+"name": "Praia da Carrapateira",
+"region": "Algarve",
+"latitude": 37.1842,
+"longitude": -8.9
+},
+{
+"id": "52e176c2-b7e6-4a85-abcf-6cf871464967",
+"name": "Praia da Samoqueira",
+"region": "Alentejo",
+"latitude": 37.8556,
+"longitude": -8.7906
+},
+{
+"id": "4bd3bca5-6c5b-486d-87c0-bd21ea5435ce",
+"name": "Zambujeira do Mar",
+"region": "Alentejo",
+"latitude": 37.52198,
+"longitude": -8.78672
+},
+{
+"id": "304b2207-d81b-4fef-bdc3-74392d207133",
+"name": "Praia de São Julião",
+"region": "Oeste",
+"latitude": 38.93213,
+"longitude": -9.42016
+},
+{
+"id": "a8e9c668-f606-4100-87ea-b00ea61617e5",
+"name": "Praia do Malhão",
+"region": "Alentejo",
+"latitude": 37.78403,
+"longitude": -8.80168
+},
+{
+"id": "db7e9098-4293-4b44-a443-d42491916a91",
+"name": "Praia de Esmoriz",
+"region": "Norte",
+"latitude": 40.95363,
+"longitude": -8.65693
+},
+{
+"id": "62030703-6711-4653-bc35-b1284f35cd5e",
+"name": "Praia de Leça da Palmeira",
+"region": "Norte",
+"latitude": 41.19083,
+"longitude": -8.70694
+},
+{
+"id": "084b12c9-a27a-4865-98b4-6932918e3609",
+"name": "Praia do Peneco",
+"region": "Algarve",
+"latitude": 37.08642,
+"longitude": -8.25247
+},
+{
+"id": "de8ce91b-729b-451d-9eac-1eedd1d62790",
+"name": "Praia de Porto Santo",
+"region": "Madeira",
+"latitude": 33.0556,
+"longitude": -16.3375
+},
+{
+"id": "feead871-bb63-43d7-acf9-592d7d54b514",
+"name": "Praia Verde",
+"region": "Algarve",
+"latitude": 37.17329,
+"longitude": -7.47962
+},
+{
+"id": "eea6217b-2508-4c9b-b1a8-e9ed888f757d",
+"name": "Praia de Melides",
+"region": "Alentejo",
+"latitude": 38.12909,
+"longitude": -8.79519
+},
+{
+"id": "a0529d77-b688-4293-ba11-8f023a69e4cf",
+"name": "Praia da Ursa",
+"region": "Oeste",
+"latitude": 38.79,
+"longitude": -9.4928
+},
+{
+"id": "f0fbf5a9-75d3-40d3-80be-62fc749588fd",
+"name": "Praia do Tamariz",
+"region": "Lisboa e Setúbal",
+"latitude": 38.70229,
+"longitude": -9.39883
+},
+{
+"id": "d81736c8-0e7d-4d98-b369-377998fc5c2f",
+"name": "Praia das Maçãs",
+"region": "Oeste",
+"latitude": 38.82576,
+"longitude": -9.4705
+},
+{
+"id": "53d1fa07-14d1-4806-8c8c-d0ec01f35b28",
+"name": "Praia da Rainha",
+"region": "Lisboa e Setúbal",
+"latitude": 38.69913,
+"longitude": -9.41794
+},
+{
+"id": "513d687d-b8f9-4d87-b5a7-c6de1d7d695c",
+"name": "Praia Grande",
+"region": "Oeste",
+"latitude": 38.81335,
+"longitude": -9.47964
+},
+{
+"id": "0b9d2380-38cf-437d-a4e3-4b68158ba2a4",
+"name": "Praia de Tróia",
+"region": "Alentejo",
+"latitude": 38.49115,
+"longitude": -8.90794
+},
+{
+"id": "9b62bea8-e8c4-44f1-9ab5-9e9864cf6bb5",
+"name": "Meia Praia",
+"region": "Algarve",
+"latitude": 37.10978,
+"longitude": -8.65972
+},
+{
+"id": "6a12acc8-f776-4b01-96f7-73f9fb096e6d",
+"name": "Praia de Porto Covo",
+"region": "Alentejo",
+"latitude": 37.82898,
+"longitude": -8.79307
+},
+{
+"id": "dee27f4d-ec13-43b4-a618-4ac272d22cf2",
+"name": "Praia de São Torpes",
+"region": "Alentejo",
+"latitude": 37.9244,
+"longitude": -8.80735
+},
+{
+"id": "37fd270d-1dd5-4701-af07-f0ede1590069",
+"name": "Praia do Zavial",
+"region": "Algarve",
+"latitude": 37.04615,
+"longitude": -8.87158
+},
+{
+"id": "d3bb1bb1-4e97-424d-9267-710673662975",
+"name": "Praia de Benagil",
+"region": "Algarve",
+"latitude": 37.08715,
+"longitude": -8.42636
+},
+{
+"id": "fd1474e1-7acb-4635-822d-df649332769e",
+"name": "Praia da Areia Branca",
+"region": "Centro",
+"latitude": 39.26687,
+"longitude": -9.33684
+},
+{
+"id": "24dba43c-02fb-40bc-b3a8-d39e1f8ea49e",
+"name": "Praia de S. Pedro de Moel",
+"region": "Centro",
+"latitude": 39.75574,
+"longitude": -9.03245
+},
+{
+"id": "23467c12-84bc-4590-a3a8-32412c15fcde",
+"name": "Praia de Carvoeiro",
+"region": "Algarve",
+"latitude": 37.09617,
+"longitude": -8.47227
+},
+{
+"id": "3d2dacea-cfcb-4086-9e15-a7b57ec9f2e7",
+"name": "Praia dos Galapinhos",
+"region": "Lisboa e Setúbal",
+"latitude": 38.4822,
+"longitude": -8.96676
+},
+{
+"id": "406a09d1-daa7-44b3-aa19-3a13b4aab711",
+"name": "Praia de Carcavelos",
+"region": "Lisboa e Setúbal",
+"latitude": 38.67798,
+"longitude": -9.33324
+},
+{
+"id": "ebf82db0-f4b2-4bb7-a1fb-ec6f07e90632",
+"name": "Jardim do Mar",
+"region": "Madeira",
+"latitude": 32.7234,
+"longitude": -17.2234
+},
+{
+"id": "cb7d55ac-702f-49ec-98f7-d2c8c8e62715",
+"name": "Portinho da Arrábida",
+"region": "Oeste",
+"latitude": 38.4786,
+"longitude": -8.97565
+},
+{
+"id": "4b75fb06-7715-4b56-8b37-8f6eb332ae22",
+"name": "Praia de Faro",
+"region": "Algarve",
+"latitude": 37.00741,
+"longitude": -7.99563
+},
+{
+"id": "c627b1c9-8467-4729-aa26-15fb6e86e6af",
+"name": "Praia de Odeceixe",
+"region": "Algarve",
+"latitude": 37.44193,
+"longitude": -8.79957
+},
+{
+"id": "26b8762d-0343-4a93-9670-9a86993e7dfd",
+"name": "Praia da Costa Nova",
+"region": "Centro",
+"latitude": 40.61642,
+"longitude": -8.7538
+},
+{
+"id": "74421a75-f67c-45d5-928f-b7fae44adc33",
+"name": "Praia do Norte",
+"region": "Centro",
+"latitude": 39.61233,
+"longitude": -9.08665
+},
+{
+"id": "dd37d1cd-8ecc-45af-b8d2-3ceabf881969",
+"name": "Praia de Ofir",
+"region": "Norte",
+"latitude": 41.51722,
+"longitude": -8.78778
+},
+{
+"id": "92de7432-12a1-4324-8ed2-932692b1e267",
+"name": "Praia de Santo André",
+"region": "Alentejo",
+"latitude": 38.11452,
+"longitude": -8.79931
+},
+{
+"id": "f893e0a8-9f2e-4533-9093-001877541cf1",
+"name": "Praia de São João do Estoril",
+"region": "Lisboa e Setúbal",
+"latitude": 38.70193,
+"longitude": -9.39204
+},
+{
+"id": "8d29adfa-7276-4074-bce6-dc1c6b49ae12",
+"name": "Praia do Guincho",
+"region": "Oeste",
+"latitude": 38.73067,
+"longitude": -9.4749
+},
+{
+"id": "4325b4a7-62f3-46a7-a66d-ae0ad6e0d374",
+"name": "Praia da Luz",
+"region": "Algarve",
+"latitude": 37.08635,
+"longitude": -8.72638
+},
+{
+"id": "6b3928b3-4680-4051-b2f1-e3bdb41cab35",
+"name": "Praia da Vagueira",
+"region": "Centro",
+"latitude": 40.56334,
+"longitude": -8.77084
+},
+{
+"id": "b699e6b6-e0cb-4620-9355-e1f3074ddde9",
+"name": "Praia de Moledo",
+"region": "Norte",
+"latitude": 41.84889,
+"longitude": -8.86611
+},
+{
+"id": "885a3c2e-2f8d-424d-b98c-a8c7b8732bee",
+"name": "Praia do Vau",
+"region": "Algarve",
+"latitude": 37.11941,
+"longitude": -8.55814
+},
+{
+"id": "63d09050-d513-474a-87f4-3658b18da09a",
+"name": "Praia de Espinho",
+"region": "Norte",
+"latitude": 41.00889,
+"longitude": -8.64694
+},
+{
+"id": "0e3bf570-263f-45c1-afd2-0f9ca232b07c",
+"name": "Praia de Ferragudo",
+"region": "Algarve",
+"latitude": 37.11728,
+"longitude": -8.52182
+},
+{
+"id": "fefd19c5-2dad-4627-a476-daa13be99352",
+"name": "Praia da Foz do Arelho",
+"region": "Centro",
+"latitude": 39.42855,
+"longitude": -9.2235
+},
+{
+"id": "e1e260e4-5094-4dee-8c90-11a43523e126",
+"name": "Praia de Monte Clérigo",
+"region": "Algarve",
+"latitude": 37.34241,
+"longitude": -8.85382
+},
+{
+"id": "2cb7aca0-9280-4405-8390-3f592e3ef0f5",
+"name": "Praia da Falésia",
+"region": "Algarve",
+"latitude": 37.08335,
+"longitude": -8.15912
+},
+{
+"id": "fdf3f8dc-a8e9-491e-9c9e-4bea8bb8fa47",
+"name": "Paul do Mar",
+"region": "Madeira",
+"latitude": 32.7534,
+"longitude": -17.2012
+},
+{
+"id": "b04adbca-20fc-44e0-b947-066978b8fffc",
+"name": "Praia do Amado",
+"region": "Algarve",
+"latitude": 37.16698,
+"longitude": -8.90345
+},
+{
+"id": "66ee7f6b-018b-408b-8d48-c58d2f73bf8d",
+"name": "Praia da Marinha",
+"region": "Algarve",
+"latitude": 37.08958,
+"longitude": -8.41284
+},
+{
+"id": "c63cbf17-1445-4697-aa21-a5b9dff08851",
+"name": "Praia do Furadouro",
+"region": "Norte",
+"latitude": 40.87371,
+"longitude": -8.67755
+},
+{
+"id": "f2061e77-2dfd-4817-bab6-2341672729a4",
+"name": "Praia de Santa Eulália",
+"region": "Algarve",
+"latitude": 37.08777,
+"longitude": -8.21397
+},
+{
+"id": "9fd20503-ced1-4e4c-9069-d38c320ef247",
+"name": "Praia de Matosinhos",
+"region": "Norte",
+"latitude": 41.17722,
+"longitude": -8.69389
+},
+{
+"id": "cd38e95f-282e-4d59-bca9-5ff03d43cee8",
+"name": "Praia da Cordoama",
+"region": "Algarve",
+"latitude": 37.10942,
+"longitude": -8.93782
+},
+{
+"id": "b5d5f332-d553-49d9-ad92-77d658de945f",
+"name": "Praia da Murtinheira",
+"region": "Centro",
+"latitude": 40.20986,
+"longitude": -8.89763
+},
+{
+"id": "59de93aa-066b-4d01-9c4e-27f3a40422f1",
+"name": "Praia da Galé",
+"region": "Algarve",
+"latitude": 37.08014,
+"longitude": -8.31599
+},
+{
+"id": "d3b73c18-ff72-4f00-b556-0370fd549fd3",
+"name": "Praia do Castelejo",
+"region": "Algarve",
+"latitude": 37.10015,
+"longitude": -8.94575
+},
+{
+"id": "885d20c0-e362-4825-b250-b63ffaaf9631",
+"name": "Praia da Vieira",
+"region": "Centro",
+"latitude": 39.87368,
+"longitude": -8.97358
+},
+{
+"id": "5c45c033-1182-4e59-b0de-61ec81ab38f2",
+"name": "Praia do Martinhal",
+"region": "Algarve",
+"latitude": 37.01978,
+"longitude": -8.92467
+},
+{
+"id": "925ac239-db1f-432b-98ee-7a308ae9a6b8",
+"name": "Praia de Alvor",
+"region": "Algarve",
+"latitude": 37.12218,
+"longitude": -8.59724
+},
+{
+"id": "d723c15c-6b6b-4c47-8182-c06313e0e641",
+"name": "Praia de Armação de Pêra",
+"region": "Algarve",
+"latitude": 37.10146,
+"longitude": -8.36603
+},
+{
+"id": "efdfab6a-36b9-42a6-8e11-019450a51c86",
+"name": "Praia da Altura",
+"region": "Algarve",
+"latitude": 37.16906,
+"longitude": -7.49756
+},
+{
+"id": "e5113c93-c469-489a-8db6-7d877c0de22c",
+"name": "Praia da Torreira",
+"region": "Centro",
+"latitude": 40.76149,
+"longitude": -8.71429
+},
+{
+"id": "f400d000-20b2-414c-ba38-bae63856431f",
+"name": "Praia da Tocha",
+"region": "Centro",
+"latitude": 40.32934,
+"longitude": -8.84553
+},
+{
+"id": "2dd735c3-9317-45bb-aed7-c3832af7653d",
+"name": "Praia de Vila Nova de Milfontes",
+"region": "Alentejo",
+"latitude": 37.7181,
+"longitude": -8.78737
+},
+{
+"id": "c4bea301-56f1-49b5-934d-f576e41f5132",
+"name": "Praia do Pedrógão",
+"region": "Centro",
+"latitude": 39.92259,
+"longitude": -8.95286
+},
+{
+"id": "4c907c07-8bbd-4c37-90f2-8f9e2696f5a0",
+"name": "Praia da Nazaré",
+"region": "Centro",
+"latitude": 39.60158,
+"longitude": -9.07548
+},
+{
+"id": "6adf3ccd-9fd2-4bc0-894e-e4c775fb3e71",
+"name": "Praia de Esposende",
+"region": "Norte",
+"latitude": 41.54583,
+"longitude": -8.79333
+},
+{
+"id": "dee7ca71-0316-4254-a1db-6c8f79a6e380",
+"name": "Praia de Sagres",
+"region": "Algarve",
+"latitude": 37.00503,
+"longitude": -8.93986
+},
+{
+"id": "9ff93289-f391-41aa-bdd1-d7d55637a9a2",
+"name": "Praia da Rocha",
+"region": "Algarve",
+"latitude": 37.11605,
+"longitude": -8.53737
+},
+{
+"id": "f7fa6d81-2872-4971-be81-42464b11ac9f",
+"name": "Praia das Caxinas",
+"region": "Norte",
+"latitude": 41.3567,
+"longitude": -8.7456
+},
+{
+"id": "081ec673-aec2-4015-b711-4f88b2664914",
+"name": "Ilha de Tavira",
+"region": "Algarve",
+"latitude": 37.10979,
+"longitude": -7.61985
+},
+{
+"id": "89fa1083-95bf-42e7-bd28-ad34740851cf",
+"name": "Ilha da Culatra",
+"region": "Algarve",
+"latitude": 36.98545,
+"longitude": -7.83904
+},
+{
+"id": "91f9ac99-a4b2-4793-afba-5b7f79d72d54",
+"name": "Praia da Comporta",
+"region": "Alentejo",
+"latitude": 38.37907,
+"longitude": -8.80288
+},
+{
+"id": "49839927-ee16-498b-80a8-f029627fd4c5",
+"name": "Praia da Costa de Caparica",
+"region": "Lisboa e Setúbal",
+"latitude": 38.63724,
+"longitude": -9.23586
+},
+{
+"id": "51c5eb21-e534-4c5c-98e0-305c78721686",
+"name": "Praia de Apúlia",
+"region": "Norte",
+"latitude": 41.48361,
+"longitude": -8.77889
+},
+{
+"id": "63806db3-12a1-4e83-b354-1ac4b44fcb2d",
+"name": "Praia de Buarcos",
+"region": "Centro",
+"latitude": 40.16336,
+"longitude": -8.8789
+},
+{
+"id": "91b63ef1-7d4f-483a-a8ca-ed2a60b65e00",
+"name": "Praia de Dona Ana",
+"region": "Algarve",
+"latitude": 37.0916,
+"longitude": -8.669
+},
+{
+"id": "67e04297-3a9a-4e41-808f-cae811d0680b",
+"name": "Praia de Ericeira",
+"region": "Oeste",
+"latitude": 38.96408,
+"longitude": -9.41889
+},
+{
+"id": "7b053b2b-f6f9-4d2b-b897-e4f4b52f463a",
+"name": "Praia de S. Pedro do Estoril",
+"region": "Lisboa e Setúbal",
+"latitude": 38.69317,
+"longitude": -9.369
+},
+{
+"id": "9efe4cc6-cb4a-4265-83c3-c710917810c1",
+"name": "Praia de Sesimbra",
+"region": "Lisboa e Setúbal",
+"latitude": 38.44065,
+"longitude": -9.09789
+},
+{
+"id": "3308ac4a-f42c-4c44-938b-cccbebb21afc",
+"name": "Praia de São Rafael",
+"region": "Algarve",
+"latitude": 37.07461,
+"longitude": -8.28079
+},
+{
+"id": "f1f7b723-5ae7-457f-a810-6d5ad1f43c23",
+"name": "Praia de Tavira",
+"region": "Algarve",
+"latitude": 37.1103,
+"longitude": -7.645
+},
+{
+"id": "f940e21f-3169-486c-9438-30dd3e503eb3",
+"name": "Praia do Carvalhal",
+"region": "Alentejo",
+"latitude": 38.30519,
+"longitude": -8.7816
+},
+{
+"id": "b7c02df5-a01e-40e3-8a13-342d56058eb4",
+"name": "Praia do Seixal",
+"region": "Madeira",
+"latitude": 32.82242,
+"longitude": -17.10253
+},
+{
+"id": "d9af39d6-f9ae-483d-ab1d-e48a026dfd53",
+"name": "Praia do Camilo",
+"region": "Algarve",
+"latitude": 37.08736,
+"longitude": -8.66839
+},
+{
+"id": "43290bbc-db7f-4b1e-9cb5-a51b644c0ca6",
+"name": "Vila Praia de Âncora",
+"region": "Norte",
+"latitude": 41.81222,
+"longitude": -8.86612
+},
+{
+"id": "fa66de51-13bc-4088-8b94-942d33e525fc",
+"name": "Praia de Beliche",
+"region": "Algarve",
+"latitude": 37.02529,
+"longitude": -8.96411
+},
+{
+"id": "5ed26c4c-0979-4497-a021-253ef66f6aeb",
+"name": "Praia do Magoito",
+"region": "Oeste",
+"latitude": 38.86361,
+"longitude": -9.44957
+},
+{
+"id": "ffe1a91f-de57-4ff0-9ad5-d32951851730",
+"name": "Praia de Peniche",
+"region": "Oeste",
+"latitude": 39.36228,
+"longitude": -9.36835
+},
+{
+"id": "6347e27e-d7fe-45bd-9fb8-ff3d7557d100",
+"name": "Praia de São Martinho do Porto",
+"region": "Oeste",
+"latitude": 39.51012,
+"longitude": -9.1355
+},
+{
+"id": "c0b66706-af15-47b5-adc4-6ff208c3b855",
+"name": "Praia de Albarquel",
+"region": "Lisboa e Setúbal",
+"latitude": 38.50879,
+"longitude": -8.91364
+},
+{
+"id": "4b7f7ece-a91f-4ef0-bd4f-f8f280a6b78a",
+"name": "Praia do Meco",
+"region": "Oeste",
+"latitude": 38.48969,
+"longitude": -9.18458
+},
+{
+"id": "a9b0eada-8f04-4862-85aa-2892039baecd",
+"name": "Ribeira d'Ilhas",
+"region": "Oeste",
+"latitude": 38.98746,
+"longitude": -9.41962
+},
+{
+"id": "6541d792-54dd-4b32-b89c-02ef4c7c9f90",
+"name": "Praia da Adraga",
+"region": "Oeste",
+"latitude": 38.80352,
+"longitude": -9.48569
+},
+{
+"id": "e3da620e-beaf-4a4a-80e3-d3f94c3a311e",
+"name": "Praia da Crismina",
+"region": "Oeste",
+"latitude": 38.7263,
+"longitude": -9.47699
+},
+{
+"id": "24ef6f3c-123f-4cda-9ed7-53b372fe4790",
+"name": "Praia de Santa Cruz",
+"region": "Oeste",
+"latitude": 39.13786,
+"longitude": -9.38243
+},
+{
+"id": "97427a14-7439-4672-8589-9139d7cb5abe",
+"name": "Praia do Baleal",
+"region": "Oeste",
+"latitude": 39.3714,
+"longitude": -9.33902
+},
+{
+"id": "23be37b8-dc27-4a24-b91f-a24e2dd76b3d",
+"name": "Praia de Canide",
+"region": "Norte",
+"latitude": 41.11694,
+"longitude": -8.66444
+},
+{
+"id": "c4e37952-73a1-42b7-b36f-b4fd60291102",
+"name": "Praia de Paredes da Vitória",
+"region": "Oeste",
+"latitude": 39.70168,
+"longitude": -9.0514
+},
+{
+"id": "bdd9928f-c4b0-4e06-95b9-9ccead088030",
+"name": "Praia de Santa Rita",
+"region": "Oeste",
+"latitude": 39.17449,
+"longitude": -9.35856
+},
+{
+"id": "64b383cd-da9c-496c-bc43-77908e175f8d",
+"name": "Praia da Foz do Lizandro",
+"region": "Oeste",
+"latitude": 38.9424,
+"longitude": -9.41646
+},
+{
+"id": "d298db41-b072-4fcb-9bbb-d6ad9c5bf1f0",
+"name": "Praia da Torre",
+"region": "Lisboa e Setúbal",
+"latitude": 38.67549,
+"longitude": -9.323
+},
+{
+"id": "6116b10b-1e12-4d54-b9ce-86bb6792fa6b",
+"name": "Praia da Parede",
+"region": "Lisboa e Setúbal",
+"latitude": 38.68552,
+"longitude": -9.35362
+},
+{
+"id": "b543a3dd-bfe8-40d7-8d5e-2ac453daf76e",
+"name": "Praia de São João da Caparica",
+"region": "Lisboa e Setúbal",
+"latitude": 38.6593,
+"longitude": -9.25541
+},
+{
+"id": "4a454a94-b132-44dc-a15b-3733e85d52f2",
+"name": "Praia das Bicas",
+"region": "Lisboa e Setúbal",
+"latitude": 38.4636,
+"longitude": -9.19353
+},
+{
+"id": "7f17154c-8b05-4c15-82ae-d14dc121bc21",
+"name": "Praia de Paço de Arcos",
+"region": "Lisboa e Setúbal",
+"latitude": 38.68998,
+"longitude": -9.29708
+},
+{
+"id": "56c6175b-966c-4d7f-a459-9db79d78734c",
+"name": "Praia da Conceição",
+"region": "Lisboa e Setúbal",
+"latitude": 38.70005,
+"longitude": -9.41636
+},
+{
+"id": "580c0d76-51d5-476b-94a4-31ce0435471b",
+"name": "Praia das Avencas",
+"region": "Lisboa e Setúbal",
+"latitude": 38.68775,
+"longitude": -9.35993
+},
+{
+"id": "781cff5a-f003-4f55-a381-f9e94fd2bdc2",
+"name": "Praia do Osso da Baleia",
+"region": "Centro",
+"latitude": 40.00341,
+"longitude": -8.91487
+},
+{
+"id": "f434fab5-7b9b-4587-8397-1614df91d007",
+"name": "Praia da Pedra do Ouro",
+"region": "Oeste",
+"latitude": 39.72597,
+"longitude": -9.04717
+},
+{
+"id": "e927161a-02ad-4e1c-89f0-541a9e0d99ba",
+"name": "Praia de Quarteira",
+"region": "Algarve",
+"latitude": 37.06535,
+"longitude": -8.09999
+},
+{
+"id": "4f522dae-6e43-4d05-b439-36c01909aa5e",
+"name": "Praia do Homem do Leme",
+"region": "Norte",
+"latitude": 41.16056,
+"longitude": -8.68639
+},
+{
+"id": "2f8ed1a4-a6e6-4ced-bc7f-3986ce468221",
+"name": "Praia das Moitas",
+"region": "Lisboa e Setúbal",
+"latitude": 38.70166,
+"longitude": -9.41
+},
+{
+"id": "1da81451-1187-4895-8c9e-ddb4d58a2f82",
+"name": "Praia de Santo Amaro de Oeiras",
+"region": "Lisboa e Setúbal",
+"latitude": 38.68433,
+"longitude": -9.31195
+},
+{
+"id": "7b667795-a26d-459d-a543-553834f68914",
+"name": "Praia da Arda",
+"region": "Norte",
+"latitude": 41.77028,
+"longitude": -8.87417
+},
+{
+"id": "0746921c-411a-46b6-a8a2-9df52412abee",
+"name": "Praia de Afife",
+"region": "Norte",
+"latitude": 41.78083,
+"longitude": -8.87139
+},
+{
+"id": "98bb3a39-2cff-4041-bef4-8ae9ef322ab1",
+"name": "Praia do Areão",
+"region": "Centro",
+"latitude": 40.52104,
+"longitude": -8.78352
+},
+{
+"id": "36eaa5a8-095d-443b-adf4-09ab24da88aa",
+"name": "Praia do Labrego",
+"region": "Centro",
+"latitude": 40.55187,
+"longitude": -8.77458
+},
+{
+"id": "4bca34ad-ea87-48bf-9e93-2e60ba80e687",
+"name": "Praia do Carvalhal (Odemira)",
+"region": "Alentejo",
+"latitude": 37.5035,
+"longitude": -8.79768
+},
+{
+"id": "2dcab437-ca9b-44b2-9b4e-022bbad98cf0",
+"name": "Praia do Infante",
+"region": "Lisboa e Setúbal",
+"latitude": 38.59969,
+"longitude": -9.21043
+},
+{
+"id": "6013ec3e-6d45-4060-a59f-55952d81b191",
+"name": "Praia Azul",
+"region": "Oeste",
+"latitude": 39.11436,
+"longitude": -9.39379
+},
+{
+"id": "afd03a2d-9ded-4768-aeb9-d894e78943ad",
+"name": "Praia Formosa",
+"region": "Madeira",
+"latitude": 32.6414,
+"longitude": -16.9544
+},
+{
+"id": "fbbb80b4-a16c-48a7-9680-ea234a3f3289",
+"name": "Praia da Barreirinha",
+"region": "Madeira",
+"latitude": 32.6467,
+"longitude": -16.8975
+},
+{
+"id": "48e61e35-c391-48a1-8566-6b2ef5a8a101",
+"name": "Praia dos Reis Magos",
+"region": "Madeira",
+"latitude": 32.6472,
+"longitude": -16.8242
+},
+{
+"id": "05ea6670-d128-4903-9778-a53d64c568db",
+"name": "Praia da Ponta do Sol",
+"region": "Madeira",
+"latitude": 32.6797,
+"longitude": -17.1056
+},
+{
+"id": "1604913a-e163-4989-ad7a-87061e065e45",
+"name": "Piscinas Naturais do Porto Moniz",
+"region": "Madeira",
+"latitude": 32.8678,
+"longitude": -17.17
+},
+{
+"id": "13490d00-010e-40ef-9060-26ab4c5a4bd2",
+"name": "Praia da Maiata",
+"region": "Madeira",
+"latitude": 32.76771,
+"longitude": -16.82109
+},
+{
+"id": "47daa628-809d-490d-b248-2ae54538b90a",
+"name": "Praia da Calheta",
+"region": "Madeira",
+"latitude": 32.7194,
+"longitude": -17.1744
+},
+{
+"id": "182596b9-05cb-4f89-8076-93668e7086fa",
+"name": "Prainha do Caniçal",
+"region": "Madeira",
+"latitude": 32.743,
+"longitude": -16.7161
+},
+{
+"id": "6210643d-f82a-458c-948e-7de143c49b55",
+"name": "Praia do Vale Figueiras",
+"region": "Algarve",
+"latitude": 37.2477,
+"longitude": -8.86956
+},
+{
+"id": "88102fe2-62d3-4721-a27a-bab4d2ffe15c",
+"name": "Praia da Salema",
+"region": "Algarve",
+"latitude": 37.06476,
+"longitude": -8.82482
+},
+{
+"id": "d2e0de6e-e891-45a7-b2e2-c78441bdd3f6",
+"name": "Praia da Boca do Rio",
+"region": "Algarve",
+"latitude": 37.06639,
+"longitude": -8.80833
+},
+{
+"id": "dde3f623-1fbf-4bcd-8e1d-0381f78b94ad",
+"name": "Praia do Burgau",
+"region": "Algarve",
+"latitude": 37.0716,
+"longitude": -8.77521
+},
+{
+"id": "a229d3bb-c089-45f9-82c6-31efc93122af",
+"name": "Praia de Porto de Mós",
+"region": "Algarve",
+"latitude": 37.0852,
+"longitude": -8.68868
+},
+{
+"id": "2934e6c6-ef59-4172-b973-cd7936da3873",
+"name": "Praia dos Caneiros",
+"region": "Algarve",
+"latitude": 37.10486,
+"longitude": -8.514
+},
+{
+"id": "619ef9eb-6f91-4cf1-9625-b4dbcf2dfd8b",
+"name": "Praia de Vale Centeanes",
+"region": "Algarve",
+"latitude": 37.09122,
+"longitude": -8.4556
+},
+{
+"id": "0d6e382a-d336-4e04-9448-05a7f7d39673",
+"name": "Praia Grande (Silves)",
+"region": "Algarve",
+"latitude": 37.09685,
+"longitude": -8.34783
+},
+{
+"id": "7bd5d617-e577-4823-9269-d328d2631a20",
+"name": "Praia dos Salgados",
+"region": "Algarve",
+"latitude": 37.08845,
+"longitude": -8.32939
+},
+{
+"id": "15aaafb9-4ae2-494f-bc72-9778158ac76b",
+"name": "Praia do Evaristo",
+"region": "Algarve",
+"latitude": 37.07417,
+"longitude": -8.30317
+},
+{
+"id": "2af0d507-0af5-460b-aff2-b605eafa1f1b",
+"name": "Praia da Coelha",
+"region": "Algarve",
+"latitude": 37.07363,
+"longitude": -8.29353
+},
+{
+"id": "b507c2ca-9975-457e-aed9-cced33668edc",
+"name": "Praia da Oura",
+"region": "Algarve",
+"latitude": 37.08589,
+"longitude": -8.22614
+},
+{
+"id": "a9704160-3d35-4ab7-942c-41599421f540",
+"name": "Praia Maria Luísa",
+"region": "Algarve",
+"latitude": 37.08897,
+"longitude": -8.20083
+},
+{
+"id": "319974fc-4030-4330-91ce-1685eaff5667",
+"name": "Praia de Olhos de Água",
+"region": "Algarve",
+"latitude": 37.08956,
+"longitude": -8.19033
+},
+{
+"id": "3ce11a3d-c4cc-4cce-9abb-8b9e6ccf7b3e",
+"name": "Praia da Rocha Baixinha",
+"region": "Algarve",
+"latitude": 37.07592,
+"longitude": -8.13506
+},
+{
+"id": "fba6e728-cb2f-41f6-b921-a6dba551fe7e",
+"name": "Praia do Vale do Lobo",
+"region": "Algarve",
+"latitude": 37.04759,
+"longitude": -8.06476
+},
+{
+"id": "771ff429-1b17-4e45-adff-5f3b3cdcc6e1",
+"name": "Praia do Garrão",
+"region": "Algarve",
+"latitude": 37.04328,
+"longitude": -8.05713
+},
+{
+"id": "34f62e39-b5b7-4540-bdcd-cd35d8972aa9",
+"name": "Praia do Ancão",
+"region": "Algarve",
+"latitude": 37.03215,
+"longitude": -8.03852
+},
+{
+"id": "53fe5a38-1a93-46d0-939e-eb08cd42ba68",
+"name": "Praia da Quinta do Lago",
+"region": "Algarve",
+"latitude": 37.025,
+"longitude": -8.0258
+},
+{
+"id": "500bb1ab-5ec5-436d-b555-e48444ec548e",
+"name": "Ilha da Barreta (Ilha Deserta)",
+"region": "Algarve",
+"latitude": 36.96403,
+"longitude": -7.87271
+},
+{
+"id": "23028eea-b000-45df-a625-a990cd2a53cc",
+"name": "Ilha da Armona",
+"region": "Algarve",
+"latitude": 37.01399,
+"longitude": -7.79384
+},
+{
+"id": "74de97fc-f3ff-4a28-a9b8-92517fa64eb9",
+"name": "Praia do Barril",
+"region": "Algarve",
+"latitude": 37.08582,
+"longitude": -7.66145
+},
+{
+"id": "9e3a79be-222c-4b05-b90f-3ab4017857c8",
+"name": "Praia de Cabanas (Ilha de Cabanas)",
+"region": "Algarve",
+"latitude": 37.13345,
+"longitude": -7.58965
+},
+{
+"id": "a6961662-b204-4fef-9916-c529f21a85e2",
+"name": "Praia da Fábrica (Cacela Velha)",
+"region": "Algarve",
+"latitude": 37.14833,
+"longitude": -7.55111
+},
+{
+"id": "bb37684d-b534-4914-9f11-09e66daed740",
+"name": "Praia de Monte Gordo",
+"region": "Algarve",
+"latitude": 37.17694,
+"longitude": -7.45194
+},
+{
+"id": "4b3ec6e5-35f3-41d4-b6e8-3454cf3d601a",
+"name": "Praia de Carreço",
+"region": "Norte",
+"latitude": 41.74139,
+"longitude": -8.87722
+},
+{
+"id": "e7a9f6a0-35ee-4332-be39-a8d37c78fe3f",
+"name": "Praia de Angeiras",
+"region": "Norte",
+"latitude": 41.26528,
+"longitude": -8.72861
+},
+{
+"id": "72084e6e-d230-428a-b053-9efadcbcf7fc",
+"name": "Praia de Lavadores",
+"region": "Norte",
+"latitude": 41.12861,
+"longitude": -8.66833
+},
+{
+"id": "541f339e-9287-452d-80be-56e0ce86c70a",
+"name": "Praia de Miramar",
+"region": "Norte",
+"latitude": 41.06667,
+"longitude": -8.6575
+},
+{
+"id": "1bd1690d-613e-471d-aafd-c508b5d8eaa4",
+"name": "Praia da Aguda",
+"region": "Norte",
+"latitude": 41.05083,
+"longitude": -8.65583
+},
+{
+"id": "2016cd68-2f90-4c10-8c6b-30cd5562cede",
+"name": "Praia da Granja",
+"region": "Norte",
+"latitude": 41.04,
+"longitude": -8.65028
+},
+{
+"id": "88233a0a-3a55-4a95-9ff2-144f5459647c",
+"name": "Praia de São Jacinto",
+"region": "Centro",
+"latitude": 40.66955,
+"longitude": -8.74632
+},
+{
+"id": "e2ee3da8-358d-4b95-9d36-011d4f1de6d4",
+"name": "Praia da Costa de Lavos",
+"region": "Centro",
+"latitude": 40.09131,
+"longitude": -8.8761
+},
+{
+"id": "e7b054de-28b8-444a-8aa6-6289678417e1",
+"name": "Praia da Leirosa",
+"region": "Centro",
+"latitude": 40.05761,
+"longitude": -8.89088
+},
+{
+"id": "b0010c2a-4024-442a-9509-38ef8dec73e2",
+"name": "Praia Velha (São Pedro de Moel)",
+"region": "Centro",
+"latitude": 39.77153,
+"longitude": -9.02823
+},
+{
+"id": "415fb78a-a6c5-40dd-98d9-563dfb337f5c",
+"name": "Praia de Água de Madeiros",
+"region": "Oeste",
+"latitude": 39.74012,
+"longitude": -9.04043
+},
+{
+"id": "1575a838-150e-4360-bbf9-37453dc0ca52",
+"name": "Praia do Salgado",
+"region": "Oeste",
+"latitude": 39.54808,
+"longitude": -9.11192
+},
+{
+"id": "1e7bcce8-d99c-437b-8ddb-b8ce0d811d01",
+"name": "Praia do Bom Sucesso",
+"region": "Oeste",
+"latitude": 39.42537,
+"longitude": -9.23518
+},
+{
+"id": "1841fa6a-f713-455a-8cec-2207abe40e02",
+"name": "Praia da Consolação",
+"region": "Oeste",
+"latitude": 39.32696,
+"longitude": -9.35977
+},
+{
+"id": "025349fa-956a-448e-ad3a-ff58cfacb514",
+"name": "Praia de São Lourenço (Ericeira)",
+"region": "Oeste",
+"latitude": 39.01207,
+"longitude": -9.42202
+},
+{
+"id": "0947d29b-b01c-479a-ba28-98b72cd94ea7",
+"name": "Praia das Azenhas do Mar",
+"region": "Lisboa e Setúbal",
+"latitude": 38.84049,
+"longitude": -9.46255
+},
+{
+"id": "743712e3-2b1b-4f99-87b7-c68eea975e84",
+"name": "Praia da Figueirinha",
+"region": "Lisboa e Setúbal",
+"latitude": 38.483,
+"longitude": -8.94386
+},
+{
+"id": "0b50908b-fe98-4945-8374-1de9494e5c83",
+"name": "Praia de Tróia-Galé",
+"region": "Lisboa e Setúbal",
+"latitude": 38.48233,
+"longitude": -8.90396
+},
+{
+"id": "87a70b78-c18b-4d6b-9381-3b306c75d08a",
+"name": "Praia do Pego",
+"region": "Alentejo",
+"latitude": 38.29218,
+"longitude": -8.7798
+},
+{
+"id": "7ef38114-8772-463d-ab1f-ec9ff6a39536",
+"name": "Praia da Galé-Fontaínhas",
+"region": "Alentejo",
+"latitude": 38.20426,
+"longitude": -8.77778
+},
+{
+"id": "7853505f-e1ff-4f21-8354-8e4982566c32",
+"name": "Praia da Aberta Nova",
+"region": "Alentejo",
+"latitude": 38.17701,
+"longitude": -8.78237
+},
+{
+"id": "40d75401-bc0e-42d0-b6b3-669d3dca265d",
+"name": "Praia do Monte Velho",
+"region": "Alentejo",
+"latitude": 38.08185,
+"longitude": -8.81147
+},
+{
+"id": "3dd3cbd8-3697-4e94-962a-a8c3dca76bda",
+"name": "Praia do Garajau",
+"region": "Madeira",
+"latitude": 32.6378,
+"longitude": -16.8522
+},
+{
+"id": "544485fc-eba3-478d-a265-cbab78f2a04c",
+"name": "Complexo Balnear do Lido",
+"region": "Madeira",
+"latitude": 32.6355,
+"longitude": -16.9317
+},
+{
+"id": "eeb38a67-35a7-4a42-9d69-9a22c00d2a0b",
+"name": "Complexo Balnear da Ponta Gorda",
+"region": "Madeira",
+"latitude": 32.6344,
+"longitude": -16.9403
+},
+{
+"id": "5c9c8e50-d300-4187-8c0e-db8895bc6ebc",
+"name": "Praia da Madalena do Mar",
+"region": "Madeira",
+"latitude": 32.7028,
+"longitude": -17.1378
+},
+{
+"id": "12cccb8f-e54b-4bdd-a5c1-138af0b1fb8f",
+"name": "Praia dos Anjos",
+"region": "Madeira",
+"latitude": 32.69057,
+"longitude": -17.12048
+},
+{
+"id": "ef50355c-7860-4236-a6da-d30e412a4dea",
+"name": "Praia da Ribeira Brava",
+"region": "Madeira",
+"latitude": 32.6711,
+"longitude": -17.0672
+},
+{
+"id": "bf5ae99f-b6cc-43ec-841d-eeae1099c0d7",
+"name": "Praia da Banda d'Além (Machico)",
+"region": "Madeira",
+"latitude": 32.7183,
+"longitude": -16.7619
+},
+{
+"id": "3c9a075b-ea72-4616-b4ec-5965210268f0",
+"name": "Praia dos Mosteiros",
+"region": "Açores",
+"latitude": 37.88777,
+"longitude": -25.82423
+},
+{
+"id": "8a63da83-8856-4a66-bb31-c168790ae7e8",
+"name": "Ponta da Ferraria",
+"region": "Açores",
+"latitude": 37.85838,
+"longitude": -25.85225
+},
+{
+"id": "6d319eca-d238-4fd3-8e31-085c60e9403c",
+"name": "Poços de São Vicente Ferreira (Capelas)",
+"region": "Açores",
+"latitude": 37.83467,
+"longitude": -25.66938
+},
+{
+"id": "c3f48c57-0e24-4746-b128-8abd6110bfd3",
+"name": "Praia do Pópulo",
+"region": "Açores",
+"latitude": 37.75012,
+"longitude": -25.61818
+},
+{
+"id": "0da1d9ed-858e-4011-9506-4a9bfe6653eb",
+"name": "Areal de Santa Bárbara",
+"region": "Açores",
+"latitude": 37.81726,
+"longitude": -25.54831
+},
+{
+"id": "46e04a13-4162-4af4-b4d0-4da7464824ff",
+"name": "Praia dos Moinhos (Porto Formoso)",
+"region": "Açores",
+"latitude": 37.82397,
+"longitude": -25.44578
+},
+{
+"id": "3f211578-418a-4d6e-a188-74c646868687",
+"name": "Zona Balnear da Caloura",
+"region": "Açores",
+"latitude": 37.7133,
+"longitude": -25.49565
+},
+{
+"id": "e77557d4-842b-4e59-9f63-7d806ea7e40d",
+"name": "Praia de Água d'Alto",
+"region": "Açores",
+"latitude": 37.71662,
+"longitude": -25.47353
+},
+{
+"id": "faa511fe-388d-470d-915f-f3e3b2a98938",
+"name": "Ilhéu de Vila Franca do Campo",
+"region": "Açores",
+"latitude": 37.70576,
+"longitude": -25.44339
+},
+{
+"id": "f97bf7d0-4068-4538-bb42-047dff69c1ed",
+"name": "Praia do Fogo (Ribeira Quente)",
+"region": "Açores",
+"latitude": 37.73046,
+"longitude": -25.31032
+},
+{
+"id": "deedac89-7307-470e-b01a-49dcf1fcb4b6",
+"name": "Biscoitos",
+"region": "Açores",
+"latitude": 38.80326,
+"longitude": -27.25742
+},
+{
+"id": "68688402-f32e-4b92-8fc6-5b2bb48da295",
+"name": "Praia Grande (Praia da Vitória)",
+"region": "Açores",
+"latitude": 38.72958,
+"longitude": -27.06013
+},
+{
+"id": "c8ff115e-e7cf-45fc-b5e9-9df5e4020a30",
+"name": "Zona Balnear da Silveira",
+"region": "Açores",
+"latitude": 38.65634,
+"longitude": -27.23595
+},
+{
+"id": "6c571168-88c7-4e2f-9254-bb7c17494887",
+"name": "Zona Balnear do Negrito",
+"region": "Açores",
+"latitude": 38.65583,
+"longitude": -27.28179
+},
+{
+"id": "13bf3b0b-2153-4845-a051-78c1d9ba9d65",
+"name": "Prainha (Angra do Heroísmo)",
+"region": "Açores",
+"latitude": 38.65357,
+"longitude": -27.22006
+},
+{
+"id": "1f303bba-6f7f-409b-88b4-94d92652f20c",
+"name": "Praia de Porto Pim",
+"region": "Açores",
+"latitude": 38.52455,
+"longitude": -28.62588
+},
+{
+"id": "1db377c8-ff89-4931-9b7c-a4de1b7eeea3",
+"name": "Praia do Almoxarife",
+"region": "Açores",
+"latitude": 38.55399,
+"longitude": -28.60902
+},
+{
+"id": "e3db5c95-2d2a-4a03-aa1d-49daa9ed5ee6",
+"name": "Varadouro",
+"region": "Açores",
+"latitude": 38.56427,
+"longitude": -28.77529
+},
+{
+"id": "e33c2485-15d8-419c-9e4d-f904c109c724",
+"name": "Zona Balnear da Madalena (Pico)",
+"region": "Açores",
+"latitude": 38.53401,
+"longitude": -28.53449
+},
+{
+"id": "e4a7a649-7037-4cd7-bd7f-911aae1c4d95",
+"name": "Poças de São Roque do Pico",
+"region": "Açores",
+"latitude": 38.51935,
+"longitude": -28.30497
+},
+{
+"id": "38d04433-d2fe-4b87-97a4-72ff169f2177",
+"name": "Lajes do Pico (Maré)",
+"region": "Açores",
+"latitude": 38.39094,
+"longitude": -28.25182
+},
+{
+"id": "53466cb1-5297-4ca4-bd4b-887be1c31120",
+"name": "Zona Balnear da Preguiça (Velas)",
+"region": "Açores",
+"latitude": 38.68046,
+"longitude": -28.21326
+},
+{
+"id": "85b78ee3-7b8e-4633-825f-d03d80c7dc68",
+"name": "Praia Formosa (Santa Maria)",
+"region": "Açores",
+"latitude": 36.95101,
+"longitude": -25.098
+},
+{
+"id": "9cde4c55-2448-4d7a-a9fe-ec3b31b16618",
+"name": "Baía de São Lourenço (Santa Maria)",
+"region": "Açores",
+"latitude": 36.98803,
+"longitude": -25.05407
+},
+{
+"id": "7193bc61-2a99-4e32-880b-58bfc4d7fd5a",
+"name": "Fajã Grande (Flores)",
+"region": "Açores",
+"latitude": 39.45941,
+"longitude": -31.26206
+},
+{
+"id": "355ab513-1b15-455d-8086-3a80000ee407",
+"name": "Praia do Castelo (Costa da Caparica)",
+"region": "Lisboa e Setúbal",
+"latitude": 38.61292,
+"longitude": -9.21721
+},
+{
+"id": "3cd439e0-b726-44dd-a01c-6409f7bf0391",
+"name": "Praia da Mata (Costa da Caparica)",
+"region": "Lisboa e Setúbal",
+"latitude": 38.62311,
+"longitude": -9.22447
+},
+{
+"id": "1eea8666-dbde-4e31-9120-54dbeec9ac9b",
+"name": "Praia de Santo António (Vila Real de Santo António)",
+"region": "Algarve",
+"latitude": 37.17417,
+"longitude": -7.42583
+},
+{
+"id": "441cccc7-a339-4aee-8d56-a1f6ea55110f",
+"name": "Praia do Almargem",
+"region": "Algarve",
+"latitude": 37.05838,
+"longitude": -8.08353
+},
+{
+"id": "a3e5153c-c183-4f20-9956-f0778a0d4a9f",
+"name": "Ilha do Farol",
+"region": "Algarve",
+"latitude": 36.97396,
+"longitude": -7.86384
+},
+{
+"id": "ab40961d-ba81-4ff7-89c8-1fa587732736",
+"name": "Praia dos Três Irmãos",
+"region": "Algarve",
+"latitude": 37.11997,
+"longitude": -8.5836
+},
+{
+"id": "68c4ba70-f6b6-4c44-8987-8cf3b409c431",
+"name": "Praia das Camarinhas (Tróia)",
+"region": "Lisboa e Setúbal",
+"latitude": 38.46216,
+"longitude": -8.87861
+},
+{
+"id": "44f4e2d5-5ac1-4a04-941c-a4b9c2363c67",
+"name": "Praia da Saúde (Costa da Caparica)",
+"region": "Lisboa e Setúbal",
+"latitude": 38.62898,
+"longitude": -9.22904
+},
+{
+"id": "5b120139-4f37-47dd-8d50-5fb4ddd36b73",
+"name": "Praia das Furnas (Vila do Bispo)",
+"region": "Algarve",
+"latitude": 37.055,
+"longitude": -8.85444
+},
+{
+"id": "bea66bea-81ab-4445-aa6d-22b3e550e899",
+"name": "Praia das Cabanas Velhas",
+"region": "Algarve",
+"latitude": 37.06278,
+"longitude": -8.79167
+},
+{
+"id": "e57489e7-d222-43b6-ae14-24a234b01dc3",
+"name": "Praia de Caxias",
+"region": "Lisboa e Setúbal",
+"latitude": 38.69802,
+"longitude": -9.27383
+},
+{
+"id": "3bb185de-eede-4a8e-b226-39dd3db5b786",
+"name": "Praia da Terra Estreita",
+"region": "Algarve",
+"latitude": 37.09767,
+"longitude": -7.64062
+},
+{
+"id": "bea79a0d-6d7f-4862-b4cc-82160dfe4a3f",
+"name": "Praia da Amoreira (Aljezur)",
+"region": "Algarve",
+"latitude": 37.35213,
+"longitude": -8.84501
+},
+{
+"id": "5097bad4-6949-44f5-850c-a9247037b7d2",
+"name": "Praia da Armona-Ria",
+"region": "Algarve",
+"latitude": 37.02336,
+"longitude": -7.80635
+},
+{
+"id": "9c523dc0-d6cd-4fe8-847c-cec4881d3e29",
+"name": "Praia do Barranco (Vila do Bispo)",
+"region": "Algarve",
+"latitude": 37.04208,
+"longitude": -8.89473
+},
+{
+"id": "9add8697-72c4-41b1-8b99-d1e8df418c11",
+"name": "Praia Atlântica (Tróia)",
+"region": "Lisboa e Setúbal",
+"latitude": 38.4505,
+"longitude": -8.86153
+},
+{
+"id": "546c5b59-edfb-4b37-9fce-ec101c6e6e3e",
+"name": "Praia dos Cavacos",
+"region": "Algarve",
+"latitude": 37.03825,
+"longitude": -7.79133
+},
+{
+"id": "96f0a86a-bbcf-42df-83f2-21155e17fb6f",
+"name": "Praia do Vale dos Homens",
+"region": "Algarve",
+"latitude": 37.38351,
+"longitude": -8.82577
+},
+{
+"id": "98c701a2-5e43-4111-b2e8-0f92c26a1346",
+"name": "Praia do CDS",
+"region": "Lisboa e Setúbal",
+"latitude": 38.64538,
+"longitude": -9.24231
+},
+{
+"id": "56f1dd06-d13d-4b36-a1cd-88ba284f2393",
+"name": "Praia dos Alemães",
+"region": "Algarve",
+"latitude": 37.08398,
+"longitude": -8.23791
+},
+{
+"id": "1baee7dc-bebd-4475-a12d-8c35fdcfdeec",
+"name": "Praia do Rei Cortiço",
+"region": "Oeste",
+"latitude": 39.4207,
+"longitude": -9.24705
+},
+{
+"id": "0901e8ca-9e6e-4836-a79c-f4d3d776217a",
+"name": "Praia do Porto da Areia Sul",
+"region": "Oeste",
+"latitude": 39.3535,
+"longitude": -9.38878
+},
+{
+"id": "7121018a-364b-4671-9553-a1485b172b25",
+"name": "Praia de São Bernardino",
+"region": "Oeste",
+"latitude": 39.31125,
+"longitude": -9.3469
+},
+{
+"id": "272691c6-2056-402d-820b-d6a150d524dc",
+"name": "Praia de Valmitão",
+"region": "Oeste",
+"latitude": 39.20139,
+"longitude": -9.34752
+},
+{
+"id": "a34d36c9-4662-423f-93f8-1fee61f022ee",
+"name": "Praia das Palmeiras",
+"region": "Madeira",
+"latitude": 32.6878,
+"longitude": -16.7897
+},
+{
+"id": "96fd7eba-85f1-4446-a09d-d4d75beb21d7",
+"name": "Praia do Cabeço da Ponta",
+"region": "Madeira",
+"latitude": 33.0364,
+"longitude": -16.3605
+},
+{
+"id": "1a101766-8f4b-4360-8bd0-bfc4b35525ee",
+"name": "Praia do Vigário",
+"region": "Madeira",
+"latitude": 32.6483,
+"longitude": -16.9789
+},
+{
+"id": "acdfa7d4-fae4-46fd-b173-6f9af62bec5d",
+"name": "Praia da Peralta",
+"region": "Oeste",
+"latitude": 39.24562,
+"longitude": -9.34199
+},
+{
+"id": "9e6005fe-7e8e-4f63-8fe7-6fe85ab3f618",
+"name": "Praia de Vale de Janelas",
+"region": "Oeste",
+"latitude": 39.40045,
+"longitude": -9.27762
+},
+{
+"id": "cd25fc03-d97d-48db-9e96-0b4af33a14db",
+"name": "Praia do Portinho (Jardim do Mar)",
+"region": "Madeira",
+"latitude": 32.73479,
+"longitude": -17.20872
+},
+{
+"id": "b6014c0c-3d29-429b-9a7d-e82960197424",
+"name": "Praia da Lagoa (Porto Santo)",
+"region": "Madeira",
+"latitude": 33.0283,
+"longitude": -16.3719
+},
+{
+"id": "1434131a-a8f8-4a7f-bdd7-a7162b004448",
+"name": "Praia de Porto Dinheiro",
+"region": "Oeste",
+"latitude": 39.21413,
+"longitude": -9.34479
+},
+{
+"id": "7b04f50d-d271-4ca3-8d11-0ce374c53561",
+"name": "Praia da Foz do Sizandro",
+"region": "Oeste",
+"latitude": 39.1037,
+"longitude": -9.40125
+},
+{
+"id": "0ae4b5e2-6109-43ca-aea6-b7e53cae72d9",
+"name": "Praia da Fajã dos Asnos",
+"region": "Madeira",
+"latitude": 32.65368,
+"longitude": -17.0029
+},
+{
+"id": "616f794b-efe6-4801-897f-584de39e045c",
+"name": "Zona Balnear da Ribeira do Faial",
+"region": "Madeira",
+"latitude": 32.7922,
+"longitude": -16.8478
+},
+{
+"id": "fbc425ba-cfc6-4fe3-8ebd-2c8abf6ef90c",
+"name": "Praia da Fajã dos Padres",
+"region": "Madeira",
+"latitude": 32.65429,
+"longitude": -17.02245
+},
+{
+"id": "4281168e-4992-4e5d-ba84-ebd1c3a26c1b",
+"name": "Praia das Salemas (Porto Santo)",
+"region": "Madeira",
+"latitude": 33.0932,
+"longitude": -16.34911
+},
+{
+"id": "d315a110-c292-445e-aefe-3ff6ce7ef307",
+"name": "Praia da Laje (Seixal)",
+"region": "Madeira",
+"latitude": 32.8269,
+"longitude": -17.1142
+},
+{
+"id": "0971f35f-3de7-4f8d-8f49-580db0921903",
+"name": "Praia da Ribeira das Galinhas",
+"region": "Madeira",
+"latitude": 32.76441,
+"longitude": -17.23506
+},
+{
+"id": "05a79eec-ebc3-4eec-81ea-9574169e17e8",
+"name": "Praia do Porto (Paul do Mar)",
+"region": "Madeira",
+"latitude": 32.7523,
+"longitude": -17.2248
+},
+{
+"id": "08c91075-52f8-44c7-a189-aa220cafff4d",
+"name": "Praia do Ribeiro Cochino (Porto Santo)",
+"region": "Madeira",
+"latitude": 33.0494,
+"longitude": -16.3455
+},
+{
+"id": "9812ac7e-f3a8-47a5-bb66-1d14350934a7",
+"name": "Praia do Penedo (Porto Santo)",
+"region": "Madeira",
+"latitude": 33.0628,
+"longitude": -16.3183
+},
+{
+"id": "2173718e-68cd-474e-a67e-0861d13700be",
+"name": "Praia da Polvoeira",
+"region": "Oeste",
+"latitude": 39.71628,
+"longitude": -9.0499
+},
+{
+"id": "e442d81b-ad73-4790-bbb2-fdbeac7cacf8",
+"name": "Praia da Ribeira do Natal",
+"region": "Madeira",
+"latitude": 32.7347,
+"longitude": -16.7458
+},
+{
+"id": "1fac19e2-190d-4d89-a39f-f1280d166894",
+"name": "Zona Balnear do Galo Mar",
+"region": "Madeira",
+"latitude": 32.6408,
+"longitude": -16.8328
+},
+{
+"id": "da4cf259-233e-4016-b544-cbe24efab59e",
+"name": "Zona Balnear do Clube Naval de São Vicente",
+"region": "Madeira",
+"latitude": 32.81315,
+"longitude": -17.03299
+},
+{
+"id": "4e7964bf-1efa-4e28-b232-70818b6bb7c7",
+"name": "Zona Balnear da Ponta Delgada (Madeira)",
+"region": "Madeira",
+"latitude": 32.8278,
+"longitude": -16.9844
+},
+{
+"id": "bf016917-24ac-4a91-a372-568b5162e4e5",
+"name": "Praia da Alagoa (Porto da Cruz)",
+"region": "Madeira",
+"latitude": 32.77483,
+"longitude": -16.82855
+},
+{
+"id": "78e04293-478f-4902-b6d6-5162ae3bf6a8",
+"name": "Praia da Légua",
+"region": "Oeste",
+"latitude": 39.65357,
+"longitude": -9.06983
+},
+{
+"id": "f8fd0b5c-1ef0-4280-bf68-3b3f5f8773be",
+"name": "Praia da Areia (Corvo)",
+"region": "Açores",
+"latitude": 39.67262,
+"longitude": -31.12188
+},
+{
+"id": "73f94858-2712-4aa0-837c-447fffe65203",
+"name": "Piscinas Naturais de Santa Cruz das Flores",
+"region": "Açores",
+"latitude": 39.45856,
+"longitude": -31.12582
+},
+{
+"id": "e5e15004-b3de-4472-b282-f5e202edee75",
+"name": "Portinho do Faial da Terra",
+"region": "Açores",
+"latitude": 37.73928,
+"longitude": -25.19649
+},
+{
+"id": "94cbb1f7-2d8d-47a9-ab58-cf29ff762691",
+"name": "Piscinas Naturais da Lagoa (São Miguel)",
+"region": "Açores",
+"latitude": 37.74169,
+"longitude": -25.57408
+},
+{
+"id": "aa826358-ca32-4394-9310-6fb381d08f82",
+"name": "Zona Balnear do Forno da Cal",
+"region": "Açores",
+"latitude": 37.74456,
+"longitude": -25.64004
+},
+{
+"id": "4a325cf9-711b-4c00-93c3-c3dc0c03c367",
+"name": "Praia da Baixa d'Areia",
+"region": "Açores",
+"latitude": 37.71722,
+"longitude": -25.51883
+},
+{
+"id": "9ff2dc6d-bc05-4ed5-8027-4d3cdbfb74a6",
+"name": "Zona Balnear das Poças da Ribeira Grande",
+"region": "Açores",
+"latitude": 37.82677,
+"longitude": -25.52218
+},
+{
+"id": "f8069f5b-ac70-4f8d-bece-cbf2643fc16d",
+"name": "Praia do Morro (Povoação)",
+"region": "Açores",
+"latitude": 37.74623,
+"longitude": -25.24234
+},
+{
+"id": "be66f564-0337-4f10-887e-d0ec3a3fd2c4",
+"name": "Piscinas Naturais das Calhetas da Maia",
+"region": "Açores",
+"latitude": 37.83519,
+"longitude": -25.39166
+},
+{
+"id": "c3ef242d-38a4-4356-9b1b-c9cf89125f8a",
+"name": "Zona Balnear dos Anjos",
+"region": "Açores",
+"latitude": 37.00504,
+"longitude": -25.15733
+},
+{
+"id": "881143d4-ca37-4389-a00f-c946ec437b0b",
+"name": "Piscina Natural das Portas do Mar",
+"region": "Açores",
+"latitude": 37.73963,
+"longitude": -25.66114
+},
+{
+"id": "b028bbf8-0d41-4207-adac-bcd75cdecbeb",
+"name": "Praia da Vinha da Areia",
+"region": "Açores",
+"latitude": 37.71679,
+"longitude": -25.42609
+},
+{
+"id": "a9d2cd87-2ead-4e62-8642-e7914bde3d66",
+"name": "Praia do Corpo Santo (Vila Franca do Campo)",
+"region": "Açores",
+"latitude": 37.71384,
+"longitude": -25.43724
+},
+{
+"id": "80dfe159-a47a-4b1a-8c4f-258b0922a6d1",
+"name": "Zona Balnear das Calhetas (Ribeira Grande)",
+"region": "Açores",
+"latitude": 37.82435,
+"longitude": -25.60632
+},
+{
+"id": "806455ab-60f5-4763-bc10-78f668482f15",
+"name": "Zona Balnear da Maia (Santa Maria)",
+"region": "Açores",
+"latitude": 36.93911,
+"longitude": -25.01406
+},
+{
+"id": "10275d00-3fe5-4e6f-8fa3-ca0f0ee43a32",
+"name": "Zona Balnear das Poças Sul dos Mosteiros",
+"region": "Açores",
+"latitude": 37.89843,
+"longitude": -25.82262
+},
+{
+"id": "7e579f5a-5408-4d6e-8940-93950df7800f",
+"name": "Praia de São Mateus (Graciosa)",
+"region": "Açores",
+"latitude": 39.05112,
+"longitude": -27.97094
+},
+{
+"id": "62c1b8f0-123a-4779-8ec4-1ca547aac71f",
+"name": "Praia da Riviera",
+"region": "Açores",
+"latitude": 38.71483,
+"longitude": -27.06057
+},
+{
+"id": "15a383e5-fbc2-4f96-a8b4-ecfb9a1d8339",
+"name": "Zona Balnear dos Poceirões",
+"region": "Açores",
+"latitude": 39.07631,
+"longitude": -28.06332
+},
+{
+"id": "4a36047b-a99f-4f47-a7d3-a075cf734449",
+"name": "Zona Balnear dos Portinhos (Fajã Grande, São Jorge)",
+"region": "Açores",
+"latitude": 38.60674,
+"longitude": -28.03462
+},
+{
+"id": "1546bb1f-f07c-4350-bc42-eb10d342ddc2",
+"name": "Zona Balnear de Santa Cruz da Graciosa (Calheta)",
+"region": "Açores",
+"latitude": 39.08775,
+"longitude": -28.00856
+},
+{
+"id": "52218cc4-91dc-47b5-a28d-c822f337f188",
+"name": "Zona Balnear da Baía do Refugo",
+"region": "Açores",
+"latitude": 38.64664,
+"longitude": -27.11282
+},
+{
+"id": "d7be708f-89f8-487f-8d49-402209a43a67",
+"name": "Zona Balnear da Salga (Terceira)",
+"region": "Açores",
+"latitude": 38.64832,
+"longitude": -27.0976
+},
+{
+"id": "473e8adb-9673-4200-95a5-c606435674eb",
+"name": "Zona Balnear das Quatro Ribeiras",
+"region": "Açores",
+"latitude": 38.79266,
+"longitude": -27.22562
+},
+{
+"id": "71296f63-03a3-471f-ad52-bbf73dba8d50",
+"name": "Piscinas Naturais do Carapacho",
+"region": "Açores",
+"latitude": 39.01256,
+"longitude": -27.9591
+},
+{
+"id": "d8d29010-2ea1-472a-8519-6455937fd2bb",
+"name": "Zona Balnear da Calheta dos Lagadores",
+"region": "Açores",
+"latitude": 38.79975,
+"longitude": -27.24596
+},
+{
+"id": "6064d9d2-cec5-4656-9f43-fb054174bd41",
+"name": "Praia do Barro Vermelho",
+"region": "Açores",
+"latitude": 39.09539,
+"longitude": -28.02796
+},
+{
+"id": "07c25604-dafc-45a9-9ce4-6b73c3a68328",
+"name": "Zona Balnear de Porto Martins",
+"region": "Açores",
+"latitude": 38.68036,
+"longitude": -27.05542
+},
+{
+"id": "22b63bb2-4d82-4595-9820-31bec89fd877",
+"name": "Zona Balnear das Cinco Ribeiras",
+"region": "Açores",
+"latitude": 38.67528,
+"longitude": -27.32854
+},
+{
+"id": "730f7ae0-8ad5-4731-9c11-6cd20365bd5c",
+"name": "Zona Balnear das Escaleiras (Terceira)",
+"region": "Açores",
+"latitude": 38.78729,
+"longitude": -27.13564
+},
+{
+"id": "6f4b3742-fd4a-40c2-ac69-0d3f8ad06051",
+"name": "Zona Balnear dos Salgueiros (Terceira)",
+"region": "Açores",
+"latitude": 38.6711,
+"longitude": -27.07504
+},
+{
+"id": "dca4c5c1-821a-48df-ae06-b10c26d6321e",
+"name": "Zona Balnear da Poça das Mujas",
+"region": "Açores",
+"latitude": 38.39962,
+"longitude": -28.08311
+},
+{
+"id": "a1fde33c-1ed3-498c-ae5e-de51fdee4bb1",
+"name": "Zona Balnear do Porto da Baixa",
+"region": "Açores",
+"latitude": 38.44569,
+"longitude": -28.07857
+},
+{
+"id": "d92de58b-8541-4ba8-878f-eb8de05bca85",
+"name": "Piscinas Naturais da Furna de Santo António",
+"region": "Açores",
+"latitude": 38.53558,
+"longitude": -28.33561
+},
+{
+"id": "166e1a3f-5b01-4f6f-84f8-aa30f0f241f0",
+"name": "Piscinas Naturais da Criação Velha",
+"region": "Açores",
+"latitude": 38.50501,
+"longitude": -28.54133
+},
+{
+"id": "3bbde140-5134-4cd0-9120-ac524ef4446d",
+"name": "Zona Balnear de Castelo Branco (Faial)",
+"region": "Açores",
+"latitude": 38.5184,
+"longitude": -28.72611
+},
+{
+"id": "3797c9b2-00d4-4212-9674-af8d5694ab06",
+"name": "Zona Balnear do Pocinho (Pico)",
+"region": "Açores",
+"latitude": 38.4956,
+"longitude": -28.53963
+},
+{
+"id": "fb576590-6e9e-4a5e-905e-b4706f1ec963",
+"name": "Praia da Conceição (Horta)",
+"region": "Açores",
+"latitude": 38.54286,
+"longitude": -28.61906
+},
+{
+"id": "34328e50-4d4a-45ed-a5c4-a70632802b4e",
+"name": "Zona Balnear de Santa Cruz das Ribeiras",
+"region": "Açores",
+"latitude": 38.40435,
+"longitude": -28.18694
+},
+{
+"id": "92bbaa95-69a1-4955-b67c-6c248d89af38",
+"name": "Zona Balnear da Fonte (Lajes do Pico)",
+"region": "Açores",
+"latitude": 38.41225,
+"longitude": -28.28937
+},
+{
+"id": "d1f0dcb4-c877-43cd-825a-181058f6fb39",
+"name": "Zona Balnear do Caminho de Baixo (Santa Bárbara, Pico)",
+"region": "Açores",
+"latitude": 38.39403,
+"longitude": -28.2047
+},
+{
+"id": "0fda9ec4-702a-4749-884b-9a9a632c24e0",
+"name": "Zona Balnear do Caisinho",
+"region": "Açores",
+"latitude": 38.4567,
+"longitude": -28.15156
+},
+{
+"id": "2b754a93-d447-4d76-9d72-2e99b496c8cd",
+"name": "Zona Balnear da Prainha do Galeão",
+"region": "Açores",
+"latitude": 38.42679,
+"longitude": -28.42102
+},
+{
+"id": "d445a202-f0cd-46aa-befe-02fd248b22a4",
+"name": "Zona Balnear da Manhenha",
+"region": "Açores",
+"latitude": 38.41084,
+"longitude": -28.0366
+},
+{
+"id": "b3130351-cdc2-4b93-84a3-e59f1a1a34c8",
+"name": "Zona Balnear dos Arcos (Pico)",
+"region": "Açores",
+"latitude": 38.56032,
+"longitude": -28.40876
+},
+{
+"id": "aa3d54bd-7a03-4a7d-bbda-e9149a39b8ac",
+"name": "Piscina do Cais do Pico",
+"region": "Açores",
+"latitude": 38.52455,
+"longitude": -28.31659
+},
+{
+"id": "2e4bbd42-6b18-427d-9994-721118522f94",
+"name": "Zona Balnear da Ponta do Admoiro",
+"region": "Açores",
+"latitude": 38.41421,
+"longitude": -28.34726
+},
+{
+"id": "fc092cbf-0459-4c79-ab2c-ea08badf9985",
+"name": "Zona Balnear do Cais do Mourato",
+"region": "Açores",
+"latitude": 38.55868,
+"longitude": -28.48143
+},
+{
+"id": "ed6ec57f-adb7-4c36-a0c4-f129776cbe13",
+"name": "Zona Balnear do Calhau (Piedade, Pico)",
+"region": "Açores",
+"latitude": 38.43898,
+"longitude": -28.05558
+},
+{
+"id": "02127e50-2944-4840-a526-a89dd05dafec",
+"name": "Zona Balnear das Baixas (São Caetano, Pico)",
+"region": "Açores",
+"latitude": 38.41854,
+"longitude": -28.38513
+},
+{
+"id": "2cbc1521-5c47-4bf0-b769-33b48bfa7eb6",
+"name": "Zona Balnear da Barca (Madalena do Pico)",
+"region": "Açores",
+"latitude": 38.54345,
+"longitude": -28.52084
+},
+{
+"id": "1c89b458-523a-4014-945a-c390463aa194",
+"name": "Zona Balnear da Poça Branca",
+"region": "Açores",
+"latitude": 38.47778,
+"longitude": -28.20528
+},
+{
+"id": "720fa8be-3a2c-4037-a166-da0da5780909",
+"name": "Zona Balnear das Pontes (Ribeiras, Pico)",
+"region": "Açores",
+"latitude": 38.40733,
+"longitude": -28.15955
+},
+{
+"id": "586da732-8832-4c78-b746-b4854f3c1c9f",
+"name": "Praia da Fajã (Faial)",
+"region": "Açores",
+"latitude": 38.6102,
+"longitude": -28.75601
+},
+{
+"id": "face1374-cf12-4e54-8fca-7701c362efd3",
+"name": "Zona Balnear de São Mateus (Pico)",
+"region": "Açores",
+"latitude": 38.43078,
+"longitude": -28.46104
+}
+]

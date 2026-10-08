@@ -2,7 +2,7 @@
 """Gera js/webcams-cams.js (pagina /webcams v2).
 Fontes:
   _data/meo-livecams-20261007.json  lista publica beachcam.meo.pt/livecams (nome, municipio, regiao, lat/lng, cliques) — SO LINK, nunca incorporar
-  _data/beaches-db-20261007.json    praias da BD (id, nome, coords) -> foto images/beaches/<id> + link /beach?id=
+  _data/beaches-db-20261008.json    praias da BD (id, nome, coords) -> foto images/beaches/<id> + link /beach?id=
   docs/FOTOS-CREDITOS.md            so se usa foto com linha de credito (autor + licenca)
   YT (abaixo)                       diretos YouTube verificados 07/10/2026 (oEmbed 200 + isLive) — aprovar com o Ricardo
 Correr: python3 _scripts/build_webcams_data.py
@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(ROOT, *a)
 
 meo = json.load(open(P('_data', 'meo-livecams-20261007.json'), encoding='utf-8'))
-db = json.load(open(P('_data', 'beaches-db-20261007.json'), encoding='utf-8'))
+db = json.load(open(P('_data', 'beaches-db-20261008.json'), encoding='utf-8'))
 
 # ---------- creditos ----------
 cred_praia, cred_surf = {}, {}
@@ -191,6 +191,11 @@ def photo_for(c):
     if s in SURF_PH and SURF_PH[s] in cred_surf and os.path.isfile(P('images', 'spots', 'surf-%s-480.webp' % SURF_PH[s])):
         url, a, l = cred_surf[SURF_PH[s]]
         return ['/images/spots/surf-' + SURF_PH[s], a + ' · ' + l, url]
+    # 1.o: foto escolhida a mao para esta camara; depois foto da praia da BD
+    # fotos do Wikimedia Commons escolhidas a mao para esta camara (_scripts/commons_photos.py + commons_fetch.py)
+    if s in COMMONS_PICK and os.path.isfile(P('images', 'webcams', s + '-480.webp')):
+        c = COMMONS_CAND[s][COMMONS_PICK[s]]
+        return ['/images/webcams/' + s, clean_artist(c['artist']) + ' · ' + c['lic'], c['page']]
     nm = c['name'].split('|')
     ct = toks(' '.join(nm[1:]) if len(nm) > 1 else nm[0])
     ch = toks(nm[0]) if len(nm) > 1 else set()
@@ -207,10 +212,6 @@ def photo_for(c):
     if best:
         b = best[1]; url, a, l = cred_praia[b['name']]
         return ['/images/beaches/' + b['id'], a + ' · ' + l, url]
-    # fotos do Wikimedia Commons escolhidas a mao para esta camara (_scripts/commons_photos.py + commons_fetch.py)
-    if s in COMMONS_PICK and os.path.isfile(P('images', 'webcams', s + '-480.webp')):
-        c = COMMONS_CAND[s][COMMONS_PICK[s]]
-        return ['/images/webcams/' + s, clean_artist(c['artist']) + ' · ' + c['lic'], c['page']]
     return None
 
 def beach_for(c):
@@ -222,7 +223,7 @@ def beach_for(c):
     for b in db:
         if not b.get('latitude'): continue
         d = dist(c['lat'], c['lng'], b['latitude'], b['longitude'])
-        if d > 2.5 or not (ct & toks(b['name'])): continue
+        if d > 2.5 or not (ct & toks(re.sub(r'\(.*?\)', '', b['name']))): continue  # o que esta entre parenteses e so desambiguacao
         if best is None or d < best[0]: best = (d, b)
     return ['b', best[1]['id'], 1] if best else None
 
@@ -277,6 +278,8 @@ for y in YT:
     else:
         o = {k: v for k, v in y.items() if k not in ('yt', 'by')}
         o['yt'] = [y['yt'], y['by']]; o['pop'] = y.get('pop', 150)
+        bp = beach_for({'slug': y['id'], 'name': y['t'], 'lat': y['lat'], 'lng': y['lng']})  # liga o direto YouTube a pagina da praia
+        if bp: o['bp'] = bp
         out.append(o)
 
 out.sort(key=lambda o: (-o['pop'], o['t']))
