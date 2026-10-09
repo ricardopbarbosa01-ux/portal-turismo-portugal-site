@@ -1,6 +1,9 @@
 /** js/partners-directory.js — Partners Directory: filters, accordion, mobile drawer
  *  Vanilla JS ES2020+. Strict mode IIFE. Zero globals. Zero dependencies.
  *  Depends on: partners-directory.css (.pd-* classes)
+ *  Lote F 09/10/2026: conteudo fechado com inert (sem Tab); clique dentro do cartao aberto ja nao o fecha;
+ *  eventos school_expand / school_outbound_click {school,type} / escolas_filter; contador de filtros ativos
+ *  (.pd-mobile-count); estado vazio (.esc-dir__empty); foco preso no drawer; ancora faz scroll para a linha.
  */
 (function () {
   'use strict';
@@ -12,8 +15,17 @@
 
   // ─── Init ───────────────────────────────────────────────────────────────────
 
+  function track(name, params) {
+    try {
+      if (typeof window.track === 'function') window.track(name, params || {});
+      else if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+    } catch (_) {}
+  }
+
   function init() {
+    document.querySelectorAll('.pd-expand:not(.pd-expand--open)').forEach(function (exp) { exp.inert = true; });
     bindAccordion();
+    bindOutbound();
     bindFilters();
     bindMobileDrawer();
     readURLState();
@@ -33,14 +45,14 @@
 
       if (toggle && row) {
         e.stopPropagation();
-        toggleRow(row, toggle);
+        toggleRow(row, toggle, true);
         return;
       }
 
-      // Click anywhere on pd-row (not on a link/button inside) also toggles
-      if (row && !e.target.closest('a') && !e.target.closest('button')) {
+      // Click anywhere on pd-row (not on a link/button inside, nor inside the open card) also toggles
+      if (row && !e.target.closest('a') && !e.target.closest('button') && !e.target.closest('.pd-expand')) {
         const t = row.querySelector('.pd-row__toggle');
-        toggleRow(row, t);
+        toggleRow(row, t, true);
       }
     });
 
@@ -58,7 +70,7 @@
     });
   }
 
-  function toggleRow(row, toggle) {
+  function toggleRow(row, toggle, byUser) {
     const expand = row.querySelector('.pd-expand');
     if (!expand) return;
 
@@ -67,16 +79,27 @@
       closeRow(row, toggle, expand);
     } else {
       openRow(row, toggle, expand);
+      if (byUser) track('school_expand', { school: row.dataset.pdId || '' });
     }
+  }
+
+  // Texto do botao (opcional): <span class="pd-row__toggle-txt" data-open="Fechar" data-closed="Ver detalhes">
+  function setToggleText(toggle, open) {
+    const t = toggle.querySelector('.pd-row__toggle-txt');
+    if (!t) return;
+    const v = t.getAttribute(open ? 'data-open' : 'data-closed');
+    if (v) t.textContent = v;
   }
 
   function openRow(row, toggle, expand) {
     expand.classList.add('pd-expand--open');
     expand.removeAttribute('aria-hidden');
+    expand.inert = false;
     if (toggle) {
       toggle.setAttribute('aria-expanded', 'true');
       const icon = toggle.querySelector('.pd-row__toggle-icon');
       if (icon) icon.textContent = '▴';
+      setToggleText(toggle, true);
     }
     const id = row.dataset.pdId;
     if (id) STATE.expanded.add(id);
@@ -86,14 +109,43 @@
   function closeRow(row, toggle, expand) {
     expand.classList.remove('pd-expand--open');
     expand.setAttribute('aria-hidden', 'true');
+    expand.inert = true;
     if (toggle) {
       toggle.setAttribute('aria-expanded', 'false');
       const icon = toggle.querySelector('.pd-row__toggle-icon');
       if (icon) icon.textContent = '▾';
+      setToggleText(toggle, false);
     }
     const id = row.dataset.pdId;
     if (id) STATE.expanded.delete(id);
     writeURLState();
+  }
+
+  // ─── Outbound clicks (site / tel / instagram / facebook / review) ───────────
+  // Base do argumento comercial: "enviamos-lhe N visitas". Sem preventDefault.
+
+  function bindOutbound() {
+    const list = document.querySelector('.pd-list');
+    if (!list) return;
+    function onOut(e) {
+      const a = e.target.closest && e.target.closest('a[href]');
+      if (!a || !list.contains(a)) return;
+      const row = a.closest('.pd-row');
+      if (!row) return;
+      const href = a.getAttribute('href') || '';
+      let type = a.getAttribute('data-esc-out') || '';
+      if (!type) {
+        if (/^tel:/i.test(href)) type = 'tel';
+        else if (/instagram\.com/i.test(href)) type = 'instagram';
+        else if (/facebook\.com/i.test(href)) type = 'facebook';
+        else if (/tripadvisor\.|google\.[a-z.]+\/maps/i.test(href)) type = 'review';
+        else if (/^https?:/i.test(href) && a.hostname !== location.hostname) type = 'site';
+      }
+      if (!type) return; // ligacoes internas (praias) nao sao "saidas"
+      track('school_outbound_click', { school: row.dataset.pdId || '', type: type });
+    }
+    list.addEventListener('click', onOut);
+    list.addEventListener('auxclick', function (e) { if (e.button === 1) onOut(e); });
   }
 
   // ─── Filters ────────────────────────────────────────────────────────────────
@@ -106,6 +158,7 @@
       updateFilterState(input);
       syncCheckboxPairs(input);
       applyFilters();
+      track('escolas_filter', { filter: input.dataset.pdFilter, value: input.checked ? input.value : '' });
     });
 
     // Clear buttons (sidebar + drawer may each have one)
@@ -176,7 +229,19 @@
     });
 
     updateResultCount(visible);
+    updateActiveCount();
+    const empty = document.querySelector('.esc-dir__empty');
+    if (empty) empty.hidden = visible !== 0;
     writeURLState();
+  }
+
+  function updateActiveCount() {
+    const el = document.querySelector('.pd-mobile-count');
+    if (!el) return;
+    const f = STATE.filters;
+    const n = f.region.length + f.language.length + (f.fps ? 1 : 0) + (f.founder ? 1 : 0);
+    el.textContent = n ? String(n) : '';
+    el.hidden = !n;
   }
 
   function rowMatchesFilters(row) {
@@ -249,8 +314,17 @@
     }
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && drawer.classList.contains('pd-drawer--open')) {
+      if (!drawer.classList.contains('pd-drawer--open')) return;
+      if (e.key === 'Escape') {
         closeDrawer(drawer, backdrop, btn);
+        return;
+      }
+      if (e.key === 'Tab') { // aria-modal: manter o foco dentro do drawer
+        const f = Array.prototype.filter.call(drawer.querySelectorAll('button, input, a[href], select'), function (x) { return !x.disabled; });
+        if (!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
   }
@@ -342,7 +416,15 @@
     }
 
     const qs = params.toString();
-    const newURL = window.location.pathname + (qs ? '?' + qs : '');
+    // Revisao 09/10: manter o hash quando NAO e uma escola (ex.: #listagem vindo de um email); o de escola passa a ?open=
+    const h = window.location.hash;
+    let keep = '';
+    if (h && h.length > 1) {
+      let el = null;
+      try { el = document.getElementById(decodeURIComponent(h.slice(1))); } catch (_) {}
+      if (!(el && el.closest('.pd-row'))) keep = h;
+    }
+    const newURL = window.location.pathname + (qs ? '?' + qs : '') + keep;
     history.replaceState(null, '', newURL);
   }
 
@@ -362,8 +444,31 @@
     const expand = row.querySelector('.pd-expand');
     if (!expand || expand.classList.contains('pd-expand--open')) return;
     const toggle = row.querySelector('.pd-row__toggle');
+    if (row.style.display === 'none') resetFilters(); // a ancora pede uma escola escondida pelos filtros
     openRow(row, toggle, expand);
-    setTimeout(function () { anchor.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    const smooth = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    setTimeout(function () { row.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' }); }, 100);
+    keepAligned(row);
+  }
+
+  // Revisao 09/10: o que esta acima (widget GYG, imagens, fontes) pode crescer depois do salto e empurrar a escola
+  // para baixo do header fixo. Durante ~12 s volta a alinhar a linha, ate o utilizador mexer na pagina.
+  function keepAligned(row) {
+    if (!('ResizeObserver' in window)) return;
+    let stop = false, t0 = Date.now(), last = null;
+    const quit = function () { stop = true; };
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, quit, { once: true, passive: true }); });
+    const ro = new ResizeObserver(function () {
+      if (stop || Date.now() - t0 > 12000) { ro.disconnect(); return; }
+      const top = row.getBoundingClientRect().top;
+      const want = parseFloat(getComputedStyle(row).scrollMarginTop) || 0;
+      if (Math.abs(top - want) > 4 && last !== Math.round(top)) {
+        last = Math.round(top);
+        row.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    });
+    ro.observe(document.body);
+    setTimeout(function () { ro.disconnect(); }, 12500);
   }
 
   window.addEventListener('hashchange', function () { openCardByHash(); });

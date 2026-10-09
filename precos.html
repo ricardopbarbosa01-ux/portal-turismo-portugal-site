@@ -15,8 +15,8 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',wait_for_update:500});</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YBQEM613J"></script>
   <script>gtag('js',new Date());gtag('config','G-8YBQEM613J');</script>
-  <title>Planos e Preços — Portal Turismo Portugal · Grátis e Pro</title>
-  <meta name="description" content="Praias, webcams, marés e condições do mar em Portugal — grátis, sem registo. Planos para negócios e parceiros. O plano Pro está em desenvolvimento.">
+  <title>Preços · Portal Turismo Portugal é grátis para viajantes</title>
+  <meta name="description" content="Praias, webcams, marés oficiais e condições do mar em Portugal, grátis e sem registo. Saiba como o portal se financia e entre na lista do Pro.">
   <link rel="canonical" href="https://www.portalturismoportugal.com/precos">
   <link rel="alternate" hreflang="pt" href="https://www.portalturismoportugal.com/precos">
   <link rel="alternate" hreflang="en" href="https://www.portalturismoportugal.com/en/precos">
@@ -26,14 +26,15 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.portalturismoportugal.com/precos">
-  <meta property="og:title" content="Planos e Preços — Portal Turismo Portugal · Grátis e Pro">
-  <meta property="og:description" content="Praias, webcams, marés e condições do mar em Portugal — grátis, sem registo. O plano Pro está em desenvolvimento.">
+  <meta property="og:title" content="Preços · Portal Turismo Portugal é grátis para viajantes">
+  <meta property="og:description" content="Praias, webcams, marés oficiais e condições do mar em Portugal, grátis e sem registo. Planos para negócios desde 149 € por ano.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:locale" content="pt_PT">
+  <meta property="og:locale:alternate" content="en_GB">
   <meta property="og:site_name" content="Portal Turismo Portugal">
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Planos e Preços — Portal Turismo Portugal · Grátis e Pro">
-  <meta name="twitter:description" content="Praias, webcams, marés e condições do mar em Portugal — grátis, sem registo. O plano Pro está em desenvolvimento.">
+  <meta name="twitter:title"       content="Preços · Portal Turismo Portugal é grátis para viajantes">
+  <meta name="twitter:description" content="Praias, webcams, marés oficiais e condições do mar em Portugal, grátis e sem registo. Planos para negócios desde 149 € por ano.">
   <meta name="twitter:image"       content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
   <meta name="twitter:url"         content="https://www.portalturismoportugal.com/precos">
 
@@ -44,17 +45,18 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "Plans &amp; Pricing — Portal Turismo Portugal",
-        "description": "Free access to Portugal's beaches, webcams, tides and sea conditions. Plans for businesses and partners. The Pro plan is in development.",
+        "@id": "https://www.portalturismoportugal.com/precos#webpage",
+        "name": "Preços · Portal Turismo Portugal",
+        "description": "Praias, webcams, marés oficiais e condições do mar em Portugal, grátis e sem registo. Como o portal se financia e lista de espera do Pro.",
         "url": "https://www.portalturismoportugal.com/precos",
-        "inLanguage": "pt",
+        "inLanguage": "pt-PT",
         "isPartOf": { "@type": "WebSite", "name": "Portal Turismo Portugal", "url": "https://www.portalturismoportugal.com/" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.portalturismoportugal.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Plans &amp; Pricing", "item": "https://www.portalturismoportugal.com/precos" }
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.portalturismoportugal.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Preços", "item": "https://www.portalturismoportugal.com/precos" }
         ]
       }
     ]
@@ -69,632 +71,9 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css?v=20261009b">
-
-  <style>
-/* ── Focus ── */
-    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
-
-    /* ── Buttons (local) ── */
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; transition: var(--transition); cursor: pointer; min-height: 44px; }
-    .btn-outline { border: 1.5px solid var(--glass-border); color: var(--white); backdrop-filter: blur(12px); background: var(--glass); }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font-weight: 600; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.40); }
-
-    /* ── Page hero ── */
-    .page-hero {
-      background: linear-gradient(135deg, var(--blue) 0%, #1a5fa3 60%, #0d4f8a 100%);
-      padding: 120px 5vw 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Override BEM .page-hero flex layout from css/style.css (260513-i18n9) */
-    body section.page-hero,
-    body header.page-hero {
-      display: block !important;
-      min-height: auto !important;
-      align-items: initial !important;
-    }
-    body section.page-hero h1,
-    body header.page-hero h1 {
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media (max-width: 640px) { .page-hero { padding-top: 80px; padding-bottom: 48px; } }
-    .page-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .page-hero-eyebrow {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .page-hero h1 {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 20px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .page-hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.78);
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.65;
-    }
-
-    /* ── Pricing wrapper ── */
-    .pricing-section {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 80px 5vw 100px;
-    }
-
-    /* ── Billing toggle ── */
-    .billing-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 56px;
-    }
-    .billing-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-mid);
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.2s;
-    }
-    .billing-label.active { color: var(--blue); font-weight: 600; }
-    .toggle-switch {
-      position: relative;
-      width: 52px;
-      height: 28px;
-      background: var(--blue);
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background 0.25s;
-      border: none;
-      outline: none;
-    }
-    /* Invisible tap-area extension — keeps visual unchanged */
-    .toggle-switch::before {
-      content: '';
-      position: absolute;
-      top: -8px; bottom: -8px; left: -8px; right: -8px;
-    }
-    .toggle-switch::after {
-      content: '';
-      position: absolute;
-      top: 4px; left: 4px;
-      width: 20px; height: 20px;
-      background: var(--white);
-      border-radius: 50%;
-      transition: transform 0.25s;
-    }
-    .toggle-switch[aria-checked="true"]::after { transform: translateX(24px); }
-    .toggle-switch[aria-checked="true"] { background: var(--gold); }
-    .billing-badge {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--blue);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 50px;
-    }
-
-    /* ── Plans grid ── */
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      align-items: start;
-    }
-    @media (max-width: 900px) { .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
-    @media (max-width: 599px) {
-      /* Plan card: tighter padding on small screens */
-      .plan-card { padding: 32px 22px; }
-      /* Pricing section padding */
-      .pricing-section { padding: 56px 16px; }
-      /* Billing toggle: generous tap zone on labels */
-      .billing-toggle { gap: 10px; margin-bottom: 40px; }
-      .billing-label { font-size: 0.9rem; min-height: 44px; display: inline-flex; align-items: center; }
-      /* Plan CTA already width:100% — improve font size for legibility */
-      .plan-cta { font-size: 0.9375rem; padding: 15px 24px; }
-    }
-
-    .plan-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 40px 32px;
-      box-shadow: var(--shadow-sm);
-      border: 1.5px solid rgba(10,61,107,0.07);
-      position: relative;
-      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
-    }
-    .plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-
-    /* Featured plan */
-    .plan-card.featured {
-      background: linear-gradient(160deg, var(--blue) 0%, #1a5fa3 100%);
-      border-color: transparent;
-      color: var(--white);
-      transform: scale(1.04);
-      box-shadow: var(--shadow-gold), var(--shadow-lg);
-      z-index: 2;
-    }
-    .plan-card.featured:hover { transform: scale(1.04) translateY(-6px); }
-    /* On single-column (≤900px) the scale overflows the container — flatten it */
-    @media (max-width: 900px) {
-      .plan-card.featured { transform: none; }
-      .plan-card.featured:hover { transform: translateY(-6px); }
-    }
-
-    .plan-badge {
-      position: absolute;
-      top: -14px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--blue);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 5px 18px;
-      border-radius: 50px;
-      white-space: nowrap;
-    }
-
-    .plan-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      margin-bottom: 10px;
-    }
-    .plan-card.featured .plan-name { color: rgba(255,255,255,0.65); }
-
-    .plan-price-row {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      margin-bottom: 6px;
-    }
-    .plan-price {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1;
-    }
-    .plan-card.featured .plan-price { color: var(--white); }
-    .plan-price-currency {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-mid);
-      margin-bottom: 8px;
-    }
-    .plan-card.featured .plan-price-currency { color: rgba(255,255,255,0.70); }
-    .plan-price-period {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      margin-bottom: 4px;
-    }
-    .plan-card.featured .plan-price-period { color: rgba(255,255,255,0.55); }
-    .plan-annual-note {
-      font-size: 0.78rem;
-      color: var(--gold);
-      font-weight: 500;
-      min-height: 18px;
-      margin-bottom: 20px;
-    }
-    .plan-card.featured .plan-annual-note { color: var(--gold-light); }
-
-    .plan-desc {
-      font-size: 0.875rem;
-      color: var(--text-mid);
-      line-height: 1.55;
-      margin-bottom: 28px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid rgba(10,61,107,0.08);
-    }
-    .plan-card.featured .plan-desc { color: rgba(255,255,255,0.72); border-bottom-color: rgba(255,255,255,0.12); }
-
-    .plan-features {
-      list-style: none;
-      margin-bottom: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .plan-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.875rem;
-      color: var(--text-mid);
-      line-height: 1.45;
-    }
-    .plan-card.featured .plan-features li { color: rgba(255,255,255,0.85); }
-    .plan-features li.disabled { opacity: 0.38; }
-    .feat-icon {
-      flex-shrink: 0;
-      width: 18px; height: 18px;
-      margin-top: 1px;
-    }
-    .feat-icon.check { color: #22c55e; }
-    .plan-card.featured .feat-icon.check { color: var(--gold-light); }
-    .feat-icon.cross { color: var(--text-light); }
-
-    .plan-cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 14px 24px;
-      border-radius: 50px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.25s, box-shadow 0.25s;
-      text-decoration: none;
-    }
-    .plan-cta.outline {
-      border: 1.5px solid rgba(10,61,107,0.18);
-      color: var(--blue);
-      background: transparent;
-    }
-    .plan-cta.outline:hover { border-color: var(--blue); background: rgba(10,61,107,0.05); }
-    .plan-cta.gold {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--blue);
-      box-shadow: 0 4px 16px rgba(201,168,76,0.32);
-    }
-    .plan-cta.gold:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,168,76,0.48); }
-    .plan-cta.white-outline {
-      border: 1.5px solid rgba(255,255,255,0.30);
-      color: var(--white);
-      background: rgba(255,255,255,0.08);
-    }
-    .plan-cta.white-outline:hover { border-color: rgba(255,255,255,0.60); background: rgba(255,255,255,0.14); }
-
-    /* ── Comparison table ── */
-    .compare-section {
-      background: var(--white);
-      border-top: 1px solid rgba(10,61,107,0.07);
-      padding: 80px 5vw;
-    }
-    .compare-inner {
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-    .section-eyebrow {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    .section-title {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 700;
-      color: var(--text);
-      text-align: center;
-      margin-bottom: 56px;
-      line-height: 1.2;
-    }
-
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.875rem;
-    }
-    .compare-table th {
-      padding: 16px 20px;
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      border-bottom: 2px solid rgba(10,61,107,0.10);
-    }
-    .compare-table th:first-child { text-align: left; }
-    .compare-table th.featured-col {
-      background: linear-gradient(160deg, var(--blue) 0%, #1a5fa3 100%);
-      color: var(--white);
-      border-radius: 12px 12px 0 0;
-    }
-    .compare-table td {
-      padding: 14px 20px;
-      text-align: center;
-      border-bottom: 1px solid rgba(10,61,107,0.06);
-      color: var(--text-mid);
-    }
-    .compare-table td:first-child {
-      text-align: left;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .compare-table .category-row td {
-      background: var(--off-white);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      padding: 10px 20px;
-    }
-    .compare-table .featured-col-cell {
-      background: rgba(10,61,107,0.03);
-    }
-    .compare-table tr:hover td { background: rgba(10,61,107,0.025); }
-    .compare-table tr:hover .featured-col-cell { background: rgba(10,61,107,0.06); }
-    .check-icon { color: #22c55e; font-size: 1.1rem; }
-    .cross-icon { color: #cbd5e0; font-size: 1.1rem; }
-    .partial { font-size: 0.78rem; color: var(--text-light); }
-    @media (max-width: 599px) {
-      .compare-table th, .compare-table td { padding: 10px 10px; font-size: 0.8rem; }
-      .compare-table td:first-child { font-size: 0.8125rem; }
-      .compare-table .category-row td { padding: 8px 10px; }
-    }
-
-    /* ── FAQ ── */
-    .faq-section {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 80px 5vw 100px;
-    }
-    .faq-list { display: flex; flex-direction: column; gap: 2px; }
-    .faq-item {
-      border-bottom: 1px solid rgba(10,61,107,0.08);
-    }
-    .faq-question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 22px 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      transition: color 0.2s;
-    }
-    .faq-question:hover { color: var(--blue); }
-    .faq-question[aria-expanded="true"] { color: var(--blue); }
-    .faq-chevron {
-      flex-shrink: 0;
-      width: 20px; height: 20px;
-      stroke: currentColor;
-      transition: transform 0.3s var(--ease);
-    }
-    .faq-question[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
-    .faq-answer {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.35s var(--ease), padding 0.3s;
-    }
-    .faq-answer.open { max-height: 400px; }
-    .faq-answer p {
-      padding-bottom: 20px;
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-    }
-
-    /* ── Bottom CTA ── */
-    .bottom-cta {
-      background: linear-gradient(135deg, var(--blue) 0%, #1a5fa3 100%);
-      padding: 80px 5vw;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .bottom-cta::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 110%, rgba(201,168,76,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .bottom-cta h2 {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .bottom-cta p {
-      color: rgba(255,255,255,0.72);
-      font-size: 1.05rem;
-      max-width: 480px;
-      margin: 0 auto 36px;
-      line-height: 1.6;
-    }
-    .bottom-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    @media (max-width: 540px) {
-      .bottom-cta-actions { flex-direction: column; align-items: stretch; max-width: 320px; margin: 0 auto; }
-      .cta-btn-gold, .cta-btn-ghost { width: 100%; justify-content: center; padding: 16px 24px; }
-    }
-    .cta-btn-gold {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 15px 36px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--blue);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.25s, box-shadow 0.25s;
-      box-shadow: 0 4px 20px rgba(201,168,76,0.40);
-    }
-    .cta-btn-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(201,168,76,0.55); }
-    .cta-btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 15px 36px;
-      border: 1.5px solid rgba(255,255,255,0.30);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: border-color 0.25s, background 0.25s;
-    }
-    .cta-btn-ghost:hover { border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.08); }
-
-    /* ── Reveal animation ── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    /* ── Ideal para ── */
-    .ideal-section { background: var(--off-white); padding: 72px 5vw; border-top: 1px solid rgba(10,61,107,0.07); }
-    .ideal-inner { max-width: 960px; margin: 0 auto; }
-    .ideal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
-    @media (max-width: 700px) { .ideal-grid { grid-template-columns: 1fr; } }
-    .ideal-card { background: var(--white); border-radius: var(--radius-lg); padding: 32px 28px; border: 1.5px solid rgba(10,61,107,0.07); box-shadow: var(--shadow-sm); }
-    .ideal-card.featured-ideal { border-color: rgba(10,61,107,0.18); box-shadow: var(--shadow); }
-    .ideal-plan-label { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); background: rgba(201,168,76,0.1); padding: 4px 12px; border-radius: 50px; margin-bottom: 14px; }
-    .ideal-for-title { font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.25; }
-    .ideal-for-desc { font-size: 0.875rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
-    .ideal-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .ideal-tag { font-size: 0.72rem; font-weight: 500; color: var(--text-mid); background: var(--off-white); padding: 4px 10px; border-radius: 50px; border: 1px solid rgba(10,61,107,0.1); }
-    .ideal-card.featured-ideal .ideal-tag { background: rgba(10,61,107,0.04); border-color: rgba(10,61,107,0.12); }
-
-    /* ── B2B band ── */
-    .b2b-band { background: linear-gradient(135deg, rgba(10,61,107,0.04) 0%, rgba(201,168,76,0.05) 100%); border-top: 1px solid rgba(10,61,107,0.08); border-bottom: 1px solid rgba(10,61,107,0.08); padding: 64px 5vw; }
-    .b2b-band-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 48px; justify-content: space-between; flex-wrap: wrap; }
-    .b2b-band-text h2 { font-family: 'Bodoni Moda', Georgia, serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.2; }
-    .b2b-band-text p { font-size: 0.925rem; color: var(--text-mid); line-height: 1.65; max-width: 480px; }
-    .b2b-band-actions { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
-    .b2b-cta-gold { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700; border-radius: 50px; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s; box-shadow: 0 4px 16px rgba(201,168,76,0.30); }
-    .b2b-cta-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.45); }
-    .b2b-cta-outline { display: inline-flex; align-items: center; gap: 6px; padding: 13px 28px; border: 1.5px solid rgba(10,61,107,0.20); color: var(--blue); font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 500; border-radius: 50px; text-decoration: none; transition: border-color 0.25s, background 0.25s; }
-    .b2b-cta-outline:hover { border-color: var(--blue); background: rgba(10,61,107,0.04); }
-    @media (max-width: 640px) { .b2b-band-inner { flex-direction: column; gap: 28px; } .b2b-band-actions { width: 100%; } .b2b-cta-gold, .b2b-cta-outline { width: 100%; justify-content: center; } }
-
-    /* ── Plans section: B2C header label ── */
-    .plans-section-header { text-align: center; margin-bottom: 12px; }
-    .plans-section-label { display: inline-flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-light); background: var(--off-white); border: 1px solid rgba(10,61,107,0.1); padding: 5px 14px; border-radius: 50px; }
-
-    /* ── Plans grid: 2-col B2C layout ── */
-    .plans-grid.b2c-grid { max-width: 780px; margin: 0 auto; grid-template-columns: 1fr 1fr; }
-    @media (max-width: 900px) { .plans-grid.b2c-grid { grid-template-columns: 1fr; max-width: 420px; } }
-
-    /* ── B2B Plans Section ── */
-    .b2b-plans-section { background: linear-gradient(160deg, #071f35 0%, #0a3d6b 65%, #0c4577 100%); padding: 88px 5vw; }
-    .b2b-plans-inner { max-width: 1100px; margin: 0 auto; }
-    .b2b-plans-header { text-align: center; margin-bottom: 56px; }
-    .b2b-plans-eyebrow { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .b2b-plans-header h2 { font-family: 'Bodoni Moda', Georgia, serif; font-size: clamp(1.9rem, 3.5vw, 2.9rem); font-weight: 700; color: var(--white); margin-bottom: 14px; line-height: 1.12; }
-    .b2b-plans-header p { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.65; max-width: 54ch; margin: 0 auto; }
-    .b2b-plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    @media (max-width: 760px) { .b2b-plans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
-    .b2b-plan-card { background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: 40px 36px; }
-    .b2b-plan-card.b2b-highlight { background: rgba(201,168,76,0.07); border-color: rgba(201,168,76,0.32); }
-    .b2b-plan-name { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
-    .b2b-plan-title { font-family: 'Bodoni Moda', Georgia, serif; font-size: 1.6rem; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.18; }
-    .b2b-price-row { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
-    .b2b-price-currency { font-size: 1.25rem; font-weight: 700; color: var(--gold); }
-    .b2b-price { font-size: 2.9rem; font-weight: 700; color: var(--gold); line-height: 1; }
-    .b2b-price-unit { font-size: 0.875rem; color: rgba(255,255,255,0.45); }
-    .b2b-price-custom { font-size: 2rem; font-weight: 700; color: var(--gold-light); line-height: 1.1; margin-bottom: 4px; }
-    .b2b-price-note { font-size: 0.775rem; color: rgba(255,255,255,0.40); margin-bottom: 16px; min-height: 18px; }
-    .b2b-plan-desc { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 22px; }
-    .b2b-features { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-    .b2b-features li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.875rem; color: rgba(255,255,255,0.80); line-height: 1.4; }
-    .b2b-check { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; stroke: var(--gold); fill: none; stroke-width: 2.8; }
-    .b2b-cta-btn { display: block; width: 100%; text-align: center; padding: 15px 24px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 0.9375rem; font-weight: 700; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s; }
-    .b2b-cta-btn.b2b-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--blue); box-shadow: 0 4px 20px rgba(201,168,76,0.35); }
-    .b2b-cta-btn.b2b-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.52); }
-    .b2b-cta-btn.b2b-outline { border: 1.5px solid rgba(255,255,255,0.28); color: var(--white); background: transparent; }
-    .b2b-cta-btn.b2b-outline:hover { border-color: rgba(255,255,255,0.60); background: rgba(255,255,255,0.06); }
-    .b2b-cta-sub { text-align: center; margin-top: 10px; font-size: 0.775rem; color: rgba(255,255,255,0.36); }
-
-    @media (max-width: 599px) {
-      .b2b-plan-card { padding: 32px 22px; }
-      .b2b-plans-section { padding: 64px 16px; }
-    }
-
-    /* ── Founder Partner additions ── */
-    .b2b-founder { position: relative; }
-    .b2b-founder-badge {
-      position: absolute;
-      top: -12px;
-      right: 18px;
-      background: var(--gold, #c9a84c);
-      color: var(--blue, #0a3d6b);
-      padding: 4px 12px;
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .b2b-scarcity {
-      margin-top: 12px;
-      font-size: 0.75rem;
-      color: rgba(201,168,76,0.85);
-      font-style: italic;
-      text-align: center;
-    }
-    .b2b-enterprise-link {
-      margin: 40px auto 0;
-      max-width: 720px;
-      text-align: center;
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-    }
-    .b2b-enterprise-link a {
-      color: rgba(201,168,76,0.85);
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(201,168,76,0.4);
-    }
-    .b2b-enterprise-link a:hover {
-      color: var(--gold, #c9a84c);
-      border-bottom-color: var(--gold, #c9a84c);
-    }
-</style>
-
-<link rel="stylesheet" href="/css/footer-v2.css?v=20261009c">
-<script src="/js/pwa.js?v=20261009h2" defer></script>
+  <link rel="stylesheet" href="/css/footer-v2.css?v=20261009c">
+  <link rel="stylesheet" href="/css/precos-v2.css?v=20261009g">
+  <script src="/js/pwa.js?v=20261009h2" defer></script>
 </head>
 <body>
 
@@ -712,49 +91,25 @@
   </a>
 
   <div class="nav-links" role="list">
-    <a href="beaches.html" role="listitem">Praias</a>
-    <a href="surf.html" role="listitem">Surf</a>
-    <a href="pesca.html" role="listitem">Pesca</a>
-    <a href="webcams.html" role="listitem">Webcams</a>
-    <a href="planear.html" role="listitem">Planear</a>
-    <a href="/guias.html" role="listitem">Guias</a>
-    <a href="precos.html" role="listitem">Preços</a>
-    <div class="pth-dd" data-pth-dd data-nav-dropdown>
-      <button type="button" class="pth-dd__trigger"
-              aria-haspopup="menu" aria-expanded="false"
-              aria-controls="pth-dd-menu">
-        Parceiros Verificados <span class="pth-dd__chevron" aria-hidden="true">&#9662;</span>
-      </button>
-      <div id="pth-dd-menu" class="pth-dd__menu" role="menu">
-        <a href="/escolas-de-surf.html" class="pth-dd__featured" role="menuitem">
-          <div class="pth-dd__featured-eyebrow">Verificado</div>
-          <div class="pth-dd__featured-title">Escolas de Surf</div>
-          <span class="pth-dd__featured-link">Ver todas &rarr;</span>
-        </a>
-        <div class="pth-dd__coming">
-          <div class="pth-dd__coming-eyebrow">Em desenvolvimento</div>
-          <ul class="pth-dd__coming-list">
-            <li class="pth-dd__coming-item" title="Em breve">Pesca (Charters)</li>
-            <li class="pth-dd__coming-item" title="Em breve">Restaurantes</li>
-            <li class="pth-dd__coming-item" title="Em breve">Alojamento Local</li>
-            <li class="pth-dd__coming-item" title="Em breve">Hot&eacute;is &amp; Pousadas</li>
-            <li class="pth-dd__coming-item" title="Em breve">Turismo Rural</li>
-            <li class="pth-dd__coming-item" title="Em breve">Experi&ecirc;ncias</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <a href="parceiros.html" role="listitem">Para o seu Negócio</a>
+    <a href="/beaches" role="listitem">Praias</a>
+    <a href="/surf" role="listitem">Surf</a>
+    <a href="/pesca" role="listitem">Pesca</a>
+    <a href="/webcams" role="listitem">Webcams</a>
+    <a href="/planear" role="listitem">Planear</a>
+    <a href="/guias" role="listitem">Guias</a>
+    <a href="/precos" role="listitem" aria-current="page">Preços</a>
+    <a href="/escolas-de-surf" role="listitem">Escolas de surf</a>
+    <a href="/parceiros" role="listitem">Para o seu Negócio</a>
   </div>
 
   <div class="nav-actions">
     <div class="lang-switcher" aria-label="Seleção de idioma">
       <span class="lang-btn lang-btn--active" aria-current="true" hreflang="pt">PT</span>
       <span class="lang-sep" aria-hidden="true">|</span>
-      <a href="/en/precos.html" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
+      <a href="/en/precos" class="lang-btn" data-lang="en" onclick="try{localStorage.setItem('pth_lang','en')}catch(_){}" hreflang="en">EN</a>
     </div>
-    <a href="login.html" class="btn btn-outline" id="nav-login-btn">Entrar</a>
-    <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
+    <a href="/login" class="btn btn-outline" id="nav-login-btn">Entrar</a>
+    <a href="/login#register" class="btn btn-primary" id="nav-register-btn">Registar</a>
     <button class="hamburger" type="button" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
       <span></span>
       <span></span>
@@ -765,467 +120,169 @@
 </nav>
 
 <!-- ══ MAIN ════════════════════════════════════════════════════════════ -->
-<main id="main">
+<main id="main" class="prc">
 
-<!-- ── Hero ── -->
-<section class="page-hero" aria-label="Planos e preços">
-  <p class="page-hero-eyebrow">Planos &amp; Preços</p>
-  <h1>O oceano no seu ecrã.<br><em>Grátis para viajantes. Premium para negócios.</em></h1>
-  <p>Praias, webcams, marés oficiais e o mar de agora — grátis. Para negócios: visibilidade junto de quem planeia a próxima escapada.</p>
-</section>
-
-<!-- ── Plans (B2C) ── -->
-<section class="pricing-section" aria-label="Planos para viajantes">
-
-  <div class="plans-section-header">
-    <span class="plans-section-label">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      Para Viajantes e Utilizadores
-    </span>
-  </div>
-
-  <!-- Billing toggle -->
-  <div class="billing-toggle" role="group" aria-label="Período de faturação" style="display:none">
-    <span class="billing-label active" id="label-monthly">Mensal</span>
-    <button
-      class="toggle-switch"
-      id="billing-toggle"
-      role="switch"
-      aria-checked="false"
-      aria-labelledby="label-toggle"
-      aria-label="Mudar para faturação anual"
-    ></button>
-    <span class="billing-label" id="label-annual">
-      Anual &nbsp;<span class="billing-badge">-25%</span>
-    </span>
-  </div>
-
-  <!-- Cards (Free + Pro only) -->
-  <div class="plans-grid b2c-grid reveal">
-
-    <!-- Free -->
-    <div class="plan-card" aria-label="Plano Grátis">
-      <p class="plan-name">Grátis</p>
-      <div class="plan-price-row">
-        <span class="plan-price-currency">€</span>
-        <span class="plan-price" id="price-free">0</span>
-      </div>
-      <p class="plan-price-period">para sempre</p>
-      <p class="plan-annual-note" id="note-free">&nbsp;</p>
-      <p class="plan-desc">Tudo o que precisa para escolher a praia certa antes de sair de casa. Sem cartão. Sem compromisso.</p>
-      <ul class="plan-features" aria-label="Funcionalidades incluídas">
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Mais de 500 praias com condições em tempo real
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Webcams ao vivo com link directo
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Previsão de ondas e vento (3 dias)
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Marés oficiais do Instituto Hidrográfico
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Planear escapada
-        </li>
+<!-- 1. Duas portas -->
+<div class="prc-doors">
+  <section class="prc-door prc-door--free" aria-labelledby="prc-h1">
+    <div class="prc-door__head">
+      <p class="prc-door__who">Para quem viaja</p>
+      <h1 id="prc-h1" class="prc-door__title">Tudo o que vê aqui é grátis.</h1>
+    </div>
+    <p class="prc-door__price prc-zero" aria-hidden="true">0<span>€</span></p>
+    <div class="prc-door__body">
+      <ul class="prc-free">
+        <li><b>522</b> praias com ficha, mapa e condições do mar</li>
+        <li><b>171</b> webcams da costa, com ligação à câmara oficial MEO</li>
+        <li>Marés oficiais do Instituto Hidrográfico</li>
+        <li>Previsão de ondas e vento para os próximos dias</li>
       </ul>
-      <a href="/beaches" class="plan-cta outline">Explorar as praias</a>
-    </div>
-
-    <!-- Pro (featured) -->
-    <div class="plan-card featured" aria-label="Plano Pro — em desenvolvimento">
-      <div class="plan-badge">Em desenvolvimento</div>
-      <p class="plan-name">Pro</p>
-      <div class="plan-price-row" style="display:none">
-        <span class="plan-price-currency">€</span>
-        <span class="plan-price" id="price-pro"></span>
+      <div class="prc-acts">
+        <a class="prc-btn prc-btn--gold" href="/beaches" data-prc-cta="praias">Escolher uma praia</a>
+        <a class="prc-btn prc-btn--line" href="/planear?ref=precos" data-prc-cta="planear">Planear uma escapada</a>
       </div>
-      <p class="plan-price-period">Ainda sem preço nem data de lançamento</p>
-      <p class="plan-annual-note" id="note-pro">&nbsp;</p>
-      <p class="plan-desc">Estamos a preparar funcionalidades extra para quem vai ao mar todas as semanas. Nada disto está disponível ainda:</p>
-      <ul class="plan-features" aria-label="Funcionalidades incluídas">
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Tudo do plano Grátis
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Previsão de ondas, vento e condições a 10 dias
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Praias favoritas e listas pessoais
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Guias exclusivos e itinerários editoriais
-        </li>
-        <li>
-          <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Suporte prioritário por email
-        </li>
+      <p class="prc-door__fine">Sem registo e sem cartão.</p>
+    </div>
+  </section>
+
+  <section class="prc-door prc-door--biz" id="negocios" aria-labelledby="prc-biz-h">
+    <div class="prc-door__head">
+      <p class="prc-door__who">Para quem tem um negócio</p>
+      <h2 id="prc-biz-h" class="prc-door__title">Tem um negócio junto ao mar?</h2>
+    </div>
+    <p class="prc-door__price prc-from"><span class="prc-from__pre">Planos desde</span><span class="prc-from__n">149 €</span><span class="prc-from__per">por ano</span></p>
+    <div class="prc-door__body">
+      <p class="prc-door__lead">Mostre-o a quem está a escolher a praia. A ficha no diretório é sempre grátis; os planos pagos põem-no no topo da sua zona.</p>
+      <ul class="prc-terms">
+        <li>Primeiros 30 dias grátis</li>
+        <li>Sem contrato, com proposta e fatura por email</li>
+        <li>Se cancelar, mantém a ficha grátis</li>
       </ul>
-      <div class="plan-cta gold" aria-disabled="true" data-pro-state="coming-soon">Em desenvolvimento</div>
-      <p style="text-align:center;margin-top:10px;font-size:0.75rem;color:rgba(255,255,255,0.55);line-height:1.4;">
-        Tem uma ideia para o Pro? <a href="/contact" style="color:inherit;text-decoration:underline">Diga-nos</a>.
-      </p>
-    </div>
-
-  </div><!-- /plans-grid -->
-
-  <p style="text-align:center; margin-top:28px; font-size:0.8rem; color:var(--text-light);">
-    O plano Grátis não pede cartão nem registo. IVA incluído nos preços apresentados.
-  </p>
-
-</section>
-
-<!-- ── B2B Partner Plans ── -->
-<section class="b2b-plans-section" aria-label="Planos para empresas e parceiros">
-  <div class="b2b-plans-inner">
-
-    <div class="b2b-plans-header reveal">
-      <span class="b2b-plans-eyebrow">Para Empresas e Parceiros</span>
-      <h2>Visibilidade onde os viajantes<br>decidem para onde ir.</h2>
-      <p>Surfistas, viajantes e pescadores com alta intenção de compra — todos os dias. Perfil verificado e destaque editorial nas páginas das praias.</p>
-    </div>
-
-    <div class="b2b-plans-grid reveal">
-
-      <!-- Essential Partner -->
-      <div class="b2b-plan-card">
-        <p class="b2b-plan-name">Essential Partner</p>
-        <p class="b2b-plan-title">Presença verificada<br>no portal.</p>
-        <div class="b2b-price-row">
-          <span class="b2b-price-currency">€</span>
-          <span class="b2b-price">49</span>
-          <span class="b2b-price-unit">&nbsp;/ mês</span>
-        </div>
-        <p class="b2b-price-note">Faturação mensal · sem compromisso mínimo</p>
-        <p class="b2b-plan-desc">O seu negócio verificado e visível nas páginas das praias da sua zona.</p>
-        <ul class="b2b-features" aria-label="Funcionalidades incluídas">
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Perfil de negócio verificado no portal
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Pedidos de clientes (leads) da sua zona <em style="opacity:.7">— em desenvolvimento</em>
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Perfil visível nas páginas de praia da sua zona
-          </li>
-          <li>
-            <svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Suporte dedicado por email
-          </li>
-        </ul>
-        <a href="parceiros.html#candidatura" class="b2b-cta-btn b2b-outline" onclick="track('pricing_b2b_essencial_click',{page:'precos'})">Candidatar-me</a>
-        <p class="b2b-cta-sub">Sem compromisso · resposta em 5 dias úteis</p>
+      <div class="prc-acts">
+        <a class="prc-btn prc-btn--gold" href="/parceiros#planos" data-prc-b2b="planos">Ver planos para negócios</a>
+        <a class="prc-link" href="/parceiros#previa" data-prc-b2b="previa">Pedir pré-visualização grátis</a>
       </div>
-
-      <!-- Founder Partner 2026 -->
-      <div class="b2b-plan-card b2b-highlight b2b-founder">
-        <span class="b2b-founder-badge">Founder Partner 2026</span>
-        <p class="b2b-plan-name">Founder Partner</p>
-        <p class="b2b-plan-title">Presença destacada<br>com prioridade editorial.</p>
-        <div class="b2b-price-row">
-          <span class="b2b-price-currency">€</span>
-          <span class="b2b-price">149</span>
-          <span class="b2b-price-unit">&nbsp;/ mês</span>
-        </div>
-        <p class="b2b-price-note">Faturação mensal · cancelar a qualquer momento (mantém acesso até fim do mês pago)</p>
-        <p class="b2b-plan-desc">Tudo do Essential, com lugar destacado no portal, página própria e prioridade editorial. Limitado a 10 lugares no 1.º ano.</p>
-        <ul class="b2b-features" aria-label="Funcionalidades incluídas">
-          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Tudo o que está no Essential</li>
-          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Destaque visual no topo de /parceiros</li>
-          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Página própria /parceiros/&lt;nome&gt;/ com descrição longa</li>
-          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Até 4 fotos adicionais</li>
-          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Inclusão prioritária em guias e listicles relevantes</li>
-          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Badge "Founder Partner 2026" visível durante 12 meses</li>
-          <li><svg class="b2b-check" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Revisão semestral de conteúdo</li>
-        </ul>
-        <a href="parceiros.html#candidatura" class="b2b-cta-btn b2b-gold" onclick="track('pricing_b2b_founder_click',{page:'precos'})">Candidatar-me a Founder</a>
-        <p class="b2b-scarcity">Apenas 10 lugares no 1.º ano · vagas limitadas</p>
-      </div>
-
     </div>
-      <p class="b2b-enterprise-link">
-        Para grandes operações ou cases especiais &middot;
-        <a href="parceiros.html#candidatura?type=enterprise">contactar com proposta personalizada &rarr;</a>
-      </p>
+  </section>
+</div>
+
+<!-- 2. O mar agora (só aparece com dados reais) -->
+<section class="prc-now" id="agora" aria-labelledby="prc-now-h" hidden>
+  <div class="prc-now__in">
+    <div class="prc-now__head">
+      <h2 id="prc-now-h">O mar agora</h2>
+      <p class="prc-now__src">Valores do modelo Open-Meteo para as <span data-now-time>--:--</span>. É isto que tem, grátis, em cada praia.</p>
+    </div>
+    <ul class="prc-now__list">
+      <li data-read="rocha" data-lat="37.1167" data-lng="-8.5333">
+        <a class="prc-read" href="/praias/praia-da-rocha/">
+          <span class="prc-read__place">Praia da Rocha</span>
+          <span class="prc-read__area">Portimão, Algarve</span>
+          <span class="prc-read__big"><b data-v="sst">--</b><span>°C na água</span></span>
+          <span class="prc-read__sub"><span>Ondas <span data-v="wave">--</span> m</span><span>Vento <span data-v="wind">--</span> km/h</span></span>
+        </a>
+      </li>
+      <li data-read="carcavelos" data-lat="38.6869" data-lng="-9.3329">
+        <a class="prc-read" href="/praias/praia-de-carcavelos/">
+          <span class="prc-read__place">Carcavelos</span>
+          <span class="prc-read__area">Cascais, Lisboa</span>
+          <span class="prc-read__big"><b data-v="sst">--</b><span>°C na água</span></span>
+          <span class="prc-read__sub"><span>Ondas <span data-v="wave">--</span> m</span><span>Vento <span data-v="wind">--</span> km/h</span></span>
+        </a>
+      </li>
+      <li data-read="matosinhos" data-lat="41.1768" data-lng="-8.6935">
+        <a class="prc-read" href="/praias/praia-de-matosinhos/">
+          <span class="prc-read__place">Matosinhos</span>
+          <span class="prc-read__area">Porto e Norte</span>
+          <span class="prc-read__big"><b data-v="sst">--</b><span>°C na água</span></span>
+          <span class="prc-read__sub"><span>Ondas <span data-v="wave">--</span> m</span><span>Vento <span data-v="wind">--</span> km/h</span></span>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- ── Ideal para ── -->
-<section class="ideal-section" aria-label="Para quem é cada plano">
-  <div class="ideal-inner">
-    <span class="section-eyebrow">Para quem é?</span>
-    <h2 class="section-title reveal">Um plano para cada perfil.</h2>
-    <div class="ideal-grid">
-
-      <div class="ideal-card">
-        <span class="ideal-plan-label">Grátis</span>
-        <p class="ideal-for-title">O viajante curioso</p>
-        <p class="ideal-for-desc">Descubra praias, consulte condições e planeie fins de semana sem custo.</p>
-        <div class="ideal-tags">
-          <span class="ideal-tag">Turista</span>
-          <span class="ideal-tag">Família</span>
-          <span class="ideal-tag">Visitante ocasional</span>
-        </div>
-      </div>
-
-      <div class="ideal-card featured-ideal">
-        <span class="ideal-plan-label">Pro · em desenvolvimento</span>
-        <p class="ideal-for-title">O entusiasta do oceano</p>
-        <p class="ideal-for-desc">Previsão a 10 dias, praias favoritas e guias exclusivos — em desenvolvimento, sem data. Para quem vive o mar.</p>
-        <div class="ideal-tags">
-          <span class="ideal-tag">Surfista</span>
-          <span class="ideal-tag">Pescador</span>
-          <span class="ideal-tag">Viajante frequente</span>
-          <span class="ideal-tag">Nómada digital</span>
-        </div>
-      </div>
-
-      <div class="ideal-card">
-        <span class="ideal-plan-label">Partner / B2B</span>
-        <p class="ideal-for-title">O negócio que quer estar onde o cliente decide</p>
-        <p class="ideal-for-desc">Presença verificada, destaque editorial nas páginas de praia e dados de condições integráveis. A partir de €49/mês — ou proposta personalizada para maior escala.</p>
-        <div class="ideal-tags">
-          <span class="ideal-tag">Hotel</span>
-          <span class="ideal-tag">Escola de surf</span>
-          <span class="ideal-tag">Operador turístico</span>
-          <span class="ideal-tag">Marca náutica</span>
-        </div>
-      </div>
-
+<!-- 3. Porque é grátis -->
+<section class="prc-why" aria-labelledby="prc-why-h">
+  <div class="prc-split">
+    <h2 id="prc-why-h">Porque é grátis</h2>
+    <div>
+      <ul class="prc-why__list">
+        <li>Quando reserva alojamento, carro ou uma atividade através das nossas ligações, o parceiro pode pagar-nos uma comissão. <strong>Para si, o preço é o mesmo.</strong></li>
+        <li>Negócios locais podem pagar para aparecer em destaque no diretório. Quando isso acontece, têm sempre a etiqueta "Parceiro". Os guias não estão à venda.</li>
+        <li>Não vendemos os seus dados.</li>
+      </ul>
+      <a class="prc-link" href="/transparencia-comercial">Como funciona a transparência comercial</a>
     </div>
   </div>
 </section>
 
-<!-- ── Comparison table ── -->
-<section class="compare-section" aria-label="Comparação detalhada de planos">
-  <div class="compare-inner">
-    <span class="section-eyebrow">Comparação completa</span>
-    <h2 class="section-title reveal">O que está incluído em cada plano?</h2>
-
-    <p style="margin:0 0 14px;font-size:.82rem;color:var(--text-light)">A coluna Pro mostra o que está em desenvolvimento — ainda não está disponível.</p>
-    <div class="compare-scroll-wrap">
-      <table class="compare-table" aria-label="Tabela de comparação de planos">
-        <thead>
-          <tr>
-            <th scope="col" style="width:40%">Funcionalidade</th>
-            <th scope="col">Grátis</th>
-            <th scope="col" class="featured-col">Pro <small style="display:block;font-weight:500;opacity:.75">em desenvolvimento</small></th>
-            <th scope="col">Partner</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="category-row"><td colspan="4">Praias e Condições</td></tr>
-          <tr>
-            <td>Lista de praias (500+)</td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-          </tr>
-          <tr>
-            <td>Condições em tempo real</td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-          </tr>
-          <tr>
-            <td>Previsão de ondas e vento (3 dias)</td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-          </tr>
-<tr>
-            <td>Marés oficiais (Instituto Hidrográfico)</td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-          </tr><tr>
-            <td>Previsão a 10 dias</td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-          </tr>
-          <tr class="category-row"><td colspan="4">Webcams</td></tr>
-          <tr>
-            <td>Webcams ao vivo com link directo</td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-          </tr>
-<tr>
-            <td>Condições do mar nas webcams</td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-          </tr>
-          <tr class="category-row"><td colspan="4">Conteúdo e Experiência</td></tr>
-<tr>
-            <td>Praias favoritas e listas pessoais</td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-          </tr><tr>
-            <td>Guias exclusivos e itinerários editoriais</td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-            <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-          </tr>
-          <tr class="category-row"><td colspan="4">Parceiro e Empresa</td></tr>
-          <tr>
-            <td>Perfil de negócio verificado</td>
-            <td><span class="cross-icon">✕</span></td>
-            <td class="featured-col-cell"><span class="cross-icon">✕</span></td>
-            <td><span class="check-icon">✓</span></td>
-          </tr>
-          <tr>
-            <td>Perfil visível nas páginas de praia</td>
-            <td><span class="cross-icon">✕</span></td>
-            <td class="featured-col-cell"><span class="cross-icon">✕</span></td>
-            <td><span class="check-icon">✓</span></td>
-          </tr>
-<tr>
-            <td>Pedidos de clientes (leads)</td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-            <td class="featured-col-cell"><span class="cross-icon" aria-label="Not included">✕</span></td>
-            <td><span class="partial">Em desenvolvimento</span></td>
-          </tr><tr>
-            <td>Contacto direto com a equipa</td>
-            <td><span class="cross-icon" aria-label="Not included">✕</span></td>
-            <td class="featured-col-cell"><span class="cross-icon" aria-label="Not included">✕</span></td>
-            <td><span class="check-icon" aria-label="Included">✓</span></td>
-          </tr>        </tbody>
-      </table>
+<!-- 4. Pro em construção -->
+<section class="prc-pro" id="pro" aria-labelledby="prc-pro-h">
+  <div class="prc-pro__in">
+    <div class="prc-pro__panel">
+      <div>
+        <h2 id="prc-pro-h">Pro: ainda em construção</h2>
+        <p class="prc-pro__sub">Ainda não tem preço nem data. Diga-nos o que quer primeiro: é isso que decide o que fazemos a seguir.</p>
+        <p class="prc-pro__fav" data-prc-fav hidden>As praias favoritas fazem parte do Pro, que ainda está em construção. Deixe o email e avisamos quando houver novidade.</p>
+      </div>
+      <div>
+        <form class="prc-form" data-email-capture data-source="precos-pro-lista" data-success="prc-pro-ok" novalidate>
+          <fieldset class="prc-chips">
+            <legend>O que quer primeiro?</legend>
+            <div class="prc-chips__row">
+              <label class="prc-chip"><input type="radio" name="interesse" value="previsao" data-ec-tag><span>Previsão a 10 dias</span></label>
+              <label class="prc-chip"><input type="radio" name="interesse" value="favoritas" data-ec-tag><span>Praias favoritas e listas</span></label>
+              <label class="prc-chip"><input type="radio" name="interesse" value="guias" data-ec-tag><span>Guias e roteiros exclusivos</span></label>
+              <label class="prc-chip"><input type="radio" name="interesse" value="outro" data-ec-tag><span>Outra coisa</span></label>
+            </div>
+          </fieldset>
+          <div class="prc-field">
+            <label for="prc-email">Email</label>
+            <div class="prc-field__row">
+              <input id="prc-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="nome@email.com" aria-describedby="prc-pro-fine">
+              <button class="prc-btn prc-btn--gold" type="submit">Entrar na lista</button>
+            </div>
+          </div>
+          <div class="prc-pro__ts" data-ec-ts data-theme="dark"></div>
+          <p class="prc-pro__err" data-ec-error role="alert" hidden></p>
+          <p class="prc-pro__fine" id="prc-pro-fine">Um email quando houver novidade sobre isto. Não é uma newsletter. Para sair, basta responder. <a href="/privacidade">Política de privacidade</a></p>
+        </form>
+        <div class="prc-pro__ok" id="prc-pro-ok" data-ec-success tabindex="-1" role="status" hidden>
+          <strong>Está na lista.</strong>
+          <p>Quando houver novidade sobre o Pro, recebe um email. Só esse.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── FAQ ── -->
-<section class="faq-section" aria-label="Perguntas frequentes sobre preços">
-  <span class="section-eyebrow">FAQ</span>
-  <h2 class="section-title reveal">Perguntas frequentes</h2>
-
-  <div class="faq-list">
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
-        Posso cancelar a qualquer momento?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-1" role="region">
-        <p>Sim. Não existem contratos ou períodos mínimos. Hoje não há subscrições: o plano Grátis não tem compromisso e as parcerias B2B são acordadas diretamente.</p>
-      </div>
+<!-- 5. Perguntas frequentes -->
+<section class="prc-faq" aria-labelledby="prc-faq-h">
+  <div class="prc-split">
+    <h2 id="prc-faq-h">Perguntas frequentes</h2>
+    <div class="prc-faq__list">
+      <details>
+        <summary>É mesmo grátis? Qual é o truque?</summary>
+        <p>Não há truque. O portal ganha dinheiro com comissões de reservas feitas através das nossas ligações (o preço para si é o mesmo) e, no futuro, de negócios locais que paguem um destaque, sempre identificado como "Parceiro".</p>
+      </details>
+      <details>
+        <summary>Preciso de criar conta?</summary>
+        <p>Não. Praias, webcams, marés e planeador funcionam sem registo.</p>
+      </details>
+      <details>
+        <summary>Quanto vai custar o Pro e quando sai?</summary>
+        <p>Ainda não sabemos e preferimos não inventar. Quem está na lista recebe um email quando houver novidade.</p>
+      </details>
+      <details>
+        <summary>O que fazem com o meu email?</summary>
+        <p>Guardamo-lo só para o aviso do Pro. Não o partilhamos nem vendemos. Para sair, basta responder ao email.</p>
+      </details>
+      <details>
+        <summary>De onde vêm os dados do mar?</summary>
+        <p>Ondas, vento e temperatura da água vêm do Open-Meteo. As marés vêm do Instituto Hidrográfico. As webcams são da MEO; nós só fazemos a ligação.</p>
+      </details>
     </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
-        O que acontece aos meus dados se cancelar?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-2" role="region">
-        <p>As suas praias favoritas e preferências ficam guardadas na conta durante 12 meses após o cancelamento. Pode reativar o plano a qualquer momento e retomar onde parou.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
-        Existe um período de teste gratuito do plano Pro?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-3" role="region">
-        <p>O plano Grátis está sempre disponível sem cartão de crédito — praias, condições e webcams incluídas. O Pro está em desenvolvimento, ainda sem data. O plano Grátis não pede cartão nem registo.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-        O desconto anual aplica-se imediatamente?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-4" role="region">
-        <p>O preço do Pro só será definido quando estiver pronto. As parcerias comerciais B2B são acordadas diretamente — contacte-nos através da página Parceiros.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
-        Para que tipo de negócios é o plano Partner?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-5" role="region">
-        <p>Escolas de surf, lojas de material náutico, alojamento junto à praia, agências de viagens, restaurantes e bares com vista mar — qualquer negócio que beneficie de visibilidade perante os utilizadores do portal. Os pedidos de viagem de turistas para a sua zona estão em desenvolvimento.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
-        Como funcionam os leads?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-6" role="region">
-        <p>Os pedidos de clientes (leads) estão em desenvolvimento. Quando estiverem prontos, um viajante que planeie uma viagem para a sua região e escolha o seu tipo de serviço poderá enviar-lhe o pedido diretamente. Os parceiros atuais serão avisados primeiro.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
-        Qual é a diferença entre o Essential Partner e a parceria comercial completa?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-7" role="region">
-        <p>O <strong>Essential Partner</strong> (€49/mês) inclui perfil verificado e perfil visível nas páginas de praia da sua zona (os pedidos de clientes estão em desenvolvimento) — a custo fixo, sem comissões. O <strong>Founder Partner</strong> (€149/mês) vai mais longe: destaque visual no topo de /parceiros, página própria com descrição longa e até 4 fotos, inclusão prioritária em guias e listicles, badge "Founder Partner 2026" durante 12 meses, e revisão semestral. Limitado a 10 lugares no 1.º ano. Para casos fora de grelha, existe ainda um link de contacto para proposta personalizada abaixo dos cards.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
-        O que distingue o Founder Partner do Essential?
-        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-answer" id="faq-8" role="region">
-        <p>O Founder Partner (€149/mês) inclui tudo o que está no Essential (€49/mês) e adiciona destaque visual no topo de /parceiros, página própria com descrição longa e até 4 fotos, inclusão prioritária em guias e listicles, badge "Founder Partner 2026" durante 12 meses, e revisão semestral. Limitado a 10 lugares no 1.º ano para garantir qualidade editorial.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ── B2B Band ── -->
-<section class="b2b-band" aria-label="Commercial partnership">
-  <div class="b2b-band-inner reveal">
-    <div class="b2b-band-text">
-      <h2>Não é publicidade. É presença comercial verificada.</h2>
-      <p>Formatos, volume e exclusividade negociados diretamente — sem contratos longos. Consulte o media kit ou candidate-se como parceiro.</p>
-    </div>
-    <div class="b2b-band-actions">
-      <a href="media-kit.html" class="b2b-cta-gold">Ver Media Kit</a>
-      <a href="parceiros.html#candidatura" class="b2b-cta-outline">Candidatar-me como Parceiro</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── Bottom CTA ── -->
-<section class="bottom-cta" aria-label="Final call to action">
-  <h2>Pronto para começar?</h2>
-  <p>Viajante? Use tudo grátis — sem cartão nem registo. Negócio? Envie a sua candidatura e receba uma proposta personalizada.</p>
-  <div class="bottom-cta-actions">
-    <a href="/beaches" class="cta-btn-gold">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      Explorar as praias
-    </a>
-    <a href="media-kit.html" class="cta-btn-ghost">Media Kit B2B</a>
-    <a href="parceiros.html#candidatura" class="cta-btn-ghost">Candidatura como Parceiro</a>
   </div>
 </section>
 
@@ -1250,139 +307,112 @@
   </div>
 </footer>
 
-<!-- Supabase -->
+<!-- Scripts globais -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="js/nav.js?v=20260512-lhq" defer></script>
 <script src="/js/config.js?v=20260508-isactive" defer></script>
+<script src="/js/nav.js?v=20260512-lhq" defer></script>
+<script src="/js/lang-switcher.js" defer></script>
+<script src="/js/cookie-consent.js?v=20261009b" defer></script>
+<script src="/js/om-pool.js?v=20261009a2" defer></script>
+<script src="/js/email-capture.js?v=20261009f" defer></script>
 <script>
-// ── Footer year ──
-document.getElementById('footer-year').textContent = new Date().getFullYear();
-
-// ── Navbar scroll ──
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 30);
-}, { passive: true });
-
-// ── Mobile menu ──
-const navToggle = document.getElementById('nav-toggle');
-const navLinks  = document.querySelector('.nav-links');
-const navBackdrop = document.getElementById('nav-backdrop');
-const navClose  = document.getElementById('nav-close');
-function openMenu() { navLinks.classList.add('open'); navBackdrop.classList.add('open'); navToggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-function closeMenu(){ navLinks.classList.remove('open'); navBackdrop.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-navToggle?.addEventListener('click', openMenu);
-navClose?.addEventListener('click', closeMenu);
-navBackdrop?.addEventListener('click', closeMenu);
-
-
-/* ── LemonSqueezy checkout URLs — paused during monetization freeze (2026-06) ─
-// Onde colar: LemonSqueezy Dashboard → Store → Products → [Produto] → Variants
-//             → copiar o "Checkout link" de cada variante
-const LS_CHECKOUT = {
-  pro_monthly: 'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/2d56d759-3e65-46cb-9210-ea7c0fce2cb3?enabled=1475549&checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html',
-  pro_annual:  'https://portalturismoportugal.lemonsqueezy.com/checkout/buy/5cc5346d-1dfa-4cdf-9632-45effbf8d943?checkout[success_url]=https%3A%2F%2Fportalturismoportugal.com%2Fpro%2Fwelcome.html',
-};
-*/
-
-// ── Billing toggle ──
-const toggle = document.getElementById('billing-toggle');
-const labelMonthly = document.getElementById('label-monthly');
-const labelAnnual  = document.getElementById('label-annual');
-
-// B2C plans only — Partner/B2B is separate and not controlled by this toggle
-const prices = {
-  monthly: { free: '0', pro: '4,99' },
-  annual:  { free: '0', pro: '3,74' }
-};
-
-const annualNotes = {
-  free: '',
-  pro: 'Faturado como €44,88/ano — poupa €15'
-};
-
-let isAnnual = false;
-
-function updatePricing() {
-  const set = isAnnual ? prices.annual : prices.monthly;
-  document.getElementById('price-free').textContent = set.free;
-  document.getElementById('price-pro').textContent  = set.pro;
-  document.getElementById('note-free').textContent  = '\u00a0';
-  document.getElementById('note-pro').textContent   = isAnnual ? annualNotes.pro : '\u00a0';
-  labelMonthly.classList.toggle('active', !isAnnual);
-  labelAnnual.classList.toggle('active', isAnnual);
-  toggle.setAttribute('aria-checked', isAnnual ? 'true' : 'false');
-  // Sync Pro CTA — route through login so user is authenticated before checkout
-  const ctaPro = document.getElementById('cta-pro');
-  if (ctaPro) {
-    const lsUrl = isAnnual ? LS_CHECKOUT.pro_annual : LS_CHECKOUT.pro_monthly;
-    if (lsUrl && !lsUrl.startsWith('COLE_')) {
-      ctaPro.href = 'login.html?redirect=' + encodeURIComponent(lsUrl) + '#register';
-      ctaPro.textContent = 'Ativar Pro';
-    }
+/* /precos — "Duas portas" (Lote F, 09/10/2026). Igual em /en/precos; os textos vêm do html[lang]. */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var EN = (document.documentElement.lang || '').indexOf('en') === 0;
+  var PAGE = { page: 'precos', lang: EN ? 'en' : 'pt' };
+  function track(n, p) {
+    var o = {}, k; for (k in PAGE) o[k] = PAGE[k]; for (k in (p || {})) o[k] = p[k];
+    try { if (typeof window.track === 'function') window.track(n, o); else if (window.gtag) window.gtag('event', n, o); } catch (e) {}
   }
-}
-updatePricing(); // initialise on load
+  var y = document.getElementById('footer-year'); if (y) y.textContent = new Date().getFullYear();
 
-toggle.addEventListener('click', () => {
-  isAnnual = !isAnnual;
-  updatePricing();
-  track(isAnnual ? 'pricing_toggle_annual' : 'pricing_toggle_monthly', { page: 'precos' });
-});
-labelMonthly.addEventListener('click', () => { isAnnual = false; updatePricing(); track('pricing_toggle_monthly', { page: 'precos' }); });
-labelAnnual.addEventListener('click',  () => { isAnnual = true;  updatePricing(); track('pricing_toggle_annual',  { page: 'precos' }); });
-
-// ── FAQ accordion ──
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    // Close all
-    document.querySelectorAll('.faq-question').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      document.getElementById(b.getAttribute('aria-controls'))?.classList.remove('open');
-    });
-    // Open clicked if it was closed
-    if (!expanded) {
-      btn.setAttribute('aria-expanded', 'true');
-      document.getElementById(btn.getAttribute('aria-controls'))?.classList.add('open');
-    }
+  // ── Cliques nas portas ──
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-prc-cta],[data-prc-b2b]');
+    if (!a) return;
+    if (a.hasAttribute('data-prc-cta')) track('precos_cta_click', { cta: a.getAttribute('data-prc-cta') });
+    else track('precos_b2b_click', { cta: a.getAttribute('data-prc-b2b') });
   });
-});
 
-// ── Reveal on scroll ──
-const io = new IntersectionObserver(
-  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
-  { threshold: 0.12 }
-);
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
-    });
+  // ── Lista do Pro ──
+  var pro = document.getElementById('pro');
+  var form = pro && pro.querySelector('form[data-email-capture]');
+  var fromFav = /(?:^|[?&])de=favoritas(?:&|$)/.test(location.search);
+  if (form && fromFav) {
+    var r = form.querySelector('input[data-ec-tag][value="favoritas"]'); if (r) r.checked = true;
+    var note = pro.querySelector('[data-prc-fav]'); if (note) note.hidden = false;
   }
-</script>
+  function interest() { var c = form && form.querySelector('[data-ec-tag]:checked'); return c ? c.value : ''; }
+  if (pro && 'IntersectionObserver' in window) {
+    var seen = new IntersectionObserver(function (en) {
+      if (en.some(function (x) { return x.isIntersecting; })) { track('pro_list_view', { from: fromFav ? 'favoritas' : 'direto' }); seen.disconnect(); }
+    }, { threshold: 0.4 });
+    seen.observe(pro);
+  }
+  if (form) {
+    var email = form.querySelector('input[type="email"]'), started = false;
+    if (email) email.addEventListener('focus', function () { if (!started) { started = true; track('pro_list_start', { interest: interest() }); } });
+    var ok = document.getElementById('prc-pro-ok'), err = form.querySelector('[data-ec-error]');
+    if (ok && window.MutationObserver) new MutationObserver(function () {
+      if (!ok.hidden) track('pro_list_submit', { interest: interest(), source: form.getAttribute('data-source') + (interest() ? ':' + interest() : '') });
+    }).observe(ok, { attributes: true, attributeFilter: ['hidden'] });
+    var lastErr = '';
+    if (err && window.MutationObserver) new MutationObserver(function () {
+      if (err.hidden || !err.textContent) { lastErr = ''; return; }
+      if (err.textContent === lastErr) return;
+      lastErr = err.textContent;
+      var why = email && email.getAttribute('aria-invalid') === 'true' ? 'email' : (/anti-spam/i.test(lastErr) ? 'turnstile' : 'network');
+      track('form_error', { form: 'pro_list', reason: why });
+    }).observe(err, { attributes: true, attributeFilter: ['hidden'], childList: true });
+  }
 
-  <script src="js/lang-switcher.js" defer></script>
-  <script>
-  /* Pre-fill checkout email — paused during monetization freeze (2026-06). Restore by reverting this commit.
-  (async () => {
-    if (typeof getCurrentUser !== 'function') return;
-    const user = await getCurrentUser();
-    if (!user?.email) return;
-    document.querySelectorAll('a[href*="lemonsqueezy.com"]').forEach(btn => {
-      try {
-        const url = new URL(btn.href);
-        url.searchParams.set('checkout[email]', user.email);
-        btn.href = url.toString();
-      } catch (_) {}
+  // ── O mar agora: 3 leituras reais do Open-Meteo; se falhar, a faixa fica escondida ──
+  var now = document.getElementById('agora');
+  if (!now || !window.PTHOpenMeteo) return;
+  var items = [].slice.call(now.querySelectorAll('[data-read]'));
+  var pts = items.map(function (li) { return { id: li.getAttribute('data-read'), lat: +li.getAttribute('data-lat'), lng: +li.getAttribute('data-lng') }; });
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(v, d) { return EN ? v.toFixed(d) : v.toFixed(d).replace('.', ','); }
+  function put(el, v, d) {
+    if (!el) return;
+    if (v == null || !isFinite(v)) { el.textContent = '--'; return; }
+    if (reduce) { el.textContent = fmt(v, d); return; }
+    var t0 = null, dur = 900;
+    (function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(v * e, d);
+      if (k < 1) requestAnimationFrame(step);
+    })(performance.now());
+    setTimeout(function () { el.textContent = fmt(v, d); }, dur + 200); // valor final garantido mesmo com o separador em segundo plano
+  }
+  Promise.all([window.PTHOpenMeteo.marine(pts), window.PTHOpenMeteo.weather(pts)]).then(function (res) {
+    var m = res[0] || {}, w = res[1] || {}, shown = 0, stamp = '';
+    var rows = items.map(function (li) {
+      var id = li.getAttribute('data-read'), mc = m[id] && m[id].c, wc = w[id] && w[id].c;
+      var sst = mc && mc.sea_surface_temperature, wave = mc && mc.wave_height, wind = wc && wc.wind_speed_10m;
+      var okRow = sst != null || wave != null;
+      li.hidden = !okRow; if (okRow) shown++;
+      if (!stamp && mc && mc.time) stamp = String(mc.time).slice(11, 16);
+      return { li: li, sst: sst, wave: wave, wind: wind, ok: okRow };
     });
-  })();
-  */
-  </script>
-  <script src="/js/cookie-consent.js?v=20261009b" defer></script>
-    <script src="/js/nav-dropdown.js" defer></script>
+    if (!shown) return;
+    var ts = now.querySelector('[data-now-time]'); if (ts) ts.textContent = stamp || '--:--';
+    now.hidden = false;
+    requestAnimationFrame(function () {
+      now.classList.add('is-in');
+      rows.forEach(function (r, i) {
+        if (!r.ok) return;
+        setTimeout(function () {
+          put(r.li.querySelector('[data-v="sst"]'), r.sst, 1);
+          put(r.li.querySelector('[data-v="wave"]'), r.wave, 1);
+          put(r.li.querySelector('[data-v="wind"]'), r.wind, 0);
+        }, reduce ? 0 : i * 120);
+      });
+    });
+  }, function () {});
+});
+</script>
 </body>
 </html>

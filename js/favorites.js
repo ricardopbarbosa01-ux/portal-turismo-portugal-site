@@ -24,8 +24,8 @@ async function toggleFavorite(beachId, beachName, beachRegion) {
   // Verificar se é Pro
   const isPro = user?.app_metadata?.plan === 'pro';
   if (!isPro) {
-    showToast('Favoritos disponíveis no plano Pro 🌟', 'info');
-    setTimeout(() => { window.location.href = '/precos.html'; }, 1500);
+    showToast((document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? 'Favourites will come with Pro (in development).' : 'Os favoritos vão chegar com o Pro (em desenvolvimento).', 'info');
+    setTimeout(() => { window.location.href = ((document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '/en/precos' : '/precos') + '?de=favoritas#pro'; }, 1500);
     return;
   }
 

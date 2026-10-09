@@ -140,6 +140,12 @@
   transform: translateX(0);
 }
 
+/* Lote F 09/10/2026: drawer fechado fora da ordem de Tab (estava so deslocado para fora do ecra) */
+.pd-drawer:not(.pd-drawer--open) {
+  visibility: hidden;
+  transition: transform 0.28s ease, visibility 0s linear 0.28s;
+}
+
 .pd-drawer__backdrop {
   position: fixed;
   inset: 0;
@@ -393,13 +399,22 @@
 .pd-expand {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  /* Lote F 09/10/2026: fechado = visibility:hidden -> os links la dentro deixam de receber Tab (antes so max-height:0).
+     A visibilidade muda no FIM da animacao de fecho e no INICIO da de abertura. */
+  visibility: hidden;
+  transition: max-height 0.3s ease-out, visibility 0s linear 0.3s;
   grid-column: 1 / -1; /* span all columns inside .pd-row grid */
 }
 
 .pd-expand--open {
-  max-height: 1200px;
-  transition: max-height 0.5s ease-in;
+  max-height: 2000px;
+  visibility: visible;
+  transition: max-height 0.5s ease-in, visibility 0s linear 0s;
+}
+
+/* Sem JavaScript: tudo aberto (substitui o antigo <noscript><style>) */
+@media (scripting: none) {
+  .pd-expand { max-height: none; visibility: visible; }
 }
 
 .pd-expand__inner {
@@ -500,6 +515,7 @@
   .pd-expand {
     max-height: none;
     overflow: visible;
+    visibility: visible;
   }
 }
 

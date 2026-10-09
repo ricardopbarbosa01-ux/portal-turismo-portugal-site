@@ -333,51 +333,17 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ── Partner / Services data ──────────────────────────────────────
-  const REGION_PARTNERS = {
-    'Algarve': [
-      { type:'surf',       id:'alg-surf-01',  name:'Sagres Surf School',   cat:'Escola de Surf',      zone:'Sagres, Algarve',         prop:'Aulas para todos os níveis. Aluguer de pranchas e material.',           badge:'destaque',  cta:'Ver Perfil',           href:'partner-demo.html' },
-      { type:'pesca',      id:'alg-pesca-01', name:'Mar & Anzol Charters', cat:'Pesca Desportiva',    zone:'Portimão, Algarve',        prop:'Saídas de pesca de altura e fundo. Barco próprio, 4–8 pax.',            badge:'verificado', cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'alojamento', id:'alg-aloj-01',  name:'Quinta do Pinhal',     cat:'Alojamento Rural',    zone:'Lagos, Algarve',           prop:'Casa rural a 5 min da praia. Pequeno-almoço incluído.',                 badge:'destaque',  cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'experiencia',id:'alg-exp-01',   name:'Algarve Sea Tours',    cat:'Passeios de Barco',   zone:'Albufeira, Algarve',       prop:'Grutas, golfinhos e costa algarvia. Saídas diárias.',                  badge:'novo',      cta:'Saber Mais',           href:'parceiros.html' }
-    ],
-    'Lisboa': [
-      { type:'surf',       id:'lis-surf-01',  name:'Cascais Surf Camp',    cat:'Escola de Surf',      zone:'Cascais, Lisboa',          prop:'Formação certificada, aluguer e transporte para a praia.',              badge:'destaque',  cta:'Saber Mais',           href:'parceiros.html' },
-      { type:'pesca',      id:'lis-pesca-01', name:'Sado Fishing Tours',   cat:'Pesca Desportiva',    zone:'Setúbal, Lisboa',          prop:'Pesca no estuário do Sado e costa atlântica. Guia incluído.',           badge:'verificado', cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'alojamento', id:'lis-aloj-01',  name:'Casa da Arrábida',     cat:'Turismo de Habitação',zone:'Arrábida, Lisboa',         prop:'Vista mar, natureza preservada, tranquilidade total.',                  badge:'destaque',  cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'restaurante',id:'lis-rest-01',  name:'Taberna do Pescador',  cat:'Restaurante',         zone:'Sesimbra, Lisboa',         prop:'Peixe fresco do dia, marisco vivo e vista para o mar.',                 badge:'verificado', cta:'Ver Carta',            href:'parceiros.html' }
-    ],
-    'Porto': [
-      { type:'surf',       id:'prt-surf-01',  name:'Norte Surf Academy',   cat:'Escola de Surf',      zone:'Matosinhos, Porto',        prop:'Surf, bodyboard e SUP. Equipamento incluído nas aulas.',               badge:'destaque',  cta:'Saber Mais',           href:'parceiros.html' },
-      { type:'pesca',      id:'prt-pesca-01', name:'Costa Verde Pesca',    cat:'Pesca Desportiva',    zone:'Póvoa de Varzim, Porto',   prop:'Saídas ao largo e pesca costeira. Toda a semana.',                      badge:'verificado', cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'alojamento', id:'prt-aloj-01',  name:'Surf House Matosinhos',cat:'Alojamento Surf',     zone:'Matosinhos, Porto',        prop:'Hostel e quartos privados, a 200m da praia. Wi-Fi, cozinha.',           badge:'novo',      cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'restaurante',id:'prt-rest-01',  name:'Marisqueira do Cais',  cat:'Restaurante',         zone:'Matosinhos, Porto',        prop:'Marisco ao peso, peixe grelhado e ambiente portuário.',                 badge:'verificado', cta:'Ver Carta',            href:'parceiros.html' }
-    ],
-    'Alentejo': [
-      { type:'surf',       id:'ale-surf-01',  name:'Vicentina Surf',       cat:'Escola de Surf',      zone:'Vila Nova de Milfontes, Alentejo', prop:'Surf na Costa Vicentina, ambiente natural único. Max. 6 alunos.',badge:'destaque',  cta:'Ver Perfil',           href:'partner-demo.html' },
-      { type:'pesca',      id:'ale-pesca-01', name:'Rio e Mar Aventura',   cat:'Pesca e Natureza',    zone:'Comporta, Alentejo',       prop:'Pesca no estuário e atividades de natureza. Guia local.',               badge:'verificado', cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'alojamento', id:'ale-aloj-01',  name:'Herdade do Sudoeste',  cat:'Turismo Rural',       zone:'Alentejo litoral',         prop:'Monte alentejano a 3 km da praia, piscina e natureza.',                 badge:'destaque',  cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'experiencia',id:'ale-exp-01',   name:'Rota Vicentina Tours', cat:'Caminhadas',           zone:'Costa Vicentina, Alentejo',prop:'Percursos guiados na Rota Vicentina. Grupos pequenos.',                 badge:'novo',      cta:'Saber Mais',           href:'parceiros.html' }
-    ],
-    'Madeira': [
-      { type:'surf',       id:'mad-surf-01',  name:'Madeira Surf Point',   cat:'Escola de Surf',      zone:'Paul do Mar, Madeira',     prop:'As melhores ondas da Madeira com instrutores certificados.',            badge:'destaque',  cta:'Saber Mais',           href:'parceiros.html' },
-      { type:'pesca',      id:'mad-pesca-01', name:'Pesca Fundo Madeira',  cat:'Pesca Desportiva',    zone:'Funchal, Madeira',         prop:'Pesca de fundo e alto mar, atum e espada. Barco 6 pax.',               badge:'verificado', cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'alojamento', id:'mad-aloj-01',  name:'Quinta do Atlântico',  cat:'Quinta com Vista Mar', zone:'Câmara de Lobos, Madeira', prop:'Alojamento típico madeirense com varanda sobre o oceano.',             badge:'destaque',  cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'experiencia',id:'mad-exp-01',   name:'Cetáceos Madeira',     cat:'Avistamento Cetáceos',zone:'Funchal, Madeira',         prop:'Golfinhos e baleias nas águas da Madeira. Saídas diárias.',             badge:'verificado', cta:'Saber Mais',           href:'parceiros.html' }
-    ],
-    'Açores': [
-      { type:'surf',       id:'aco-surf-01',  name:'Azores Surf Club',     cat:'Escola de Surf',      zone:'São Miguel, Açores',       prop:'Surf em ondas oceânicas em ambiente vulcânico único.',                  badge:'destaque',  cta:'Saber Mais',           href:'parceiros.html' },
-      { type:'pesca',      id:'aco-pesca-01', name:'Açores Deep Sea',      cat:'Pesca Desportiva',    zone:'Horta, Faial, Açores',     prop:'Big game fishing: marlim, atum e espada. Barco equipado.',             badge:'verificado', cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'alojamento', id:'aco-aloj-01',  name:'Casa das Furnas',      cat:'Turismo de Habitação',zone:'Furnas, São Miguel, Açores',prop:'Casa açoriana junto às caldeiras, natureza vulcânica.',               badge:'destaque',  cta:'Ver Disponibilidade',  href:'planear.html' },
-      { type:'experiencia',id:'aco-exp-01',   name:'Açores Whale Watch',   cat:'Avistamento Cetáceos',zone:'Pico, Açores',             prop:'Um dos melhores locais do mundo para ver baleias.',                     badge:'novo',      cta:'Saber Mais',           href:'parceiros.html' }
-    ]
-  };
+  // 09/10/2026: estes dados TEM de ficar vazios ate haver parceiros REAIS e PAGANTES (com contrato/fatura).
+  // Os 28 negocios que aqui estavam (24 por regiao + 4 genericos) eram ficticios e foram apagados
+  // para que nada inventado possa ir para producao. Regras para voltar a preencher:
+  //  - so negocios reais que pagam (plano Parceiro Local / Fundador da Zona), com autorizacao escrita;
+  //  - nome, morada e oferta confirmados (RNAAT/Turismo de Portugal + ficha Google), sem badges inventados;
+  //  - o modulo esta desligado (buildPartners() comentado mais abaixo) e NAO deve ser reativado sem decisao do Ricardo.
+  // Formato: { 'Algarve': [ { type, id, name, cat, zone, prop, badge, cta, href } ] }
+  const REGION_PARTNERS = {};
 
-  const DEFAULT_PARTNERS = [
-    { type:'surf',       id:'def-surf-01',  name:'Escola de Surf Local',  cat:'Escola de Surf',  zone:'Região', prop:'Aulas e aluguer de equipamento surf e bodyboard.',                          badge:'verificado', cta:'Saber Mais',          href:'parceiros.html' },
-    { type:'pesca',      id:'def-pesca-01', name:'Charter de Pesca',      cat:'Pesca Desportiva',zone:'Região', prop:'Saídas de pesca costeira com guia experiente.',                             badge:'verificado', cta:'Ver Disponibilidade', href:'planear.html' },
-    { type:'alojamento', id:'def-aloj-01',  name:'Alojamento Local',      cat:'Turismo Local',   zone:'Região', prop:'Opções de alojamento próximas da praia com boa relação qualidade/preço.',   badge:'verificado', cta:'Ver Disponibilidade', href:'planear.html' },
-    { type:'experiencia',id:'def-exp-01',   name:'Atividades na Natureza', cat:'Ecoturismo',     zone:'Região', prop:'Passeios pedestres, canoagem e atividades na natureza.',                    badge:'novo',      cta:'Saber Mais',          href:'parceiros.html' }
-  ];
+  // Sem parceiros genericos de recurso: lista vazia = o modulo nao mostra nada.
+  const DEFAULT_PARTNERS = [];
 
   const PARTNER_ICONS = {
     surf:        { bg:'linear-gradient(135deg,#0a3d6b,#1a5fa3)', path:'<path d="M2 20 L8 8 L12 14 L16 6 L22 20"/><path d="M2 20 Q6 17 10 20 Q14 23 18 20 Q20 18 22 20"/>' },
@@ -390,6 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function buildPartners(beach) {
     const pfx = lang === 'en' ? '/en/' : '';
     const partners = REGION_PARTNERS[beach.region] || DEFAULT_PARTNERS;
+    if (!partners.length) return '';
     const region = beach.region || 'Portugal';
     const beachParam  = encodeURIComponent(beach.name   || '');
     const regionParam = encodeURIComponent(beach.region || '');

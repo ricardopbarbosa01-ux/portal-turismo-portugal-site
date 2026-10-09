@@ -284,9 +284,18 @@ Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-c.txt)` →
 7. SEO: 3 páginas antigas + planear-legacy com 301 reais; sitemap 205 URLs.
 Fica: morada completa no rodapé/termos (falta o dado); /conta e o login continuam sem nada para utilizadores grátis (CC-02); "Registar" no cabeçalho.
 
-## >>> LOTE E — /beaches: tudo o que vem depois da lista (09/10, tarde), POR PUBLICAR
+## >>> LOTE E — /beaches: tudo o que vem depois da lista (09/10, tarde), PUBLICADO
 Pedido do Ricardo (13:09): remodelar a parte de baixo de /beaches (GYG perdido, guias por região mal aproveitados, "Como escolher a praia certa" feio).
 Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-e.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`.
 Nova ordem (PT e EN, gerada por `_diag/lote-a-20261008/bb_build.py`): 1) Que praia procura? (5 perfis com foto e contagem real; clicar filtra a lista) 2) Depois da praia (GetYourGuide a toda a largura + chips de destino) 3) Guias por região (6) + por tema (8) 4) Antes de ir (webcams/surf/pesca/planear) 5) Onde dormir (Stay22 com datas).
 Ficheiros: beaches.html, en/beaches.html, NOVOS css/beaches-bottom.css e js/beaches-bottom.js (?v=20261009e). css/gyg-block.css fica (usado noutras páginas). Cópias antigas: docs/_backup-lote-e-20261009/.
 Fica por fazer: morada completa no rodapé/termos (falta o dado); "Registar" no cabeçalho; Lote D.
+
+## >>> LOTE F — Preços, Escolas de surf, Para o seu negócio + correções no site inteiro (09/10, tarde), POR PUBLICAR
+Pedido do Ricardo (13:35): reestruturar as 3 páginas com foco em faturação, captação de email, tecnologia, design e psicologia de venda. Feito com agentes (estudo de preços, estratégia/copy, auditoria técnica, 3 construtores, correções do site, media kit, revisão independente).
+Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-f.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`. Sem SQL nem funções. Cópias antigas: docs/_backup-lote-f-20261009/.
+Depois do deploy: 1 pedido real em /parceiros e 1 em /en/parceiros (confirmar que chegam a partner_leads e apagar), 1 email na lista do Pro (surf_subscribers, source precos-pro-lista:*).
+Decisões do Ricardo: grelha Base grátis / Parceiro Local 149 €/ano ou 19 €/mês / Fundador da Zona 290 €/ano (1 por zona); BookSurfCamps (faliu) → GetYourGuide; IVA não mencionado; menu "Escolas de surf"; pagamento decide-se com o 1.º interessado.
+Emails novos: surf_subscribers.source = precos-pro-lista:<interesse>, escolas-viajante-regiao:<zona> (EN com prefixo en-). Leads B2B: partner_leads.mensagem começa por [origem: …] [plano: …] [zona: …].
+Por confirmar pelo Ricardo: se a verificação das 7 escolas (registo, certificações, praias, avaliações; "maio de 2026") foi mesmo feita como a página diz; datas das notas Tripadvisor/Google.
+Pendentes: quadro de zonas e ordem do diretório ao 1.º parceiro; bloco GYG das páginas ("verificadas por nós / selecionamos pessoalmente") a rever; títulos do media-kit >60; logótipo cortado a 320 px (style.css global); erro "supabase is not defined" nas páginas praias/* (antigo); morada completa no rodapé; Lote D.

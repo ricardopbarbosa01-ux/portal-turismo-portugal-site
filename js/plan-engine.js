@@ -7,7 +7,7 @@
  *  - Alojamento: Stay22 Allez (aid kaptarstudio) -> Booking.com. Usamos o link
  *    Allez direto com address/checkin/checkout/adults/rooms porque o LinkSwap
  *    automatico (booking.com -> stay22) DESCARTA datas e adultos (teste 06/10).
- *  - Surf camps: BookSurfCamps aid=11861
+ *  - Surf: so GetYourGuide (aulas). BookSurfCamps/Tripaneer B.V. faliu a 02/10/2026 -> NAO usar.
  *  - Atividades / pesca: GetYourGuide partner_id=0WTBHZE, cmp pthplanear(en)[-<origem>]
  *  - Atribuicao: data.origem -> sufixo na campanha Stay22 e no cmp GYG (ex.: -webcams)
  *  - data.base: vila-base escolhida pela pagina de origem (so vilas da regiao)
@@ -21,7 +21,6 @@
   var IDS = {
     stay22Aid: 'kaptarstudio',
     gygPartner: '0WTBHZE',
-    bscAid: '11861',
     dcAid: 'portalturismoportugal'
   };
 
@@ -56,36 +55,36 @@
 
   // ── Zonas por regiao. town = base de alojamento por perfil ─────────────
   // car = slug DiscoverCars validado 06/10 (null = pagina Portugal generica)
-  // bsc = slug BookSurfCamps validado 06/10 (PT e EN usam o mesmo slug)
+  // surfq = local da pesquisa GetYourGuide "surf lesson <surfq>" para a zona (substitui o slug BookSurfCamps a 09/10/2026)
   var REGIONS = {
     algarve:       { name: { pt: 'Algarve', en: 'Algarve' },                 town: { def: 'Albufeira', surf: 'Lagos', pesca: 'Portimão', luxo: 'Vilamoura', b1: 'Tavira' },
-                     car: 'faro',   carCity: 'Faro',      bsc: 'algarve',            gyg: 'Benagil caves boat tour',      fish: 'Portimão' },
+                     car: 'faro',   carCity: 'Faro',      surfq: 'Algarve',          gyg: 'Benagil caves boat tour',      fish: 'Portimão' },
     alentejo:      { name: { pt: 'Costa Alentejana', en: 'Alentejo Coast' }, town: { def: 'Vila Nova de Milfontes', surf: 'Zambujeira do Mar', pesca: 'Vila Nova de Milfontes', luxo: 'Comporta' },
-                     car: 'lisbon', carCity: 'Lisboa',    bsc: 'alentejo',           gyg: 'Comporta',                     fish: 'Sines' },
+                     car: 'lisbon', carCity: 'Lisboa',    surfq: 'Alentejo',         gyg: 'Comporta',                     fish: 'Sines' },
     setubal:       { name: { pt: 'Arrábida', en: 'Arrábida' }, town: { def: 'Setúbal', surf: 'Costa da Caparica', pesca: 'Sesimbra' },
-                     car: 'lisbon', carCity: 'Lisboa',    bsc: 'costa-da-caparica',  gyg: 'Arrabida dolphin watching',   fish: 'Sesimbra' },
+                     car: 'lisbon', carCity: 'Lisboa',    surfq: 'Costa da Caparica', gyg: 'Arrabida dolphin watching',   fish: 'Sesimbra' },
     cascais:       { name: { pt: 'Linha de Cascais', en: 'Cascais coast' }, town: { def: 'Cascais' },
-                     car: 'lisbon', carCity: 'Lisboa',    bsc: 'regiao-de-lisboa',   gyg: 'Sintra Cascais',              fish: 'Cascais' },
+                     car: 'lisbon', carCity: 'Lisboa',    surfq: 'Cascais',          gyg: 'Sintra Cascais',              fish: 'Cascais' },
     'costa-prata': { name: { pt: 'Costa de Prata', en: 'Silver Coast' },     town: { def: 'Nazaré', b1: 'Figueira da Foz', b2: 'Aveiro' },
-                     car: 'lisbon', carCity: 'Lisboa',    bsc: 'nazare',             gyg: 'Nazare',                      fish: 'Nazaré' },
+                     car: 'lisbon', carCity: 'Lisboa',    surfq: 'Nazare',           gyg: 'Nazare',                      fish: 'Nazaré' },
     oeste:         { name: { pt: 'Oeste', en: 'West Coast' }, town: { def: 'Ericeira', surf: 'Peniche', pesca: 'Peniche' },
-                     car: 'lisbon', carCity: 'Lisboa',    bsc: 'oeste',              gyg: 'Berlengas Peniche',           fish: 'Peniche' },
+                     car: 'lisbon', carCity: 'Lisboa',    surfq: 'Peniche',          gyg: 'Berlengas Peniche',           fish: 'Peniche' },
     minho:         { name: { pt: 'Porto e Minho', en: 'Porto & Minho' },     town: { def: 'Viana do Castelo', b1: 'Porto' },
-                     car: 'porto',  carCity: 'Porto',     bsc: 'viana-do-castelo',   gyg: 'Viana do Castelo',            fish: 'Viana do Castelo' },
+                     car: 'porto',  carCity: 'Porto',     surfq: 'Viana do Castelo', gyg: 'Viana do Castelo',            fish: 'Viana do Castelo' },
     acores:        { name: { pt: 'Açores', en: 'Azores' }, town: { def: 'Ponta Delgada', b1: 'Angra do Heroísmo', b2: 'Horta', b3: 'Madalena', b4: 'Velas', b5: 'Santa Cruz das Flores', b6: 'Santa Cruz da Graciosa', b7: 'Vila do Porto' },
-                     car: '/portugal-azores-islands/ponta-delgada', carCity: 'Ponta Delgada', bsc: 'acores',         gyg: 'Sao Miguel whale watching',   fish: 'Ponta Delgada' },
+                     car: '/portugal-azores-islands/ponta-delgada', carCity: 'Ponta Delgada', surfq: 'Azores',        gyg: 'Sao Miguel whale watching',   fish: 'Ponta Delgada' },
     madeira:       { name: { pt: 'Madeira', en: 'Madeira' },                 town: { def: 'Funchal', b1: 'Porto Santo' },
-                     car: 'madeira', carCity: 'Funchal',  bsc: 'madeira',            gyg: 'Madeira levada walk',         fish: 'Funchal' },
+                     car: 'madeira', carCity: 'Funchal',  surfq: 'Madeira',          gyg: 'Madeira levada walk',         fish: 'Funchal' },
     // Lote B 09/10: praias fluviais do interior (151 na BD) deixam de cair na costa (Tomar -> Nazare, Monsaraz -> Costa Alentejana)
     interior:      { name: { pt: 'Praias fluviais', en: 'River beaches' },   town: { def: 'Tomar', b1: 'Abrantes', b2: 'Coimbra', b3: 'Arganil', b4: 'Seia', b5: 'Covilhã', b6: 'Guarda', b7: 'Castelo Branco', b8: 'Viseu', b9: 'Braga', b10: 'Mirandela', b11: 'Bragança', b12: 'Évora', b13: 'Monsaraz', b14: 'Mértola' },
-                     car: 'tomar',  carCity: 'Tomar',     bsc: '',                   gyg: 'Tomar',                       fish: 'Tomar' },
+                     car: 'tomar',  carCity: 'Tomar',     surfq: '',                 gyg: 'Tomar',                       fish: 'Tomar' },
     '':            { name: { pt: 'Portugal', en: 'Portugal' },               town: { def: 'Albufeira', surf: 'Ericeira', pesca: 'Sesimbra', roteiro: 'Lisboa' },
-                     car: 'lisbon', carCity: 'Lisboa',    bsc: '',                   gyg: 'Lisbon',                      fish: 'Sesimbra' }
+                     car: 'lisbon', carCity: 'Lisboa',    surfq: '',                 gyg: 'Lisbon',                      fish: 'Sesimbra' }
   };
-  // Quando a regiao e "qualquer", a base de alojamento define a zona do carro / surf camps
+  // Quando a regiao e "qualquer", a base de alojamento define a zona do carro / aulas de surf
   var ANY_BY_TOWN = {
     'Albufeira': { car: 'faro', carCity: 'Faro', gyg: 'Benagil caves boat tour', region: { pt: 'Algarve', en: 'Algarve' } },
-    'Ericeira':  { car: 'lisbon', carCity: 'Lisboa', bsc: 'ericeira', region: { pt: 'Oeste', en: 'West Coast' } },
+    'Ericeira':  { car: 'lisbon', carCity: 'Lisboa', surfq: 'Ericeira', region: { pt: 'Oeste', en: 'West Coast' } },
     'Sesimbra':  { car: 'lisbon', carCity: 'Lisboa', region: { pt: 'Setúbal', en: 'Setúbal' } },
     'Lisboa':    { car: 'lisbon', carCity: 'Lisboa', gyg: 'Lisbon', region: { pt: 'Lisboa', en: 'Lisbon' } }
   };
@@ -158,8 +157,8 @@
       rooms:  function (n) { return n + (n === 1 ? ' quarto' : ' quartos'); },
       noDates: 'escolha as datas no site',
       stayTitle: function (t) { return 'Ver todos os alojamentos em ' + t; },
-      campTitle: function (z) { return 'Surf camps — ' + z; },
-      campMeta: 'Pacotes com alojamento e aulas · BookSurfCamps',
+      campTitle: function (z) { return 'Mais aulas de surf — ' + z; },
+      campMeta: 'Outras escolas e horários na zona · GetYourGuide',
       surfTitle: function (t) { return 'Aulas de surf em ' + t; },
       fishTitle: function (t) { return 'Saídas de pesca em ' + t; },
       actTitle: function (z) { return 'Experiências — ' + z; },
@@ -174,7 +173,7 @@
       titleDefault: 'O seu plano está pronto',
       groupNote: 'Para grupos, reserve com antecedência.',
       site: { surf: 'surf.html', pesca: 'pesca.html', praia: 'beaches.html', webcams: 'webcams.html' },
-      bookingLang: 'pt-pt', bscBase: 'https://www.booksurfcamps.com/pt/all/d/europa/portugal', dcBase: 'https://www.discovercars.com/pt/portugal',
+      bookingLang: 'pt-pt', dcBase: 'https://www.discovercars.com/pt/portugal',
       gygCmp: 'pthplanear', stayCampaign: 'portalturismoportugal-planear',
       sec: { sleep: function (t) { return 'Dormir em ' + t; }, do: 'O que fazer', move: 'Mover-se', site: 'Antes de ir' },
       steps: { sleep: 'Dormir', do: 'Fazer', move: 'Mover-se' },
@@ -192,8 +191,8 @@
       rooms:  function (n) { return n + (n === 1 ? ' room' : ' rooms'); },
       noDates: 'pick your dates on the site',
       stayTitle: function (t) { return 'See all places to stay in ' + t; },
-      campTitle: function (z) { return 'Surf camps — ' + z; },
-      campMeta: 'Packages with lodging and lessons · BookSurfCamps',
+      campTitle: function (z) { return 'More surf lessons — ' + z; },
+      campMeta: 'Other schools and times in the area · GetYourGuide',
       surfTitle: function (t) { return 'Surf lessons in ' + t; },
       fishTitle: function (t) { return 'Fishing trips in ' + t; },
       actTitle: function (z) { return 'Experiences — ' + z; },
@@ -208,7 +207,7 @@
       titleDefault: 'Your plan is ready',
       groupNote: 'For groups, book early.',
       site: { surf: 'surf.html', pesca: 'pesca.html', praia: 'beaches.html', webcams: 'webcams.html' },
-      bookingLang: 'en-gb', bscBase: 'https://www.booksurfcamps.com/all/d/europe/portugal', dcBase: 'https://www.discovercars.com/portugal',
+      bookingLang: 'en-gb', dcBase: 'https://www.discovercars.com/portugal',
       gygCmp: 'pthplanearen', stayCampaign: 'portalturismoportugal-en-planear',
       sec: { sleep: function (t) { return 'Where to stay in ' + t; }, do: 'Things to do', move: 'Getting around', site: 'Before you go' },
       steps: { sleep: 'Stay', do: 'Do', move: 'Get around' },
@@ -298,14 +297,16 @@
     }
     var gygMeta = (dt ? fmtRange(dt, t) + ' · ' : '') + 'GetYourGuide';
 
-    // 2. Surf: camp (BookSurfCamps) + aulas (GYG)
+    // 2. Surf: aulas (GYG) na vila-base + pesquisa da zona (kind 'surfcamp' mantido por compatibilidade).
+    //    09/10/2026: BookSurfCamps (Tripaneer B.V.) faliu a 02/10/2026 -> substituido por GetYourGuide.
     if (has('surf')) {
-      var bscSlug = regiao ? R.bsc : (any.bsc || '');
-      links.push({ kind: 'surfcamp', section: 'do', partner: 'booksurfcamps', icon: 'wave',
-        title: t.campTitle(zoneName), meta: t.campMeta,
-        href: t.bscBase + (bscSlug ? '/' + bscSlug : '') + '?aid=' + IDS.bscAid });
+      var surfQ = stripAccents((regiao ? R.surfq : any.surfq) || 'Portugal');
       links.push({ kind: 'surf', section: 'do', partner: 'getyourguide', icon: 'star',
         title: t.surfTitle(town), meta: gygMeta, href: gyg('surf lessons ' + stripAccents(town)) });
+      if (surfQ.toLowerCase() !== stripAccents(town).toLowerCase()) {
+        links.push({ kind: 'surfcamp', section: 'do', partner: 'getyourguide', icon: 'wave',
+          title: t.campTitle(zoneName), meta: t.campMeta, href: gyg('surf lesson ' + surfQ) });
+      }
     }
     // 3. Pesca (FishingBooker quando aprovado — ate la GYG)
     if (has('pesca')) {
