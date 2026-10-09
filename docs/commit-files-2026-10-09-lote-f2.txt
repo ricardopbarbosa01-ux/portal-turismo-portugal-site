@@ -1,0 +1,13 @@
+parceiros.html
+en/parceiros.html
+css/parceiros-v3.css
+js/parceiros-v3.js
+js/parceiros.js
+js/email-capture.js
+precos.html
+en/precos.html
+escolas-de-surf.html
+en/surf-schools.html
+docs/REGRESSION-WATCHLIST.md
+HANDOFF.md
+docs/commit-files-2026-10-09-lote-f2.txt

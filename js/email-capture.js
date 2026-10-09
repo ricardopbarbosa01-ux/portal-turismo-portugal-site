@@ -51,7 +51,7 @@
     var tok = '', wid = null;
     el.__pthTs = loadApi().then(function (ts) {
       wid = ts.render(el, {
-        sitekey: SITEKEY, size: 'flexible', theme: el.getAttribute('data-theme') || 'auto', language: EN ? 'en' : 'pt-PT',
+        sitekey: SITEKEY, size: 'flexible', appearance: 'interaction-only', theme: el.getAttribute('data-theme') || 'auto', language: EN ? 'en' : 'pt-PT',
         callback: function (t) { tok = t; },
         'expired-callback': function () { tok = ''; try { ts.reset(wid); } catch (e) {} },
         'error-callback': function () { tok = ''; }

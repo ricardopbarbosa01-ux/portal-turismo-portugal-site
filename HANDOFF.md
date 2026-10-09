@@ -291,7 +291,7 @@ Nova ordem (PT e EN, gerada por `_diag/lote-a-20261008/bb_build.py`): 1) Que pra
 Ficheiros: beaches.html, en/beaches.html, NOVOS css/beaches-bottom.css e js/beaches-bottom.js (?v=20261009e). css/gyg-block.css fica (usado noutras páginas). Cópias antigas: docs/_backup-lote-e-20261009/.
 Fica por fazer: morada completa no rodapé/termos (falta o dado); "Registar" no cabeçalho; Lote D.
 
-## >>> LOTE F — Preços, Escolas de surf, Para o seu negócio + correções no site inteiro (09/10, tarde), POR PUBLICAR
+## >>> LOTE F — Preços, Escolas de surf, Para o seu negócio + correções no site inteiro (09/10, tarde), PUBLICADO (177173f)
 Pedido do Ricardo (13:35): reestruturar as 3 páginas com foco em faturação, captação de email, tecnologia, design e psicologia de venda. Feito com agentes (estudo de preços, estratégia/copy, auditoria técnica, 3 construtores, correções do site, media kit, revisão independente).
 Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-f.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`. Sem SQL nem funções. Cópias antigas: docs/_backup-lote-f-20261009/.
 Depois do deploy: 1 pedido real em /parceiros e 1 em /en/parceiros (confirmar que chegam a partner_leads e apagar), 1 email na lista do Pro (surf_subscribers, source precos-pro-lista:*).
@@ -299,3 +299,10 @@ Decisões do Ricardo: grelha Base grátis / Parceiro Local 149 €/ano ou 19 €
 Emails novos: surf_subscribers.source = precos-pro-lista:<interesse>, escolas-viajante-regiao:<zona> (EN com prefixo en-). Leads B2B: partner_leads.mensagem começa por [origem: …] [plano: …] [zona: …].
 Por confirmar pelo Ricardo: se a verificação das 7 escolas (registo, certificações, praias, avaliações; "maio de 2026") foi mesmo feita como a página diz; datas das notas Tripadvisor/Google.
 Pendentes: quadro de zonas e ordem do diretório ao 1.º parceiro; bloco GYG das páginas ("verificadas por nós / selecionamos pessoalmente") a rever; títulos do media-kit >60; logótipo cortado a 320 px (style.css global); erro "supabase is not defined" nas páginas praias/* (antigo); morada completa no rodapé; Lote D.
+
+## >>> LOTE F2 — /parceiros v3 escuro/tecnológico (09/10, fim da tarde), POR PUBLICAR
+O Ricardo rejeitou o visual do Lote F ("horríveis, desalinhadas, sem gráficos"). Refeito à mão, um só estilo: escuro, tecnológico, ouro + ciano, Inter.
+Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-f2.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`.
+/parceiros: topo sem audiência (conteúdo + 149 €/ano), cartão ao vivo, calculadora das aulas, bento "O que recebe", planos, mapa real com 12 zonas de Fundador, como funciona, candidatura, FAQ (tráfego honesto só aí).
+Decisões: 1 Fundador por zona, 12 zonas de surf; números de tráfego só com fonte (pedido de 6 000 cliques/mês e 1 milhão de aparições não confirmado pelo GSC).
+PRÓXIMO: /precos e /escolas-de-surf no mesmo estilo (o Ricardo também os achou fracos). Pedir ao Ricardo a exportação mensal do GSC (16 meses) para um gráfico de evolução, se o crescimento se confirmar.

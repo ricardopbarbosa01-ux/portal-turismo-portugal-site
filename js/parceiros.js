@@ -48,13 +48,17 @@
 
   // Zonas do Fundador (surf). Nome canónico PT vai para a mensagem (o Ricardo filtra por ele); EN só para o ecrã.
   var ZONES = {
-    sagres:    { pt: 'Sagres e Costa Vicentina', en: 'Sagres and Costa Vicentina', reg: 'algarve', k: ['sagres', 'vila do bispo', 'aljezur', 'carrapateira', 'arrifana', 'odeceixe', 'zavial', 'salema', 'burgau', 'bordeira', 'amado', 'monte clerigo', 'beliche', 'tonel'] },
+    sagres:    { pt: 'Sagres', en: 'Sagres', reg: 'algarve', k: ['sagres', 'vila do bispo', 'zavial', 'salema', 'burgau', 'beliche', 'tonel', 'martinhal', 'mareta', 'raposeira', 'ingrina', 'boca do rio'] },
+    vicentina: { pt: 'Costa Vicentina', en: 'Costa Vicentina', reg: 'algarve', k: ['aljezur', 'carrapateira', 'arrifana', 'odeceixe', 'bordeira', 'amado', 'monte clerigo', 'cordoama', 'castelejo', 'amoreira', 'vale figueiras', 'rogil', 'vicentina'] },
     lagos:     { pt: 'Lagos e Luz', en: 'Lagos and Luz', reg: 'algarve', k: ['lagos', 'luz', 'porto de mos', 'meia praia', 'odiaxere', 'dona ana', 'camilo'] },
     portimao:  { pt: 'Portimão e Alvor', en: 'Portimão and Alvor', reg: 'algarve', k: ['portimao', 'alvor', 'praia da rocha', 'rocha', 'ferragudo', 'carvoeiro', 'lagoa', 'tres irmaos', 'mexilhoeira'] },
     albufeira: { pt: 'Albufeira a Quarteira', en: 'Albufeira to Quarteira', reg: 'algarve', k: ['albufeira', 'armacao de pera', 'gale', 'olhos de agua', 'vilamoura', 'quarteira', 'falesia', 'guia', 'salgados', 'acoteias'] },
     alentejo:  { pt: 'Costa Alentejana', en: 'Alentejo coast', reg: 'alentejo', k: ['milfontes', 'zambujeira', 'odemira', 'porto covo', 'sines', 'comporta', 'almograve', 'melides', 'malhao', 'carvalhal', 'sao torpes'] },
-    lisboa:    { pt: 'Lisboa, Cascais e Ericeira', en: 'Lisbon, Cascais and Ericeira', reg: 'cascais', k: ['lisboa', 'lisbon', 'cascais', 'estoril', 'ericeira', 'carcavelos', 'sintra', 'caparica', 'guincho', 'mafra', 'oeiras', 'parede', 'sao juliao', 'ribamar', 'praia grande', 'magoito'] },
-    peniche:   { pt: 'Peniche e Nazaré', en: 'Peniche and Nazaré', reg: 'costa-prata', k: ['peniche', 'baleal', 'nazare', 'ferrel', 'obidos', 'foz do arelho', 'sao martinho', 'supertubos', 'consolacao', 'lourinha', 'santa cruz'] },
+    caparica:  { pt: 'Costa da Caparica', en: 'Costa da Caparica', reg: 'setubal', k: ['caparica', 'costa da caparica', 'fonte da telha', 'trafaria', 'almada', 'meco', 'sesimbra', 'setubal', 'arrabida', 'troia'] },
+    cascais:   { pt: 'Cascais e Lisboa', en: 'Cascais and Lisbon', reg: 'cascais', k: ['lisboa', 'lisbon', 'cascais', 'estoril', 'carcavelos', 'sintra', 'guincho', 'oeiras', 'parede', 'sao juliao', 'praia grande', 'magoito', 'colares', 'azenhas do mar'] },
+    ericeira:  { pt: 'Ericeira', en: 'Ericeira', reg: 'cascais', k: ['ericeira', 'ribamar', 'mafra', 'foz do lizandro', 'sao lourenco', 'ribeira d ilhas', 'ribeira de ilhas', 'santa cruz', 'assenta'] },
+    peniche:   { pt: 'Peniche e Baleal', en: 'Peniche and Baleal', reg: 'costa-prata', k: ['peniche', 'baleal', 'ferrel', 'supertubos', 'consolacao', 'lourinha', 'obidos', 'foz do arelho', 'areia branca'] },
+    nazare:    { pt: 'Nazaré', en: 'Nazaré', reg: 'costa-prata', k: ['nazare', 'sao martinho', 'sao pedro de moel', 'vieira', 'paredes da vitoria', 'pedrogao'] },
     porto:     { pt: 'Porto e Norte', en: 'Porto and North', reg: 'minho', k: ['porto', 'oporto', 'matosinhos', 'vila do conde', 'povoa', 'espinho', 'viana', 'esposende', 'moledo', 'leca', 'gaia', 'afife', 'caminha', 'ofir'] }
   };
   var REG_EXTRA = [
@@ -134,7 +138,7 @@
       err.innerHTML = '';
       var m = document.createElement('p'); m.textContent = msg; err.appendChild(m);
       if (p) {
-        var a = document.createElement('a'); a.className = 'biz-btn biz-btn--gold'; a.href = mailtoHref(p); a.textContent = T.mailBtn;
+        var a = document.createElement('a'); a.className = 'pv3-btn pv3-btn--gold'; a.href = mailtoHref(p); a.textContent = T.mailBtn;
         a.addEventListener('click', function () { track('partner_mailto_fallback', { form: opts.name, lang: EN ? 'en' : 'pt' }); });
         err.appendChild(a);
       }
