@@ -223,6 +223,8 @@
     .help-topics { display:flex; flex-direction:column; gap:7px; margin-bottom:28px; }
     .help-topic { display:flex; align-items:center; gap:10px; font-size:0.85rem; color:var(--text-mid); line-height:1.4; }
     .help-topic-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+.cf-turnstile { margin: 1rem 0; display: flex; justify-content: center; }
+    .form-submit-btn:disabled { opacity:.6; cursor:wait; transform:none; }
 </style>
 
 <link rel="stylesheet" href="/css/footer-v2.css?v=20261007">
@@ -503,6 +505,8 @@
             <span class="field-error" id="err-message">Please write your message.</span>
           </div>
 
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADFrwvqNt1FGaqkB" data-theme="auto"></div>
+
           <button type="submit" class="form-submit-btn" id="submit-btn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
             <span>Send Message</span>
@@ -741,7 +745,7 @@ function showFieldError(inputId, errId, show) {
   err.classList.toggle('visible', show);
 }
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', async function(e) {
   e.preventDefault();
   let valid = true;
 
@@ -764,23 +768,49 @@ form.addEventListener('submit', function(e) {
 
   if (!valid) return;
 
+  // Lote A 08/10: o insert direto com .catch() nunca enviava (CC-01). Agora igual ao PT: Edge Function submit-contact + Turnstile,
+  // e o ecra de sucesso SO aparece quando o servidor responde OK.
+  const data = { name, email, subject, message, timestamp: new Date().toISOString(), ...(window._pthSourceCtx || {}) };
   try {
-    const data = { name, email, subject, message, timestamp: new Date().toISOString(), ...(window._pthSourceCtx || {}) };
     const existing = JSON.parse(localStorage.getItem('pth_contact_messages') || '[]');
     existing.push(data);
     localStorage.setItem('pth_contact_messages', JSON.stringify(existing));
-    db.from('contact_messages').insert([data]).catch((err) => {
-      console.error('Error sending message:', err);
-      const form = document.querySelector('form') || document.querySelector('.contact-form');
-      if (form) {
-        const errorEl = document.createElement('div');
-        errorEl.style.cssText = 'background:#fee;color:#c00;padding:12px 16px;border-radius:8px;margin-top:12px;font-size:14px;';
-        errorEl.textContent = 'Unable to send message. Please try again or contact us by email.';
-        form.appendChild(errorEl);
-        setTimeout(() => errorEl.remove(), 8000);
-      }
-    });
   } catch(_) {}
+
+  function showError(msg) {
+    const errorEl = document.createElement('div');
+    errorEl.setAttribute('role', 'alert');
+    errorEl.style.cssText = 'background:#fee;color:#c00;padding:12px 16px;border-radius:8px;margin-top:12px;font-size:14px;';
+    errorEl.textContent = msg;
+    form.appendChild(errorEl);
+    setTimeout(() => errorEl.remove(), 8000);
+  }
+
+  const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value || '';
+  if (!turnstileToken) {
+    showError('Anti-bot check missing. Please wait a moment for the check to finish, or reload the page and try again.');
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  if (btn) btn.disabled = true;
+  try {
+    const res = await fetch(SUPABASE_URL + '/functions/v1/submit-contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+      body: JSON.stringify({ turnstileToken, ...data })
+    });
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      throw new Error(d.error || ('HTTP ' + res.status));
+    }
+  } catch (err) {
+    console.error('Error sending message:', err);
+    if (btn) btn.disabled = false;
+    try { if (window.turnstile) window.turnstile.reset(); } catch(_) {}
+    showError('Unable to send your message. Please try again or email us at ola@portalturismoportugal.com.');
+    return;  // keep the form visible on failure
+  }
 
   form.style.display = 'none';
   formSuccess.classList.add('visible');
@@ -810,6 +840,7 @@ const io = new IntersectionObserver(
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/js/lang-switcher.js" defer></script>
   <script src="/js/nav.js?v=20260422c" defer></script>
   <script src="/js/cookie-consent.js" defer></script>

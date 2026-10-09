@@ -26,6 +26,9 @@
   }
   function once(u) { return timed(u, 12000).catch(function () { return new Promise(function (r) { setTimeout(r, 700); }).then(function () { return timed(u, 18000); }); }).catch(function () { return null; }); }
   function geo() { return (window.SurfPescaData && window.SurfPescaData.FISH_GEO) || {}; }
+  function nowLisbon() { // 'AAAA-MM-DDTHH:MM' na hora de Lisboa (as series do Open-Meteo vem com timezone=Europe/Lisbon)
+    try { return new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Lisbon' }).replace(' ', 'T').slice(0, 16); } catch (e) { return new Date().toISOString().slice(0, 16); }
+  }
   function tideTrend(m) {
     var h = m && m.hourly, cur = m && m.current; if (!h || !h.time || !h.sea_level_height_msl || !cur || !cur.time) return null;
     var i = h.time.indexOf(cur.time.slice(0, 13) + ':00'); if (i < 0 || i + 1 >= h.time.length) return null;
@@ -33,6 +36,22 @@
     return b > a ? 'up' : 'down';
   }
   function chunk(ids, G) {
+    // Lote A2 09/10: pedidos agrupados por celula + cache partilhada (js/om-pool.js); mare pela serie horaria guardada
+    if (window.PTHOpenMeteo) {
+      var pts = ids.map(function (id) { return { id: id, lat: G[id][0], lng: G[id][1] }; });
+      return Promise.all([window.PTHOpenMeteo.marine(pts), window.PTHOpenMeteo.weather(pts)]).then(function (r) {
+        var out = {};
+        ids.forEach(function (id) {
+          var me = r[0][id], a = me && me.c, b = r[1][id] && r[1][id].c; if (!a && !b) return;
+          var tide = me && me.sl ? tideTrend({ hourly: { time: me.sl.t, sea_level_height_msl: me.sl.v }, current: { time: nowLisbon() } }) : null;
+          out[id] = { h: a ? num(a.wave_height) : null, t: a ? num(a.sea_surface_temperature) : null, tide: tide,
+                      ws: b ? num(b.wind_speed_10m) : null, wd: b ? num(b.wind_direction_10m) : null, air: b ? num(b.temperature_2m) : null,
+                      at: ((a && a.time) || (b && b.time) || '').slice(11, 16) };
+          if (out[id].ws == null && out[id].h == null) delete out[id];
+        });
+        return out;
+      });
+    }
     var lat = ids.map(function (id) { return G[id][0]; }).join(','), lng = ids.map(function (id) { return G[id][1]; }).join(',');
     var mu = 'https://marine-api.open-meteo.com/v1/marine?latitude=' + lat + '&longitude=' + lng +
       '&current=wave_height,sea_surface_temperature&hourly=sea_level_height_msl&forecast_days=2&timezone=Europe%2FLisbon';

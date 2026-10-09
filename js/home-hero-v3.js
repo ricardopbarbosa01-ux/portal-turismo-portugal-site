@@ -67,7 +67,7 @@
       if (best.t != null) meta.appendChild(el('span', null, T.water + ' ' + Math.round(best.t) + ' °C'));
       info.appendChild(meta); B.appendChild(info);
       var acts = el('div', 'lh__acts');
-      var ho = el('a', 'lh__hotels'); ho.href = 'https://www.booking.com/searchresults.' + T.booking + '.html?ss=' + encodeURIComponent(best.b.name + ', Portugal');
+      var ho = el('a', 'lh__hotels'); ho.href = 'https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-' + (EN ? 'en-' : '') + 'home&address=' + encodeURIComponent(best.b.name + ', Portugal'); /* Lote A 08/10: a home nao carrega o Stay22 -> link ja com ID */
       ho.target = '_blank'; ho.rel = 'sponsored noopener noreferrer';
       ho.appendChild(icon(['M2 20V8', 'M2 16h20v4', 'M22 16v-4a3 3 0 0 0-3-3H10v7'])); ho.appendChild(document.createTextNode(T.hotels));
       ho.addEventListener('click', function () { track('home_live_hotels', { beach: best.b.name }); });

@@ -603,7 +603,7 @@
 <link rel="stylesheet" href="/css/beach-filters-v2.css?v=20261007">
 <link rel="stylesheet" href="/css/beaches-hero-v4.css?v=20261008r">
 <link rel="preload" as="image" type="image/avif" imagesrcset="/images/map/portugal-relevo-560.avif?v=2 560w, /images/map/portugal-relevo-760.avif?v=2 760w, /images/map/portugal-relevo-1000.avif?v=2 1000w" imagesizes="(max-width: 1180px) 300px, 361px" fetchpriority="high">
-<script src="/js/beach-renderer.js?v=20260512-i18n" defer></script>
+<script src="/js/beach-renderer.js?v=20261008la" defer></script>
 <script async src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="0WTBHZE"></script>
 <link rel="stylesheet" href="/css/footer-v2.css?v=20261007">
 </head>
@@ -1054,7 +1054,7 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         Plan My Trip
       </a>
-      <a href="https://www.booking.com/country/pt.en-gb.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.30);color:var(--white);font-size:0.875rem;font-weight:500;white-space:nowrap;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.60)';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.30)';this.style.background=''">
+      <a href="https://www.stay22.com/allez/booking?aid=kaptarstudio&amp;campaign=portalturismoportugal-en-beaches-faixa&amp;address=Portugal" target="_blank" rel="noopener noreferrer sponsored" style="display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.30);color:var(--white);font-size:0.875rem;font-weight:500;white-space:nowrap;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.60)';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.30)';this.style.background=''">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         Find Accommodation
       </a>
@@ -1089,8 +1089,9 @@
 <script src="/js/affiliate.js?v=20261005" defer></script>
 <!-- Stay22 LetMeAllez (afiliados alojamento) -->
 <script>(function (s, t, a, y, twenty, two) {s.Stay22 = s.Stay22 || {};s.Stay22.params = { lmaID: '6ac371f3b7bfdedf2d37801a' };twenty = t.createElement(a);two = t.getElementsByTagName(a)[0];twenty.async = 1;twenty.src = y;two.parentNode.insertBefore(twenty, two);})(window, document, 'script', 'https://scripts.stay22.com/letmeallez.js');</script>
-<script src="/js/live-coast.js?v=20261008r" defer></script>
-<script src="/js/beach-card-v2.js?v=20261008r" defer></script>
+<script src="/js/om-pool.js?v=20261009a2" defer></script>
+<script src="/js/live-coast.js?v=20261009a2" defer></script>
+<script src="/js/beach-card-v2.js?v=20261008la" defer></script>
 <script src="/js/beaches-hero-v4.js?v=20261008r" defer></script>
 <script src="/js/beaches-filters.js?v=20261007-chipn" defer></script>
 
@@ -1227,7 +1228,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .normalize('NFD').replace(/[̀-ͯ]/g, '')
         .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
       const planearUrl = `/en/planear.html?source=beaches&beach=${encodeURIComponent(b.name)}&region=${encodeURIComponent(b.region || '')}`;
-      const bookingUrl = `https://www.booking.com/searchresults.en-us.html?ss=${encodeURIComponent(b.name + ' Portugal')}&aid=XXXXXXX#hotelTmpl`;
+      const bookingUrl = `https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-en-beaches&address=${encodeURIComponent(b.name + ', Portugal')}`; // Lote A 08/10 (era aid=XXXXXXX falso)
       const tagsArr   = deriveTags(b);
       const tagsHtml  = tagsArr.length ? `<div class="beach-card-tags">${tagsArr.slice(0,3).map(t => `<span class="beach-tag beach-tag--${t}">${t}</span>`).join('')}</div>` : '';
 

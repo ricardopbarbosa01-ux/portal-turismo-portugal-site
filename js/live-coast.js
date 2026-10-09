@@ -46,6 +46,12 @@
   }
 
   function fetchChunk(pts, retry) {
+    // Lote A2 09/10: com js/om-pool.js os pontos na mesma celula do modelo sao pedidos uma so vez e a cache e partilhada (localStorage)
+    if (window.PTHOpenMeteo) return window.PTHOpenMeteo.marine(pts).then(function (res) {
+      var c = cache();
+      pts.forEach(function (p) { var e = res[p.id]; if (!e) return; var cur = e.c; c[p.id] = { w: num(cur.wave_height), t: num(cur.sea_surface_temperature), ts: e.ts, at: (cur.time || '').slice(11, 16) }; });
+      sset(KEY_SEA, c);
+    });
     var url = 'https://marine-api.open-meteo.com/v1/marine?latitude=' + pts.map(function (p) { return p.lat; }).join(',') +
       '&longitude=' + pts.map(function (p) { return p.lng; }).join(',') + '&current=wave_height,sea_surface_temperature&timezone=Europe%2FLisbon';
     return timed(url, null, retry ? 14000 : 8000).then(function (res) {

@@ -23,7 +23,7 @@
     count: function (n) { return n + (n === 1 ? ' camera' : ' cameras'); }, none: 'No cameras match. Try another name or region.', reset: 'Show all',
     calm: 'Calm sea', mod: 'Moderate swell', rough: 'Rough sea', windy: 'Strong wind', nodata: 'No live data',
     sGood: 'Good for surf', sFair: 'Surfable', sSmall: 'Too small', sBig: 'Big — experts only', sWind: 'Wind is spoiling it', sPoor: 'Poor',
-    wind: 'Wind', water: 'Water', air: 'Air', waves: 'Waves', period: 'Period', tide: 'Tide', rising: 'rising', falling: 'falling',
+    wind: 'Wind', water: 'Water', air: 'Air', waves: 'Waves', period: 'Period', tide: 'Tide', rising: 'rising', falling: 'falling', tideEst: 'Model estimate (Open-Meteo), not the official tide table', tideIH: 'Official tide table (Instituto Hidrográfico) · reference port: ',
     photo: 'Photo', upd: 'Live · updated ', cams: 'cameras', loading: 'Reading the sea…', est: 'Estimate from Open-Meteo for this stretch of coast — always check on site and follow the flags.',
     beach: 'Beach', surf: 'Surf', best: 'Best right now', biggest: 'Biggest waves', sunset: 'Sunset in Lisbon', inMin: function (h, m) { return 'in ' + (h ? h + ' h ' : '') + m + ' min'; }, gone: 'tomorrow (already set today)',
     near: 'Near me', nearBusy: 'Finding you…', nearFail: 'Location not available', km: ' km away',
@@ -45,7 +45,7 @@
     count: function (n) { return n + (n === 1 ? ' câmara' : ' câmaras'); }, none: 'Nenhuma câmara encontrada. Tente outro nome ou região.', reset: 'Ver todas',
     calm: 'Mar calmo', mod: 'Ondulação moderada', rough: 'Mar agitado', windy: 'Vento forte', nodata: 'Sem dados ao vivo',
     sGood: 'Bom para surf', sFair: 'Dá para surfar', sSmall: 'Pequeno demais', sBig: 'Grande — só experientes', sWind: 'Vento a estragar', sPoor: 'Fraco',
-    wind: 'Vento', water: 'Água', air: 'Ar', waves: 'Ondas', period: 'Período', tide: 'Maré', rising: 'a encher', falling: 'a vazar',
+    wind: 'Vento', water: 'Água', air: 'Ar', waves: 'Ondas', period: 'Período', tide: 'Maré', rising: 'a encher', falling: 'a vazar', tideEst: 'Estimativa de modelo (Open-Meteo), não é a tabela oficial', tideIH: 'Tabela oficial do Instituto Hidrográfico · porto de referência: ',
     photo: 'Foto', upd: 'Ao vivo · atualizado às ', cams: 'câmaras', loading: 'A ler o mar…', est: 'Estimativa Open-Meteo para esta zona da costa — confirme sempre no local e respeite as bandeiras.',
     beach: 'Praia', surf: 'Surf', best: 'Melhores agora', biggest: 'Maiores ondas', sunset: 'Pôr do sol em Lisboa', inMin: function (h, m) { return 'daqui a ' + (h ? h + ' h ' : '') + m + ' min'; }, gone: 'amanhã (hoje já foi)',
     near: 'Perto de mim', nearBusy: 'A localizar…', nearFail: 'Localização indisponível', km: ' km de si',
@@ -148,6 +148,24 @@
       if (c && Date.now() - c.t < 30 * 60 * 1000 && c.d) { LIVE = c.d; LIVE_AT = new Date(c.t); return Promise.resolve(LIVE); }
     } catch (e) {}
     var sea = CAMS.filter(function (c) { return c.k === 'mar'; }), all = CAMS;
+    // Lote A2 09/10: com js/om-pool.js os pontos na mesma celula do modelo sao pedidos uma so vez (cache partilhada com
+    // /beaches, /surf e /pesca). So guarda em sessionStorage quando ha dados de mar (antes: falha do mar = 30 min 'sem dados', W04).
+    if (window.PTHOpenMeteo) {
+      var pts = function (l) { return l.map(function (c) { return { id: c.id, lat: c.lat, lng: c.lng }; }); };
+      return Promise.all([window.PTHOpenMeteo.marine(pts(sea)), window.PTHOpenMeteo.weather(pts(all))]).then(function (r) {
+        var d = {}, nSea = 0, any = false;
+        all.forEach(function (c) {
+          var m = r[0][c.id] && r[0][c.id].c, f = r[1][c.id] && r[1][c.id].c, o = {};
+          if (m) { o.wh = m.wave_height; o.wp = m.wave_period; o.wd = m.wave_direction; o.sst = m.sea_surface_temperature; if (o.wh != null) { nSea++; any = true; } }
+          if (f) { o.ta = f.temperature_2m; o.ws = f.wind_speed_10m; o.wdir = f.wind_direction_10m; any = true; }
+          if (m || f) d[c.id] = o;
+        });
+        if (!any) throw new Error('no live data');
+        LIVE = d; LIVE_AT = new Date();
+        if (nSea >= sea.length * 0.8) { try { sessionStorage.setItem(KEY, JSON.stringify({ t: Date.now(), d: d })); } catch (e) {} }
+        return d;
+      });
+    }
     var reqs = [];
     chunk(sea, 90).forEach(function (g) {
       reqs.push(getJSON('https://marine-api.open-meteo.com/v1/marine?latitude=' + g.map(function (c) { return c.lat; }).join(',') + '&longitude=' + g.map(function (c) { return c.lng; }).join(',') +
@@ -548,7 +566,7 @@
     box.appendChild(h('p', { class: 'wp__msg', hidden: true }));
     var tiles = h('div', { class: 'wp__tiles' });
     var ss = where + (c.r === 'madeira' && where !== 'Madeira' ? ', Madeira' : '') + ', Portugal';
-    tiles.appendChild(linkTile('https://www.booking.com/searchresults.' + (EN ? 'en-gb' : 'pt-pt') + '.html?ss=' + encodeURIComponent(ss), 'bed', T.pHotels, T.pHotelsS, 'hotel', c.id, true));
+    tiles.appendChild(linkTile('https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-' + (EN ? 'en-' : '') + 'webcams&address=' + encodeURIComponent(ss), 'bed', T.pHotels, T.pHotelsS, 'hotel', c.id, true));
     tiles.appendChild(linkTile('https://www.getyourguide.com/s/?q=' + encodeURIComponent(where + (c.r === 'madeira' && where !== 'Madeira' ? ' Madeira' : '') + ' Portugal') + '&partner_id=0WTBHZE&cmp=webcam-' + encodeURIComponent(c.id.slice(0, 40)) + '&locale_autoredirect_optout=true', 'star', T.pDo, T.pDoS, 'gyg', c.id, true));
     var cc = carCity(c);
     tiles.appendChild(linkTile('https://www.discovercars.com/' + (EN ? '' : 'pt/') + 'portugal' + (cc[0] ? '/' + cc[0] : '') + '?a_aid=portalturismoportugal', 'car', T.pCar, T.pCarS + cc[1], 'car', c.id, true));
@@ -577,7 +595,7 @@
   function loadHourly(c) {
     if (HOURLY[c.id]) return Promise.resolve(HOURLY[c.id]);
     var fc = getJSON('https://api.open-meteo.com/v1/forecast?latitude=' + c.lat + '&longitude=' + c.lng + '&hourly=wind_speed_10m,temperature_2m&daily=sunset&timezone=auto&forecast_days=2&wind_speed_unit=kmh');
-    var mr = c.k === 'mar' ? getJSON('https://marine-api.open-meteo.com/v1/marine?latitude=' + c.lat + '&longitude=' + c.lng + '&hourly=wave_height,wave_period,sea_level_height_msl&timezone=auto&forecast_days=2').catch(function () { return null; }) : Promise.resolve(null);
+    var mr = c.k === 'mar' ? getJSON('https://marine-api.open-meteo.com/v1/marine?latitude=' + c.lat + '&longitude=' + c.lng + '&hourly=wave_height,wave_period,sea_level_height_msl&minutely_15=sea_level_height_msl&timezone=auto&forecast_days=2').catch(function () { return null; }) : Promise.resolve(null);
     return Promise.all([fc, mr]).then(function (r) { HOURLY[c.id] = { f: r[0], m: r[1] }; return HOURLY[c.id]; });
   }
   function hoursBlock(c, H) {
@@ -613,14 +631,30 @@
       facts.appendChild(h('li', {}, [ico('star'), h('span', {}, [T.pBest + ': ', h('b', { text: best.t }), ' · ' + (best.wh != null ? fmt1(best.wh) + ' m · ' : '') + fmt0(best.ws) + ' km/h'])]));
     }
     if (setH) facts.appendChild(h('li', {}, [ico('sun'), h('span', {}, [T.pSunset + ': ', h('b', { text: setH })])]));
-    if (m && m.hourly && m.hourly.sea_level_height_msl) {
-      var sl = m.hourly.sea_level_height_msl, mt = m.hourly.time, j0 = mt.findIndex(function (t) { return t.slice(0, 13) >= nowLocal; });
-      if (j0 > 0 && sl[j0] != null && sl[j0 - 1] != null) {
-        var rising = sl[j0] > sl[j0 - 1], ext = null;
-        for (var j = j0 + 1; j < sl.length - 1; j++) { if (sl[j] == null) break; if ((rising && sl[j] >= sl[j - 1] && sl[j] >= sl[j + 1]) || (!rising && sl[j] <= sl[j - 1] && sl[j] <= sl[j + 1])) { ext = mt[j].slice(11, 16); break; } }
-        facts.appendChild(h('li', {}, [ico('wave'), h('span', {}, [T.tide + ': ', h('b', { text: rising ? T.rising : T.falling }), ext ? ' · ' + (rising ? T.hi : T.lo) + T.at + ext : ''])]));
+    // Mare (Lote A 08/10, auditoria W01): o codigo antigo comparava a hora cheia atual com a anterior e procurava o extremo
+    // so a partir da hora seguinte -> perto de um extremo dizia "a vazar · baixa-mar as 08:00" quando ja estava a encher.
+    // Agora: serie de 15 min (hora de recurso), tendencia entre as amostras que rodeiam o momento atual, extremo seguinte >= agora.
+    var tideLi = null;
+    var mq = m && m.minutely_15 && m.minutely_15.sea_level_height_msl ? m.minutely_15 : (m && m.hourly && m.hourly.sea_level_height_msl ? m.hourly : null);
+    if (mq) {
+      var sl = mq.sea_level_height_msl, mt = mq.time;
+      var nowMin = new Date(Date.now() + (m.utc_offset_seconds || 0) * 1000).toISOString().slice(0, 16);
+      var j0 = -1; for (var q = 0; q < mt.length - 1; q++) { if (mt[q] <= nowMin && mt[q + 1] > nowMin) { j0 = q; break; } }
+      if (j0 >= 0 && sl[j0] != null && sl[j0 + 1] != null && sl[j0 + 1] !== sl[j0]) {
+        var rising = sl[j0 + 1] > sl[j0], ext = null;
+        for (var j = j0 + 1; j < sl.length - 1; j++) { if (sl[j] == null || sl[j + 1] == null) break; if ((rising && sl[j] >= sl[j - 1] && sl[j] > sl[j + 1]) || (!rising && sl[j] <= sl[j - 1] && sl[j] < sl[j + 1])) { ext = mt[j].slice(11, 16); break; } }
+        tideLi = h('li', { title: T.tideEst }, [ico('wave'), h('span', {}, [T.tide + ': ', h('b', { text: rising ? T.rising : T.falling }), ext ? ' · ' + (rising ? T.hi : T.lo) + T.at + '\u2248' + ext : ''])]);
+        facts.appendChild(tideLi);
       }
     }
+    // Lote A2 09/10: com a tabela oficial do IH (js/mares-ih.js) a linha da mare passa a usar o porto de referencia
+    if (c.k === 'mar' && window.PTHMares) window.PTHMares.now(c.lat, c.lng).then(function (r) {
+      if (!r) return;
+      var tz = c.lng < -20 ? 'Atlantic/Azores' : 'Europe/Lisbon';
+      var hm = new Date(r.next.ts).toLocaleTimeString(EN ? 'en-GB' : 'pt-PT', { hour: '2-digit', minute: '2-digit', timeZone: tz });
+      var li = h('li', { title: T.tideIH + r.port }, [ico('wave'), h('span', {}, [T.tide + ': ', h('b', { text: r.rising ? T.rising : T.falling }), ' · ' + (r.rising ? T.hi : T.lo) + T.at + hm])]);
+      if (tideLi && tideLi.parentNode) tideLi.parentNode.replaceChild(li, tideLi); else facts.appendChild(li);
+    }).catch(function () {});
     wrap.appendChild(facts);
   }
   function ytBlock(c, autoplay) {

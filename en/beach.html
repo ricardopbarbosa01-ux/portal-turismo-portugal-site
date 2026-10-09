@@ -42,8 +42,11 @@
   (function() {
     var id = new URLSearchParams(window.location.search).get('id');
     if (!id) return;
-    var base = 'https://www.portalturismoportugal.com/en/beach.html?id=';
-    var url  = base + id;
+    // Lote A 08/10: URL final (sem .html -> sem redirect) + hreflang com id
+    var hp = 'https://www.portalturismoportugal.com/beach?id=' + encodeURIComponent(id);
+    var he = 'https://www.portalturismoportugal.com/en/beach?id=' + encodeURIComponent(id);
+    var url  = he;
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) { l.href = l.getAttribute('hreflang') === 'en' ? he : hp; });
     var c = document.getElementById('page-canonical'); if (c) c.href = url;
     var ou = document.getElementById('page-og-url');   if (ou) ou.content = url;
     var tu = document.getElementById('page-tw-url');   if (tu) tu.content = url;
@@ -64,7 +67,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="/css/style.css?v=20261007cr">
-  <link rel="stylesheet" href="/css/beach-page.css?v=20260514-gyg">
+  <link rel="stylesheet" href="/css/beach-page.css?v=20261008la">
 
 <link rel="stylesheet" href="/css/footer-v2.css?v=20261007">
 </head>
@@ -220,7 +223,7 @@
       <!-- Tides -->
       <div class="tides-section" id="tides-section" style="display:none">
         <h2>Tides</h2>
-        <p class="tides-subtitle">Forecast for the next 3 days — Instituto Hidrográfico</p>
+        <p class="tides-subtitle">Model estimate (Open-Meteo) — not the official tide table</p>
         <div id="tides-content"></div>
       </div>
 
@@ -310,11 +313,12 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="/js/beach-renderer.js?v=20260512-i18n" defer></script>
+<script src="/js/beach-renderer.js?v=20261009a2" defer></script>
 <script src="/js/config.js?v=20260508-isactive" defer></script>
 <script src="/js/affiliate.js?v=20261005" defer></script>
 <script>(function (s, t, a, y, twenty, two) {s.Stay22 = s.Stay22 || {};s.Stay22.params = { lmaID: '6ac371f3b7bfdedf2d37801a' };twenty = t.createElement(a);two = t.getElementsByTagName(a)[0];twenty.async = 1;twenty.src = y;two.parentNode.insertBefore(twenty, two);})(window, document, 'script', 'https://scripts.stay22.com/letmeallez.js');</script>
-<script src="/js/beach-page.js?v=20261008r" defer></script>
+<script src="/js/mares-ih.js?v=20261009a2" defer></script>
+<script src="/js/beach-page.js?v=20261009a2" defer></script>
 
 
 <!-- Mobile bottom nav -->

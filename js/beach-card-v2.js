@@ -559,7 +559,8 @@
     var orig = b.image_curated_url || b.image_storage_url_webp || b.image_storage_url || b.image_url || '';
     var detail = id ? L.beach(id) : '#';
     var planner = L.planner + '?beach=' + encodeURIComponent(name) + '&i=praia&ref=beaches';
-    var booking = 'https://www.booking.com/searchresults.' + L.booking + '.html?ss=' + encodeURIComponent(name + ', Portugal');
+    // Lote A 08/10: link Stay22 Allez ja com ID (o LetMeAllez so trocava o booking.com ~6-8 s depois -> cliques cedo sem comissao)
+    var booking = 'https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-' + (lang === 'en' ? 'en-' : '') + 'beaches&address=' + encodeURIComponent(name + ', Portugal');
     var slug = name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     var desc = (b.i18n && b.i18n.description && b.i18n.description[lang]) || b.description || '';
     var feats = tags(b, lang).slice(0, 3).map(function (t) { return '<li>' + (ICON[t] || '') + esc(L.feats[t] || t) + '</li>'; }).join('');

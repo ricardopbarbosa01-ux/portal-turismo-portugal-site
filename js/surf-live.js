@@ -39,6 +39,20 @@
     });
   }
   function chunk(ids, G) {
+    // Lote A2 09/10: pedidos agrupados por celula + cache partilhada (js/om-pool.js)
+    if (window.PTHOpenMeteo) {
+      var pts = ids.map(function (id) { return { id: id, lat: G[id][0], lng: G[id][1] }; });
+      return Promise.all([window.PTHOpenMeteo.marine(pts), window.PTHOpenMeteo.weather(pts)]).then(function (r) {
+        var out = {};
+        ids.forEach(function (id) {
+          var a = r[0][id] && r[0][id].c, b = r[1][id] && r[1][id].c; if (!a || num(a.wave_height) == null) return;
+          out[id] = { h: num(a.wave_height), p: num(a.wave_period), sp: num(a.swell_wave_period), sd: num(a.swell_wave_direction),
+                      t: num(a.sea_surface_temperature), ws: b ? num(b.wind_speed_10m) : null, wd: b ? num(b.wind_direction_10m) : null,
+                      at: (a.time || '').slice(11, 16) };
+        });
+        return out;
+      });
+    }
     var lat = ids.map(function (id) { return G[id][0]; }).join(','), lng = ids.map(function (id) { return G[id][1]; }).join(',');
     var m = 'https://marine-api.open-meteo.com/v1/marine?latitude=' + lat + '&longitude=' + lng +
       '&current=wave_height,wave_period,swell_wave_period,swell_wave_direction,sea_surface_temperature&timezone=Europe%2FLisbon';

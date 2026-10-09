@@ -54,10 +54,10 @@
 
   // ── Level label resolvers ─────────────────────────────────────────────────────
   function surfLevelLabel(spot, T) {
-    if (spot.levelLabelKey && T.surf.levelLabelComposite && T.surf.levelLabelComposite[spot.levelLabelKey]) {
-      return T.surf.levelLabelComposite[spot.levelLabelKey];
+    if (spot.levelLabelKey && T.surfPage.levelLabelComposite && T.surfPage.levelLabelComposite[spot.levelLabelKey]) {
+      return T.surfPage.levelLabelComposite[spot.levelLabelKey];
     }
-    return (T.surf.levelLabel && T.surf.levelLabel[spot.levelKey]) || spot.levelKey || '';
+    return (T.surfPage.levelLabel && T.surfPage.levelLabel[spot.levelKey]) || spot.levelKey || '';
   }
 
   function fishingLevelLabel(spot, T) {
@@ -582,15 +582,15 @@
     var grid  = document.getElementById('spots-grid');
     var count = document.getElementById('spot-count');
     var n = spots.length;
-    if (count) _setHTML(count, T.surf.spotCount(n));
+    if (count) _setHTML(count, T.surfPage.spotCount(n));
     if (!grid) return;
     if (!n) {
       _setHTML(grid,
         '<div class="spots-empty" role="status">' +
           '<div class="spots-empty-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 18c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="8"/></svg></div>' +
-          '<p class="spots-empty-title">' + esc(T.surf.emptyTitle) + '</p>' +
-          '<p class="spots-empty-sub">' + esc(T.surf.emptySub) + '</p>' +
-          '<button class="btn-reset" id="btn-reset-filters">' + esc(T.surf.emptyCta) + '</button>' +
+          '<p class="spots-empty-title">' + esc(T.surfPage.emptyTitle) + '</p>' +
+          '<p class="spots-empty-sub">' + esc(T.surfPage.emptySub) + '</p>' +
+          '<button class="btn-reset" id="btn-reset-filters">' + esc(T.surfPage.emptyCta) + '</button>' +
         '</div>'
       );
       var btn = document.getElementById('btn-reset-filters');
@@ -633,7 +633,8 @@
     var T    = window.BeachRenderer.getT();
     var list = document.getElementById('faq-list');
     if (!list) return;
-    var faqs = (T[kind] && T[kind].faqs) ? T[kind].faqs : [];
+    var K    = kind === 'surf' ? 'surfPage' : kind; // textos da pagina /surf vivem em T.surfPage (T.surf = ficha de praia)
+    var faqs = (T[K] && T[K].faqs) ? T[K].faqs : [];
     _setHTML(list, faqs.map(function (f, i) {
       var isFirst = (kind === 'surf' && i === 0);
       return (
@@ -659,7 +660,7 @@
   // ── Meta tag updater ──────────────────────────────────────────────────────────
   function updateMetaTags(kind) {
     var T = window.BeachRenderer.getT();
-    var m = T[kind];
+    var m = T[kind === 'surf' ? 'surfPage' : kind];
     if (!m) return;
     if (m.metaTitle) document.title = m.metaTitle;
     var md = document.querySelector('meta[name="description"]');

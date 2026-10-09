@@ -2740,7 +2740,7 @@
         pt: 'A marina de Ponta Delgada (Portas do Mar) é a base da maioria dos charters de big game de São Miguel. Marlim-azul, atuns e espadarte em mar profundo perto da costa; pico em agosto–setembro.',
         en: "Ponta Delgada marina (Portas do Mar) is home to most of São Miguel's big-game charters. Blue marlin, tuna and swordfish in deep water close to shore; peak in August–September.",
       },
-      tags: { pt: ['Big Game', 'Atum Rabilho', 'Wahoo', 'Açores'], en: ['Big Game', 'Bluefin Tuna', 'Wahoo', 'Azores'] },
+      tags: { pt: ['Big Game', 'Marlim-azul', 'Wahoo', 'Açores'], en: ['Big Game', 'Blue Marlin', 'Wahoo', 'Azores'] },
       quality: 5,
     },
     {
@@ -3996,7 +3996,7 @@
       tipos: ['embarcacao'],
       levelKey: 'intermedio',
       season: { pt: 'Abril a outubro; pico do espadim-azul em julho–setembro', en: 'April to October; blue marlin peaks July–September' },
-      especies: { pt: 'Espadim-azul e branco, dourada-do-mar, atum-rabilho, patudo, albacora, serra (wahoo); no fundo e jigging, espécies costeiras', en: 'Blue and white marlin, mahi-mahi, bluefin, bigeye and yellowfin tuna, wahoo; coastal species on bottom and jigging trips' },
+      especies: { pt: 'Espadim-azul e branco, dourada-do-mar, patudo, albacora, serra (wahoo); no fundo e jigging, espécies costeiras', en: 'Blue and white marlin, mahi-mahi, bigeye and yellowfin tuna, wahoo; coastal species on bottom and jigging trips' },
       tecnica: { pt: 'Big game ao corrico, jigging, pesca de fundo, corrico costeiro e saídas noturnas', en: 'Big-game trolling, jigging, bottom fishing, inshore trolling and night trips' },
       desc: {
         pt: 'O Pico faz parte do \'triângulo\' com o Faial e São Jorge, a zona mais conhecida dos Açores para a pesca grossa, e tem operadores no cais da Madalena, em São Roque e nas Lajes. Há saídas para todos os gostos, do jigging e fundo em meio dia ao dia inteiro de big game.',

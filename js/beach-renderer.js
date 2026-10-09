@@ -34,7 +34,7 @@
         waves:       'Mar & Ondulação',
         wavesSub:    'Previsão de ondas, vento e condições para os próximos dias.',
         tides:       'Marés',
-        tidesSub:    'Previsão astronómica (±30 min) — sem API externa',
+        tidesSub:    'Estimativa por modelo (Open-Meteo) — não é a tabela oficial',
         location:    'Como Chegar',
         localRecs:   'Recomendações Locais',
         related:     'Praias Semelhantes',
@@ -186,6 +186,20 @@
         low:   'Baixa-mar',
         next:  'Próxima',
         locale: 'pt-PT',
+        // Lote A 08/10: estimativa de modelo, nunca apresentada como tabela oficial
+        subtitle:    'Estimativa por modelo (Open-Meteo) — não é a tabela oficial',
+        approxTitle: 'Hora aproximada (estimativa de modelo)',
+        heightTitle: 'Altura em relação ao nível médio do mar',
+        note:        'As horas são uma estimativa de modelo e podem diferir da previsão oficial. Antes de atravessar zonas que dependem da maré, confirme a previsão oficial no',
+        ihLink:      'Instituto Hidrográfico',
+        heightNote:  'Alturas em relação ao nível médio do mar (a tabela oficial usa o zero hidrográfico, por isso os valores são diferentes).',
+        source:      'Dados do modelo:',
+        // Lote A2 09/10: tabela oficial do IH (porto de referencia)
+        ihSubtitle:    function (port, km) { return 'Previsão oficial · porto de referência: ' + port + (km >= 3 ? ' (a ' + km + ' km)' : ''); },
+        ihHeightTitle: 'Altura acima do zero hidrográfico (como na tabela oficial)',
+        ihNote:        'Horas do porto de referência indicado, na hora legal; na praia a maré pode chegar um pouco antes ou depois. Alturas acima do zero hidrográfico.',
+        ihSource:      'Fonte:',
+        ihTable:       'Tabela de Marés',
       },
 
       // Map / location
@@ -375,8 +389,8 @@
       // JSON-LD description fallback
       jsonLdDesc: function (name, region) { return 'Praia ' + name + ' em ' + (region || 'Portugal') + ', Portugal.'; },
 
-      // ── Surf page i18n ───────────────────────────────────────────────────────
-      surf: {
+      // ── Surf page i18n (chave surfPage: a 2.a chave 'surf' apagava a da ficha de praia -> 'Mar & Ondulacao' nunca aparecia; Lote A 08/10) ──
+      surfPage: {
         spotCount: function (n) { return '<strong>' + n + '</strong> spot' + (n !== 1 ? 's' : ''); },
         emptyTitle: 'Sem spots encontrados',
         emptySub:   'Tente outros filtros ou explore todas as regiões disponíveis.',
@@ -465,7 +479,7 @@
           },
           {
             q: 'Quais são as espécies mais comuns na pesca de costa em Portugal?',
-            a: 'Na pesca de costa as espécies mais comuns são: robalo, dourada, sargo, pargo, ruivo e linguado. Na pesca de embarcação costeira: carapau, peixe-espada, safio e garoupa. Em mar alto nos Açores e Madeira: atum rabilho, wahoo, espadim e mahi-mahi. A época do ano e o tipo de fundo determinam as espécies disponíveis em cada zona.'
+            a: 'Na pesca de costa as espécies mais comuns são: robalo, dourada, sargo, pargo, ruivo e linguado. Na pesca de embarcação costeira: carapau, peixe-espada, safio e garoupa. Em mar alto nos Açores e Madeira: espadim (marlim-azul), atuns como o patudo e a albacora, wahoo e mahi-mahi (o atum-rabilho não pode ser pescado na pesca lúdica). A época do ano e o tipo de fundo determinam as espécies disponíveis em cada zona.'
           }
         ],
       },
@@ -526,7 +540,7 @@
         waves:       'Waves & Sea Conditions',
         wavesSub:    'Wave, wind and conditions forecast for the coming days.',
         tides:       'Tides',
-        tidesSub:    'Astronomical prediction (±30 min) · no external API',
+        tidesSub:    'Model estimate (Open-Meteo) — not the official tide table',
         location:    'How to Get There',
         localRecs:   'Local Recommendations',
         related:     'Similar Beaches',
@@ -668,6 +682,19 @@
         low:   'Low tide',
         next:  'Next',
         locale: 'en-GB',
+        // Lote A 08/10: model estimate, never presented as the official table
+        subtitle:    'Model estimate (Open-Meteo) — not the official tide table',
+        approxTitle: 'Approximate time (model estimate)',
+        heightTitle: 'Height relative to mean sea level',
+        note:        'Times are a model estimate and may differ from the official prediction. Before crossing areas that depend on the tide, check the official prediction from the',
+        ihLink:      'Instituto Hidrográfico (Portuguese Hydrographic Institute)',
+        heightNote:  'Heights are relative to mean sea level (official tables use chart datum, so the numbers differ).',
+        source:      'Model data:',
+        ihSubtitle:    function (port, km) { return 'Official prediction · reference port: ' + port + (km >= 3 ? ' (' + km + ' km away)' : ''); },
+        ihHeightTitle: 'Height above chart datum (as in the official table)',
+        ihNote:        'Times are for the reference port shown, in local time; at the beach the tide may turn slightly earlier or later. Heights above chart datum.',
+        ihSource:      'Source:',
+        ihTable:       'Tide Tables',
       },
 
       map: {
@@ -856,8 +883,8 @@
 
       jsonLdDesc: function (name, region) { return 'Beach ' + name + ' in ' + (region || 'Portugal') + ', Portugal.'; },
 
-    // ── Surf page i18n ─────────────────────────────────────────────────────────
-    surf: {
+    // ── Surf page i18n (surfPage — ver nota no bloco pt) ─────────────────────
+    surfPage: {
       spotCount: function (n) { return '<strong>' + n + '</strong> spot' + (n !== 1 ? 's' : ''); },
       emptyTitle: 'No spots found',
       emptySub:   'Try other filters or explore all available regions.',
@@ -946,7 +973,7 @@
         },
         {
           q: 'What are the most common species for shore fishing in Portugal?',
-          a: 'The most common species for shore fishing are: bass, sea bream, bream, pargo, red mullet and sole. For inshore boat fishing: horse mackerel, scabbardfish, conger eel and grouper. Offshore in the Azores and Madeira: bluefin tuna, wahoo, billfish and mahi-mahi. The time of year and type of seabed determine which species are available in each area.'
+          a: 'The most common species for shore fishing are: bass, sea bream, bream, pargo, red mullet and sole. For inshore boat fishing: horse mackerel, scabbardfish, conger eel and comber. Offshore in the Azores and Madeira: marlin, tunas such as bigeye and yellowfin, wahoo and mahi-mahi (bluefin tuna cannot be fished recreationally). The time of year and type of seabed determine which species are available in each area.'
         }
       ],
     },

@@ -251,16 +251,16 @@
   var beachesP = null;
   function loadBeaches() {
     if (beachesP) return beachesP;
-    var cached = ssGet('pth_v3_beaches');
+    var cached = ssGet('pth_v3_beaches_v2'); // v2 (Lote A 08/10): a cache antiga tinha so 300 praias
     if (cached && cached.length) { beaches = cached; beachesP = Promise.resolve(); return beachesP; }
     var cols = 'id,name,region,latitude,longitude,image_curated_url,image_storage_url_webp,image_storage_url,image_curated_author,image_photographer,image_license,image_source_url,image_curated_source_url,editorial_rank,is_surf_spot';
     // Timeout de 6 s: se a BD falhar, o planeador continua (sem fotos) e o link partilhado abre na mesma
     var ctl = window.AbortController ? new AbortController() : null;
     var to = setTimeout(function () { if (ctl) ctl.abort(); }, 6000);
-    beachesP = fetch(SB_URL + '/rest/v1/beaches?select=' + cols + '&is_active=eq.true&limit=300', { headers: { apikey: SB_KEY }, signal: ctl ? ctl.signal : undefined })
+    beachesP = fetch(SB_URL + '/rest/v1/beaches?select=' + cols + '&is_active=eq.true&order=name&limit=1000' /* Lote A 08/10: eram 300 de 522 -> 222 praias sem destino */, { headers: { apikey: SB_KEY }, signal: ctl ? ctl.signal : undefined })
       .then(function (r) { clearTimeout(to); return r; })
       .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (d) { beaches = Array.isArray(d) ? d : []; ssSet('pth_v3_beaches', beaches); })
+      .then(function (d) { beaches = Array.isArray(d) ? d : []; ssSet('pth_v3_beaches_v2', beaches); })
       .catch(function () { beaches = []; });
     return beachesP;
   }

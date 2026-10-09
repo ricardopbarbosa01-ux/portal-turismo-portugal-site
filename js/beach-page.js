@@ -268,13 +268,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const Tpf = T.planearFinal;
     const planearHref = `${pfx}planear.html?source=beach&beach=${bp}&region=${rp}&intent=planear`;
-    const bookingDefault = lang === 'en' ? 'https://www.booking.com/country/pt.en-gb.html' : 'https://www.booking.com/country/pt.pt-pt.html';
-    const bookingHref = BOOKING_URLS[beach.region] || bookingDefault;
+    // Lote A 08/10: sem pagina 'onde ficar' (Acores, regiao desconhecida) -> Stay22 Allez ja com ID (BOOKING_URLS deixou de ser usado)
+    const bookingHref = 'https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-' + (lang === 'en' ? 'en-' : '') + 'beach&address=' + encodeURIComponent((beach.name || beach.region || 'Portugal') + ', Portugal');
     const beachesHref = `${pfx}beaches.html?region=${rp}`;
     const stayPage    = STAY_PAGES[beach.region];
     const stayLabel   = stayPage ? (Tpf.stayLabels[beach.region] || Tpf.stayLabels.default) : Tpf.stayLabels.default;
     const stayHref    = stayPage ? `${stayPage}?source=beach&beach=${bp}&town=${tp}&sub=${sp}` : bookingHref;
-    const stayTarget  = stayPage ? '' : ' target="_blank" rel="noopener noreferrer"';
+    const stayTarget  = stayPage ? '' : ' target="_blank" rel="noopener noreferrer sponsored"';
 
     const surfHref = `${pfx}surf.html?region=${rp}&source=beach&beach=${bp}`;
     const loginHref = `${pfx}login.html#register`;
@@ -772,103 +772,112 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // ── Astronomical Tide Calculator ─────────────────────────────────
-  // Based on simplified harmonic constituents for European Atlantic coast
-  // Accuracy: ~30 minutes | No API key required | No rate limits
-  function calcAstronomicalTides(lat, lon, daysAhead = 2) {
-    const now = Date.now();
-    const MS_HOUR = 3600000;
-    const results = [];
-
-    const M2_PERIOD = 12.4206012 * MS_HOUR;
-    const S2_PERIOD = 12.0 * MS_HOUR;
-    const K1_PERIOD = 23.9344697 * MS_HOUR;
-
-    const latFactor = Math.max(0.5, Math.min(1.5, (lat - 35) / 10));
-    const M2_AMP = 1.2 * latFactor;
-    const S2_AMP = 0.4 * latFactor;
-    const K1_AMP = 0.1;
-
-    const lonPhase = (lon + 8.5) * (Math.PI / 180) * 2;
-
-    function tidalHeight(t) {
-      const M2 = M2_AMP * Math.cos((2 * Math.PI * t / M2_PERIOD) + lonPhase);
-      const S2 = S2_AMP * Math.cos((2 * Math.PI * t / S2_PERIOD) + lonPhase * 0.9);
-      const K1 = K1_AMP * Math.cos((2 * Math.PI * t / K1_PERIOD));
-      return M2 + S2 + K1;
-    }
-
-    const INTERVAL = 10 * 60 * 1000;
-    const END = now + (daysAhead * 24 * MS_HOUR);
-
-    let prevH = tidalHeight(now - INTERVAL);
-    let prevDir = 0;
-
-    for (let t = now; t <= END; t += INTERVAL) {
-      const h = tidalHeight(t);
-      const dir = h > prevH ? 1 : -1;
-
-      if (prevDir !== 0 && dir !== prevDir) {
-        const extremumT = t - INTERVAL / 2;
-        const extremumH = tidalHeight(extremumT);
-        const isHigh = prevDir === 1;
-        results.push({
-          time:   new Date(extremumT).toISOString(),
-          height: (extremumH + 2.5).toFixed(2),
-          type:   isHigh ? 'high' : 'low',
-          label:  isHigh ? T.tides.high : T.tides.low
-        });
-      }
-
-      prevH = h;
-      prevDir = dir;
-    }
-
-    return results;
+  // ── Tides (Lote A 08/10/2026) ────────────────────────────────────
+  // ANTES: formula sintetica (calcAstronomicalTides) com horas erradas (Alvor 04:19 vs 02:01 real),
+  // "±30 min" falso e atribuicao falsa ao IH no EN (auditoria F2/F13).
+  // AGORA: nivel do mar do modelo Open-Meteo Marine (sea_level_height_msl, passo de 15 min) -> preia-mar/baixa-mar.
+  // E uma ESTIMATIVA (teste 09/10: ~30-40 min mais cedo que a tabela oficial em Lagos e Ponta Delgada) e e rotulada
+  // como tal, com link para o Instituto Hidrografico. Nao ha API oficial gratuita; a tabela do IH e um PDF (c) IH.
+  async function fetchSeaLevel(lat, lon) {
+    const key = 'pth_sl_' + lat.toFixed(3) + '_' + lon.toFixed(3);
+    try {
+      const c = JSON.parse(sessionStorage.getItem(key) || 'null');
+      if (c && Date.now() - c.at < 3 * 3600000 && c.d && c.d.t && c.d.t.length) return c.d;
+    } catch (_) {}
+    const url = 'https://marine-api.open-meteo.com/v1/marine?latitude=' + lat.toFixed(4) + '&longitude=' + lon.toFixed(4)
+      + '&minutely_15=sea_level_height_msl&timezone=GMT&timeformat=unixtime&past_days=1&forecast_days=4';
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    const m = j.minutely_15 || {};
+    const d = { t: m.time || [], v: m.sea_level_height_msl || [] };
+    try { sessionStorage.setItem(key, JSON.stringify({ at: Date.now(), d: d })); } catch (_) {}
+    return d;
   }
 
-  // ── Tides ────────────────────────────────────────────────────────
+  // Extremos locais da serie (com patamares e afinacao parabolica entre amostras)
+  function tideExtremes(d) {
+    const t = d.t, v = d.v, raw = [];
+    for (let i = 1; i < v.length - 1; i++) {
+      const a = v[i - 1], b = v[i], c = v[i + 1];
+      if (a == null || b == null || c == null) continue;
+      const hi = b >= a && b > c, lo = b <= a && b < c;
+      if (!hi && !lo) continue;
+      const den = a - 2 * b + c;
+      let off = den ? 0.5 * (a - c) / den : 0;
+      off = Math.max(-0.5, Math.min(0.5, off));
+      raw.push({ ts: (t[i] + off * (t[i + 1] - t[i])) * 1000, h: b - 0.25 * (a - c) * off, type: hi ? 'high' : 'low' });
+    }
+    // Limpar ruido: tipos alternados e pelo menos 3 h entre extremos (fica o mais extremo)
+    const out = [];
+    raw.forEach(function (e) {
+      const p = out[out.length - 1];
+      if (p && (p.type === e.type || e.ts - p.ts < 3 * 3600000)) {
+        if (p.type === e.type && ((e.type === 'high' && e.h > p.h) || (e.type === 'low' && e.h < p.h))) out[out.length - 1] = e;
+        return;
+      }
+      out.push(e);
+    });
+    return out;
+  }
+
+  // ── Mares oficiais (Lote A2 09/10/2026): Tabela de Mares do Instituto Hidrografico, portos de referencia ──
+  // Ficheiros data/mares/<ano>/<porto>.json gerados por _scripts/mares_ih_extract.py a partir do PDF anual
+  // (t = minutos desde 1 jan UTC, h = decimetros acima do zero hidrografico). Lisboa fica de fora (porto no rio).
+  // Sem ficheiro (ano novo ainda nao carregado) ou porto a > 80 km -> estimativa Open-Meteo (rotulada).
+  // Portos e leitura dos ficheiros: js/mares-ih.js (window.PTHMares), partilhado com o painel das webcams
+  async function ihTides(lat, lon) { return window.PTHMares ? window.PTHMares.events(lat, lon) : null; }
+
   async function loadTides(lat, lon) {
     try {
-      if (!lat || !lon) return;
-
-      const events = calcAstronomicalTides(parseFloat(lat), parseFloat(lon), 10);
-      const upcoming = events
-        .filter(e => new Date(e.time) >= new Date())
-        .slice(0, 6);
-
+      lat = parseFloat(lat); lon = parseFloat(lon);
+      if (!isFinite(lat) || !isFinite(lon)) return;
+      const Tt = T.tides;
+      const tz = lon < -20 ? 'Atlantic/Azores' : 'Europe/Lisbon';
+      const dec = Tt.locale === 'pt-PT' ? ',' : '.';
+      const nowMs = Date.now();
+      let src = await ihTides(lat, lon);
+      if (!src) src = { mode: 'om', events: tideExtremes(await fetchSeaLevel(lat, lon)) };
+      const IH = src.mode === 'ih';
+      const upcoming = src.events.filter(function (e) { return e.ts >= nowMs; }).slice(0, 6);
       if (upcoming.length === 0) return;
 
+      const dayKey = function (ms) { return new Date(ms).toLocaleDateString('en-CA', { timeZone: tz }); };
       const byDate = {};
-      upcoming.forEach((e, i) => {
-        const date = e.time.slice(0, 10);
-        if (!byDate[date]) byDate[date] = [];
-        byDate[date].push({ ...e, _i: i });
+      upcoming.forEach(function (e, i) {
+        const k = dayKey(e.ts);
+        (byDate[k] = byDate[k] || []).push(Object.assign({ _i: i }, e));
       });
 
-      const daysHtml = Object.entries(byDate).map(([date, tides]) => {
-        const label = new Date(date + 'T12:00:00').toLocaleDateString(T.tides.locale, { weekday: 'long', day: '2-digit', month: 'long' });
-        const rowsHtml = tides.map(t => {
+      const daysHtml = Object.entries(byDate).map(function (entry) {
+        const label = new Date(entry[0] + 'T12:00:00Z').toLocaleDateString(Tt.locale, { weekday: 'long', day: '2-digit', month: 'long', timeZone: 'UTC' });
+        const rowsHtml = entry[1].map(function (t) {
           const isNext = t._i === 0;
-          const timeStr = new Date(t.time).toLocaleTimeString(T.tides.locale, { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Lisbon' });
-          return `<div class="tides-row${isNext ? ' is-next' : ''}">
-            <div class="tides-row-icon tide-${t.type}">${t.type === 'high' ? '↑' : '↓'}</div>
-            <div class="tides-row-main">
-              <span class="tides-row-label tide-${t.type}">${escapeHtml(t.label)}</span>
-              ${isNext ? `<span class="tides-next-badge">${T.tides.next}</span>` : ''}
-            </div>
-            <div class="tides-row-time">${timeStr}</div>
-            <div class="tides-row-height">${t.height}<span class="tides-height-unit">m</span></div>
-          </div>`;
+          const timeStr = new Date(t.ts).toLocaleTimeString(Tt.locale, { hour: '2-digit', minute: '2-digit', timeZone: tz });
+          const hStr = IH ? t.h.toFixed(1).replace('.', dec) : (t.h >= 0 ? '+' : '−') + Math.abs(t.h).toFixed(1).replace('.', dec);
+          const lbl = t.type === 'high' ? Tt.high : Tt.low;
+          return '<div class="tides-row' + (isNext ? ' is-next' : '') + '">'
+            + '<div class="tides-row-icon tide-' + t.type + '" aria-hidden="true">' + (t.type === 'high' ? '↑' : '↓') + '</div>'
+            + '<div class="tides-row-main"><span class="tides-row-label tide-' + t.type + '">' + escapeHtml(lbl) + '</span>'
+            + (isNext ? '<span class="tides-next-badge">' + escapeHtml(Tt.next) + '</span>' : '') + '</div>'
+            + '<div class="tides-row-time">' + (IH ? '' : '<span class="tides-approx" title="' + escapeHtml(Tt.approxTitle) + '">≈</span>') + timeStr + '</div>'
+            + '<div class="tides-row-height" title="' + escapeHtml(IH ? Tt.ihHeightTitle : Tt.heightTitle) + '">' + hStr + '<span class="tides-height-unit">m</span></div>'
+            + '</div>';
         }).join('');
-        return `<div class="tides-day"><div class="tides-day-label">${label}</div>${rowsHtml}</div>`;
+        return '<div class="tides-day"><div class="tides-day-label">' + escapeHtml(label) + '</div>' + rowsHtml + '</div>';
       }).join('');
 
+      const sub = document.querySelector('#tides-section .tides-subtitle');
+      if (sub) sub.textContent = IH ? Tt.ihSubtitle(src.port, src.km) : Tt.subtitle;
       const wrap = document.getElementById('tides-content');
-      wrap.innerHTML = `<div class="tides-card">${daysHtml}</div>`;
+      const ihA = '<a href="https://www.hidrografico.pt/" target="_blank" rel="noopener noreferrer">' + escapeHtml(Tt.ihLink) + '</a>';
+      wrap.innerHTML = '<div class="tides-card">' + daysHtml + '</div>' + (IH
+        ? '<p class="tides-note">' + escapeHtml(Tt.ihNote) + ' ' + escapeHtml(Tt.ihSource) + ' ' + ihA + ' (' + escapeHtml(Tt.ihTable) + ' ' + new Date(upcoming[0].ts).getUTCFullYear() + ').</p>'
+        : '<p class="tides-note">' + escapeHtml(Tt.note) + ' ' + ihA + '. '
+          + escapeHtml(Tt.heightNote) + ' ' + escapeHtml(Tt.source) + ' <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.</p>');
       document.getElementById('tides-section').style.display = 'block';
-    } catch(err) {
-      console.warn('Tide calc error:', err);
+    } catch (err) {
+      console.warn('Tides error:', err); // sem dados -> a seccao fica escondida (nunca inventar horas)
     }
   }
 
@@ -949,18 +958,13 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('page-og-title').content  = title;
       document.getElementById('page-tw-title').content  = title;
 
-      // Canonical URL
-      let canonicalUrl;
-      if (lang === 'en') {
-        canonicalUrl = `https://portalturismoportugal.com/en/beach.html?id=${id}`;
-      } else {
-        const beachSlug = (beach.name || '').toLowerCase()
-          .normalize('NFD').replace(/[̀-ͯ]/g, '')
-          .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        canonicalUrl = beachSlug
-          ? `https://portalturismoportugal.com/praias/${beachSlug}`
-          : `https://portalturismoportugal.com/beach.html?id=${id}`;
-      }
+      // Canonical + hreflang (Lote A 08/10, auditoria F3): antes o PT apontava para /praias/<slug> (404 em 472/522)
+      // e o EN para portalturismoportugal.com/en/beach.html (sem www, com redirect). Agora URL final, com www, sem .html, com id.
+      const ORIGIN = 'https://www.portalturismoportugal.com';
+      const urlPt = ORIGIN + '/beach?id=' + encodeURIComponent(id);
+      const urlEn = ORIGIN + '/en/beach?id=' + encodeURIComponent(id);
+      const canonicalUrl = lang === 'en' ? urlEn : urlPt;
+      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) { l.href = l.getAttribute('hreflang') === 'en' ? urlEn : urlPt; });
       document.getElementById('page-canonical').href    = canonicalUrl;
       document.getElementById('page-og-url').content    = canonicalUrl;
       document.getElementById('page-tw-url').content    = canonicalUrl;
