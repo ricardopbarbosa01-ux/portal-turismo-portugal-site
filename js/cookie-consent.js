@@ -1,6 +1,6 @@
 /**
  * Cookie Consent – Google Consent Mode v2
- * Portugal Travel Hub
+ * Portal Turismo Portugal
  */
 (function () {
   'use strict';

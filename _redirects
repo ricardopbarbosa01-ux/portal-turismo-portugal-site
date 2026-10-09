@@ -55,3 +55,15 @@
 /planear-v3.html /planear 301
 /en/planear-v3 /en/planear 301
 /en/planear-v3.html /en/planear 301
+
+# ============================================================
+# Lote C 09/10/2026 (auditoria CG-04): paginas antigas que saltavam por JS (location.replace) -> 301 reais
+# ============================================================
+/praias-algarve /guias/melhores-praias-algarve 301
+/praias-algarve.html /guias/melhores-praias-algarve 301
+/praias-perto-lisboa /guias/praias-perto-lisboa 301
+/praias-perto-lisboa.html /guias/praias-perto-lisboa 301
+/praias-para-surfistas-iniciantes-portugal /guias/surf-portugal-iniciantes 301
+/praias-para-surfistas-iniciantes-portugal.html /guias/surf-portugal-iniciantes 301
+/planear-legacy /planear 301
+/planear-legacy.html /planear 301

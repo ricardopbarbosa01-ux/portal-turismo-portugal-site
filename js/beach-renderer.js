@@ -46,7 +46,7 @@
       },
 
       // Editorial note below description
-      editorialNote: 'Informação editorial curada pela equipa do Portugal Travel Hub. Qualidade da água por análise oficial da APA. <strong style="color:var(--text-mid);">Antes de partir:</strong> confirme horário do nadador-salvador, acesso viário e lotação — especialmente em época alta e após chuva intensa. As condições podem variar sazonalmente.',
+      editorialNote: 'Informação editorial curada pela equipa do Portal Turismo Portugal. Qualidade da água por análise oficial da APA. <strong style="color:var(--text-mid);">Antes de partir:</strong> confirme horário do nadador-salvador, acesso viário e lotação — especialmente em época alta e após chuva intensa. As condições podem variar sazonalmente.',
 
       // Facilities (IDs → labels)
       facilities: {
@@ -108,6 +108,7 @@
         family:          { label: 'Familiar',            cls: 'vibe-family'  },
         uniqueNature:    { label: 'Natureza Única',      cls: 'vibe-nature'  },
         atlanticCoast:   { label: 'Costa Atlântica',     cls: 'vibe-region'  },
+        river:           { label: 'Praia fluvial',       cls: 'vibe-region'  },
         riviera:         { label: 'Riviera Portuguesa',  cls: 'vibe-region'  },
         default:         { label: 'Praia Atlântica',     cls: 'vibe-default' },
       },
@@ -143,8 +144,8 @@
         now:           'Agora',
         forecast10d:   'Previsão a 10 dias',
         scoreNote:     'Score calculado com base em ondulação, vento e rajadas',
-        paywallText:   'Previsão completa a 10 dias disponível no plano Pro',
-        paywallBtn:    'Ver planos — €4,99/mês',
+        paywallText:   'Previsão completa a 10 dias — em desenvolvimento (plano Pro)',
+        paywallBtn:    'O que vem aí',
         atlanticType:  'Atlântico',
         fallbackNote:  'Ondulação atlântica. Condições variam com a estação e o tempo. Consulte as autoridades locais antes de entrar ao mar.',
         waveConditions: {
@@ -508,8 +509,8 @@
         readTimeUnit: 'min de leitura',
         readCta: 'Ler guia',
         proTitle: 'Conteúdo exclusivo Pro',
-        proDesc: 'Cada guia tem uma secção gratuita e conteúdo exclusivo para membros Pro — listas detalhadas, mapas, alertas de condições e actualizações sazonais.',
-        proCta: 'Ver planos — €4,99/mês',
+        proDesc: 'Estamos a preparar conteúdo exclusivo para o plano Pro — listas detalhadas, mapas e atualizações sazonais. O Pro está em desenvolvimento.',
+        proCta: 'O que vem aí',
         ctaPlan: 'Planear viagem',
         ctaBeaches: 'Explorar praias',
         breadcrumbCurrent: 'Guias',
@@ -551,7 +552,7 @@
         partnersEyebrow: 'Local Partners',
       },
 
-      editorialNote: 'Editorial information curated by the Portugal Travel Hub team. Water quality by official APA analysis. <strong style="color:var(--text-mid);">Before you go:</strong> confirm lifeguard hours, road access and capacity — especially in high season and after heavy rain. Conditions may vary seasonally.',
+      editorialNote: 'Editorial information curated by the Portal Turismo Portugal team. Water quality by official APA analysis. <strong style="color:var(--text-mid);">Before you go:</strong> confirm lifeguard hours, road access and capacity — especially in high season and after heavy rain. Conditions may vary seasonally.',
 
       facilities: {
         parking:    'Parking',
@@ -607,6 +608,7 @@
         family:          { label: 'Family-Friendly',      cls: 'vibe-family'  },
         uniqueNature:    { label: 'Unique Nature',        cls: 'vibe-nature'  },
         atlanticCoast:   { label: 'Atlantic Coast',       cls: 'vibe-region'  },
+        river:           { label: 'River beach',          cls: 'vibe-region'  },
         riviera:         { label: 'Portuguese Riviera',   cls: 'vibe-region'  },
         default:         { label: 'Atlantic Beach',       cls: 'vibe-default' },
       },
@@ -640,8 +642,8 @@
         now:           'Now',
         forecast10d:   '10-day forecast',
         scoreNote:     'Score calculated based on swell, wind and gusts',
-        paywallText:   'Full 10-day forecast available on the Pro plan',
-        paywallBtn:    'View plans — €4.99/month',
+        paywallText:   'Full 10-day forecast — in development (Pro plan)',
+        paywallBtn:    'What is coming',
         atlanticType:  'Atlantic',
         fallbackNote:  'Atlantic swell. Conditions vary with season and weather. Check with local authorities before entering the water.',
         waveConditions: {
@@ -1002,8 +1004,8 @@
       readTimeUnit: 'min read',
       readCta: 'Read guide',
       proTitle: 'Exclusive Pro content',
-      proDesc: 'Each guide has a free section and exclusive content for Pro members — detailed lists, maps, condition alerts and seasonal updates.',
-      proCta: 'View plans — €4.99/mo',
+      proDesc: 'We are preparing exclusive content for the Pro plan — detailed lists, maps and seasonal updates. Pro is in development.',
+      proCta: 'What is coming',
       ctaPlan: 'Plan a trip',
       ctaBeaches: 'Explore beaches',
       breadcrumbCurrent: 'Guides',
@@ -1117,7 +1119,8 @@
     if (beach.facilities && beach.facilities.includes('lifeguard'))   tags.push(V.lifeguarded);
     if (beach.facilities && beach.facilities.includes('restaurant'))  tags.push(V.beachSupport);
     if (beach.facilities && beach.facilities.includes('disabled'))    tags.push(V.accessible);
-    if (reg.includes('alentejo'))                       tags.push(V.wild);
+    if (beach.beach_type === 'fluvial')                 tags.push(V.river); // Lote C (F8): nada de 'Costa Atlantica' nas fluviais
+    else if (reg.includes('alentejo'))                  tags.push(V.wild);
     else if (reg.includes('algarve'))                   tags.push(V.family);
     else if (reg.includes('madeira') || reg.includes('açores') || reg.includes('acores')) tags.push(V.uniqueNature);
     else if (reg.includes('norte') || reg.includes('centro') || reg.includes('porto'))         tags.push(V.atlanticCoast);

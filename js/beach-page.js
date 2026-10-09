@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
   const lang = window.BeachRenderer.detectLang();
+  // Lote C 09/10 (F8): textos para praias fluviais (antes falavam de costa, mares e Costa Atlantica)
+  const FL = lang === 'en'
+    ? { typeLabel: 'Beach type', typeValue: 'River beach', walks: 'Local trails', fishing: 'Freshwater fishing', tides: /tides, /gi, stay: 'Find a place to stay nearby' }
+    : { typeLabel: 'Tipo de praia', typeValue: 'Praia fluvial', walks: 'Percursos na zona', fishing: 'Pesca em água doce', tides: /marés, /gi, stay: 'Procurar alojamento perto' };
+  function isFluvial(b) { return !!b && b.beach_type === 'fluvial'; }
   const T    = window.BeachRenderer.getT();
 
   document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -20,8 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (source === 'manual') {
       return author ? `Foto: ${author}` : '';
     }
+    const P = lang === 'en' ? 'Photo' : 'Foto';
+    const lic = escapeHtml(b.image_license || '');
+    // Lote C 09/10 (F7): fotos Wikimedia Commons (304 praias) apareciam sem credito; CC BY/BY-SA obrigam a autor + licenca
+    if (source === 'wikimedia_commons') {
+      const who = author || 'Wikimedia Commons';
+      return P + ': ' + who + (lic ? ' · ' + lic : '') + (author ? ' · Wikimedia Commons' : '');
+    }
     if (source === 'wikipedia_infobox') {
-      return lang === 'en' ? 'Photo: Wikipedia' : 'Foto: Wikipedia';
+      return author ? P + ': ' + author + (lic ? ' · ' + lic : '') + ' · Wikipedia' : P + ': Wikipedia';
     }
     if (source === 'pexels') {
       if (lang === 'en') {
@@ -29,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       return author ? `Foto: ${author} / Pexels` : 'Foto: Pexels';
     }
+    if (author) return P + ': ' + author + (lic ? ' · ' + lic : '');
     return '';
   }
 
@@ -59,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const wqLabel = T.waterQuality[beach.water_quality] || escapeHtml(beach.water_quality);
 
     const items = [
-      { label: T.highlights.coastType, value: rtValue, color: rtColors.color, bg: rtColors.bg,
+      { label: isFluvial(beach) ? FL.typeLabel : T.highlights.coastType, value: isFluvial(beach) ? FL.typeValue : rtValue, color: rtColors.color, bg: rtColors.bg,
         icon: '<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>' },
       ...(beach.water_quality ? [{ label: T.highlights.waterQuality, value: wqLabel, color: qc.color, bg: qc.bg,
         icon: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>' }] : []),
@@ -100,10 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hasFac && beach.facilities.includes('restaurant'))
       items.push({ label: Ti.gastronomy.label, sub: Ti.gastronomy.sub, color:'#8a6b10', bg:'rgba(201,168,76,0.12)',
         icon:'<path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>' });
-    items.push({ label: Ti.walks.label, sub: Ti.walks.sub, color:'#5a5a7a', bg:'rgba(90,90,122,0.08)',
+    items.push({ label: Ti.walks.label, sub: isFluvial(beach) ? FL.walks : Ti.walks.sub, color:'#5a5a7a', bg:'rgba(90,90,122,0.08)',
       icon:'<circle cx="12" cy="5" r="2"/><path d="M12 7v8m-4 4h8M8 10l-2 5m12-5l2 5"/>' });
     if (!beach.is_surf_spot)
-      items.push({ label: Ti.fishing.label, sub: Ti.fishing.sub, color:'#1e5c4a', bg:'rgba(30,92,74,0.10)',
+      items.push({ label: Ti.fishing.label, sub: isFluvial(beach) ? FL.fishing : Ti.fishing.sub, color:'#1e5c4a', bg:'rgba(30,92,74,0.10)',
         icon:'<path d="M18 4l-6 6-6-6m6 6v8"/><circle cx="12" cy="8" r="1"/><path d="M4 19c0-2.5 3.5-4 8-4s8 1.5 8 4"/>' });
     if (reg.includes('alentejo') || reg.includes('vicentina'))
       items.push({ label: Ti.wildNature.label, sub: Ti.wildNature.sub, color:'#1e8449', bg:'rgba(39,174,96,0.10)',
@@ -156,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                  bg:'linear-gradient(135deg,#0a3d6b,#1a5fa3)',
                  icon:'<path d="M2 20L8 8l4 6 4-8 6 14"/><path d="M2 20q4-3 8 0 4 3 8 0"/>',
                  cta: Tez.surf.cta },
-      planner: { label: Tez.planner.label, title: Tez.planner.title, desc: Tez.planner.desc,
+      planner: { label: Tez.planner.label, title: Tez.planner.title, desc: isFluvial(beach) ? Tez.planner.desc.replace(FL.tides, '') : Tez.planner.desc,
                  href: `${pfx}planear.html?source=beach&beach=${bp}&region=${rp}&intent=planear`,
                  bg:'linear-gradient(135deg,#8a6d00,#c9a84c)',
                  icon:'<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
@@ -272,9 +285,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const bookingHref = 'https://www.stay22.com/allez/booking?aid=kaptarstudio&campaign=portalturismoportugal-' + (lang === 'en' ? 'en-' : '') + 'beach&address=' + encodeURIComponent((beach.name || beach.region || 'Portugal') + ', Portugal');
     const beachesHref = `${pfx}beaches.html?region=${rp}`;
     const stayPage    = STAY_PAGES[beach.region];
-    const stayLabel   = stayPage ? (Tpf.stayLabels[beach.region] || Tpf.stayLabels.default) : Tpf.stayLabels.default;
-    const stayHref    = stayPage ? `${stayPage}?source=beach&beach=${bp}&town=${tp}&sub=${sp}` : bookingHref;
-    const stayTarget  = stayPage ? '' : ' target="_blank" rel="noopener noreferrer sponsored"';
+    // Fluviais: as paginas 'onde ficar' sao da costa -> alojamento perto da propria praia (Stay22)
+    const stayCoast   = stayPage && !isFluvial(beach);
+    const stayLabel   = stayCoast ? (Tpf.stayLabels[beach.region] || Tpf.stayLabels.default) : (isFluvial(beach) ? FL.stay : Tpf.stayLabels.default);
+    const stayHref    = stayCoast ? `${stayPage}?source=beach&beach=${bp}&town=${tp}&sub=${sp}` : bookingHref;
+    const stayTarget  = stayCoast ? '' : ' target="_blank" rel="noopener noreferrer sponsored"';
 
     const surfHref = `${pfx}surf.html?region=${rp}&source=beach&beach=${bp}`;
     const loginHref = `${pfx}login.html#register`;
@@ -283,14 +298,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20L8 8l4 6 4-8 6 14"/><path d="M2 20q4-3 8 0 4 3 8 0"/></svg>
             ${Tpf.surfForecast}
           </a>`
-      : `<a href="${loginHref}" class="planear-final-secondary">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-            ${Tpf.saveBeach}
-          </a>`;
+      : ''; // Lote C: 'Guardar praia' levava ao registo sem dar nada (favoritos = Pro em desenvolvimento)
 
     const titleText = Tpf.titleTemplate(escapeHtml(beach.name));
     const titleHtml = titleText.replace('\n', '<br>');
-    const descText  = Tpf.descTemplate(escapeHtml(beach.name), escapeHtml(beach.region || 'Portugal'));
+    const descText  = Tpf.descTemplate(escapeHtml(beach.name), escapeHtml(beach.region || 'Portugal')).replace(isFluvial(beach) ? FL.tides : /$^/, '');
 
     return `
       <div class="planear-final-band-inner">
@@ -946,7 +958,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       console.log('[beach] supabase data:', beach, '| error:', error);
 
-      if (error || !beach) throw new Error('not found');
+      // Lote C 09/10 (F6): linhas inativas (ex.: PAGE_HERO_PESCA) nao abrem como praia e ficam noindex
+      if (!error && beach && beach.is_active === false) {
+        var rb = document.querySelector('meta[name="robots"]'); if (!rb) { rb = document.createElement('meta'); rb.name = 'robots'; document.head.appendChild(rb); }
+        rb.content = 'noindex, follow';
+      }
+      if (error || !beach || beach.is_active === false) throw new Error('not found');
 
       // Get i18n-aware rendered data
       const rendered = window.BeachRenderer.renderBeach(beach);
@@ -1287,12 +1304,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>`;
         document.getElementById('alert-create-btn').addEventListener('click', openModal);
       } else {
-        wrap.innerHTML = `<div class="beach-alerts-wrap">
-          <button class="alert-create-btn alert-create-btn-disabled" disabled aria-disabled="true">
-            🔔 ${Ta.createBtn}
-            <span class="alert-tooltip">${Ta.proTooltip}</span>
-          </button>
-        </div>`;
+        // Lote C 09/10: alertas por email nao estao previstos para ja (Pro em desenvolvimento) -> sem botao desativado
+        wrap.innerHTML = '';
+        return;
       }
 
       updateUnit();

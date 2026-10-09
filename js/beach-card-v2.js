@@ -44,7 +44,9 @@
     var desc = (((b.i18n && b.i18n.description && b.i18n.description[lang]) || '') + ' ' + (b.description || '')).toLowerCase();
     var region = (b.region || '').toLowerCase(), fac = Array.isArray(b.facilities) ? b.facilities : [];
     if (b.is_surf_spot || desc.indexOf('surf') > -1 || desc.indexOf('onda') > -1 || region === 'porto') t.push('surf');
-    if (fac.indexOf('lifeguard') > -1 || desc.indexOf('famil') > -1 || desc.indexOf('famíl') > -1 || desc.indexOf('criança') > -1 || region === 'algarve') t.push('família');
+    // Lote C 09/10 (PL-02): 'Nao recomendada para criancas' dava etiqueta Familia (a palavra 'crianca' aparecia na frase negativa)
+    var notFam = /n[ãa]o\s+(é\s+)?(recomendad|aconselhad|indicad)\w*\s+(para|a)\s+(crian|famíl|famil)|desaconselhad\w*\s+(para|a)\s+(crian|famíl|famil)|not\s+(recommended|suitable)\s+for\s+(children|kids|families)/.test(desc);
+    if (!notFam && (fac.indexOf('lifeguard') > -1 || desc.indexOf('famil') > -1 || desc.indexOf('famíl') > -1 || desc.indexOf('criança') > -1 || region === 'algarve')) t.push('família');
     if (desc.indexOf('naturez') > -1 || desc.indexOf('isolad') > -1 || region === 'alentejo') t.push('natureza');
     if (region === 'madeira' || region === 'açores') t.push('ilhas');
     if (desc.indexOf('pesc') > -1) t.push('pesca');

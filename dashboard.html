@@ -1662,7 +1662,7 @@ function buildEmailTemplate(lead) {
   const nome   = lead.name && lead.name !== '—' ? lead.name.split(' ')[0] : '';
   const hi     = nome ? `Olá ${nome},` : 'Olá,';
   const status = getMeta(lead.id).status || 'novo';
-  const sig    = ['Cumprimentos,', 'Portugal Travel Hub'].join('\n');
+  const sig    = ['Cumprimentos,', 'Portal Turismo Portugal'].join('\n');
 
   // Type-specific context snippets
   let ctxRef = 'pedido/contacto';
@@ -1688,7 +1688,7 @@ function buildEmailTemplate(lead) {
   }
 
   // Stage-based subject + body
-  const subjectSuffix = ' | Portugal Travel Hub';
+  const subjectSuffix = ' | Portal Turismo Portugal';
   let subject, lines;
 
   if (status === 'novo') {
@@ -1728,7 +1728,7 @@ function buildEmailTemplate(lead) {
     subject = `Confirmação e próximos passos${subjectSuffix}`;
     lines = [
       hi, '',
-      'Bem-vindo(a) ao Portugal Travel Hub! Estamos muito satisfeitos por ter contigo.', '',
+      'Bem-vindo(a) ao Portal Turismo Portugal! Estamos muito satisfeitos por ter contigo.', '',
       'Em breve entro em contacto para confirmar todos os detalhes e próximos passos.', '',
       sig,
     ];
@@ -1742,7 +1742,7 @@ function buildEmailTemplate(lead) {
     ];
   } else {
     // arquivado / fechado / fallback
-    subject = `Portugal Travel Hub — Em contacto${subjectSuffix}`;
+    subject = `Portal Turismo Portugal — Em contacto${subjectSuffix}`;
     lines = [
       hi, '',
       'Queria apenas deixar uma mensagem de contacto caso precisasses de algum apoio.', '',

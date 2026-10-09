@@ -7,7 +7,7 @@ const CORS = {
 }
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? ''
-const FROM = 'Portugal Travel Hub <ola@portalturismoportugal.com>'
+const FROM = 'Portal Turismo Portugal <ola@portalturismoportugal.com>'
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS })
@@ -24,7 +24,7 @@ serve(async (req) => {
 <body style="margin:0;padding:0;background:#f4f4f4;font-family:Inter,sans-serif">
   <div style="max-width:600px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden">
     <div style="background:#1B3A6B;padding:32px 40px;text-align:center">
-      <h1 style="color:#C9A84C;margin:0;font-size:24px">Portugal Travel Hub</h1>
+      <h1 style="color:#C9A84C;margin:0;font-size:24px">Portal Turismo Portugal</h1>
       <p style="color:rgba(255,255,255,0.7);margin:8px 0 0;font-size:14px">O oceano na palma da mão</p>
     </div>
     <div style="padding:40px">
@@ -51,7 +51,7 @@ serve(async (req) => {
     </div>
     <div style="background:#f8f9fa;padding:20px 40px;text-align:center;border-top:1px solid #eee">
       <p style="color:#999;font-size:12px;margin:0">
-        © 2026 Portugal Travel Hub ·
+        © 2026 Portal Turismo Portugal ·
         <a href="https://www.portalturismoportugal.com" style="color:#999">portalturismoportugal.com</a>
       </p>
     </div>
@@ -65,7 +65,7 @@ serve(async (req) => {
     body: JSON.stringify({
       from: FROM,
       to: [email],
-      subject: `Bem-vindo ao Portugal Travel Hub, ${firstName}! 🌊`,
+      subject: `Bem-vindo ao Portal Turismo Portugal, ${firstName}! 🌊`,
       html
     })
   })

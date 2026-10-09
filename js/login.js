@@ -78,11 +78,11 @@ function checkPasswordStrength(value) {
   if (/[^A-Za-z0-9]/.test(value)) score++;
 
   const levels = [
-    { pct: '20%',  color: '#e53e3e', text: 'Very weak' },
-    { pct: '40%',  color: '#ed8936', text: 'Weak' },
-    { pct: '60%',  color: '#ecc94b', text: 'Fair' },
-    { pct: '80%',  color: '#68d391', text: 'Good' },
-    { pct: '100%', color: '#38a169', text: 'Strong' },
+    { pct: '20%',  color: '#e53e3e', text: 'Muito fraca' },
+    { pct: '40%',  color: '#ed8936', text: 'Fraca' },
+    { pct: '60%',  color: '#ecc94b', text: 'Razoável' },
+    { pct: '80%',  color: '#68d391', text: 'Boa' },
+    { pct: '100%', color: '#38a169', text: 'Forte' },
   ];
   const lvl = levels[Math.min(score - 1, 4)] || levels[0];
   fill.style.width      = lvl.pct;
@@ -141,18 +141,18 @@ function setLoading(btnId, loading) {
 function mapError(err) {
   const msg = (err?.message || '').toLowerCase();
   if (msg.includes('invalid login credentials') || msg.includes('invalid email or password'))
-    return 'Incorrect email or password. Please try again.';
+    return 'Email ou palavra-passe incorretos. Tente outra vez.';
   if (msg.includes('email not confirmed'))
-    return 'Please confirm your email before signing in. Check your inbox.';
+    return 'Confirme o seu email antes de entrar. Veja a sua caixa de correio.';
   if (msg.includes('user already registered') || msg.includes('already exists'))
-    return 'An account with this email already exists. Try signing in.';
+    return 'Já existe uma conta com este email. Experimente entrar.';
   if (msg.includes('password should be at least'))
-    return 'Password must be at least 8 characters.';
+    return 'A palavra-passe tem de ter pelo menos 8 caracteres.';
   if (msg.includes('network') || msg.includes('fetch'))
-    return 'Connection error. Check your internet and try again.';
+    return 'Erro de ligação. Verifique a internet e tente outra vez.';
   if (msg.includes('rate limit'))
-    return 'Too many attempts. Please wait a moment and try again.';
-  return 'Something went wrong. Please try again.';
+    return 'Demasiadas tentativas. Aguarde um momento e tente outra vez.';
+  return 'Algo correu mal. Tente outra vez.';
 }
 
 // ── LOGIN ───────────────────────────────────────────────────────────────────
@@ -167,11 +167,11 @@ document.getElementById('form-login').addEventListener('submit', async (e) => {
   let valid = true;
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    setFieldError('login-email', 'Enter a valid email.');
+    setFieldError('login-email', 'Escreva um email válido.');
     valid = false;
   }
   if (!password) {
-    setFieldError('login-password', 'Enter your password.');
+    setFieldError('login-password', 'Escreva a sua palavra-passe.');
     valid = false;
   }
   if (!valid) return;
@@ -203,15 +203,15 @@ document.getElementById('form-register').addEventListener('submit', async (e) =>
   let valid = true;
 
   if (!name || name.length < 2) {
-    setFieldError('register-name', 'Enter your name (minimum 2 characters).');
+    setFieldError('register-name', 'Escreva o seu nome (mínimo 2 caracteres).');
     valid = false;
   }
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    setFieldError('register-email', 'Enter a valid email.');
+    setFieldError('register-email', 'Escreva um email válido.');
     valid = false;
   }
   if (!password || password.length < 8) {
-    setFieldError('register-password', 'Password must be at least 8 characters.');
+    setFieldError('register-password', 'A palavra-passe tem de ter pelo menos 8 caracteres.');
     valid = false;
   }
   if (!valid) return;
@@ -224,7 +224,7 @@ document.getElementById('form-register').addEventListener('submit', async (e) =>
     // Supabase silent behaviour: when email confirmation is ON and the email
     // already exists, signUp() returns error=null but identities=[].
     if (!data?.user || data.user.identities?.length === 0) {
-      showAlert('This email is already registered. Try signing in or reset your password.', 'error');
+      showAlert('Este email já está registado. Experimente entrar ou recuperar a palavra-passe.', 'error');
       return;
     }
 
@@ -237,7 +237,7 @@ document.getElementById('form-register').addEventListener('submit', async (e) =>
       showAlert('Account created! Redirecting to checkout…', 'success');
       setTimeout(() => { window.location.href = _safeRedirect; }, 1200);
     } else {
-      showAlert('Account created! Check your email to confirm your registration.', 'success');
+      showAlert('Conta criada! Veja o seu email para confirmar o registo.', 'success');
     }
   } catch (err) {
     console.error('[register] signUp error:', err);
@@ -256,7 +256,7 @@ document.getElementById('form-reset').addEventListener('submit', async (e) => {
 
   const email = document.getElementById('reset-email').value.trim();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    setFieldError('reset-email', 'Enter a valid email.');
+    setFieldError('reset-email', 'Escreva um email válido.');
     return;
   }
 

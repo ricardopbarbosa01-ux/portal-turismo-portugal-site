@@ -1,4 +1,4 @@
-/* ── Language Switcher — Portugal Travel Hub ── */
+/* ── Language Switcher — Portal Turismo Portugal ── */
 (function () {
   var PREF_KEY = 'pth_lang';
 

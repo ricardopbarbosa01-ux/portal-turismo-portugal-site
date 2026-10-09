@@ -270,3 +270,16 @@ H2 publicado (2fc37c1). Lista: `docs/commit-files-2026-10-09-lote-b.txt` (265 fi
 9. Webcams: direto "Ribeira · Douro" retirado (fotograma de 2024) — 171 cartões.
 Testado: Playwright, CSP real, PT/EN, 1280/375/320, Open-Meteo simulado, capturas antes/depois (`b_before_*` / `b_after_*`); 0 erros de JS; sem scroll horizontal.
 Fica para depois: "Ver mais" do /beaches não é reposto no Voltar; páginas antigas planear-v3/planear-legacy ainda públicas (Lote D); marca "Portugal Travel Hub" no cabeçalho (decisão do Ricardo).
+
+
+## >>> LOTE C — credibilidade e dados (09/10, tarde), POR PUBLICAR
+Lote B publicado (73f321d). Decisões do Ricardo (09/10 12:24): Pro "em desenvolvimento"; entidade = empresa da esposa (como a Kaptar: Renata Garutti, empresária em nome individual, NIF 293753610 — tirado de kaptar.studio/termos); testemunho "João Silva" é real (fica); marca = Portal Turismo Portugal.
+Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-c.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1` → funções: `npx supabase functions deploy check-alerts send-partner-alert send-plan-confirm send-welcome --project-ref glupdjvdvunogkqgxoui` → SQL `supabase/migrations/20261009120000_lote_c_regiao_lisboa_setubal.sql` no SQL Editor.
+1. Marca em todo o site e nos emails.
+2. Pro em desenvolvimento: sem preços nem promessas (alertas, HD, API, equipa) em /precos, login, /pesca, fichas, termos e reembolsos.
+3. Rodapé com identificação legal e Livro de Reclamações; termos/privacidade com responsável, NIF, RAL.
+4. /parceiros e /media-kit coerentes com /precos; formulário PT validado; texto falso "nenhum dado é enviado" corrigido.
+5. Fichas: inativas = erro + noindex; crédito das fotos Commons; fluviais sem textos de mar; "Família" não aparece em praias não recomendadas para crianças.
+6. BD: 10 praias de Cascais/Sintra/Setúbal deixam de ser "Oeste" (SQL).
+7. SEO: 3 páginas antigas + planear-legacy com 301 reais; sitemap 205 URLs.
+Fica: morada completa no rodapé/termos (falta o dado); /conta e o login continuam sem nada para utilizadores grátis (CC-02); "Registar" no cabeçalho.

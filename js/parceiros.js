@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    // Lote C 09/10 (CC-09): o form tem novalidate -> validar aqui (campos obrigatorios e email), como na versao EN
+    if (!form.checkValidity()) { form.reportValidity(); var bad = form.querySelector(':invalid'); if (bad) bad.focus(); return; }
     const originalText = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'A enviar...';

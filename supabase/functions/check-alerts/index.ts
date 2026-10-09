@@ -5,7 +5,7 @@ const RESEND_API_KEY            = Deno.env.get('RESEND_API_KEY') ?? ''
 const SUPABASE_URL              = Deno.env.get('SUPABASE_URL') ?? ''
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
 const CRON_SECRET               = Deno.env.get('CRON_SECRET') ?? ''
-const FROM = 'Portugal Travel Hub <alertas@portalturismoportugal.com>'
+const FROM = 'Portal Turismo Portugal <alertas@portalturismoportugal.com>'
 
 const CONDITION_LABELS: Record<string, string> = {
   wave_height: 'Ondas',
@@ -176,7 +176,7 @@ serve(async (req) => {
 <body style="margin:0;padding:0;background:#f4f4f4;font-family:Inter,sans-serif">
   <div style="max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden">
     <div style="background:#1B3A6B;padding:24px 20px;text-align:center">
-      <h1 style="color:#C9A84C;margin:0;font-size:24px">Portugal Travel Hub</h1>
+      <h1 style="color:#C9A84C;margin:0;font-size:24px">Portal Turismo Portugal</h1>
       <p style="color:rgba(255,255,255,0.7);margin:8px 0 0;font-size:14px">Alerta de condições</p>
     </div>
     <div style="padding:24px 20px">
@@ -214,7 +214,7 @@ serve(async (req) => {
     </div>
     <div style="background:#f8f9fa;padding:16px 20px;text-align:center;border-top:1px solid #eee">
       <p style="color:#999;font-size:12px;margin:0">
-        © 2026 Portugal Travel Hub ·
+        © 2026 Portal Turismo Portugal ·
         <a href="https://www.portalturismoportugal.com" style="color:#999">portalturismoportugal.com</a>
       </p>
     </div>

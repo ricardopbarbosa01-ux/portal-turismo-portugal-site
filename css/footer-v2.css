@@ -28,6 +28,7 @@ body footer.ft2 a:focus-visible{outline:2px solid var(--ft-gold); outline-offset
 .ft2__bottom{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 20px;
   margin-top:22px; padding-top:14px; border-top:1px solid var(--ft-line); font-size:12px; color:rgba(255,255,255,.5);}
 .ft2__legal{display:flex; flex-wrap:wrap; gap:4px 16px;}
+.ft2__entity{flex-basis:100%; font-size:11px; color:rgba(255,255,255,.42);} /* Lote C: identificacao legal (DL 7/2004) */
 .ft2__legal a{color:rgba(255,255,255,.62);}
 
 @media (max-width:820px){
@@ -40,4 +41,5 @@ body footer.ft2 a:focus-visible{outline:2px solid var(--ft-gold); outline-offset
   .ft2__tag{font-size:12.5px; margin-top:6px;}
   .ft2__nav{gap:12px;}
   .ft2__bottom{flex-direction:column-reverse; align-items:flex-start; gap:10px; margin-top:18px;}
+  .ft2__entity{order:-1;}
 }

@@ -7,7 +7,7 @@ const CORS = {
 }
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? ''
-const FROM = 'Portugal Travel Hub <ola@portalturismoportugal.com>'
+const FROM = 'Portal Turismo Portugal <ola@portalturismoportugal.com>'
 const ADMIN_EMAIL = 'parceiros@portalturismoportugal.com'
 
 serve(async (req) => {
@@ -23,7 +23,7 @@ serve(async (req) => {
 <body style="margin:0;padding:0;background:#f4f4f4;font-family:Inter,sans-serif">
   <div style="max-width:600px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden">
     <div style="background:#1B3A6B;padding:32px 40px;text-align:center">
-      <h1 style="color:#C9A84C;margin:0;font-size:24px">Portugal Travel Hub</h1>
+      <h1 style="color:#C9A84C;margin:0;font-size:24px">Portal Turismo Portugal</h1>
     </div>
     <div style="padding:40px">
       <h2 style="color:#1B3A6B;margin:0 0 16px">Pedido recebido! 🤝</h2>
@@ -41,7 +41,7 @@ serve(async (req) => {
       </div>
     </div>
     <div style="background:#f8f9fa;padding:20px 40px;text-align:center;border-top:1px solid #eee">
-      <p style="color:#999;font-size:12px;margin:0">© 2026 Portugal Travel Hub</p>
+      <p style="color:#999;font-size:12px;margin:0">© 2026 Portal Turismo Portugal</p>
     </div>
   </div>
 </body>

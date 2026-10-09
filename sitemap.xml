@@ -184,12 +184,6 @@
 
   <!-- ── SEO Phase 2 — PT pages ── -->
   <url>
-    <loc>https://www.portalturismoportugal.com/praias-algarve</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.portalturismoportugal.com/praias-familias-algarve</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -197,12 +191,6 @@
   </url>
   <url>
     <loc>https://www.portalturismoportugal.com/surf-algarve</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.portalturismoportugal.com/praias-perto-lisboa</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -373,12 +361,6 @@
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.portalturismoportugal.com/praias-para-surfistas-iniciantes-portugal</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.portalturismoportugal.com/praias-surf-iniciantes-algarve</loc>
