@@ -1,0 +1,8 @@
+index.html
+en/index.html
+css/home-v4.css
+css/home-hero-v3.css
+js/home-hero-v3.js
+docs/REGRESSION-WATCHLIST.md
+HANDOFF.md
+docs/commit-files-2026-10-09-lote-h.txt

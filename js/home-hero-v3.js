@@ -9,11 +9,11 @@
   var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
   var T = EN ? {
     calm: 'Calmest sea right now', warm: 'Warmest water', surf: 'Best waves for surfing', waves: 'waves', water: 'water',
-    hotels: 'Hotels nearby', view: 'View beach', upd: 'updated ', kicker: function (n, c) { return n + ' beaches live · ' + c + ' with calm sea now'; },
+    hotels: 'Hotels nearby', view: 'View beach', upd: 'updated ', kicker: function (n, c) { return c > 0 ? n + ' beaches · ' + c + ' with calm sea right now' : n + ' beaches · the sea right now'; }, /* Lote H: n = todas as praias (antes so as de mar com dados -> '371 praias ao vivo') */
     beach: function (id) { return '/en/beach.html?id=' + encodeURIComponent(id); }, booking: 'en-gb', dec: '.'
   } : {
     calm: 'Mar mais calmo agora', warm: 'Água mais quente', surf: 'Melhores ondas para surf', waves: 'ondas', water: 'água',
-    hotels: 'Hotéis perto', view: 'Ver praia', upd: 'atualizado às ', kicker: function (n, c) { return n + ' praias ao vivo · ' + c + ' com mar calmo agora'; },
+    hotels: 'Hotéis perto', view: 'Ver praia', upd: 'atualizado às ', kicker: function (n, c) { return c > 0 ? n + ' praias · ' + c + ' com mar calmo agora' : n + ' praias · o mar agora'; },
     beach: function (id) { return '/beach.html?id=' + encodeURIComponent(id); }, booking: 'pt-pt', dec: ','
   };
   function $(k) { return root.querySelector('[data-lh="' + k + '"]'); }
@@ -50,7 +50,8 @@
       // Contagem sobre todas as praias com dados (a BD tem 3 nomes repetidos; a lista de destaques usa nomes unicos)
       var all = r.list.filter(function (b) { var d = r.sea[b.id]; return d && d.w != null; });
       var nCalm = all.filter(function (b) { return r.sea[b.id].w <= 0.6; }).length;
-      var k = $('kicker'); if (k) k.textContent = T.kicker(all.length, nCalm);
+      var k = $('kicker'); if (k) k.textContent = T.kicker(r.list.length, nCalm);
+      var hn = document.querySelector('[data-hv-n="praias"]'); if (hn && r.list.length > 300) hn.textContent = String(r.list.length); // contagem real (home v4)
 
       // Destaque: mar mais calmo
       var B = $('best'); B.textContent = '';

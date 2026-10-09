@@ -1,0 +1,155 @@
+/* Pagina inicial v4 — seccoes abaixo do hero — Portal Turismo Portugal — Lote H, 09/10/2026
+ * Objetivo: conversao. Logo apos o hero, "Reserve a viagem" (Stay22/Booking, GetYourGuide com precos reais, DiscoverCars,
+ * BookSurfCamps); depois "Explore a costa" (1 grelha com fotos e contagens reais, substitui 'O que procura hoje?' +
+ * 'Tudo num so lugar') e "Praias em destaque" (fotos verificadas + 'Hoteis perto' em cada cartao).
+ * Mesma linguagem do hero v3: tinta #07152A, dourado #c9a84c/#e8c97a, Bodoni Moda nos titulos, Inter no texto.
+ */
+.hv{--ink:#07152A; --ink2:#0b2340; --gold:#c9a84c; --gold-l:#e8c97a; --paper:#f6f3ec; --line:#e4ddcc; --mute:#5b6b7f;
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif; box-sizing:border-box;}
+.hv *,.hv *::before,.hv *::after{box-sizing:border-box;}
+.hv__in{max-width:1240px; margin:0 auto; padding:0 28px;}
+.hv__eyebrow{margin:0 0 10px; font-size:.72rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--gold);}
+.hv__h{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:clamp(1.9rem,3.4vw,2.8rem); line-height:1.08; letter-spacing:-.01em;}
+.hv__h em{font-style:italic; color:var(--gold);}
+.hv__lead{margin:14px 0 0; max-width:620px; font-size:1rem; line-height:1.6;}
+.hv svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
+
+/* ── 1. Reserve a viagem ─────────────────────────────────────────── */
+.hv-book{background:linear-gradient(180deg,#061224 0%,var(--ink) 40%,var(--ink2) 100%); color:#fff; padding:76px 0 84px; position:relative; overflow:hidden;}
+.hv-book::before{content:''; position:absolute; inset:-30% -10% auto auto; width:620px; height:620px; border-radius:50%;
+  background:radial-gradient(circle, rgba(201,168,76,.16) 0%, rgba(201,168,76,0) 65%); pointer-events:none;}
+.hv-book .hv__lead{color:rgba(255,255,255,.72);}
+.hv-book__head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+.hv-book__note{margin:0; max-width:340px; font-size:.8rem; line-height:1.5; color:rgba(255,255,255,.55);}
+.hv-book__grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:36px;}
+.hv-bk{display:flex; flex-direction:column; min-width:0; padding:22px 20px 20px; border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035)); border:1px solid rgba(255,255,255,.12);
+  transition:border-color .2s ease, transform .2s ease;}
+.hv-bk:hover{border-color:rgba(232,201,122,.45); transform:translateY(-2px);}
+.hv-bk--main{background:linear-gradient(180deg,rgba(201,168,76,.18),rgba(201,168,76,.05)); border-color:rgba(232,201,122,.38);}
+.hv-bk__ico{width:42px; height:42px; display:grid; place-items:center; border-radius:12px; background:rgba(232,201,122,.14); color:var(--gold-l);}
+.hv-bk__ico svg{width:22px; height:22px;}
+.hv-bk__by{margin:16px 0 4px; font-size:.68rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.5);}
+.hv-bk__t{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-size:1.32rem; font-weight:700; line-height:1.15;}
+.hv-bk__d{margin:8px 0 0; font-size:.86rem; line-height:1.5; color:rgba(255,255,255,.7);}
+.hv-bk__chips{display:flex; flex-wrap:wrap; gap:6px; margin:16px 0 18px; padding:0; list-style:none;}
+.hv-bk__chips a{display:inline-flex; align-items:center; min-height:32px; padding:6px 11px; border-radius:999px; font-size:.78rem; font-weight:500;
+  color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); transition:background .2s ease;}
+.hv-bk__chips a:hover{background:rgba(255,255,255,.18);}
+.hv-bk__go{margin-top:auto; display:flex; align-items:center; justify-content:center; gap:8px; min-height:46px; padding:0 16px; border-radius:12px;
+  font-size:.9rem; font-weight:600; text-decoration:none; color:var(--ink); background:linear-gradient(135deg,var(--gold),var(--gold-l));
+  box-shadow:0 8px 22px rgba(201,168,76,.22); transition:transform .2s ease, box-shadow .2s ease;}
+.hv-bk__go:hover{transform:translateY(-1px); box-shadow:0 12px 28px rgba(201,168,76,.32);}
+.hv-bk__go svg{width:16px; height:16px; stroke-width:2.2; transition:transform .2s ease;}
+.hv-bk__go:hover svg{transform:translateX(3px);}
+.hv-bk--plain .hv-bk__go{color:#fff; background:transparent; border:1px solid rgba(255,255,255,.3); box-shadow:none;}
+.hv-gyg{margin-top:40px; padding:26px 24px 20px; border-radius:20px; background:#fff; color:var(--ink);}
+.hv-gyg__h{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 14px;}
+.hv-gyg__h h3{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-size:1.35rem; font-weight:700;}
+.hv-gyg__h a{font-size:.85rem; font-weight:600; color:#0a3d6b; text-decoration:none;}
+.hv-gyg__h a:hover{text-decoration:underline;}
+.hv-gyg [data-gyg-widget]{min-height:120px;}
+.hv-book__more{margin:22px 0 0; font-size:.82rem; color:rgba(255,255,255,.6);}
+.hv-book__more a{color:var(--gold-l); text-decoration:none; font-weight:500;}
+.hv-book__more a:hover{text-decoration:underline;}
+
+/* ── 2. Explore a costa ──────────────────────────────────────────── */
+.hv-ex{background:var(--paper); color:var(--ink); padding:80px 0;}
+.hv-ex .hv__lead{color:var(--mute);}
+.hv-ex__grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-auto-rows:240px; gap:14px; margin-top:34px;}
+.hv-tile{position:relative; isolation:isolate; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; border-radius:18px;
+  padding:20px 22px; color:#fff; text-decoration:none; background:#0b2340;}
+.hv-tile img{position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.22,1,.36,1);}
+.hv-tile::after{content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(7,21,42,0) 30%,rgba(7,21,42,.82) 100%);}
+.hv-tile:hover img{transform:scale(1.05);}
+.hv-tile--big{grid-row:span 2;}
+.hv-tile--wide{grid-column:1 / -1; grid-row:auto; flex-direction:row; justify-content:flex-start; align-items:flex-end; gap:18px;}
+.hv-tile--wide .hv-tile__n{font-size:2.2rem;}
+.hv-tile--wide .hv-tile__t{margin:0;}
+.hv-tile--wide img{object-position:center 60%;}
+.hv-tile__n{font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:2.6rem; line-height:1; color:var(--gold-l);}
+.hv-tile--big .hv-tile__n{font-size:3.6rem;}
+.hv-tile__t{margin:6px 0 0; font-size:1.06rem; font-weight:600;}
+.hv-tile__d{margin:4px 0 0; font-size:.84rem; line-height:1.45; color:rgba(255,255,255,.8); max-width:320px;}
+.hv-tile__go{position:absolute; top:16px; right:16px; width:38px; height:38px; display:grid; place-items:center; border-radius:50%;
+  background:rgba(255,255,255,.16); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); transition:background .2s ease;}
+.hv-tile:hover .hv-tile__go{background:var(--gold); color:var(--ink);}
+.hv-tile__go svg{width:16px; height:16px; stroke-width:2.2;}
+.hv-tile__cr{position:absolute; left:22px; top:16px; font-size:9px; color:rgba(255,255,255,.38); max-width:60%;}
+.hv-live{display:inline-flex; align-items:center; gap:6px; font-size:.7rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#fff;}
+.hv-live::before{content:''; width:7px; height:7px; border-radius:50%; background:#ff4d4d; box-shadow:0 0 0 0 rgba(255,77,77,.6); animation:hv-pulse 1.8s infinite;}
+@keyframes hv-pulse{70%{box-shadow:0 0 0 8px rgba(255,77,77,0);} 100%{box-shadow:0 0 0 0 rgba(255,77,77,0);}}
+
+/* ── 3. Praias em destaque ───────────────────────────────────────── */
+.hv-ft{background:#fff; color:var(--ink); padding:80px 0;}
+.hv-ft .hv__lead{color:var(--mute);}
+.hv-ft__top{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+.hv-ft__all{display:inline-flex; align-items:center; gap:8px; font-size:.9rem; font-weight:600; color:#0a3d6b; text-decoration:none;}
+.hv-ft__all svg{width:16px; height:16px; stroke-width:2.2;}
+.hv-ft__grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin:32px 0 0; padding:0; list-style:none;}
+.hv-bc{display:flex; flex-direction:column; min-width:0; border-radius:16px; overflow:hidden; background:#fff; border:1px solid #ebe6da;
+  box-shadow:0 1px 2px rgba(7,21,42,.04); transition:box-shadow .25s ease, transform .25s ease;}
+.hv-bc:hover{box-shadow:0 14px 34px rgba(7,21,42,.10); transform:translateY(-2px);}
+.hv-bc__m{position:relative; display:block; aspect-ratio:4/3; overflow:hidden; background:#dfe6ee;}
+.hv-bc__m img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.22,1,.36,1);}
+.hv-bc:hover .hv-bc__m img{transform:scale(1.04);}
+.hv-bc__q{position:absolute; left:10px; top:10px; display:inline-flex; align-items:center; gap:5px; padding:4px 9px; border-radius:999px;
+  font-size:.68rem; font-weight:600; color:#0f5132; background:rgba(255,255,255,.92);}
+.hv-bc__q::before{content:''; width:6px; height:6px; border-radius:50%; background:#22a06b;}
+.hv-bc__cr{position:absolute; right:8px; bottom:6px; font-size:9px; color:rgba(255,255,255,.55); text-shadow:0 1px 2px rgba(0,0,0,.4);}
+.hv-bc__b{display:flex; flex-direction:column; flex:1; padding:14px 16px 16px;}
+.hv-bc__r{margin:0; font-size:.68rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:#9a7b2e;}
+.hv-bc__n{margin:4px 0 0; font-family:'Bodoni Moda',Georgia,serif; font-size:1.18rem; font-weight:700; line-height:1.2;}
+.hv-bc__n a{color:inherit; text-decoration:none;}
+.hv-bc__d{margin:6px 0 14px; font-size:.82rem; line-height:1.45; color:var(--mute);}
+.hv-bc__a{margin-top:auto; display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.hv-bc__a a{display:flex; align-items:center; justify-content:center; gap:6px; min-height:40px; padding:0 8px; border-radius:10px;
+  font-size:.8rem; font-weight:600; text-decoration:none; white-space:nowrap;}
+.hv-bc__view{color:var(--ink); border:1px solid #d9d2c1; background:#fff;}
+.hv-bc__view:hover{border-color:var(--ink);}
+.hv-bc__stay{color:var(--ink); background:linear-gradient(135deg,var(--gold),var(--gold-l));}
+.hv-bc__stay svg{width:15px; height:15px; stroke-width:2;}
+
+/* ── Responsivo ──────────────────────────────────────────────────── */
+@media (max-width:1080px){
+  .hv-book__grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .hv-ft__grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:760px){
+  .hv__in{padding:0 18px;}
+  .hv-book,.hv-ex,.hv-ft{padding:56px 0 60px;}
+  .hv-book__grid{grid-template-columns:1fr; gap:12px; margin-top:26px;}
+  .hv-bk{padding:16px 14px 14px; display:grid; grid-template-columns:42px minmax(0,1fr); column-gap:12px; align-items:start;}
+  .hv-bk__ico{grid-row:span 2;}
+  .hv-bk__by{margin:0 0 2px;}
+  .hv-bk__t{font-size:1.12rem;}
+  .hv-bk__d{display:none;}
+  .hv-bk__chips,.hv-bk__go{grid-column:1 / -1;}
+  .hv-bk__chips{flex-wrap:nowrap; overflow-x:auto; margin:12px -14px 12px; padding:0 14px; scrollbar-width:none;}
+  .hv-bk__chips::-webkit-scrollbar{display:none;}
+  .hv-bk__chips a{white-space:nowrap;}
+  .hv-bk__chips:empty{display:none;}
+  .hv-bk--plain .hv-bk__go{margin-top:12px;}
+  .hv-gyg{margin-top:28px; padding:20px 14px 14px; border-radius:16px;}
+  .hv-ex__grid{grid-template-columns:repeat(2,minmax(0,1fr)); grid-auto-rows:180px; gap:10px; margin-top:26px;}
+  .hv-tile{padding:14px; border-radius:14px;}
+  .hv-tile--big{grid-column:span 2; grid-row:span 1;}
+  .hv-tile--wide{flex-direction:column; align-items:flex-start; gap:0;}
+  .hv-tile__n,.hv-tile--big .hv-tile__n{font-size:2rem;}
+  .hv-tile__d{display:none;}
+  .hv-tile--big .hv-tile__d{display:block;}
+  .hv-tile__go{width:32px; height:32px; top:10px; right:10px;}
+  .hv-ft__grid{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:12px; margin:24px -18px 0; padding:2px 18px 8px; scrollbar-width:none;}
+  .hv-ft__grid::-webkit-scrollbar{display:none;}
+  .hv-ft__grid > li{flex:0 0 84%; scroll-snap-align:start;}
+  .hv-bc__a{gap:6px;}
+  .hv-bc__a a{font-size:.78rem; padding:0 6px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .hv *{transition:none !important; animation:none !important;}
+}
+
+/* O cartao '10 praias escondidas' (style.css) tem margin-top 64/48 px pensado para o layout antigo -> faixa bege entre seccoes */
+.hv-ft + .hero-secondary{margin-top:0;}
+/* style.css da pagina inicial: main{padding:0 16px} no telemovel -> seccoes a toda a largura (igual ao hero .lh) */
+@media (max-width:768px){ body main > section.hv{margin-left:-16px !important; margin-right:-16px !important; width:calc(100% + 32px) !important; max-width:none !important;} }
