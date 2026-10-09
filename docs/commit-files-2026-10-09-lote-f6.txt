@@ -1,0 +1,6 @@
+escolas-de-surf.html
+en/surf-schools.html
+css/escolas-v2.css
+docs/REGRESSION-WATCHLIST.md
+HANDOFF.md
+docs/commit-files-2026-10-09-lote-f6.txt

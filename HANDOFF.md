@@ -316,3 +316,6 @@ Testar: 1 pedido em /parceiros e 1 em /en/parceiros → linhas em partner_leads 
 Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-f4.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`.
 Página de exemplo no estilo do /parceiros v3: barra Exemplo + notas "o que está incluído", hero, mar em direto na Nazaré, aulas e preços, um dia de aula, 3 praias com o mar de agora, mapa, bloco para o dono.
 PRÓXIMO: /precos e /escolas-de-surf no mesmo estilo.
+
+## >>> LOTE F6 — reservar no GetYourGuide nas escolas (09/10, 17h40), POR PUBLICAR
+4 escolas com botão "Reservar no GetYourGuide" (afiliado 0WTBHZE): Albufeira Surf & Sup, Future Eco, Salty Wave Algarve, SUPA. Publicar com docs/commit-files-2026-10-09-lote-f6.txt.

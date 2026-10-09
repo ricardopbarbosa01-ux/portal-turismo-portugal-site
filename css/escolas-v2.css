@@ -302,3 +302,6 @@ body.esc-body .i18n-notice:not([hidden]) + main.esc { padding-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .esc *, .pd-drawer, .pd-drawer__backdrop { transition: none !important; animation: none !important; }
 }
+
+/* Lote F6 — reserva online no GetYourGuide (ligação de afiliado) */
+.esc-sch__aff { margin: 8px 0 0; font-size: 12px; line-height: 1.45; color: var(--esc-mute, #5b6b7f); }
