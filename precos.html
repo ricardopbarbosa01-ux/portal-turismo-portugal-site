@@ -66,16 +66,17 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css?v=20261009b">
   <link rel="stylesheet" href="/css/footer-v2.css?v=20261009c">
-  <link rel="stylesheet" href="/css/precos-v2.css?v=20261009g">
+  <link rel="stylesheet" href="/css/parceiros-v3.css?v=20261009j">
+  <link rel="stylesheet" href="/css/precos-v3.css?v=20261009p">
   <script src="/js/pwa.js?v=20261009h2" defer></script>
 </head>
-<body>
+<body class="pv3-body pc3-body">
 
 <!-- Skip link -->
 <a href="#main" class="skip-link">Saltar para o conteúdo</a>
@@ -120,168 +121,173 @@
 </nav>
 
 <!-- ══ MAIN ════════════════════════════════════════════════════════════ -->
-<main id="main" class="prc">
+<main id="main" class="pv3 pc3">
 
-<!-- 1. Duas portas -->
-<div class="prc-doors">
-  <section class="prc-door prc-door--free" aria-labelledby="prc-h1">
-    <div class="prc-door__head">
-      <p class="prc-door__who">Para quem viaja</p>
-      <h1 id="prc-h1" class="prc-door__title">Tudo o que vê aqui é grátis.</h1>
-    </div>
-    <p class="prc-door__price prc-zero" aria-hidden="true">0<span>€</span></p>
-    <div class="prc-door__body">
-      <ul class="prc-free">
-        <li><b>522</b> praias com ficha, mapa e condições do mar</li>
-        <li><b>171</b> webcams da costa, com ligação à câmara oficial MEO</li>
-        <li>Marés oficiais do Instituto Hidrográfico</li>
-        <li>Previsão de ondas e vento para os próximos dias</li>
-      </ul>
-      <div class="prc-acts">
-        <a class="prc-btn prc-btn--gold" href="/beaches" data-prc-cta="praias">Escolher uma praia</a>
-        <a class="prc-btn prc-btn--line" href="/planear?ref=precos" data-prc-cta="planear">Planear uma escapada</a>
-      </div>
-      <p class="prc-door__fine">Sem registo e sem cartão.</p>
-    </div>
-  </section>
-
-  <section class="prc-door prc-door--biz" id="negocios" aria-labelledby="prc-biz-h">
-    <div class="prc-door__head">
-      <p class="prc-door__who">Para quem tem um negócio</p>
-      <h2 id="prc-biz-h" class="prc-door__title">Tem um negócio junto ao mar?</h2>
-    </div>
-    <p class="prc-door__price prc-from"><span class="prc-from__pre">Planos desde</span><span class="prc-from__n">149 €</span><span class="prc-from__per">por ano</span></p>
-    <div class="prc-door__body">
-      <p class="prc-door__lead">Mostre-o a quem está a escolher a praia. A ficha no diretório é sempre grátis; os planos pagos põem-no no topo da sua zona.</p>
-      <ul class="prc-terms">
-        <li>Primeiros 30 dias grátis</li>
-        <li>Sem contrato, com proposta e fatura por email</li>
-        <li>Se cancelar, mantém a ficha grátis</li>
-      </ul>
-      <div class="prc-acts">
-        <a class="prc-btn prc-btn--gold" href="/parceiros#planos" data-prc-b2b="planos">Ver planos para negócios</a>
-        <a class="prc-link" href="/parceiros#previa" data-prc-b2b="previa">Pedir pré-visualização grátis</a>
+<!-- 1. O mar agora — o produto, ao vivo, antes do preço -->
+<section class="pc3-hero" aria-labelledby="pc3-h1">
+  <div class="pv3-in">
+    <div class="pc3-hero__txt">
+      <span class="pv3-pill"><span class="pv3-pill__dot" aria-hidden="true"></span>O mar de Portugal, neste momento</span>
+      <h1 class="pv3-h1 pc3-h1" id="pc3-h1">Tudo isto é grátis.</h1>
+      <p class="pc3-zero"><span class="pc3-zero__n">0&nbsp;€</span><span class="pc3-zero__l">para quem viaja, sempre</span></p>
+      <p class="pv3-lead">As ondas, a água e o vento da costa inteira, ao vivo, sem registo e sem cartão. Para quem tem um negócio junto ao mar, há planos desde 149 € por ano.</p>
+      <div class="pv3-ctas">
+        <a class="pv3-btn pv3-btn--gold" href="#viajar" data-prc-cta="porta-viajar">Vou viajar</a>
+        <a class="pv3-btn pv3-btn--ghost" href="#negocios" data-prc-b2b="porta-negocio">Tenho um negócio</a>
       </div>
     </div>
-  </section>
-</div>
-
-<!-- 2. O mar agora (só aparece com dados reais) -->
-<section class="prc-now" id="agora" aria-labelledby="prc-now-h" hidden>
-  <div class="prc-now__in">
-    <div class="prc-now__head">
-      <h2 id="prc-now-h">O mar agora</h2>
-      <p class="prc-now__src">Valores do modelo Open-Meteo para as <span data-now-time>--:--</span>. É isto que tem, grátis, em cada praia.</p>
-    </div>
-    <ul class="prc-now__list">
-      <li data-read="rocha" data-lat="37.1167" data-lng="-8.5333">
-        <a class="prc-read" href="/praias/praia-da-rocha/">
-          <span class="prc-read__place">Praia da Rocha</span>
-          <span class="prc-read__area">Portimão, Algarve</span>
-          <span class="prc-read__big"><b data-v="sst">--</b><span>°C na água</span></span>
-          <span class="prc-read__sub"><span>Ondas <span data-v="wave">--</span> m</span><span>Vento <span data-v="wind">--</span> km/h</span></span>
-        </a>
-      </li>
-      <li data-read="carcavelos" data-lat="38.6869" data-lng="-9.3329">
-        <a class="prc-read" href="/praias/praia-de-carcavelos/">
-          <span class="prc-read__place">Carcavelos</span>
-          <span class="prc-read__area">Cascais, Lisboa</span>
-          <span class="prc-read__big"><b data-v="sst">--</b><span>°C na água</span></span>
-          <span class="prc-read__sub"><span>Ondas <span data-v="wave">--</span> m</span><span>Vento <span data-v="wind">--</span> km/h</span></span>
-        </a>
-      </li>
-      <li data-read="matosinhos" data-lat="41.1768" data-lng="-8.6935">
-        <a class="prc-read" href="/praias/praia-de-matosinhos/">
-          <span class="prc-read__place">Matosinhos</span>
-          <span class="prc-read__area">Porto e Norte</span>
-          <span class="prc-read__big"><b data-v="sst">--</b><span>°C na água</span></span>
-          <span class="prc-read__sub"><span>Ondas <span data-v="wave">--</span> m</span><span>Vento <span data-v="wind">--</span> km/h</span></span>
-        </a>
-      </li>
-    </ul>
+    <figure class="pc3-eq" id="agora" aria-labelledby="pc3-eq-h">
+      <figcaption class="pc3-eq__h">
+        <span class="pc3-eq__ttl" id="pc3-eq-h"><span class="pc3-live" aria-hidden="true"></span>Altura das ondas agora, de Porto a Albufeira</span>
+        <span class="pc3-eq__src" data-eq-src>Open-Meteo</span>
+      </figcaption>
+      <ol class="pc3-eq__row" aria-describedby="pc3-eq-note"><li class="pc3-eq__c" data-z="porto" data-lat="41.1754" data-lng="-8.6903"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Porto</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="nazare" data-lat="39.6047" data-lng="-9.0849"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Nazaré</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="peniche" data-lat="39.3457" data-lng="-9.3642"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Peniche</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="ericeira" data-lat="38.9879" data-lng="-9.4181"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Ericeira</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="cascais" data-lat="38.6801" data-lng="-9.3352"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Cascais</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="caparica" data-lat="38.6468" data-lng="-9.2427"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Caparica</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="alentejo" data-lat="37.7148" data-lng="-8.7863"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Milfontes</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="vicentina" data-lat="37.2958" data-lng="-8.8661"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Arrifana</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="sagres" data-lat="36.9948" data-lng="-8.9491"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Sagres</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="lagos" data-lat="37.0875" data-lng="-8.7272"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Luz</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="portimao" data-lat="37.1192" data-lng="-8.5368"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Rocha</span><span class="pc3-eq__t" data-t>—</span></li><li class="pc3-eq__c" data-z="albufeira" data-lat="37.0865" data-lng="-8.2539"><span class="pc3-eq__v" data-v>—</span><span class="pc3-eq__tr"><span class="pc3-eq__b" data-b></span></span><span class="pc3-eq__n">Albufeira</span><span class="pc3-eq__t" data-t>—</span></li></ol>
+      <p class="pc3-eq__note" id="pc3-eq-note"><span data-eq-note>Em cada praia do site vê isto e a previsão dos próximos dias.</span> <a href="/webcams" data-prc-cta="eq-webcams">Ver as webcams</a></p>
+    </figure>
   </div>
 </section>
 
-<!-- 3. Porque é grátis -->
-<section class="prc-why" aria-labelledby="prc-why-h">
-  <div class="prc-split">
-    <h2 id="prc-why-h">Porque é grátis</h2>
-    <div>
-      <ul class="prc-why__list">
-        <li>Quando reserva alojamento, carro ou uma atividade através das nossas ligações, o parceiro pode pagar-nos uma comissão. <strong>Para si, o preço é o mesmo.</strong></li>
-        <li>Negócios locais podem pagar para aparecer em destaque no diretório. Quando isso acontece, têm sempre a etiqueta "Parceiro". Os guias não estão à venda.</li>
-        <li>Não vendemos os seus dados.</li>
-      </ul>
-      <a class="prc-link" href="/transparencia-comercial">Como funciona a transparência comercial</a>
+<!-- 2. A história -->
+<section class="pc3-story" aria-labelledby="pc3-story-h">
+  <div class="pv3-in pc3-story__in">
+    <figure class="pc3-photo">
+      <img src="/images/heroes/praia-da-luz-1200.webp" width="1200" height="900" alt="Praia da Luz, no Algarve, com a falésia da Rocha Negra ao fundo" loading="lazy" decoding="async">
+      <figcaption class="pc3-credit">Praia da Luz · Foto: colaboradores da Wikipédia · CC BY-SA 3.0</figcaption>
+    </figure>
+    <div class="pc3-story__txt">
+      <h2 class="pv3-h2" id="pc3-story-h">20 anos do outro lado do balcão</h2>
+      <p class="pc3-p">Durante 20 anos geri operações de hotelaria no Algarve e em Dublin: no Four Seasons, no Pine Cliffs, na IHG e no Carvoeiro Clube, onde fui diretor de operações.</p>
+      <blockquote class="pc3-q"><p>Todas as manhãs, alguém perguntava na receção: «Como está o mar hoje? Para que praia vamos?»</p></blockquote>
+      <p class="pc3-p">E todos os dias via a escola de surf, o restaurante da praia e o barco de pesca ali ao lado ficarem invisíveis, porque os grandes sites de reservas não os mostram.</p>
+      <p class="pc3-p">Em dezembro de 2025 deixei a hotelaria. Em janeiro de 2026 comecei o Portal Turismo Portugal com a Kaptar.Studio, para dar a qualquer pessoa, a qualquer hora, a resposta que eu dava na receção.</p>
+      <p class="pc3-sign"><span>Ricardo Barbosa</span>fundador do Portal Turismo Portugal</p>
+    </div>
+  </div>
+  <div class="pv3-in"><ol class="pc3-tl" aria-label="Percurso do fundador"><li class="pc3-tl__i"><span class="pc3-tl__dot" aria-hidden="true"></span><span class="pc3-tl__n">Four Seasons</span><span class="pc3-tl__r">Hotelaria</span></li><li class="pc3-tl__i"><span class="pc3-tl__dot" aria-hidden="true"></span><span class="pc3-tl__n">Pine Cliffs</span><span class="pc3-tl__r">Hotelaria</span></li><li class="pc3-tl__i"><span class="pc3-tl__dot" aria-hidden="true"></span><span class="pc3-tl__n">IHG</span><span class="pc3-tl__r">Hotelaria</span></li><li class="pc3-tl__i"><span class="pc3-tl__dot" aria-hidden="true"></span><span class="pc3-tl__n">Carvoeiro Clube</span><span class="pc3-tl__r">Diretor de operações, até dez. 2025</span></li><li class="pc3-tl__i is-now"><span class="pc3-tl__dot" aria-hidden="true"></span><span class="pc3-tl__n">Portal Turismo Portugal</span><span class="pc3-tl__r">Desde jan. 2026, com a Kaptar.Studio</span></li></ol></div>
+</section>
+
+<!-- 3. O que já está construído -->
+<section class="pc3-inv" aria-labelledby="pc3-inv-h">
+  <div class="pv3-in">
+    <header class="pv3-sec-h"><h2 class="pv3-h2" id="pc3-inv-h">O que já está construído</h2><p class="pv3-sub">Contado na base de dados do site a 9 de outubro de 2026. Nada aqui é estimado.</p></header>
+    <div class="pc3-inv__in">
+      <figure class="pc3-dotsfig">
+        <svg class="pc3-dots" viewBox="-4 -4 678 257" role="img" aria-label="Cada ponto é uma praia do site, por região: 371 de mar e 151 fluviais."><circle class="pc3-d pc3-d--m" cx="4.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="40.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="49.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="4.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="13.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="22.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="31.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="40.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="49.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="4.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="13.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="22.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="31.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="40.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="49.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="4.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="13.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="22.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="31.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="40.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="49.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="4.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="13.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="22.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="31.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="40.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="49.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="4.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="13.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="22.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="31.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="40.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="49.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="4.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="13.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="22.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="31.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="40.5" cy="85.5" r="3.2"/><text class="pc3-dl" x="27.0" y="229" text-anchor="middle">83</text><text class="pc3-dn" x="27.0" y="247" text-anchor="middle">Norte</text><circle class="pc3-d pc3-d--m" cx="92.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="101.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="110.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="119.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="128.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="137.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="92.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="101.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="110.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="119.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="128.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="137.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="92.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="101.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="110.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="119.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="128.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="137.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="92.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="101.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="110.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="119.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="128.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="137.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="92.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="101.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="110.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="119.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="128.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="137.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="92.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="76.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="76.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="76.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="76.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="76.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="76.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="67.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="67.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="67.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="67.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="67.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="67.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="58.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="58.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="58.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="58.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="58.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="58.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="49.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="49.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="49.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="49.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="49.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="49.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="40.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="40.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="40.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="40.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="40.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="40.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="31.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="31.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="31.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="31.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="31.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="31.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="22.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="22.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="22.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="22.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="22.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="22.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="13.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="13.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="13.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="119.5" cy="13.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="128.5" cy="13.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="137.5" cy="13.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="92.5" cy="4.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="101.5" cy="4.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="110.5" cy="4.5" r="3.2"/><text class="pc3-dl" x="115.0" y="229" text-anchor="middle">135</text><text class="pc3-dn" x="115.0" y="247" text-anchor="middle">Centro</text><circle class="pc3-d pc3-d--m" cx="180.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="189.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="198.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="207.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="216.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="225.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="180.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="189.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="198.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="207.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="216.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="225.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="180.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="189.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="198.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="207.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="216.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="225.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="180.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="189.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="198.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="207.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="216.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="225.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="180.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="189.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="198.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="207.5" cy="166.5" r="3.2"/><text class="pc3-dl" x="203.0" y="229" text-anchor="middle">28</text><text class="pc3-dn" x="203.0" y="247" text-anchor="middle">Oeste</text><circle class="pc3-d pc3-d--m" cx="268.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="277.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="286.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="295.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="304.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="313.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="268.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="277.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="286.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="295.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="304.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="313.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="268.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="277.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="286.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="295.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="304.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="313.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="268.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="277.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="286.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="295.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="304.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="313.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="268.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="277.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="286.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="295.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="304.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="313.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="268.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="277.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="286.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="295.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="304.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="313.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="268.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="277.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="286.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="295.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="304.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="313.5" cy="148.5" r="3.2"/><text class="pc3-dl" x="291.0" y="229" text-anchor="middle">42</text><text class="pc3-dn" x="291.0" y="247" text-anchor="middle">Lisboa</text><circle class="pc3-d pc3-d--m" cx="356.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="365.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="374.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="383.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="392.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="401.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="356.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="365.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="374.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="383.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="392.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="401.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="356.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="365.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="374.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="383.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="392.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="401.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="356.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="365.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="374.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="383.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="392.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="401.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="356.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="365.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="374.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="383.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="392.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="401.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="356.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="365.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="374.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="383.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="392.5" cy="157.5" r="3.2"/><text class="pc3-dl" x="379.0" y="229" text-anchor="middle">35</text><text class="pc3-dn" x="379.0" y="247" text-anchor="middle">Alentejo</text><circle class="pc3-d pc3-d--m" cx="444.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="444.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="453.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="462.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="471.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="480.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="489.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="444.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--f" cx="453.5" cy="85.5" r="3.2"/><text class="pc3-dl" x="467.0" y="229" text-anchor="middle">80</text><text class="pc3-dn" x="467.0" y="247" text-anchor="middle">Algarve</text><circle class="pc3-d pc3-d--m" cx="532.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="541.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="550.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="559.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="568.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="577.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="532.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="541.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="550.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="559.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="568.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="577.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="532.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="541.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="550.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="559.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="568.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="577.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="532.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="541.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="550.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="559.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="568.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="577.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="532.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="541.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="550.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="559.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="568.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="577.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="532.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="541.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="550.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="559.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="568.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="577.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="532.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="541.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="550.5" cy="148.5" r="3.2"/><text class="pc3-dl" x="555.0" y="229" text-anchor="middle">39</text><text class="pc3-dn" x="555.0" y="247" text-anchor="middle">Madeira</text><circle class="pc3-d pc3-d--m" cx="620.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="202.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="193.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="184.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="175.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="166.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="157.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="148.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="139.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="130.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="121.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="112.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="103.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="638.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="647.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="656.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="665.5" cy="94.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="620.5" cy="85.5" r="3.2"/><circle class="pc3-d pc3-d--m" cx="629.5" cy="85.5" r="3.2"/><text class="pc3-dl" x="643.0" y="229" text-anchor="middle">80</text><text class="pc3-dn" x="643.0" y="247" text-anchor="middle">Açores</text></svg>
+        <figcaption class="pc3-legend"><span><i class="pc3-k pc3-k--m"></i>371 praias de mar</span><span><i class="pc3-k pc3-k--f"></i>151 praias fluviais</span><span class="pc3-legend__tot">522 no total, do Minho aos Açores</span></figcaption>
+      </figure>
+      <ul class="pc3-spec"><li><a href="/webcams"><span class="pc3-spec__k">Webcams da costa, ligadas às câmaras oficiais</span><span class="pc3-spec__v">171</span></a></li><li><a href="/surf"><span class="pc3-spec__k">Spots de surf com ondas e vento</span><span class="pc3-spec__v">126</span></a></li><li><a href="/pesca"><span class="pc3-spec__k">Spots de pesca</span><span class="pc3-spec__v">117</span></a></li><li><a href="/beaches"><span class="pc3-spec__k">Portos com marés oficiais do Instituto Hidrográfico</span><span class="pc3-spec__v">19</span></a></li><li><a href="/beaches"><span class="pc3-spec__k">Regiões, incluindo Madeira e Açores</span><span class="pc3-spec__v">8</span></a></li><li><a href="/en/"><span class="pc3-spec__k">Línguas</span><span class="pc3-spec__v">PT · EN</span></a></li></ul>
     </div>
   </div>
 </section>
 
-<!-- 4. Pro em construção -->
-<section class="prc-pro" id="pro" aria-labelledby="prc-pro-h">
-  <div class="prc-pro__in">
-    <div class="prc-pro__panel">
-      <div>
-        <h2 id="prc-pro-h">Pro: ainda em construção</h2>
-        <p class="prc-pro__sub">Ainda não tem preço nem data. Diga-nos o que quer primeiro: é isso que decide o que fazemos a seguir.</p>
-        <p class="prc-pro__fav" data-prc-fav hidden>As praias favoritas fazem parte do Pro, que ainda está em construção. Deixe o email e avisamos quando houver novidade.</p>
-      </div>
-      <div>
-        <form class="prc-form" data-email-capture data-source="precos-pro-lista" data-success="prc-pro-ok" novalidate>
-          <fieldset class="prc-chips">
-            <legend>O que quer primeiro?</legend>
-            <div class="prc-chips__row">
-              <label class="prc-chip"><input type="radio" name="interesse" value="previsao" data-ec-tag><span>Previsão a 10 dias</span></label>
-              <label class="prc-chip"><input type="radio" name="interesse" value="favoritas" data-ec-tag><span>Praias favoritas e listas</span></label>
-              <label class="prc-chip"><input type="radio" name="interesse" value="guias" data-ec-tag><span>Guias e roteiros exclusivos</span></label>
-              <label class="prc-chip"><input type="radio" name="interesse" value="outro" data-ec-tag><span>Outra coisa</span></label>
-            </div>
-          </fieldset>
-          <div class="prc-field">
-            <label for="prc-email">Email</label>
-            <div class="prc-field__row">
-              <input id="prc-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="nome@email.com" aria-describedby="prc-pro-fine">
-              <button class="prc-btn prc-btn--gold" type="submit">Entrar na lista</button>
-            </div>
-          </div>
-          <div class="prc-pro__ts" data-ec-ts data-theme="dark"></div>
-          <p class="prc-pro__err" data-ec-error role="alert" hidden></p>
-          <p class="prc-pro__fine" id="prc-pro-fine">Um email quando houver novidade sobre isto. Não é uma newsletter. Para sair, basta responder. <a href="/privacidade">Política de privacidade</a></p>
-        </form>
-        <div class="prc-pro__ok" id="prc-pro-ok" data-ec-success tabindex="-1" role="status" hidden>
-          <strong>Está na lista.</strong>
-          <p>Quando houver novidade sobre o Pro, recebe um email. Só esse.</p>
+<!-- 4. Onde está o turista -->
+<section class="pc3-mkt" aria-labelledby="pc3-mkt-h">
+  <div class="pv3-in">
+    <header class="pv3-sec-h"><h2 class="pv3-h2" id="pc3-mkt-h">Onde está o turista</h2><p class="pv3-sub">Números oficiais de 2025. É para estas pessoas que o site existe.</p></header>
+    <ul class="pc3-figs"><li><span class="pc3-fig__n">29,9 milhões</span><span class="pc3-fig__l">de turistas não residentes</span><span class="pc3-fig__s"><a href="https://eco.sapo.pt/2026/07/09/turismo-abrandou-em-2025-portugal-visitado-por-299-milhoes-de-turistas/" rel="noopener" target="_blank">INE, Estatísticas do Turismo 2025</a></span></li><li><span class="pc3-fig__n">29,1 mil milhões €</span><span class="pc3-fig__l">de receitas turísticas, um recorde</span><span class="pc3-fig__s"><a href="https://eco.sapo.pt/2026/02/19/receitas-turisticas-batem-recorde-ao-subirem-para-291-mil-milhoes-de-euros-em-2025/" rel="noopener" target="_blank">Banco de Portugal</a></span></li><li><span class="pc3-fig__n">67,1%</span><span class="pc3-fig__l">das dormidas são de estrangeiros</span><span class="pc3-fig__s"><a href="https://eco.sapo.pt/2026/07/09/turismo-abrandou-em-2025-portugal-visitado-por-299-milhoes-de-turistas/" rel="noopener" target="_blank">INE, Estatísticas do Turismo 2025</a></span></li><li><span class="pc3-fig__n">25,4%</span><span class="pc3-fig__l">das dormidas ficam no Algarve</span><span class="pc3-fig__s"><a href="https://postal.pt/edicaopapel/hospedes-crescem-3-e-dormidas-22-para-325-e-821-milhoes-em-2025/" rel="noopener" target="_blank">INE, dados preliminares 2025</a></span></li></ul>
+    <div class="pc3-split" role="img" aria-label="Dormidas em Portugal em 2025: 67,1% de estrangeiros, 32,9% de residentes.">
+      <span class="pc3-split__a" style="width:67.1%"><b>67,1%</b> estrangeiros</span><span class="pc3-split__b"><b>32,9%</b> residentes</span>
+    </div>
+    <div class="pc3-bridge">
+      <p class="pc3-bridge__n">63%</p>
+      <div><p class="pc3-bridge__t">Dos cliques que o Google nos envia, 63% vêm de fora de Portugal. Quem procura praias, webcams e o mar em inglês chega aqui: é o mesmo turista que o seu negócio quer.</p><p class="pv3-fine">Fonte: Google Search Console do site, 14/04 a 03/10/2026.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 e 6. As duas portas -->
+<section class="pc3-doors" aria-labelledby="pc3-doors-h">
+  <div class="pv3-in">
+    <header class="pv3-sec-h pv3-sec-h--c"><h2 class="pv3-h2" id="pc3-doors-h">Duas portas. Escolha a sua.</h2><p class="pv3-sub">Quem viaja não paga nada. Quem tem um negócio paga para ser encontrado por quem viaja.</p></header>
+    <div class="pc3-doors__in">
+
+      <article class="pc3-door" id="viajar" aria-labelledby="pc3-d1-h">
+        <p class="pc3-door__who">Para quem viaja</p>
+        <h3 class="pc3-door__h" id="pc3-d1-h"><span class="pc3-door__price">0&nbsp;€</span><span class="pc3-door__per">para sempre</span></h3>
+        <ul class="pv3-ticks pc3-ticks"><li>522 praias com ficha, mapa e condições do mar</li><li>171 webcams da costa, com ligação à câmara oficial MEO</li><li>Marés oficiais do Instituto Hidrográfico</li><li>Previsão de ondas e vento para os próximos dias</li><li>Planeador de escapadas, sem esperar por ninguém</li></ul>
+        <div class="pv3-ctas">
+          <a class="pv3-btn pv3-btn--gold" href="/beaches" data-prc-cta="praias">Escolher uma praia</a>
+          <a class="pv3-btn pv3-btn--ghost" href="/planear" data-prc-cta="planear">Planear uma escapada</a>
         </div>
-      </div>
+        <p class="pv3-fine">Sem registo e sem cartão.</p>
+
+        <div class="pc3-pro" id="pro" aria-labelledby="pc3-pro-h">
+          <h4 class="pc3-pro__h" id="pc3-pro-h">Pro: ainda em construção</h4>
+          <p class="pc3-pro__sub">Ainda não tem preço nem data. Diga-nos o que quer primeiro: é isso que decide o que fazemos a seguir.</p>
+          <p class="pc3-pro__fav" data-prc-fav hidden>As praias favoritas fazem parte do Pro, que ainda está em construção. Deixe o email e avisamos quando houver novidade.</p>
+          <form class="pc3-form" data-email-capture data-source="precos-pro-lista" data-success="prc-pro-ok" novalidate>
+            <fieldset class="pc3-chips"><legend>O que quer primeiro?</legend><div class="pc3-chips__row"><label class="pc3-chip"><input type="radio" name="interesse" value="previsao" data-ec-tag><span>Previsão a 10 dias</span></label><label class="pc3-chip"><input type="radio" name="interesse" value="favoritas" data-ec-tag><span>Praias favoritas e listas</span></label><label class="pc3-chip"><input type="radio" name="interesse" value="guias" data-ec-tag><span>Guias e roteiros exclusivos</span></label><label class="pc3-chip"><input type="radio" name="interesse" value="outro" data-ec-tag><span>Outra coisa</span></label></div></fieldset>
+            <label class="pv3-sr" for="prc-email">Email</label>
+            <div class="pc3-form__row">
+              <input id="prc-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="nome@email.com" aria-describedby="prc-pro-fine">
+              <button class="pv3-btn pv3-btn--gold" type="submit">Entrar na lista</button>
+            </div>
+            <div class="pc3-ts" data-ec-ts data-theme="dark"></div>
+            <p class="pc3-err" data-ec-error role="alert" hidden></p>
+            <p class="pv3-fine" id="prc-pro-fine">Um email quando houver novidade sobre isto. Não é uma newsletter. Para sair, basta responder. <a href="/privacidade">Política de privacidade</a></p>
+          </form>
+          <div class="pc3-ok" id="prc-pro-ok" data-ec-success tabindex="-1" role="status" hidden><strong>Está na lista.</strong><p>Quando houver novidade sobre o Pro, recebe um email. Só esse.</p></div>
+        </div>
+      </article>
+
+      <article class="pc3-door pc3-door--biz" id="negocios" aria-labelledby="pc3-d2-h">
+        <p class="pc3-door__who">Para quem tem um negócio junto ao mar</p>
+        <h3 class="pc3-door__h" id="pc3-d2-h"><span class="pc3-door__from">desde</span><span class="pc3-door__price">149&nbsp;€</span><span class="pc3-door__per">por ano</span></h3>
+        <ul class="pc3-tiers"><li class="pc3-tier"><div class="pc3-tier__top"><span class="pc3-tier__n">Base</span><span class="pc3-tier__p">0 €</span></div><p>A ficha no diretório da sua categoria, com o selo Verificado.</p></li><li class="pc3-tier is-rec"><div class="pc3-tier__top"><span class="pc3-tier__n">Parceiro Local</span><span class="pc3-tier__p">149 €/ano <small>ou 19 €/mês</small></span></div><p>Primeiro lugar na sua região com a etiqueta Parceiro, página própria, botão de reserva e resumo mensal das visitas.</p></li><li class="pc3-tier"><div class="pc3-tier__top"><span class="pc3-tier__n">Fundador da Zona</span><span class="pc3-tier__p">290 €/ano</span></div><p>Tudo do Parceiro Local e o único destaque da sua categoria na zona. Um lugar por zona.</p></li></ul>
+
+        <div class="pc3-calc" data-calc>
+          <p class="pc3-calc__h">Quantos clientes pagam o plano?</p>
+          <div class="pc3-calc__in">
+            <label class="pc3-calc__f"><span>Preço de uma aula, refeição ou passeio</span><span class="pc3-calc__eur"><input type="number" inputmode="decimal" min="1" max="2000" step="1" value="40" data-calc-price aria-describedby="pc3-calc-out"><em>€</em></span></label>
+            <label class="pc3-calc__f"><span>Plano</span><select data-calc-plan><option value="149">Parceiro Local, anual (149 €)</option><option value="228">Parceiro Local, mensal (228 € num ano)</option><option value="290">Fundador da Zona (290 €)</option></select></label>
+          </div>
+          <p class="pc3-calc__out" id="pc3-calc-out" aria-live="polite"><span class="pc3-calc__n" data-calc-n>4</span> <span data-calc-txt>clientes num ano pagam o plano. Menos de 1 por mês.</span></p>
+          <p class="pv3-fine">O anual poupa 79 € face ao mensal. É uma conta simples, não uma promessa de reservas.</p>
+        </div>
+
+        <ul class="pv3-ticks pc3-ticks pc3-ticks--sm"><li>Primeiros 30 dias grátis</li><li>Sem contrato: proposta e fatura por email</li><li>Se cancelar, mantém a ficha grátis</li></ul>
+        <div class="pv3-ctas">
+          <a class="pv3-btn pv3-btn--gold" href="/parceiros#planos" data-prc-b2b="planos">Ver planos para negócios</a>
+          <a class="pv3-btn pv3-btn--ghost" href="/partner-demo" data-prc-b2b="demo">Ver uma página de exemplo</a>
+        </div>
+        <p class="pv3-fine"><a href="/parceiros#previa" data-prc-b2b="previa">Pedir uma pré-visualização grátis do seu negócio</a></p>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- 5. Perguntas frequentes -->
-<section class="prc-faq" aria-labelledby="prc-faq-h">
-  <div class="prc-split">
-    <h2 id="prc-faq-h">Perguntas frequentes</h2>
-    <div class="prc-faq__list">
-      <details>
-        <summary>É mesmo grátis? Qual é o truque?</summary>
-        <p>Não há truque. O portal ganha dinheiro com comissões de reservas feitas através das nossas ligações (o preço para si é o mesmo) e, no futuro, de negócios locais que paguem um destaque, sempre identificado como "Parceiro".</p>
-      </details>
-      <details>
-        <summary>Preciso de criar conta?</summary>
-        <p>Não. Praias, webcams, marés e planeador funcionam sem registo.</p>
-      </details>
-      <details>
-        <summary>Quanto vai custar o Pro e quando sai?</summary>
-        <p>Ainda não sabemos e preferimos não inventar. Quem está na lista recebe um email quando houver novidade.</p>
-      </details>
-      <details>
-        <summary>O que fazem com o meu email?</summary>
-        <p>Guardamo-lo só para o aviso do Pro. Não o partilhamos nem vendemos. Para sair, basta responder ao email.</p>
-      </details>
-      <details>
-        <summary>De onde vêm os dados do mar?</summary>
-        <p>Ondas, vento e temperatura da água vêm do Open-Meteo. As marés vêm do Instituto Hidrográfico. As webcams são da MEO; nós só fazemos a ligação.</p>
-      </details>
+<!-- Porque é grátis -->
+<section class="pc3-why" aria-labelledby="pc3-why-h">
+  <div class="pv3-in pc3-why__in">
+    <h2 class="pv3-h2" id="pc3-why-h">Porque é grátis</h2>
+    <div><ul class="pc3-why__l"><li><strong>Comissões.</strong> Quando reserva alojamento, carro ou uma atividade através das nossas ligações, o parceiro pode pagar-nos uma comissão. Para si, o preço é o mesmo.</li><li><strong>Negócios locais.</strong> Podem pagar para aparecer em destaque no diretório e levam sempre a etiqueta "Parceiro". Os guias não estão à venda.</li><li><strong>Os seus dados não.</strong> Não vendemos os seus dados.</li></ul><p class="pv3-fine"><a href="/transparencia-comercial">Como funciona a transparência comercial</a></p></div>
+  </div>
+</section>
+
+<section class="pv3-faq" aria-labelledby="pc3-faq-h">
+  <div class="pv3-in pv3-faq__in">
+    <h2 id="pc3-faq-h" class="pv3-h2">Perguntas frequentes</h2>
+    <div class="pv3-faq__list">
+      <details><summary>É mesmo grátis? Qual é o truque?</summary><p>Não há truque. O portal ganha dinheiro com comissões de reservas feitas através das nossas ligações (o preço para si é o mesmo) e com negócios locais que paguem um destaque, sempre identificado como "Parceiro".</p></details>
+      <details><summary>Preciso de criar conta?</summary><p>Não. Praias, webcams, marés e planeador funcionam sem registo.</p></details>
+      <details><summary>Quanto vai custar o Pro e quando sai?</summary><p>Ainda não sabemos e preferimos não inventar. Quem está na lista recebe um email quando houver novidade.</p></details>
+      <details><summary>O que fazem com o meu email?</summary><p>Guardamo-lo só para o aviso do Pro. Não o partilhamos nem vendemos. Para sair, basta responder ao email.</p></details>
+      <details><summary>Tenho um negócio. O que estou a pagar, exatamente?</summary><p>Visibilidade junto de quem está a escolher a praia: o primeiro lugar na sua zona, uma página própria e ligações medidas, que vê no Analytics do seu site. Não vendemos reservas garantidas. Os primeiros 30 dias são grátis.</p></details>
+      <details><summary>De onde vêm os dados do mar?</summary><p>Ondas, vento e temperatura da água vêm do modelo Open-Meteo. As marés vêm do Instituto Hidrográfico. As webcams são da MEO; nós só fazemos a ligação.</p></details>
+      <details><summary>De onde vêm os números desta página?</summary><p>Os do site são contados na nossa base de dados (9 de outubro de 2026). Os do turismo são do INE e do Banco de Portugal, com a ligação ao lado de cada número.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Fecho: volta à pergunta da receção -->
+<section class="pc3-end" aria-labelledby="pc3-end-h">
+  <div class="pv3-in pc3-end__in">
+    <p class="pc3-end__q" aria-hidden="true">«Como está o mar hoje?»</p>
+    <h2 class="pv3-h2" id="pc3-end-h">A pergunta da receção tem agora resposta. Para qualquer pessoa, a qualquer hora.</h2>
+    <div class="pv3-ctas pv3-ctas--c">
+      <a class="pv3-btn pv3-btn--gold" href="/beaches" data-prc-cta="fecho-praias">Ver o mar de hoje</a>
+      <a class="pv3-btn pv3-btn--ghost" href="/parceiros" data-prc-b2b="fecho">Pôr o meu negócio no mapa</a>
     </div>
   </div>
 </section>
@@ -307,6 +313,17 @@
   </div>
 </footer>
 
+<nav class="mobile-bottom-nav" aria-label="Navegação rápida">
+  <div class="mobile-bottom-nav-inner">
+    <a href="/beaches" class="mobile-nav-item" aria-label="Praias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M2 20c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><line x1="12" y1="2" x2="12" y2="10"/></svg>Praias</a>
+    <a href="/surf" class="mobile-nav-item" aria-label="Surf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/><path d="M8 6l4-4 4 4"/></svg>Surf</a>
+    <a href="/webcams" class="mobile-nav-item" aria-label="Webcams ao vivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/><circle cx="19.5" cy="3.5" r="3" fill="#ff4d6d" stroke="none"/></svg>Webcams</a>
+    <a href="/pesca" class="mobile-nav-item" aria-label="Pesca"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12c3-5 9-5 12 0-3 5-9 5-12 0z"/><path d="M6.5 12L3 9v6z"/></svg>Pesca</a>
+    <button type="button" class="mobile-nav-item" id="mob-menu-btn" aria-label="Abrir menu"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>Menu</button>
+  </div>
+</nav>
+
+
 <!-- Scripts globais -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="/js/config.js?v=20260508-isactive" defer></script>
@@ -315,104 +332,6 @@
 <script src="/js/cookie-consent.js?v=20261009b" defer></script>
 <script src="/js/om-pool.js?v=20261009a2" defer></script>
 <script src="/js/email-capture.js?v=20261009h" defer></script>
-<script>
-/* /precos — "Duas portas" (Lote F, 09/10/2026). Igual em /en/precos; os textos vêm do html[lang]. */
-document.addEventListener('DOMContentLoaded', function () {
-  'use strict';
-  var EN = (document.documentElement.lang || '').indexOf('en') === 0;
-  var PAGE = { page: 'precos', lang: EN ? 'en' : 'pt' };
-  function track(n, p) {
-    var o = {}, k; for (k in PAGE) o[k] = PAGE[k]; for (k in (p || {})) o[k] = p[k];
-    try { if (typeof window.track === 'function') window.track(n, o); else if (window.gtag) window.gtag('event', n, o); } catch (e) {}
-  }
-  var y = document.getElementById('footer-year'); if (y) y.textContent = new Date().getFullYear();
-
-  // ── Cliques nas portas ──
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('[data-prc-cta],[data-prc-b2b]');
-    if (!a) return;
-    if (a.hasAttribute('data-prc-cta')) track('precos_cta_click', { cta: a.getAttribute('data-prc-cta') });
-    else track('precos_b2b_click', { cta: a.getAttribute('data-prc-b2b') });
-  });
-
-  // ── Lista do Pro ──
-  var pro = document.getElementById('pro');
-  var form = pro && pro.querySelector('form[data-email-capture]');
-  var fromFav = /(?:^|[?&])de=favoritas(?:&|$)/.test(location.search);
-  if (form && fromFav) {
-    var r = form.querySelector('input[data-ec-tag][value="favoritas"]'); if (r) r.checked = true;
-    var note = pro.querySelector('[data-prc-fav]'); if (note) note.hidden = false;
-  }
-  function interest() { var c = form && form.querySelector('[data-ec-tag]:checked'); return c ? c.value : ''; }
-  if (pro && 'IntersectionObserver' in window) {
-    var seen = new IntersectionObserver(function (en) {
-      if (en.some(function (x) { return x.isIntersecting; })) { track('pro_list_view', { from: fromFav ? 'favoritas' : 'direto' }); seen.disconnect(); }
-    }, { threshold: 0.4 });
-    seen.observe(pro);
-  }
-  if (form) {
-    var email = form.querySelector('input[type="email"]'), started = false;
-    if (email) email.addEventListener('focus', function () { if (!started) { started = true; track('pro_list_start', { interest: interest() }); } });
-    var ok = document.getElementById('prc-pro-ok'), err = form.querySelector('[data-ec-error]');
-    if (ok && window.MutationObserver) new MutationObserver(function () {
-      if (!ok.hidden) track('pro_list_submit', { interest: interest(), source: form.getAttribute('data-source') + (interest() ? ':' + interest() : '') });
-    }).observe(ok, { attributes: true, attributeFilter: ['hidden'] });
-    var lastErr = '';
-    if (err && window.MutationObserver) new MutationObserver(function () {
-      if (err.hidden || !err.textContent) { lastErr = ''; return; }
-      if (err.textContent === lastErr) return;
-      lastErr = err.textContent;
-      var why = email && email.getAttribute('aria-invalid') === 'true' ? 'email' : (/anti-spam/i.test(lastErr) ? 'turnstile' : 'network');
-      track('form_error', { form: 'pro_list', reason: why });
-    }).observe(err, { attributes: true, attributeFilter: ['hidden'], childList: true });
-  }
-
-  // ── O mar agora: 3 leituras reais do Open-Meteo; se falhar, a faixa fica escondida ──
-  var now = document.getElementById('agora');
-  if (!now || !window.PTHOpenMeteo) return;
-  var items = [].slice.call(now.querySelectorAll('[data-read]'));
-  var pts = items.map(function (li) { return { id: li.getAttribute('data-read'), lat: +li.getAttribute('data-lat'), lng: +li.getAttribute('data-lng') }; });
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function fmt(v, d) { return EN ? v.toFixed(d) : v.toFixed(d).replace('.', ','); }
-  function put(el, v, d) {
-    if (!el) return;
-    if (v == null || !isFinite(v)) { el.textContent = '--'; return; }
-    if (reduce) { el.textContent = fmt(v, d); return; }
-    var t0 = null, dur = 900;
-    (function step(t) {
-      if (t0 === null) t0 = t;
-      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      el.textContent = fmt(v * e, d);
-      if (k < 1) requestAnimationFrame(step);
-    })(performance.now());
-    setTimeout(function () { el.textContent = fmt(v, d); }, dur + 200); // valor final garantido mesmo com o separador em segundo plano
-  }
-  Promise.all([window.PTHOpenMeteo.marine(pts), window.PTHOpenMeteo.weather(pts)]).then(function (res) {
-    var m = res[0] || {}, w = res[1] || {}, shown = 0, stamp = '';
-    var rows = items.map(function (li) {
-      var id = li.getAttribute('data-read'), mc = m[id] && m[id].c, wc = w[id] && w[id].c;
-      var sst = mc && mc.sea_surface_temperature, wave = mc && mc.wave_height, wind = wc && wc.wind_speed_10m;
-      var okRow = sst != null || wave != null;
-      li.hidden = !okRow; if (okRow) shown++;
-      if (!stamp && mc && mc.time) stamp = String(mc.time).slice(11, 16);
-      return { li: li, sst: sst, wave: wave, wind: wind, ok: okRow };
-    });
-    if (!shown) return;
-    var ts = now.querySelector('[data-now-time]'); if (ts) ts.textContent = stamp || '--:--';
-    now.hidden = false;
-    requestAnimationFrame(function () {
-      now.classList.add('is-in');
-      rows.forEach(function (r, i) {
-        if (!r.ok) return;
-        setTimeout(function () {
-          put(r.li.querySelector('[data-v="sst"]'), r.sst, 1);
-          put(r.li.querySelector('[data-v="wave"]'), r.wave, 1);
-          put(r.li.querySelector('[data-v="wind"]'), r.wind, 0);
-        }, reduce ? 0 : i * 120);
-      });
-    });
-  }, function () {});
-});
-</script>
+<script src="/js/precos-v3.js?v=20261009p" defer></script>
 </body>
 </html>

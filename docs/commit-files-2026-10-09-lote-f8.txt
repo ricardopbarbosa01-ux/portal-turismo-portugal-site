@@ -1,0 +1,12 @@
+precos.html
+en/precos.html
+css/precos-v3.css
+js/precos-v3.js
+js/beaches-filters.js
+beaches.html
+en/beaches.html
+guias.html
+en/guides.html
+docs/REGRESSION-WATCHLIST.md
+HANDOFF.md
+docs/commit-files-2026-10-09-lote-f8.txt

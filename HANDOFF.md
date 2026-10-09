@@ -327,3 +327,11 @@ PRÓXIMO: /precos e /escolas-de-surf no mesmo estilo.
 - Mantido: âncoras #<escola> e de secção, os 4 botões GYG do F6, UTM e school_outbound_click, nada de booking.com / BookSurfCamps.
 - Testes: _diag/lote-a-20261008/v3/t_esc3.py — 32/32 (filtros, URL, âncora, links GYG, os dois formulários com stub, sem erros JS) PT e EN, 1440/390 sem scroll horizontal (o EN 390 tem 6 px do cabeçalho global, já existia).
 - css/escolas-v2.css e css/partners-directory.css deixam de ser usados nestas páginas (não apagados).
+
+## >>> LOTE F8 — /precos v3: a página que prova o site (09/10, 19h30), POR PUBLICAR
+- Pedido do Ricardo: coerência de A a Z, história que mexe com sentimentos, "faça a diferença". Rascunho aprovado (só tirar o Brasil; projeto desde jan. 2026 com a Kaptar.Studio).
+- Secções: O mar agora (12 zonas, ondas reais) → 20 anos do outro lado do balcão (Four Seasons, Pine Cliffs, IHG, Carvoeiro Clube → Portal) → O que já está construído (522 pontos, 171 webcams, 126 surf, 117 pesca, 19 portos IH) → Onde está o turista (INE 29,9 M; BdP 29,1 mil M€; 67,1%; Algarve 25,4%; 63% dos nossos cliques de fora de PT) → Duas portas (0 € / desde 149 € + calculadora) → Porque é grátis → FAQ → fecho.
+- O Ricardo pediu números de tráfego muito acima dos reais: recusado (sem secção de crescimento).
+- Também: preço do Pro €4,99 retirado do aviso de /beaches (js/beaches-filters.js) e da faixa de /guias e /en/guides (dizia "conteúdo exclusivo Pro").
+- Lista: docs/commit-files-2026-10-09-lote-f8.txt. Testes: _diag/lote-a-20261008/v3/t_precos3.py 48/48 (PT/EN; ondas OK e falha; Pro com ?de=favoritas; calculadora; eventos; 320/375 sem scroll).
+- Depois do deploy: abrir /precos no telemóvel e confirmar que as 12 barras mostram valores (Open-Meteo real).

@@ -293,8 +293,8 @@
       modal.setAttribute('aria-modal', 'true');
       // Lote B 09/10 (PL-08): textos e link na lingua da pagina
       const en = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
-      const P = en ? { aria: 'Pro feature', close: 'Close', h: 'Nearest beaches is a Pro feature', p: 'See which beaches are closest to you, in real time. Available with the Pro plan from €4.99/month.', href: '/en/precos', cta: 'See plans' }
-                   : { aria: 'Funcionalidade Pro', close: 'Fechar', h: 'Praias mais próximas é uma funcionalidade Pro', p: 'Veja quais praias estão mais próximas de si em tempo real. Disponível com o plano Pro a partir de €4,99/mês.', href: '/precos', cta: 'Ver planos' };
+      const P = en ? { aria: 'Pro feature', close: 'Close', h: 'Nearest beaches is a Pro feature', p: 'See which beaches are closest to you, in real time. This will be part of Pro, which is still being built: no price or date yet.', href: '/en/precos#pro', cta: 'Join the Pro list' }
+                   : { aria: 'Funcionalidade Pro', close: 'Fechar', h: 'Praias mais próximas é uma funcionalidade Pro', p: 'Veja quais praias estão mais próximas de si em tempo real. Vai fazer parte do Pro, que ainda está em construção: ainda sem preço nem data.', href: '/precos#pro', cta: 'Entrar na lista do Pro' };
       modal.setAttribute('aria-label', P.aria);
       modal.innerHTML =
         '<div class="pro-upsell-content">' +
