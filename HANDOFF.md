@@ -317,5 +317,13 @@ Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-f4.txt)` �
 Página de exemplo no estilo do /parceiros v3: barra Exemplo + notas "o que está incluído", hero, mar em direto na Nazaré, aulas e preços, um dia de aula, 3 praias com o mar de agora, mapa, bloco para o dono.
 PRÓXIMO: /precos e /escolas-de-surf no mesmo estilo.
 
-## >>> LOTE F6 — reservar no GetYourGuide nas escolas (09/10, 17h40), POR PUBLICAR
+## >>> LOTE F6 — reservar no GetYourGuide nas escolas (09/10, 17h40), commit e1a6b38
 4 escolas com botão "Reservar no GetYourGuide" (afiliado 0WTBHZE): Albufeira Surf & Sup, Future Eco, Salty Wave Algarve, SUPA. Publicar com docs/commit-files-2026-10-09-lote-f6.txt.
+
+## >>> LOTE F7 — /escolas-de-surf v3 escuro e tecnológico (09/10, 18h45), POR PUBLICAR
+- Pedido do Ricardo: "Urgente tratar da página /escolas-de-surf, está horrível". Refeita (PT+EN) no mesmo estilo de /parceiros e /partner-demo.
+- Ficheiros: escolas-de-surf.html, en/surf-schools.html, NOVOS css/escolas-v3.css e js/escolas-v3.js (?v=20261009m). Lista: docs/commit-files-2026-10-09-lote-f7.txt.
+- Secções: hero com foto e mapa (pinos por escola, legenda filtra por região) → barra de filtros fixa (região, idioma, FPS, reserva online; estado no URL) → 7 escolas → reservar online (GYG) → aviso por zona (submit-surf) → como verificamos → listagem grátis (submit-partner-lead, 11 colunas) → FAQ.
+- Mantido: âncoras #<escola> e de secção, os 4 botões GYG do F6, UTM e school_outbound_click, nada de booking.com / BookSurfCamps.
+- Testes: _diag/lote-a-20261008/v3/t_esc3.py — 32/32 (filtros, URL, âncora, links GYG, os dois formulários com stub, sem erros JS) PT e EN, 1440/390 sem scroll horizontal (o EN 390 tem 6 px do cabeçalho global, já existia).
+- css/escolas-v2.css e css/partners-directory.css deixam de ser usados nestas páginas (não apagados).
