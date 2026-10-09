@@ -243,3 +243,16 @@ Pedido do Ricardo depois do deploy A+A2 (a81f4e2): números errados, atalhos des
 Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-h.txt)` → commit → deploy.ps1 -DryRun → deploy.ps1.
 Medir: GA4 `affiliate_click` com page_path "/" e campanhas Stay22 `-home-reservar`/`-home-destaque`, GYG `pthhomept`/`pthhomeen`.
 
+## >>> LOTE H2 — Home (balcão de reservas), app em todo o site, contacto, planeador (09/10, manhã), POR PUBLICAR
+Pedido do Ricardo (10:15 + 10:17) depois de publicar o Lote H. Lista: `docs/commit-files-2026-10-09-lote-h2.txt` (253 ficheiros — 236 são só as 4 linhas da app no <head>).
+Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-h2.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1` → `npx supabase functions deploy submit-contact --project-ref glupdjvdvunogkqgxoui`.
+1. "Reservar a viagem": foto da Nazaré + balcão com separadores Estadia/Carro/Passeios/Surf camp e campos reais; o JS monta o link do parceiro (CSP `form-action 'self'` impede submeter) e abre noutro separador. GYG "mais reservados" continua por baixo.
+2. Cartão largo "Planear viagem": sem foto (era de baixa resolução) → bilhete escuro com botão dourado. Surf: foto Supertubos.
+3. "Praias em destaque": 19 praias (água Excelente + foto verificada) em 8 zonas, uma por zona, roda todos os dias; mar calmo (≤0,6 m, cache LiveCoast) primeiro com etiqueta.
+4. Contacto: `submit-contact` agora envia email (Resend, reply-to = visitante) para `CONTACT_NOTIFY_TO` ou ola@. **Precisa de deploy da função.** A mensagem do teste do Ricardo deve estar em `contact_messages`.
+5. Planeador: carro na localização DiscoverCars mais perto da vila-base (DC_TOWN) e datas no texto (a DiscoverCars não aceita datas no link — confirmado). Stay22/GYG já levavam as datas (testado).
+6. DiscoverCars `chan` + `data1` em todos os links (affiliate.js). **Ricardo: criar no painel (Promoção > Ad channels) os canais home, webcams, planear, praias, praia, onde-ficar, guia-carro, surf, pesca, guias, outras.**
+7. /webcams PT/EN: cada cartão tem "O que fazer em <vila>" → GYG `cmp=wcard-<id>`.
+8. App em todo o site: js/pwa.js + manifests PT/EN + sw.js v12 (ver watchlist). Botão no rodapé, barra discreta, instruções no iPhone.
+Testado: Playwright, CSP real, PT/EN, 1280/375, Open-Meteo simulado; 0 erros de JS; links dos 4 separadores verificados; prompt de instalação simulado (Chrome) e folha iOS; sem scroll horizontal.
+Medir: GA4 `home_desk_search` (partner), `affiliate_click` page_path "/", `pwa_install_click`/`pwa_installed`; Stay22 `-home-reservar`; PAP por canal.

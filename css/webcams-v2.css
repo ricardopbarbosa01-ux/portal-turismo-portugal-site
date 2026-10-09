@@ -241,6 +241,9 @@ html.wp-lock, html.wp-lock body{overflow:hidden;}
 button.wc__go .wi{fill:currentColor; stroke:none;}
 .wc__more{display:inline-flex; align-items:center; gap:7px; min-height:46px; padding:0 14px; border-radius:14px; border:1px solid #d6dee8; background:#fff; color:#0a3d6b; font:600 .88rem/1 'Inter',system-ui,sans-serif; cursor:pointer; transition:border-color .2s ease, background .2s ease;}
 .wc__more:hover{border-color:#0a3d6b; background:#f6f9fc;}
+.wc__do{display:inline-flex; align-items:center; gap:6px; margin:8px 0 0; font-size:.8rem; font-weight:600; color:#0a3d6b; text-decoration:none;} /* Lote H2: GYG por praia */
+.wc__do:hover{text-decoration:underline;}
+.wc__do svg{width:14px; height:14px; flex:0 0 14px;}
 .wc__cr{margin:2px 0 0; font-size:9px; color:#94a3b8; line-height:1.3; opacity:.4; transition:opacity .2s ease;} /* credito quase invisivel (pedido do Ricardo) */
 .wc:hover .wc__cr{opacity:.8;}
 .wc-empty{grid-column:1/-1; padding:40px 20px; text-align:center; border-radius:20px; background:#fff; border:1px dashed #cbd5e1; color:var(--wc-mut);}

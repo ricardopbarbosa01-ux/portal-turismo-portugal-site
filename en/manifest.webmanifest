@@ -1,14 +1,14 @@
 {
-  "id": "/",
+  "id": "/en/",
   "name": "Portal Turismo Portugal",
   "short_name": "Portal Turismo",
-  "description": "Praias de Portugal com o mar de agora: ondas, marés, webcams, surf e pesca, e onde ficar.",
-  "start_url": "/?ref=app",
+  "description": "Portugal's beaches with the sea right now: waves, tides, webcams, surf and fishing, and where to stay.",
+  "start_url": "/en/?ref=app",
   "scope": "/",
   "display": "standalone",
   "background_color": "#07152A",
   "theme_color": "#07152A",
-  "lang": "pt-PT",
+  "lang": "en",
   "dir": "ltr",
   "categories": [
     "travel",
@@ -43,28 +43,28 @@
   ],
   "shortcuts": [
     {
-      "name": "Praias",
-      "url": "/beaches?ref=app"
+      "name": "Beaches",
+      "url": "/en/beaches?ref=app"
     },
     {
-      "name": "Webcams em direto",
+      "name": "Live webcams",
       "short_name": "Webcams",
-      "url": "/webcams?ref=app"
+      "url": "/en/webcams?ref=app"
     },
     {
-      "name": "Surf hoje",
+      "name": "Surf today",
       "short_name": "Surf",
-      "url": "/surf?ref=app"
+      "url": "/en/surf?ref=app"
     },
     {
-      "name": "Pesca e marés",
-      "short_name": "Pesca",
-      "url": "/pesca?ref=app"
+      "name": "Fishing and tides",
+      "short_name": "Fishing",
+      "url": "/en/pesca?ref=app"
     },
     {
-      "name": "Planear viagem",
-      "short_name": "Planear",
-      "url": "/planear?ref=app"
+      "name": "Plan a trip",
+      "short_name": "Plan",
+      "url": "/en/planear?ref=app"
     }
   ]
 }

@@ -30,7 +30,7 @@
     sortTop: 'Featured', sortCalm: 'Calmest now', sortBig: 'Biggest waves', sortNear: 'Nearest',
     ytOnly: 'Watch on this page', islands: 'Madeira & Azores', islandsMeta: function (n) { return n + ' cameras · see list'; },
     pClose: 'Close', pNow: 'Right now', pNext: 'Next hours', pBest: 'Best time today', pSunset: 'Sunset', pAngles: 'Other angles',
-    pPlan: 'Plan around ', pHotels: 'Hotels nearby', pHotelsS: 'Compare prices for tonight', pDo: 'Things to do', pDoS: 'Tours & activities nearby', pCar: 'Hire a car', pCarS: 'Pick up at ', pTrip: 'Plan the trip', pTripS: 'Route, stay & budget in 60 s',
+    pPlan: 'Plan around ', pHotels: 'Hotels nearby', pHotelsS: 'Compare prices for tonight', doIn: 'Things to do in ', pDo: 'Things to do', pDoS: 'Tours & activities nearby', pCar: 'Hire a car', pCarS: 'Pick up at ', pTrip: 'Plan the trip', pTripS: 'Route, stay & budget in 60 s',
     pBeach: 'Beach guide', pShare: 'Share', pCopied: 'Link copied', pAsk: 'Missing a camera? Ask us',
     pSrcMeo: 'Camera by MEO Beachcam — opens on their site (free, may show ads). We are not MEO.', pSrcYt: function (by) { return 'YouTube live stream by ' + by + ', shown with the owner\'s embed permission.'; },
     pPlay: 'Play the live stream here', pYtBy: 'via YouTube · ', pNoLive: 'Live data unavailable right now.',
@@ -52,7 +52,7 @@
     sortTop: 'Em destaque', sortCalm: 'Mar mais calmo', sortBig: 'Maiores ondas', sortNear: 'Mais perto',
     ytOnly: 'Ver nesta página', islands: 'Madeira e Açores', islandsMeta: function (n) { return n + ' câmaras · ver lista'; },
     pClose: 'Fechar', pNow: 'Agora', pNext: 'Próximas horas', pBest: 'Melhor hora hoje', pSunset: 'Pôr do sol', pAngles: 'Outros ângulos',
-    pPlan: 'Planear à volta de ', pHotels: 'Hotéis perto', pHotelsS: 'Compare preços para hoje', pDo: 'O que fazer', pDoS: 'Passeios e atividades perto', pCar: 'Alugar carro', pCarS: 'Levantar em ', pTrip: 'Planear a viagem', pTripS: 'Roteiro, alojamento e custo em 60 s',
+    pPlan: 'Planear à volta de ', pHotels: 'Hotéis perto', pHotelsS: 'Compare preços para hoje', doIn: 'O que fazer em ', pDo: 'O que fazer', pDoS: 'Passeios e atividades perto', pCar: 'Alugar carro', pCarS: 'Levantar em ', pTrip: 'Planear a viagem', pTripS: 'Roteiro, alojamento e custo em 60 s',
     pBeach: 'Guia da praia', pShare: 'Partilhar', pCopied: 'Link copiado', pAsk: 'Falta uma câmara? Peça-nos',
     pSrcMeo: 'Câmara da MEO Beachcam — abre no site deles (grátis, pode ter publicidade). Não somos a MEO.', pSrcYt: function (by) { return 'Direto do YouTube publicado por ' + by + ', mostrado com a autorização de incorporação do dono.'; },
     pPlay: 'Ver o direto aqui', pYtBy: 'via YouTube · ', pNoLive: 'Dados ao vivo indisponíveis neste momento.',
@@ -295,6 +295,10 @@
     else cta.appendChild(h('a', { class: 'wc__go', href: meoUrl(c.meo), target: '_blank', rel: 'noopener', 'data-golive': c.id }, [T.open, ico('ext')]));
     cta.appendChild(h('button', { type: 'button', class: 'wc__more', 'data-open': c.id, 'data-focus': 'plan' }, [ico('cal'), T.plan]));
     body.appendChild(cta);
+    // Lote H2 09/10: atividades GetYourGuide desta praia em cada cartao (antes so um link generico 'passeio de barco Portugal')
+    var whereDo = placeShort(c);
+    body.appendChild(h('a', { class: 'wc__do', href: 'https://www.getyourguide.com/s/?q=' + encodeURIComponent(whereDo + (c.r === 'madeira' && whereDo !== 'Madeira' ? ' Madeira' : c.r === 'acores' ? ' Azores' : '') + ' Portugal') + '&partner_id=0WTBHZE&cmp=wcard-' + encodeURIComponent(c.id.slice(0, 40)) + '&locale_autoredirect_optout=true',
+      target: '_blank', rel: 'noopener noreferrer sponsored', 'data-gyg-card': c.id }, [ico('star'), T.doIn + whereDo, h('span', { 'aria-hidden': 'true', text: ' →' })]));
     if (c.yt) body.appendChild(h('p', { class: 'wc__cr', text: (EN ? 'Live frame: ' : 'Imagem do direto: ') + c.yt[1] }));
     else if (c.ph) body.appendChild(h('p', { class: 'wc__cr', text: T.photo + ': ' + c.ph[1] }));
     a.appendChild(body);

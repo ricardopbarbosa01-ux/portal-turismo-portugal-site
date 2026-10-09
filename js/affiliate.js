@@ -37,6 +37,21 @@
     return null;
   }
 
+  function dcChannel(path) {
+    var p = (path || '/').replace(/\.html$/, '').replace(/\/$/, '').replace(/^\/en(?=\/|$)/, '') || '/';
+    if (p === '/' || p === '/index') return 'home';
+    if (/webcam/.test(p)) return 'webcams';
+    if (/^\/planear/.test(p)) return 'planear';
+    if (/^\/beaches$/.test(p)) return 'praias';
+    if (/^\/beach$|^\/praias\//.test(p)) return 'praia';
+    if (/onde-ficar|where-to-stay/.test(p)) return 'onde-ficar';
+    if (/alugar-carro|car-hire/.test(p)) return 'guia-carro';
+    if (/^\/surf/.test(p)) return 'surf';
+    if (/^\/pesca/.test(p)) return 'pesca';
+    if (/^\/guia|^\/guides/.test(p)) return 'guias';
+    return 'outras';
+  }
+
   function prepare(a) {
     if (a.dataset.affPartner) return a.dataset.affPartner;
     var u;
@@ -49,6 +64,13 @@
     if (p === 'booking') {
       var nu = bookingUrl(u);
       if (nu) a.href = nu;
+    }
+    // Lote H2 09/10: DiscoverCars (Post Affiliate Pro) — canal por pagina (chan, tem de existir no painel: Promocao > Ad channels)
+    // + data1 com o caminho exato (nao precisa de configuracao). Nao mexe no a_aid.
+    if (p === 'discovercars' && u.searchParams.has('a_aid') && !u.searchParams.has('chan')) {
+      u.searchParams.set('chan', dcChannel(location.pathname));
+      u.searchParams.set('data1', location.pathname.replace(/\.html$/, '').slice(0, 60) || '/');
+      a.href = u.href;
     }
     if (!/\bsponsored\b/.test(a.rel || '')) a.rel = ((a.rel || '') + ' sponsored').trim();
     return p;

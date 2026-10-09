@@ -15,34 +15,10 @@
 .hv svg{fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round;}
 
 /* ── 1. Reserve a viagem ─────────────────────────────────────────── */
-.hv-book{background:linear-gradient(180deg,#061224 0%,var(--ink) 40%,var(--ink2) 100%); color:#fff; padding:76px 0 84px; position:relative; overflow:hidden;}
-.hv-book::before{content:''; position:absolute; inset:-30% -10% auto auto; width:620px; height:620px; border-radius:50%;
+.hv-book{background:linear-gradient(180deg,#061224 0%,var(--ink) 40%,var(--ink2) 100%); color:#fff; padding:0 0 84px; position:relative; overflow:hidden;}
+.hv-book::before{content:''; position:absolute; inset:auto -10% -20% auto; width:620px; height:620px; border-radius:50%;
   background:radial-gradient(circle, rgba(201,168,76,.16) 0%, rgba(201,168,76,0) 65%); pointer-events:none;}
 .hv-book .hv__lead{color:rgba(255,255,255,.72);}
-.hv-book__head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;}
-.hv-book__note{margin:0; max-width:340px; font-size:.8rem; line-height:1.5; color:rgba(255,255,255,.55);}
-.hv-book__grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:36px;}
-.hv-bk{display:flex; flex-direction:column; min-width:0; padding:22px 20px 20px; border-radius:18px;
-  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035)); border:1px solid rgba(255,255,255,.12);
-  transition:border-color .2s ease, transform .2s ease;}
-.hv-bk:hover{border-color:rgba(232,201,122,.45); transform:translateY(-2px);}
-.hv-bk--main{background:linear-gradient(180deg,rgba(201,168,76,.18),rgba(201,168,76,.05)); border-color:rgba(232,201,122,.38);}
-.hv-bk__ico{width:42px; height:42px; display:grid; place-items:center; border-radius:12px; background:rgba(232,201,122,.14); color:var(--gold-l);}
-.hv-bk__ico svg{width:22px; height:22px;}
-.hv-bk__by{margin:16px 0 4px; font-size:.68rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.5);}
-.hv-bk__t{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-size:1.32rem; font-weight:700; line-height:1.15;}
-.hv-bk__d{margin:8px 0 0; font-size:.86rem; line-height:1.5; color:rgba(255,255,255,.7);}
-.hv-bk__chips{display:flex; flex-wrap:wrap; gap:6px; margin:16px 0 18px; padding:0; list-style:none;}
-.hv-bk__chips a{display:inline-flex; align-items:center; min-height:32px; padding:6px 11px; border-radius:999px; font-size:.78rem; font-weight:500;
-  color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); transition:background .2s ease;}
-.hv-bk__chips a:hover{background:rgba(255,255,255,.18);}
-.hv-bk__go{margin-top:auto; display:flex; align-items:center; justify-content:center; gap:8px; min-height:46px; padding:0 16px; border-radius:12px;
-  font-size:.9rem; font-weight:600; text-decoration:none; color:var(--ink); background:linear-gradient(135deg,var(--gold),var(--gold-l));
-  box-shadow:0 8px 22px rgba(201,168,76,.22); transition:transform .2s ease, box-shadow .2s ease;}
-.hv-bk__go:hover{transform:translateY(-1px); box-shadow:0 12px 28px rgba(201,168,76,.32);}
-.hv-bk__go svg{width:16px; height:16px; stroke-width:2.2; transition:transform .2s ease;}
-.hv-bk__go:hover svg{transform:translateX(3px);}
-.hv-bk--plain .hv-bk__go{color:#fff; background:transparent; border:1px solid rgba(255,255,255,.3); box-shadow:none;}
 .hv-gyg{margin-top:40px; padding:26px 24px 20px; border-radius:20px; background:#fff; color:var(--ink);}
 .hv-gyg__h{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 14px;}
 .hv-gyg__h h3{margin:0; font-family:'Bodoni Moda',Georgia,serif; font-size:1.35rem; font-weight:700;}
@@ -112,24 +88,12 @@
 
 /* ── Responsivo ──────────────────────────────────────────────────── */
 @media (max-width:1080px){
-  .hv-book__grid{grid-template-columns:repeat(2,minmax(0,1fr));}
   .hv-ft__grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 @media (max-width:760px){
   .hv__in{padding:0 18px;}
-  .hv-book,.hv-ex,.hv-ft{padding:56px 0 60px;}
-  .hv-book__grid{grid-template-columns:1fr; gap:12px; margin-top:26px;}
-  .hv-bk{padding:16px 14px 14px; display:grid; grid-template-columns:42px minmax(0,1fr); column-gap:12px; align-items:start;}
-  .hv-bk__ico{grid-row:span 2;}
-  .hv-bk__by{margin:0 0 2px;}
-  .hv-bk__t{font-size:1.12rem;}
-  .hv-bk__d{display:none;}
-  .hv-bk__chips,.hv-bk__go{grid-column:1 / -1;}
-  .hv-bk__chips{flex-wrap:nowrap; overflow-x:auto; margin:12px -14px 12px; padding:0 14px; scrollbar-width:none;}
-  .hv-bk__chips::-webkit-scrollbar{display:none;}
-  .hv-bk__chips a{white-space:nowrap;}
-  .hv-bk__chips:empty{display:none;}
-  .hv-bk--plain .hv-bk__go{margin-top:12px;}
+  .hv-book{padding:0 0 56px;}
+  .hv-ex,.hv-ft{padding:56px 0 60px;}
   .hv-gyg{margin-top:28px; padding:20px 14px 14px; border-radius:16px;}
   .hv-ex__grid{grid-template-columns:repeat(2,minmax(0,1fr)); grid-auto-rows:180px; gap:10px; margin-top:26px;}
   .hv-tile{padding:14px; border-radius:14px;}
@@ -152,4 +116,93 @@
 /* O cartao '10 praias escondidas' (style.css) tem margin-top 64/48 px pensado para o layout antigo -> faixa bege entre seccoes */
 .hv-ft + .hero-secondary{margin-top:0;}
 /* style.css da pagina inicial: main{padding:0 16px} no telemovel -> seccoes a toda a largura (igual ao hero .lh) */
-@media (max-width:768px){ body main > section.hv{margin-left:-16px !important; margin-right:-16px !important; width:calc(100% + 32px) !important; max-width:none !important;} }
+@media (max-width:768px){ body main > section.hv{margin-left:-16px !important; margin-right:-16px !important; width:calc(100% + 32px) !important; max-width:none !important; padding-left:0 !important; padding-right:0 !important;} }
+
+/* ── 1b. Balcao de reservas (Lote H2) ─────────────────────────────────
+ * Foto da Nazare a toda a largura; por cima, um balcao com separadores (Estadia / Carro / Passeios / Surf camp) e
+ * campos reais. Os formularios sao enviados por js/home-v4.js (constroi o link do parceiro e abre noutro separador).
+ */
+.tk-stage{position:relative; isolation:isolate; padding:96px 0 64px; min-height:620px; display:flex; align-items:flex-end;}
+.tk-bg{position:absolute; inset:0; z-index:-2;}
+.tk-bg img{width:100%; height:100%; object-fit:cover; object-position:center 42%; display:block;}
+.tk-stage::before{content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(90deg,rgba(6,18,36,.86) 0%,rgba(6,18,36,.55) 48%,rgba(6,18,36,.18) 100%),linear-gradient(180deg,rgba(6,18,36,0) 55%,rgba(6,18,36,.9) 100%);}
+.tk-in{width:100%;}
+.tk-h{margin:0; max-width:11ch; font-family:'Bodoni Moda',Georgia,serif; font-weight:700; font-size:clamp(2.4rem,5.2vw,4.2rem); line-height:1; letter-spacing:-.015em; color:#fff;}
+.tk-lead{margin:16px 0 0; max-width:500px; font-size:1.02rem; line-height:1.55; color:rgba(255,255,255,.82);}
+.tk-desk{margin-top:34px; max-width:1060px; border-radius:22px; background:#fff; color:var(--ink); box-shadow:0 34px 80px rgba(3,10,22,.5); overflow:hidden;}
+.tk-tabs{display:flex; gap:2px; padding:6px 10px 0; background:#f7f4ec; border-bottom:1px solid var(--line); overflow-x:auto; scrollbar-width:none;}
+.tk-tabs::-webkit-scrollbar{display:none;}
+.tk-tab{position:relative; flex:0 0 auto; appearance:none; -webkit-appearance:none; border:0; background:transparent; cursor:pointer;
+  padding:14px 18px 15px; font:600 .93rem/1 'Inter',system-ui,sans-serif; color:var(--mute); border-radius:12px 12px 0 0; transition:color .15s ease, background .15s ease;}
+.tk-tab:hover{color:var(--ink);}
+.tk-tab[aria-selected="true"]{color:var(--ink); background:#fff;}
+.tk-tab[aria-selected="true"]::after{content:''; position:absolute; left:18px; right:18px; bottom:-1px; height:3px; border-radius:3px 3px 0 0; background:var(--gold);}
+.tk-tab:focus-visible{outline:2px solid #0a64c8; outline-offset:-2px;}
+.tk-p{padding:18px 18px 14px; margin:0;}
+.tk-p[hidden]{display:none;}
+.tk-row{display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr) auto; gap:1px; background:var(--line);
+  border:1px solid var(--line); border-radius:16px; overflow:hidden;}
+.tk-row--car{grid-template-columns:minmax(0,1fr) auto;}
+.tk-row--exp{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) auto;}
+.tk-f{display:flex; flex-direction:column; justify-content:center; gap:3px; min-width:0; padding:11px 16px 10px; background:#fff; cursor:pointer; transition:background .15s ease;}
+.tk-f:hover{background:#fcfaf5;}
+.tk-f:focus-within{background:#fbf6e8; box-shadow:inset 0 -2px 0 var(--gold);}
+.tk-l{font-size:.74rem; font-weight:600; color:#8a6a1f;}
+.tk-f select,.tk-f input{appearance:none; -webkit-appearance:none; width:100%; min-width:0; margin:0; padding:2px 0 0; border:0; border-radius:0; background:transparent;
+  font:600 1rem/1.3 'Inter',system-ui,sans-serif; color:var(--ink); outline:none; cursor:pointer; min-height:26px;}
+.tk-f select{padding-right:20px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2307152A' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") right 2px center/12px 8px no-repeat;}
+.tk-f input::-webkit-calendar-picker-indicator{opacity:.55; cursor:pointer;}
+.tk-go{appearance:none; border:0; margin:0; padding:0 30px; min-height:64px; cursor:pointer; white-space:nowrap;
+  font:700 .98rem/1 'Inter',system-ui,sans-serif; color:var(--ink); background:linear-gradient(135deg,var(--gold),var(--gold-l)); transition:filter .15s ease;}
+.tk-go:hover{filter:brightness(1.06);}
+.tk-go:focus-visible{outline:3px solid #0a64c8; outline-offset:-3px;}
+.tk-by{margin:10px 2px 0; font-size:.78rem; line-height:1.45; color:var(--mute);}
+.tk-note{margin:18px 0 0; max-width:600px; font-size:.8rem; line-height:1.5; color:rgba(255,255,255,.66);}
+.tk-cr{position:absolute; right:16px; bottom:10px; margin:0; font-size:9px; color:rgba(255,255,255,.42);}
+.tk-err{margin:8px 2px 0; font-size:.8rem; font-weight:600; color:#a8331f;}
+
+/* Cartao largo 'Planear viagem' sem foto: bilhete escuro com a acao a direita */
+.hv-tile--wide{background:radial-gradient(120% 160% at 100% 0%,rgba(201,168,76,.22) 0%,rgba(201,168,76,0) 46%),linear-gradient(115deg,#0b2340 0%,#07152A 70%);
+  border:1px solid rgba(232,201,122,.26); align-items:center; padding:22px 92px 22px 28px; min-height:120px;}
+.hv-tile--wide::after{display:none;}
+.hv-ex__grid{grid-template-rows:240px 240px auto;}
+.hv-tile--wide .hv-tile__d{margin:0; max-width:none; color:rgba(255,255,255,.72);}
+.hv-tile--wide .hv-tile__go{top:50%; right:24px; width:48px; height:48px; transform:translateY(-50%); background:linear-gradient(135deg,var(--gold),var(--gold-l)); color:var(--ink);}
+.hv-tile--wide:hover .hv-tile__go{filter:brightness(1.06);}
+.hv-tile--wide:hover{border-color:rgba(232,201,122,.5);}
+
+/* 'Mar calmo agora' nos cartoes em destaque (dado ao vivo, nao editorial) */
+.hv-bc__q--calm{color:#073b5c;}
+.hv-bc__q--calm::before{background:#1c8fd6; box-shadow:0 0 0 3px rgba(28,143,214,.18);}
+
+@media (max-width:1080px){
+  .tk-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .tk-row .tk-f--where{grid-column:1 / -1;}
+  .tk-row--exp .tk-f:not(.tk-f--where){grid-column:auto;}
+  .tk-row--car{grid-template-columns:minmax(0,1fr) auto;}
+  .tk-row--car .tk-f--where{grid-column:auto;}
+  .tk-row:not(.tk-row--car) .tk-go{grid-column:1 / -1; min-height:54px;}
+  .tk-row:not(.tk-row--car):not(.tk-row--exp) .tk-f--n{grid-column:1 / -1;}
+}
+@media (max-width:760px){
+  .tk-stage{padding:64px 0 32px; min-height:0;}
+  .tk-stage::before{background:linear-gradient(180deg,rgba(6,18,36,.55) 0%,rgba(6,18,36,.7) 40%,rgba(6,18,36,.95) 100%);}
+  .tk-h{font-size:2.35rem;}
+  .tk-lead{font-size:.95rem;}
+  .tk-desk{margin:26px -6px 0; border-radius:18px;}
+  .tk-tabs{padding:4px 6px 0;}
+  .tk-tab{flex:1 1 auto; padding:13px 8px 14px; font-size:.86rem;}
+  .tk-tab[aria-selected="true"]::after{left:10px; right:10px;}
+  .tk-p{padding:12px 12px 10px;}
+  .tk-row--car{grid-template-columns:minmax(0,1fr);}
+  .tk-row--car .tk-go,.tk-row--exp .tk-go{min-height:54px;}
+  .tk-row--exp{grid-template-columns:minmax(0,1fr);}
+  .tk-f{padding:10px 14px 9px;}
+  .tk-f select,.tk-f input{font-size:16px;}
+  .tk-cr{bottom:6px; right:12px;}
+  .hv-ex__grid{grid-template-rows:repeat(3,180px) auto;}
+  .hv-tile--wide{padding:16px 64px 16px 16px; min-height:0; grid-row:auto;}
+  .hv-tile--wide .hv-tile__go{right:14px; width:40px; height:40px;}
+  .hv-tile--wide .hv-tile__d{display:block; font-size:.8rem;}
+}

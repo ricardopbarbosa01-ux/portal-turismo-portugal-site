@@ -62,3 +62,10 @@
 /en/manifest-planner.webmanifest
   Content-Type: application/manifest+json
   Cache-Control: public, max-age=3600
+
+/en/manifest.webmanifest
+  Content-Type: application/manifest+json
+  Cache-Control: public, max-age=3600
+
+/sw.js
+  Cache-Control: no-cache

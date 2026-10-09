@@ -1,108 +1,71 @@
-// Portugal Travel Hub — Service Worker
-// Cache strategy: network-first for HTML, cache-first for static assets
-const CACHE_NAME = 'ptb-v11';
+// Portal Turismo Portugal — Service Worker
+// v12 (Lote H2, 09/10/2026): app instalavel em todo o site (js/pwa.js regista este SW em todas as paginas).
+// - HTML: rede primeiro; sem rede -> copia guardada -> /offline.
+// - CSS/JS com ?v= , imagens e fontes: cache primeiro (o ?v= muda a cada alteracao).
+// - JSON e JS/CSS sem ?v= (ex.: /data/*.json, /js/config.js): rede primeiro, cache so como reserva sem rede
+//   (antes era cache primeiro -> dados como marés e celulas Open-Meteo podiam ficar velhos para sempre).
+// - Pre-cache tolerante (um ficheiro em falta ja nao impede a instalacao) e sem URLs .html (fazem 308 no Cloudflare).
+// - Cache de execucao limitada a 180 entradas.
+const SHELL_CACHE = 'ptb-shell-v12';
+const RT_CACHE = 'ptb-rt-v12';
+const RT_MAX = 180;
+const SHELL = ['/', '/en/', '/offline', '/manifest.webmanifest', '/en/manifest.webmanifest', '/favicon.svg', '/icon-192.png', '/icon-512.png'];
 
-// Assets to pre-cache on install (the app shell)
-const SHELL = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/manifest.webmanifest',
-  '/favicon.svg',
-  '/icons/icon-192.svg',
-  '/icons/icon-512.svg',
-  '/beaches.html',
-  '/beach.html',
-  '/surf.html',
-  '/pesca.html',
-  '/webcams.html',
-  '/planear.html',
-  '/precos.html',
-  '/parceiros.html',
-  '/about.html',
-  '/contact.html',
-  '/privacy.html',
-  '/terms.html',
-  '/media-kit.html',
-  '/css/style.css?v=20260418',
-  '/js/config.js',
-  '/js/lang-switcher.js',
-  '/js/nav.js',
-  '/js/cookie-consent.js',
-  '/conta.html',
-  '/guias.html',
-  '/parceiro.html',
-  '/en/',
-  '/en/index.html',
-];
-
-// ── Install: cache the shell ──────────────────────────────────
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(SHELL))
+    caches.open(SHELL_CACHE).then((cache) =>
+      Promise.all(SHELL.map((u) => cache.add(new Request(u, { cache: 'reload' })).catch(() => null)))
+    )
   );
   self.skipWaiting();
 });
 
-// ── Activate: remove old caches ──────────────────────────────
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(
-        keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))
-      )
-    )
+      Promise.all(keys.filter((k) => k !== SHELL_CACHE && k !== RT_CACHE).map((k) => caches.delete(k)))
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-// ── Fetch: routing logic ──────────────────────────────────────
+function trim() {
+  return caches.open(RT_CACHE).then((cache) =>
+    cache.keys().then((keys) => {
+      if (keys.length <= RT_MAX) return null;
+      return Promise.all(keys.slice(0, keys.length - RT_MAX).map((k) => cache.delete(k)));
+    })
+  ).catch(() => null);
+}
+function save(request, response) {
+  if (!response || response.status !== 200 || response.type !== 'basic' || response.redirected) return;
+  const copy = response.clone();
+  caches.open(RT_CACHE).then((cache) => cache.put(request, copy)).then(trim).catch(() => null);
+}
+function networkFirst(request, fallbackUrl) {
+  return fetch(request).then((response) => { save(request, response); return response; }).catch(() =>
+    caches.match(request).then((hit) => hit || (fallbackUrl ? caches.match(fallbackUrl) : undefined)).then((hit) => hit || Response.error())
+  );
+}
+function cacheFirst(request) {
+  return caches.match(request).then((hit) => hit || fetch(request).then((response) => { save(request, response); return response; }));
+}
+
 self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-
-  // Only handle same-origin requests
-  if (url.origin !== location.origin) return;
-
-  // Skip non-GET requests (POST forms, Supabase writes, etc.)
+  const request = event.request;
   if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  if (url.pathname === '/sw.js') return;
 
-  const isHTML = request.headers.get('accept')?.includes('text/html');
-
-  if (isHTML) {
-    // Network-first for HTML pages: always try to get fresh content.
-    // On failure (offline), serve the offline page.
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Cache a fresh copy on success
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          return response;
-        })
-        .catch(() =>
-          caches.match(request).then(
-            (cached) => cached || caches.match('/offline.html')
-          )
-        )
-    );
-  } else {
-    // Cache-first for CSS, JS, fonts, images.
-    // Falls back to network, then to nothing (let it fail naturally).
-    event.respondWith(
-      caches.match(request).then(
-        (cached) =>
-          cached ||
-          fetch(request).then((response) => {
-            // Only cache successful, opaque-safe responses
-            if (response && response.status === 200 && response.type === 'basic') {
-              caches.open(CACHE_NAME).then((cache) =>
-                cache.put(request, response.clone())
-              );
-            }
-            return response;
-          })
-      )
-    );
+  const accept = request.headers.get('accept') || '';
+  if (request.mode === 'navigate' || accept.includes('text/html')) {
+    event.respondWith(networkFirst(request, '/offline'));
+    return;
   }
+  const p = url.pathname;
+  const versioned = url.searchParams.has('v');
+  const isAsset = /\.(?:png|jpe?g|webp|avif|gif|svg|ico|woff2?|ttf|otf)$/i.test(p);
+  if (versioned || isAsset) { event.respondWith(cacheFirst(request)); return; }
+  if (/\.(?:js|css|json|webmanifest)$/i.test(p)) { event.respondWith(networkFirst(request)); return; }
+  // Resto (ex.: endpoints, ficheiros sem extensao conhecida): deixa o browser tratar.
 });

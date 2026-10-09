@@ -25,6 +25,15 @@
     dcAid: 'portalturismoportugal'
   };
 
+  // Vila-base -> localizacao DiscoverCars mais perto (slug, nome). Acores: a DiscoverCars nao tem pagina -> fica a de Portugal.
+  var DC_TOWN = {
+    'Albufeira': ['albufeira', 'Albufeira'], 'Lagos': ['lagos', 'Lagos'], 'Portimão': ['portimao', 'Portimão'], 'Vilamoura': ['vilamoura', 'Vilamoura'],
+    'Vila Nova de Milfontes': ['vila-nova-de-milfontes', 'Vila Nova de Milfontes'], 'Zambujeira do Mar': ['vila-nova-de-milfontes', 'Vila Nova de Milfontes'],
+    'Comporta': ['setubal', 'Setúbal'], 'Setúbal': ['setubal', 'Setúbal'], 'Sesimbra': ['setubal', 'Setúbal'], 'Costa da Caparica': ['almada', 'Almada'],
+    'Cascais': ['cascais', 'Cascais'], 'Ericeira': ['sintra', 'Sintra'], 'Peniche': ['caldas-da-rainha', 'Caldas da Rainha'], 'Nazaré': ['caldas-da-rainha', 'Caldas da Rainha'],
+    'Viana do Castelo': ['viana-do-castelo', 'Viana do Castelo'], 'Funchal': ['funchal', 'Funchal'], 'Lisboa': ['lisbon', 'Lisboa']
+  };
+
   // ── Zonas por regiao. town = base de alojamento por perfil ─────────────
   // car = slug DiscoverCars validado 06/10 (null = pagina Portugal generica)
   // bsc = slug BookSurfCamps validado 06/10 (PT e EN usam o mesmo slug)
@@ -131,6 +140,7 @@
       actTitle: function (z) { return 'Experiências — ' + z; },
       carTitle: function (c) { return 'Carro de aluguer em ' + c; },
       carMeta: 'Compare preços de várias rent-a-car · DiscoverCars',
+      carDates: function (d) { return d + ' · escolha estas datas na DiscoverCars (o link não leva datas)'; },
       siteSurf: 'Condições de surf em direto', siteFish: 'Zonas e marés de pesca', siteBeach: 'Praias e condições do mar', siteCams: 'Webcams ao vivo',
       siteMeta: 'Grátis no Portal Turismo Portugal',
       listTitle: 'O seu plano, pronto a reservar',
@@ -164,6 +174,7 @@
       actTitle: function (z) { return 'Experiences — ' + z; },
       carTitle: function (c) { return 'Car hire in ' + c; },
       carMeta: 'Compare prices from many rental companies · DiscoverCars',
+      carDates: function (d) { return d + ' · pick these dates on DiscoverCars (the link cannot carry dates)'; },
       siteSurf: 'Live surf conditions', siteFish: 'Fishing spots and tides', siteBeach: 'Beaches and sea conditions', siteCams: 'Live webcams',
       siteMeta: 'Free on Portal Turismo Portugal',
       listTitle: 'Your plan, ready to book',
@@ -287,9 +298,13 @@
     // 5. Carro — DiscoverCars
     var carSlug = regiao ? R.car : (any.car || 'lisbon');
     var carCity = regiao ? R.carCity : (any.carCity || 'Lisboa');
+    // Lote H2 09/10: levantar o carro na localizacao DiscoverCars mais perto da vila-base (paginas validadas com HTTP 200 a 09/10)
+    if (DC_TOWN[town]) { carSlug = DC_TOWN[town][0]; carCity = DC_TOWN[town][1]; }
     if (lang === 'en' && carCity === 'Lisboa') carCity = 'Lisbon';
+    // A DiscoverCars NAO aceita datas no link (a pesquisa e criada na pagina deles): mostrar as datas para escolher la
+    var carMeta = dt ? t.carDates(fmtRange(dt, t)) : t.carMeta;
     links.push({ kind: 'car', section: 'move', partner: 'discovercars', icon: 'car',
-      title: t.carTitle(carCity), meta: t.carMeta,
+      title: t.carTitle(carCity), meta: carMeta,
       href: t.dcBase + (carSlug ? '/' + carSlug : '') + '?a_aid=' + IDS.dcAid });
     // 6. Do site (confianca; nao fatura)
     var siteKey = has('surf') ? 'surf' : has('pesca') ? 'pesca' : has('webcams') ? 'webcams' : 'praia';
