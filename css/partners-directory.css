@@ -502,3 +502,14 @@
     overflow: visible;
   }
 }
+
+/* Lote B 09/10/2026 (SP-05): no telemovel o cartao aberto ficava mais largo que o ecra (~388 px) e cortava o texto.
+   As colunas 1fr/grid tinham minimo = largura do conteudo -> minmax(0,1fr) e min-width:0 em toda a cadeia. */
+@media (max-width: 760px) {
+  .pd-row { grid-template-columns: 60px minmax(0, 1fr); }
+  .pd-expand, .pd-expand__inner { min-width: 0; max-width: 100%; }
+  .pd-expand .partner-card--large { grid-template-columns: minmax(0, 1fr); min-width: 0; max-width: 100%; }
+  .pd-expand .partner-card__media, .pd-expand .partner-card__body { min-width: 0; max-width: 100%; }
+  .pd-expand .partner-card__body { overflow-wrap: anywhere; }
+  .pd-expand .partner-card__badge { white-space: normal; max-width: 100%; height: auto; line-height: 1.35; }
+}

@@ -140,8 +140,7 @@ ALT_LABEL = {'pt': 'Ângulo fixo', 'en': 'Fixed angle'}
 
 # Diretos YouTube (07/10/2026: oEmbed 200 + isLive + playableInEmbed). attach = camara MEO a que se junta; senao cartao novo.
 YT = [
-    dict(id='yt-porto-ribeira', yt='lfrjNVD10RU', by='Webcamtaxi', t='Ribeira · Douro', p='Porto', r='norte', pr='minho', k='rio', lat=41.1405, lng=-8.6131, pop=1900,
-         al='porto oporto ribeira douro ponte luis i gaia porto webcam porto live cam'),
+    # Lote B 09/10/2026 (W02): 'Ribeira · Douro' (lfrjNVD10RU, Webcamtaxi) retirado — o 'direto' mostra um fotograma de 28/05/2024 (verificado 09/10 11:40).
     dict(attach='praia-do-norte-canhao-nazare', yt='_Gi8UC_HPKM', by='Explore.org'),
     dict(attach='praia-da-rocha-marina', yt='w7rzgn6WXs8', by='Playocean'),
     dict(attach='praia-do-meco', yt='EqnyST2s53I', by='Playocean'),

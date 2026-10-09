@@ -58,6 +58,8 @@
 
   /* ── Hero ────────────────────────────────────────────────────────────── */
   var root = document.querySelector('.sh');
+  // Lote B 09/10: contagem real de spots no hero (o HTML dizia 38 com 126 cartoes, SP-01)
+  [].forEach.call(document.querySelectorAll('[data-sh-n]'), function (e) { e.textContent = String(SPOTS.length); });
   var NS = 'http://www.w3.org/2000/svg', pts = [], cur = null;
   function mk(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
   function $(k) { return root.querySelector('[data-sh="' + k + '"]'); }

@@ -256,3 +256,17 @@ Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-h2.txt)` �
 8. App em todo o site: js/pwa.js + manifests PT/EN + sw.js v12 (ver watchlist). Botão no rodapé, barra discreta, instruções no iPhone.
 Testado: Playwright, CSP real, PT/EN, 1280/375, Open-Meteo simulado; 0 erros de JS; links dos 4 separadores verificados; prompt de instalação simulado (Chrome) e folha iOS; sem scroll horizontal.
 Medir: GA4 `home_desk_search` (partner), `affiliate_click` page_path "/", `pwa_install_click`/`pwa_installed`; Stay22 `-home-reservar`; PAP por canal.
+
+## >>> LOTE B — EN + telemóvel (09/10, manhã), POR PUBLICAR. PRÓXIMA SESSÃO: LOTE C
+H2 publicado (2fc37c1). Lista: `docs/commit-files-2026-10-09-lote-b.txt` (265 ficheiros — a maioria são páginas com `?v=` novo do style.css/cookie-consent.js e o botão do menu EN). Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-b.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`.
+1. Cookies: banner PT/EN, link certo, estilos próprios no /planear (css/cookie-consent.css), banner nas 5 páginas sem ele; /guias/praias-perto-lisboa tinha GA4 sem consentimento por omissão → corrigido.
+2. Menu: hambúrguer EN visível (43 páginas), cabe a 320 px.
+3. CSP: `www.google.com` no connect-src (hits GA4 /g/collect deixam de ser bloqueados).
+4. Números: /surf 126 (automático), /precos /parceiros /planear 500+, /en/guides 7.
+5. /beaches: pesquisa sem acentos, por vila (≤12 km), EN (Azores, Lisbon); filtros no URL e repostos no Voltar; "1 praia"; modal Pro em EN.
+6. Planeador: região nova "Praias fluviais" (15 vilas do interior), Porto/Aveiro/Figueira/Tavira/ilhas como bases, carro e passeios pela vila, Açores com página DiscoverCars de Ponta Delgada, máximo 30 noites com aviso, folha iOS acima da barra.
+7. EN: espécies em inglês nos cartões de pesca, garoupa = comber, chips de guias da home EN → páginas EN.
+8. Telemóvel: Samoqueira (/escondidas), escolas de surf (cartão aberto), webcams (Voltar fecha o painel, X sempre visível).
+9. Webcams: direto "Ribeira · Douro" retirado (fotograma de 2024) — 171 cartões.
+Testado: Playwright, CSP real, PT/EN, 1280/375/320, Open-Meteo simulado, capturas antes/depois (`b_before_*` / `b_after_*`); 0 erros de JS; sem scroll horizontal.
+Fica para depois: "Ver mais" do /beaches não é reposto no Voltar; páginas antigas planear-v3/planear-legacy ainda públicas (Lote D); marca "Portugal Travel Hub" no cabeçalho (decisão do Ricardo).

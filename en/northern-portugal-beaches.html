@@ -76,7 +76,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=20261007cr">
+  <link rel="stylesheet" href="/css/style.css?v=20261009b">
   <link rel="stylesheet" href="/css/gyg-block.css?v=20260513-gyg2">
   <style>
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
@@ -202,8 +202,10 @@
   <div class="nav-actions">
     <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Sign In</a>
     <a href="login.html#register" class="btn btn-primary" id="nav-register-btn">Register</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </nav>
@@ -490,7 +492,7 @@ const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isInt
 reveals.forEach(el => io.observe(el));
 </script>
   <script src="/js/nav.js?v=20260422c" defer></script>
-  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/cookie-consent.js?v=20261009b" defer></script>
     <script src="/js/nav-dropdown.js" defer></script>
 </body>
 </html>

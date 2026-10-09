@@ -68,7 +68,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20261007cr">
+  <link rel="stylesheet" href="/css/style.css?v=20261009b">
 
   <style>
 /* ── Focus ── */
@@ -758,8 +758,10 @@
     </div>
     <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
     <a href="/en/login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </nav>
@@ -821,7 +823,7 @@
       <ul class="plan-features" aria-label="Included features">
         <li>
           <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          300+ beaches with real-time conditions
+          500+ beaches with real-time conditions
         </li>
         <li>
           <svg class="feat-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1041,7 +1043,7 @@
         <tbody>
           <tr class="category-row"><td colspan="4">Beaches &amp; Conditions</td></tr>
           <tr>
-            <td>Beach listing (200+)</td>
+            <td>Beach listing (500+)</td>
             <td><span class="check-icon" aria-label="Included">✓</span></td>
             <td class="featured-col-cell"><span class="check-icon" aria-label="Included">✓</span></td>
             <td><span class="check-icon" aria-label="Included">✓</span></td>
@@ -1416,7 +1418,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   <script src="/js/lang-switcher.js" defer></script>
   <script src="/js/nav.js?v=20260512-lhq" defer></script>
-  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/cookie-consent.js?v=20261009b" defer></script>
     <script src="/js/nav-dropdown.js" defer></script>
 </body>
 </html>

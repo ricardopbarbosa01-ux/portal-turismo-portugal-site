@@ -778,7 +778,7 @@
         pt: "Beach break exposto à ondulação de oeste, sob as falésias junto à Fortaleza de Sagres, com esquerdas e direitas que ficam pesadas e cavadas acima de 1,2 m. Pede nível intermédio a avançado; atenção às correntes fortes e às rochas submersas, visíveis na baixa-mar.",
         en: "Beach break exposed to westerly swell beneath the cliffs by Sagres Fortress, with lefts and rights that turn heavy and hollow above about 4 ft. Suits intermediate to advanced surfers; watch for strong rips and submerged rocks, visible at low tide.",
       },
-      tags: { pt: ["Falésias", "Ondas cavadas", "Junto à fortaleza", "Correntes"], en: ["Cliffs", "Hollow waves", "By the fortress", "Rips"] },
+      tags: { pt: ["Falésias", "Ondas cavadas", "Junto à fortaleza", "Correntes"], en: [] },
       quality: 3,
     },
     {
@@ -799,7 +799,7 @@
         pt: "Baía abrigada entre Sagres e o Cabo de São Vicente, com picos em cunha rápidos e cavados que podem tubar logo na partida. Para intermédios e avançados: fundo baixo de rocha e areia, correntes fortes e alguns locais pouco tolerantes.",
         en: "Sheltered bay between Sagres and Cape St Vincent, with fast, hollow wedging peaks that can barrel right from take-off. For intermediate and advanced surfers: shallow rock-and-sand bottom, strong rips and a few unwelcoming locals.",
       },
-      tags: { pt: ["Tubos", "Ondas em cunha", "Abrigada do norte", "Escadaria"], en: ["Barrels", "Wedges", "Sheltered from north", "Cliff stairs"] },
+      tags: { pt: ["Tubos", "Ondas em cunha", "Abrigada do norte", "Escadaria"], en: [] },
       quality: 4,
     },
     {
@@ -820,7 +820,7 @@
         pt: "Praia virada a sul, na vila de Sagres, abrigada dos ventos de oeste e noroeste, que só tem ondas com grandes ondulações de noroeste a contornar a ponta ou com ondulação de sul. Ondas suaves, boas para iniciantes; quando funciona fica concorrida.",
         en: "South-facing beach in Sagres town, sheltered from westerly and north-westerly winds, that only gets waves when a big north-westerly swell wraps round the point or a southerly swell arrives. Soft waves, good for beginners; crowded when it works.",
       },
-      tags: { pt: ["Iniciantes", "Abrigada", "Na vila", "Plano B do inverno"], en: ["Beginners", "Sheltered", "In town", "Winter back-up"] },
+      tags: { pt: ["Iniciantes", "Abrigada", "Na vila", "Plano B do inverno"], en: [] },
       quality: 2,
     },
     {
@@ -841,7 +841,7 @@
         pt: "A mais abrigada das praias de Sagres, a leste da vila, só trabalha no inverno, com ondulação de sudoeste forte e vento de norte ou noroeste. Ondas curtas de esquerda e direita sobre areia, muito usadas pelas escolas de surf para iniciantes.",
         en: "The most sheltered of the Sagres beaches, east of town, it only works in winter with a strong south-westerly swell and a northerly or north-westerly wind. Short lefts and rights over sand, widely used by surf schools for beginners.",
       },
-      tags: { pt: ["Iniciantes", "Escolas de surf", "Muito abrigada", "Inconsistente"], en: ["Beginners", "Surf schools", "Very sheltered", "Inconsistent"] },
+      tags: { pt: ["Iniciantes", "Escolas de surf", "Muito abrigada", "Inconsistente"], en: [] },
       quality: 2,
     },
     {
@@ -862,7 +862,7 @@
         pt: "Praia extensa e muito exposta a norte do promontório da Carrapateira, com vários picos de beach break e uma esquerda sobre rocha no canto sul, só para surfistas experientes. No verão serve intermédios; no inverno fica pesada, com correntes fortes e rochas.",
         en: "Long, very exposed beach north of the Carrapateira headland, with several beach-break peaks and a left over rock at the southern corner, for experienced surfers only. Suits intermediates in summer; in winter it gets heavy, with strong rips and rocks.",
       },
-      tags: { pt: ["Praia extensa", "Muito exposta", "Pouca gente", "Esquerda sobre rocha"], en: ["Long beach", "Very exposed", "Uncrowded", "Left over rock"] },
+      tags: { pt: ["Praia extensa", "Muito exposta", "Pouca gente", "Esquerda sobre rocha"], en: [] },
       quality: 3,
     },
     {
@@ -883,7 +883,7 @@
         pt: "Beach break consistente e potente, com esquerdas e direitas, mais exposto à ondulação de noroeste do que a Arrifana e normalmente pouco concorrido. Indicado para intermédios e avançados; atenção às rochas, às correntes que puxam para as pedras e aos ouriços.",
         en: "Consistent, powerful beach break with lefts and rights, more exposed to north-westerly swell than Arrifana and usually uncrowded. Suited to intermediate and advanced surfers; watch for rocks, rips that pull towards the rocks, and sea urchins.",
       },
-      tags: { pt: ["Consistente", "Pouca gente", "Ondas potentes", "Aldeia de praia"], en: ["Consistent", "Uncrowded", "Powerful waves", "Beach village"] },
+      tags: { pt: ["Consistente", "Pouca gente", "Ondas potentes", "Aldeia de praia"], en: [] },
       quality: 3,
     },
     {
@@ -904,7 +904,7 @@
         pt: "Beach break na foz da ribeira, a norte de Aljezur, com esquerdas e direitas em bancos de areia que mudam com frequência e com a maré. Para intermédios e avançados; correntes fortes junto à foz, algumas rochas e fecha quando passa da cabeça.",
         en: "River-mouth beach break north of Aljezur, with lefts and rights over sandbanks that shift often and with the tide. For intermediate and advanced surfers; strong rips near the river mouth, some rocks, and it closes out when overhead.",
       },
-      tags: { pt: ["Foz de ribeira", "Pouca gente", "Bancos de areia", "Correntes"], en: ["River mouth", "Uncrowded", "Sandbanks", "Rips"] },
+      tags: { pt: ["Foz de ribeira", "Pouca gente", "Bancos de areia", "Correntes"], en: [] },
       quality: 3,
     },
     {
@@ -925,7 +925,7 @@
         pt: "Beach break urbano virado a sul, com picos junto ao molhe e no meio da praia, que funciona com ondulação de sudoeste ou quando a costa oeste está demasiado grande. Ondas fáceis, boas para iniciantes e intermédios; atenção aos molhes e boias.",
         en: "South-facing urban beach break with peaks by the jetty and mid-beach, working on a south-westerly swell or when the west coast is too big. Easy waves, good for beginners and intermediates; watch out for the jetties and buoys.",
       },
-      tags: { pt: ["Urbana", "Iniciantes", "Junto ao molhe", "Plano B"], en: ["Urban", "Beginners", "By the jetty", "Back-up spot"] },
+      tags: { pt: ["Urbana", "Iniciantes", "Junto ao molhe", "Plano B"], en: [] },
       quality: 2,
     },
     {
@@ -946,7 +946,7 @@
         pt: "Baía isolada na costa oeste a norte de Sagres, com vários picos sobre fundo de rocha e areia, incluindo uma direita junto às rochas que fica pesada com ondulação grande. Para intermédios e avançados; rochas, alguns locais e acesso por estradão de terra.",
         en: "Secluded bay on the west coast north of Sagres, with several peaks over rock and sand, including a right by the rocks that gets heavy in big swell. For intermediate and advanced surfers; rocks, some localism and access via a dirt track.",
       },
-      tags: { pt: ["Isolada", "Fundo de rocha", "Pouca gente", "Acesso de terra"], en: ["Secluded", "Rocky bottom", "Uncrowded", "Dirt-track access"] },
+      tags: { pt: ["Isolada", "Fundo de rocha", "Pouca gente", "Acesso de terra"], en: [] },
       quality: 3,
     },
     {
@@ -967,7 +967,7 @@
         pt: "Beach break exposto com picos de esquerda e direita sobre areia e rocha, fácil em dias pequenos e mais potente com swell. Bom para iniciar; famoso pela água mais quente junto à antiga central termoelétrica (fechada em 2021), mas cuidado com rochas e correntes.",
         en: "Exposed beach break with left and right peaks over sand and rock, easy on small days and more powerful as the swell builds. Good for learning; known for warmer water by the former power station (closed in 2021), but watch for rocks and currents.",
       },
-      tags: { pt: ["Beach break", "Água mais quente", "Iniciantes", "Todo o ano"], en: ["Beach break", "Warmer water", "Beginners", "Year-round"] },
+      tags: { pt: ["Beach break", "Água mais quente", "Iniciantes", "Todo o ano"], en: [] },
       quality: 3,
     },
     {
@@ -988,7 +988,7 @@
         pt: "Enseada abrigada por falésias com picos de esquerda e direita sobre areia, ondas curtas e divertidas que servem de alternativa quando o vento norte estraga as praias expostas. Adequada a iniciantes e intermédios; evite as pontas da baía, com rochas submersas.",
         en: "Cliff-sheltered cove with left and right peaks over sand, short fun waves that make a back-up when north wind spoils the exposed beaches. Suits beginners and intermediates; avoid the ends of the bay, which have submerged rocks.",
       },
-      tags: { pt: ["Enseada", "Abrigo do vento norte", "Iniciantes", "Ondas curtas"], en: ["Cove", "North-wind shelter", "Beginners", "Short rides"] },
+      tags: { pt: ["Enseada", "Abrigo do vento norte", "Iniciantes", "Ondas curtas"], en: [] },
       quality: 2,
     },
     {
@@ -1009,7 +1009,7 @@
         pt: "Praia longa e exposta com picos em A de esquerda e direita, consistente e capaz de aguentar swell razoável; o lado norte é o mais forte. Serve vários níveis em dias pequenos, mas há rochas no line-up e o verão traz vento onshore.",
         en: "Long, exposed beach with left and right A-frame peaks, consistent and able to hold a decent swell; the north end is the punchiest. Suits a range of levels on small days, but there are rocks in the line-up and summer brings onshore wind.",
       },
-      tags: { pt: ["Beach break", "Picos em A", "Escolas de surf", "Melhor no outono"], en: ["Beach break", "A-frames", "Surf schools", "Best in autumn"] },
+      tags: { pt: ["Beach break", "Picos em A", "Escolas de surf", "Melhor no outono"], en: [] },
       quality: 3,
     },
     {
@@ -1030,7 +1030,7 @@
         pt: "Reef de rocha e areia junto à barra do Mira e ao farol, com esquerdas e direitas rápidas e cavadas. Para intermédios e avançados: rochas, ouriços e correntes, sobretudo na baixa-mar; a remada até ao pico é longa.",
         en: "Rock-and-sand reef by the Mira river mouth and lighthouse, with fast, hollow lefts and rights. For intermediate and advanced surfers: rocks, urchins and currents, especially at low tide; the paddle out to the peak is long.",
       },
-      tags: { pt: ["Reef", "Barra do Mira", "Ondas cavadas", "Ouriços"], en: ["Reef", "Mira river mouth", "Hollow waves", "Urchins"] },
+      tags: { pt: ["Reef", "Barra do Mira", "Ondas cavadas", "Ouriços"], en: [] },
       quality: 3,
     },
     {
@@ -1050,7 +1050,7 @@
         pt: "Praia de areia com fundo rochoso irregular e picos de esquerda e direita; a zona norte é a melhor e funciona sobretudo a meia-maré. Indicada sobretudo a intermédios: rochas e correntes exigem atenção, e raramente há crowd fora de julho e agosto.",
         en: "Sandy beach over an uneven rocky bottom with left and right peaks; the northern end is the best and works mainly at mid tide. Best suited to intermediates: rocks and rips demand care, and it is rarely crowded outside July and August.",
       },
-      tags: { pt: ["Fundo rochoso", "Meia-maré", "Pouco crowd", "Intermédios"], en: ["Rocky bottom", "Mid tide", "Uncrowded", "Intermediates"] },
+      tags: { pt: ["Fundo rochoso", "Meia-maré", "Pouco crowd", "Intermédios"], en: [] },
       quality: 3,
     },
     {
@@ -1071,7 +1071,7 @@
         pt: "Esquerda rápida e potente que quebra junto às falésias no extremo sul da praia, sobre areia e rocha, muito consistente com swell de noroeste. Para intermédios e avançados: rochas, correntes de retorno e algum localismo; fecha com ondas grandes.",
         en: "Fast, powerful left breaking by the cliffs at the south end of the beach over sand and rock, very consistent in north-westerly swell. For intermediate and advanced surfers: rocks, rip currents and some localism; it closes out when big.",
       },
-      tags: { pt: ["Esquerda", "Falésias", "Consistente", "Avançados"], en: ["Left-hander", "Cliffs", "Consistent", "Advanced"] },
+      tags: { pt: ["Esquerda", "Falésias", "Consistente", "Avançados"], en: [] },
       quality: 3,
     },
     {
@@ -1092,7 +1092,7 @@
         pt: "Beach break de areia com picos em A de esquerda e direita, quase sempre vazio. Serve vários níveis, mas é inconsistente: precisa de swell de oeste e vento de leste, e funciona melhor da baixa à meia-maré.",
         en: "Sandy beach break with left and right A-frame peaks, almost always empty. Suits a range of levels but is inconsistent: it needs a westerly swell and easterly wind, and works best from low to mid tide.",
       },
-      tags: { pt: ["Beach break", "Vazio", "Inconsistente", "Baixa-mar"], en: ["Beach break", "Empty", "Inconsistent", "Low tide"] },
+      tags: { pt: ["Beach break", "Vazio", "Inconsistente", "Baixa-mar"], en: [] },
       quality: 2,
     },
     {
@@ -1112,7 +1112,7 @@
         pt: "Reef de laje a cerca de 500 m da costa que só acorda com swell gigante de oeste, com ondas longas e pesadas que podem passar os 5 m. Só para profissionais: remada de 20+ minutos ou barco, tow-in nos dias maiores e rochas.",
         en: "Slab reef about 500 m offshore that only wakes up in giant westerly swells, with long, heavy waves that can exceed 5 m. Pros only: a 20+ minute paddle or a boat, tow-in on the biggest days, and rocks.",
       },
-      tags: { pt: ["Ondas grandes", "Reef", "Tow-in", "Só profissionais"], en: ["Big waves", "Reef", "Tow-in", "Pros only"] },
+      tags: { pt: ["Ondas grandes", "Reef", "Tow-in", "Só profissionais"], en: [] },
       quality: 4,
     },
     {
@@ -1133,7 +1133,7 @@
         pt: "Beach break com picos em A que, com mar pequeno, serve vários níveis; com mais ondulação, a direita junto ao molhe do Casino fica rápida, cavada e pesada. Atenção às correntes junto aos molhes, às pedras no inside e às redes de pesca.",
         en: "Beach break with A-frame peaks that suits a range of levels in small surf; with more swell, the right off the Casino jetty turns fast, hollow and heavy. Watch for rips along the jetties, rocks on the inside and fishing nets.",
       },
-      tags: { pt: ["Direita do molhe", "Tubos", "Etapas WSL", "Urbano"], en: ["Jetty right", "Barrels", "WSL events", "Urban"] },
+      tags: { pt: ["Direita do molhe", "Tubos", "Etapas WSL", "Urbano"], en: [] },
       quality: 4,
     },
     {
@@ -1153,7 +1153,7 @@
         pt: "Beach break urbano e consistente a norte do porto de Leixões, com esquerdas e direitas rápidas que, em manhãs de vento leste, podem abrir tubos. A remada pode ser dura; atenção às correntes fortes, ao molhe a sul e à poluição.",
         en: "Consistent urban beach break north of the port of Leixões, with fast lefts and rights that can barrel on mornings with an easterly wind. The paddle-out can be hard; watch for strong currents, the harbour wall to the south and pollution.",
       },
-      tags: { pt: ["Urbano", "Consistente", "Perto do Porto", "Esquerdas e direitas"], en: ["Urban", "Consistent", "Near Porto", "Lefts and rights"] },
+      tags: { pt: ["Urbano", "Consistente", "Perto do Porto", "Esquerdas e direitas"], en: [] },
       quality: 2,
     },
     {
@@ -1174,7 +1174,7 @@
         pt: "Esquerda sobre fundo de rocha, muito procurada pelo bodyboard; com a maré mais cheia serve também surf e longboard. Aguenta ondulações grandes, mas exige experiência: rochas, corrente forte e algum localismo.",
         en: "Left-hander over a rock bottom, very popular with bodyboarders; on a fuller tide it also works for surfing and longboarding. It holds big swells but demands experience: rocks, strong currents and some localism.",
       },
-      tags: { pt: ["Esquerda", "Fundo de rocha", "Bodyboard", "Aguenta mar grande"], en: ["Left", "Rock bottom", "Bodyboard", "Holds big swell"] },
+      tags: { pt: ["Esquerda", "Fundo de rocha", "Bodyboard", "Aguenta mar grande"], en: [] },
       quality: 2,
     },
     {
@@ -1195,7 +1195,7 @@
         pt: "Praia junto à foz do rio Ave com duas ondas: uma esquerda a meio do areal, rápida e cavada nos bons dias, e um pico de direita junto à foz, que depende dos bancos de areia. Atenção às correntes, às pedras e à poluição.",
         en: "Beach by the mouth of the River Ave with two waves: a left in the middle of the beach, fast and hollow on good days, and a right-hand peak by the river mouth that depends on the sandbanks. Watch for rips, rocks and pollution.",
       },
-      tags: { pt: ["Foz do Ave", "Esquerda e direita", "Pouco crowd", "Bancos de areia"], en: ["River Ave mouth", "Left and right", "Uncrowded", "Sandbanks"] },
+      tags: { pt: ["Foz do Ave", "Esquerda e direita", "Pouco crowd", "Bancos de areia"], en: [] },
       quality: 3,
     },
     {
@@ -1216,7 +1216,7 @@
         pt: "Praia extensa protegida a norte pelo molhe da barra de Aveiro, com vários picos de esquerda e direita sobre bancos de areia. Raramente fica sem ondas e serve tanto para aprender como para surfistas experientes; atenção às correntes e à multidão junto ao molhe.",
         en: "Long beach sheltered to the north by the Aveiro harbour jetty, with several left and right peaks over sandbanks. It is rarely flat and suits both learners and experienced surfers; watch for rips and the crowd by the jetty.",
       },
-      tags: { pt: ["Vários picos", "Molhe", "Bom para aprender", "Bancos de areia"], en: ["Multiple peaks", "Jetty", "Good for learning", "Sandbanks"] },
+      tags: { pt: ["Vários picos", "Molhe", "Bom para aprender", "Bancos de areia"], en: [] },
       quality: 3,
     },
     {
@@ -1237,7 +1237,7 @@
         pt: "Direita potente e manobrável que quebra a partir do pontão, sobre areia com alguma rocha e abrigada do vento norte; nos dias maiores dá tubos. Palco histórico do circuito mundial e da Liga MEO; atenção às correntes, às pedras e ao crowd.",
         en: "Powerful, rippable right breaking off the jetty over sand with some rock, sheltered from the north wind; on bigger days it barrels. A historic world-tour and Liga MEO venue; watch for rips, rocks and the crowd.",
       },
-      tags: { pt: ["Direita", "Molhe", "Histórico WCT", "Liga MEO"], en: ["Right-hander", "Jetty", "WCT history", "Liga MEO"] },
+      tags: { pt: ["Direita", "Molhe", "Histórico WCT", "Liga MEO"], en: [] },
       quality: 4,
     },
     {
@@ -1257,7 +1257,7 @@
         pt: "Baía em concha, abrigada do vento norte, com picos em A de esquerda e direita sobre areia e rocha; ondas curtas e potentes, com tubos nos bons dias. Indicado para quem já surfa com à-vontade; atenção às rochas e ao localismo.",
         en: "Shell-shaped bay sheltered from the north wind, with A-frame lefts and rights over sand and rock; short, punchy waves that barrel on good days. Best for confident surfers; watch for rocks and localism.",
       },
-      tags: { pt: ["Baía", "Abrigado do norte", "Tubos", "Pouco crowd"], en: ["Bay", "Sheltered from north wind", "Barrels", "Uncrowded"] },
+      tags: { pt: ["Baía", "Abrigado do norte", "Tubos", "Pouco crowd"], en: [] },
       quality: 3,
     },
     {
@@ -1278,7 +1278,7 @@
         pt: "Beach break muito consistente, com picos em A rápidos e potentes de esquerda e direita sobre fundo de areia. Indicado para surfistas com alguma experiência; ao fim de semana enche e há registos de localismo e de poluição.",
         en: "Very consistent beach break with fast, powerful A-frame lefts and rights over a sand bottom. Suited to surfers with some experience; it gets crowded at weekends and localism and pollution have been reported.",
       },
-      tags: { pt: ["Muito consistente", "Picos em A", "Potente", "Crowd ao fim de semana"], en: ["Very consistent", "A-frame peaks", "Powerful", "Weekend crowds"] },
+      tags: { pt: ["Muito consistente", "Picos em A", "Potente", "Crowd ao fim de semana"], en: [] },
       quality: 2,
     },
     {
@@ -1299,7 +1299,7 @@
         pt: "Beach break de fundo de areia com picos em A de esquerda e direita, ondas curtas e rápidas, que funciona em muitas condições ao longo do ano. Acessível a vários níveis e raramente concorrido; respeite os locais.",
         en: "Sand-bottom beach break with A-frame lefts and rights, short and fast waves, that works in many conditions through the year. Accessible to a range of levels and rarely crowded; respect the locals.",
       },
-      tags: { pt: ["Picos em A", "Fundo de areia", "Pouco crowd", "Vários níveis"], en: ["A-frame peaks", "Sand bottom", "Uncrowded", "All levels"] },
+      tags: { pt: ["Picos em A", "Fundo de areia", "Pouco crowd", "Vários níveis"], en: [] },
       quality: 3,
     },
     {
@@ -1319,7 +1319,7 @@
         pt: "Beach break de areia muito consistente a norte de Buarcos, com esquerdas e direitas curtas que funcionam bem mesmo com pouca ondulação. Costuma ter pouca gente; há registos de localismo e de poluição, e as dunas são área protegida.",
         en: "Very consistent sandy beach break north of Buarcos, with short lefts and rights that work well even in small swell. Usually uncrowded; localism and pollution have been reported, and the dunes are a protected area.",
       },
-      tags: { pt: ["Muito consistente", "Pouco crowd", "Mar pequeno", "Dunas"], en: ["Very consistent", "Uncrowded", "Small swell", "Dunes"] },
+      tags: { pt: ["Muito consistente", "Pouco crowd", "Mar pequeno", "Dunas"], en: [] },
       quality: 3,
     },
     {
@@ -1340,7 +1340,7 @@
         pt: "Beach break exposto e bastante consistente, com picos de esquerda e direita sobre fundo de areia e ondas com força. Serve vários níveis em dias pequenos, mas enche depressa quando funciona e há relatos de localismo.",
         en: "An exposed and fairly consistent beach break with left and right peaks over a sandy bottom and waves with some power. It suits a range of levels on small days, but gets crowded quickly when it works and localism has been reported.",
       },
-      tags: { pt: ["Beach break", "Consistente", "Vários picos", "Concorrido"], en: ["Beach break", "Consistent", "Multiple peaks", "Crowded"] },
+      tags: { pt: ["Beach break", "Consistente", "Vários picos", "Concorrido"], en: [] },
       quality: 3,
     },
     {
@@ -1361,7 +1361,7 @@
         pt: "Beach break junto a uma foz, com esquerdas e direitas divertidas e algum abrigo do vento norte. Adequado a vários níveis, mas há rochas e ouriços em parte do fundo e relatos de localismo nos picos principais.",
         en: "A beach break beside a river mouth, with fun lefts and rights and some shelter from the north wind. It suits a range of levels, but there are rocks and urchins on parts of the bottom and reports of localism on the main peaks.",
       },
-      tags: { pt: ["Beach break", "Foz", "Abrigo do norte", "Escolas de surf"], en: ["Beach break", "River mouth", "North-wind shelter", "Surf schools"] },
+      tags: { pt: ["Beach break", "Foz", "Abrigo do norte", "Escolas de surf"], en: [] },
       quality: 2,
     },
     {
@@ -1382,7 +1382,7 @@
         pt: "Beach break de areia com muitos picos, conhecido como o íman de ondulação da zona da Ericeira quando as outras praias estão sem ondas. Bom para iniciantes em dias pequenos; com mais ondulação fecha com força e há rochas a evitar.",
         en: "A sandy beach break with many peaks, known as the swell magnet of the Ericeira area when other beaches are flat. Good for beginners on small days; with more swell it closes out heavily and there are rocks to avoid.",
       },
-      tags: { pt: ["Beach break", "Íman de ondulação", "Bom no verão", "Iniciantes"], en: ["Beach break", "Swell magnet", "Good in summer", "Beginners"] },
+      tags: { pt: ["Beach break", "Íman de ondulação", "Bom no verão", "Iniciantes"], en: [] },
       quality: 3,
     },
     {
@@ -1402,7 +1402,7 @@
         pt: "Pico em A sobre laje e areia, com uma esquerda mais lenta e uma direita mais cavada, a poucos passos do centro da Ericeira. Muito usado por escolas e surfistas em progressão, costuma estar cheio e há rochas e ouriços à entrada.",
         en: "An A-frame peak over reef and sand, with a slower left and a steeper right, a short walk from the centre of Ericeira. Popular with surf schools and improving surfers, it is usually crowded and there are rocks and urchins at the entry.",
       },
-      tags: { pt: ["Pico em A", "Laje", "Centro da Ericeira", "Escolas de surf"], en: ["A-frame", "Reef", "Ericeira town", "Surf schools"] },
+      tags: { pt: ["Pico em A", "Laje", "Centro da Ericeira", "Escolas de surf"], en: [] },
       quality: 3,
     },
     {
@@ -1423,7 +1423,7 @@
         pt: "Baía aberta a sul da vila, com picos de esquerda e direita sobre areia e laje, mais protegida quando o norte da Ericeira está grande demais. Serve vários níveis em ondulação moderada; atenção às correntes e às rochas.",
         en: "An open bay south of town, with left and right peaks over sand and flat reef, more sheltered when the coast north of Ericeira is too big. It suits a range of levels in moderate swell; watch out for currents and rocks.",
       },
-      tags: { pt: ["Baía", "Areia e laje", "Alternativa abrigada", "Vários níveis"], en: ["Bay", "Sand and reef", "Sheltered option", "Mixed levels"] },
+      tags: { pt: ["Baía", "Areia e laje", "Alternativa abrigada", "Vários níveis"], en: [] },
       quality: 2,
     },
     {
@@ -1443,7 +1443,7 @@
         pt: "Direita rápida, cavada e potente sobre laje muito rasa, que tuba logo após o take-off; uma das sete ondas da Reserva Mundial de Surf da Ericeira. Só para surfistas e bodyboarders experientes: fundo raso, ouriços, crowd e localismo.",
         en: "A fast, hollow and powerful right over very shallow reef that barrels almost straight after the take-off; one of the seven waves of the Ericeira World Surfing Reserve. Experienced surfers and bodyboarders only: shallow bottom, urchins, crowds and localism.",
       },
-      tags: { pt: ["Direita", "Tubos", "Laje rasa", "Reserva Mundial"], en: ["Right-hander", "Barrels", "Shallow reef", "World Surfing Reserve"] },
+      tags: { pt: ["Direita", "Tubos", "Laje rasa", "Reserva Mundial"], en: [] },
       quality: 4,
     },
     {
@@ -1463,7 +1463,7 @@
         pt: "Laje de direita muito rasa, oca e pesada, uma das ondas mais violentas da Ericeira e uma das sete da Reserva Mundial de Surf. Só funciona com ondulação grande de inverno e é para profissionais, sobretudo bodyboarders; rochas, correntes e ouriços.",
         en: "A very shallow, hollow and heavy right-hand slab, one of the most powerful waves in Ericeira and one of the seven in the World Surfing Reserve. It only works on big winter swells and is for experts, mostly bodyboarders; rocks, currents and urchins.",
       },
-      tags: { pt: ["Laje", "Direita", "Bodyboard", "Reserva Mundial"], en: ["Slab", "Right-hander", "Bodyboard", "World Surfing Reserve"] },
+      tags: { pt: ["Laje", "Direita", "Bodyboard", "Reserva Mundial"], en: [] },
       quality: 4,
     },
     {
@@ -1483,7 +1483,7 @@
         pt: "Direita lendária de ondas grandes sobre calhau, palco de competições com ondas grandes entre 1997 e 2001. Desde o paredão construído por volta de 2003 só funciona perto da baixa-mar e as ondas rebentam contra os blocos: só para surfistas muito experientes.",
         en: "Legendary big-wave right over boulders that hosted big-surf contests between 1997 and 2001. Since the seawall built around 2003 it only works near low tide and waves crash against the blocks: for very experienced surfers only.",
       },
-      tags: { pt: ["Ondas grandes", "Direita", "Só experientes", "Paredão"], en: ["Big waves", "Right-hander", "Experts only", "Seawall"] },
+      tags: { pt: ["Ondas grandes", "Direita", "Só experientes", "Paredão"], en: [] },
       quality: 4,
     },
     {
@@ -1503,7 +1503,7 @@
         pt: "Direita rápida e cavada sobre calhau, entre Jardim do Mar e Paul do Mar, onde hoje surfa grande parte dos locais. O acesso faz-se por um caminho rochoso ou de barco, e há pedras submersas no pico: para surfistas experientes.",
         en: "Fast, hollow right over boulders between Jardim do Mar and Paul do Mar, now where many locals surf. Access is via a rocky path or by boat, and there are submerged rocks at the peak: for experienced surfers.",
       },
-      tags: { pt: ["Direita", "Acesso difícil", "Pouco crowd", "Experientes"], en: ["Right-hander", "Tricky access", "Uncrowded", "Experienced"] },
+      tags: { pt: ["Direita", "Acesso difícil", "Pouco crowd", "Experientes"], en: [] },
       quality: 3,
     },
     {
@@ -1523,7 +1523,7 @@
         pt: "Direita potente e por vezes tubular sobre laje de rocha junto à estrada marginal, recomendada pelo turismo oficial a surfistas avançados. O reforço costeiro da estrada criou backwash na preia-mar; atenção às rochas e às correntes.",
         en: "Powerful, sometimes tubing right over rock shelf next to the coast road, recommended by the official tourist board for advanced surfers. Coastal armouring of the road has created backwash at high tide; watch out for rocks and currents.",
       },
-      tags: { pt: ["Direita", "Tubos", "Avançados", "Rochas"], en: ["Right-hander", "Barrels", "Advanced", "Rocks"] },
+      tags: { pt: ["Direita", "Tubos", "Avançados", "Rochas"], en: [] },
       quality: 3,
     },
     {
@@ -1543,7 +1543,7 @@
         pt: "Direita rápida e potente sobre recife, que pode tubar perto da preia-mar, e o spot mais próximo do Funchal, por isso enche quando funciona. Só arranca com ondulação grande; rochas, correntes e backwash do paredão costeiro.",
         en: "Fast, powerful right over reef that can barrel around high tide, and the closest spot to Funchal, so it gets crowded when it works. It only starts with a big swell; rocks, currents and backwash from the coastal seawall.",
       },
-      tags: { pt: ["Direita", "Tubos", "Crowd", "Perto do Funchal"], en: ["Right-hander", "Barrels", "Crowded", "Near Funchal"] },
+      tags: { pt: ["Direita", "Tubos", "Crowd", "Perto do Funchal"], en: [] },
       quality: 4,
     },
     {
@@ -1564,7 +1564,7 @@
         pt: "Polo de surf da costa norte, com escolas e praias de areia escura (Alagoa e Maiata) indicadas pelo turismo oficial para iniciantes e intermédios. A onda principal rebenta sobre recife junto ao passeio; com ondulação forte fica rápida e há rochas.",
         en: "North-coast surf hub, with schools and dark-sand beaches (Alagoa and Maiata) recommended by the official tourist board for beginners and intermediates. The main wave breaks over reef by the promenade; in a strong swell it gets fast, and there are rocks.",
       },
-      tags: { pt: ["Escolas de surf", "Iniciantes", "Costa norte", "Areia escura"], en: ["Surf schools", "Beginners", "North coast", "Dark sand"] },
+      tags: { pt: ["Escolas de surf", "Iniciantes", "Costa norte", "Areia escura"], en: [] },
       quality: 2,
     },
     {
@@ -1585,7 +1585,7 @@
         pt: "Pico de esquerdas e direitas sobre calhau e rocha em frente à estrada da costa norte, considerado uma das melhores ondas da ilha para intermédios. Com ondulação grande ganha força; há rochas submersas.",
         en: "A-frame of lefts and rights over cobble and rock in front of the north-coast road, considered one of the island's best waves for intermediates. It gains power in a big swell; there are submerged rocks.",
       },
-      tags: { pt: ["Pico", "Intermédios", "Costa norte", "Calhau"], en: ["A-frame", "Intermediates", "North coast", "Cobblestones"] },
+      tags: { pt: ["Pico", "Intermédios", "Costa norte", "Calhau"], en: [] },
       quality: 3,
     },
     {
@@ -1606,7 +1606,7 @@
         pt: "Esquerda cavada e rápida sobre rocha junto ao porto de pesca, onde a construção do molhe destruiu a antiga direita. As séries podem fechar a baía e empurrar contra as rochas; há ouriços e algum localismo.",
         en: "Hollow, fast left over rock next to the fishing harbour, where building the breakwater destroyed the old right. Sets can close out the bay and push you onto the rocks; there are sea urchins and some localism.",
       },
-      tags: { pt: ["Esquerda", "Tubos", "Porto de pesca", "Localismo"], en: ["Left-hander", "Barrels", "Fishing harbour", "Localism"] },
+      tags: { pt: ["Esquerda", "Tubos", "Porto de pesca", "Localismo"], en: [] },
       quality: 3,
     },
     {
@@ -1627,7 +1627,7 @@
         pt: "Areal com vários picos de esquerdas e direitas sobre bancos de areia, muito consistente e mais exposto à ondulação de noroeste do que Santa Bárbara. No inverno fica pesado e três ribeiras criam correntes fortes.",
         en: "Sandy beach with several left and right peaks over sandbanks, very consistent and more exposed to NW swell than Santa Bárbara. In winter it gets heavy and three streams create strong currents.",
       },
-      tags: { pt: ["Beach break", "Consistente", "Vários picos", "Correntes"], en: ["Beach break", "Consistent", "Several peaks", "Currents"] },
+      tags: { pt: ["Beach break", "Consistente", "Vários picos", "Correntes"], en: [] },
       quality: 3,
     },
     {
@@ -1648,7 +1648,7 @@
         pt: "Direita de ponta na praia de areia preta dos Mosteiros, com take-off a pique sobre laje de rocha vulcânica e secção rápida. Há uma segunda direita, mais longa, no porto de pesca; rochas e correntes exigem experiência.",
         en: "Point right on the black-sand beach at Mosteiros, with a steep take-off onto a volcanic rock slab and a fast section. There is a second, longer right at the fishing harbour; rocks and currents call for experience.",
       },
-      tags: { pt: ["Direita", "Areia preta", "Laje", "Porto de pesca"], en: ["Right-hander", "Black sand", "Slab", "Fishing harbour"] },
+      tags: { pt: ["Direita", "Areia preta", "Laje", "Porto de pesca"], en: [] },
       quality: 3,
     },
     {
@@ -1669,7 +1669,7 @@
         pt: "Fajã isolada com vários picos, sobretudo esquerdas longas e potentes, como o Lago do Linho, com tubos e take-offs verticais sobre rocha. Só se chega a pé, pelo trilho PR1SJO, ou de mota; entrada e saída pelas rochas, com ouriços e correntes.",
         en: "Remote fajã with several peaks, mostly long, powerful lefts such as Lago do Linho, with barrels and vertical take-offs over rock. Reachable only on foot via the PR1SJO trail or by motorbike; entry and exit over rocks, with sea urchins and currents.",
       },
-      tags: { pt: ["Esquerdas", "Acesso a pé", "Remoto", "Tubos"], en: ["Left-handers", "Walk-in access", "Remote", "Barrels"] },
+      tags: { pt: ["Esquerdas", "Acesso a pé", "Remoto", "Tubos"], en: [] },
       quality: 4,
     },
     {
@@ -1689,7 +1689,7 @@
         pt: "Pico sobre recife na costa norte da Terceira que precisa de muita ondulação e dá uma esquerda cavada e pesada. A entrada e a saída pelas grandes rochas da costa são muito complicadas; correntes e rochas, só para experientes.",
         en: "Reef A-frame on Terceira's north coast that needs a lot of swell and produces a hollow, heavy left. Getting in and out over the big shoreline rocks is very tricky; currents and rocks, for experienced surfers only.",
       },
-      tags: { pt: ["Recife", "Esquerda", "Costa norte", "Experientes"], en: ["Reef", "Left-hander", "North coast", "Experienced"] },
+      tags: { pt: ["Recife", "Esquerda", "Costa norte", "Experientes"], en: [] },
       quality: 3,
     },
     {
@@ -1710,7 +1710,7 @@
         pt: "Esquerdas sobre recife que arrancam junto aos molhes do porto, divertidas e com acesso fácil a partir da cidade, por isso dos picos mais concorridos da ilha. A baía é também conhecida pelo windsurf e kitesurf; atenção às rochas.",
         en: "Lefts over reef starting by the harbour piers, fun and easy to reach from town, which makes them some of the island's most crowded peaks. The bay is also known for windsurfing and kitesurfing; watch out for rocks.",
       },
-      tags: { pt: ["Esquerda", "Acesso fácil", "Crowd", "Cidade"], en: ["Left-hander", "Easy access", "Crowded", "Town"] },
+      tags: { pt: ["Esquerda", "Acesso fácil", "Crowd", "Cidade"], en: [] },
       quality: 3,
     },
     // ── Lote S3 (2026-10-08): Ericeira, Sintra/Cascais, Caparica/Sesimbra, Oeste/Nazaré, Porto/Gaia/Aveiro, Algarve, Madeira, Açores. Fontes por spot em _diag/surf-s3/fichas.json
@@ -1732,7 +1732,7 @@
         pt: "Pico de areia e laje entre a vila da Ericeira e o parque de campismo, com esquerdas e direitas consistentes. Indicado para surfistas com experiência, sobretudo porque há rochas que ficam submersas consoante a maré e alguma corrente.",
         en: "A sand-and-rock peak between Ericeira town and the campsite, with consistent lefts and rights. Best suited to experienced surfers, mainly because some rocks become submerged depending on the tide and there can be some current.",
       },
-      tags: { pt: ["Ericeira", "Esquerdas e direitas", "Consistente", "Rochas"], en: ["Ericeira", "Lefts and rights", "Consistent", "Rocks"] },
+      tags: { pt: ["Ericeira", "Esquerdas e direitas", "Consistente", "Rochas"], en: [] },
       quality: 3,
     },
     {
@@ -1752,7 +1752,7 @@
         pt: "Esquerda tubular e rápida sobre laje no lado sul da baía dos Coxos, uma das sete ondas da Reserva Mundial de Surf da Ericeira. Só para surfistas avançados e só com maré cheia, por causa das rochas e das correntes.",
         en: "A fast, hollow left over a rock shelf on the south side of Coxos bay, one of the seven waves of the Ericeira World Surfing Reserve. For advanced surfers only and only at high tide, because of the rocks and currents.",
       },
-      tags: { pt: ["Esquerda", "Tubos", "Reserva Mundial de Surf", "Maré cheia"], en: ["Left", "Barrels", "World Surfing Reserve", "High tide"] },
+      tags: { pt: ["Esquerda", "Tubos", "Reserva Mundial de Surf", "Maré cheia"], en: [] },
       quality: 4,
     },
     {
@@ -1773,7 +1773,7 @@
         pt: "Praia muito consistente com picos sobre areia e rocha em ondulação pequena e direitas rápidas que correm da ponta norte com as grandes ondulações de inverno. Mais indicada para surfistas intermédios e avançados; o fundo tem bastante rocha e laje.",
         en: "A very consistent beach with peaks over sand and rock in small swell, and fast rights running off the northern point in big winter swells. Best suited to intermediate and advanced surfers; the bottom has plenty of rock and reef.",
       },
-      tags: { pt: ["Consistente", "Direitas", "Fundo de rocha", "Sintra"], en: ["Consistent", "Rights", "Rocky bottom", "Sintra"] },
+      tags: { pt: ["Consistente", "Direitas", "Fundo de rocha", "Sintra"], en: [] },
       quality: 3,
     },
     {
@@ -1794,7 +1794,7 @@
         pt: "Picos curtos, cavados e potentes entre areia e rocha numa enseada rodeada de falésias, com esquerdas exigentes. Para surfistas intermédios a avançados; as rochas e algum localismo pedem atenção, sobretudo quando o mar está bom.",
         en: "Short, hollow, powerful peaks between sand and rock in a cliff-lined cove, with some demanding lefts. For intermediate to advanced surfers; the rocks and some localism call for care, especially when it is good.",
       },
-      tags: { pt: ["Cavado", "Esquerdas", "Falésias", "Sintra"], en: ["Hollow", "Lefts", "Cliffs", "Sintra"] },
+      tags: { pt: ["Cavado", "Esquerdas", "Falésias", "Sintra"], en: [] },
       quality: 3,
     },
     {
@@ -1815,7 +1815,7 @@
         pt: "Pequena enseada de areia e rocha a sul do Guincho, no Parque Natural de Sintra-Cascais, com picos para os dois lados e menos gente que o vizinho. Não é praia de iniciação, e o vento forte da zona estraga o mar com frequência.",
         en: "A small sand-and-rock cove south of Guincho, in the Sintra-Cascais Natural Park, with peaks both ways and fewer people than its neighbour. It is not a beginners' beach, and the area's strong winds often blow it out.",
       },
-      tags: { pt: ["Beach break", "Pouco crowd", "Parque Natural", "Vento"], en: ["Beach break", "Uncrowded", "Natural Park", "Wind"] },
+      tags: { pt: ["Beach break", "Pouco crowd", "Parque Natural", "Vento"], en: [] },
       quality: 2,
     },
     {
@@ -1835,7 +1835,7 @@
         pt: "Direita cavada sobre laje em frente às Avencas, numa zona abrigada que só acorda com ondulações grandes. Boa alternativa a Carcavelos, com menos gente, mas caprichosa: a janela de maré é curta e há correntes e rochas.",
         en: "A hollow right over a reef off Avencas, in a sheltered stretch that only wakes up with big swells. A good, less crowded alternative to Carcavelos, but fickle: the tide window is short and there are rips and rocks.",
       },
-      tags: { pt: ["Direita", "Laje", "Grandes ondulações", "Linha de Cascais"], en: ["Right", "Reef", "Big swells", "Cascais line"] },
+      tags: { pt: ["Direita", "Laje", "Grandes ondulações", "Linha de Cascais"], en: [] },
       quality: 2,
     },
     {
@@ -1855,7 +1855,7 @@
         pt: "Direita potente e tubular sobre laje à entrada do Tejo, que só funciona com ondulação grande e condições certas. Para surfistas avançados: muito crowd quando está boa, rochas, ouriços, correntes e água por vezes poluída.",
         en: "A powerful, hollow right over a reef at the mouth of the Tagus that only works with a big swell and the right conditions. For advanced surfers: very crowded when it is on, with rocks, urchins, rips and sometimes polluted water.",
       },
-      tags: { pt: ["Direita", "Tubos", "Grandes ondulações", "Crowd"], en: ["Right", "Barrels", "Big swells", "Crowds"] },
+      tags: { pt: ["Direita", "Tubos", "Grandes ondulações", "Crowd"], en: [] },
       quality: 3,
     },
     {
@@ -1876,7 +1876,7 @@
         pt: "Esquerda curta, rápida e cavada sobre fundo de areia e rocha, junto à Praia da Poça e a cinco minutos a pé da estação de São João do Estoril. Para surfistas intermédios e avançados; há ouriços e rochas e enche ao fim de semana.",
         en: "A short, fast, hollow left over sand and rock, next to Praia da Poça and a five-minute walk from São João do Estoril station. For intermediate and advanced surfers; watch for urchins and rocks, and it gets crowded at weekends.",
       },
-      tags: { pt: ["Esquerda", "Tubos", "Comboio", "Linha de Cascais"], en: ["Left", "Barrels", "By train", "Cascais line"] },
+      tags: { pt: ["Esquerda", "Tubos", "Comboio", "Linha de Cascais"], en: [] },
       quality: 2,
     },
     {
@@ -1897,7 +1897,7 @@
         pt: "Beach break de areia com picos de esquerda e direita e ondas mais cheias e menos potentes do que nas praias da vila. Bom para aprender e evoluir; atenção às rochas junto aos esporões e ao crowd ao fim de semana.",
         en: "Sandy beach break with left and right peaks and fatter, less powerful waves than at the town beaches. Good for learning and progressing; watch out for the rocks by the groynes and the weekend crowds.",
       },
-      tags: { pt: ["Iniciação", "Perto de Lisboa", "Fundo de areia", "Crowd ao fim de semana"], en: ["Beginner-friendly", "Near Lisbon", "Sandy bottom", "Busy at weekends"] },
+      tags: { pt: ["Iniciação", "Perto de Lisboa", "Fundo de areia", "Crowd ao fim de semana"], en: [] },
       quality: 2,
     },
     {
@@ -1918,7 +1918,7 @@
         pt: "Beach break exposto de areia que, com ondulação bem formada, cria picos potentes e cavados junto à areia. Indicado para quem já tem experiência: as correntes são traiçoeiras e no verão o mar está quase sempre flat.",
         en: "Exposed sandy beach break that, with a well-formed swell, produces powerful, hollow peaks close to the sand. Best for surfers with some experience: the rips are treacherous and in summer it is usually flat.",
       },
-      tags: { pt: ["Ondas cavadas", "Correntes", "Pouco crowd", "Inverno"], en: ["Hollow waves", "Rips", "Uncrowded", "Winter"] },
+      tags: { pt: ["Ondas cavadas", "Correntes", "Pouco crowd", "Inverno"], en: [] },
       quality: 2,
     },
     {
@@ -1939,7 +1939,7 @@
         pt: "Beach break muito consistente junto à aberta da lagoa: quando esta liga ao mar formam-se bons bancos com direitas, e com ondulação de sul dominam as esquerdas. Correntes fortes e algum localismo; mais indicado para quem já surfa com à-vontade.",
         en: "Very consistent beach break by the lagoon inlet: when the lagoon opens to the sea, good sandbanks form with rights, and south swells bring mostly lefts. Strong rips and some localism; better suited to confident surfers.",
       },
-      tags: { pt: ["Muito consistente", "Bancos de areia", "Correntes fortes", "Localismo"], en: ["Very consistent", "Sandbanks", "Strong rips", "Localism"] },
+      tags: { pt: ["Muito consistente", "Bancos de areia", "Correntes fortes", "Localismo"], en: [] },
       quality: 3,
     },
     {
@@ -1960,7 +1960,7 @@
         pt: "Beach break de areia com esquerdas e direitas que só ganha forma com ondulação de sudoeste ou de oeste forte e com os bancos de areia no sítio certo. Ondas divertidas, para todos os níveis, e raramente com muita gente na água.",
         en: "Sandy beach break with lefts and rights that only takes shape with a south-westerly or strong westerly swell and the sandbanks in the right place. Fun waves for all levels, rarely with many people in the water.",
       },
-      tags: { pt: ["Inconsistente", "Fundo de areia", "Pouco crowd", "Ondulação de SO"], en: ["Inconsistent", "Sandy bottom", "Uncrowded", "SW swell"] },
+      tags: { pt: ["Inconsistente", "Fundo de areia", "Pouco crowd", "Ondulação de SO"], en: [] },
       quality: 2,
     },
     {
@@ -1980,7 +1980,7 @@
         pt: "Esquerda cavada sobre laje de pedra e areia, apontada por locais como a melhor onda da zona de Sesimbra e abrigada do vento norte. Só para surfistas experientes: fundo de rocha, crowd frequente e localismo forte; acesso por estrada de terra.",
         en: "Hollow left over a rock-and-sand reef, rated by locals as the best wave in the Sesimbra area and sheltered from the north wind. Experienced surfers only: rocky bottom, frequent crowds and strong localism; access by dirt road.",
       },
-      tags: { pt: ["Esquerda", "Tubos", "Localismo", "Estrada de terra"], en: ["Left-hander", "Barrels", "Localism", "Dirt-road access"] },
+      tags: { pt: ["Esquerda", "Tubos", "Localismo", "Estrada de terra"], en: [] },
       quality: 3,
     },
     {
@@ -2001,7 +2001,7 @@
         pt: "Direita longa sobre calhau junto ao Porto das Barcas, a norte de Milfontes, que começa a funcionar com 1,5–2 m e pode passar os 150 m. Remada longa e saída pelo porto delicada com mar grande; não é para iniciantes.",
         en: "Long right over boulders by Porto das Barcas, north of Milfontes, that starts working at 1.5–2 m and can run past 150 m. Long paddle and a tricky exit through the harbour in big swell; not for beginners.",
       },
-      tags: { pt: ["Point break", "Direita longa", "Fundo de calhau", "Pouco crowd"], en: ["Point break", "Long right", "Boulder bottom", "Few surfers"] },
+      tags: { pt: ["Point break", "Direita longa", "Fundo de calhau", "Pouco crowd"], en: [] },
       quality: 3,
     },
     {
@@ -2022,7 +2022,7 @@
         pt: "Beach break de areia em frente à vila, com esquerdas e direitas rápidas, cavadas e potentes que aguentam ondulação grande. Indicado para surfistas experientes; atenção às correntes de retorno e a algum localismo, e no verão as ondas costumam ser fracas.",
         en: "Sandy beach break in front of the town, with fast, hollow and powerful lefts and rights that hold big swell. Suited to experienced surfers; watch out for rip currents and some localism, and expect poor waves in summer.",
       },
-      tags: { pt: ["Beach break", "Potente", "Inverno", "Experientes"], en: ["Beach break", "Powerful", "Winter", "Experienced"] },
+      tags: { pt: ["Beach break", "Potente", "Inverno", "Experientes"], en: [] },
       quality: 3,
     },
     {
@@ -2043,7 +2043,7 @@
         pt: "Extenso beach break de areia com esquerdas e direitas, que funciona em todas as marés e raramente tem crowd. Adequado a vários níveis com ondulação pequena a média; com mar forte as ondas ganham força, por isso os iniciantes devem escolher dias calmos.",
         en: "Long sandy beach break with lefts and rights that works at all stages of the tide and is rarely crowded. Suits a range of levels in small to medium swell; waves get strong when the sea picks up, so beginners should pick calm days.",
       },
-      tags: { pt: ["Beach break", "Pouco crowd", "Todas as marés", "Vários níveis"], en: ["Beach break", "Uncrowded", "All tides", "All levels"] },
+      tags: { pt: ["Beach break", "Pouco crowd", "Todas as marés", "Vários níveis"], en: [] },
       quality: 2,
     },
     {
@@ -2063,7 +2063,7 @@
         pt: "Beach break junto à aberta da Lagoa de Óbidos, com esquerdas e direitas rápidas e potentes que só funcionam com as condições certas. Melhor para quem já surfa com à-vontade; com ondulação grande o mar fica exigente e ao fim de semana pode haver crowd.",
         en: "Beach break by the mouth of the Óbidos Lagoon, with fast, powerful lefts and rights that only work when conditions line up. Best for confident surfers; big swells make it demanding and it can get crowded at weekends.",
       },
-      tags: { pt: ["Beach break", "Lagoa de Óbidos", "Inconsistente", "Crowd ao fim de semana"], en: ["Beach break", "Óbidos Lagoon", "Inconsistent", "Weekend crowds"] },
+      tags: { pt: ["Beach break", "Lagoa de Óbidos", "Inconsistente", "Crowd ao fim de semana"], en: [] },
       quality: 2,
     },
     {
@@ -2084,7 +2084,7 @@
         pt: "Longa praia de areia com vários picos de esquerdas e direitas que mudam com os bancos de areia, apontada como um dos spots mais consistentes da zona no verão. Boa para vários níveis com mar pequeno a médio; atenção às correntes de retorno.",
         en: "Long sandy beach with several left and right peaks that shift with the sandbanks, cited as one of the most consistent spots in the area in summer. Good for a range of levels in small to medium swell; watch out for rip currents.",
       },
-      tags: { pt: ["Beach break", "Consistente no verão", "Vários picos", "Pouco crowd"], en: ["Beach break", "Consistent in summer", "Several peaks", "Uncrowded"] },
+      tags: { pt: ["Beach break", "Consistente no verão", "Vários picos", "Pouco crowd"], en: [] },
       quality: 2,
     },
     {
@@ -2105,7 +2105,7 @@
         pt: "Praia comprida com beach break de esquerdas e direitas sobre areia com algumas pedras, normalmente com pouca gente na água. Indicada para iniciantes e intermédios, funciona melhor da baixa-mar à meia-maré; atenção às correntes de retorno e às rochas dispersas.",
         en: "Long beach with a left and right beach break over sand with a few scattered rocks, usually with few people in the water. Suits beginners and intermediates and works best from low to mid tide; watch out for rip currents and scattered rocks.",
       },
-      tags: { pt: ["Beach break", "Pouco crowd", "Iniciantes", "Maré baixa"], en: ["Beach break", "Uncrowded", "Beginners", "Low tide"] },
+      tags: { pt: ["Beach break", "Pouco crowd", "Iniciantes", "Maré baixa"], en: [] },
       quality: 2,
     },
     {
@@ -2126,7 +2126,7 @@
         pt: "Point break de direita sobre laje rochosa pouco funda, a sul da Consolação, que pode ser muito bom nos melhores dias e aguenta ondulação grande. Só para intermédios e avançados: na baixa-mar fica demasiado raso, há ouriços e a entrada e saída da água é complicada.",
         en: "Right-hand point break over shallow flat rock just south of Consolação, which can be very good on its best days and holds big swell. Intermediate and advanced surfers only: it gets too shallow at low tide, there are urchins and getting in and out is tricky.",
       },
-      tags: { pt: ["Point break", "Direita", "Fundo de rocha", "Experientes"], en: ["Point break", "Right-hander", "Rock bottom", "Experienced"] },
+      tags: { pt: ["Point break", "Direita", "Fundo de rocha", "Experientes"], en: [] },
       quality: 3,
     },
     {
@@ -2146,7 +2146,7 @@
         pt: "Beach break com vários picos de esquerdas e direitas a norte do Baleal, acessível por Ferrel e normalmente com pouca gente. Ondas mais suaves em dias pequenos e picos mais potentes com ondulação; com mar grande há correntes fortes e as rochas ficam expostas na vazante.",
         en: "Beach break with several left and right peaks north of Baleal, reached via Ferrel and usually uncrowded. Gentler waves on small days and punchier peaks as the swell builds; big seas bring strong currents and rocks show as the tide drops.",
       },
-      tags: { pt: ["Beach break", "Vários picos", "Pouco crowd", "Estrada de terra"], en: ["Beach break", "Several peaks", "Uncrowded", "Dirt-road access"] },
+      tags: { pt: ["Beach break", "Vários picos", "Pouco crowd", "Estrada de terra"], en: [] },
       quality: 3,
     },
     {
@@ -2167,7 +2167,7 @@
         pt: "Beach break de areia a sul de Ofir, com vários picos que dispersam os surfistas e direitas divertidas, por vezes cavadas. Funciona melhor com ondulação de noroeste e vento de leste e serve todos os níveis, mas o vento do mar estraga depressa as ondas.",
         en: "Sandy beach break south of Ofir, with several peaks that spread surfers out and fun, sometimes hollow rights. Works best with a north-west swell and easterly wind and suits all levels, but onshore wind quickly spoils the waves.",
       },
-      tags: { pt: ["Beach break", "Vários picos", "Todos os níveis", "Fundo de areia"], en: ["Beach break", "Multiple peaks", "All levels", "Sandy bottom"] },
+      tags: { pt: ["Beach break", "Vários picos", "Todos os níveis", "Fundo de areia"], en: [] },
       quality: 2,
     },
     {
@@ -2187,7 +2187,7 @@
         pt: "Direita sobre fundo de areia e rocha em Lavra, junto a Angeiras, rodeada de picos entre recifes e de um molhe abrigado do vento norte. Para surfistas com alguma experiência: há recifes cortantes, escondidos na maré cheia, e correntes de retorno.",
         en: "Right-hander over sand and rock at Lavra, next to Angeiras, surrounded by peaks between reefs and a breakwater sheltered from the north wind. For surfers with some experience: there are sharp reefs, hidden at high tide, and rip currents.",
       },
-      tags: { pt: ["Direita", "Recife", "Pouco crowd", "Abrigo da nortada"], en: ["Right-hander", "Reef", "Uncrowded", "Shelter from nortada"] },
+      tags: { pt: ["Direita", "Recife", "Pouco crowd", "Abrigo da nortada"], en: [] },
       quality: 2,
     },
     {
@@ -2207,7 +2207,7 @@
         pt: "Onda de foz de rio sobre o banco de areia do Cabedelo, à saída do Douro, com esquerdas e direitas que podem ser rápidas e cavadas quando o banco está bem formado. Correntes fortes do rio e água por vezes poluída: só para surfistas experientes.",
         en: "River-mouth wave over the Cabedelo sandbar at the Douro outlet, with lefts and rights that can be fast and hollow when the bank is well shaped. Strong rips from the river outflow and sometimes polluted water: experienced surfers only.",
       },
-      tags: { pt: ["Foz de rio", "Banco de areia", "Correntes fortes", "Esquerdas e direitas"], en: ["River mouth", "Sandbar", "Strong rips", "Lefts and rights"] },
+      tags: { pt: ["Foz de rio", "Banco de areia", "Correntes fortes", "Esquerdas e direitas"], en: [] },
       quality: 3,
     },
     {
@@ -2227,7 +2227,7 @@
         pt: "Point break de areia e rocha em Canidelo, com esquerdas e direitas rápidas e potentes que só funcionam quando as condições se alinham. Onda exigente, indicada para surfistas avançados; atenção às rochas e a obstáculos artificiais, como boias, junto ao pico.",
         en: "Sand-and-rock point break at Canidelo, with fast, powerful lefts and rights that only work when conditions line up. A demanding wave for advanced surfers; watch out for rocks and man-made obstacles, such as buoys, near the peak.",
       },
-      tags: { pt: ["Point break", "Potente", "Inconsistente", "Pouco crowd"], en: ["Point break", "Powerful", "Inconsistent", "Uncrowded"] },
+      tags: { pt: ["Point break", "Potente", "Inconsistente", "Pouco crowd"], en: [] },
       quality: 2,
     },
     {
@@ -2247,7 +2247,7 @@
         pt: "Beach break com fundo de areia e rocha na praia de Miramar, com esquerdas e direitas que funcionam melhor a meia-maré. Razoavelmente consistente fora do verão, que tende a ser plano; as rochas são o principal perigo e por vezes há crowd.",
         en: "Beach break with a sand and rock bottom at Miramar beach, with lefts and rights that work best at mid tide. Fairly consistent outside summer, which tends to be flat; rocks are the main hazard and it is sometimes crowded.",
       },
-      tags: { pt: ["Beach break", "Rochas", "Meia-maré", "Esquerdas e direitas"], en: ["Beach break", "Rocks", "Mid tide", "Lefts and rights"] },
+      tags: { pt: ["Beach break", "Rochas", "Meia-maré", "Esquerdas e direitas"], en: [] },
       quality: 2,
     },
     {
@@ -2268,7 +2268,7 @@
         pt: "Beach break exposto com picos em A para a esquerda e para a direita, bastante fiável e capaz de funcionar todo o ano. Bom até cerca de 1,5 m mas impraticável acima dos 2,5 m; há rochas e raramente está cheio.",
         en: "Exposed beach break with A-frame peaks breaking left and right, fairly reliable and able to work all year. Good up to about 1.5 m but unsurfable above roughly 2.5 m; there are rocks and it is rarely crowded.",
       },
-      tags: { pt: ["Beach break", "Picos em A", "Pouco crowd", "Todo o ano"], en: ["Beach break", "A-frames", "Uncrowded", "All year"] },
+      tags: { pt: ["Beach break", "Picos em A", "Pouco crowd", "Todo o ano"], en: [] },
       quality: 3,
     },
     {
@@ -2289,7 +2289,7 @@
         pt: "Beach break de areia muito exposto e consistente, quase nunca está flat, com esquerdas e direitas ao longo de quilómetros de praia deserta. Não aguenta ondulação grande e as correntes de retorno são o principal perigo; raramente há crowd.",
         en: "Very exposed, consistent sandy beach break, almost never flat, with lefts and rights along miles of empty beach. It doesn't handle big swells and rip currents are the main hazard; it is rarely crowded.",
       },
-      tags: { pt: ["Beach break", "Consistente", "Pouco crowd", "Correntes"], en: ["Beach break", "Consistent", "Uncrowded", "Rips"] },
+      tags: { pt: ["Beach break", "Consistente", "Pouco crowd", "Correntes"], en: [] },
       quality: 2,
     },
     {
@@ -2310,7 +2310,7 @@
         pt: "Banco de areia com picos em A para a esquerda e para a direita, junto ao canal da Barra, no extremo sul da península de São Jacinto, que precisa de ondulação de norte. Inconsistente, mas um clássico regional quando entra; nesses dias enche.",
         en: "Sandbar with A-frame peaks breaking left and right, by the Barra channel at the southern tip of the São Jacinto peninsula, that needs a north swell. Inconsistent, but a regional classic when it turns on; on those days it gets busy.",
       },
-      tags: { pt: ["Banco de areia", "Picos em A", "Ondulação de norte", "Clássico regional"], en: ["Sandbar", "A-frames", "North swell", "Regional classic"] },
+      tags: { pt: ["Banco de areia", "Picos em A", "Ondulação de norte", "Clássico regional"], en: [] },
       quality: 3,
     },
     {
@@ -2331,7 +2331,7 @@
         pt: "Onda junto ao molhe da Vagueira, sobre fundo de areia, com esquerdas e direitas rápidas que ganham força com a maré a encher. Funciona todo o ano e serve vários níveis, mas há rochas junto ao molhe e a força aumenta depressa.",
         en: "Wave beside the Vagueira jetty over a sandy bottom, with fast lefts and rights that gain power as the tide rises. Works all year and suits a range of levels, but there are rocks by the jetty and the power builds quickly.",
       },
-      tags: { pt: ["Molhe", "Fundo de areia", "Todo o ano", "Maré a encher"], en: ["Jetty", "Sandy bottom", "All year", "Rising tide"] },
+      tags: { pt: ["Molhe", "Fundo de areia", "Todo o ano", "Maré a encher"], en: [] },
       quality: 2,
     },
     {
@@ -2351,7 +2351,7 @@
         pt: "Beach break com algumas zonas de rocha na margem sul do Mondego, com esquerdas e direitas rápidas que funcionam quando a ondulação entra bem alinhada. Pouco consistente; exige atenção às correntes, às rochas e às embarcações ao largo.",
         en: "Beach break with some rocky patches on the south bank of the Mondego, with fast lefts and rights that work when the swell is well aligned. Not very consistent; watch out for rips, rocks and boats offshore.",
       },
-      tags: { pt: ["Beach break", "Esquerdas e direitas", "Inconsistente", "Correntes"], en: ["Beach break", "Lefts and rights", "Inconsistent", "Rips"] },
+      tags: { pt: ["Beach break", "Esquerdas e direitas", "Inconsistente", "Correntes"], en: [] },
       quality: 3,
     },
     {
@@ -2372,7 +2372,7 @@
         pt: "Reef break abrigado com esquerdas rápidas e cavadas sobre fundo de areia e rocha, que só funciona com ondulação de oeste a sul e vento norte. Indicado para surfistas com experiência; atenção às rochas, ao localismo e à afluência ao fim de semana.",
         en: "Sheltered reef break with fast, hollow lefts over sand and rock, only working with a west-to-south swell and northerly wind. Suited to experienced surfers; watch out for rocks, localism and weekend crowds.",
       },
-      tags: { pt: ["Recife", "Esquerda", "Abrigado", "Inverno"], en: ["Reef", "Left", "Sheltered", "Winter"] },
+      tags: { pt: ["Recife", "Esquerda", "Abrigado", "Inverno"], en: [] },
       quality: 3,
     },
     {
@@ -2393,7 +2393,7 @@
         pt: "Onda de inverno da baía da Luz, que só acorda com ondulação de sul a sul-sueste e vento norte, de preferência na maré cheia. Rápida e por vezes cavada, é para surfistas com experiência; cuidado com as correntes, as boias e o localismo.",
         en: "Winter wave in Luz bay that only wakes up with a south to south-south-east swell and northerly wind, ideally at high tide. Fast and sometimes hollow, it suits experienced surfers; beware of rips, buoys and localism.",
       },
-      tags: { pt: ["Inverno", "Ondulação de sul", "Maré cheia", "Ocasional"], en: ["Winter", "South swell", "High tide", "Occasional"] },
+      tags: { pt: ["Inverno", "Ondulação de sul", "Maré cheia", "Ocasional"], en: [] },
       quality: 2,
     },
     {
@@ -2413,7 +2413,7 @@
         pt: "Beach break de areia junto à vila de Alvor, que precisa de ondulação de sudoeste e funciona melhor na maré cheia. Parece pequena mas quebra em pouca água e com força; atenção à forte corrente lateral junto à rebentação.",
         en: "Sandy beach break by Alvor village that needs a south-westerly swell and works best at high tide. It looks small but breaks in shallow water with power; watch out for the strong cross-shore rip on the inside.",
       },
-      tags: { pt: ["Areia", "Maré cheia", "Pouca gente", "Inverno"], en: ["Sand", "High tide", "Uncrowded", "Winter"] },
+      tags: { pt: ["Areia", "Maré cheia", "Pouca gente", "Inverno"], en: [] },
       quality: 2,
     },
     {
@@ -2434,7 +2434,7 @@
         pt: "Beach break de areia na Ilha de Faro, com ondas curtas para a esquerda e para a direita, que só funciona com ondulação de oés-sudoeste e vento de nordeste. Bom para iniciantes e intermédios; no verão costuma estar flat e nos dias bons enche.",
         en: "Sandy beach break on Faro Island with short lefts and rights, which only works with a west-south-west swell and north-easterly wind. Good for beginners and intermediates; it is usually flat in summer and gets crowded on good days.",
       },
-      tags: { pt: ["Areia", "Iniciantes", "Inverno", "Perto de Faro"], en: ["Sand", "Beginners", "Winter", "Near Faro"] },
+      tags: { pt: ["Areia", "Iniciantes", "Inverno", "Perto de Faro"], en: [] },
       quality: 2,
     },
     {
@@ -2455,7 +2455,7 @@
         pt: "Reef break sobre laje de rocha na costa norte da Madeira, com uma esquerda potente que pede ondulação de norte a noroeste e vento sul. Para surfistas com experiência; cuidado com as rochas e os ouriços-do-mar.",
         en: "Reef break over flat rock on Madeira's north coast, with a powerful left that needs a north to north-west swell and a southerly wind. For experienced surfers; beware of the rocks and sea urchins.",
       },
-      tags: { pt: ["Recife", "Esquerda", "Costa norte", "Potente"], en: ["Reef", "Left", "North coast", "Powerful"] },
+      tags: { pt: ["Recife", "Esquerda", "Costa norte", "Potente"], en: [] },
       quality: 3,
     },
     {
@@ -2475,7 +2475,7 @@
         pt: "Esquerda pesada de recife junto a Porto Moniz que só começa a funcionar com ondulação grande de noroeste, a partir de 2,5–3 m. Exclusiva para surfistas avançados; rochas, estruturas artificiais e localismo exigem respeito.",
         en: "Heavy reef left near Porto Moniz that only starts working with a big north-westerly swell of 2.5–3 m or more. Strictly for advanced surfers; rocks, man-made structures and localism demand respect.",
       },
-      tags: { pt: ["Recife", "Esquerda", "Ondas grandes", "Inconsistente"], en: ["Reef", "Left", "Big waves", "Inconsistent"] },
+      tags: { pt: ["Recife", "Esquerda", "Ondas grandes", "Inconsistente"], en: [] },
       quality: 3,
     },
     {
@@ -2496,7 +2496,7 @@
         pt: "Reef break sobre laje de rocha com direitas e esquerdas consistentes, em frente a uma praia de calhau a que se chega pelo teleférico das Achadas da Cruz. Indicado para intermédios e avançados; o fundo rochoso e o acesso exigem planeamento.",
         en: "Reef break over flat rock with consistent rights and lefts, in front of a pebble beach reached by the Achadas da Cruz cable car. Suited to intermediate and advanced surfers; the rocky bottom and the access require planning.",
       },
-      tags: { pt: ["Recife", "Consistente", "Teleférico", "Paisagem"], en: ["Reef", "Consistent", "Cable car", "Scenery"] },
+      tags: { pt: ["Recife", "Consistente", "Teleférico", "Paisagem"], en: [] },
       quality: 4,
     },
     {
@@ -2517,7 +2517,7 @@
         pt: "Beach break de areia às portas de Ponta Delgada, com ondas sobretudo para a direita que funcionam com ondulação de sul a sudoeste e vento norte. Bom para todos os níveis, incluindo iniciantes; quando há ondas, enche, sobretudo ao fim de semana.",
         en: "Sandy beach break on the edge of Ponta Delgada, with mostly right-handers that work with a south to south-west swell and northerly wind. Good for all levels, beginners included; when it is working it gets crowded, especially at weekends.",
       },
-      tags: { pt: ["Areia", "Iniciantes", "Perto da cidade", "Todo o ano"], en: ["Sand", "Beginners", "Close to town", "All year"] },
+      tags: { pt: ["Areia", "Iniciantes", "Perto da cidade", "Todo o ano"], en: [] },
       quality: 2,
     },
     {
@@ -2538,7 +2538,7 @@
         pt: "Reef break de rocha na Praia da Vitória, com esquerdas e direitas curtas que funcionam com ondulação de norte e vento de sudoeste, idealmente a meia-maré. Um dos spots mais procurados da Terceira, para surfistas com experiência; o fundo é raso e cortante.",
         en: "Rock reef break in Praia da Vitória with short lefts and rights that work with a north swell and south-westerly wind, ideally at mid tide. One of Terceira's most sought-after spots, for experienced surfers; the bottom is shallow and sharp.",
       },
-      tags: { pt: ["Recife", "Esquerda e direita", "Meia-maré", "Terceira"], en: ["Reef", "Left and right", "Mid tide", "Terceira"] },
+      tags: { pt: ["Recife", "Esquerda e direita", "Meia-maré", "Terceira"], en: [] },
       quality: 4,
     },
     {
@@ -2559,7 +2559,7 @@
         pt: "Point break de esquerda potente sobre laje de rocha na costa norte do Faial, que começa a funcionar com 1,5–2 m de ondulação de norte a noroeste e aguenta mais de 3 m. Para surfistas com experiência; atenção às rochas e aos ouriços.",
         en: "Powerful left-hand point break over flat rock on Faial's north coast, which starts working with a 1.5–2 m north to north-west swell and holds over 3 m. For experienced surfers; watch out for rocks and urchins.",
       },
-      tags: { pt: ["Point break", "Esquerda", "Potente", "Pouca gente"], en: ["Point break", "Left", "Powerful", "Uncrowded"] },
+      tags: { pt: ["Point break", "Esquerda", "Potente", "Pouca gente"], en: [] },
       quality: 3,
     },
     {
@@ -2580,7 +2580,7 @@
         pt: "Longo beach break de areia com algumas rochas na costa sul de Santa Maria, que funciona com ondulação de sul a sueste e vento norte, com as melhores condições no verão. Bom para todos os níveis; atenção às rochas e às correntes.",
         en: "Long sandy beach break with some rocks on Santa Maria's south coast, working with a south to south-east swell and northerly wind, with the best conditions in summer. Good for all levels; watch out for rocks and rips.",
       },
-      tags: { pt: ["Areia", "Verão", "Todos os níveis", "Santa Maria"], en: ["Sand", "Summer", "All levels", "Santa Maria"] },
+      tags: { pt: ["Areia", "Verão", "Todos os níveis", "Santa Maria"], en: [] },
       quality: 3,
     },
   ];
@@ -2597,14 +2597,14 @@
       tipos: ['rocha', 'costeira'],
       levelKey: 'experiente',
       season: { pt: 'Outubro–Março', en: 'October–March' },
-      especies: { pt: 'Pargo, Garoupa, Salema', en: 'Pargo, Garoupa, Salema' },
+      especies: { pt: 'Pargo, Garoupa, Salema', en: 'Red porgy, Comber, Salema' },
       tecnica: { pt: 'Aparelho de Fundo', en: 'Bottom Rig' },
       desc: {
         pt: 'Extremo sudoeste de Portugal, onde o Atlântico encontra a costa algarvia. Rochas altas com correntes fortes e peixes de fundo de grande porte. Exige experiência e equipamento resistente.',
         en: 'Extreme southwest of Portugal, where the Atlantic meets the Algarve coast. High rocks with strong currents and large bottom-dwelling fish. Requires experience and sturdy gear.',
       },
       aviso: { pt: 'Interdito: Ilhotes do Martinhal e 100 m à volta da Pedra das Gaivotas e da Pedra do Gigante.', en: 'Off-limits: the Martinhal islets and 100 m around Pedra das Gaivotas and Pedra do Gigante.' },
-      tags: { pt: ['Rocha Alta', 'Fundo', 'Pargo', 'Garoupa'], en: ['High Rock', 'Bottom', 'Pargo', 'Garoupa'] },
+      tags: { pt: ['Rocha Alta', 'Fundo', 'Pargo', 'Garoupa'], en: ['High Rock', 'Bottom', 'Red porgy', 'Comber'] },
       quality: 5,
     },
     {
@@ -2617,13 +2617,13 @@
       tipos: ['ria'],
       levelKey: 'iniciante',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Dourada, Robalo, Polvo', en: 'Dourada, Robalo, Polvo' },
+      especies: { pt: 'Dourada, Robalo, Polvo', en: 'Gilthead bream, Sea bass, Octopus' },
       tecnica: { pt: 'Cortiça / Float Rig', en: 'Float Rig' },
       desc: {
         pt: 'Lagoa costeira protegida com águas calmas e espécies abundantes. Ideal para iniciantes e famílias. Fácil acesso de barco ou margem e boa densidade de espécies ao longo do ano.',
         en: 'Protected coastal lagoon with calm waters and abundant species. Ideal for beginners and families. Easy boat or bank access with good species density year-round.',
       },
-      tags: { pt: ['Família', 'Barco', 'Dourada', 'Polvo', 'Calmo'], en: ['Family', 'Boat', 'Dourada', 'Polvo', 'Calm'] },
+      tags: { pt: ['Família', 'Barco', 'Dourada', 'Polvo', 'Calmo'], en: ['Family', 'Boat', 'Gilthead bream', 'Octopus', 'Calm'] },
       quality: 4,
     },
     {
@@ -2636,13 +2636,13 @@
       tipos: ['costeira', 'rocha'],
       levelKey: 'intermedio',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Robalão, Salema, Bica', en: 'Robalão, Salema, Bica' },
+      especies: { pt: 'Robalão, Salema, Bica', en: 'Big sea bass, Salema, Common pandora' },
       tecnica: { pt: 'Surfcasting / Aparelho', en: 'Surfcasting / Bottom Rig' },
       desc: {
         pt: 'Costa alentejana com extensas praias e pontões rochosos. Favorito de surfcasting com espécies variadas durante todo o ano e menor pressão de pesca que o Algarve.',
         en: 'Alentejo coast with long beaches and rocky piers. Surfcasting favourite with varied species all year and less pressure than the Algarve.',
       },
-      tags: { pt: ['Surfcasting', 'Praia', 'Robalão', 'Alentejo'], en: ['Surfcasting', 'Beach', 'Robalão', 'Alentejo'] },
+      tags: { pt: ['Surfcasting', 'Praia', 'Robalão', 'Alentejo'], en: ['Surfcasting', 'Beach', 'Big sea bass', 'Alentejo'] },
       quality: 4,
     },
     {
@@ -2675,13 +2675,13 @@
       tipos: ['ria', 'fluvial'],
       levelKey: 'iniciante',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Linguado, Robalo, Enguia', en: 'Linguado, Robalo, Enguia' },
+      especies: { pt: 'Linguado, Robalo, Enguia', en: 'Sole, Sea bass, European eel' },
       tecnica: { pt: 'Cortiça / Spinning', en: 'Float Rig / Spinning' },
       desc: {
         pt: 'Vasta laguna costeira com canais, salinas e zonas de maré. Diversidade de microhabitats e espécies. Ideal para pesca desportiva de barco e para quem quer aprender em águas calmas.',
         en: 'Vast coastal lagoon with channels, saltmarshes and tidal zones. Diverse microhabitats and species. Ideal for sports fishing by boat and for learning in calm waters.',
       },
-      tags: { pt: ['Laguna', 'Linguado', 'Spinning', 'Barco'], en: ['Lagoon', 'Linguado', 'Spinning', 'Boat'] },
+      tags: { pt: ['Laguna', 'Linguado', 'Spinning', 'Barco'], en: ['Lagoon', 'Sole', 'Spinning', 'Boat'] },
       quality: 4,
     },
     {
@@ -2773,7 +2773,7 @@
       tipos: ['fluvial'],
       levelKey: 'intermedio',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Achigã, Lúcio, Carpa', en: 'Achigã, Lúcio, Carpa' },
+      especies: { pt: 'Achigã, Lúcio, Carpa', en: 'Largemouth bass, Pike, Carp' },
       tecnica: { pt: 'Spinning / Lure', en: 'Spinning / Lure' },
       desc: {
         pt: 'Grande albufeira no Parque Nacional Peneda-Gerês. Achigã abundante em zonas de vegetação submersa. Barco recomendado.',
@@ -2792,7 +2792,7 @@
       tipos: ['fluvial'],
       levelKey: 'intermedio',
       season: { pt: 'Abril–Outubro', en: 'April–October' },
-      especies: { pt: 'Barbo, Achigã, Enguia', en: 'Barbo, Achigã, Enguia' },
+      especies: { pt: 'Barbo, Achigã, Enguia', en: 'Barbel, Largemouth bass, European eel' },
       tecnica: { pt: 'Spinning / Aparelho de Fundo', en: 'Spinning / Bottom Rig' },
       desc: {
         pt: 'O Douro no coração do Douro Vinhateiro. Barbo de grande porte nas correntes junto às barragens. Combinação perfeita com enoturismo.',
@@ -2811,7 +2811,7 @@
       tipos: ['costeira'],
       levelKey: 'intermedio',
       season: { pt: 'Abril–Outubro', en: 'April–October' },
-      especies: { pt: 'Robalo, Dourada, Linguado', en: 'Robalo, Dourada, Linguado' },
+      especies: { pt: 'Robalo, Dourada, Linguado', en: 'Sea bass, Gilthead bream, Sole' },
       tecnica: { pt: 'Surfcasting / Isco Natural', en: 'Surfcasting / Natural Bait' },
       desc: {
         pt: 'Costa arenosa com boa produção de robalo ao entardecer. Pesca de surf com isco natural (minhoca, ameijoa) nos bancos de areia.',
@@ -2830,7 +2830,7 @@
       tipos: ['ria', 'costeira'],
       levelKey: 'intermedio',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Robalo, Linguado, Enguia, Tainha', en: 'Robalo, Linguado, Enguia, Tainha' },
+      especies: { pt: 'Robalo, Linguado, Enguia, Tainha', en: 'Sea bass, Sole, European eel, Grey mullet' },
       tecnica: { pt: 'Cortiça / Maré', en: 'Float Rig / Tide' },
       desc: {
         pt: 'Estuário produtivo na Figueira da Foz. Robalo activo nas correntes de maré. Melhor nas 2h antes e depois da baixa-mar.',
@@ -2849,7 +2849,7 @@
       tipos: ['fluvial'],
       levelKey: 'intermedio',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Achigã, Lúcio, Carpa', en: 'Achigã, Lúcio, Carpa' },
+      especies: { pt: 'Achigã, Lúcio, Carpa', en: 'Largemouth bass, Pike, Carp' },
       tecnica: { pt: 'Spinning / Lure', en: 'Spinning / Lure' },
       desc: {
         pt: 'A maior albufeira de Portugal Central. Referência nacional para pesca de achigã — campeonatos regulares. Muitos serviços de guia disponíveis.',
@@ -2868,7 +2868,7 @@
       tipos: ['fluvial'],
       levelKey: 'intermedio',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Achigã, Lúcio, Perca', en: 'Achigã, Lúcio, Perca' },
+      especies: { pt: 'Achigã, Lúcio, Perca', en: 'Largemouth bass, Pike, Perch' },
       tecnica: { pt: 'Spinning / Lure', en: 'Spinning / Lure' },
       desc: {
         pt: 'Albufeira tranquila no Alto Alentejo com excelente população de achigã. Pouca pressão de pesca em comparação com outras albufeiras.',
@@ -2887,13 +2887,13 @@
       tipos: ['rocha', 'costeira'],
       levelKey: 'intermedio',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Sargo, Pargo, Robalo, Corvina', en: 'Sargo, Pargo, Robalo, Corvina' },
+      especies: { pt: 'Sargo, Pargo, Robalo, Corvina', en: 'White seabream, Red porgy, Sea bass, Meagre' },
       tecnica: { pt: 'Aparelho de Fundo / Rock Fishing', en: 'Bottom Rig / Rock Fishing' },
       desc: {
         pt: 'Costa rochosa com fundos variados. Rock fishing de qualidade — sargo e pargo nas fendas rochosas, robalo nas praias adjacentes.',
         en: 'Rocky coast with varied seabed. Quality rock fishing — bream and pargo in rock crevices, bass on adjacent beaches.',
       },
-      tags: { pt: ['Rock Fishing', 'Sargo', 'Pargo', 'Corvina'], en: ['Rock Fishing', 'Bream', 'Pargo', 'Corvina'] },
+      tags: { pt: ['Rock Fishing', 'Sargo', 'Pargo', 'Corvina'], en: ['Rock Fishing', 'Bream', 'Red porgy', 'Meagre'] },
       quality: 4,
     },
     {
@@ -2906,7 +2906,7 @@
       tipos: ['costeira', 'rocha'],
       levelKey: 'intermedio',
       season: { pt: 'Primavera–Outono', en: 'Spring–Autumn' },
-      especies: { pt: 'Robalo, Sargo, Safia', en: 'Robalo, Sargo, Safia' },
+      especies: { pt: 'Robalo, Sargo, Safia', en: 'Sea bass, White seabream, Two-banded seabream' },
       tecnica: { pt: 'Spinning / Aparelho', en: 'Spinning / Bottom Rig' },
       desc: {
         pt: 'Pequena praia protegida no Parque Natural do Sudoeste Alentejano. Pesqueiros de qualidade nas pontas rochosas com pouca pressão de pesca.',
@@ -2926,7 +2926,7 @@
       tipos: ['costeira'],
       levelKey: 'intermedio',
       season: { pt: 'Março–Outubro', en: 'March–October' },
-      especies: { pt: 'Robalo, Dourada, Linguado', en: 'Robalo, Dourada, Linguado' },
+      especies: { pt: 'Robalo, Dourada, Linguado', en: 'Sea bass, Gilthead bream, Sole' },
       tecnica: { pt: 'Surfcasting / Isco Natural', en: 'Surfcasting / Natural Bait' },
       desc: {
         pt: 'Pesca de surf em praias selvagens da Costa Vicentina. Robalo activo após noites de temporal. Acesso por trilhos — equipamento portátil.',
@@ -2945,7 +2945,7 @@
       tipos: ['ria'],
       levelKey: 'iniciante',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Robalo, Dourada, Linguado, Choco', en: 'Robalo, Dourada, Linguado, Choco' },
+      especies: { pt: 'Robalo, Dourada, Linguado, Choco', en: 'Sea bass, Gilthead bream, Sole, Cuttlefish' },
       tecnica: { pt: 'Cortiça / Float Rig', en: 'Float Rig' },
       desc: {
         pt: 'Ria protegida entre Portimão e Lagos. Excelente para pesca de chocos (Outubro–Fevereiro) e robalo nas entradas das valas.',
@@ -2964,7 +2964,7 @@
       tipos: ['rocha', 'costeira'],
       levelKey: 'iniciante',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Sargo, Bica, Robalo', en: 'Sargo, Bica, Robalo' },
+      especies: { pt: 'Sargo, Bica, Robalo', en: 'White seabream, Common pandora, Sea bass' },
       tecnica: { pt: 'Aparelho de Fundo', en: 'Bottom Rig' },
       desc: {
         pt: 'Estruturas rochosas sob as falésias com populações estáveis de sargo. Melhor ao amanhecer e ao pôr do sol.',
@@ -3003,7 +3003,7 @@
       tipos: ['embarcacao'],
       levelKey: 'intermedio',
       season: { pt: 'Primavera–Outono', en: 'Spring–Autumn' },
-      especies: { pt: 'Dourada, Sargo, Choco, Lula', en: 'Dourada, Sargo, Choco, Lula' },
+      especies: { pt: 'Dourada, Sargo, Choco, Lula', en: 'Gilthead bream, White seabream, Cuttlefish, Squid' },
       tecnica: { pt: 'Jigging / Float Rig', en: 'Jigging / Float Rig' },
       desc: {
         pt: 'Fundos de posidónia à volta da ilha com excelente biodiversidade. Pesca de choco (jigging) muito produtiva de Outubro a Janeiro.',
@@ -3022,13 +3022,13 @@
       tipos: ['embarcacao'],
       levelKey: 'intermedio',
       season: { pt: 'Todo o Ano', en: 'Year-round' },
-      especies: { pt: 'Pargo, Goraz, Robalo, Linguado', en: 'Pargo, Goraz, Robalo, Linguado' },
+      especies: { pt: 'Pargo, Goraz, Robalo, Linguado', en: 'Red porgy, Blackspot seabream, Sea bass, Sole' },
       tecnica: { pt: 'Big Game / Fundo', en: 'Big Game / Bottom' },
       desc: {
         pt: 'Uma das baías mais produtivas de Portugal. Charters disponíveis em Setúbal e Sesimbra. Goraz nos fundos rochosos do Espichel.',
         en: "One of Portugal's most productive bays. Charters available in Setúbal and Sesimbra. Alfonsino on the rocky seabed of Espichel.",
       },
-      tags: { pt: ['Goraz', 'Pargo', 'Charter', 'Espichel', 'Baía'], en: ['Alfonsino', 'Pargo', 'Charter', 'Espichel', 'Bay'] },
+      tags: { pt: ['Goraz', 'Pargo', 'Charter', 'Espichel', 'Baía'], en: ['Alfonsino', 'Red porgy', 'Charter', 'Espichel', 'Bay'] },
       quality: 5,
     },
     {
@@ -3956,7 +3956,7 @@
       tipos: ['rocha', 'costeira'],
       levelKey: 'experiente',
       season: { pt: 'Melhor com mar calmo e pouco vento; evitar dias de ondulação forte de norte', en: 'Best with calm sea and light wind; avoid days of heavy northerly swell' },
-      especies: { pt: 'Sargo, capatão (dentão), anchova, bodião, pampo; garoupas pequenas ocasionais', en: 'White seabream, dentex, bluefish, wrasse, pompano; occasional small groupers' },
+      especies: { pt: 'Sargo, capatão (dentão), anchova, bodião, pampo; garoupas pequenas ocasionais', en: 'White seabream, dentex, bluefish, wrasse, pompano; occasional small blacktail comber' },
       tecnica: { pt: 'Spinning com jigs de lançamento leves (cerca de 12 g) e vinis de 3–4"; pesca ao fundo e à boia nas plataformas rochosas', en: 'Spinning with light casting jigs (around 12 g) and 3–4" soft plastics; bottom and float fishing from rock platforms' },
       desc: {
         pt: 'A costa norte, mais batida pelo mar, tem lajes de basalto, corrente e fundos irregulares que atraem predadores como o capatão e a anchova. Porto Moniz é um dos pesqueiros preferidos dos pescadores lúdicos madeirenses e o Seixal, a poucos quilómetros, oferece pedra semelhante.',
@@ -3976,7 +3976,7 @@
       tipos: ['costeira', 'rocha'],
       levelKey: 'iniciante',
       season: { pt: 'Todo o ano, com mais pescadores no verão; melhores horas ao fim da tarde', en: 'Year-round, busiest in summer; best at dusk' },
-      especies: { pt: 'Sargo, veja, roncador, besugo, tainhas; lagartos e garoupas pequenas junto às pedras', en: 'White seabream, parrotfish, bastard grunt, axillary seabream, mullet; lizardfish and small groupers near the rocks' },
+      especies: { pt: 'Sargo, veja, roncador, besugo, tainhas; lagartos e garoupas pequenas junto às pedras', en: 'White seabream, parrotfish, bastard grunt, axillary seabream, mullet; lizardfish and small blacktail comber near the rocks' },
       tecnica: { pt: 'Pesca ao fundo e à boia com isco natural (camarão, lula, sardinha, pão); spinning leve com jigs pequenos ao entardecer', en: 'Bottom and float fishing with natural bait (shrimp, squid, sardine, bread); light spinning with small jigs at dusk' },
       desc: {
         pt: 'O Funchal concentra cerca de um quinto dos pescadores de costa da Madeira, e o troço entre o Cais do Carvão e a Praia Formosa, ligado pela promenade, é um dos pontos mais usados. Acesso fácil a pé e peixe pequeno mas frequente fazem dele um bom sítio para começar.',
@@ -4177,7 +4177,7 @@
       tipos: ['fluvial'],
       levelKey: 'iniciante',
       season: { pt: 'Ano inteiro com defesos por espécie (ciprinídeos e achigã fecham parte da primavera; truta de 1 mar a 31 jul) — confirmar no edital do clube', en: 'Year-round with species closed seasons (cyprinids and bass close for part of spring; trout 1 Mar–31 Jul) — check the club edital' },
-      especies: { pt: 'Barbo, boga, carpa, achigã, tenca', en: 'Barbel, boga, carp, largemouth bass, tench' },
+      especies: { pt: 'Barbo, boga, carpa, achigã, tenca', en: 'Barbel, Iberian nase, carp, largemouth bass, tench' },
       tecnica: { pt: 'Boia e fundo a partir das margens urbanas; spinning leve para achigã', en: 'Float and ledger from the town banks; light spinning for bass' },
       desc: {
         pt: 'O troço urbano do Tua, entre o Açude do Gomes e o açude da Quinta do Choupim, é concessão de pesca do clube local e passa pela Ponte Velha e pelo Parque Dr. José Gama. Pesca de margem dentro da cidade, cómoda para iniciar miúdos na boia.',
@@ -4197,7 +4197,7 @@
       tipos: ['fluvial'],
       levelKey: 'intermedio',
       season: { pt: 'Truta de 1 de março a 31 de julho; barbo, boga e escalo fora do defeso de primavera', en: 'Trout 1 March to 31 July; barbel, boga and chub outside the spring closed season' },
-      especies: { pt: 'Truta-de-rio, barbo, boga, escalo', en: 'Brown trout, barbel, boga, chub' },
+      especies: { pt: 'Truta-de-rio, barbo, boga, escalo', en: 'Brown trout, barbel, Iberian nase, chub' },
       tecnica: { pt: 'Boia e fundo para ciprinídeos; amostra ou minhoca para truta na cauda da albufeira', en: 'Float and ledger for coarse fish; lure or worm for trout at the head of the reservoir' },
       desc: {
         pt: 'Albufeira estreita no rio Lima entre o Alto Lindoso e a barragem de Touvedo, com as duas margens concessionadas pelas câmaras de Ponte da Barca e de Arcos de Valdevez. Entre Ambos-os-Rios fica a meio do troço da margem esquerda, que vai da ponte de Paradamonte até perto da barragem.',
@@ -4217,7 +4217,7 @@
       tipos: ['fluvial'],
       levelKey: 'intermedio',
       season: { pt: 'Ano inteiro; barbo em defeso de 16 de março a 14 de junho', en: 'Year-round; barbel closed 16 March to 14 June' },
-      especies: { pt: 'Barbo, carpa, boga', en: 'Barbel, carp, boga' },
+      especies: { pt: 'Barbo, carpa, boga', en: 'Barbel, carp, Iberian nase' },
       tecnica: { pt: 'Feeder e boia a partir do cais; fundo com milho para carpa', en: 'Feeder and float from the quay; bottom fishing with sweetcorn for carp' },
       desc: {
         pt: 'O cais de Melres, na albufeira de Crestuma-Lever, é palco habitual de provas de feeder e de concursos livres onde o barbo domina as capturas. As margens com boa profundidade também guardam carpas grandes, mas os melhores pesqueiros enchem cedo ao fim de semana.',
@@ -4777,7 +4777,7 @@
       tipos: ['embarcacao', 'costeira'],
       levelKey: 'iniciante',
       season: { pt: 'Todo o ano; primavera e outono são as épocas mais confortáveis', en: 'Year-round; spring and autumn are the most comfortable seasons' },
-      especies: { pt: 'Sargo, bodião, bica, pargo, peixe-porco, garoupa', en: 'White seabream, wrasse, common pandora, red porgy, grey triggerfish, grouper' },
+      especies: { pt: 'Sargo, bodião, bica, pargo, peixe-porco, garoupa', en: 'White seabream, wrasse, common pandora, red porgy, grey triggerfish, blacktail comber' },
       tecnica: { pt: 'Pesca de fundo de barco; bóia e fundo ligeiro na costa', en: 'Bottom fishing from the boat; float and light ledgering from shore' },
       desc: {
         pt: 'A baía abrigada de Machico, a 10 minutos do aeroporto, é ponto de partida de saídas de pesca de fundo em barcos pequenos, à procura de pargo, bica e peixe-porco sobre fundos rochosos perto da costa. Em terra é um sítio calmo para principiantes apanharem sargo e bodião, mas as duas praias da baía obrigam a pescar longe das zonas de banho.',
@@ -4877,7 +4877,7 @@
       tipos: ['embarcacao'],
       levelKey: 'iniciante',
       season: { pt: 'Abril a outubro (mar mais calmo nos Açores)', en: 'April to October (calmer seas across the Azores)' },
-      especies: { pt: 'Garoupa, írio, bodião, rocaz', en: 'Grouper, amberjack, wrasse, scorpionfish' },
+      especies: { pt: 'Garoupa, írio, bodião, rocaz', en: 'Blacktail comber, amberjack, wrasse, scorpionfish' },
       tecnica: { pt: 'Pesca de fundo com isco natural (canas e isco incluídos)', en: 'Bottom fishing with natural bait (rods and bait included)' },
       desc: {
         pt: 'A marina da Praia da Vitória, na grande baía do lado leste da Terceira, tem saídas de pesca de cerca de quatro horas com canas e isco incluídos, em grupos até seis pessoas. É a alternativa a Angra para quem fica no lado leste da ilha ou perto do aeroporto das Lajes, com pesca de fundo sobre os recifes rochosos da costa.',

@@ -3925,3 +3925,12 @@ input[type="number"], input[type="date"], input[type="search"] {
 /* Creditos de fotos quase invisiveis (pedido do Ricardo, 07/10/2026). O texto fica na pagina porque as licencas CC/Pexels/Unsplash exigem atribuicao; so aparece melhor com o rato/foco. */
 .page-hero__attribution, .hero-attribution, .hero-secondary__attribution, .beach-card-attribution{opacity:.28 !important; font-size:9px !important; letter-spacing:0 !important; text-shadow:none !important; transition:opacity .2s ease;}
 .page-hero__attribution:hover, .hero-attribution:hover, .hero-secondary__attribution:hover, .beach-card-attribution:hover, .page-hero__attribution:focus-within, .hero-attribution:focus-within, .hero-secondary__attribution:focus-within, .beach-card-attribution:focus-within{opacity:.75 !important;}
+
+/* Lote B 09/10/2026 (INAV-04): a 320-380 px o hamburger ficava fora do ecra (logo + PT|EN + menu nao cabiam). */
+@media (max-width: 380px) {
+  .navbar { padding: 0 10px; gap: 8px; }
+  .nav-logo { font-size: 13px; gap: 7px; min-width: 0; flex-shrink: 1; overflow: hidden; }
+  .nav-logo-icon { width: 28px; height: 28px; }
+  .nav-actions { gap: 2px; }
+  .lang-btn { padding: 4px 3px; }
+}

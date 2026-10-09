@@ -110,10 +110,11 @@ button { font: inherit; color: inherit; }
 .pv3-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .pv3-grid--people { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .pv3-grid--regions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.pv3-grid--regions .pv3-opt:last-child { grid-column: 1 / -1; }
+.pv3-grid--regions .pv3-opt:last-child { grid-column: span 2; } /* Lote B: 10 regioes + 'Surpreendam-me' -> ultima linha completa */
 @media (max-width: 540px) {
   .pv3-grid--regions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pv3-grid--regions .pv3-opt:first-child { grid-column: 1 / -1; }
+  .pv3-grid--regions .pv3-opt:last-child { grid-column: auto; }
 }
 
 .pv3-opt { position: relative; display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 16px; cursor: pointer; transition: border-color .18s, box-shadow .18s, transform .18s, background .18s; }
@@ -377,7 +378,7 @@ body.pv3-has-results #planner { display: none; }
 .r-app p { margin: 8px 0 14px; font-size: .86rem; color: var(--muted); line-height: 1.45; }
 .r-btn--dark { width: 100%; background: var(--ink); color: #fff; }
 .r-btn--dark:hover { background: var(--ink-2); }
-.pv3-ios { position: fixed; inset: 0; z-index: 90; display: flex; align-items: flex-end; justify-content: center; padding: 16px; background: rgba(6,18,31,.55); }
+.pv3-ios { position: fixed; inset: 0; z-index: 1000; /* Lote B (PLN-06): acima da barra inferior (z 90) e do cabecalho */ display: flex; align-items: flex-end; justify-content: center; padding: 16px; background: rgba(6,18,31,.55); }
 .pv3-ios[hidden] { display: none; }
 .pv3-ios-card { width: 100%; max-width: 420px; background: #fff; color: var(--text); border-radius: 22px; padding: 22px 22px calc(18px + env(safe-area-inset-bottom)); box-shadow: var(--shadow-pop); animation: pv3In .3s ease both; }
 .pv3-ios-card h2 { margin: 0 0 4px; font: 600 1.3rem var(--f-display); color: var(--ink); }

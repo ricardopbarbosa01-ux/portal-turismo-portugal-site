@@ -31,14 +31,34 @@
     'Vila Nova de Milfontes': ['vila-nova-de-milfontes', 'Vila Nova de Milfontes'], 'Zambujeira do Mar': ['vila-nova-de-milfontes', 'Vila Nova de Milfontes'],
     'Comporta': ['setubal', 'Setúbal'], 'Setúbal': ['setubal', 'Setúbal'], 'Sesimbra': ['setubal', 'Setúbal'], 'Costa da Caparica': ['almada', 'Almada'],
     'Cascais': ['cascais', 'Cascais'], 'Ericeira': ['sintra', 'Sintra'], 'Peniche': ['caldas-da-rainha', 'Caldas da Rainha'], 'Nazaré': ['caldas-da-rainha', 'Caldas da Rainha'],
-    'Viana do Castelo': ['viana-do-castelo', 'Viana do Castelo'], 'Funchal': ['funchal', 'Funchal'], 'Lisboa': ['lisbon', 'Lisboa']
+    'Viana do Castelo': ['viana-do-castelo', 'Viana do Castelo'], 'Funchal': ['funchal', 'Funchal'], 'Lisboa': ['lisbon', 'Lisboa'],
+    // Lote B 09/10: novas vilas-base (Porto, Aveiro, Figueira, Tavira, interior/fluviais, outras ilhas). Slugs validados com HTTP 200 a 09/10.
+    // Slug a comecar por '/' = caminho completo (os Acores nao estao debaixo de /portugal/).
+    'Porto': ['porto', 'Porto'], 'Aveiro': ['aveiro', 'Aveiro'], 'Figueira da Foz': ['figueira-da-foz', 'Figueira da Foz'], 'Tavira': ['tavira', 'Tavira'],
+    'Tomar': ['tomar', 'Tomar'], 'Abrantes': ['abrantes', 'Abrantes'], 'Coimbra': ['coimbra', 'Coimbra'], 'Arganil': ['coimbra', 'Coimbra'], 'Seia': ['seia', 'Seia'],
+    'Covilhã': ['covilha', 'Covilhã'], 'Guarda': ['guarda', 'Guarda'], 'Castelo Branco': ['castelo-branco', 'Castelo Branco'], 'Viseu': ['viseu', 'Viseu'],
+    'Braga': ['braga', 'Braga'], 'Mirandela': ['mirandela', 'Mirandela'], 'Bragança': ['braganca', 'Bragança'], 'Évora': ['evora', 'Évora'],
+    'Monsaraz': ['evora', 'Évora'], 'Mértola': ['beja', 'Beja'], 'Porto Santo': ['porto-santo', 'Porto Santo'],
+    'Ponta Delgada': ['/portugal-azores-islands/ponta-delgada', 'Ponta Delgada'],
+    'Angra do Heroísmo': ['/portugal-azores-islands', 'Açores'], 'Horta': ['/portugal-azores-islands', 'Açores'], 'Madalena': ['/portugal-azores-islands', 'Açores'],
+    'Velas': ['/portugal-azores-islands', 'Açores'], 'Santa Cruz das Flores': ['/portugal-azores-islands', 'Açores'],
+    'Santa Cruz da Graciosa': ['/portugal-azores-islands', 'Açores'], 'Vila do Porto': ['/portugal-azores-islands', 'Açores']
+  };
+  // Atividades GetYourGuide pela vila-base (quando a pesquisa da regiao nao serve a vila: Porto != Viana, ilhas, interior)
+  var TOWN_GYG = {
+    'Porto': 'Porto Douro', 'Aveiro': 'Aveiro moliceiro', 'Figueira da Foz': 'Figueira da Foz', 'Tavira': 'Ria Formosa boat tour',
+    'Tomar': 'Tomar', 'Abrantes': 'Tomar', 'Coimbra': 'Coimbra', 'Arganil': 'Coimbra', 'Seia': 'Serra da Estrela', 'Covilhã': 'Serra da Estrela',
+    'Guarda': 'Serra da Estrela', 'Castelo Branco': 'Castelo Branco', 'Viseu': 'Viseu', 'Braga': 'Peneda Geres', 'Mirandela': 'Douro valley',
+    'Bragança': 'Braganca', 'Évora': 'Evora', 'Monsaraz': 'Alqueva', 'Mértola': 'Alentejo', 'Porto Santo': 'Porto Santo',
+    'Angra do Heroísmo': 'Terceira Azores', 'Horta': 'Faial Azores', 'Madalena': 'Pico Azores', 'Velas': 'Sao Jorge Azores',
+    'Santa Cruz das Flores': 'Flores Azores', 'Santa Cruz da Graciosa': 'Graciosa Azores', 'Vila do Porto': 'Santa Maria Azores'
   };
 
   // ── Zonas por regiao. town = base de alojamento por perfil ─────────────
   // car = slug DiscoverCars validado 06/10 (null = pagina Portugal generica)
   // bsc = slug BookSurfCamps validado 06/10 (PT e EN usam o mesmo slug)
   var REGIONS = {
-    algarve:       { name: { pt: 'Algarve', en: 'Algarve' },                 town: { def: 'Albufeira', surf: 'Lagos', pesca: 'Portimão', luxo: 'Vilamoura' },
+    algarve:       { name: { pt: 'Algarve', en: 'Algarve' },                 town: { def: 'Albufeira', surf: 'Lagos', pesca: 'Portimão', luxo: 'Vilamoura', b1: 'Tavira' },
                      car: 'faro',   carCity: 'Faro',      bsc: 'algarve',            gyg: 'Benagil caves boat tour',      fish: 'Portimão' },
     alentejo:      { name: { pt: 'Costa Alentejana', en: 'Alentejo Coast' }, town: { def: 'Vila Nova de Milfontes', surf: 'Zambujeira do Mar', pesca: 'Vila Nova de Milfontes', luxo: 'Comporta' },
                      car: 'lisbon', carCity: 'Lisboa',    bsc: 'alentejo',           gyg: 'Comporta',                     fish: 'Sines' },
@@ -46,16 +66,19 @@
                      car: 'lisbon', carCity: 'Lisboa',    bsc: 'costa-da-caparica',  gyg: 'Arrabida dolphin watching',   fish: 'Sesimbra' },
     cascais:       { name: { pt: 'Linha de Cascais', en: 'Cascais coast' }, town: { def: 'Cascais' },
                      car: 'lisbon', carCity: 'Lisboa',    bsc: 'regiao-de-lisboa',   gyg: 'Sintra Cascais',              fish: 'Cascais' },
-    'costa-prata': { name: { pt: 'Costa de Prata', en: 'Silver Coast' },     town: { def: 'Nazaré' },
+    'costa-prata': { name: { pt: 'Costa de Prata', en: 'Silver Coast' },     town: { def: 'Nazaré', b1: 'Figueira da Foz', b2: 'Aveiro' },
                      car: 'lisbon', carCity: 'Lisboa',    bsc: 'nazare',             gyg: 'Nazare',                      fish: 'Nazaré' },
     oeste:         { name: { pt: 'Oeste', en: 'West Coast' }, town: { def: 'Ericeira', surf: 'Peniche', pesca: 'Peniche' },
                      car: 'lisbon', carCity: 'Lisboa',    bsc: 'oeste',              gyg: 'Berlengas Peniche',           fish: 'Peniche' },
-    minho:         { name: { pt: 'Minho', en: 'Minho' },                     town: { def: 'Viana do Castelo' },
+    minho:         { name: { pt: 'Porto e Minho', en: 'Porto & Minho' },     town: { def: 'Viana do Castelo', b1: 'Porto' },
                      car: 'porto',  carCity: 'Porto',     bsc: 'viana-do-castelo',   gyg: 'Viana do Castelo',            fish: 'Viana do Castelo' },
-    acores:        { name: { pt: 'Açores', en: 'Azores' }, town: { def: 'Ponta Delgada' },
-                     car: null,     carCity: 'Ponta Delgada', bsc: 'acores',         gyg: 'Sao Miguel whale watching',   fish: 'Ponta Delgada' },
-    madeira:       { name: { pt: 'Madeira', en: 'Madeira' },                 town: { def: 'Funchal' },
+    acores:        { name: { pt: 'Açores', en: 'Azores' }, town: { def: 'Ponta Delgada', b1: 'Angra do Heroísmo', b2: 'Horta', b3: 'Madalena', b4: 'Velas', b5: 'Santa Cruz das Flores', b6: 'Santa Cruz da Graciosa', b7: 'Vila do Porto' },
+                     car: '/portugal-azores-islands/ponta-delgada', carCity: 'Ponta Delgada', bsc: 'acores',         gyg: 'Sao Miguel whale watching',   fish: 'Ponta Delgada' },
+    madeira:       { name: { pt: 'Madeira', en: 'Madeira' },                 town: { def: 'Funchal', b1: 'Porto Santo' },
                      car: 'madeira', carCity: 'Funchal',  bsc: 'madeira',            gyg: 'Madeira levada walk',         fish: 'Funchal' },
+    // Lote B 09/10: praias fluviais do interior (151 na BD) deixam de cair na costa (Tomar -> Nazare, Monsaraz -> Costa Alentejana)
+    interior:      { name: { pt: 'Praias fluviais', en: 'River beaches' },   town: { def: 'Tomar', b1: 'Abrantes', b2: 'Coimbra', b3: 'Arganil', b4: 'Seia', b5: 'Covilhã', b6: 'Guarda', b7: 'Castelo Branco', b8: 'Viseu', b9: 'Braga', b10: 'Mirandela', b11: 'Bragança', b12: 'Évora', b13: 'Monsaraz', b14: 'Mértola' },
+                     car: 'tomar',  carCity: 'Tomar',     bsc: '',                   gyg: 'Tomar',                       fish: 'Tomar' },
     '':            { name: { pt: 'Portugal', en: 'Portugal' },               town: { def: 'Albufeira', surf: 'Ericeira', pesca: 'Sesimbra', roteiro: 'Lisboa' },
                      car: 'lisbon', carCity: 'Lisboa',    bsc: '',                   gyg: 'Lisbon',                      fish: 'Sesimbra' }
   };
@@ -92,7 +115,8 @@
       cascais: 'Praias urbanas com boas condições, animação noturna e acesso fácil a partir de Lisboa.',
       'costa-prata': 'Ondas com força, aldeias de pescadores autênticas e paisagem atlântica intocada.',
       oeste: 'Duas das melhores ondas da Europa, vilas piscatórias e praias para todos os níveis.',
-      minho: 'Praias atlânticas entre pinheiros, rio Lima e natureza do noroeste português.',
+      minho: 'Do Porto ao rio Minho: praias atlânticas entre pinheiros, cidade e natureza do noroeste.',
+      interior: 'Praias de rio e albufeira com água doce e calma, aldeias de xisto e serra — longe da costa.',
       acores: 'Piscinas naturais de basalto, observação de cetáceos e paisagem única no meio do Atlântico.',
       madeira: 'Piscinas naturais de rocha negra, levadas e água temperada todo o ano.',
       '': 'Praias curadas, webcams em tempo real e condições atualizadas diariamente.'
@@ -107,7 +131,8 @@
       cascais: 'Town beaches with good conditions, nightlife and easy access from Lisbon.',
       'costa-prata': 'Powerful waves, authentic fishing villages and untouched Atlantic scenery.',
       oeste: 'Two of Europe\'s best waves, fishing villages and beaches for every level.',
-      minho: 'Atlantic beaches among pine forests, the Lima river and north-west nature.',
+      minho: 'From Porto to the Minho river: Atlantic beaches among pine forests, city life and north-west nature.',
+      interior: 'River and lake beaches with calm fresh water, schist villages and mountains — away from the coast.',
       acores: 'Basalt rock pools, whale watching and unique scenery in the middle of the Atlantic.',
       madeira: 'Black-rock natural pools, levada walks and mild water all year round.',
       '': 'Curated beaches, live webcams and conditions updated daily.'
@@ -138,7 +163,7 @@
       surfTitle: function (t) { return 'Aulas de surf em ' + t; },
       fishTitle: function (t) { return 'Saídas de pesca em ' + t; },
       actTitle: function (z) { return 'Experiências — ' + z; },
-      carTitle: function (c) { return 'Carro de aluguer em ' + c; },
+      carTitle: function (c) { return c === 'Açores' ? 'Carro de aluguer nos Açores' : 'Carro de aluguer em ' + c; },
       carMeta: 'Compare preços de várias rent-a-car · DiscoverCars',
       carDates: function (d) { return d + ' · escolha estas datas na DiscoverCars (o link não leva datas)'; },
       siteSurf: 'Condições de surf em direto', siteFish: 'Zonas e marés de pesca', siteBeach: 'Praias e condições do mar', siteCams: 'Webcams ao vivo',
@@ -291,9 +316,10 @@
     // 4. Atividades gerais (praia / roteiro / webcams / outro) — so se ainda nao ha GYG de surf/pesca
     if (!has('surf') && !has('pesca')) {
       var q = regiao ? R.gyg : (any.gyg || stripAccents(town));
+      if (TOWN_GYG[town]) q = TOWN_GYG[town];
       if (has('roteiro')) q = 'food tour ' + (regiao ? stripAccents(town) : 'Lisbon');
       links.push({ kind: 'activity', section: 'do', partner: 'getyourguide', icon: 'star',
-        title: t.actTitle(regiao ? zoneName : town), meta: gygMeta, href: gyg(q) });
+        title: t.actTitle(TOWN_GYG[town] ? town : (regiao ? zoneName : town)), meta: gygMeta, href: gyg(q) });
     }
     // 5. Carro — DiscoverCars
     var carSlug = regiao ? R.car : (any.car || 'lisbon');
@@ -301,11 +327,12 @@
     // Lote H2 09/10: levantar o carro na localizacao DiscoverCars mais perto da vila-base (paginas validadas com HTTP 200 a 09/10)
     if (DC_TOWN[town]) { carSlug = DC_TOWN[town][0]; carCity = DC_TOWN[town][1]; }
     if (lang === 'en' && carCity === 'Lisboa') carCity = 'Lisbon';
+    if (lang === 'en' && carCity === 'Açores') carCity = 'the Azores';
     // A DiscoverCars NAO aceita datas no link (a pesquisa e criada na pagina deles): mostrar as datas para escolher la
     var carMeta = dt ? t.carDates(fmtRange(dt, t)) : t.carMeta;
     links.push({ kind: 'car', section: 'move', partner: 'discovercars', icon: 'car',
       title: t.carTitle(carCity), meta: carMeta,
-      href: t.dcBase + (carSlug ? '/' + carSlug : '') + '?a_aid=' + IDS.dcAid });
+      href: (carSlug && carSlug.charAt(0) === '/' ? t.dcBase.replace(/\/portugal$/, '') + carSlug : t.dcBase + (carSlug ? '/' + carSlug : '')) + '?a_aid=' + IDS.dcAid });
     // 6. Do site (confianca; nao fatura)
     var siteKey = has('surf') ? 'surf' : has('pesca') ? 'pesca' : has('webcams') ? 'webcams' : 'praia';
     var siteLabel = { surf: t.siteSurf, pesca: t.siteFish, webcams: t.siteCams, praia: t.siteBeach }[siteKey];

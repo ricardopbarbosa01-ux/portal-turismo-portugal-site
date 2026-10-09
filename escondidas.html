@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,700;1,6..96,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261007cr">
+<link rel="stylesheet" href="/css/style.css?v=20261009b">
 <style>
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-family:'Inter',sans-serif;font-size:0.875rem;font-weight:500;transition:var(--transition);min-height:44px;cursor:pointer;}
@@ -57,6 +57,10 @@
 .beach-card-live-name{font-family:'Bodoni Moda',Georgia,serif;font-size:1.15rem;font-weight:700;color:var(--blue);margin-bottom:5px;line-height:1.2;}
 .beach-card-live-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.6;margin-bottom:8px;}
 .beach-card-live-cta{font-size:0.78rem;font-weight:600;color:var(--gold);letter-spacing:0.04em;}
+/* Lote B 09/10 (CG-03): no telemovel o badge esticava e empurrava o texto para fora do cartao */
+.beach-card-live-body{min-width:0;}
+@media (max-width:600px){.beach-card-live{flex-direction:column;gap:10px;padding:16px 16px 18px;}.beach-card-live-badge{align-self:flex-start;white-space:nowrap;width:auto !important;} /* style.css: [class*="-card"]{width:100% !important} */
+.beach-card-live,.beach-card-live:hover{text-decoration:none !important;}.beach-card-live-body{width:100%;}}
 .beaches-coming{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:20px;}
 .beach-pill{background:var(--off-white);border:1px solid rgba(10,61,107,0.07);border-radius:8px;padding:12px 14px;}
 .beach-pill-num{font-family:'IBM Plex Mono',monospace;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;color:var(--gold);margin-bottom:4px;}
@@ -325,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<script src="/js/cookie-consent.js" defer></script>
+<script src="/js/cookie-consent.js?v=20261009b" defer></script>
 <script src="/js/nav-dropdown.js" defer></script>
 </body>
 </html>

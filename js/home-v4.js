@@ -163,7 +163,9 @@
       }
       if (partner === 'discovercars') {
         var dc = form.querySelector('[name="dc"]');
-        action = (form.getAttribute('data-base') || action) + (dc ? dc.value : 'faro'); skip.dc = 1;
+        var base = form.getAttribute('data-base') || action, slug = dc ? dc.value : 'faro';
+        // Acores: a DiscoverCars tem-nos fora de /portugal/ (valor com caminho completo a comecar por '/')
+        action = slug.charAt(0) === '/' ? base.replace(/\/portugal\/?$/, '') + slug : base + slug; skip.dc = 1;
       }
       err(form, null);
       var u; try { u = new URL(action); } catch (x) { return; }

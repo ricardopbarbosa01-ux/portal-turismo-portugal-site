@@ -21,13 +21,13 @@
   // ── Textos (PT / EN) ──────────────────────────────────────────────────────
   var I18N = {
     pt: {
-      regions: { algarve: ['Algarve', 'Falésias e água calma'], alentejo: ['Costa Alentejana', 'Praias selvagens'], setubal: ['Arrábida', 'Baías turquesa'], cascais: ['Cascais e Lisboa', 'Cidade e praia'], oeste: ['Oeste', 'Peniche e Ericeira'], 'costa-prata': ['Costa de Prata', 'Nazaré e ondas gigantes'], minho: ['Minho', 'Verde e atlântico'], madeira: ['Madeira', 'Primavera todo o ano'], acores: ['Açores', 'Natureza vulcânica'], '': ['Surpreendam-me', 'Escolhemos por si'] },
+      regions: { algarve: ['Algarve', 'Falésias e água calma'], alentejo: ['Costa Alentejana', 'Praias selvagens'], setubal: ['Arrábida', 'Baías turquesa'], cascais: ['Cascais e Lisboa', 'Cidade e praia'], oeste: ['Oeste', 'Peniche e Ericeira'], 'costa-prata': ['Costa de Prata', 'Nazaré e ondas gigantes'], minho: ['Porto e Minho', 'Cidade e costa verde'], madeira: ['Madeira', 'Primavera todo o ano'], acores: ['Açores', 'Natureza vulcânica'], interior: ['Praias fluviais', 'Rios e albufeiras'], '': ['Surpreendam-me', 'Escolhemos por si'] },
       interests: { praia: ['Praia', 'Sol, mar e descanso'], surf: ['Surf', 'Aulas, camps e spots'], pesca: ['Pesca', 'Barco ou costa'], roteiro: ['Cidade e sabores', 'Cultura e gastronomia'] },
       people: { '1': ['Só eu', '1 adulto'], '2': ['A dois', '2 adultos'], '3-4': ['Família', '3 a 4 pessoas'], '5-8': ['Grupo', '5 a 8 pessoas'], '8+': ['Grupo grande', 'Mais de 8'] },
       budgets: { economico: ['Económico', 'Hostels, AL e boa relação preço'], moderado: ['Confortável', 'Hotéis 3★ e casas com carácter'], premium: ['Premium', 'Hotéis 4★ e boutique'], luxo: ['Sem limite', 'Resorts e 5★'] },
       steps: { interesses: ['O que lhe apetece fazer?', 'Pode escolher mais do que um.'], regiao: ['Para onde quer ir?', 'Escolhemos a melhor base para dormir.'], datas: ['Quando?', 'Com datas, mostramos preços reais da sua estadia.'], pessoas: ['Quem vai?', ''], orcamento: ['Que estilo de viagem?', ''] },
       stepOf: function (a, b) { return 'Passo ' + a + ' de ' + b; },
-      arrival: 'Chegada', departure: 'Partida', dateErr: 'A partida tem de ser depois da chegada.',
+      arrival: 'Chegada', departure: 'Partida', dateErr: 'A partida tem de ser depois da chegada.', dateLong: 'Máximo 30 noites — é o limite dos sites de reserva. Para uma estadia maior, faça o plano para as primeiras 30.',
       quickWeekend: 'Próximo fim de semana', quick2w: 'Daqui a 2 semanas · 7 noites',
       quickMonth: function (m) { return 'Início de ' + m + ' · 4 noites'; }, quickUnknown: 'Ainda não sei',
       monthsLong: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
@@ -68,13 +68,13 @@
       iosClose: 'Percebi', installed: '✓ App instalada.'
     },
     en: {
-      regions: { algarve: ['Algarve', 'Cliffs and calm water'], alentejo: ['Alentejo Coast', 'Wild beaches'], setubal: ['Arrábida', 'Turquoise bays'], cascais: ['Cascais & Lisbon', 'City and beach'], oeste: ['West Coast', 'Peniche & Ericeira'], 'costa-prata': ['Silver Coast', 'Nazaré & giant waves'], minho: ['Minho', 'Green and Atlantic'], madeira: ['Madeira', 'Spring all year'], acores: ['Azores', 'Volcanic nature'], '': ['Surprise me', 'We pick for you'] },
+      regions: { algarve: ['Algarve', 'Cliffs and calm water'], alentejo: ['Alentejo Coast', 'Wild beaches'], setubal: ['Arrábida', 'Turquoise bays'], cascais: ['Cascais & Lisbon', 'City and beach'], oeste: ['West Coast', 'Peniche & Ericeira'], 'costa-prata': ['Silver Coast', 'Nazaré & giant waves'], minho: ['Porto & Minho', 'City and green coast'], madeira: ['Madeira', 'Spring all year'], acores: ['Azores', 'Volcanic nature'], interior: ['River beaches', 'Rivers and lakes inland'], '': ['Surprise me', 'We pick for you'] },
       interests: { praia: ['Beach', 'Sun, sea and rest'], surf: ['Surf', 'Lessons, camps and spots'], pesca: ['Fishing', 'Boat or shore'], roteiro: ['City & food', 'Culture and cuisine'] },
       people: { '1': ['Just me', '1 adult'], '2': ['Couple', '2 adults'], '3-4': ['Family', '3 to 4 people'], '5-8': ['Group', '5 to 8 people'], '8+': ['Large group', 'More than 8'] },
       budgets: { economico: ['Budget', 'Hostels, rentals, good value'], moderado: ['Comfortable', '3★ hotels and charming stays'], premium: ['Premium', '4★ and boutique hotels'], luxo: ['No limit', 'Resorts and 5★'] },
       steps: { interesses: ['What do you feel like doing?', 'You can pick more than one.'], regiao: ['Where do you want to go?', 'We pick the best base to stay.'], datas: ['When?', 'With dates, we show real prices for your stay.'], pessoas: ['Who is going?', ''], orcamento: ['What travel style?', ''] },
       stepOf: function (a, b) { return 'Step ' + a + ' of ' + b; },
-      arrival: 'Check-in', departure: 'Check-out', dateErr: 'Check-out must be after check-in.',
+      arrival: 'Check-in', departure: 'Check-out', dateErr: 'Check-out must be after check-in.', dateLong: 'Up to 30 nights — the booking sites\' limit. For a longer stay, plan the first 30 nights.',
       quickWeekend: 'Next weekend', quick2w: 'In 2 weeks · 7 nights',
       quickMonth: function (m) { return 'Early ' + m + ' · 4 nights'; }, quickUnknown: 'Not sure yet',
       monthsLong: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -127,10 +127,17 @@
     'Costa da Caparica': [38.6446, -9.2356], 'Sesimbra': [38.4445, -9.1015], 'Cascais': [38.6979, -9.4215],
     'Nazaré': [39.6012, -9.0700], 'Ericeira': [38.9631, -9.4153], 'Peniche': [39.3558, -9.3811],
     'Viana do Castelo': [41.6932, -8.8329], 'Ponta Delgada': [37.7412, -25.6756],
-    'Funchal': [32.6669, -16.9241], 'Lisboa': [38.7223, -9.1393]
+    'Funchal': [32.6669, -16.9241], 'Lisboa': [38.7223, -9.1393],
+    // Lote B 09/10: novas vilas-base (centro aproximado da vila)
+    'Porto': [41.1496, -8.6110], 'Aveiro': [40.6405, -8.6538], 'Figueira da Foz': [40.1508, -8.8618], 'Tavira': [37.1270, -7.6490],
+    'Tomar': [39.6020, -8.4090], 'Abrantes': [39.4630, -8.1990], 'Coimbra': [40.2033, -8.4103], 'Arganil': [40.2180, -8.0540], 'Seia': [40.4200, -7.7000],
+    'Covilhã': [40.2810, -7.5040], 'Guarda': [40.5370, -7.2680], 'Castelo Branco': [39.8220, -7.4910], 'Viseu': [40.6570, -7.9130], 'Braga': [41.5450, -8.4270],
+    'Mirandela': [41.4850, -7.1820], 'Bragança': [41.8060, -6.7570], 'Évora': [38.5710, -7.9090], 'Monsaraz': [38.4430, -7.3800], 'Mértola': [37.6420, -7.6610],
+    'Porto Santo': [33.0600, -16.3400], 'Angra do Heroísmo': [38.6550, -27.2180], 'Horta': [38.5360, -28.6270], 'Madalena': [38.5350, -28.5270],
+    'Velas': [38.6800, -28.2080], 'Santa Cruz das Flores': [39.4530, -31.1270], 'Santa Cruz da Graciosa': [39.0850, -28.0060], 'Vila do Porto': [36.9440, -25.1450]
   };
   function opts(map, extra) { return Object.keys(map).map(function (k) { var o = { v: k, t: map[k][0], s: map[k][1] }; if (extra) for (var x in extra[k]) o[x] = extra[k][x]; return o; }); }
-  var REGIONS = opts(L.regions, { algarve: { town: 'Lagos' }, alentejo: { town: 'Vila Nova de Milfontes' }, setubal: { town: 'Sesimbra' }, cascais: { town: 'Cascais' }, oeste: { town: 'Peniche' }, 'costa-prata': { town: 'Nazaré' }, minho: { town: 'Viana do Castelo' }, madeira: { town: 'Funchal' }, acores: { town: 'Ponta Delgada' }, '': { town: 'Albufeira' } });
+  var REGIONS = opts(L.regions, { algarve: { town: 'Lagos' }, alentejo: { town: 'Vila Nova de Milfontes' }, setubal: { town: 'Sesimbra' }, cascais: { town: 'Cascais' }, oeste: { town: 'Peniche' }, 'costa-prata': { town: 'Nazaré' }, minho: { town: 'Viana do Castelo' }, madeira: { town: 'Funchal' }, acores: { town: 'Ponta Delgada' }, interior: { town: 'Tomar' }, '': { town: 'Albufeira' } });
   // Object.keys poe '' em primeiro em alguns motores? Nao: chaves string mantem a ordem de insercao. Garantir '' no fim:
   REGIONS.sort(function (a, b) { return (a.v === '') - (b.v === ''); });
   var INTERESTS = opts(L.interests, { praia: { i: 'sun' }, surf: { i: 'wave' }, pesca: { i: 'fish' }, roteiro: { i: 'map' } });
@@ -222,7 +229,10 @@
     'Nazaré': '4c907c07', 'Viana do Castelo': 'f7fa6d81', 'Funchal': 'ebf82db0'
   };
   function byId(prefix) { return prefix ? beaches.filter(function (b) { return b.id.indexOf(prefix) === 0; })[0] : null; }
+  // Lote B 09/10: foto local para o cartao 'Praias fluviais' (a BD nao tem URL de imagem para as fluviais). Credito em docs/FOTOS-CREDITOS.md.
+  var TOWN_PHOTO_FILE = { 'Tomar': { id: '004cc2ac-510e-4246-a32e-ee3cec8be170', name: 'Praia Fluvial do Lago Azul (Ferreira do Zêzere)', image_curated_url: '/images/beaches/004cc2ac-510e-4246-a32e-ee3cec8be170-800.webp', image_curated_author: 'Vitor Oliveira', image_license: 'CC BY-SA 2.0', latitude: 39.67582, longitude: -8.23071 } };
   function townPhoto(town) {
+    if (TOWN_PHOTO_FILE[town]) return TOWN_PHOTO_FILE[town];
     var b = byId(TOWN_PHOTO[town]);
     if (b && beachImg(b)) return b;
     var nb = nearBeaches(town, 1, 60)[0];
@@ -251,16 +261,16 @@
   var beachesP = null;
   function loadBeaches() {
     if (beachesP) return beachesP;
-    var cached = ssGet('pth_v3_beaches_v2'); // v2 (Lote A 08/10): a cache antiga tinha so 300 praias
+    var cached = ssGet('pth_v3_beaches_v3'); // v2 (Lote A 08/10): a cache antiga tinha so 300 praias; v3 (Lote B): + beach_type
     if (cached && cached.length) { beaches = cached; beachesP = Promise.resolve(); return beachesP; }
-    var cols = 'id,name,region,latitude,longitude,image_curated_url,image_storage_url_webp,image_storage_url,image_curated_author,image_photographer,image_license,image_source_url,image_curated_source_url,editorial_rank,is_surf_spot';
+    var cols = 'id,name,region,beach_type,latitude,longitude,image_curated_url,image_storage_url_webp,image_storage_url,image_curated_author,image_photographer,image_license,image_source_url,image_curated_source_url,editorial_rank,is_surf_spot';
     // Timeout de 6 s: se a BD falhar, o planeador continua (sem fotos) e o link partilhado abre na mesma
     var ctl = window.AbortController ? new AbortController() : null;
     var to = setTimeout(function () { if (ctl) ctl.abort(); }, 6000);
     beachesP = fetch(SB_URL + '/rest/v1/beaches?select=' + cols + '&is_active=eq.true&order=name&limit=1000' /* Lote A 08/10: eram 300 de 522 -> 222 praias sem destino */, { headers: { apikey: SB_KEY }, signal: ctl ? ctl.signal : undefined })
       .then(function (r) { clearTimeout(to); return r; })
       .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (d) { beaches = Array.isArray(d) ? d : []; ssSet('pth_v3_beaches_v2', beaches); })
+      .then(function (d) { beaches = Array.isArray(d) ? d : []; ssSet('pth_v3_beaches_v3', beaches); })
       .catch(function () { beaches = []; });
     return beachesP;
   }
@@ -342,11 +352,12 @@
       f1.appendChild(i1);
       var f2 = el('label', 'pv3-field'); f2.appendChild(el('span', null, L.departure));
       var i2 = el('input'); i2.type = 'date'; i2.id = 'pv3-d2'; i2.value = state.data_fim; i2.min = state.data_inicio || iso(new Date());
+      if (state.data_inicio) { var mx0 = pd(state.data_inicio); mx0.setDate(mx0.getDate() + 30); i2.max = iso(mx0); }
       f2.appendChild(i2);
       var err = el('p', 'pv3-err'); err.id = 'pv3-derr';
       var upd = function () {
         state.data_inicio = i1.value; state.data_fim = i2.value;
-        if (i1.value) i2.min = i1.value;
+        if (i1.value) { i2.min = i1.value; var mx = pd(i1.value); mx.setDate(mx.getDate() + 30); i2.max = iso(mx); }
         if (i1.value && (!i2.value || i2.value <= i1.value)) {
           var d = pd(i1.value); d.setDate(d.getDate() + 3); i2.value = iso(d); state.data_fim = i2.value;
         }
@@ -354,7 +365,7 @@
       };
       i1.addEventListener('change', upd); i2.addEventListener('change', function () {
         state.data_fim = i2.value;
-        err.textContent = (state.data_inicio && i2.value && i2.value <= state.data_inicio) ? L.dateErr : '';
+        err.textContent = (state.data_inicio && i2.value && i2.value <= state.data_inicio) ? L.dateErr : (nightsOf() > 30 ? L.dateLong : '');
         renderPreview(); syncQuick(); updateNav();
       });
       wrap.appendChild(f1); wrap.appendChild(f2);
@@ -406,7 +417,7 @@
     var k = STEPS[i].k;
     if (k === 'interesses') return state.interesses.length > 0;
     if (k === 'regiao') return state.regiao !== null;
-    if (k === 'datas') return !state.data_inicio || (state.data_fim && state.data_fim > state.data_inicio);
+    if (k === 'datas') return !state.data_inicio || (state.data_fim && state.data_fim > state.data_inicio && nightsOf() <= 30);
     if (k === 'pessoas') return !!state.pessoas;
     if (k === 'orcamento') return !!state.orcamento;
     return true;
@@ -421,7 +432,7 @@
   }
   function next(auto) {
     if (!stepOk(state.step)) {
-      if (STEPS[state.step].k === 'datas') $('pv3-derr').textContent = L.dateErr;
+      if (STEPS[state.step].k === 'datas') $('pv3-derr').textContent = nightsOf() > 30 ? L.dateLong : L.dateErr;
       return;
     }
     if (state.step === STEPS.length - 1) return generate();
@@ -964,6 +975,7 @@
     });
     if (!best) return;
     if (best.d <= 60) { state.regiao = best.r; state.base = best.t; }
+    else if (b.beach_type === 'fluvial') { state.regiao = 'interior'; state.base = ''; }
     else { var cand = LEGACY_REGION[norm(b.region)]; if (cand) state.regiao = cand[0]; state.base = ''; }
     if (!state.interesses.length) state.interesses = ['praia'];
     for (var i = 0; i < STEPS.length; i++) { if (!stepOk(i) || STEPS[i].k === 'datas') { state.step = Math.max(state.step, i); break; } }

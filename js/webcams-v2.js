@@ -539,7 +539,7 @@
     var sheet = h('div', { class: 'wp__sheet', tabindex: '-1' });
     panel.appendChild(sheet);
     document.body.appendChild(panel);
-    panel.addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closePanel(); });
+    panel.addEventListener('click', function (e) { var cl = e.target.closest('[data-close]'); if (cl) closePanel(false, cl.tagName === 'A'); });
     document.addEventListener('keydown', function (e) {
       if (panel.hidden) return;
       if (e.key === 'Escape') closePanel();
@@ -687,7 +687,8 @@
     var head = h('header', { class: 'wp__head' });
     head.appendChild(media(c, '(max-width: 640px) 100vw, 480px', true));
     fillMediaData(head.querySelector('.wm__data'), c);
-    head.appendChild(h('button', { type: 'button', class: 'wp__x', 'data-close': '1', 'aria-label': T.pClose }, ico('x')));
+    // Lote B 09/10 (W04): o X fica num suporte 'sticky' -> continua visivel depois de fazer scroll no painel
+    sheet.appendChild(h('div', { class: 'wp__xw' }, h('button', { type: 'button', class: 'wp__x', 'data-close': '1', 'aria-label': T.pClose }, ico('x'))));
     head.appendChild(h('div', { class: 'wp__title' }, [h('p', { class: 'wp__eye', text: T.reg[c.r] }), h('h2', { id: 'wp-t', text: c.t }), h('p', { class: 'wp__place', text: place(c) })]));
     sheet.appendChild(head);
     var body = h('div', { class: 'wp__body' });
@@ -731,7 +732,9 @@
     panel.hidden = false;
     requestAnimationFrame(function () { panel.classList.add('is-open'); });
     document.documentElement.classList.add('wp-lock');
-    if (history.replaceState) history.replaceState(null, '', '#cam-' + c.id);
+    // Lote B 09/10 (W04): abrir o painel cria uma entrada no historico -> o Voltar do telemovel fecha o painel em vez de sair da pagina
+    if (!wpPushed && history.pushState && !/^#cam-/.test(location.hash)) { history.pushState({ wp: 1 }, '', '#cam-' + c.id); wpPushed = true; }
+    else if (history.replaceState) history.replaceState(history.state, '', '#cam-' + c.id);
     if (opt.focus === 'plan') { var pl = sheet.querySelector('#wp-plan'); if (pl) setTimeout(function () { pl.scrollIntoView({ block: 'start' }); }, 60); }
     sheet.focus({ preventScroll: true });
     loadHourly(c).then(function (H) { if (current === c) hoursBlock(c, H); }).catch(function () { var w = panel.querySelector('[data-hours]'); if (w) w.textContent = ''; });
@@ -744,13 +747,17 @@
     if (HOURLY[c.id]) hoursBlock(c, HOURLY[c.id]);
     var dd = panel.querySelector('.wp__head .wm__data'); if (dd) fillMediaData(dd, c);
   }
-  function closePanel() {
+  var wpPushed = false;
+  window.addEventListener('popstate', function () { if (current && !/^#cam-/.test(location.hash)) { wpPushed = false; closePanel(true); } });
+  function closePanel(fromPop, viaLink) {
     if (!panel || panel.hidden) return;
     panel.classList.remove('is-open');
     document.documentElement.classList.remove('wp-lock');
     var yt = panel.querySelector('iframe'); if (yt) yt.remove();
     setTimeout(function () { panel.hidden = true; }, 220);
-    if (history.replaceState && /^#cam-/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
+    if (!fromPop && wpPushed && !viaLink && history.state && history.state.wp) { wpPushed = false; current = null; history.back(); }
+    else if (!fromPop && history.replaceState && /^#cam-/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
+    if (viaLink) wpPushed = false;
     current = null;
     if (lastFocus && lastFocus.focus) try { lastFocus.focus({ preventScroll: true }); } catch (e) {}
   }

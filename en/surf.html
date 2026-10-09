@@ -118,7 +118,7 @@
   <link rel="preload" as="image" type="image/avif" imagesrcset="/images/map/portugal-relevo-560.avif?v=2 560w, /images/map/portugal-relevo-760.avif?v=2 760w, /images/map/portugal-relevo-1000.avif?v=2 1000w" imagesizes="(max-width: 1180px) 300px, 361px" fetchpriority="high">
   <link rel="stylesheet" href="/css/gyg-block.css?v=20260516-video2">
 
-<link rel="stylesheet" href="/css/style.css?v=20261007cr">
+<link rel="stylesheet" href="/css/style.css?v=20261009b">
 <script async src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="0WTBHZE"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/js/image-autofix.js"></script>
@@ -184,8 +184,10 @@
     </div>
     <a href="/en/login.html" class="btn btn-outline" id="nav-login-btn">Log In</a>
     <a href="/en/login.html#register" class="btn btn-primary" id="nav-register-btn">Sign Up</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="nav-toggle">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" type="button" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </nav>
@@ -208,9 +210,9 @@
     <svg class="bh4__grid" aria-hidden="true"><defs><pattern id="sh-grid" width="106" height="137" patternUnits="userSpaceOnUse"><path d="M106 0V137M0 137H106" fill="none" stroke="#8fc2f2" stroke-opacity=".09"/></pattern></defs><rect width="100%" height="100%" fill="url(#sh-grid)"/></svg>
     <div class="bh4__inner">
       <div class="bh4__copy">
-        <p class="bh4__kicker"><span class="bh4__live" aria-hidden="true"></span><span data-sh="time">Live · 38 surf spots</span></p>
+        <p class="bh4__kicker"><span class="bh4__live" aria-hidden="true"></span><span data-sh="time">Live · <span data-sh-n>126</span> surf spots</span></p>
         <h1 class="bh4__title" id="sh-title">Surf in Portugal,<br><em>today</em></h1>
-        <p class="bh4__sub">Waves, period and wind <strong>right now</strong> at the 38 spots we checked — and where it is worth paddling out for your level.</p>
+        <p class="bh4__sub">Waves, period and wind <strong>right now</strong> at the <span data-sh-n>126</span> spots we checked — and where it is worth paddling out for your level.</p>
         <div class="sh__now">
           <div class="sh__head"><span class="sh__k">My level</span></div>
           <div class="sh__lv" role="group" aria-label="My level"><button type="button" data-lv="iniciante" aria-pressed="false">Beginner</button><button type="button" data-lv="intermedio" aria-pressed="false">Intermediate</button><button type="button" data-lv="avancado" aria-pressed="false">Advanced</button></div>
@@ -220,7 +222,7 @@
           <p class="sh__note">Automatic estimate from Open-Meteo data: wave size for your level, period, wind and swell. Always check conditions on the spot.</p>
         </div>
         <div class="bh4__ctas">
-          <a href="#spot-filters" class="bh4__cta bh4__cta--gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>See all 38 spots</a>
+          <a href="#spot-filters" class="bh4__cta bh4__cta--gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>See all <span data-sh-n>126</span> spots</a>
           <a href="/en/planear?i=surf&ref=surf-hero" class="bh4__cta bh4__cta--ghost"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Plan a surf trip</a>
         </div>
       </div>
@@ -434,11 +436,11 @@
 <script src="/js/nav.js?v=20260422c" defer></script>
 <script src="/js/chips-fade.js" defer></script>
 <script src="/js/beach-renderer.js?v=20261008la" defer></script>
-<script src="/js/surf-pesca-data.js?v=20261008la" defer></script>
+<script src="/js/surf-pesca-data.js?v=20261009b" defer></script>
 <script src="/js/surf-pesca-page.js?v=20261008la" defer></script>
 <script src="/js/om-pool.js?v=20261009a2" defer></script>
 <script src="/js/surf-live.js?v=20261009a2" defer></script>
-<script src="/js/surf-hero.js?v=20261008s3" defer></script>
+<script src="/js/surf-hero.js?v=20261009b" defer></script>
 <script>
   // nav.js handles #nav-toggle — delegate bottom-nav btn to the same hamburger
   document.getElementById('mob-menu-btn')?.addEventListener('click', (e) => { e.stopPropagation(); document.getElementById('nav-toggle').click(); });
@@ -534,7 +536,7 @@
   }
 </script>
 <script src="/js/lang-switcher.js" defer></script>
-  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/cookie-consent.js?v=20261009b" defer></script>
 <script>
   (function() {
     var hero = document.querySelector('.page-hero');

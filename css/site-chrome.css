@@ -123,3 +123,12 @@ body.pv3-has-results main{padding-top:64px;}
   body.pv3-has-results main{padding-top:60px;}
   body.pv3 .r-sticky{bottom:calc(70px + env(safe-area-inset-bottom,0px));}
 }
+
+/* Lote B 09/10/2026 (INAV-04): a 320-380 px o hamburger ficava fora do ecra (logo + PT|EN + menu nao cabiam). */
+@media (max-width: 380px) {
+  .navbar { padding: 0 10px; gap: 8px; }
+  .nav-logo { font-size: 13px; gap: 7px; min-width: 0; flex-shrink: 1; overflow: hidden; }
+  .nav-logo-icon { width: 28px; height: 28px; }
+  .nav-actions { gap: 2px; }
+  .lang-btn { padding: 4px 3px; }
+}
