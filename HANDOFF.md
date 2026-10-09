@@ -300,9 +300,19 @@ Emails novos: surf_subscribers.source = precos-pro-lista:<interesse>, escolas-vi
 Por confirmar pelo Ricardo: se a verificação das 7 escolas (registo, certificações, praias, avaliações; "maio de 2026") foi mesmo feita como a página diz; datas das notas Tripadvisor/Google.
 Pendentes: quadro de zonas e ordem do diretório ao 1.º parceiro; bloco GYG das páginas ("verificadas por nós / selecionamos pessoalmente") a rever; títulos do media-kit >60; logótipo cortado a 320 px (style.css global); erro "supabase is not defined" nas páginas praias/* (antigo); morada completa no rodapé; Lote D.
 
-## >>> LOTE F2 — /parceiros v3 escuro/tecnológico (09/10, fim da tarde), POR PUBLICAR
+## >>> LOTE F2 — /parceiros v3 escuro/tecnológico (09/10, fim da tarde), PUBLICADO
 O Ricardo rejeitou o visual do Lote F ("horríveis, desalinhadas, sem gráficos"). Refeito à mão, um só estilo: escuro, tecnológico, ouro + ciano, Inter.
 Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-f2.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`.
 /parceiros: topo sem audiência (conteúdo + 149 €/ano), cartão ao vivo, calculadora das aulas, bento "O que recebe", planos, mapa real com 12 zonas de Fundador, como funciona, candidatura, FAQ (tráfego honesto só aí).
 Decisões: 1 Fundador por zona, 12 zonas de surf; números de tráfego só com fonte (pedido de 6 000 cliques/mês e 1 milhão de aparições não confirmado pelo GSC).
 PRÓXIMO: /precos e /escolas-de-surf no mesmo estilo (o Ricardo também os achou fracos). Pedir ao Ricardo a exportação mensal do GSC (16 meses) para um gráfico de evolução, se o crescimento se confirmar.
+
+## >>> LOTE F3 — pedidos de parceiro voltam a gravar (09/10, 17h), APLICADO (testado pelo Ricardo)
+Causa: trigger on_partner_lead_created usava NEW.nome (não existe em partner_leads) → todos os inserts falhavam.
+Aplicar: 1) SQL supabase/migrations/20261009170000_fix_partner_lead_trigger.sql no SQL Editor; 2) `npx supabase functions deploy send-partner-alert --project-ref glupdjvdvunogkqgxoui`; 3) commit com docs/commit-files-2026-10-09-lote-f3.txt (sem deploy.ps1: nada do site mudou).
+Testar: 1 pedido em /parceiros e 1 em /en/parceiros → linhas em partner_leads + email em ola@ + email de confirmação ao endereço do teste. Apagar as linhas de teste.
+
+## >>> LOTE F4 — /partner-demo v3 (09/10, 17h30), POR PUBLICAR
+Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-f4.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`.
+Página de exemplo no estilo do /parceiros v3: barra Exemplo + notas "o que está incluído", hero, mar em direto na Nazaré, aulas e preços, um dia de aula, 3 praias com o mar de agora, mapa, bloco para o dono.
+PRÓXIMO: /precos e /escolas-de-surf no mesmo estilo.

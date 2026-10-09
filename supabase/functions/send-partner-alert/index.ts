@@ -8,12 +8,17 @@ const CORS = {
 
 const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? ''
 const FROM = 'Portal Turismo Portugal <ola@portalturismoportugal.com>'
-const ADMIN_EMAIL = 'parceiros@portalturismoportugal.com'
+const ADMIN_EMAIL = 'ola@portalturismoportugal.com'
+
+// Escapa texto vindo do formulário antes de o pôr no HTML dos emails
+const esc = (v: unknown) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string))
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS })
 
-  const { negocio, contacto, email, tipo, plano, regiao, mensagem } = await req.json()
+  const raw = await req.json()
+  const email = String(raw.email ?? '').trim()
+  const [negocio, contacto, tipo, plano, regiao, localizacao, mensagem] = [raw.negocio, raw.contacto, raw.tipo, raw.plano, raw.regiao, raw.localizacao, raw.mensagem].map(esc)
   if (!email) return new Response('No email', { status: 400, headers: CORS })
 
   // Email de confirmação para o parceiro
@@ -29,14 +34,14 @@ serve(async (req) => {
       <h2 style="color:#1B3A6B;margin:0 0 16px">Pedido recebido! 🤝</h2>
       <p style="color:#444;line-height:1.6;margin:0 0 24px">
         Recebemos o pedido de parceria do <strong>${negocio}</strong>.
-        A nossa equipa vai analisar o perfil e contactar-te em até 48 horas.
+        Vamos analisar o pedido e responder por email em até 5 dias úteis, com a proposta.
       </p>
       <div style="background:#f8f9fa;border-radius:8px;padding:20px;margin:0 0 24px">
         <p style="margin:0 0 12px;font-weight:600;color:#1B3A6B">O que acontece a seguir:</p>
         <ol style="margin:0;padding:0 0 0 20px;color:#444;line-height:2;font-size:14px">
-          <li>A equipa analisa o perfil do negócio</li>
-          <li>Enviamos uma proposta personalizada</li>
-          <li>Activação da presença no portal em 5 dias úteis</li>
+          <li>Analisamos o pedido e montamos a pré-visualização</li>
+          <li>Enviamos a proposta por email</li>
+          <li>Se aceitar, publicamos e os primeiros 30 dias são grátis</li>
         </ol>
       </div>
     </div>
@@ -51,7 +56,7 @@ serve(async (req) => {
   const adminHtml = `<h3>Novo lead de parceiro</h3>
 <p><b>Negócio:</b> ${negocio}<br><b>Contacto:</b> ${contacto}<br>
 <b>Email:</b> ${email}<br><b>Tipo:</b> ${tipo}<br>
-<b>Plano:</b> ${plano}<br><b>Região:</b> ${regiao}</p>
+<b>Plano:</b> ${plano}<br><b>Região:</b> ${regiao}<br><b>Localidade:</b> ${localizacao}</p>
 <p><b>Mensagem:</b><br>${mensagem}</p>
 <p><a href="https://www.portalturismoportugal.com/dashboard.html">Ver no dashboard</a></p>`
 
@@ -59,12 +64,12 @@ serve(async (req) => {
     fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from: FROM, to: [email], subject: `Pedido de parceria recebido — ${negocio}`, html: partnerHtml })
+      body: JSON.stringify({ from: FROM, to: [email], subject: `Pedido de parceria recebido — ${raw.negocio ?? ''}`, html: partnerHtml })
     }),
     fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from: FROM, to: [ADMIN_EMAIL], subject: `Novo parceiro — ${negocio} (${plano})`, html: adminHtml })
+      body: JSON.stringify({ from: FROM, to: [ADMIN_EMAIL], subject: `Novo parceiro — ${raw.negocio ?? ''} (${raw.plano ?? ''})`, html: adminHtml })
     })
   ])
 

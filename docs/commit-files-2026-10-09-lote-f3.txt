@@ -1,0 +1,5 @@
+supabase/migrations/20261009170000_fix_partner_lead_trigger.sql
+supabase/functions/send-partner-alert/index.ts
+docs/REGRESSION-WATCHLIST.md
+HANDOFF.md
+docs/commit-files-2026-10-09-lote-f3.txt
