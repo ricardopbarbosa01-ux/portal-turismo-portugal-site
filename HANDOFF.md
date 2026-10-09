@@ -272,7 +272,7 @@ Testado: Playwright, CSP real, PT/EN, 1280/375/320, Open-Meteo simulado, captura
 Fica para depois: "Ver mais" do /beaches não é reposto no Voltar; páginas antigas planear-v3/planear-legacy ainda públicas (Lote D); marca "Portugal Travel Hub" no cabeçalho (decisão do Ricardo).
 
 
-## >>> LOTE C — credibilidade e dados (09/10, tarde), POR PUBLICAR
+## >>> LOTE C — credibilidade e dados (09/10, tarde), PUBLICADO (0f0f8d8; SQL e funções aplicados)
 Lote B publicado (73f321d). Decisões do Ricardo (09/10 12:24): Pro "em desenvolvimento"; entidade = empresa da esposa (como a Kaptar: Renata Garutti, empresária em nome individual, NIF 293753610 — tirado de kaptar.studio/termos); testemunho "João Silva" é real (fica); marca = Portal Turismo Portugal.
 Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-c.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1` → funções: `npx supabase functions deploy check-alerts send-partner-alert send-plan-confirm send-welcome --project-ref glupdjvdvunogkqgxoui` → SQL `supabase/migrations/20261009120000_lote_c_regiao_lisboa_setubal.sql` no SQL Editor.
 1. Marca em todo o site e nos emails.
@@ -283,3 +283,10 @@ Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-c.txt)` →
 6. BD: 10 praias de Cascais/Sintra/Setúbal deixam de ser "Oeste" (SQL).
 7. SEO: 3 páginas antigas + planear-legacy com 301 reais; sitemap 205 URLs.
 Fica: morada completa no rodapé/termos (falta o dado); /conta e o login continuam sem nada para utilizadores grátis (CC-02); "Registar" no cabeçalho.
+
+## >>> LOTE E — /beaches: tudo o que vem depois da lista (09/10, tarde), POR PUBLICAR
+Pedido do Ricardo (13:09): remodelar a parte de baixo de /beaches (GYG perdido, guias por região mal aproveitados, "Como escolher a praia certa" feio).
+Publicar: `git add -f (Get-Content docs/commit-files-2026-10-09-lote-e.txt)` → commit → `deploy.ps1 -DryRun` → `deploy.ps1`.
+Nova ordem (PT e EN, gerada por `_diag/lote-a-20261008/bb_build.py`): 1) Que praia procura? (5 perfis com foto e contagem real; clicar filtra a lista) 2) Depois da praia (GetYourGuide a toda a largura + chips de destino) 3) Guias por região (6) + por tema (8) 4) Antes de ir (webcams/surf/pesca/planear) 5) Onde dormir (Stay22 com datas).
+Ficheiros: beaches.html, en/beaches.html, NOVOS css/beaches-bottom.css e js/beaches-bottom.js (?v=20261009e). css/gyg-block.css fica (usado noutras páginas). Cópias antigas: docs/_backup-lote-e-20261009/.
+Fica por fazer: morada completa no rodapé/termos (falta o dado); "Registar" no cabeçalho; Lote D.

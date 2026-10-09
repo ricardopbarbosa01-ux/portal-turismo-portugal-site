@@ -1,0 +1,7 @@
+beaches.html
+en/beaches.html
+css/beaches-bottom.css
+js/beaches-bottom.js
+docs/REGRESSION-WATCHLIST.md
+HANDOFF.md
+docs/commit-files-2026-10-09-lote-e.txt
