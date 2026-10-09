@@ -1,0 +1,4 @@
+parceiros.html
+en/parceiros.html
+css/parceiros-v3.css
+docs/commit-files-2026-10-09-lote-f5.txt
